@@ -13,10 +13,10 @@
     left: 33vw;
     bottom: 10vh;
     width: 34vw;
-    -webkit-transition: width .5s;
-    transition: width .5s; }
+    -webkit-transition: border-bottom 1s;
+    transition: border-bottom 1s; }
     .landing a:hover {
-      border-bottom: 0.4vh solid green; }
+      border-bottom: 0.4vh solid red; }
 
 .login {
   background-color: #474747;
