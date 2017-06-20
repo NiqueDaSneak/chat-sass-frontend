@@ -9,16 +9,22 @@
   top: 20vh
   font-size: 6vw
   padding-top: 5vh
-  // display: none
+  transition: transform .8s, left .8s
+  @include tablet
+    height: 68vh
+    top: 16vh
+  @include desktop
+    font-size: 2vw
   hr
     width: 40vw
   form
     label
       display: block
-      &:last-of-type
-        padding-top: 5vh
+      padding-top: 5vh
     input[type='text'], input[type='password']
       font-size: 6vw
+      @include desktop
+        font-size: 2vw
     input[type='password']
       margin-bottom: 5vh
     input[type='submit']
@@ -27,13 +33,21 @@
       margin: 0 auto
       font-size: 6vw
       background-color: white
-      margin-bottom: 3vh
+      margin-bottom: 7vh
+      @include tablet
+        margin-bottom: 3vh
+      @include desktop
+        font-size: 2vw
+        width: 14vw
   a:last-of-type
     color: white
-    font-size: 3.4vw
+    font-size: 5.6vw
+    @include tablet
+      font-size: 3.4vw
+    @include desktop
+      font-size: 1.6vw
 
 .signup
-  // display: none
   background-color: $siteGrey
   color: white
   text-align: center
@@ -44,6 +58,11 @@
   top: 8vh
   font-size: 6vw
   padding-top: 5vh
+  transition: transform .8s, left .8s
+  @include tablet
+    height: 80vh
+  @include desktop
+    font-size: 2vw
   hr
     width: 40vw
   form
@@ -52,6 +71,8 @@
       padding-top: 5vh
     input[type='text'], input[type='password']
       font-size: 6vw
+      @include desktop
+        font-size: 2vw
     input[type='password']
       margin-bottom: 5vh
     input[type='submit']
@@ -60,7 +81,30 @@
       margin: 0 auto
       font-size: 6vw
       background-color: white
-      margin-bottom: 3vh
+      margin-bottom: 7vh
+      @include tablet
+        margin-bottom: 3vh
+      @include desktop
+        font-size: 2vw
+        width: 14vw
   a:last-of-type
     color: white
-    font-size: 3.4vw
+    font-size: 5.6vw
+    @include tablet
+      font-size: 3.4vw
+    @include desktop
+      font-size: 1.6vw
+
+.signup.rotate
+  left: 128vw
+  transform: rotate(-90deg)
+  @include tablet
+    left: 110vw
+    transform: rotate(-90deg)
+
+.login.rotate
+  left: -95vw
+  transform: rotate(90deg)
+  @include tablet
+    left: -86vw
+    transform: rotate(90deg)

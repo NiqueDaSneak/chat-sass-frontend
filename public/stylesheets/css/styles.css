@@ -28,15 +28,28 @@
   height: 60vh;
   top: 20vh;
   font-size: 6vw;
-  padding-top: 5vh; }
+  padding-top: 5vh;
+  -webkit-transition: left .8s, -webkit-transform .8s;
+  transition: left .8s, -webkit-transform .8s;
+  transition: transform .8s, left .8s;
+  transition: transform .8s, left .8s, -webkit-transform .8s; }
+  @media only screen and (max-width: 1024px) and (min-width: 415px) {
+    .login {
+      height: 68vh;
+      top: 16vh; } }
+  @media only screen and (min-width: 1025px) {
+    .login {
+      font-size: 2vw; } }
   .login hr {
     width: 40vw; }
   .login form label {
-    display: block; }
-    .login form label:last-of-type {
-      padding-top: 5vh; }
+    display: block;
+    padding-top: 5vh; }
   .login form input[type='text'], .login form input[type='password'] {
     font-size: 6vw; }
+    @media only screen and (min-width: 1025px) {
+      .login form input[type='text'], .login form input[type='password'] {
+        font-size: 2vw; } }
   .login form input[type='password'] {
     margin-bottom: 5vh; }
   .login form input[type='submit'] {
@@ -45,10 +58,23 @@
     margin: 0 auto;
     font-size: 6vw;
     background-color: white;
-    margin-bottom: 3vh; }
+    margin-bottom: 7vh; }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .login form input[type='submit'] {
+        margin-bottom: 3vh; } }
+    @media only screen and (min-width: 1025px) {
+      .login form input[type='submit'] {
+        font-size: 2vw;
+        width: 14vw; } }
   .login a:last-of-type {
     color: white;
-    font-size: 3.4vw; }
+    font-size: 5.6vw; }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .login a:last-of-type {
+        font-size: 3.4vw; } }
+    @media only screen and (min-width: 1025px) {
+      .login a:last-of-type {
+        font-size: 1.6vw; } }
 
 .signup {
   background-color: #474747;
@@ -60,7 +86,17 @@
   height: 80vh;
   top: 8vh;
   font-size: 6vw;
-  padding-top: 5vh; }
+  padding-top: 5vh;
+  -webkit-transition: left .8s, -webkit-transform .8s;
+  transition: left .8s, -webkit-transform .8s;
+  transition: transform .8s, left .8s;
+  transition: transform .8s, left .8s, -webkit-transform .8s; }
+  @media only screen and (max-width: 1024px) and (min-width: 415px) {
+    .signup {
+      height: 80vh; } }
+  @media only screen and (min-width: 1025px) {
+    .signup {
+      font-size: 2vw; } }
   .signup hr {
     width: 40vw; }
   .signup form label {
@@ -68,6 +104,9 @@
     padding-top: 5vh; }
   .signup form input[type='text'], .signup form input[type='password'] {
     font-size: 6vw; }
+    @media only screen and (min-width: 1025px) {
+      .signup form input[type='text'], .signup form input[type='password'] {
+        font-size: 2vw; } }
   .signup form input[type='password'] {
     margin-bottom: 5vh; }
   .signup form input[type='submit'] {
@@ -76,10 +115,43 @@
     margin: 0 auto;
     font-size: 6vw;
     background-color: white;
-    margin-bottom: 3vh; }
+    margin-bottom: 7vh; }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .signup form input[type='submit'] {
+        margin-bottom: 3vh; } }
+    @media only screen and (min-width: 1025px) {
+      .signup form input[type='submit'] {
+        font-size: 2vw;
+        width: 14vw; } }
   .signup a:last-of-type {
     color: white;
-    font-size: 3.4vw; }
+    font-size: 5.6vw; }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .signup a:last-of-type {
+        font-size: 3.4vw; } }
+    @media only screen and (min-width: 1025px) {
+      .signup a:last-of-type {
+        font-size: 1.6vw; } }
+
+.signup.rotate {
+  left: 128vw;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg); }
+  @media only screen and (max-width: 1024px) and (min-width: 415px) {
+    .signup.rotate {
+      left: 110vw;
+      -webkit-transform: rotate(-90deg);
+              transform: rotate(-90deg); } }
+
+.login.rotate {
+  left: -95vw;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg); }
+  @media only screen and (max-width: 1024px) and (min-width: 415px) {
+    .login.rotate {
+      left: -86vw;
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg); } }
 
 body {
   margin: 0; }

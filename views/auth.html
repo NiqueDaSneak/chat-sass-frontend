@@ -3,8 +3,10 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <meta charset="utf-8">
   <link rel="stylesheet" href="/stylesheets/css/styles.css">
+  <script src="/js/auth.js" charset="utf-8"></script>
   <title>Chat SASS Front-End</title>
 </head>
 
@@ -12,20 +14,20 @@
   <div class="login">
     <span>Log In</span>
     <hr>
-    <form action="index.html" method="post">
+    <form action="/login" method="post">
       <label for="email">Email</label>
       <input type="text" name="email" value="">
       <label for="pass">Password</label>
       <input type="password" name="pass" value="">
       <input type="submit" name="submit" value="Sign In">
     </form>
-    <a href="#">Need to Sign Up?</a>
+    <a class="show-signup" href="#">Need to Sign Up?</a>
   </div>
 
-  <div class="signup">
+  <div class="signup rotate">
     <span>Sign Up</span>
     <hr>
-    <form action="index.html" method="post">
+    <form action="/signup" method="post">
       <label for="email">Email</label>
       <input type="text" name="email" value="">
       <label for="pass">Company Name</label>
@@ -34,7 +36,7 @@
       <input type="password" name="pass" value="">
       <input type="submit" name="submit" value="Sign In">
     </form>
-    <a href="#">Need to Log In?</a>
+    <a class="show-login" href="#">Need to Log In?</a>
   </div>
 </body>
 
