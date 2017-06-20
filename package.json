@@ -1,0 +1,32 @@
+{
+  "name": "chat-sass-frontend",
+  "version": "1.0.0",
+  "description": "Front End for chat-sass-platform",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NiqueDaSneak/chat-sass-frontend.git"
+  },
+  "author": "niquedasneak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NiqueDaSneak/chat-sass-frontend/issues"
+  },
+  "homepage": "https://github.com/NiqueDaSneak/chat-sass-frontend#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "pug": "^2.0.0-rc.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-util": "^3.0.8"
+  }
+}
