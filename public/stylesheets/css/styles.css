@@ -1,2 +1,85 @@
+.landing {
+  color: #474747;
+  text-align: center; }
+  .landing p {
+    font-size: 6vw;
+    padding-top: 6vh; }
+  .landing a {
+    text-decoration: none;
+    color: #474747;
+    border-bottom: 0.4vh solid #474747;
+    font-size: 6vw;
+    position: fixed;
+    left: 33vw;
+    bottom: 10vh;
+    width: 34vw;
+    -webkit-transition: width .5s;
+    transition: width .5s; }
+    .landing a:hover {
+      border-bottom: 0.4vh solid green; }
+
+.login {
+  background-color: #474747;
+  color: white;
+  text-align: center;
+  width: 84vw;
+  position: fixed;
+  left: 8vw;
+  height: 60vh;
+  top: 20vh;
+  font-size: 6vw;
+  padding-top: 5vh; }
+  .login hr {
+    width: 40vw; }
+  .login form label {
+    display: block; }
+    .login form label:last-of-type {
+      padding-top: 5vh; }
+  .login form input[type='text'], .login form input[type='password'] {
+    font-size: 6vw; }
+  .login form input[type='password'] {
+    margin-bottom: 5vh; }
+  .login form input[type='submit'] {
+    display: block;
+    width: 30vw;
+    margin: 0 auto;
+    font-size: 6vw;
+    background-color: white;
+    margin-bottom: 3vh; }
+  .login a:last-of-type {
+    color: white;
+    font-size: 3.4vw; }
+
+.signup {
+  background-color: #474747;
+  color: white;
+  text-align: center;
+  width: 84vw;
+  position: fixed;
+  left: 8vw;
+  height: 80vh;
+  top: 8vh;
+  font-size: 6vw;
+  padding-top: 5vh; }
+  .signup hr {
+    width: 40vw; }
+  .signup form label {
+    display: block;
+    padding-top: 5vh; }
+  .signup form input[type='text'], .signup form input[type='password'] {
+    font-size: 6vw; }
+  .signup form input[type='password'] {
+    margin-bottom: 5vh; }
+  .signup form input[type='submit'] {
+    display: block;
+    width: 30vw;
+    margin: 0 auto;
+    font-size: 6vw;
+    background-color: white;
+    margin-bottom: 3vh; }
+  .signup a:last-of-type {
+    color: white;
+    font-size: 3.4vw; }
+
 body {
-  color: red; }
+  margin: 0; }
