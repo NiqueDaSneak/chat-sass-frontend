@@ -23,10 +23,12 @@ app.get('/auth', (req, res) => {
 })
 
 app.post('/login', (req, res) => {
+  console.log('login data')
   console.log(req.body)
 })
 
 app.post('/signup', (req, res) => {
+  console.log('signup data')
   console.log(req.body)
 })
 
