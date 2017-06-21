@@ -5,6 +5,17 @@ const express = require('express')
 const path = require("path")
 const bodyParser = require('body-parser')
 
+// DATABASE SETUP
+var mongoose = require('mongoose')
+mongoose.connect('mongodb://dom:Losangeleslakers47@ds123182.mlab.com:23182/chat-sass-frontend')
+var db = mongoose.connection
+db.on('error', console.error.bind(console, 'connection error:'))
+
+var userSchema = mongoose.Schema({email: String, company: String, password: String})
+var User = mongoose.model('User', userSchema)
+
+// BCRYPT
+
 // EXPRESS SETUP
 const app = express()
 app.use(express.static('public'))
