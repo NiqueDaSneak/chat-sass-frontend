@@ -25,17 +25,17 @@ app.use(express.static(__dirname + 'view'))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 var session = require('express-session')
-var sess = {
-  secret: 'keyboard cat',
-  cookie: {}
-}
-if (app.get('env') === 'production') {
-  app.set('trust proxy', 1) // trust first proxy
-  sess.cookie.secure = true // serve secure cookies
-}
-app.use(session(sess))
-var flash = require('connect-flash')
-app.use(flash())
+// var sess = {
+//   secret: 'keyboard cat',
+//   cookie: {},
+//   resave: false,
+//   saveUninitialized: true
+// }
+// if (app.get('env') === 'production') {
+//   app.set('trust proxy', 1) // trust first proxy
+//   sess.cookie.secure = true // serve secure cookies
+// }
+// app.use(session(sess))
 
 // ROUTES
 app.get('/', (req, res) => {
@@ -46,21 +46,26 @@ app.get('/auth', (req, res) => {
   res.sendFile(path.join(__dirname + '/views/auth.html'))
 })
 
+app.get('/auth-error', (req, res) => {
+  res.sendFile(path.join(__dirname + '/views/auth-error.html'))
+})
+
 app.get('/dashboard', (req, res) => {
   res.sendFile(path.join(__dirname + '/views/dashboard.html'))
 })
 
 app.post('/login', (req, res) => {
-  // var potentialUser
-  // User.findOne({email: req.body.email}, (err, user) => {
-  //   if (err) return console.error(err)
-  //   bcrypt.compare(req.body.password, user.password).then((res) => {
-  //       if (res === true) {
-  //         console.log('found a match')
-  //         res.redirect('/dashboard')
-  //       }
-  //   })
-  // })
+  console.log(req.body)
+  User.findOne({email: req.body.email}, (err, user) => {
+    if (err) return console.error(err)
+    bcrypt.compare(req.body.password, user.password).then((response) => {
+        if (response) {
+          res.redirect('dashboard')
+        } else {
+          res.redirect('auth-error')
+        }
+    })
+  })
 })
 
 app.post('/signup', (req, res) => {

@@ -40,6 +40,11 @@
   @media only screen and (min-width: 1025px) {
     .login {
       font-size: 2vw; } }
+  .login p {
+    font-size: 2.6vw;
+    margin: 0vh 0vw 1vh 0vw;
+    padding: 0vh 0vw 0vh 0vw;
+    color: red; }
   .login hr {
     width: 40vw; }
   .login form label {
