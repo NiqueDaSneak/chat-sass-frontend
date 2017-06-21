@@ -24,6 +24,18 @@ app.use(express.static(__dirname + 'view'))
 // app.set('view engine', 'pug')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+var session = require('express-session')
+var sess = {
+  secret: 'keyboard cat',
+  cookie: {}
+}
+if (app.get('env') === 'production') {
+  app.set('trust proxy', 1) // trust first proxy
+  sess.cookie.secure = true // serve secure cookies
+}
+app.use(session(sess))
+var flash = require('connect-flash')
+app.use(flash())
 
 // ROUTES
 app.get('/', (req, res) => {
