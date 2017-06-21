@@ -11,7 +11,7 @@ mongoose.connect('mongodb://dom:Losangeleslakers47@ds123182.mlab.com:23182/chat-
 var db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'))
 
-var userSchema = mongoose.Schema({email: String, company: String, password: String})
+var userSchema = mongoose.Schema({email: String, organization: String, password: String})
 var User = mongoose.model('User', userSchema)
 
 // BCRYPT
@@ -25,17 +25,17 @@ app.use(express.static(__dirname + 'view'))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 var session = require('express-session')
-// var sess = {
-//   secret: 'keyboard cat',
-//   cookie: {},
-//   resave: false,
-//   saveUninitialized: true
-// }
-// if (app.get('env') === 'production') {
-//   app.set('trust proxy', 1) // trust first proxy
-//   sess.cookie.secure = true // serve secure cookies
-// }
-// app.use(session(sess))
+var sess = {
+  secret: 'ELpR4sYMFAv12w4Ae386',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true
+}
+if (app.get('env') === 'production') {
+  app.set('trust proxy', 1) // trust first proxy
+  sess.cookie.secure = true // serve secure cookies
+}
+app.use(session(sess))
 
 // ROUTES
 app.get('/', (req, res) => {
@@ -50,17 +50,18 @@ app.get('/auth-error', (req, res) => {
   res.sendFile(path.join(__dirname + '/views/auth-error.html'))
 })
 
-app.get('/dashboard', (req, res) => {
+app.get('/dashboard/:organization', (req, res) => {
   res.sendFile(path.join(__dirname + '/views/dashboard.html'))
 })
 
 app.post('/login', (req, res) => {
-  console.log(req.body)
   User.findOne({email: req.body.email}, (err, user) => {
     if (err) return console.error(err)
     bcrypt.compare(req.body.password, user.password).then((response) => {
         if (response) {
-          res.redirect('dashboard')
+          res.redirect('dashboard/' + user.organization)
+          var sess = req.session
+          sess.email = req.body.email
         } else {
           res.redirect('auth-error')
         }
@@ -71,7 +72,7 @@ app.post('/login', (req, res) => {
 app.post('/signup', (req, res) => {
   bcrypt.genSalt(10, function(err, salt) {
     bcrypt.hash(req.body.password, salt, function(err, hash) {
-      var newUser = new User({email: req.body.email, company: req.body.company, password: hash}).save((err, user) => {
+      var newUser = new User({email: req.body.email, organization: req.body.organization, password: hash}).save((err, user) => {
         if (err) return console.error(err)
       })
     })
