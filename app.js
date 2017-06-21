@@ -15,6 +15,7 @@ var userSchema = mongoose.Schema({email: String, company: String, password: Stri
 var User = mongoose.model('User', userSchema)
 
 // BCRYPT
+var bcrypt = require('bcryptjs')
 
 // EXPRESS SETUP
 const app = express()
@@ -33,14 +34,32 @@ app.get('/auth', (req, res) => {
   res.sendFile(path.join(__dirname + '/views/auth.html'))
 })
 
+app.get('/dashboard', (req, res) => {
+  res.sendFile(path.join(__dirname + '/views/dashboard.html'))
+})
+
 app.post('/login', (req, res) => {
-  console.log('login data')
-  console.log(req.body)
+  // var potentialUser
+  // User.findOne({email: req.body.email}, (err, user) => {
+  //   if (err) return console.error(err)
+  //   bcrypt.compare(req.body.password, user.password).then((res) => {
+  //       if (res === true) {
+  //         console.log('found a match')
+  //         res.redirect('/dashboard')
+  //       }
+  //   })
+  // })
 })
 
 app.post('/signup', (req, res) => {
-  console.log('signup data')
-  console.log(req.body)
+  bcrypt.genSalt(10, function(err, salt) {
+    bcrypt.hash(req.body.password, salt, function(err, hash) {
+      var newUser = new User({email: req.body.email, company: req.body.company, password: hash}).save((err, user) => {
+        if (err) return console.error(err)
+      })
+    })
+  })
+  res.redirect('/dashboard')
 })
 
 // SET UP SERVER ENVIRONMENT
