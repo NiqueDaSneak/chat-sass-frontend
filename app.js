@@ -2,6 +2,9 @@
 
 // NPM PACKAGES
 const express = require('express')
+const app = express()
+const server = require('http').createServer(app)
+const io = require('socket.io')(server)
 const path = require("path")
 const bodyParser = require('body-parser')
 
@@ -18,7 +21,6 @@ var User = mongoose.model('User', userSchema)
 var bcrypt = require('bcryptjs')
 
 // EXPRESS SETUP
-const app = express()
 app.use(express.static('public'))
 app.use(express.static(__dirname + 'view'))
 // app.set('view engine', 'pug')
@@ -80,9 +82,16 @@ app.post('/signup', (req, res) => {
   res.redirect('/dashboard')
 })
 
+// SOCKET.IO
+io.on('connection', (socket) => {
+
+  console.log('Server connected to client!')
+
+})
+
 // SET UP SERVER ENVIRONMENT
 var port = process.env.PORT || 3000
-app.listen(port, function(){
+server.listen(port, function(){
     console.log('Server running on port ' + port)
 })
 
