@@ -189,7 +189,7 @@ footer {
     vertical-align: middle; }
     footer .add-new div {
       width: 11vw;
-      height: 0.2vh;
+      height: 0.3vh;
       background-color: lightgrey;
       border-radius: 50px;
       margin-left: 7vw;
@@ -197,19 +197,45 @@ footer {
       footer .add-new div:first-of-type {
         -webkit-transform: rotate(90deg);
                 transform: rotate(90deg); }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        footer .add-new div {
+          width: 7.4vw;
+          margin-left: 9vw; } }
   footer .hamburger {
     width: 33vw;
     vertical-align: middle;
     display: inline-block; }
     footer .hamburger div {
       width: 16vw;
+      max-width: 10vw;
       height: 0.4vh;
       background-color: lightgrey;
-      border-radius: 50px; }
+      border-radius: 50px;
+      margin-left: 4vw; }
       footer .hamburger div:first-of-type {
         margin-bottom: 1.1vh; }
       footer .hamburger div:nth-of-type(2) {
         margin-bottom: 1vh; }
+
+footer.active {
+  bottom: 43.4vh; }
+  footer.active img {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg); }
+  @media only screen and (max-width: 1024px) and (min-width: 415px) {
+    footer.active {
+      bottom: 24vh; } }
+
+#calendar {
+  position: fixed;
+  bottom: -44vh; }
+
+#calendar.bottom {
+  position: fixed;
+  bottom: 0; }
+
+.fc td, .fc th {
+  border-style: none !important; }
 
 body {
   margin: 0; }

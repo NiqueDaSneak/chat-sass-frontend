@@ -5,14 +5,19 @@ $(document).ready(() => {
   var org = pathname[pathname.length - 1]
   console.log(org)
 
-  // CALENDAR SETUP
-  $('#calendar').fullCalendar({
-        // put your options and callbacks here
+  // UI
+
+  $('.toggle').click(() => {
+    $('footer').toggleClass('active')
+    $('#calendar').toggleClass('bottom')
   })
 
+  // CALENDAR SETUP
+  $('#calendar').fullCalendar({
+    header: false
+  })
 
   // SOCKET CONNECTION AND DATA TRANSFER
   var socket = io.connect();
-
 
 })
