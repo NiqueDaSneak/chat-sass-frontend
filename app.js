@@ -53,7 +53,13 @@ app.get('/auth-error', (req, res) => {
 })
 
 app.get('/dashboard/:organization', (req, res) => {
-  res.sendFile(path.join(__dirname + '/views/dashboard.html'))
+  if (req.session.email) {
+    res.sendFile(path.join(__dirname + '/views/dashboard.html'))
+    console.log('logged in: ' + req.session.email)
+  } else {
+    console.log('not logged in')
+    res.redirect('/auth')
+  }
 })
 
 app.post('/login', (req, res) => {
@@ -61,9 +67,8 @@ app.post('/login', (req, res) => {
     if (err) return console.error(err)
     bcrypt.compare(req.body.password, user.password).then((response) => {
         if (response) {
+          req.session.email = req.body.email
           res.redirect('dashboard/' + user.organization)
-          var sess = req.session
-          sess.email = req.body.email
         } else {
           res.redirect('auth-error')
         }
@@ -79,6 +84,7 @@ app.post('/signup', (req, res) => {
       })
     })
   })
+  req.session.email = req.body.email
   res.redirect('/dashboard')
 })
 
