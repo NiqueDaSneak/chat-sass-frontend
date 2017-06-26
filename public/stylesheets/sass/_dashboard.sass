@@ -69,10 +69,16 @@ nav
   img
     z-index: 2
     position: fixed
+    width: 4vw
+    @include tablet
+      &:first-of-type
+        left: 20vw
+      &:last-of-type
+        right: 20vw
     &:first-of-type
-      left: 20vw
+      left: 10vw
     &:last-of-type
-      right: 20vw
+      right: 10vw
 
 // FULL CALENDAR OVERRIDES
 .fc td, .fc th
