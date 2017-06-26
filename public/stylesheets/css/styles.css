@@ -175,7 +175,10 @@ footer {
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  -webkit-transition: bottom 1s;
+  transition: bottom 1s;
+  height: 2vh; }
   footer .toggle {
     cursor: pointer;
     padding-left: 8vw;
@@ -183,7 +186,11 @@ footer {
     vertical-align: middle;
     display: inline-block; }
     footer .toggle img {
-      width: 4vw; }
+      width: 4vw;
+      -webkit-transition: -webkit-transform 1s;
+      transition: -webkit-transform 1s;
+      transition: transform 1s;
+      transition: transform 1s, -webkit-transform 1s; }
   footer .add-new {
     cursor: pointer;
     width: 33vw;
@@ -223,15 +230,17 @@ footer {
 footer.active {
   bottom: 43.4vh; }
   footer.active img {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg); }
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg); }
   @media only screen and (max-width: 1024px) and (min-width: 415px) {
     footer.active {
       bottom: 24vh; } }
 
 #toggle-calendar {
   position: fixed;
-  bottom: -44vh; }
+  bottom: -44vh;
+  -webkit-transition: bottom 1s;
+  transition: bottom 1s; }
 
 #toggle-calendar.bottom {
   position: fixed;
@@ -255,6 +264,9 @@ nav {
 
 .fc td, .fc th {
   border-style: none !important; }
+
+.fc-today {
+  color: darkgrey; }
 
 body {
   margin: 0;
