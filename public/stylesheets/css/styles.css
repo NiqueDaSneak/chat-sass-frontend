@@ -177,6 +177,7 @@ footer {
       -ms-flex-align: center;
           align-items: center; }
   footer .toggle {
+    cursor: pointer;
     padding-left: 8vw;
     width: 33vw;
     vertical-align: middle;
@@ -184,6 +185,7 @@ footer {
     footer .toggle img {
       width: 4vw; }
   footer .add-new {
+    cursor: pointer;
     width: 33vw;
     display: inline-block;
     vertical-align: middle; }
@@ -202,6 +204,7 @@ footer {
           width: 7.4vw;
           margin-left: 9vw; } }
   footer .hamburger {
+    cursor: pointer;
     width: 33vw;
     vertical-align: middle;
     display: inline-block; }
