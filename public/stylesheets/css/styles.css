@@ -226,16 +226,27 @@ footer.active {
     footer.active {
       bottom: 24vh; } }
 
-#calendar {
+#toggle-calendar {
   position: fixed;
   bottom: -44vh; }
 
-#calendar.bottom {
+#toggle-calendar.bottom {
   position: fixed;
   bottom: 0; }
+
+nav {
+  text-align: center; }
+  nav img {
+    z-index: 2;
+    position: fixed; }
+    nav img:first-of-type {
+      left: 20vw; }
+    nav img:last-of-type {
+      right: 20vw; }
 
 .fc td, .fc th {
   border-style: none !important; }
 
 body {
-  margin: 0; }
+  margin: 0;
+  padding-top: 5vh; }

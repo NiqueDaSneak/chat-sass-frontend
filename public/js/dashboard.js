@@ -9,12 +9,27 @@ $(document).ready(() => {
 
   $('.toggle').click(() => {
     $('footer').toggleClass('active')
-    $('#calendar').toggleClass('bottom')
+    $('#toggle-calendar').toggleClass('bottom')
   })
 
   // CALENDAR SETUP
-  $('#calendar').fullCalendar({
-    header: false
+  $('#toggle-calendar').fullCalendar({header: false})
+
+  $('#main-calendar').fullCalendar({
+    defaultView: 'basicDay',
+    header: {
+      left: '',
+      center: 'title',
+      right: ''
+    }
+  })
+
+  $('.left').click(() => {
+    $('#main-calendar').fullCalendar('prev')
+  })
+
+  $('.right').click(() => {
+    $('#main-calendar').fullCalendar('next')
   })
 
   // SOCKET CONNECTION AND DATA TRANSFER

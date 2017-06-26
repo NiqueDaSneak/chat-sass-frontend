@@ -57,12 +57,22 @@ footer.active
   @include tablet
     bottom: 24vh
 
-#calendar
+#toggle-calendar
   position: fixed
   bottom: -44vh
-#calendar.bottom
+#toggle-calendar.bottom
   position: fixed
   bottom: 0
+
+nav
+  text-align: center
+  img
+    z-index: 2
+    position: fixed
+    &:first-of-type
+      left: 20vw
+    &:last-of-type
+      right: 20vw
 
 // FULL CALENDAR OVERRIDES
 .fc td, .fc th
