@@ -32,10 +32,9 @@ $(document).ready(() => {
 
   generateMonthCalendar()
   function generateMonthCalendar() {
-    var month = "09"
+    var month = moment().format("MM")
     var day = "01"
-    // var year = moment().format("YYYY")
-    var year = 2018
+    var year = moment().format("YYYY")
     var firstDay = moment(month + day + year, "MM-DD-YYYY").format('dd')
     console.log(firstDay);
     var days = ["Su","Mo", "Tu", "We", "Th", "Fr", "Sa"]
