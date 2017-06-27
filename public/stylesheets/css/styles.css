@@ -234,6 +234,7 @@ footer.active {
             transform: rotate(-180deg); }
   @media only screen and (max-width: 1024px) and (min-width: 415px) {
     footer.active {
+
       bottom: 44vh; } }
 
 nav {
@@ -420,6 +421,9 @@ nav {
     .toggle-calendar .days .sixth span:nth-of-type(7) {
       position: fixed;
       left: 83.1vw; }
+
+.fc-today {
+  color: darkgrey; }
 
 body {
   margin: 0;
