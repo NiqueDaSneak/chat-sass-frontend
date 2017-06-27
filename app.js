@@ -54,8 +54,7 @@ app.get('/auth-error', (req, res) => {
 
 app.get('/dashboard/:organization', (req, res) => {
   // if (req.session.email) {
-    res.sendFile(path.join(__dirname + '/views/selectable.html'))
-    // res.sendFile(path.join(__dirname + '/views/dashboard.html'))
+    res.sendFile(path.join(__dirname + '/views/dashboard.html'))
     // console.log('logged in: ' + req.session.email)
   // } else {
     // console.log('not logged in')
