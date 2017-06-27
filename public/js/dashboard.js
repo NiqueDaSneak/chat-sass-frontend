@@ -1,8 +1,22 @@
 $(document).ready(() => {
 
   // INITIALIZERS
+  // date variables
+  var month = moment().format("MM")
+  var day = "01"
+  var year = moment().format("YYYY")
+
+  var displayMonth = moment().format("MM")
+  var displayMonthLong = moment().format("MMM")
+  var displayDay = moment().format('DD')
+  var displayDayNumber = Number(moment().format('D'))
+  var displayYear = moment().format('YYYY')
+
   // set date for toggle ui element
-  $('.month').text(moment().format("MMMM"))
+  $('.month').text(displayMonthLong)
+
+  // set number for main-calendar
+  $('.main-calendar').text(Number(displayDay))
 
   // GRAB ORG NAME FOR URL TO GET DATA FROM SERVER
   var pathname = window.location.pathname.split('/')
@@ -17,11 +31,32 @@ $(document).ready(() => {
   })
 
   $('.left').click(() => {
-
+    if (displayDayNumber === 1) {
+      var daysInNextMonth = moment(displayMonth + '-' + displayDay, "MM-DD").subtract('1', 'months').daysInMonth()
+      displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").subtract('1', 'months').format('MM')
+      displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").subtract('1', 'months').format('MMM')
+      $('.month').text(displayMonthLong)
+      $('.main-calendar').text(Number(daysInNextMonth))
+      displayDayNumber = daysInNextMonth
+      if (displayMonth === '01') {
+      displayYear = moment(displayYear, "YYYY").subtract('1', 'years').format('YYYY')
+      }
+    } else {
+      displayDayNumber = displayDayNumber - 1
+      $('.main-calendar').text(Number(displayDayNumber))
+    }
+    // check if the display date is the first day of the month
+    // if the display date is the 1st, check how many days are in the previous month and change it to that
+    // change the display month
   })
 
   $('.right').click(() => {
+    if (displayDayNumber === 3 ) {
 
+    }
+    // check if the display date is the last day of the month
+    // if it is, change date to 1st
+    // change the display month
   })
 
   $('.hamburger').click(() => {
@@ -29,12 +64,8 @@ $(document).ready(() => {
   })
 
   // CALENDAR SETUP
-
   generateMonthCalendar()
   function generateMonthCalendar() {
-    var month = moment().format("MM")
-    var day = "01"
-    var year = moment().format("YYYY")
     var firstDay = moment(month + day + year, "MM-DD-YYYY").format('dd')
     var days = ["Su","Mo", "Tu", "We", "Th", "Fr", "Sa"]
     var months = {
