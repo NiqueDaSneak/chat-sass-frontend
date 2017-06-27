@@ -12,20 +12,24 @@ footer
   align-items: center
   transition: bottom 1s
   height: 2vh
+
   .toggle
     cursor: pointer
     padding-left: 8vw
     width: 33vw
     vertical-align: middle
     display: inline-block
+
     img
       width: 4vw
       transition: transform 1s
+
   .add-new
     cursor: pointer
     width: 33vw
     display: inline-block
     vertical-align: middle
+
     div
       width: 11vw
       height: 0.3vh
@@ -33,16 +37,20 @@ footer
       border-radius: 50px
       margin-left: 7vw
       margin-right: 16vw
+
       &:first-of-type
         transform: rotate(90deg)
-      @include tablet
+
+      +tablet
         width: 7.4vw
         margin-left: 9vw
+
   .hamburger
     cursor: pointer
     width: 33vw
     vertical-align: middle
     display: inline-block
+
     div
       width: 16vw
       max-width: 10vw
@@ -50,49 +58,42 @@ footer
       background-color: lightgrey
       border-radius: 50px
       margin-left: 4vw
+
       &:first-of-type
         margin-bottom: 1.1vh
+
       &:nth-of-type(2)
         margin-bottom: 1vh
+
       &:nth-of-type(3)
 
 footer.active
   bottom: 43.4vh
+
   img
     transform: rotate(-180deg)
-  @include tablet
+
+  +tablet
     bottom: 24vh
-
-#toggle-calendar
-  position: fixed
-  bottom: -44vh
-  transition: bottom 1s
-#toggle-calendar.bottom
-  position: fixed
-  bottom: 0
-
-#main-calendar
-  // height: 85vh
 
 nav
   text-align: center
+
   img
     z-index: 2
     position: fixed
     width: 4vw
-    @include tablet
+
+    +tablet
       &:first-of-type
         left: 20vw
+
       &:last-of-type
         right: 20vw
+
+
     &:first-of-type
       left: 10vw
+
     &:last-of-type
       right: 10vw
-
-// FULL CALENDAR OVERRIDES
-.fc td, .fc th
-  border-style: none !important
-
-.fc-today
-  color: darkgrey

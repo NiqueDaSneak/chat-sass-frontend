@@ -236,16 +236,6 @@ footer.active {
     footer.active {
       bottom: 24vh; } }
 
-#toggle-calendar {
-  position: fixed;
-  bottom: -44vh;
-  -webkit-transition: bottom 1s;
-  transition: bottom 1s; }
-
-#toggle-calendar.bottom {
-  position: fixed;
-  bottom: 0; }
-
 nav {
   text-align: center; }
   nav img {
@@ -262,11 +252,167 @@ nav {
     nav img:last-of-type {
       right: 10vw; }
 
-.fc td, .fc th {
-  border-style: none !important; }
-
-.fc-today {
-  color: darkgrey; }
+.toggle-calendar {
+  font-size: 5vw; }
+  .toggle-calendar .weekdays span:nth-of-type(1) {
+    position: fixed;
+    left: 6vw; }
+  .toggle-calendar .weekdays span:nth-of-type(2) {
+    position: fixed;
+    left: 18.85vw; }
+  .toggle-calendar .weekdays span:nth-of-type(3) {
+    position: fixed;
+    left: 31.7vw; }
+  .toggle-calendar .weekdays span:nth-of-type(4) {
+    position: fixed;
+    left: 44.55vw; }
+  .toggle-calendar .weekdays span:nth-of-type(5) {
+    position: fixed;
+    left: 57.4vw; }
+  .toggle-calendar .weekdays span:nth-of-type(6) {
+    position: fixed;
+    left: 70.25vw; }
+  .toggle-calendar .weekdays span:nth-of-type(7) {
+    position: fixed;
+    left: 83.1vw; }
+  .toggle-calendar .days .first {
+    padding-top: 4vh; }
+    .toggle-calendar .days .first span:nth-of-type(1) {
+      position: fixed;
+      left: 6vw; }
+    .toggle-calendar .days .first span:nth-of-type(2) {
+      position: fixed;
+      left: 18.85vw; }
+    .toggle-calendar .days .first span:nth-of-type(3) {
+      position: fixed;
+      left: 31.7vw; }
+    .toggle-calendar .days .first span:nth-of-type(4) {
+      position: fixed;
+      left: 44.55vw; }
+    .toggle-calendar .days .first span:nth-of-type(5) {
+      position: fixed;
+      left: 57.4vw; }
+    .toggle-calendar .days .first span:nth-of-type(6) {
+      position: fixed;
+      left: 70.25vw; }
+    .toggle-calendar .days .first span:nth-of-type(7) {
+      position: fixed;
+      left: 83.1vw; }
+  .toggle-calendar .days .second {
+    padding-top: 4vh; }
+    .toggle-calendar .days .second span:nth-of-type(1) {
+      position: fixed;
+      left: 6vw; }
+    .toggle-calendar .days .second span:nth-of-type(2) {
+      position: fixed;
+      left: 18.85vw; }
+    .toggle-calendar .days .second span:nth-of-type(3) {
+      position: fixed;
+      left: 31.7vw; }
+    .toggle-calendar .days .second span:nth-of-type(4) {
+      position: fixed;
+      left: 44.55vw; }
+    .toggle-calendar .days .second span:nth-of-type(5) {
+      position: fixed;
+      left: 57.4vw; }
+    .toggle-calendar .days .second span:nth-of-type(6) {
+      position: fixed;
+      left: 70.25vw; }
+    .toggle-calendar .days .second span:nth-of-type(7) {
+      position: fixed;
+      left: 83.1vw; }
+  .toggle-calendar .days .third {
+    padding-top: 4vh; }
+    .toggle-calendar .days .third span:nth-of-type(1) {
+      position: fixed;
+      left: 6vw; }
+    .toggle-calendar .days .third span:nth-of-type(2) {
+      position: fixed;
+      left: 18.85vw; }
+    .toggle-calendar .days .third span:nth-of-type(3) {
+      position: fixed;
+      left: 31.7vw; }
+    .toggle-calendar .days .third span:nth-of-type(4) {
+      position: fixed;
+      left: 44.55vw; }
+    .toggle-calendar .days .third span:nth-of-type(5) {
+      position: fixed;
+      left: 57.4vw; }
+    .toggle-calendar .days .third span:nth-of-type(6) {
+      position: fixed;
+      left: 70.25vw; }
+    .toggle-calendar .days .third span:nth-of-type(7) {
+      position: fixed;
+      left: 83.1vw; }
+  .toggle-calendar .days .fourth {
+    padding-top: 4vh; }
+    .toggle-calendar .days .fourth span:nth-of-type(1) {
+      position: fixed;
+      left: 6vw; }
+    .toggle-calendar .days .fourth span:nth-of-type(2) {
+      position: fixed;
+      left: 18.85vw; }
+    .toggle-calendar .days .fourth span:nth-of-type(3) {
+      position: fixed;
+      left: 31.7vw; }
+    .toggle-calendar .days .fourth span:nth-of-type(4) {
+      position: fixed;
+      left: 44.55vw; }
+    .toggle-calendar .days .fourth span:nth-of-type(5) {
+      position: fixed;
+      left: 57.4vw; }
+    .toggle-calendar .days .fourth span:nth-of-type(6) {
+      position: fixed;
+      left: 70.25vw; }
+    .toggle-calendar .days .fourth span:nth-of-type(7) {
+      position: fixed;
+      left: 83.1vw; }
+  .toggle-calendar .days .fifth {
+    padding-top: 4vh; }
+    .toggle-calendar .days .fifth span:nth-of-type(1) {
+      position: fixed;
+      left: 6vw; }
+    .toggle-calendar .days .fifth span:nth-of-type(2) {
+      position: fixed;
+      left: 18.85vw; }
+    .toggle-calendar .days .fifth span:nth-of-type(3) {
+      position: fixed;
+      left: 31.7vw; }
+    .toggle-calendar .days .fifth span:nth-of-type(4) {
+      position: fixed;
+      left: 44.55vw; }
+    .toggle-calendar .days .fifth span:nth-of-type(5) {
+      position: fixed;
+      left: 57.4vw; }
+    .toggle-calendar .days .fifth span:nth-of-type(6) {
+      position: fixed;
+      left: 70.25vw; }
+    .toggle-calendar .days .fifth span:nth-of-type(7) {
+      position: fixed;
+      left: 83.1vw; }
+  .toggle-calendar .days .sixth {
+    padding-top: 4vh; }
+    .toggle-calendar .days .sixth span:nth-of-type(1) {
+      position: fixed;
+      left: 6vw; }
+    .toggle-calendar .days .sixth span:nth-of-type(2) {
+      position: fixed;
+      left: 18.85vw; }
+    .toggle-calendar .days .sixth span:nth-of-type(3) {
+      position: fixed;
+      left: 31.7vw; }
+    .toggle-calendar .days .sixth span:nth-of-type(4) {
+      position: fixed;
+      left: 44.55vw; }
+    .toggle-calendar .days .sixth span:nth-of-type(5) {
+      position: fixed;
+      left: 57.4vw; }
+    .toggle-calendar .days .sixth span:nth-of-type(6) {
+      position: fixed;
+      left: 70.25vw; }
+    .toggle-calendar .days .sixth span:nth-of-type(7) {
+      position: fixed;
+      left: 83.1vw; }
 
 body {
   margin: 0;

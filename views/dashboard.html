@@ -1,53 +1,70 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="/socket.io/socket.io.js"></script>
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.print.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="/js/moment.min.js"></script>
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/jquery-ui.min.js"></script>
-  <script src="/js/fullcalendar.js"></script>
   <meta charset="utf-8">
   <link rel="stylesheet" href="/stylesheets/css/styles.css">
 
   <script src="/js/dashboard.js" charset="utf-8"></script>
   <title>Chat SASS Front-End</title>
 </head>
-  <body>
 
-    <nav>
+<body>
+
+  <!-- <nav>
       <img class="left" src="/imgs/left-arrow.svg" alt="Left Arrow">
       <img class="right" src="/imgs/right-arrow.svg" alt="Right Arrow">
-    </nav>
+    </nav> -->
 
-    <div class="messeges">
+  <div class="messeges">
+  </div>
+
+
+  <footer>
+    <div class="toggle">
+      <span class="month"></span>
+      <img src="/imgs/triangle.svg" alt="toggle calendar">
     </div>
-
-    <div id="main-calendar"></div>
-
-    <footer>
-      <div class="toggle">
-        <span class="month"></span>
-        <img src="/imgs/triangle.svg" alt="toggle calendar">
-      </div>
-      <div class="add-new">
-        <div></div>
-        <div></div>
-      </div>
-      <div class="hamburger">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </footer>
-
-    <div class="sub-menu">
-
+    <div class="add-new">
+      <div></div>
+      <div></div>
     </div>
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </footer>
+  <div class="toggle-calendar">
+    <div class="weekdays">
+      <span>Su</span>
+      <span>Mo</span>
+      <span>Tu</span>
+      <span>We</span>
+      <span>Th</span>
+      <span>Fr</span>
+      <span>Sa</span>
+    </div>
+    <div class="days">
+      <div class="first"></div>
+      <div class="second"></div>
+      <div class="third"></div>
+      <div class="fourth"></div>
+      <div class="fifth"></div>
+      <div class="sixth"></div>
+    </div>
+  </div>
 
-    <div id="toggle-calendar"></div>
+  <div class="sub-menu">
 
-  </body>
+  </div>
+
+  <div id="toggle-calendar"></div>
+
+</body>
+
 </html>
