@@ -3,8 +3,7 @@ $(document).ready(() => {
   // INITIALIZERS
   // set date for toggle ui element
   $('.month').text(moment().format("MMMM"))
-  // set color for today's date
-  $('.fc-today').css('color', 'darkgrey')
+
   // GRAB ORG NAME FOR URL TO GET DATA FROM SERVER
   var pathname = window.location.pathname.split('/')
   var org = pathname[pathname.length - 1]
@@ -14,6 +13,7 @@ $(document).ready(() => {
 
   $('.toggle').click(() => {
     $('footer').toggleClass('active')
+    $('.toggle-calendar').toggleClass('active')
   })
 
   $('.left').click(() => {
@@ -36,7 +36,6 @@ $(document).ready(() => {
     var day = "01"
     var year = moment().format("YYYY")
     var firstDay = moment(month + day + year, "MM-DD-YYYY").format('dd')
-    console.log(firstDay);
     var days = ["Su","Mo", "Tu", "We", "Th", "Fr", "Sa"]
     var months = {
       "01": 31,

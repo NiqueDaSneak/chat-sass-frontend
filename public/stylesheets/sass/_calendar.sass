@@ -1,6 +1,12 @@
+$weekPadding: 7vh
+
+.toggle-calendar.active
+  bottom: 0vh
 .toggle-calendar
   font-size: 5vw
-
+  position: fixed
+  bottom: -44vh
+  transition: bottom 1s
   .weekdays
     span:nth-of-type(1)
       position: fixed
@@ -32,7 +38,7 @@
 
   .days
     .first
-      padding-top: 4vh
+      padding-top: $weekPadding
 
       span:nth-of-type(1)
         position: fixed
@@ -63,7 +69,7 @@
         left: 83.1vw
 
     .second
-      padding-top: 4vh
+      padding-top: $weekPadding
 
       span:nth-of-type(1)
         position: fixed
@@ -94,7 +100,7 @@
         left: 83.1vw
 
     .third
-      padding-top: 4vh
+      padding-top: $weekPadding
 
       span:nth-of-type(1)
         position: fixed
@@ -125,7 +131,7 @@
         left: 83.1vw
 
     .fourth
-      padding-top: 4vh
+      padding-top: $weekPadding
 
       span:nth-of-type(1)
         position: fixed
@@ -156,7 +162,7 @@
         left: 83.1vw
 
     .fifth
-      padding-top: 4vh
+      padding-top: $weekPadding
 
       span:nth-of-type(1)
         position: fixed
@@ -186,7 +192,7 @@
         position: fixed
         left: 83.1vw
     .sixth
-      padding-top: 4vh
+      padding-top: $weekPadding
 
       span:nth-of-type(1)
         position: fixed

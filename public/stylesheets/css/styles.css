@@ -234,7 +234,7 @@ footer.active {
             transform: rotate(-180deg); }
   @media only screen and (max-width: 1024px) and (min-width: 415px) {
     footer.active {
-      bottom: 24vh; } }
+      bottom: 44vh; } }
 
 nav {
   text-align: center; }
@@ -252,8 +252,15 @@ nav {
     nav img:last-of-type {
       right: 10vw; }
 
+.toggle-calendar.active {
+  bottom: 0vh; }
+
 .toggle-calendar {
-  font-size: 5vw; }
+  font-size: 5vw;
+  position: fixed;
+  bottom: -44vh;
+  -webkit-transition: bottom 1s;
+  transition: bottom 1s; }
   .toggle-calendar .weekdays span:nth-of-type(1) {
     position: fixed;
     left: 6vw; }
@@ -276,7 +283,7 @@ nav {
     position: fixed;
     left: 83.1vw; }
   .toggle-calendar .days .first {
-    padding-top: 4vh; }
+    padding-top: 7vh; }
     .toggle-calendar .days .first span:nth-of-type(1) {
       position: fixed;
       left: 6vw; }
@@ -299,7 +306,7 @@ nav {
       position: fixed;
       left: 83.1vw; }
   .toggle-calendar .days .second {
-    padding-top: 4vh; }
+    padding-top: 7vh; }
     .toggle-calendar .days .second span:nth-of-type(1) {
       position: fixed;
       left: 6vw; }
@@ -322,7 +329,7 @@ nav {
       position: fixed;
       left: 83.1vw; }
   .toggle-calendar .days .third {
-    padding-top: 4vh; }
+    padding-top: 7vh; }
     .toggle-calendar .days .third span:nth-of-type(1) {
       position: fixed;
       left: 6vw; }
@@ -345,7 +352,7 @@ nav {
       position: fixed;
       left: 83.1vw; }
   .toggle-calendar .days .fourth {
-    padding-top: 4vh; }
+    padding-top: 7vh; }
     .toggle-calendar .days .fourth span:nth-of-type(1) {
       position: fixed;
       left: 6vw; }
@@ -368,7 +375,7 @@ nav {
       position: fixed;
       left: 83.1vw; }
   .toggle-calendar .days .fifth {
-    padding-top: 4vh; }
+    padding-top: 7vh; }
     .toggle-calendar .days .fifth span:nth-of-type(1) {
       position: fixed;
       left: 6vw; }
@@ -391,7 +398,7 @@ nav {
       position: fixed;
       left: 83.1vw; }
   .toggle-calendar .days .sixth {
-    padding-top: 4vh; }
+    padding-top: 7vh; }
     .toggle-calendar .days .sixth span:nth-of-type(1) {
       position: fixed;
       left: 6vw; }
