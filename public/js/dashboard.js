@@ -33,11 +33,11 @@ $(document).ready(() => {
   $('.left').click(() => {
     if (displayDayNumber === 1) {
       var daysInNextMonth = moment(displayMonth + '-' + displayDay, "MM-DD").subtract('1', 'months').daysInMonth()
+      displayDayNumber = daysInNextMonth
       displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").subtract('1', 'months').format('MM')
-      displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").subtract('1', 'months').format('MMM')
+      displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
       $('.month').text(displayMonthLong)
       $('.main-calendar').text(Number(daysInNextMonth))
-      displayDayNumber = daysInNextMonth
       if (displayMonth === '01') {
       displayYear = moment(displayYear, "YYYY").subtract('1', 'years').format('YYYY')
       }
@@ -51,8 +51,34 @@ $(document).ready(() => {
   })
 
   $('.right').click(() => {
-    if (displayDayNumber === 3 ) {
-
+      console.log(displayYear)
+     if (displayDayNumber === 30 && moment(displayMonthLong, "MMM").daysInMonth() === 30) {
+       if (displayMonth === '12') {
+         displayYear = moment(displayYear, "YYYY").add('1', 'years').format('YYYY')
+       }
+       displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").add('1', 'months').format('MM')
+       displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
+       $('.month').text(displayMonthLong)
+       $('.main-calendar').text(1)
+       displayDayNumber = 1
+    } else if (displayDayNumber === 31 && moment(displayMonthLong, "MMM").daysInMonth() === 31) {
+        if (displayMonth === '12') {
+          displayYear = moment(displayYear, "YYYY").add('1', 'years').format('YYYY')
+        }
+        displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").add('1', 'months').format('MM')
+        displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
+        $('.month').text(displayMonthLong)
+        $('.main-calendar').text(1)
+        displayDayNumber = 1
+    } else if (displayDayNumber === 28 && moment(displayMonthLong, "MMM").daysInMonth() === 28) {
+      displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").add('1', 'months').format('MM')
+      displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
+      $('.month').text(displayMonthLong)
+      $('.main-calendar').text(1)
+      displayDayNumber = 1
+    } else {
+      displayDayNumber = displayDayNumber + 1
+      $('.main-calendar').text(displayDayNumber)
     }
     // check if the display date is the last day of the month
     // if it is, change date to 1st
