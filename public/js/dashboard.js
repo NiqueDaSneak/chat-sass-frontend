@@ -12,6 +12,7 @@ $(document).ready(() => {
   var displayDayNumber = Number(moment().format('D'))
   var displayYear = moment().format('YYYY')
   generateMonthCalendar()
+  activeDay()
 
   // set date for toggle ui element
   $('.month').text(displayMonthLong)
@@ -25,11 +26,12 @@ $(document).ready(() => {
   console.log(org)
 
   // UI & INTERACTIONS
-  $('.toggle-calendar').click(() => {
-    console.log('tapped cal')
+  $('.toggle-calendar').click((event) => {
+    displayDayNumber = Number($(event.target).text())
+    $('.main-calendar').text(Number($(event.target).text()))
   })
 
-  $('.toggle-calendar').on('swipeleft', () => {
+  $('.toggle-calendar').on('swiperight', () => {
     displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").subtract('1', 'months').format('MM')
     displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
     $('.month').text(displayMonthLong)
@@ -40,7 +42,14 @@ $(document).ready(() => {
     console.log('swiped left!')
   })
 
-  $('.toggle-calendar').on('swiperight', () => {
+  $('.toggle-calendar').on('swipeleft', () => {
+    displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").add('1', 'months').format('MM')
+    displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
+    $('.month').text(displayMonthLong)
+    if (displayMonth === '01') {
+      displayYear = moment(displayYear, "YYYY").add('1', 'years').format('YYYY')
+    }
+    generateMonthCalendar()
     console.log('swiped right!!!')
   })
 
@@ -125,7 +134,7 @@ $(document).ready(() => {
     ]
     var months = {
       "01": 31,
-      "02": 28,
+      "02": moment("02" + "01" + displayYear, "MM-DD-YYYY").daysInMonth(),
       "03": 31,
       "04": 30,
       "05": 31,
@@ -286,6 +295,24 @@ $(document).ready(() => {
       }
 
     }
+
+  }
+
+  // FIGURE OUT WHAT THE CURRENT DAY IS AND HIGHLIGHT IT
+  function activeDay() {
+
+    for (var i = 0; i < $('.days').children().children().length; i++) {
+      if (Number($($('.days').children().children()[i]).text()) === displayDayNumber) {
+        $($('.days').children().children()[i]).addClass('today')
+      }
+
+    }
+    // what is displayDayNumber
+    // loop thru all elements in toggle-calendar
+      // get the number
+      // compare to displayDayNumber
+      // if there is a match
+        // set that span class to active
 
   }
 
