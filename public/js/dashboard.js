@@ -11,6 +11,7 @@ $(document).ready(() => {
   var displayDay = moment().format('DD')
   var displayDayNumber = Number(moment().format('D'))
   var displayYear = moment().format('YYYY')
+  generateMonthCalendar()
 
   // set date for toggle ui element
   $('.month').text(displayMonthLong)
@@ -41,6 +42,7 @@ $(document).ready(() => {
       if (displayMonth === '01') {
       displayYear = moment(displayYear, "YYYY").subtract('1', 'years').format('YYYY')
       }
+      generateMonthCalendar()
     } else {
       displayDayNumber = displayDayNumber - 1
       $('.main-calendar').text(Number(displayDayNumber))
@@ -51,7 +53,6 @@ $(document).ready(() => {
   })
 
   $('.right').click(() => {
-      console.log(displayYear)
      if (displayDayNumber === 30 && moment(displayMonthLong, "MMM").daysInMonth() === 30) {
        if (displayMonth === '12') {
          displayYear = moment(displayYear, "YYYY").add('1', 'years').format('YYYY')
@@ -61,6 +62,7 @@ $(document).ready(() => {
        $('.month').text(displayMonthLong)
        $('.main-calendar').text(1)
        displayDayNumber = 1
+       generateMonthCalendar()
     } else if (displayDayNumber === 31 && moment(displayMonthLong, "MMM").daysInMonth() === 31) {
         if (displayMonth === '12') {
           displayYear = moment(displayYear, "YYYY").add('1', 'years').format('YYYY')
@@ -70,12 +72,14 @@ $(document).ready(() => {
         $('.month').text(displayMonthLong)
         $('.main-calendar').text(1)
         displayDayNumber = 1
+        generateMonthCalendar()
     } else if (displayDayNumber === 28 && moment(displayMonthLong, "MMM").daysInMonth() === 28) {
       displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").add('1', 'months').format('MM')
       displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
       $('.month').text(displayMonthLong)
       $('.main-calendar').text(1)
       displayDayNumber = 1
+      generateMonthCalendar()
     } else {
       displayDayNumber = displayDayNumber + 1
       $('.main-calendar').text(displayDayNumber)
@@ -90,9 +94,14 @@ $(document).ready(() => {
   })
 
   // CALENDAR SETUP
-  generateMonthCalendar()
   function generateMonthCalendar() {
-    var firstDay = moment(month + day + year, "MM-DD-YYYY").format('dd')
+    $('.first').empty()
+    $('.second').empty()
+    $('.third').empty()
+    $('.fourth').empty()
+    $('.fifth').empty()
+    $('.sixth').empty()
+    var firstDay = moment(displayMonth + day + displayYear, "MM-DD-YYYY").format('dd')
     var days = ["Su","Mo", "Tu", "We", "Th", "Fr", "Sa"]
     var months = {
       "01": 31,
@@ -108,9 +117,8 @@ $(document).ready(() => {
       "11": 30,
       "12": 31
     }
-
     if (firstDay === "Su") {
-      for (var i = 1; i <= months[month]; i++) {
+      for (var i = 1; i <= months[displayMonth]; i++) {
         if (i <= 7) {
           $('.first').append("<span>" + i + "</span>")
         } else if (i > 7 && i <= 14) {
@@ -125,7 +133,7 @@ $(document).ready(() => {
       }
     }
     if (firstDay === "Mo") {
-      for (var i = 1; i <= months[month]; i++) {
+      for (var i = 1; i <= months[displayMonth]; i++) {
         if (i === 1) {
           $('.first').append("<span></span>")
         } else if (i > 1 && i <= 7) {
@@ -140,10 +148,10 @@ $(document).ready(() => {
           $('.fifth').append("<span>" + (i - 1) + "</span>")
         }
       }
-      $('.fifth').append("<span>" + months[month] + "</span>")
+      $('.fifth').append("<span>" + months[displayMonth] + "</span>")
     }
     if (firstDay === "Tu") {
-      for (var i = 1; i <= months[month]; i++) {
+      for (var i = 1; i <= months[displayMonth]; i++) {
         if (i <= 2) {
           $('.first').append("<span></span>")
         } else if (i > 1 && i <= 7) {
@@ -158,11 +166,11 @@ $(document).ready(() => {
           $('.fifth').append("<span>" + (i - 2) + "</span>")
         }
       }
-      $('.fifth').append("<span>" + (months[month] - 1) + "</span>")
-      $('.fifth').append("<span>" + months[month] + "</span>")
+      $('.fifth').append("<span>" + (months[displayMonth] - 1) + "</span>")
+      $('.fifth').append("<span>" + months[displayMonth] + "</span>")
     }
     if (firstDay === "We") {
-      for (var i = 1; i <= months[month]; i++) {
+      for (var i = 1; i <= months[displayMonth]; i++) {
         if (i <= 3) {
           $('.first').append("<span></span>")
         } else if (i > 1 && i <= 7) {
@@ -177,12 +185,12 @@ $(document).ready(() => {
           $('.fifth').append("<span>" + (i - 3) + "</span>")
         }
       }
-      $('.fifth').append("<span>" + (months[month] - 2) + "</span>")
-      $('.fifth').append("<span>" + (months[month] - 1) + "</span>")
-      $('.fifth').append("<span>" + months[month] + "</span>")
+      $('.fifth').append("<span>" + (months[displayMonth] - 2) + "</span>")
+      $('.fifth').append("<span>" + (months[displayMonth] - 1) + "</span>")
+      $('.fifth').append("<span>" + months[displayMonth] + "</span>")
     }
     if (firstDay === "Th") {
-      for (var i = 1; i <= months[month]; i++) {
+      for (var i = 1; i <= months[displayMonth]; i++) {
         if (i <= 4) {
           $('.first').append("<span></span>")
         } else if (i > 1 && i <= 7) {
@@ -197,13 +205,13 @@ $(document).ready(() => {
           $('.fifth').append("<span>" + (i - 4) + "</span>")
         }
       }
-      $('.fifth').append("<span>" + (months[month] - 3) + "</span>")
-      $('.fifth').append("<span>" + (months[month] - 2) + "</span>")
-      $('.fifth').append("<span>" + (months[month] - 1) + "</span>")
-      $('.fifth').append("<span>" + months[month] + "</span>")
+      $('.fifth').append("<span>" + (months[displayMonth] - 3) + "</span>")
+      $('.fifth').append("<span>" + (months[displayMonth] - 2) + "</span>")
+      $('.fifth').append("<span>" + (months[displayMonth] - 1) + "</span>")
+      $('.fifth').append("<span>" + months[displayMonth] + "</span>")
     }
     if (firstDay === "Fr") {
-      for (var i = 1; i <= months[month]; i++) {
+      for (var i = 1; i <= months[displayMonth]; i++) {
         if (i <= 5) {
           $('.first').append("<span></span>")
         } else if (i > 1 && i <= 7) {
@@ -218,14 +226,14 @@ $(document).ready(() => {
           $('.fifth').append("<span>" + (i - 5) + "</span>")
         }
       }
-      $('.fifth').append("<span>" + (months[month] - 4) + "</span>")
-      $('.fifth').append("<span>" + (months[month] - 3) + "</span>")
-      $('.fifth').append("<span>" + (months[month] - 2) + "</span>")
-      $('.fifth').append("<span>" + (months[month] - 1) + "</span>")
-      $('.fifth').append("<span>" + months[month] + "</span>")
+      $('.fifth').append("<span>" + (months[displayMonth] - 4) + "</span>")
+      $('.fifth').append("<span>" + (months[displayMonth] - 3) + "</span>")
+      $('.fifth').append("<span>" + (months[displayMonth] - 2) + "</span>")
+      $('.fifth').append("<span>" + (months[displayMonth] - 1) + "</span>")
+      $('.fifth').append("<span>" + months[displayMonth] + "</span>")
     }
     if (firstDay === "Sa") {
-      for (var i = 1; i <= months[month]; i++) {
+      for (var i = 1; i <= months[displayMonth]; i++) {
         if (i <= 6) {
           $('.first').append("<span></span>")
         } else if (i > 1 && i <= 7) {
@@ -240,12 +248,12 @@ $(document).ready(() => {
           $('.fifth').append("<span>" + (i - 6) + "</span>")
         }
       }
-      $('.fifth').append("<span>" + (months[month] - 5) + "</span>")
-      $('.fifth').append("<span>" + (months[month] - 4) + "</span>")
-      $('.fifth').append("<span>" + (months[month] - 3) + "</span>")
-      $('.fifth').append("<span>" + (months[month] - 2) + "</span>")
-      $('.fifth').append("<span>" + (months[month] - 1) + "</span>")
-      $('.sixth').append("<span>" + months[month] + "</span>")
+      $('.fifth').append("<span>" + (months[displayMonth] - 5) + "</span>")
+      $('.fifth').append("<span>" + (months[displayMonth] - 4) + "</span>")
+      $('.fifth').append("<span>" + (months[displayMonth] - 3) + "</span>")
+      $('.fifth').append("<span>" + (months[displayMonth] - 2) + "</span>")
+      $('.sixth').append("<span>" + (months[displayMonth] - 1) + "</span>")
+      $('.sixth').append("<span>" + months[displayMonth] + "</span>")
     }
 
   }
