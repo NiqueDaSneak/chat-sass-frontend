@@ -25,6 +25,24 @@ $(document).ready(() => {
   console.log(org)
 
   // UI & INTERACTIONS
+  $('.toggle-calendar').click(() => {
+    console.log('tapped cal')
+  })
+
+  $('.toggle-calendar').on('swipeleft', () => {
+    displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").subtract('1', 'months').format('MM')
+    displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
+    $('.month').text(displayMonthLong)
+    if (displayMonth === '01') {
+      displayYear = moment(displayYear, "YYYY").subtract('1', 'years').format('YYYY')
+    }
+    generateMonthCalendar()
+    console.log('swiped left!')
+  })
+
+  $('.toggle-calendar').on('swiperight', () => {
+    console.log('swiped right!!!')
+  })
 
   $('.toggle').click(() => {
     $('footer').toggleClass('active')
@@ -40,39 +58,36 @@ $(document).ready(() => {
       $('.month').text(displayMonthLong)
       $('.main-calendar').text(Number(daysInNextMonth))
       if (displayMonth === '01') {
-      displayYear = moment(displayYear, "YYYY").subtract('1', 'years').format('YYYY')
+        displayYear = moment(displayYear, "YYYY").subtract('1', 'years').format('YYYY')
       }
       generateMonthCalendar()
     } else {
       displayDayNumber = displayDayNumber - 1
       $('.main-calendar').text(Number(displayDayNumber))
     }
-    // check if the display date is the first day of the month
-    // if the display date is the 1st, check how many days are in the previous month and change it to that
-    // change the display month
   })
 
   $('.right').click(() => {
-     if (displayDayNumber === 30 && moment(displayMonthLong, "MMM").daysInMonth() === 30) {
-       if (displayMonth === '12') {
-         displayYear = moment(displayYear, "YYYY").add('1', 'years').format('YYYY')
-       }
-       displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").add('1', 'months').format('MM')
-       displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
-       $('.month').text(displayMonthLong)
-       $('.main-calendar').text(1)
-       displayDayNumber = 1
-       generateMonthCalendar()
+    if (displayDayNumber === 30 && moment(displayMonthLong, "MMM").daysInMonth() === 30) {
+      if (displayMonth === '12') {
+        displayYear = moment(displayYear, "YYYY").add('1', 'years').format('YYYY')
+      }
+      displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").add('1', 'months').format('MM')
+      displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
+      $('.month').text(displayMonthLong)
+      $('.main-calendar').text(1)
+      displayDayNumber = 1
+      generateMonthCalendar()
     } else if (displayDayNumber === 31 && moment(displayMonthLong, "MMM").daysInMonth() === 31) {
-        if (displayMonth === '12') {
-          displayYear = moment(displayYear, "YYYY").add('1', 'years').format('YYYY')
-        }
-        displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").add('1', 'months').format('MM')
-        displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
-        $('.month').text(displayMonthLong)
-        $('.main-calendar').text(1)
-        displayDayNumber = 1
-        generateMonthCalendar()
+      if (displayMonth === '12') {
+        displayYear = moment(displayYear, "YYYY").add('1', 'years').format('YYYY')
+      }
+      displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").add('1', 'months').format('MM')
+      displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
+      $('.month').text(displayMonthLong)
+      $('.main-calendar').text(1)
+      displayDayNumber = 1
+      generateMonthCalendar()
     } else if (displayDayNumber === 28 && moment(displayMonthLong, "MMM").daysInMonth() === 28) {
       displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").add('1', 'months').format('MM')
       displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
@@ -84,9 +99,6 @@ $(document).ready(() => {
       displayDayNumber = displayDayNumber + 1
       $('.main-calendar').text(displayDayNumber)
     }
-    // check if the display date is the last day of the month
-    // if it is, change date to 1st
-    // change the display month
   })
 
   $('.hamburger').click(() => {
@@ -102,7 +114,15 @@ $(document).ready(() => {
     $('.fifth').empty()
     $('.sixth').empty()
     var firstDay = moment(displayMonth + day + displayYear, "MM-DD-YYYY").format('dd')
-    var days = ["Su","Mo", "Tu", "We", "Th", "Fr", "Sa"]
+    var days = [
+      "Su",
+      "Mo",
+      "Tu",
+      "We",
+      "Th",
+      "Fr",
+      "Sa"
+    ]
     var months = {
       "01": 31,
       "02": 28,
@@ -230,7 +250,7 @@ $(document).ready(() => {
       $('.fifth').append("<span>" + (months[displayMonth] - 3) + "</span>")
       $('.fifth').append("<span>" + (months[displayMonth] - 2) + "</span>")
       $('.fifth').append("<span>" + (months[displayMonth] - 1) + "</span>")
-      $('.fifth').append("<span>" + months[displayMonth] + "</span>")
+      $('.sixth').append("<span>" + months[displayMonth] + "</span>")
     }
     if (firstDay === "Sa") {
       for (var i = 1; i <= months[displayMonth]; i++) {
@@ -248,17 +268,28 @@ $(document).ready(() => {
           $('.fifth').append("<span>" + (i - 6) + "</span>")
         }
       }
-      $('.fifth').append("<span>" + (months[displayMonth] - 5) + "</span>")
-      $('.fifth').append("<span>" + (months[displayMonth] - 4) + "</span>")
-      $('.fifth').append("<span>" + (months[displayMonth] - 3) + "</span>")
-      $('.fifth').append("<span>" + (months[displayMonth] - 2) + "</span>")
-      $('.sixth').append("<span>" + (months[displayMonth] - 1) + "</span>")
-      $('.sixth').append("<span>" + months[displayMonth] + "</span>")
+      if (months[displayMonth] === 30) {
+        $('.fifth').append("<span>" + (months[displayMonth] - 5) + "</span>")
+        $('.fifth').append("<span>" + (months[displayMonth] - 4) + "</span>")
+        $('.fifth').append("<span>" + (months[displayMonth] - 3) + "</span>")
+        $('.fifth').append("<span>" + (months[displayMonth] - 2) + "</span>")
+        $('.fifth').append("<span>" + (months[displayMonth] - 1) + "</span>")
+        $('.sixth').append("<span>" + months[displayMonth] + "</span>")
+      }
+      if (months[displayMonth] === 31) {
+        $('.fifth').append("<span>" + (months[displayMonth] - 5) + "</span>")
+        $('.fifth').append("<span>" + (months[displayMonth] - 4) + "</span>")
+        $('.fifth').append("<span>" + (months[displayMonth] - 3) + "</span>")
+        $('.fifth').append("<span>" + (months[displayMonth] - 2) + "</span>")
+        $('.sixth').append("<span>" + (months[displayMonth] - 1) + "</span>")
+        $('.sixth').append("<span>" + months[displayMonth] + "</span>")
+      }
+
     }
 
   }
 
-// SOCKET CONNECTION AND DATA TRANSFER
-var socket = io.connect();
+  // SOCKET CONNECTION AND DATA TRANSFER
+  var socket = io.connect();
 
 })
