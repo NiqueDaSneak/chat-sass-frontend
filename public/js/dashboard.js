@@ -29,6 +29,7 @@ $(document).ready(() => {
   $('.toggle-calendar').click((event) => {
     displayDayNumber = Number($(event.target).text())
     $('.main-calendar').text(Number($(event.target).text()))
+    loadActiveDay()
   })
 
   $('.toggle-calendar').on('swiperight', () => {
@@ -73,6 +74,7 @@ $(document).ready(() => {
     } else {
       displayDayNumber = displayDayNumber - 1
       $('.main-calendar').text(Number(displayDayNumber))
+      loadActiveDay()
     }
   })
 
@@ -107,6 +109,7 @@ $(document).ready(() => {
     } else {
       displayDayNumber = displayDayNumber + 1
       $('.main-calendar').text(displayDayNumber)
+      loadActiveDay()
     }
   })
 
@@ -296,14 +299,19 @@ $(document).ready(() => {
       }
 
     }
-
+    loadActiveDay()
   }
 
   // FIGURE OUT WHAT THE CURRENT DAY IS AND HIGHLIGHT IT
   function loadActiveDay() {
     for (var i = 0; i < $('.days').children().children().length; i++) {
       if (Number($($('.days').children().children()[i]).text()) === displayDayNumber) {
-        $($('.days').children().children()[i]).addClass('today')
+        $($('.days').children().children()[i]).addClass('active-day')
+      }
+    }
+    for (var i = 0; i < $('.active-day').length; i++) {
+      if (Number($($('.active-day')[i]).text()) != displayDayNumber) {
+        $($('.active-day')[i]).removeClass('active-day')
       }
     }
   }

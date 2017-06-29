@@ -255,10 +255,19 @@ nav {
     nav img:last-of-type {
       right: 10vw; }
 
+.active-day {
+  background-color: black;
+  color: white;
+  border-radius: 16px;
+  padding: 4px;
+  width: 3vh;
+  height: 3vh; }
+
 .toggle-calendar.active {
   bottom: 6vh; }
 
 .toggle-calendar {
+  text-align: center;
   font-size: 5vw;
   position: fixed;
   bottom: -44vh;
