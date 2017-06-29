@@ -1,6 +1,7 @@
 $(document).ready(() => {
 
   // INITIALIZERS
+  $.mobile.loadingMessage = false
   // date variables
   var month = moment().format("MM")
   var day = "01"

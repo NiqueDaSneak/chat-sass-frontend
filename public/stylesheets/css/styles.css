@@ -240,7 +240,8 @@ footer.active {
   font-size: 15vw; }
 
 nav {
-  text-align: center; }
+  text-align: center;
+  padding-top: 5vh; }
   nav img {
     z-index: 2;
     position: fixed;
