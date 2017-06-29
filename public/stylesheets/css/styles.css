@@ -434,6 +434,40 @@ nav {
       position: fixed;
       left: 83.1vw; }
 
+.chat-ui.live-chat {
+  bottom: 0vh;
+  z-index: 2; }
+
+.chat-ui {
+  height: 80vh;
+  position: fixed;
+  bottom: -100vh;
+  background-color: #474747;
+  width: 100vw;
+  -webkit-transition: bottom 1.5s;
+  transition: bottom 1.5s;
+  -webkit-transition-timing-function: cubic-bezier(0.44, 0.29, 0.53, 1.2);
+          transition-timing-function: cubic-bezier(0.44, 0.29, 0.53, 1.2); }
+  .chat-ui input:focus {
+    outline: none; }
+  .chat-ui input {
+    width: 75vw;
+    font-size: 8vw;
+    position: absolute;
+    bottom: 1vh;
+    border-radius: 0vh 10vw 70vw 0vw;
+    border: none;
+    left: -90vw;
+    -webkit-transition: left 1s;
+    transition: left 1s; }
+  .chat-ui img {
+    width: 15vw;
+    position: absolute;
+    bottom: 1vh;
+    right: -30vw;
+    -webkit-transition: right .5s;
+    transition: right .5s; }
+
 body {
   margin: 0;
   padding-top: 5vh; }

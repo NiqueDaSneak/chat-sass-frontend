@@ -1,0 +1,29 @@
+.chat-ui.live-chat
+  bottom: 0vh
+  z-index: 2
+
+.chat-ui
+  height: 80vh
+  position: fixed
+  bottom: -100vh
+  background-color: $siteGrey
+  width: 100vw
+  transition: bottom 1.5s
+  transition-timing-function: cubic-bezier(.44,.29,.53,1.2)
+  input:focus
+    outline: none
+  input
+    width: 75vw
+    font-size: 8vw
+    position: absolute
+    bottom: 1vh
+    border-radius: 0vh 10vw 70vw 0vw
+    border: none
+    left: -90vw
+    transition: left 1s
+  img
+    width: 15vw
+    position: absolute
+    bottom: 1vh
+    right: -30vw
+    transition: right .5s
