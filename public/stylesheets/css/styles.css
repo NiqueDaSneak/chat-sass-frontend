@@ -454,8 +454,8 @@ nav {
     width: 75vw;
     font-size: 8vw;
     position: absolute;
-    bottom: 1vh;
-    border-radius: 0vh 10vw 70vw 0vw;
+    bottom: 1.5vh;
+    border-radius: 0vh 10vw 10vw 0vw;
     border: none;
     left: -90vw;
     -webkit-transition: left 1s;
