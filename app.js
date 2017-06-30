@@ -7,15 +7,22 @@ const server = require('http').createServer(app)
 const io = require('socket.io')(server)
 const path = require("path")
 const bodyParser = require('body-parser')
+const fileUpload = require('express-fileupload')
+const fs = require('fs')
+// CHAT CONTENT
+const content = JSON.parse(fs.readFileSync('content/chat.json', 'utf8'))
 
 // DATABASE SETUP
-var mongoose = require('mongoose')
+const mongoose = require('mongoose')
 mongoose.connect('mongodb://dom:Losangeleslakers47@ds123182.mlab.com:23182/chat-sass-frontend')
 var db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'))
 
 var userSchema = mongoose.Schema({email: String, organization: String, password: String})
 var User = mongoose.model('User', userSchema)
+
+var messageSchema = mongoose.Schema({type: String, date: String, assetManifest: Object, organization: String, groupNames: Array, id: Number})
+var Message = mongoose.model('Message', messageSchema)
 
 // BCRYPT
 var bcrypt = require('bcryptjs')
@@ -38,6 +45,7 @@ if (app.get('env') === 'production') {
   sess.cookie.secure = true // serve secure cookies
 }
 app.use(session(sess))
+app.use(fileUpload())
 
 // ROUTES
 app.get('/', (req, res) => {
@@ -92,6 +100,10 @@ app.post('/signup', (req, res) => {
 io.on('connection', (socket) => {
 
   console.log('Server connected to client!')
+
+  socket.on('sendData', (data) => {
+    socket.emit('botMessage', {content: content[data.query]})
+  })
 
 })
 
