@@ -460,6 +460,12 @@ nav {
     left: -90vw;
     -webkit-transition: left 1s;
     transition: left 1s; }
+  .chat-ui input.active {
+    left: 0vw; }
+  .chat-ui input.file-upload.active {
+    color: white;
+    font-size: 6vw;
+    width: 74vw; }
   .chat-ui img {
     width: 15vw;
     position: absolute;
@@ -467,6 +473,16 @@ nav {
     right: -30vw;
     -webkit-transition: right .5s;
     transition: right .5s; }
+  .chat-ui img.active {
+    right: 5vw; }
+  .chat-ui .botMessages {
+    padding-top: 5vh;
+    padding-left: 5vw;
+    width: 90vw;
+    text-align: center; }
+    .chat-ui .botMessages span {
+      color: white;
+      font-size: 5vw; }
 
 body {
   margin: 0;

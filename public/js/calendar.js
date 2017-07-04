@@ -317,7 +317,4 @@ $(document).ready(() => {
     }
   }
 
-  // SOCKET CONNECTION AND DATA TRANSFER
-  var socket = io.connect();
-
 })

@@ -21,9 +21,29 @@
     border: none
     left: -90vw
     transition: left 1s
+  input.active
+    left: 0vw
+  input.file-upload
+    .ui-input-text
+      display:none
+
+  input.file-upload.active
+    color: white
+    font-size: 6vw
+    width: 74vw
   img
     width: 15vw
     position: absolute
     bottom: 1vh
     right: -30vw
     transition: right .5s
+  img.active
+    right: 5vw
+  .botMessages
+    padding-top: 5vh
+    padding-left: 5vw
+    width: 90vw
+    text-align: center
+    span
+      color: white
+      font-size: 5vw
