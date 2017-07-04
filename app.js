@@ -96,6 +96,13 @@ app.post('/signup', (req, res) => {
   res.redirect('/dashboard')
 })
 
+app.post('/message', (req, res) => {
+  console.log('body')
+  console.log(req.body)
+  console.log('files')
+  console.log(req.files)
+})
+
 // SOCKET.IO
 io.on('connection', (socket) => {
 
