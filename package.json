@@ -19,6 +19,7 @@
   "homepage": "https://github.com/NiqueDaSneak/chat-sass-frontend#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.2",
     "connect-flash": "^0.1.1",
     "express": "^4.15.3",
     "express-session": "^1.15.3",

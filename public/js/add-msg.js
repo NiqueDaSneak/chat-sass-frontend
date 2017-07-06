@@ -2,9 +2,16 @@
 
 $(document).ready(() => {
 
+  // GRAB ORG NAME FOR URL TO GET DATA FROM SERVER
+  var pathname = window.location.pathname.split('/')
+  var org = pathname[pathname.length - 1]
+  $('.organization').val(org)
+
   // SOCKET CONNECTION
   var socket = io.connect()
-  var manifest = {}
+  var manifest = {
+    organization: org
+  }
 
   // UI
   $('.add-new').click(() => {
@@ -12,11 +19,11 @@ $(document).ready(() => {
     setTimeout(() => {
       $('.input1').addClass('active')
       // ANIMATE INPUT1
-    }, 2500)
+    }, 1500)
     setTimeout(() => {
       $('.send1').addClass('active')
       // ANIMATE SEND1
-    }, 4000)
+    }, 2800)
     var moreAssets = false
     socket.emit('sendData', {query: 'introMessage'})
 
@@ -32,12 +39,12 @@ $(document).ready(() => {
       setTimeout(() => {
         $('.input2').addClass('active')
         $('.send2').addClass('active')
-      }, 1000)
+      }, 500)
       console.log(manifest)
     })
 
     $('.send2').click(() => {
-      manifest.date = $('.input2').val().toLowerCase()
+      manifest.date = $('.input2').val()
       $('.input2').removeClass('active')
       $('.send2').removeClass('active')
       // $('.input2').val("")
@@ -57,7 +64,7 @@ $(document).ready(() => {
           }
           if (manifest.type === 'text') {
             socket.emit('sendData', {query: 'assetMessageText'})
-            $('.input3').addClass('active')
+            $('.input5').addClass('active')
           }
           $('.send3').addClass('active')
         }, 1000)
@@ -86,22 +93,25 @@ $(document).ready(() => {
               socket.emit('sendData', {query: 'assetMessageImage'})
               $('.input4').removeClass('active')
               $('.send4').removeClass('active')
-              $('.send5').addClass('active')
-              $('.file-upload').addClass('active')
+              setTimeout(() => {
+                $('.send5').addClass('active')
+                $('.file-upload').addClass('active')
+              }, 500)
               console.log(manifest)
             })
           )
           .then(
             $('.send5').click(() => {
+              $('.msg-data').submit()
               manifest.assets.image = $('.file-upload').val()
+              $('.image-name').val($('.file-upload').val().split("\\")[$('.file-upload').val().split("\\").length - 1])
               socket.emit('sendData', {query: 'successMsg'})
               $('.send5').removeClass('active')
               $('.file-upload').removeClass('active')
               setTimeout(() => {
-                $.post("/message", {manifest})
                 $('.chat-ui').toggleClass('live-chat')
                 $('input').val("")
-              }, 3500)
+              }, 1800)
               console.log(manifest)
             })
           )
@@ -117,7 +127,8 @@ $(document).ready(() => {
           .then(
             $('.send4').click(() => {
               manifest.assets.image = $('.file-upload').val()
-              console.log($('.input4').val())
+              $('.image-name').val($('.file-upload').val().split("\\")[$('.file-upload').val().split("\\").length - 1])
+              // console.log($('.input4').val())
               socket.emit('sendData', {query: 'assetMessageText'})
               $('.file-upload').removeClass('active')
               $('.send4').removeClass('active')
@@ -130,89 +141,53 @@ $(document).ready(() => {
           )
           .then(
             $('.send5').click(() => {
+              $('.msg-data').submit()
               manifest.assets.text = $('.input5').val()
               socket.emit('sendData', {query: 'successMsg'})
               $('.send5').removeClass('active')
               $('.input5').removeClass('active')
               setTimeout(() => {
-                $.post("/message", {manifest})
                 $('.chat-ui').toggleClass('live-chat')
                 $('input').val("")
-              }, 3500)
+              }, 1800)
               console.log(manifest)
             })
           )
         }
       } else {
         if (manifest.type === 'text') {
+          $('.image-data').submit()
+          // $('.msg-data').submit()
           manifest.assets = {
-            text: $('.input3').val()
+            text: $('.input5').val()
           }
           socket.emit('sendData', {query: 'successMsg'})
-          $('.input3').removeClass('active')
+          $('.input5').removeClass('active')
           $('.send3').removeClass('active')
           console.log(manifest)
           setTimeout(() => {
-            $.post("/message", {manifest})
             $('.chat-ui').toggleClass('live-chat')
             $('input').val("")
-          }, 3500)
+          }, 1800)
 
         } else {
+          $('.msg-data').submit()
           manifest.assets = {
             image: $('.file-upload').val()
           }
+          $('.image-name').val($('.file-upload').val().split("\\")[$('.file-upload').val().split("\\").length - 1])
           socket.emit('sendData', {query: 'successMsg'})
           $('.file-upload').removeClass('active')
           $('.send3').removeClass('active')
           console.log(manifest)
           setTimeout(() => {
-            $.post("/message", {manifest})
             $('.chat-ui').toggleClass('live-chat')
             $('input').val("")
-          }, 3500)
+          }, 1800)
         }
       }
 
     })
-
-
-    // emit event for sending welcome, and asking what type of message
-
-    // event1 : click1
-      // emit message to ask for date
-      // on click1 => save data in input1
-      // if input1 val === "both" => (moreAssets = true)
-
-    // event2 : click2
-    // event3 : click3
-
-    ASQ(
-      socket.emit('sendData', {query: 'introMessage'})
-    )
-    .then(
-      $('.send').click(() => {
-        socket.emit('sendData', {query: 'dateMessage'})
-        manifest.type = $('.chat-ui input').val().toLowerCase()
-        if ($('.chat-ui input').val().toLowerCase() === 'both') {
-          moreAssets = true
-        }
-        $('.chat-ui input').val("")
-      })
-  )
-  // .then(
-  //   $('.send').click(() => {
-  //     socket.emit('sendData', {query: 'assetMessage'})
-  //     manifest.date = $('.chat-ui input').val()
-  //     // $('.send2').addClass('send3').removeClass('send2')
-  //     $('.chat-ui input').val("")
-  //   })
-  // )
-  .then(
-    console.log(manifest)
-  )
-    // createMessageChat()
-    //
   })
 
   // DATA EXCHANGE
@@ -220,41 +195,5 @@ $(document).ready(() => {
     $('.botMessages').empty()
     $('.botMessages').prepend("<span>" + data.content + "</span>")
   })
-
-  // function createMessageChat() {
-  //   var moreAssets = false
-  //   var manifest = {}
-  //
-  //   var saveManifestType = function() {
-  //       $('.send').click(() => {
-  //         socket.emit('sendData', {query: 'dateMessage'})
-  //           manifest.type = $('.chat-ui input').val().toLowerCase()
-  //         if ($('.chat-ui input').val().toLowerCase() === 'both') {
-  //           moreAssets = true
-  //         }
-  //         $('.chat-ui input').val("")
-  //         // $('.send').addClass('send2').removeClass('send')
-  //       })
-  //   }
-  //   var saveManifestDate = function() {
-  //       $('.send').click(() => {
-  //         socket.emit('sendData', {query: 'assetMessage'})
-  //         manifest.date = $('.chat-ui input').val()
-  //         // $('.send2').addClass('send3').removeClass('send2')
-  //         $('.chat-ui input').val("")
-  //       })
-  //   }
-  //   var saveTextAsset = function() {
-  //       $('.send').click(() => {
-  //         manifest.assets = {
-  //           "text": $('.chat-ui input').val()
-  //         }
-  //       })
-  //       console.log(manifest)
-  //   }
-  //   ASQ(saveManifestType())
-  //   .then(saveManifestDate())
-  //   .then(saveTextAsset())
-  // }
 
 })

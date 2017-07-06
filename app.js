@@ -2,13 +2,13 @@
 
 // NPM PACKAGES
 const express = require('express')
+const path = require("path")
+const fs = require('fs')
+const bodyParser = require('body-parser')
 const app = express()
 const server = require('http').createServer(app)
 const io = require('socket.io')(server)
-const path = require("path")
-const bodyParser = require('body-parser')
-const fileUpload = require('express-fileupload')
-const fs = require('fs')
+
 // CHAT CONTENT
 const content = JSON.parse(fs.readFileSync('content/chat.json', 'utf8'))
 
@@ -30,9 +30,6 @@ var bcrypt = require('bcryptjs')
 // EXPRESS SETUP
 app.use(express.static('public'))
 app.use(express.static(__dirname + 'view'))
-// app.set('view engine', 'pug')
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
 var session = require('express-session')
 var sess = {
   secret: 'ELpR4sYMFAv12w4Ae386',
@@ -45,7 +42,8 @@ if (app.get('env') === 'production') {
   sess.cookie.secure = true // serve secure cookies
 }
 app.use(session(sess))
-app.use(fileUpload())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
 
 // ROUTES
 app.get('/', (req, res) => {
@@ -97,10 +95,8 @@ app.post('/signup', (req, res) => {
 })
 
 app.post('/message', (req, res) => {
-  console.log('body')
-  console.log(req.body)
-  console.log('files')
-  console.log(req.files)
+    console.log(req.body)
+    res.sendStatus(200)
 })
 
 // SOCKET.IO

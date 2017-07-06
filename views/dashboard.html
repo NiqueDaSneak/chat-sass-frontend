@@ -67,12 +67,16 @@
 
   <div class="chat-ui">
     <div class="botMessages"></div>
-    <input class="input1" type="text" name="type" value="">
-    <input class="input2" type="text" name="date" value="">
-    <input class="input3" type="text" name="" value="">
-    <input class="input4" type="text" name="" value="">
-    <input class="input5" type="text" name="" value="">
-    <input class="file-upload" type="file" name="image" value="">
+    <form class="msg-data" action="http://localhost:4000/submit-image" method="post" enctype="multipart/form-data">
+      <input class="organization" type="hidden" name="organization" value="">
+      <input class="input1" type="text" name="type" value="">
+      <input class="input2" type="text" name="date" value="">
+      <input class="input3" type="text" name="" value="">
+      <input class="input4" type="text" name="" value="">
+      <input class="input5" type="text" name="msgText" value="">
+      <input class="image-name" type="hidden" name="imageName" value="">
+      <input class="file-upload" type="file" name="uploadedImage" value="">
+    </form>
     <img class="send1" src="/imgs/send.svg" alt="Send Button">
     <img class="send2" src="/imgs/send.svg" alt="Send Button">
     <img class="send3" src="/imgs/send.svg" alt="Send Button">
