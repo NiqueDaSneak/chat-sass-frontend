@@ -33,21 +33,30 @@ $(document).ready(() => {
       if ($('.input1').val().toLowerCase() === 'both') {
         moreAssets = true
       }
-      socket.emit('sendData', {query: 'dateMessage'})
-      // $('.input1').val("")
+      socket.emit('sendData', {query: 'timeMsg'})
       $('.input1').removeClass('active')
       $('.send1').removeClass('active')
+      setTimeout(() => {
+        $('.input6').addClass('active')
+        $('.send6').addClass('active')
+      }, 500)
+    })
+
+    $('.send6').click(() => {
+      socket.emit('sendData', {query: 'dateMessage'})
+      $('.input6').removeClass('active')
+      $('.send6').removeClass('active')
       setTimeout(() => {
         $('.input2').addClass('active')
         $('.send2').addClass('active')
       }, 500)
+
     })
 
     $('.send2').click(() => {
       manifest.date = $('.input2').val()
       $('.input2').removeClass('active')
       $('.send2').removeClass('active')
-      // $('.input2').val("")
       if (moreAssets === true) {
         socket.emit('sendData', {query: 'bothMessage'})
         $('.input3').addClass('both')

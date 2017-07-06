@@ -4,5 +4,6 @@
   "assetMessageText": "Go ahead and tell me what you want the message to say...",
   "assetMessageImage": "If you have an image, tap below and upload the image...",
   "bothMessage": "You have multiple assets. What would you like to upload first? Respond with 'text' or 'image'...",
-  "successMsg": "Message Saved! You will see it populate now on the calendar."
+  "successMsg": "Message Saved! You will see it populate now on the calendar.",
+  "timeMsg": "What time do you want this message to go out? Respond with a whole number: Ex. '9am', '12pm', 6pm"
   }
