@@ -1,7 +1,16 @@
 $(document).ready(() => {
 
   // INITIALIZERS
+
   $.mobile.loadingMessage = false
+
+  // socket connection
+  var socket = io.connect()
+
+  // grab org name for url to get data from server
+  var pathname = window.location.pathname.split('/')
+  var org = pathname[pathname.length - 1]
+
   // date variables
   var month = moment().format("MM")
   var day = "01"
@@ -14,6 +23,7 @@ $(document).ready(() => {
   var displayYear = moment().format('YYYY')
   generateMonthCalendar()
   loadActiveDay()
+  loadMsgsForCal()
 
   // set date for toggle ui element
   $('.month').text(displayMonthLong)
@@ -21,10 +31,7 @@ $(document).ready(() => {
   // set number for main-calendar
   $('.main-calendar').text(Number(displayDay))
 
-  // GRAB ORG NAME FOR URL TO GET DATA FROM SERVER
-  var pathname = window.location.pathname.split('/')
-  var org = pathname[pathname.length - 1]
-  console.log(org)
+
 
   // UI & INTERACTIONS
   $('.toggle-calendar').click((event) => {
@@ -303,9 +310,29 @@ $(document).ready(() => {
     loadActiveDay()
   }
 
+  // FIND CREATED MSGS AND ADD A FLAG IN THE UI OVER THE DATE
+  function loadMsgsForCal() {
+    socket.emit('requestScheduledMsg', {data: org})
+    socket.on('scheduledMsgs', (data) => {
+      console.log(data.data)
+      for (var i = 0; i < data.data.length; i++) {
+        var month = data.data[i].date.split('-')[0]
+        var day = data.data[i].date.split('-')[1]
+        var year = data.data[i].date.split('-')[2]
+        if (month === displayMonth) {
+          for (var i = 0; i < $('.days').children().children().length; i++) {
+            if (day === $($('.days').children().children()[i]).text()) {
+              $($('.days').children().children()[i]).addClass('msg-day')
+            }
+          }
+        }
+      }
+    })
+  }
+
   // FIGURE OUT WHAT THE CURRENT DAY IS AND HIGHLIGHT IT
   function loadActiveDay() {
-    for (var i = 0; i < $('.days').children().children().length; i++) {
+    for (var i = 0; i <= $('.days').children().children().length; i++) {
       if (Number($($('.days').children().children()[i]).text()) === displayDayNumber) {
         $($('.days').children().children()[i]).addClass('active-day')
       }
