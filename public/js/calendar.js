@@ -308,21 +308,23 @@ $(document).ready(() => {
 
     }
     loadActiveDay()
+    loadMsgsForCal()
   }
 
   // FIND CREATED MSGS AND ADD A FLAG IN THE UI OVER THE DATE
   function loadMsgsForCal() {
+    var msgs
     socket.emit('requestScheduledMsg', {data: org})
     socket.on('scheduledMsgs', (data) => {
-      console.log(data.data)
-      for (var i = 0; i < data.data.length; i++) {
+      msgs = data.data
+      for (var i = 0; i < msgs.length; i++) {
         var month = data.data[i].date.split('-')[0]
         var day = data.data[i].date.split('-')[1]
         var year = data.data[i].date.split('-')[2]
         if (month === displayMonth) {
-          for (var i = 0; i < $('.days').children().children().length; i++) {
-            if (day === $($('.days').children().children()[i]).text()) {
-              $($('.days').children().children()[i]).addClass('msg-day')
+          for (var x = 0; x < $('.days').children().children().length; x++) {
+            if (Number(day) === Number($($('.days').children().children()[x]).text())) {
+              $($('.days').children().children()[x]).addClass('msg-day')
             }
           }
         }
