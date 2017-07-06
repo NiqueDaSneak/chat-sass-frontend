@@ -28,6 +28,7 @@ $(document).ready(() => {
     socket.emit('sendData', {query: 'introMessage'})
 
     $('.send1').click(() => {
+      $('.organization').val(org)
       manifest.type = $('.input1').val().toLowerCase()
       if ($('.input1').val().toLowerCase() === 'both') {
         moreAssets = true
@@ -40,7 +41,6 @@ $(document).ready(() => {
         $('.input2').addClass('active')
         $('.send2').addClass('active')
       }, 500)
-      console.log(manifest)
     })
 
     $('.send2').click(() => {
@@ -69,7 +69,6 @@ $(document).ready(() => {
           $('.send3').addClass('active')
         }, 1000)
       }
-      console.log(manifest)
     })
 
     $('.send3').click(() => {
@@ -81,30 +80,27 @@ $(document).ready(() => {
           $('input.both').removeClass('active')
           $('img.both').removeClass('active')
           setTimeout(() => {
-            $('.input4').addClass('active')
+            $('.input5').addClass('active')
             $('.send4').addClass('active')
           }, 500)
 
           ASQ(socket.emit('sendData', {query: 'assetMessageText'}))
           .then(
             $('.send4').click(() => {
-              console.log($('.input4').val())
               manifest.assets.text = $('.input4').val()
               socket.emit('sendData', {query: 'assetMessageImage'})
-              $('.input4').removeClass('active')
+              $('.input5').removeClass('active')
               $('.send4').removeClass('active')
               setTimeout(() => {
                 $('.send5').addClass('active')
                 $('.file-upload').addClass('active')
               }, 500)
-              console.log(manifest)
             })
           )
           .then(
             $('.send5').click(() => {
               $('.msg-data').submit()
               manifest.assets.image = $('.file-upload').val()
-              $('.image-name').val($('.file-upload').val().split("\\")[$('.file-upload').val().split("\\").length - 1])
               socket.emit('sendData', {query: 'successMsg'})
               $('.send5').removeClass('active')
               $('.file-upload').removeClass('active')
@@ -112,7 +108,6 @@ $(document).ready(() => {
                 $('.chat-ui').toggleClass('live-chat')
                 $('input').val("")
               }, 1800)
-              console.log(manifest)
             })
           )
         } else {
@@ -127,8 +122,6 @@ $(document).ready(() => {
           .then(
             $('.send4').click(() => {
               manifest.assets.image = $('.file-upload').val()
-              $('.image-name').val($('.file-upload').val().split("\\")[$('.file-upload').val().split("\\").length - 1])
-              // console.log($('.input4').val())
               socket.emit('sendData', {query: 'assetMessageText'})
               $('.file-upload').removeClass('active')
               $('.send4').removeClass('active')
@@ -136,7 +129,6 @@ $(document).ready(() => {
                 $('.input5').addClass('active')
                 $('.send5').addClass('active')
               }, 500)
-              console.log(manifest)
             })
           )
           .then(
@@ -150,21 +142,18 @@ $(document).ready(() => {
                 $('.chat-ui').toggleClass('live-chat')
                 $('input').val("")
               }, 1800)
-              console.log(manifest)
             })
           )
         }
       } else {
         if (manifest.type === 'text') {
-          $('.image-data').submit()
-          // $('.msg-data').submit()
+          $('.msg-data').submit()
           manifest.assets = {
             text: $('.input5').val()
           }
           socket.emit('sendData', {query: 'successMsg'})
           $('.input5').removeClass('active')
           $('.send3').removeClass('active')
-          console.log(manifest)
           setTimeout(() => {
             $('.chat-ui').toggleClass('live-chat')
             $('input').val("")
@@ -179,7 +168,6 @@ $(document).ready(() => {
           socket.emit('sendData', {query: 'successMsg'})
           $('.file-upload').removeClass('active')
           $('.send3').removeClass('active')
-          console.log(manifest)
           setTimeout(() => {
             $('.chat-ui').toggleClass('live-chat')
             $('input').val("")
@@ -190,7 +178,7 @@ $(document).ready(() => {
     })
   })
 
-  // DATA EXCHANGE
+  // ADD MESSAGES TO SCREEN
   socket.on('botMessage', (data) => {
     $('.botMessages').empty()
     $('.botMessages').prepend("<span>" + data.content + "</span>")
