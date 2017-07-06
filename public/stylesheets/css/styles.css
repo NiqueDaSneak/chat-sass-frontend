@@ -260,9 +260,9 @@ nav {
   background-color: black;
   color: white;
   border-radius: 16px;
-  padding: 4px;
-  width: 3vh;
-  height: 3vh; }
+  padding: 0.3vh;
+  width: 4vh;
+  height: 4vh; }
 
 .toggle-calendar.active {
   bottom: 6vh; }

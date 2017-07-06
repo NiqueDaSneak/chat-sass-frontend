@@ -85,7 +85,6 @@ $(document).ready(() => {
         manifest.assets = {
         }
         if ($('input.both').val().toLowerCase() === "text") {
-          // $('input.both').val("")
           $('input.both').removeClass('active')
           $('img.both').removeClass('active')
           setTimeout(() => {
