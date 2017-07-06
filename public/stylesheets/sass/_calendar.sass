@@ -7,6 +7,7 @@ $weekPadding: 7vh
   padding: 0.3vh
   width: 4vh
   height: 4vh
+  transition: background-color 1.3s
 
 .msg-day
   background-color: grey
@@ -15,15 +16,18 @@ $weekPadding: 7vh
   padding: 0.3vh
   width: 4vh
   height: 4vh
+  transition: background-color .9s
 
 .toggle-calendar.active
   bottom: 6vh
 .toggle-calendar
   text-align: center
-  font-size: 5vw
+  font-size: 3.9vw
   position: fixed
   bottom: -44vh
   transition: bottom 1s
+  span
+    line-height: 4.5vh
   .weekdays
     span:nth-of-type(1)
       position: fixed
