@@ -264,6 +264,14 @@ nav {
   width: 4vh;
   height: 4vh; }
 
+.msg-day {
+  background-color: grey;
+  color: white;
+  border-radius: 16px;
+  padding: 0.3vh;
+  width: 4vh;
+  height: 4vh; }
+
 .toggle-calendar.active {
   bottom: 6vh; }
 
