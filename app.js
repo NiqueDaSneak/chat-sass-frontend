@@ -104,6 +104,12 @@ io.on('connection', (socket) => {
 
   console.log('Server connected to client!')
 
+  socket.on('requestScheduledMsg', (data) => {
+    Message.find({ organization: data.data }, (err, msgs) => {
+      socket.emit('scheduledMsgs', {data: msgs})
+    })
+  })
+
   socket.on('sendData', (data) => {
     socket.emit('botMessage', {content: content[data.query]})
   })
