@@ -67,11 +67,11 @@ $(document).ready(() => {
         }, 500)
       } else {
         setTimeout(() => {
-          if (manifest.type === 'image') {
+          if (manifest.type.toLowerCase() === 'image') {
             socket.emit('sendData', {query: 'assetMessageImage'})
             $('.file-upload').addClass('active')
           }
-          if (manifest.type === 'text') {
+          if (manifest.type.toLowerCase() === 'text') {
             socket.emit('sendData', {query: 'assetMessageText'})
             $('.input5').addClass('active')
           }
@@ -84,7 +84,7 @@ $(document).ready(() => {
       if (manifest.type === 'both') {
         manifest.assets = {
         }
-        if ($('input.both').val() === "text") {
+        if ($('input.both').val().toLowerCase() === "text") {
           // $('input.both').val("")
           $('input.both').removeClass('active')
           $('img.both').removeClass('active')
