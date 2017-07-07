@@ -259,8 +259,8 @@ nav {
 .todays-msgs {
   text-align: center;
   font-size: 6vw;
-  -webkit-transition: padding-left .5s, opacity .5s;
-  transition: padding-left .5s, opacity .5s; }
+  -webkit-transition: padding-left 1s, opacity .7s;
+  transition: padding-left 1s, opacity .7s; }
   .todays-msgs .header {
     padding-top: 4vh; }
   .todays-msgs img {
