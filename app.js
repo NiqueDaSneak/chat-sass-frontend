@@ -110,6 +110,12 @@ io.on('connection', (socket) => {
     })
   })
 
+  socket.on('requestMsgs', (data) => {
+    Message.find({ organization: data.data }, (err, msgs) => {
+      socket.emit('sendMsgs', {data: msgs})
+    })
+  })
+
   socket.on('sendData', (data) => {
     socket.emit('botMessage', {content: content[data.query]})
   })

@@ -23,8 +23,7 @@ $(document).ready(() => {
   var displayYear = moment().format('YYYY')
   generateMonthCalendar()
   loadActiveDay()
-  // loadMsgsForCal()
-  // loadTodayMsgs()
+  loadTodayMsgs()
 
   // set date for toggle ui element
   $('.month').text(displayMonthLong)
@@ -39,8 +38,7 @@ $(document).ready(() => {
     displayDayNumber = Number($(event.target).text())
     $('.main-calendar').text(Number($(event.target).text()))
     loadActiveDay()
-    loadMsgsForCal()
-    // loadTodayMsgs()
+    loadTodayMsgs()
   })
 
   $('.toggle-calendar').on('swiperight', () => {
@@ -52,7 +50,6 @@ $(document).ready(() => {
     }
     generateMonthCalendar()
     console.log('swiped right!!!')
-    // loadTodayMsgs()
   })
 
   $('.toggle-calendar').on('swipeleft', () => {
@@ -68,11 +65,14 @@ $(document).ready(() => {
 
   $('.toggle').click(() => {
     $('footer').toggleClass('active')
-    $('.toggle-calendar').toggleClass('active')
+    ASQ($('.todays-msgs').toggleClass('inactive'))
+    .then($('.toggle-calendar').toggleClass('active'))
+
+
   })
 
   $('.left').click(() => {
-    // loadTodayMsgs()
+    loadTodayMsgs()
     if (displayDayNumber === 1) {
       var daysInNextMonth = moment(displayMonth + '-' + displayDay, "MM-DD").subtract('1', 'months').daysInMonth()
       displayDayNumber = daysInNextMonth
@@ -92,7 +92,6 @@ $(document).ready(() => {
   })
 
   $('.right').click(() => {
-    // loadTodayMsgs()
     if (displayDayNumber === 30 && moment(displayMonthLong, "MMM").daysInMonth() === 30) {
       if (displayMonth === '12') {
         displayYear = moment(displayYear, "YYYY").add('1', 'years').format('YYYY')
@@ -125,6 +124,7 @@ $(document).ready(() => {
       $('.main-calendar').text(displayDayNumber)
       loadActiveDay()
     }
+    loadTodayMsgs()
   })
 
   $('.hamburger').click(() => {
@@ -329,26 +329,11 @@ $(document).ready(() => {
         var month = data.data[i].date.split('-')[0]
         var day = data.data[i].date.split('-')[1]
         var year = data.data[i].date.split('-')[2]
-        // if (month === displayMonth) {
-        //   for (var x = 0; x < $('.days').children().children().length; x++) {
-        //     if (Number(day) === Number($($('.days').children().children()[x]).text())) {
-        //       $($('.days').children().children()[x]).addClass('msg-day')
-        //     }
-        //   }
-        // }
-        console.log(month)
-        if (Number(day) === displayDayNumber) {
-          if (msgs[i].assetManifest.image) {
-            console.log(msgs[i].assetManifest.image)
-            $('.todays-msgs').prepend("<p>Image Message</p><img src='http://localhost:4000/'" + msgs[i].assetManifest.image + ">")
-          }
-
-          if (msgs[i].assetManifest.text) {
-            console.log(msgs[i].assetManifest)
-          }
-
-          if (msgs[i].assetManifest.both) {
-            console.log('neither')
+        if (month === displayMonth) {
+          for (var x = 0; x < $('.days').children().children().length; x++) {
+            if (Number(day) === Number($($('.days').children().children()[x]).text())) {
+              $($('.days').children().children()[x]).addClass('msg-day')
+            }
           }
         }
       }
@@ -356,33 +341,45 @@ $(document).ready(() => {
   }
 
   // LOOP THRU MESSAGES, AND SEE IF ONE HAS THE DISPLAYDAYNUMBER => PUT MESSAGE INFO ON SCREEN
-  // function loadTodayMsgs() {
-  //   socket.emit('requestScheduledMsg', {data: org})
-  //
-  //   socket.on('scheduledMsgs', (data) => {
-  //     msgs = data.data
-  //     for (var i = 0; i < msgs.length; i++) {
-  //       var month = data.data[i].date.split('-')[0]
-  //       var day = data.data[i].date.split('-')[1]
-  //       var year = data.data[i].date.split('-')[2]
-  //       if (Number(day) === displayDayNumber) {
-  //         if (msgs[i].assetManifest.image) {
-  //           // console.log(msgs[i].assetManifest.image)
-  //           // $('.todays-msgs').prepend("<p>Image Message</p><img src='http://localhost:4000/'" + msgs[i].assetManifest.image + ">")
-  //         }
-  //
-  //         if (msgs[i].assetManifest.text) {
-  //           console.log(msgs[i].assetManifest)
-  //         }
-  //
-  //         if (msgs[i].assetManifest.both) {
-  //           console.log('neither')
-  //         }
-  //       }
-  //     }
-  //   })
-  //
-  // }
+  function loadTodayMsgs() {
+    var msgs
+    var imgAppend
+    var textAppend
+    var bothAppend
+
+    socket.emit('requestMsgs', {data: org})
+
+    socket.on('sendMsgs', (data) => {
+      msgs = data.data
+      for (var i = 0; i < msgs.length; i++) {
+        console.log(i)
+        var month = data.data[i].date.split('-')[0]
+        var day = data.data[i].date.split('-')[1]
+        var year = data.data[i].date.split('-')[2]
+        if (Number(day) === displayDayNumber) {
+          if (msgs[i].assetManifest.image && msgs[i].assetManifest.text) {
+            bothAppend = "<p class='header'>Text & Image Message</p><p>" + msgs[i].assetManifest.text + "</p><img src='http://localhost:4000/uploads/" + msgs[i].assetManifest.image + "'>"
+            console.log('neither')
+          } else if (msgs[i].assetManifest.image) {
+            // console.log(msgs[i].assetManifest.image)
+            imgAppend = "<p class='header'>Image Message</p><img src='http://localhost:4000/uploads/" + msgs[i].assetManifest.image + "'>"
+            // console.log(imgAppend)
+            // $('.todays-msgs').append("<p class='header'>Image Message</p><img src='http://localhost:4000/uploads/" + msgs[i].assetManifest.image + "'>")
+          } else {
+            // console.log(msgs[i].assetManifest)
+            textAppend = "<p class='header'>Text Message</p><p>" + msgs[i].assetManifest.text + "</p>"
+            // console.log(textAppend)
+            // $('.todays-msgs').append("<p class='header'>Text Message</p><p>" + msgs[i].assetManifest.text + "</p>")
+          }
+        }
+      }
+      console.log('loop done')
+      $('.todays-msgs').empty()
+      $('.todays-msgs').append(imgAppend)
+      $('.todays-msgs').append(textAppend)
+      $('.todays-msgs').append(bothAppend)
+    })
+  }
 
   // FIGURE OUT WHAT THE CURRENT DAY IS AND HIGHLIGHT IT
   function loadActiveDay() {
