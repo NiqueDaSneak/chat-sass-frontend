@@ -23,7 +23,8 @@ $(document).ready(() => {
   var displayYear = moment().format('YYYY')
   generateMonthCalendar()
   loadActiveDay()
-  loadMsgsForCal()
+  // loadMsgsForCal()
+  // loadTodayMsgs()
 
   // set date for toggle ui element
   $('.month').text(displayMonthLong)
@@ -38,6 +39,8 @@ $(document).ready(() => {
     displayDayNumber = Number($(event.target).text())
     $('.main-calendar').text(Number($(event.target).text()))
     loadActiveDay()
+    loadMsgsForCal()
+    // loadTodayMsgs()
   })
 
   $('.toggle-calendar').on('swiperight', () => {
@@ -48,7 +51,8 @@ $(document).ready(() => {
       displayYear = moment(displayYear, "YYYY").subtract('1', 'years').format('YYYY')
     }
     generateMonthCalendar()
-    console.log('swiped left!')
+    console.log('swiped right!!!')
+    // loadTodayMsgs()
   })
 
   $('.toggle-calendar').on('swipeleft', () => {
@@ -59,7 +63,7 @@ $(document).ready(() => {
       displayYear = moment(displayYear, "YYYY").add('1', 'years').format('YYYY')
     }
     generateMonthCalendar()
-    console.log('swiped right!!!')
+    console.log('swiped left!')
   })
 
   $('.toggle').click(() => {
@@ -68,6 +72,7 @@ $(document).ready(() => {
   })
 
   $('.left').click(() => {
+    // loadTodayMsgs()
     if (displayDayNumber === 1) {
       var daysInNextMonth = moment(displayMonth + '-' + displayDay, "MM-DD").subtract('1', 'months').daysInMonth()
       displayDayNumber = daysInNextMonth
@@ -87,6 +92,7 @@ $(document).ready(() => {
   })
 
   $('.right').click(() => {
+    // loadTodayMsgs()
     if (displayDayNumber === 30 && moment(displayMonthLong, "MMM").daysInMonth() === 30) {
       if (displayMonth === '12') {
         displayYear = moment(displayYear, "YYYY").add('1', 'years').format('YYYY')
@@ -314,23 +320,69 @@ $(document).ready(() => {
   // FIND CREATED MSGS AND ADD A FLAG IN THE UI OVER THE DATE
   function loadMsgsForCal() {
     var msgs
+
     socket.emit('requestScheduledMsg', {data: org})
+
     socket.on('scheduledMsgs', (data) => {
       msgs = data.data
       for (var i = 0; i < msgs.length; i++) {
         var month = data.data[i].date.split('-')[0]
         var day = data.data[i].date.split('-')[1]
         var year = data.data[i].date.split('-')[2]
-        if (month === displayMonth) {
-          for (var x = 0; x < $('.days').children().children().length; x++) {
-            if (Number(day) === Number($($('.days').children().children()[x]).text())) {
-              $($('.days').children().children()[x]).addClass('msg-day')
-            }
+        // if (month === displayMonth) {
+        //   for (var x = 0; x < $('.days').children().children().length; x++) {
+        //     if (Number(day) === Number($($('.days').children().children()[x]).text())) {
+        //       $($('.days').children().children()[x]).addClass('msg-day')
+        //     }
+        //   }
+        // }
+        console.log(month)
+        if (Number(day) === displayDayNumber) {
+          if (msgs[i].assetManifest.image) {
+            console.log(msgs[i].assetManifest.image)
+            $('.todays-msgs').prepend("<p>Image Message</p><img src='http://localhost:4000/'" + msgs[i].assetManifest.image + ">")
+          }
+
+          if (msgs[i].assetManifest.text) {
+            console.log(msgs[i].assetManifest)
+          }
+
+          if (msgs[i].assetManifest.both) {
+            console.log('neither')
           }
         }
       }
     })
   }
+
+  // LOOP THRU MESSAGES, AND SEE IF ONE HAS THE DISPLAYDAYNUMBER => PUT MESSAGE INFO ON SCREEN
+  // function loadTodayMsgs() {
+  //   socket.emit('requestScheduledMsg', {data: org})
+  //
+  //   socket.on('scheduledMsgs', (data) => {
+  //     msgs = data.data
+  //     for (var i = 0; i < msgs.length; i++) {
+  //       var month = data.data[i].date.split('-')[0]
+  //       var day = data.data[i].date.split('-')[1]
+  //       var year = data.data[i].date.split('-')[2]
+  //       if (Number(day) === displayDayNumber) {
+  //         if (msgs[i].assetManifest.image) {
+  //           // console.log(msgs[i].assetManifest.image)
+  //           // $('.todays-msgs').prepend("<p>Image Message</p><img src='http://localhost:4000/'" + msgs[i].assetManifest.image + ">")
+  //         }
+  //
+  //         if (msgs[i].assetManifest.text) {
+  //           console.log(msgs[i].assetManifest)
+  //         }
+  //
+  //         if (msgs[i].assetManifest.both) {
+  //           console.log('neither')
+  //         }
+  //       }
+  //     }
+  //   })
+  //
+  // }
 
   // FIGURE OUT WHAT THE CURRENT DAY IS AND HIGHLIGHT IT
   function loadActiveDay() {
