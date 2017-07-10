@@ -264,10 +264,9 @@ nav {
   .todays-msgs .header {
     padding-top: 4vh; }
   .todays-msgs img {
-    width: 80vw; }
+    width: 60vw; }
 
 .todays-msgs.inactive {
-  padding-left: 100vw;
   opacity: 0; }
 
 .active-day {
