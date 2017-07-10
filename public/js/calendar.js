@@ -35,10 +35,14 @@ $(document).ready(() => {
 
   // UI & INTERACTIONS
   $('.toggle-calendar').click((event) => {
-    displayDayNumber = Number($(event.target).text())
-    $('.main-calendar').text(Number($(event.target).text()))
-    loadActiveDay()
-    loadTodayMsgs()
+    if (isNaN($(event.target).text())) {
+      console.log('not a number')
+    } else {
+      displayDayNumber = Number($(event.target).text())
+      $('.main-calendar').text(Number($(event.target).text()))
+      loadActiveDay()
+      loadTodayMsgs()
+    }
   })
 
   $('.toggle-calendar').on('swiperight', () => {
@@ -49,7 +53,6 @@ $(document).ready(() => {
       displayYear = moment(displayYear, "YYYY").subtract('1', 'years').format('YYYY')
     }
     generateMonthCalendar()
-    console.log('swiped right!!!')
   })
 
   $('.toggle-calendar').on('swipeleft', () => {
@@ -60,7 +63,6 @@ $(document).ready(() => {
       displayYear = moment(displayYear, "YYYY").add('1', 'years').format('YYYY')
     }
     generateMonthCalendar()
-    console.log('swiped left!')
   })
 
   $('.toggle').click(() => {
@@ -352,28 +354,19 @@ $(document).ready(() => {
     socket.on('sendMsgs', (data) => {
       msgs = data.data
       for (var i = 0; i < msgs.length; i++) {
-        console.log(i)
         var month = data.data[i].date.split('-')[0]
         var day = data.data[i].date.split('-')[1]
         var year = data.data[i].date.split('-')[2]
         if (Number(day) === displayDayNumber) {
           if (msgs[i].assetManifest.image && msgs[i].assetManifest.text) {
             bothAppend = "<p class='header'>Text & Image Message</p><p>" + msgs[i].assetManifest.text + "</p><img src='http://localhost:4000/uploads/" + msgs[i].assetManifest.image + "'>"
-            console.log('neither')
           } else if (msgs[i].assetManifest.image) {
-            // console.log(msgs[i].assetManifest.image)
             imgAppend = "<p class='header'>Image Message</p><img src='http://localhost:4000/uploads/" + msgs[i].assetManifest.image + "'>"
-            // console.log(imgAppend)
-            // $('.todays-msgs').append("<p class='header'>Image Message</p><img src='http://localhost:4000/uploads/" + msgs[i].assetManifest.image + "'>")
           } else {
-            // console.log(msgs[i].assetManifest)
             textAppend = "<p class='header'>Text Message</p><p>" + msgs[i].assetManifest.text + "</p>"
-            // console.log(textAppend)
-            // $('.todays-msgs').append("<p class='header'>Text Message</p><p>" + msgs[i].assetManifest.text + "</p>")
           }
         }
       }
-      console.log('loop done')
       $('.todays-msgs').empty()
       $('.todays-msgs').append(imgAppend)
       $('.todays-msgs').append(textAppend)
