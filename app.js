@@ -30,7 +30,7 @@ var bcrypt = require('bcryptjs')
 // EXPRESS SETUP
 app.use(express.static('public'))
 app.use(express.static(__dirname + 'view'))
-var session = require('express-session')
+var session = require('cookie-session')
 var sess = {
   secret: 'ELpR4sYMFAv12w4Ae386',
   cookie: {},
@@ -59,13 +59,13 @@ app.get('/auth-error', (req, res) => {
 })
 
 app.get('/dashboard/:organization', (req, res) => {
-  // if (req.session.email) {
+  if (req.session.email) {
     res.sendFile(path.join(__dirname + '/views/dashboard.html'))
-    // console.log('logged in: ' + req.session.email)
-  // } else {
-    // console.log('not logged in')
-    // res.redirect('/auth')
-  // }
+    console.log('logged in: ' + req.session.email)
+  } else {
+    console.log('not logged in')
+    res.redirect('/auth')
+  }
 })
 
 app.post('/login', (req, res) => {
