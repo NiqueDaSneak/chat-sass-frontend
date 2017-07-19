@@ -12,6 +12,14 @@ $(document).ready(() => {
   var manifest = {
     organization: org
   }
+  var id
+  console.log(org)
+  // socket.emit('requestID', {data: org})
+  // socket.on('sendID', (data) => {
+  //   id = data.data
+  //   $('.id').val(id)
+  //   console.log(id)
+  // })
 
   // UI
   $('.add-new').click(() => {
@@ -29,6 +37,7 @@ $(document).ready(() => {
 
     $('.send1').click(() => {
       $('.organization').val(org)
+      console.log($('.input1').val())
       manifest.type = $('.input1').val().toLowerCase()
       if ($('.input1').val().toLowerCase() === 'both') {
         moreAssets = true
@@ -43,6 +52,7 @@ $(document).ready(() => {
     })
 
     $('.send6').click(() => {
+      console.log($('.input6').val())
       socket.emit('sendData', {query: 'dateMessage'})
       $('.input6').removeClass('active')
       $('.send6').removeClass('active')
@@ -55,6 +65,7 @@ $(document).ready(() => {
 
     $('.send2').click(() => {
       manifest.date = $('.input2').val()
+      console.log($('.input2').val())
       $('.input2').removeClass('active')
       $('.send2').removeClass('active')
       if (moreAssets === true) {
@@ -70,6 +81,7 @@ $(document).ready(() => {
           if (manifest.type.toLowerCase() === 'image') {
             socket.emit('sendData', {query: 'assetMessageImage'})
             $('.file-upload').addClass('active')
+            console.log('give me that image!')
           }
           if (manifest.type.toLowerCase() === 'text') {
             socket.emit('sendData', {query: 'assetMessageText'})
@@ -107,7 +119,6 @@ $(document).ready(() => {
           )
           .then(
             $('.send5').click(() => {
-              $('.msg-data').submit()
               manifest.assets.image = $('.file-upload').val()
               socket.emit('sendData', {query: 'successMsg'})
               $('.send5').removeClass('active')
@@ -116,6 +127,8 @@ $(document).ready(() => {
                 $('.chat-ui').toggleClass('live-chat')
                 $('input').val("")
               }, 1800)
+              $('.msg-data').submit()
+              console.log('submitting form!!!')
             })
           )
         } else {
@@ -141,7 +154,6 @@ $(document).ready(() => {
           )
           .then(
             $('.send5').click(() => {
-              $('.msg-data').submit()
               manifest.assets.text = $('.input5').val()
               socket.emit('sendData', {query: 'successMsg'})
               $('.send5').removeClass('active')
@@ -150,12 +162,13 @@ $(document).ready(() => {
                 $('.chat-ui').toggleClass('live-chat')
                 $('input').val("")
               }, 1800)
+              $('.msg-data').submit()
+              console.log('submitting form!!!')
             })
           )
         }
       } else {
         if (manifest.type === 'text') {
-          $('.msg-data').submit()
           manifest.assets = {
             text: $('.input5').val()
           }
@@ -166,9 +179,10 @@ $(document).ready(() => {
             $('.chat-ui').toggleClass('live-chat')
             $('input').val("")
           }, 1800)
-
-        } else {
           $('.msg-data').submit()
+          console.log('submitting form!!!')
+        } else {
+          console.log($('.file-upload').val())
           manifest.assets = {
             image: $('.file-upload').val()
           }
@@ -180,6 +194,8 @@ $(document).ready(() => {
             $('.chat-ui').toggleClass('live-chat')
             $('input').val("")
           }, 1800)
+          console.log('submitting form!!!')
+          $('.msg-data').submit()
         }
       }
 
