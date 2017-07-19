@@ -18,7 +18,7 @@ mongoose.connect('mongodb://dom:Losangeleslakers47@ds123182.mlab.com:23182/chat-
 var db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'))
 
-var userSchema = mongoose.Schema({email: String, organization: String, password: String})
+var userSchema = mongoose.Schema({email: String, organization: String, password: String, webhook: Number})
 var User = mongoose.model('User', userSchema)
 
 var messageSchema = mongoose.Schema({type: String, date: String, assetManifest: Object, organization: String, groupNames: Array, id: Number})
@@ -59,13 +59,13 @@ app.get('/auth-error', (req, res) => {
 })
 
 app.get('/dashboard/:organization', (req, res) => {
-  if (req.session.email) {
+  // if (req.session.email) {
     res.sendFile(path.join(__dirname + '/views/dashboard.html'))
-    console.log('logged in: ' + req.session.email)
-  } else {
-    console.log('not logged in')
-    res.redirect('/auth')
-  }
+    // console.log('logged in: ' + req.session.email)
+  // } else {
+    // console.log('not logged in')
+    // res.redirect('/auth')
+  // }
 })
 
 app.post('/login', (req, res) => {
@@ -85,13 +85,13 @@ app.post('/login', (req, res) => {
 app.post('/signup', (req, res) => {
   bcrypt.genSalt(10, function(err, salt) {
     bcrypt.hash(req.body.password, salt, function(err, hash) {
-      var newUser = new User({email: req.body.email, organization: req.body.organization, password: hash}).save((err, user) => {
+      var newUser = new User({email: req.body.email, organization: req.body.organization, password: hash, webhook: Math.floor((Math.random() * 10000) + 1)}).save((err, user) => {
         if (err) return console.error(err)
+        req.session.email = req.body.email
+        res.redirect('/dashboard/' + user.organization)
       })
     })
   })
-  req.session.email = req.body.email
-  res.redirect('/dashboard')
 })
 
 app.post('/message', (req, res) => {
@@ -119,6 +119,16 @@ io.on('connection', (socket) => {
   socket.on('sendData', (data) => {
     socket.emit('botMessage', {content: content[data.query]})
   })
+
+  // socket.on('requestID', (data) => {
+  //   User.find({organization: data.data}, (err, user) => {
+  //     console.log(user)
+  //     if (err) return console.error(err)
+  //     socket.emit('sendID', {data: user.id})
+  //   })
+  // })
+
+
 
 })
 
