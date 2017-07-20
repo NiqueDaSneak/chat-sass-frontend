@@ -24,6 +24,13 @@ var User = mongoose.model('User', userSchema)
 var messageSchema = mongoose.Schema({type: String, date: String, assetManifest: Object, organization: String, groupNames: Array, id: Number})
 var Message = mongoose.model('Message', messageSchema)
 
+var memberSchema = mongoose.Schema({organization: String, fbID: Number, fullName: String, enrolled: Boolean, timezone: Number, photo: String})
+var Member = mongoose.model('Member', memberSchema)
+
+var affirmationSchema = mongoose.Schema({text: String})
+var Affirmation = mongoose.model('Affirmation', affirmationSchema)
+
+
 // BCRYPT
 var bcrypt = require('bcryptjs')
 
