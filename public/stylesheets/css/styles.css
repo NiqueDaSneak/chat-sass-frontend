@@ -557,6 +557,78 @@ nav {
       color: white;
       font-size: 5vw; }
 
+.groups {
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  z-index: 2; }
+  .groups .header {
+    text-align: center; }
+    .groups .header img {
+      position: absolute;
+      left: 6vw;
+      top: 3vh;
+      width: 10vw;
+      display: inline-block; }
+    .groups .header p {
+      display: inline-block;
+      line-height: 0vh;
+      font-size: 10vw; }
+  .groups .list, .groups .new {
+    background-color: #474747;
+    color: white;
+    text-align: center;
+    width: 84vw;
+    position: fixed;
+    left: 8vw;
+    height: 60vh;
+    top: 20vh;
+    font-size: 6vw;
+    padding-top: 5vh;
+    -webkit-transition: left .8s, -webkit-transform .8s;
+    transition: left .8s, -webkit-transform .8s;
+    transition: transform .8s, left .8s;
+    transition: transform .8s, left .8s, -webkit-transform .8s;
+    border-radius: 4vw; }
+  .groups .list div {
+    border: 1vw dotted;
+    width: 50vw;
+    border-radius: 5vw;
+    padding: 3vw;
+    margin-left: 12.5vw; }
+  .groups .list.rotate {
+    left: 112vw;
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg); }
+  .groups .new.rotate {
+    left: -95vw;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg); }
+  .groups .new input {
+    position: absolute;
+    width: 77.5vw;
+    left: 0;
+    top: 0;
+    font-size: 5.7vw;
+    height: 7vh;
+    border-radius: 4vw 4vw 0vw 0vw;
+    padding-left: 5vw; }
+  .groups .new button {
+    position: absolute;
+    bottom: -2.1vh;
+    width: 84.4vw;
+    height: 10vh;
+    left: -1.4vw;
+    border: none;
+    border-radius: 0vw 0vw 4vw 4vw;
+    font-size: 7vw;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    color: white;
+    background-color: green; }
+
 body {
   margin: 0;
   padding-top: 5vh; }
