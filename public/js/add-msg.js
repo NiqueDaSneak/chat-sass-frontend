@@ -13,7 +13,6 @@ $(document).ready(() => {
     organization: org
   }
   var id
-  console.log(org)
   // socket.emit('requestID', {data: org})
   // socket.on('sendID', (data) => {
   //   id = data.data
