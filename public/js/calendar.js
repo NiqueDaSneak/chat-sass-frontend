@@ -34,6 +34,15 @@ $(document).ready(() => {
 
 
   // UI & INTERACTIONS
+
+  $('.go-to-today').click(() => {
+    console.log('works!')
+    displayDayNumber = Number(moment().format('D'))
+    $('.main-calendar').text(Number(displayDay))
+    loadTodayMsgs()
+    loadActiveDay()
+  })
+
   $('.toggle-calendar').click((event) => {
     if (isNaN($(event.target).text())) {
       console.log('not a number')

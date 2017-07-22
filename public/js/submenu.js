@@ -7,4 +7,6 @@ $(document).ready(() => {
     $('footer').toggleClass('sub')
     $('.submenu').toggleClass('inactive')
   })
+
+  
 })
