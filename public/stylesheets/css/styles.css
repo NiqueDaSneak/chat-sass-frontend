@@ -276,8 +276,8 @@ nav {
   position: fixed;
   height: 10vh;
   width: 49vw;
-  background-color: darkgrey;
-  border: .5vh solid white;
+  background-color: #474747;
+  border: .5vh solid lightgrey;
   line-height: 10vh;
   text-align: center;
   color: white;
