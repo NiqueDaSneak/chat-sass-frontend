@@ -353,6 +353,7 @@ $(document).ready(() => {
 
     socket.on('sendMsgs', (data) => {
       msgs = data.data
+      console.log(msgs[0])
       for (var i = 0; i < msgs.length; i++) {
         var month = data.data[i].date.split('-')[0]
         var day = data.data[i].date.split('-')[1]
