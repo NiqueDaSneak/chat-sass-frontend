@@ -229,11 +229,14 @@ footer {
 
 footer.active {
   bottom: 49vh; }
-  footer.active img {
+
+footer.sub {
+  bottom: 21vh; }
+  footer.sub img {
     -webkit-transform: rotate(-180deg);
             transform: rotate(-180deg); }
   @media only screen and (max-width: 1024px) and (min-width: 415px) {
-    footer.active {
+    footer.sub {
       bottom: 44vh; } }
 
 .main-calendar {
@@ -268,6 +271,49 @@ nav {
 
 .todays-msgs.inactive {
   opacity: 0; }
+
+.submenu div {
+  position: fixed;
+  height: 10vh;
+  width: 49vw;
+  background-color: darkgrey;
+  border: .5vh solid white;
+  line-height: 10vh;
+  text-align: center;
+  color: white;
+  font-size: 4.9vw; }
+  .submenu div:first-of-type {
+    bottom: 10vh;
+    left: 0vw;
+    -webkit-transition: bottom 1s;
+    transition: bottom 1s; }
+  .submenu div:nth-of-type(2) {
+    bottom: 10vh;
+    right: 0vw;
+    -webkit-transition: bottom 1s;
+    transition: bottom 1s; }
+  .submenu div:nth-of-type(3) {
+    bottom: 0vh;
+    left: 0vw;
+    -webkit-transition: bottom 1s;
+    transition: bottom 1s; }
+  .submenu div:nth-of-type(4) {
+    bottom: 0vh;
+    right: 0vw;
+    -webkit-transition: bottom 1s;
+    transition: bottom 1s; }
+
+.submenu.inactive div:nth-child(1) {
+  bottom: -15vh; }
+
+.submenu.inactive div:nth-child(2) {
+  bottom: -15vh; }
+
+.submenu.inactive div:nth-child(3) {
+  bottom: -20vh; }
+
+.submenu.inactive div:nth-child(4) {
+  bottom: -20vh; }
 
 .active-day {
   background-color: black !important;

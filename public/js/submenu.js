@@ -4,6 +4,7 @@ $(document).ready(() => {
   var socket = io.connect()
 
   $('.hamburger').click(() => {
-    $('footer').toggleClass('active')
+    $('footer').toggleClass('sub')
+    $('.submenu').toggleClass('inactive')
   })
 })

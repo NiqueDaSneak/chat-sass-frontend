@@ -70,6 +70,9 @@ footer
 footer.active
   bottom: 49vh
 
+footer.sub
+  bottom: 21vh
+
   img
     transform: rotate(-180deg)
 
@@ -112,3 +115,79 @@ nav
     width: 60vw
 .todays-msgs.inactive
   opacity: 0
+
+.submenu
+  div
+    position: fixed
+    height: 10vh
+    width: 49vw
+    background-color: darkgrey
+    border: .5vh solid white
+    line-height: 10vh
+    text-align: center
+    color: white
+    font-size: 4.9vw
+    &:first-of-type
+      bottom: 10vh
+      left: 0vw
+      transition: bottom 1s
+    &:nth-of-type(2)
+      bottom: 10vh
+      right: 0vw
+      transition: bottom 1s
+    &:nth-of-type(3)
+      bottom: 0vh
+      left: 0vw
+      transition: bottom 1s
+    &:nth-of-type(4)
+      bottom: 0vh
+      right: 0vw
+      transition: bottom 1s
+.submenu.inactive
+  div
+    &:nth-child(1)
+      bottom: -15vh
+    &:nth-child(2)
+      bottom: -15vh
+    &:nth-child(3)
+      bottom: -20vh
+    &:nth-child(4)
+      bottom: -20vh
+
+
+
+// .submenu
+//   position: fixed
+//   bottom: -20vh
+//   transition: bottom 1s
+//   div
+//     bottom: -20vh
+// .submenu.active
+//   bottom: 0
+//   right: 50vw
+//   div
+//     // position: absolute
+//     background-color: green
+//     width: 50vw
+//     height: 10vh
+//     // transition: bottom 1s
+//     &:first-of-type
+//       bottom: 10vh
+//       background-color: green
+//       left: 0vw
+//       transition: bottom 1s
+//     &:nth-of-type(2)
+//       bottom: 10vh
+//       background-color: red
+//       right: 0vw
+//       transition: bottom 1s
+//     &:nth-of-type(3)
+//       bottom: 0vh
+//       background-color: yellow
+//       left: 0vw
+//       transition: bottom 1s
+//     &:nth-of-type(4)
+//       bottom: 0vh
+//       background-color: blue
+//       right: 0vw
+//       transition: bottom 1s
