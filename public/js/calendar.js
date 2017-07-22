@@ -359,9 +359,9 @@ $(document).ready(() => {
         var year = data.data[i].date.split('-')[2]
         if (Number(day) === displayDayNumber) {
           if (msgs[i].assetManifest.image && msgs[i].assetManifest.text) {
-            bothAppend = "<p class='header'>Text & Image Message</p><p>" + msgs[i].assetManifest.text + "</p><img src='https://chat-sass-image-uploader.herokuapp.com/uploads/" + msgs[i].assetManifest.image + "'>"
+            bothAppend = "<p class='header'>Text & Image Message</p><p>" + msgs[i].assetManifest.text + "</p><img src='" + msgs[i].assetManifest.image + "'>"
           } else if (msgs[i].assetManifest.image) {
-            imgAppend = "<p class='header'>Image Message</p><img src='https://chat-sass-image-uploader.herokuapp.com/uploads/" + msgs[i].assetManifest.image + "'>"
+            imgAppend = "<p class='header'>Image Message</p><img src='" + msgs[i].assetManifest.image + "'>"
           } else {
             textAppend = "<p class='header'>Text Message</p><p>" + msgs[i].assetManifest.text + "</p>"
           }
