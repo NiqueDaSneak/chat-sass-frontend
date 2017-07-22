@@ -129,10 +129,6 @@ $(document).ready(() => {
     loadTodayMsgs()
   })
 
-  $('.hamburger').click(() => {
-    $('footer').toggleClass('active')
-  })
-
   // CALENDAR SETUP
   function generateMonthCalendar() {
     $('.first').empty()
