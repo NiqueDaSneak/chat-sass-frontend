@@ -30,6 +30,9 @@ var Member = mongoose.model('Member', memberSchema)
 var affirmationSchema = mongoose.Schema({text: String})
 var Affirmation = mongoose.model('Affirmation', affirmationSchema)
 
+var groupSchema = mongoose.Schema({groupName: String, groupMembers: Array, organization: String})
+var Group = mongoose.model('Group', groupSchema)
+
 
 // BCRYPT
 var bcrypt = require('bcryptjs')
@@ -127,15 +130,36 @@ io.on('connection', (socket) => {
     socket.emit('botMessage', {content: content[data.query]})
   })
 
-  // socket.on('requestID', (data) => {
-  //   User.find({organization: data.data}, (err, user) => {
-  //     console.log(user)
-  //     if (err) return console.error(err)
-  //     socket.emit('sendID', {data: user.id})
-  //   })
-  // })
+  socket.on('requestMembers', (data) => {
+    Member.find({organization: data.data}, (err, users) => {
+      if (err) return console.error(err)
+      for (var i = 0; i < users.length; i++) {
+        socket.emit('addUser', {data: users[i]})
+      }
+    })
+  })
 
+  socket.on('createGroup', (data) => {
+    console.log(data.org)
+    var newGroup = new Group({groupName: data.groupName, groupMembers: data.groupMembers, organization: data.org}).save((err, group) => {
+            if (err) {
+              return console.error(err)
+            } else {
+              // console.log('saved group: ' + group)
+            }
+          })
+  })
 
+  socket.on('getList', (data) => {
+    Group.find({ organization: data.org }, (err, group) => {
+      if (err) {
+        return console.error(err)
+      } else {
+        // console.log('group: ' + group)
+        socket.emit('showList', {data: group})
+      }
+    })
+  })
 
 })
 
