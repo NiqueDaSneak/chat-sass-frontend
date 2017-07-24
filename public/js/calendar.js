@@ -39,7 +39,6 @@ $(document).ready(() => {
   // UI & INTERACTIONS
 
   $('.go-to-today').click(() => {
-    console.log('works!')
     displayDayNumber = Number(moment().format('D'))
     $('.main-calendar').text(Number(displayDay))
     loadTodayMsgs()
