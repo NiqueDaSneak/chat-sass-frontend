@@ -2,10 +2,10 @@ $(document).ready(() => {
 
   // INITIALIZERS
 
-  $.mobile.loadingMessage = false
-  if ($.mobile.loadingMessage) {
-    $.mobile.loadingMessage = false
-  }
+  // $.mobile.loadingMessage = false
+  // if ($.mobile.loadingMessage) {
+  //   $.mobile.loadingMessage = false
+  // }
 
   // socket connection
   var socket = io.connect()

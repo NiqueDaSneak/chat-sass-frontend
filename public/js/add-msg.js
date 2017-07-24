@@ -13,12 +13,6 @@ $(document).ready(() => {
     organization: org
   }
   var id
-  // socket.emit('requestID', {data: org})
-  // socket.on('sendID', (data) => {
-  //   id = data.data
-  //   $('.id').val(id)
-  //   console.log(id)
-  // })
 
   // UI
   $('.add-new').click(() => {
