@@ -665,6 +665,11 @@ nav {
           vertical-align: middle;
           padding-left: 4vw; }
 
+.group-name {
+  color: white;
+  font-size: 4vw;
+  padding-top: 2vh; }
+
 body {
   margin: 0;
   padding-top: 5vh; }

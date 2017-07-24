@@ -140,7 +140,7 @@ io.on('connection', (socket) => {
   })
 
   socket.on('createGroup', (data) => {
-    console.log(data.org)
+    console.log(data.groupMembers)
     var newGroup = new Group({groupName: data.groupName, groupMembers: data.groupMembers, organization: data.org}).save((err, group) => {
             if (err) {
               return console.error(err)
@@ -161,8 +161,18 @@ io.on('connection', (socket) => {
     })
   })
 
-})
+  socket.on('getGroups', (data) => {
+    Group.find({ organization: data.org }, (err, group) => {
+      if (err) {
+        return console.error(err)
+      } else {
+        // console.log('group: ' + group)
+        socket.emit('groups', {data: group})
+      }
+    })
+  })
 
+})
 
 // SET UP SERVER ENVIRONMENT
 var port = process.env.PORT || 3000

@@ -46,14 +46,25 @@ $(document).ready(() => {
 
     $('.send6').click(() => {
       console.log($('.input6').val())
-      socket.emit('sendData', {query: 'dateMessage'})
+      socket.emit('sendData', {query: 'groupMsg'})
+      socket.emit('getGroups', {org: org})
       $('.input6').removeClass('active')
       $('.send6').removeClass('active')
+      setTimeout(() => {
+        $('.input7').addClass('active')
+        $('.send7').addClass('active')
+      }, 500)
+    })
+
+    $('.send7').click(() => {
+      console.log($('.input7').val())
+      socket.emit('sendData', {query: 'dateMessage'})
+      $('.input7').removeClass('active')
+      $('.send7').removeClass('active')
       setTimeout(() => {
         $('.input2').addClass('active')
         $('.send2').addClass('active')
       }, 500)
-
     })
 
     $('.send2').click(() => {
@@ -199,6 +210,13 @@ $(document).ready(() => {
   socket.on('botMessage', (data) => {
     $('.botMessages').empty()
     $('.botMessages').prepend("<span>" + data.content + "</span>")
+  })
+
+  socket.on('groups', (data) => {
+    for (var i = 0; i < data.data.length; i++) {
+      $('.botMessages').append("<div class='group-name'>" + data.data[i].groupName + "</div>")
+      // data.data[i]
+    }
   })
 
 })
