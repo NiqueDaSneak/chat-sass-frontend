@@ -3,6 +3,9 @@ $(document).ready(() => {
   // INITIALIZERS
 
   $.mobile.loadingMessage = false
+  if ($.mobile.loadingMessage) {
+    $.mobile.loadingMessage = false
+  }
 
   // socket connection
   var socket = io.connect()
@@ -54,25 +57,25 @@ $(document).ready(() => {
     }
   })
 
-  $('.toggle-calendar').on('swiperight', () => {
-    displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").subtract('1', 'months').format('MM')
-    displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
-    $('.month').text(displayMonthLong)
-    if (displayMonth === '01') {
-      displayYear = moment(displayYear, "YYYY").subtract('1', 'years').format('YYYY')
-    }
-    generateMonthCalendar()
-  })
+  // $('.toggle-calendar').on('swiperight', () => {
+  //   displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").subtract('1', 'months').format('MM')
+  //   displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
+  //   $('.month').text(displayMonthLong)
+  //   if (displayMonth === '01') {
+  //     displayYear = moment(displayYear, "YYYY").subtract('1', 'years').format('YYYY')
+  //   }
+  //   generateMonthCalendar()
+  // })
 
-  $('.toggle-calendar').on('swipeleft', () => {
-    displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").add('1', 'months').format('MM')
-    displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
-    $('.month').text(displayMonthLong)
-    if (displayMonth === '01') {
-      displayYear = moment(displayYear, "YYYY").add('1', 'years').format('YYYY')
-    }
-    generateMonthCalendar()
-  })
+  // $('.toggle-calendar').on('swipeleft', () => {
+  //   displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").add('1', 'months').format('MM')
+  //   displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
+  //   $('.month').text(displayMonthLong)
+  //   if (displayMonth === '01') {
+  //     displayYear = moment(displayYear, "YYYY").add('1', 'years').format('YYYY')
+  //   }
+  //   generateMonthCalendar()
+  // })
 
   $('.toggle').click(() => {
     $('footer').toggleClass('active')
