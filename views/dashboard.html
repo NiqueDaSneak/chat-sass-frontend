@@ -73,26 +73,28 @@
     <div>Analytics</div>
     <div class="go-to-today">Go To Today</div>
     <div>Log Out</div>
-    <div>Members</div>
+    <div class="showGroups">Groups</div>
   </div>
 
-  <div class="groups">
+  <div class="groups hide">
     <div class="header">
       <img src="/imgs/close-icon.svg" alt="">
       <p>Groups</p>
     </div>
 
     <div class="list">
-      <div>Add Group</div>
-      <ul>
-      </ul>
+      <div class="addGroup">Add Group</div>
+      <span class="listNames">
+
+      </span>
     </div>
 
-    <div class="new rotate">
-      <input placeholder="Give the group a name" type="text" name="" value="">
-      <div class="members">
-      </div>
-      <button type="button" name="create">Create</button>
+    <div class="new hide">
+      <input class="groupName" placeholder="Give the group a name" type="text" name="groupName" value="">
+      <div class="names"></div>
+      <!-- <ul>
+      </ul> -->
+      <button class="create" type="button" name="create">Create</button>
     </div>
   </div>
 
