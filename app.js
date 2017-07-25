@@ -18,7 +18,14 @@ mongoose.connect('mongodb://dom:Losangeleslakers47@ds123182.mlab.com:23182/chat-
 var db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'))
 
-var userSchema = mongoose.Schema({email: String, organization: String, password: String, webhook: Number})
+var userSchema = mongoose.Schema({email: String,
+  organization: String,
+  facebook: {
+    userID: Number,
+    pageID: Number,
+  },
+  webhook: Number})
+
 var User = mongoose.model('User', userSchema)
 
 var messageSchema = mongoose.Schema({type: String, date: String, assetManifest: Object, organization: String, groupNames: Array, id: Number})
@@ -33,6 +40,33 @@ var Affirmation = mongoose.model('Affirmation', affirmationSchema)
 var groupSchema = mongoose.Schema({groupName: String, groupMembers: Array, organization: String})
 var Group = mongoose.model('Group', groupSchema)
 
+// PASSPORTJS CONFIG
+var passport = require('passport')
+var FacebookStrategy = require('passport-facebook').Strategy
+
+passport.use(new FacebookStrategy({
+    clientID: '372903006444693',
+    clientSecret: 'e0cf0b310d6931c9140969a115efefa9',
+    callbackURL: "http://chat-sass-frontend.herokuapp.com/auth/facebook/callback"
+  },
+  function(accessToken, refreshToken, profile, done) {
+    console.log('profile: ' + profile)
+    // User.fineOne('facebook.userID': profile.id, (err, user) => {
+    //   if (err) {
+    //     console.log(err)
+    //   }
+    //   if (user) {
+    //     return done(null, user)
+    //   } else {
+    //     var newUser = new User({})
+    //   }
+    // })
+    // User.findOrCreate(..., function(err, user) {
+    //   if (err) { return done(err); }
+    //   done(null, user);
+    // });
+  }
+))
 
 // BCRYPT
 var bcrypt = require('bcryptjs')
@@ -56,6 +90,23 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // ROUTES
+// Redirect the user to Facebook for authentication.  When complete,
+// Facebook will redirect the user back to the application at
+//     /auth/facebook/callback
+app.get('/auth/facebook', passport.authenticate('facebook'));
+
+// Facebook will redirect the user to this URL after approval.  Finish the
+// authentication process by attempting to obtain an access token.  If
+// access was granted, the user will be logged in.  Otherwise,
+// authentication has failed.
+app.get('/auth/facebook/callback',
+  passport.authenticate('facebook', { successRedirect: '/find-page', failureRedirect: '/' })
+)
+
+app.get('/find-page', (req, res) => {
+  res.sendStatus(200)
+})
+
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/views/index.html'))
 })
