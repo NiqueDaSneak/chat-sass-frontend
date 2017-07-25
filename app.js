@@ -8,6 +8,8 @@ const bodyParser = require('body-parser')
 const app = express()
 const server = require('http').createServer(app)
 const io = require('socket.io')(server)
+const request = require('request')
+const util = require('util')
 
 // CHAT CONTENT
 const content = JSON.parse(fs.readFileSync('content/chat.json', 'utf8'))
@@ -70,17 +72,10 @@ app.use(passport.session())
 passport.use(new FacebookStrategy({
     clientID: '372903006444693',
     clientSecret: 'e0cf0b310d6931c9140969a115efefa9',
-    callbackURL: "http://localhost:3000/auth/facebook/callback"
+    callbackURL: "http://localhost:3000/auth/check-pages"
     // callbackURL: "http://chat-sass-frontend.herokuapp.com/auth/facebook/callback"
   },
   function(accessToken, refreshToken, profile, done) {
-    // console.log('accessToken: ' + accessToken)
-    // console.log('refreshToken: ' + refreshToken)
-    // console.log('profile: ' + profile)
-    // console.log('id: ' + profile.id)
-    // done(null, profile.id)
-    // console.log('name: ' + profile.name.familyName)
-    // console.log('email: ' + profile.emails)
     User.findOne({'facebook.userID': profile.id}, (err, user) => {
       if (err) {
         console.log(err)
@@ -110,16 +105,16 @@ app.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email', 'p
 // authentication process by attempting to obtain an access token.  If
 // access was granted, the user will be logged in.  Otherwise,
 // authentication has failed.
-app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/', session: false }), (req, res) => {
-    console.log(req.user)
-    res.sendStatus(200)
+var ID
+app.get('/auth/check-pages', passport.authenticate('facebook', { failureRedirect: '/', session: false }), (req, res, next) => {
+  res.sendFile(path.join(__dirname + '/views/pages.html'))
+  ID = req.user.facebook.userID
 })
 
-app.get('/find-page', (req, res) => {
-  // 'https://graph.facebook.com/v2.6/' + id + '/accounts'
-  // 'https://graph.facebook.com/v2.6/' + senderID + '?access_token=EAAFTJz88HJUBAJqx5WkPGiIi0jPRyBXmpuN56vZB0FowKCZCzej8zpM4hKTt2ZCXqDZASqL4GUC5ywuOjakob1icM4Sfa4L3xcpsTKsjHl0QHzPylbHjJakyq1hcPNA4i8wt7XjsGZBGoUNYP7Yx2hg8RYiG9xzUoo0dzuThqGwZDZD/accounts'
-  // 'https://graph.facebook.com/v2.6/10207609824923988/?access_token=EAAFTJz88HJUBAJqx5WkPGiIi0jPRyBXmpuN56vZB0FowKCZCzej8zpM4hKTt2ZCXqDZASqL4GUC5ywuOjakob1icM4Sfa4L3xcpsTKsjHl0QHzPylbHjJakyq1hcPNA4i8wt7XjsGZBGoUNYP7Yx2hg8RYiG9xzUoo0dzuThqGwZDZD/accounts'
-  // console.log('id: ' + req.profile.id)
+app.get('/save-page', (req, res) => {
+  console.log(req.query.pageid)
+  console.log(req.query.userid)
+  res.sendStatus(200)
 })
 
 app.get('/', (req, res) => {
@@ -238,7 +233,32 @@ io.on('connection', (socket) => {
     })
   })
 
+  socket.on('requestPages', () => {
+    console.log('...requesting')
+    socket.emit('userID', {id: ID})
+    requestPages(ID)
+  })
+
+  function requestPages(id) {
+    var options = {
+      method: 'get',
+      url: "https://graph.facebook.com/v2.6/" + id + "/accounts?access_token=EAAFTJz88HJUBAJqx5WkPGiIi0jPRyBXmpuN56vZB0FowKCZCzej8zpM4hKTt2ZCXqDZASqL4GUC5ywuOjakob1icM4Sfa4L3xcpsTKsjHl0QHzPylbHjJakyq1hcPNA4i8wt7XjsGZBGoUNYP7Yx2hg8RYiG9xzUoo0dzuThqGwZDZD"
+    }
+    request(options, function(err, res, body) {
+      if (err) {
+        console.error(err)
+      }
+      var data = JSON.parse(body)
+      for (var i = 0; i < data.data.length; i++) {
+        socket.emit('addPages', {page: data.data[i]})
+        console.log('data sent!')
+        console.log(data.data[i])
+      }
+    })
+  }
 })
+
+
 
 // SET UP SERVER ENVIRONMENT
 var port = process.env.PORT || 3000
