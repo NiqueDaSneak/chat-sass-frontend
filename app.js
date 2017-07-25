@@ -44,30 +44,6 @@ var Group = mongoose.model('Group', groupSchema)
 var passport = require('passport')
 var FacebookStrategy = require('passport-facebook').Strategy
 
-passport.use(new FacebookStrategy({
-    clientID: '372903006444693',
-    clientSecret: 'e0cf0b310d6931c9140969a115efefa9',
-    callbackURL: "http://chat-sass-frontend.herokuapp.com/auth/facebook/callback"
-  },
-  function(accessToken, refreshToken, profile, done) {
-    console.log('profile: ' + profile)
-    // User.fineOne('facebook.userID': profile.id, (err, user) => {
-    //   if (err) {
-    //     console.log(err)
-    //   }
-    //   if (user) {
-    //     return done(null, user)
-    //   } else {
-    //     var newUser = new User({})
-    //   }
-    // })
-    // User.findOrCreate(..., function(err, user) {
-    //   if (err) { return done(err); }
-    //   done(null, user);
-    // });
-  }
-))
-
 // BCRYPT
 var bcrypt = require('bcryptjs')
 
@@ -88,23 +64,62 @@ if (app.get('env') === 'production') {
 app.use(session(sess))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use(passport.initialize())
+app.use(passport.session())
+
+passport.use(new FacebookStrategy({
+    clientID: '372903006444693',
+    clientSecret: 'e0cf0b310d6931c9140969a115efefa9',
+    callbackURL: "http://localhost:3000/auth/facebook/callback"
+    // callbackURL: "http://chat-sass-frontend.herokuapp.com/auth/facebook/callback"
+  },
+  function(accessToken, refreshToken, profile, done) {
+    // console.log('accessToken: ' + accessToken)
+    // console.log('refreshToken: ' + refreshToken)
+    // console.log('profile: ' + profile)
+    // console.log('id: ' + profile.id)
+    // done(null, profile.id)
+    // console.log('name: ' + profile.name.familyName)
+    // console.log('email: ' + profile.emails)
+    User.findOne({'facebook.userID': profile.id}, (err, user) => {
+      if (err) {
+        console.log(err)
+      }
+      if (user) {
+        return done(null, user)
+      } else {
+        var newUser = new User()
+        newUser.facebook.userID = profile.id
+        newUser.webhook = Math.floor((Math.random() * 10000) + 1)
+        newUser.save((err, user) => {
+          if (err) return console.error(err)
+          return done(null, user)
+        })
+      }
+    })
+
+  }))
 
 // ROUTES
 // Redirect the user to Facebook for authentication.  When complete,
 // Facebook will redirect the user back to the application at
 //     /auth/facebook/callback
-app.get('/auth/facebook', passport.authenticate('facebook'));
+app.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email', 'pages_show_list', 'manage_pages', 'publish_pages']}));
 
 // Facebook will redirect the user to this URL after approval.  Finish the
 // authentication process by attempting to obtain an access token.  If
 // access was granted, the user will be logged in.  Otherwise,
 // authentication has failed.
-app.get('/auth/facebook/callback',
-  passport.authenticate('facebook', { successRedirect: '/find-page', failureRedirect: '/' })
-)
+app.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/', session: false }), (req, res) => {
+    console.log(req.user)
+    res.sendStatus(200)
+})
 
 app.get('/find-page', (req, res) => {
-  res.sendStatus(200)
+  // 'https://graph.facebook.com/v2.6/' + id + '/accounts'
+  // 'https://graph.facebook.com/v2.6/' + senderID + '?access_token=EAAFTJz88HJUBAJqx5WkPGiIi0jPRyBXmpuN56vZB0FowKCZCzej8zpM4hKTt2ZCXqDZASqL4GUC5ywuOjakob1icM4Sfa4L3xcpsTKsjHl0QHzPylbHjJakyq1hcPNA4i8wt7XjsGZBGoUNYP7Yx2hg8RYiG9xzUoo0dzuThqGwZDZD/accounts'
+  // 'https://graph.facebook.com/v2.6/10207609824923988/?access_token=EAAFTJz88HJUBAJqx5WkPGiIi0jPRyBXmpuN56vZB0FowKCZCzej8zpM4hKTt2ZCXqDZASqL4GUC5ywuOjakob1icM4Sfa4L3xcpsTKsjHl0QHzPylbHjJakyq1hcPNA4i8wt7XjsGZBGoUNYP7Yx2hg8RYiG9xzUoo0dzuThqGwZDZD/accounts'
+  // console.log('id: ' + req.profile.id)
 })
 
 app.get('/', (req, res) => {
