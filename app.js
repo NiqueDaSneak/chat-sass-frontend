@@ -322,8 +322,8 @@ io.on('connection', (socket) => {
 
   socket.on('requestPages', () => {
     console.log('...requesting')
-    socket.emit('userID', {id: ID})
-    requestPages(ID)
+    socket.emit('userID', {id: id})
+    requestPages(id)
   })
 
   function requestPages(id) {
