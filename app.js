@@ -114,7 +114,6 @@ passport.use(new FacebookStrategy({
         console.log('refreshToken: ' + refreshToken)
         var newUser = new User()
         newUser.facebook.userID = profile.id
-        newUser.facebook.accessToken = accessToken
         newUser.webhook = Math.floor((Math.random() * 10000) + 1)
         newUser.save((err, user) => {
           if (err) return console.error(err)
@@ -154,6 +153,7 @@ app.get('/save-page', (req, res) => {
     if (err) return console.error(err)
     user.facebook.pageID = req.query.pageid
     user.organization = req.query.org
+    user.facebook.accessToken = req.query.access_token
     user.save((err, user) => {
       if (err) return console.error(err)
 
@@ -161,7 +161,7 @@ app.get('/save-page', (req, res) => {
       var webhookPromise = new Promise(function(resolve, reject) {
         var webhookOptions = {
           method: 'post',
-          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/subscribed_apps?access_token=' + user.facebook.pageID.accessToken
+          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/subscribed_apps?access_token=' + user.facebook.accessToken
         }
 
         request(webhookOptions, (err, res, body) => {
@@ -188,7 +188,7 @@ app.get('/save-page', (req, res) => {
           method: 'post',
           body: getStarted,
           json: true,
-          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/messenger_profile?access_token=' + user.facebook.pageID.accessToken
+          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/messenger_profile?access_token=' + user.facebook.accessToken
         }
 
         request(getStartedOptions, (err, res, body) => {
@@ -217,7 +217,7 @@ app.get('/save-page', (req, res) => {
           method: 'post',
           body: setGreeting,
           json: true,
-          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/thread_settings?access_token=' + user.facebook.pageID.accessToken
+          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/thread_settings?access_token=' + user.facebook.accessToken
         }
 
         request(setGreetingOptions, (err, res, body) => {
@@ -268,39 +268,6 @@ app.get('/dashboard/:organization', (req, res) => {
   // console.log('not logged in')
   // res.redirect('/auth')
   // }
-})
-
-app.post('/login', (req, res) => {
-  User.findOne({
-    email: req.body.email
-  }, (err, user) => {
-    if (err) return console.error(err)
-    bcrypt.compare(req.body.password, user.password).then((response) => {
-      if (response) {
-        req.session.email = req.body.email
-        res.redirect('dashboard/' + user.organization)
-      } else {
-        res.redirect('auth-error')
-      }
-    })
-  })
-})
-
-app.post('/signup', (req, res) => {
-  bcrypt.genSalt(10, function(err, salt) {
-    bcrypt.hash(req.body.password, salt, function(err, hash) {
-      var newUser = new User({
-        email: req.body.email,
-        organization: req.body.organization,
-        password: hash,
-        webhook: Math.floor((Math.random() * 10000) + 1)
-      }).save((err, user) => {
-        if (err) return console.error(err)
-        req.session.email = req.body.email
-        res.redirect('/dashboard/' + user.organization)
-      })
-    })
-  })
 })
 
 app.post('/message', (req, res) => {
