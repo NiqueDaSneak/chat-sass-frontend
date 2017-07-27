@@ -26,6 +26,7 @@ var userSchema = mongoose.Schema({
   facebook: {
     userID: Number,
     pageID: Number,
+    accessToken: String
   },
   webhook: Number
 })
@@ -100,7 +101,6 @@ passport.use(new FacebookStrategy({
     callbackURL: "http://chat-sass-frontend.herokuapp.com/auth/check-pages"
   },
   function(accessToken, refreshToken, profile, done) {
-    console.log('' + accessToken)
     User.findOne({
       'facebook.userID': profile.id
     }, (err, user) => {
@@ -112,6 +112,7 @@ passport.use(new FacebookStrategy({
       } else {
         var newUser = new User()
         newUser.facebook.userID = profile.id
+        newUser.facebook.accessToken = accessToken
         newUser.webhook = Math.floor((Math.random() * 10000) + 1)
         newUser.save((err, user) => {
           if (err) return console.error(err)
@@ -160,7 +161,7 @@ app.get('/save-page', (req, res) => {
       var webhookPromise = new Promise(function(resolve, reject) {
         var webhookOptions = {
           method: 'post',
-          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/subscribed_apps?access_token=EAAFTJz88HJUBAJqx5WkPGiIi0jPRyBXmpuN56vZB0FowKCZCzej8zpM4hKTt2ZCXqDZASqL4GUC5ywuOjakob1icM4Sfa4L3xcpsTKsjHl0QHzPylbHjJakyq1hcPNA4i8wt7XjsGZBGoUNYP7Yx2hg8RYiG9xzUoo0dzuThqGwZDZD'
+          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/subscribed_apps?access_token=' + user.facebook.accessToken
         }
 
         request(webhookOptions, (err, res, body) => {
@@ -187,7 +188,7 @@ app.get('/save-page', (req, res) => {
           method: 'post',
           body: getStarted,
           json: true,
-          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/messenger_profile?access_token=EAAFTJz88HJUBAJqx5WkPGiIi0jPRyBXmpuN56vZB0FowKCZCzej8zpM4hKTt2ZCXqDZASqL4GUC5ywuOjakob1icM4Sfa4L3xcpsTKsjHl0QHzPylbHjJakyq1hcPNA4i8wt7XjsGZBGoUNYP7Yx2hg8RYiG9xzUoo0dzuThqGwZDZD'
+          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/messenger_profile?access_token=' + user.facebook.accessToken
         }
 
         request(getStartedOptions, (err, res, body) => {
@@ -215,10 +216,10 @@ app.get('/save-page', (req, res) => {
           method: 'post',
           body: setGreeting,
           json: true,
-          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/thread_settings?access_token=EAAFTJz88HJUBAJqx5WkPGiIi0jPRyBXmpuN56vZB0FowKCZCzej8zpM4hKTt2ZCXqDZASqL4GUC5ywuOjakob1icM4Sfa4L3xcpsTKsjHl0QHzPylbHjJakyq1hcPNA4i8wt7XjsGZBGoUNYP7Yx2hg8RYiG9xzUoo0dzuThqGwZDZD'
+          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/thread_settings?access_token=' + user.facebook.accessToken
         }
 
-        request(getStartedOptions, (err, res, body) => {
+        request(setGreetingOptions, (err, res, body) => {
           if (err) {
             console.error('error with get started button: ', err)
             throw err
