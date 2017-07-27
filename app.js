@@ -110,8 +110,6 @@ passport.use(new FacebookStrategy({
       if (user) {
         return done(null, user)
       } else {
-        console.log('accessToken: ' + accessToken)
-        console.log('refreshToken: ' + refreshToken)
         var newUser = new User()
         newUser.facebook.userID = profile.id
         newUser.webhook = Math.floor((Math.random() * 10000) + 1)
@@ -389,8 +387,6 @@ io.on('connection', (socket) => {
           page: data.data[i]
         })
         console.log(data.data[i].access_token)
-        console.log('data sent!')
-        // console.log('access_token: ' data.access_token)
       }
     })
   }
