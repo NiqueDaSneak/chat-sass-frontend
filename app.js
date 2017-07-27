@@ -126,9 +126,7 @@ passport.use(new FacebookStrategy({
 // Redirect the user to Facebook for authentication.  When complete,
 // Facebook will redirect the user back to the application at
 //     /auth/facebook/callback
-app.get('/auth/facebook', passport.authenticate('facebook', {
-  scope: ['email', 'pages_show_list', 'manage_pages']
-}))
+app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['pages_show_list', 'manage_pages'] }))
 
 // Facebook will redirect the user to this URL after approval.  Finish the
 // authentication process by attempting to obtain an access token.  If
@@ -156,12 +154,10 @@ app.get('/save-page', (req, res) => {
     user.organization = req.query.org
     user.save((err, user) => {
       if (err) return console.error(err)
-
-      // send this to subscribe the page to our webhook
-      var webhookPromise = new Promise(function(resolve, reject) {
-        var webhookOptions = {
-          method: 'post',
-          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/subscribed_apps?access_token=' + user.facebook.accessToken
+      // get page access token
+      var pageTokeGen = new Promise(function(resolve, reject) {
+        var options = {
+          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '?fields=access_token&access_token=EAAFTJz88HJUBAD30CLZCfPQ70gNaLj7mJ8eVgFThIbacHfijLxLr5bo4rrXtOb1K65YUiE31tbO6InE1S7guPk661hwnEwRCvZBuIjzVFe1KbqxbYZBRxq35vZA2Xast8lZACDF2jXZBuapwj6LzlDXUZA9pDMa4vnQ4UlRljpt5wZDZD'
         }
 
         request(webhookOptions, (err, res, body) => {
@@ -174,7 +170,27 @@ app.get('/save-page', (req, res) => {
           console.log('headers: ', headers)
           console.log('statusCode: ', statusCode)
           console.log('body: ', body)
-          resolve()
+          resolve(body.access_token)
+        })
+      })
+      // send this to subscribe the page to our webhook
+      var webhookPromise = new Promise(function(resolve, reject) {
+        var webhookOptions = {
+          method: 'post',
+          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/subscribed_apps?access_token=' + token
+        }
+
+        request(webhookOptions, (err, res, body) => {
+          if (err) {
+            console.error('error posting json: ', err)
+            throw err
+          }
+          var headers = res.headers
+          var statusCode = res.statusCode
+          console.log('headers: ', headers)
+          console.log('statusCode: ', statusCode)
+          console.log('body: ', body)
+          resolve(token)
         })
       })
       var getStartedPromise = new Promise(function(resolve, reject) {
@@ -188,7 +204,7 @@ app.get('/save-page', (req, res) => {
           method: 'post',
           body: getStarted,
           json: true,
-          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/messenger_profile?access_token=' + user.facebook.accessToken
+          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/messenger_profile?access_token=' + token
         }
 
         request(getStartedOptions, (err, res, body) => {
@@ -216,7 +232,7 @@ app.get('/save-page', (req, res) => {
           method: 'post',
           body: setGreeting,
           json: true,
-          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/thread_settings?access_token=' + user.facebook.accessToken
+          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/thread_settings?access_token=' + token
         }
 
         request(setGreetingOptions, (err, res, body) => {
@@ -232,12 +248,16 @@ app.get('/save-page', (req, res) => {
         })
       })
 
-      webhookPromise.then(() => {
-        console.log('subscribed to webhook')
-        getStartedPromise.then(() => {
-          console.log('new page should have get started button')
-          setGreetingPromise.then(() => {
-            console.log('greeting set! promises done! ')
+      pageTokeGen.then((token) => {
+        console.log('token: ' + token)
+        webhookPromise.then((token) => {
+          console.log('token: ' + token)
+          console.log('subscribed to webhook')
+          getStartedPromise.then((token) => {
+            console.log('new page should have get started button')
+            setGreetingPromise.then(() => {
+              console.log('greeting set! promises done! ')
+            })
           })
         })
       })
