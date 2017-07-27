@@ -92,29 +92,39 @@ passport.use(new FacebookStrategy({
         })
       }
     })
-
   }))
 
 // ROUTES
 // Redirect the user to Facebook for authentication.  When complete,
 // Facebook will redirect the user back to the application at
 //     /auth/facebook/callback
-app.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email', 'pages_show_list', 'manage_pages', 'publish_pages']}));
+app.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email', 'pages_show_list', 'manage_pages']}))
 
 // Facebook will redirect the user to this URL after approval.  Finish the
 // authentication process by attempting to obtain an access token.  If
 // access was granted, the user will be logged in.  Otherwise,
 // authentication has failed.
-var ID
+var id
 app.get('/auth/check-pages', passport.authenticate('facebook', { failureRedirect: '/', session: false }), (req, res, next) => {
-  res.sendFile(path.join(__dirname + '/views/pages.html'))
-  ID = req.user.facebook.userID
+  if (req.user.facebook.pageID) {
+    res.redirect('/dashboard/' + req.user.organization)
+  } else {
+    res.sendFile(path.join(__dirname + '/views/pages.html'))
+    id = req.user.facebook.userID
+  }
 })
 
 app.get('/save-page', (req, res) => {
-  console.log(req.query.pageid)
-  console.log(req.query.userid)
-  res.sendStatus(200)
+  User.findOne({'facebook.userID': req.query.userid}, (err, user) => {
+    if (err) return console.error(err)
+    user.facebook.pageID = req.query.pageid
+    user.organization = req.query.org
+    user.save((err, user) => {
+      if (err) return console.error(err)
+      console.log('user: ' + user)
+      res.redirect('/dashboard/' + user.organization)
+    })
+  })
 })
 
 app.get('/', (req, res) => {
