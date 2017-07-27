@@ -4,7 +4,6 @@ $(document).ready(() => {
   var ID
   socket.on('userID', (data) => {
     ID = data.id
-    console.log(ID)
   })
   socket.emit('requestPages')
 
