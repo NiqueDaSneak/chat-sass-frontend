@@ -154,7 +154,9 @@ app.get('/save-page', (req, res) => {
     user.organization = req.query.org
     user.save((err, user) => {
       if (err) return console.error(err)
+
       // get page access token
+      var token
       var pageTokeGen = new Promise(function(resolve, reject) {
         var options = {
           url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '?fields=access_token&access_token=EAAFTJz88HJUBAD30CLZCfPQ70gNaLj7mJ8eVgFThIbacHfijLxLr5bo4rrXtOb1K65YUiE31tbO6InE1S7guPk661hwnEwRCvZBuIjzVFe1KbqxbYZBRxq35vZA2Xast8lZACDF2jXZBuapwj6LzlDXUZA9pDMa4vnQ4UlRljpt5wZDZD'
@@ -170,7 +172,7 @@ app.get('/save-page', (req, res) => {
           console.log('headers: ', headers)
           console.log('statusCode: ', statusCode)
           console.log('body: ', body)
-          resolve(body.access_token)
+          token = body.access_token
         })
       })
       // send this to subscribe the page to our webhook
