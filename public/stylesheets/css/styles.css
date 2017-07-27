@@ -683,7 +683,7 @@ nav {
     color: white; }
     .pages .pageList a {
       padding-bottom: 4vh;
-      display: inline-block; }
+      display: block; }
 
 body {
   margin: 0;
