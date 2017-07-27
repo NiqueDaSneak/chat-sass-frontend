@@ -175,7 +175,7 @@ app.get('/save-page', (req, res) => {
           console.log('headers: ', headers)
           console.log('statusCode: ', statusCode)
           console.log('body: ', body)
-          resolve(token)
+          resolve()
         })
       })
       var getStartedPromise = new Promise(function(resolve, reject) {
@@ -202,6 +202,7 @@ app.get('/save-page', (req, res) => {
           console.log('headers: ', headers)
           console.log('statusCode: ', statusCode)
           console.log('body: ', body)
+          resolve()
         })
       })
 
@@ -230,6 +231,7 @@ app.get('/save-page', (req, res) => {
           console.log('headers: ', headers)
           console.log('statusCode: ', statusCode)
           console.log('body: ', body)
+          resolve()
         })
       })
 
@@ -242,7 +244,6 @@ app.get('/save-page', (req, res) => {
             })
           })
         })
-      console.log('user: ' + user)
       res.redirect('/dashboard/' + user.organization)
     })
   })
