@@ -72,8 +72,8 @@ app.use(passport.session())
 passport.use(new FacebookStrategy({
     clientID: '372903006444693',
     clientSecret: 'e0cf0b310d6931c9140969a115efefa9',
-    callbackURL: "http://localhost:3000/auth/check-pages"
-    // callbackURL: "http://chat-sass-frontend.herokuapp.com/auth/facebook/callback"
+    // callbackURL: "http://localhost:3000/auth/check-pages"
+    callbackURL: "http://chat-sass-frontend.herokuapp.com/auth/facebook/callback"
   },
   function(accessToken, refreshToken, profile, done) {
     console.log('' + accessToken)
