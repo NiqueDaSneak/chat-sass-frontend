@@ -142,7 +142,6 @@ app.get('/auth/check-pages', passport.authenticate('facebook', {
   if (req.user.facebook.pageID) {
     res.redirect('/dashboard/' + req.user.organization)
   } else {
-    console.log('email: ' + req.user.facebook.email)
     res.sendFile(path.join(__dirname + '/views/pages.html'))
     id = req.user.facebook.userID
   }
@@ -415,13 +414,14 @@ io.on('connection', (socket) => {
       if (err) {
         console.error(err)
       }
+      console.log(body)
       var data = JSON.parse(body)
       for (var i = 0; i < data.data.length; i++) {
         socket.emit('addPages', {
           page: data.data[i]
         })
         console.log('data sent!')
-        console.log(data.data[i])
+        // console.log('access_token: ' data.access_token)
       }
     })
   }
