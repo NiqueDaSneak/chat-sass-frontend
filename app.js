@@ -150,7 +150,7 @@ app.get('/save-page', (req, res) => {
   }, (err, user) => {
     if (err) return console.error(err)
     user.facebook.pageID = req.query.pageid
-    user.organization = req.query.org
+    user.organization = req.query.org.split(' ').join('').toLowerCase()
     user.facebook.accessToken = req.query.access_token
     user.save((err, user) => {
       if (err) return console.error(err)
