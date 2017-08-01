@@ -125,7 +125,7 @@ passport.use(new FacebookStrategy({
 // Redirect the user to Facebook for authentication.  When complete,
 // Facebook will redirect the user back to the application at
 //     /auth/facebook/callback
-app.get('/auth/facebook', passport.authenticate('facebook', { scope: [ 'ads_management', 'email', 'pages_show_list', 'manage_pages'] }))
+app.get('/auth/facebook', passport.authenticate('facebook', { scope: [ 'user_friends', 'ads_management', 'email', 'pages_show_list', 'manage_pages'] }))
 
 // Facebook will redirect the user to this URL after approval.  Finish the
 // authentication process by attempting to obtain an access token.  If
@@ -136,6 +136,7 @@ app.get('/auth/check-pages', passport.authenticate('facebook', {
   failureRedirect: '/',
   session: false
 }), (req, res, next) => {
+  console.log( JSON.stringify(req.user.facebook)
   if (req.user.facebook.pageID) {
     res.redirect('/dashboard/' + req.user.organization)
   } else {
