@@ -101,6 +101,7 @@ passport.use(new FacebookStrategy({
     callbackURL: "http://chat-sass-frontend.herokuapp.com/auth/check-pages"
   },
   function(accessToken, refreshToken, profile, done) {
+    console.log(profile)
     User.findOne({
       'facebook.userID': profile.id
     }, (err, user) => {
@@ -136,7 +137,7 @@ app.get('/auth/check-pages', passport.authenticate('facebook', {
   failureRedirect: '/',
   session: false
 }), (req, res, next) => {
-  console.log('USER: ' + JSON.stringify(req.user))
+  console.log('USER: ' + JSON.stringify(req.user.userID))
   if (req.user.facebook.pageID) {
     res.redirect('/dashboard/' + req.user.organization)
   } else {
@@ -146,7 +147,6 @@ app.get('/auth/check-pages', passport.authenticate('facebook', {
 })
 
 app.get('/save-page', (req, res) => {
-  console.log('USER: ' + JSON.stringify(req.user))
   User.findOne({
     'facebook.userID': req.query.userid
   }, (err, user) => {
