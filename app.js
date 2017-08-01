@@ -136,7 +136,7 @@ app.get('/auth/check-pages', passport.authenticate('facebook', {
   failureRedirect: '/',
   session: false
 }), (req, res, next) => {
-  console.log( JSON.stringify(req.user.facebook)
+  console.log(JSON.stringify(req.user.facebook))
   if (req.user.facebook.pageID) {
     res.redirect('/dashboard/' + req.user.organization)
   } else {
