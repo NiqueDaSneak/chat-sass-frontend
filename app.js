@@ -136,7 +136,7 @@ app.get('/auth/check-pages', passport.authenticate('facebook', {
   failureRedirect: '/',
   session: false
 }), (req, res, next) => {
-  console.log('USER: ' + JSON.stringify(req.user.facebook))
+  console.log('USER: ' + JSON.stringify(req.user))
   if (req.user.facebook.pageID) {
     res.redirect('/dashboard/' + req.user.organization)
   } else {
@@ -146,6 +146,7 @@ app.get('/auth/check-pages', passport.authenticate('facebook', {
 })
 
 app.get('/save-page', (req, res) => {
+  console.log('USER: ' + JSON.stringify(req.user))
   User.findOne({
     'facebook.userID': req.query.userid
   }, (err, user) => {
