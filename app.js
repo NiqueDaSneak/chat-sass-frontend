@@ -101,7 +101,7 @@ passport.use(new FacebookStrategy({
     callbackURL: "http://chat-sass-frontend.herokuapp.com/auth/check-pages"
   },
   function(accessToken, refreshToken, profile, done) {
-    console.log('profile!!!!!!' + profile)
+    console.log('profile!!!!!!' + JSON.stringify(profile))
     console.log('accessToken!!!!!!' + accessToken)
     User.findOne({
       'facebook.userID': profile.id
@@ -110,7 +110,7 @@ passport.use(new FacebookStrategy({
         console.log(err)
       }
       if (user) {
-        console.log('profile!!!!!!' + profile)
+        console.log('profile!!!!!!' + JSON.stringify(profile))
         console.log('accessToken!!!!!!' + accessToken)
         return done(null, user)
       } else {
