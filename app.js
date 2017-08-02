@@ -99,6 +99,7 @@ passport.use(new FacebookStrategy({
     clientSecret: 'e0cf0b310d6931c9140969a115efefa9',
     // callbackURL: "http://localhost:3000/auth/check-pages"
     callbackURL: "http://chat-sass-frontend.herokuapp.com/auth/check-pages"
+    profileFields: ['id', 'emails', 'name'] 
   },
   function(accessToken, refreshToken, profile, done) {
     console.log('profile!!!!!!' + JSON.stringify(profile))
@@ -131,7 +132,7 @@ passport.use(new FacebookStrategy({
 // Redirect the user to Facebook for authentication.  When complete,
 // Facebook will redirect the user back to the application at
 //     /auth/facebook/callback
-app.get('/auth/facebook', passport.authenticate('facebook', { scope: [ 'user_friends', 'ads_management', 'email', 'pages_show_list', 'manage_pages'] }))
+app.get('/auth/facebook', passport.authenticate('facebook', { scope: [ 'publish_pages', 'user_likes', 'pages_messaging', 'user_friends', 'ads_management', 'email', 'pages_show_list', 'manage_pages'] }))
 
 // Facebook will redirect the user to this URL after approval.  Finish the
 // authentication process by attempting to obtain an access token.  If
