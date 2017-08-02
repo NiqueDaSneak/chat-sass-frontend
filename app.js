@@ -26,9 +26,9 @@ var userSchema = mongoose.Schema({
   facebook: {
     userID: Number,
     pageID: Number,
-    accessToken: String
-  },
-  webhook: Number
+    pageAccessToken: String
+    userAccessToken: String
+  }
 })
 
 var User = mongoose.model('User', userSchema)
@@ -118,7 +118,7 @@ passport.use(new FacebookStrategy({
         console.log('accessToken!!!!!!' + accessToken)
         var newUser = new User()
         newUser.facebook.userID = profile.id
-        newUser.webhook = Math.floor((Math.random() * 10000) + 1)
+        newUser.facebook.userAccessToken = accessToken
         newUser.save((err, user) => {
           if (err) return console.error(err)
           return done(null, user)
@@ -159,7 +159,7 @@ app.get('/save-page', (req, res) => {
     if (err) return console.error(err)
     user.facebook.pageID = req.query.pageid
     user.organization = req.query.org.split(' ').join('').toLowerCase()
-    user.facebook.accessToken = req.query.access_token
+    user.facebook.pageAccessToken = req.query.access_token
     user.save((err, user) => {
       if (err) return console.error(err)
 
