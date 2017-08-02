@@ -102,8 +102,6 @@ passport.use(new FacebookStrategy({
     profileFields: ['id', 'emails', 'name']
   },
   function(accessToken, refreshToken, profile, done) {
-    console.log('profile!!!!!!' + JSON.stringify(profile))
-    console.log('accessToken!!!!!!' + accessToken)
     User.findOne({
       'facebook.userID': profile.id
     }, (err, user) => {
@@ -111,14 +109,12 @@ passport.use(new FacebookStrategy({
         console.log(err)
       }
       if (user) {
-        console.log('profile!!!!!!' + JSON.stringify(profile))
-        console.log('profile email: ' + profile.emails[0].value)
-        console.log('accessToken!!!!!!' + accessToken)
         return done(null, user)
       } else {
-        console.log('accessToken!!!!!!' + accessToken)
         var newUser = new User()
-        // newUser.email = profile.emails[0].value
+        if (profile.emails[0].value) {
+          newUser.email = profile.emails[0].value
+        }
         newUser.facebook.userID = profile.id
         newUser.facebook.userAccessToken = accessToken
         newUser.save((err, user) => {
