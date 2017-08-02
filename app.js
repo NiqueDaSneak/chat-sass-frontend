@@ -26,7 +26,7 @@ var userSchema = mongoose.Schema({
   facebook: {
     userID: Number,
     pageID: Number,
-    pageAccessToken: String
+    pageAccessToken: String,
     userAccessToken: String
   }
 })
