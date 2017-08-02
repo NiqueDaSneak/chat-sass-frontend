@@ -142,11 +142,12 @@ app.get('/auth/check-pages', passport.authenticate('facebook', {
   failureRedirect: '/',
   session: false
 }), (req, res, next) => {
-  console.log('USER: ' + JSON.stringify(req.user.userID))
   if (req.user.facebook.pageID) {
+    console.log('USER: ' + JSON.stringify(req.user))
     res.redirect('/dashboard/' + req.user.organization)
   } else {
     res.sendFile(path.join(__dirname + '/views/pages.html'))
+    console.log('USER: ' + JSON.stringify(req.user))
     id = req.user.facebook.userID
   }
 })
@@ -382,7 +383,6 @@ io.on('connection', (socket) => {
       method: 'get',
       url: "https://graph.facebook.com/v2.6/" + id + "/accounts?access_token=EAAFTJz88HJUBAAuDTlDz2QflnfI2nM8E7rZCkxTWHJrlhngEIUqNHWpVAnwvOhyEZCbRB3wxL2en3Pca7eZAW7WJmIKyrgRFHgyt1oupDz7n2v0BBZCiMSozLoZAxOvdSeZCBLFfFirffklKfN2e4a5JBZCd7p7s5Y2Us6VVEcgeQZDZD"
     }
-    // https://graph.facebook.com/v2.6/10207609824923988/accounts?access_token=EAAFTJz88HJUBAAuDTlDz2QflnfI2nM8E7rZCkxTWHJrlhngEIUqNHWpVAnwvOhyEZCbRB3wxL2en3Pca7eZAW7WJmIKyrgRFHgyt1oupDz7n2v0BBZCiMSozLoZAxOvdSeZCBLFfFirffklKfN2e4a5JBZCd7p7s5Y2Us6VVEcgeQZDZD
     request(options, function(err, res, body) {
       if (err) {
         console.error(err)
@@ -393,7 +393,8 @@ io.on('connection', (socket) => {
         socket.emit('addPages', {
           page: data.data[i]
         })
-        console.log(data.data[i].access_token)
+        console.log('pageName!!!!' + data.data[i].name)
+        console.log('access_token!!!!' + data.data[i].access_token)
       }
     })
   }
