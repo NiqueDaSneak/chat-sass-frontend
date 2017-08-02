@@ -112,12 +112,13 @@ passport.use(new FacebookStrategy({
       }
       if (user) {
         console.log('profile!!!!!!' + JSON.stringify(profile))
+        console.log('profile email: ' + profile.emails[0].value)
         console.log('accessToken!!!!!!' + accessToken)
         return done(null, user)
       } else {
-        console.log('profile!!!!!!' + profile)
         console.log('accessToken!!!!!!' + accessToken)
         var newUser = new User()
+        // newUser.email = profile.emails[0].value
         newUser.facebook.userID = profile.id
         newUser.facebook.userAccessToken = accessToken
         newUser.save((err, user) => {
@@ -224,7 +225,7 @@ app.get('/save-page', (req, res) => {
           method: 'post',
           body: setGreeting,
           json: true,
-          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/thread_settings?access_token=' + user.facebook.accessToken
+          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/thread_settings?access_token=' + user.facebook.pageAccessToken
         }
 
         request(setGreetingOptions, (err, res, body) => {
