@@ -37,7 +37,7 @@
     width: 80vw
     padding-left: 10vw
     color: $siteMain
-    div
+    .btn-holder
       padding-top: 4vh
       padding-bottom: 4vh
       button
@@ -61,15 +61,14 @@
       font-size: 5vw
       display: block
       padding-bottom: 4vh
-      &:nth-of-type(1)
-      &:nth-of-type(2)
-      &:nth-of-type(3)
-        padding-top: 8vh
+      // &:nth-of-type(1)
+      // &:nth-of-type(2)
+      // &:nth-of-type(3)
+      // &:nth-of-type(4)
       &:nth-of-type(4)
-      &:nth-of-type(5)
         font-weight: 500
         padding-bottom: 1vh
-      &:nth-of-type(6)
+      &:nth-of-type(5)
         font-weight: 500
         padding-bottom: 1vh
     img
@@ -91,25 +90,42 @@
       font-size: 5vw
       box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35)
 
-  .file-upload
-    width: 0.1px
-    height: 0.1px
-    opacity: 0
-    overflow: hidden
-    position: absolute
-    z-index: -1
-  .file-upload-btn
-    height: 7vh
-    border: none
-    border-radius: 1vh
-    padding: 2vh
+    .uploader input[type="file"]
+      position: fixed
+      top: -1000px
+    .uploader
+      border-radius: 2vw
+      color: white
+      background: $siteMain
+      display: inline-block
+      margin-bottom: 4vh
+      padding-top: 2vh
+      padding-bottom: 2vh
+      padding-left: 2vw
+      padding-right: 2vw
+      box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35)
+      span
+        padding-bottom: 0
+.msgGroupList
+  padding-bottom: 0
+  div
+    padding-top: 0
+    padding-bottom: 0vh
     font-size: 5vw
-    -webkit-box-shadow: none
-    box-shadow: none
-    color: white
-    background-color: $siteMain
-    margin: 0
-    box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35)
+  // .file-upload + label
+  //   overflow: hidden
+  //   position: relative
+    // height: 7vh
+    // border: none
+    // border-radius: 1vh
+    // padding: 2vh
+    // font-size: 5vw
+    // -webkit-box-shadow: none
+    // box-shadow: none
+    // color: white
+    // background-color: $siteMain
+    // margin: 0
+    // box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35)
   // input:focus
   //   outline: none
   // input

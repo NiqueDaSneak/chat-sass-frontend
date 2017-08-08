@@ -550,10 +550,10 @@ header {
     width: 80vw;
     padding-left: 10vw;
     color: #3b5998; }
-    .chat-ui form div {
+    .chat-ui form .btn-holder {
       padding-top: 4vh;
       padding-bottom: 4vh; }
-      .chat-ui form div button {
+      .chat-ui form .btn-holder button {
         width: 28vw;
         height: 7vh;
         border: none;
@@ -565,22 +565,20 @@ header {
         margin: 0;
         -webkit-box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
                 box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35); }
-        .chat-ui form div button:first-of-type {
+        .chat-ui form .btn-holder button:first-of-type {
           background-color: #70B51F;
           margin-right: 6vw; }
-        .chat-ui form div button:last-of-type {
+        .chat-ui form .btn-holder button:last-of-type {
           background-color: #D0021B;
           font-weight: 500; }
     .chat-ui form span {
       font-size: 5vw;
       display: block;
       padding-bottom: 4vh; }
-      .chat-ui form span:nth-of-type(3) {
-        padding-top: 8vh; }
-      .chat-ui form span:nth-of-type(5) {
+      .chat-ui form span:nth-of-type(4) {
         font-weight: 500;
         padding-bottom: 1vh; }
-      .chat-ui form span:nth-of-type(6) {
+      .chat-ui form span:nth-of-type(5) {
         font-weight: 500;
         padding-bottom: 1vh; }
     .chat-ui form img {
@@ -602,26 +600,30 @@ header {
       font-size: 5vw;
       -webkit-box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
               box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35); }
-  .chat-ui .file-upload {
-    width: 0.1px;
-    height: 0.1px;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: -1; }
-  .chat-ui .file-upload-btn {
-    height: 7vh;
-    border: none;
-    border-radius: 1vh;
-    padding: 2vh;
-    font-size: 5vw;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    color: white;
-    background-color: #3b5998;
-    margin: 0;
-    -webkit-box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
-            box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35); }
+    .chat-ui form .uploader input[type="file"] {
+      position: fixed;
+      top: -1000px; }
+    .chat-ui form .uploader {
+      border-radius: 2vw;
+      color: white;
+      background: #3b5998;
+      display: inline-block;
+      margin-bottom: 4vh;
+      padding-top: 2vh;
+      padding-bottom: 2vh;
+      padding-left: 2vw;
+      padding-right: 2vw;
+      -webkit-box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
+              box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35); }
+      .chat-ui form .uploader span {
+        padding-bottom: 0; }
+
+.msgGroupList {
+  padding-bottom: 0; }
+  .msgGroupList div {
+    padding-top: 0;
+    padding-bottom: 0vh;
+    font-size: 5vw; }
 
 .groups {
   display: none;
