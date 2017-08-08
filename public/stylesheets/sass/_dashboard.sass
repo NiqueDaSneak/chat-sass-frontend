@@ -180,3 +180,28 @@ header
     position: absolute
     right: 5vw
     font-weight: 500
+
+.loading
+  opacity: 0
+  display: none
+  text-align: center
+  position: fixed
+  top: 0
+  background-color: black
+  opacity: 0.7
+  height: 100vh
+  width: 100vw
+  img
+    height: 20vh
+    margin-top: 40vh
+    animation: rotate 1.9s linear infinite
+
+
+@keyframes rotate
+  from
+    transform: rotate(0deg)
+  50%
+    height: 15vh
+    margin-top: 42.5vh
+  to
+    transform: rotate(360deg)

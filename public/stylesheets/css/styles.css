@@ -289,6 +289,44 @@ header {
     right: 5vw;
     font-weight: 500; }
 
+.loading {
+  opacity: 0;
+  display: none;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  background-color: black;
+  opacity: 0.7;
+  height: 100vh;
+  width: 100vw; }
+  .loading img {
+    height: 20vh;
+    margin-top: 40vh;
+    -webkit-animation: rotate 1.9s linear infinite;
+            animation: rotate 1.9s linear infinite; }
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  50% {
+    height: 15vh;
+    margin-top: 42.5vh; }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  50% {
+    height: 15vh;
+    margin-top: 42.5vh; }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
 .active-day {
   color: #869ECC;
   -webkit-transition: color 1.3s;
@@ -589,7 +627,8 @@ header {
       font-size: 4vw;
       padding: 3vw;
       border-radius: 1vw;
-      border: none;
+      border: none; }
+    .chat-ui form textarea {
       padding-bottom: 4vh; }
     .chat-ui form input[type='date'], .chat-ui form input[type='time'] {
       padding: 2vw;
