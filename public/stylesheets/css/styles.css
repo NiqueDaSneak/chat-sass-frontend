@@ -290,18 +290,12 @@ header {
     font-weight: 500; }
 
 .active-day {
-  background-color: #3b5998 !important;
-  color: white;
-  border-radius: 16px;
-  padding: 0.3vh;
-  width: 4vh;
-  height: 4vh;
-  -webkit-transition: background-color 1.3s;
-  transition: background-color 1.3s; }
+  color: #869ECC;
+  -webkit-transition: color 1.3s;
+  transition: color 1.3s; }
 
 .msg-day {
-  background-color: white;
-  color: #3b5998;
+  color: #5772AC;
   border-radius: 16px;
   padding: 0.3vh;
   width: 4vh;
@@ -324,12 +318,24 @@ header {
   transition: opacity .6s, bottom .6s;
   -webkit-transition-delay: bottom .4s;
           transition-delay: bottom .4s;
-  padding-top: 6vh;
-  background-color: #E0E0E0;
-  color: #3b5998;
+  background-color: #14306B;
+  color: white;
   width: 100vw;
-  height: 38vh;
+  height: 52vh;
   padding-bottom: 6vh; }
+  .toggle-calendar nav {
+    padding-bottom: 3vh;
+    text-align: center;
+    padding-top: 3vh; }
+    .toggle-calendar nav .controls-month {
+      font-weight: 100;
+      line-height: 10vh;
+      font-size: 10vw;
+      margin-bottom: 3vh; }
+    .toggle-calendar nav img {
+      z-index: 2;
+      position: fixed;
+      width: 10vw; }
   .toggle-calendar span {
     line-height: 4.5vh; }
   .toggle-calendar .weekdays {

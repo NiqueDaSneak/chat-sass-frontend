@@ -1,17 +1,11 @@
 $weekPadding: 7vh
 
 .active-day
-  background-color: $siteMain !important
-  color: white
-  border-radius: 16px
-  padding: 0.3vh
-  width: 4vh
-  height: 4vh
-  transition: background-color 1.3s
+  color: $secondMain
+  transition: color 1.3s
 
 .msg-day
-  background-color: white
-  color: $siteMain
+  color: $thirdMain
   border-radius: 16px
   padding: 0.3vh
   width: 4vh
@@ -30,12 +24,24 @@ $weekPadding: 7vh
   bottom: -64vh
   transition: opacity .6s, bottom .6s
   transition-delay: bottom .4s
-  padding-top: 6vh
-  background-color: $bodyBackground
-  color: $siteMain
+  background-color: $fifthMain
+  color: white
   width: 100vw
-  height: 38vh
+  height: 52vh
   padding-bottom: 6vh
+  nav
+    padding-bottom: 3vh
+    text-align: center
+    padding-top: 3vh
+    .controls-month
+      font-weight: 100
+      line-height: 10vh
+      font-size: 10vw
+      margin-bottom: 3vh
+    img
+      z-index: 2
+      position: fixed
+      width: 10vw
   span
     line-height: 4.5vh
   .weekdays
