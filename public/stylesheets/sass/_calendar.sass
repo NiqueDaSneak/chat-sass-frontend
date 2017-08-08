@@ -1,9 +1,7 @@
 $weekPadding: 7vh
 
-
-
 .active-day
-  background-color: black !important
+  background-color: $siteMain !important
   color: white
   border-radius: 16px
   padding: 0.3vh
@@ -12,8 +10,8 @@ $weekPadding: 7vh
   transition: background-color 1.3s
 
 .msg-day
-  background-color: grey
-  color: white
+  background-color: white
+  color: $siteMain
   border-radius: 16px
   padding: 0.3vh
   width: 4vh
@@ -21,43 +19,55 @@ $weekPadding: 7vh
   transition: background-color .9s
 
 .toggle-calendar.active
-  bottom: 6vh
+  opacity: 1
+  bottom: 0vh
 .toggle-calendar
+  border-radius: 1vh
+  opacity: 0
   text-align: center
   font-size: 3.9vw
   position: fixed
-  bottom: -44vh
-  transition: bottom 1s
+  bottom: -64vh
+  transition: opacity .6s, bottom .6s
+  transition-delay: bottom .4s
+  padding-top: 6vh
+  background-color: $bodyBackground
+  color: $siteMain
+  width: 100vw
+  height: 38vh
+  padding-bottom: 6vh
   span
     line-height: 4.5vh
   .weekdays
+    font-weight: 500
+    font-size: 5vw
     span:nth-of-type(1)
       position: fixed
-      left: 6vw
+      left: 5vw
 
     span:nth-of-type(2)
       position: fixed
-      left: 18.85vw
+      left: 18.5vw
 
     span:nth-of-type(3)
       position: fixed
-      left: 31.7vw
+      left: 33vw
 
     span:nth-of-type(4)
       position: fixed
-      left: 44.55vw
+      left: 46vw
 
     span:nth-of-type(5)
       position: fixed
-      left: 57.4vw
+      right: 33vw
 
     span:nth-of-type(6)
       position: fixed
-      left: 70.25vw
+      right: 18.5vw
 
     span:nth-of-type(7)
       position: fixed
-      left: 83.1vw
+      right: 5vw
 
   .days
     .first
@@ -65,182 +75,188 @@ $weekPadding: 7vh
 
       span:nth-of-type(1)
         position: fixed
-        left: 6vw
+        left: 5vw
 
       span:nth-of-type(2)
         position: fixed
-        left: 18.85vw
+        left: 18.5vw
 
       span:nth-of-type(3)
         position: fixed
-        left: 31.7vw
+        left: 33vw
 
       span:nth-of-type(4)
         position: fixed
-        left: 44.55vw
+        left: 46vw
+        padding-left: 1vw
 
       span:nth-of-type(5)
         position: fixed
-        left: 57.4vw
+        right: 33vw
 
       span:nth-of-type(6)
         position: fixed
-        left: 70.25vw
+        right: 18.5vw
 
       span:nth-of-type(7)
         position: fixed
-        left: 83.1vw
+        right: 5vw
 
     .second
       padding-top: $weekPadding
 
       span:nth-of-type(1)
         position: fixed
-        left: 6vw
+        left: 5vw
 
       span:nth-of-type(2)
         position: fixed
-        left: 18.85vw
+        left: 18.5vw
 
       span:nth-of-type(3)
         position: fixed
-        left: 31.7vw
+        left: 33vw
 
       span:nth-of-type(4)
         position: fixed
-        left: 44.55vw
+        left: 46vw
+        padding-left: 1vw
 
       span:nth-of-type(5)
         position: fixed
-        left: 57.4vw
+        right: 33vw
 
       span:nth-of-type(6)
         position: fixed
-        left: 70.25vw
+        right: 18.5vw
 
       span:nth-of-type(7)
         position: fixed
-        left: 83.1vw
+        right: 5vw
 
     .third
       padding-top: $weekPadding
 
       span:nth-of-type(1)
         position: fixed
-        left: 6vw
+        left: 5vw
 
       span:nth-of-type(2)
         position: fixed
-        left: 18.85vw
+        left: 18.5vw
 
       span:nth-of-type(3)
         position: fixed
-        left: 31.7vw
+        left: 33vw
 
       span:nth-of-type(4)
         position: fixed
-        left: 44.55vw
+        left: 46vw
+        padding-left: 1vw
 
       span:nth-of-type(5)
         position: fixed
-        left: 57.4vw
+        right: 33vw
 
       span:nth-of-type(6)
         position: fixed
-        left: 70.25vw
+        right: 18.5vw
 
       span:nth-of-type(7)
         position: fixed
-        left: 83.1vw
+        right: 5vw
 
     .fourth
       padding-top: $weekPadding
 
       span:nth-of-type(1)
         position: fixed
-        left: 6vw
+        left: 5vw
 
       span:nth-of-type(2)
         position: fixed
-        left: 18.85vw
+        left: 18.5vw
 
       span:nth-of-type(3)
         position: fixed
-        left: 31.7vw
+        left: 33vw
 
       span:nth-of-type(4)
         position: fixed
-        left: 44.55vw
+        left: 46vw
+        padding-left: 1vw
 
       span:nth-of-type(5)
         position: fixed
-        left: 57.4vw
+        right: 33vw
 
       span:nth-of-type(6)
         position: fixed
-        left: 70.25vw
+        right: 18.5vw
 
       span:nth-of-type(7)
         position: fixed
-        left: 83.1vw
+        right: 5vw
 
     .fifth
       padding-top: $weekPadding
 
       span:nth-of-type(1)
         position: fixed
-        left: 6vw
+        left: 5vw
 
       span:nth-of-type(2)
         position: fixed
-        left: 18.85vw
+        left: 18.5vw
 
       span:nth-of-type(3)
         position: fixed
-        left: 31.7vw
+        left: 33vw
 
       span:nth-of-type(4)
         position: fixed
-        left: 44.55vw
+        left: 46vw
+        padding-left: 1vw
 
       span:nth-of-type(5)
         position: fixed
-        left: 57.4vw
+        right: 33vw
 
       span:nth-of-type(6)
         position: fixed
-        left: 70.25vw
+        right: 18.5vw
 
       span:nth-of-type(7)
         position: fixed
-        left: 83.1vw
+        right: 5vw
     .sixth
       padding-top: $weekPadding
 
       span:nth-of-type(1)
         position: fixed
-        left: 6vw
+        left: 5vw
 
       span:nth-of-type(2)
         position: fixed
-        left: 18.85vw
+        left: 18.5vw
 
       span:nth-of-type(3)
         position: fixed
-        left: 31.7vw
+        left: 33vw
 
       span:nth-of-type(4)
         position: fixed
-        left: 44.55vw
+        left: 46vw
+        padding-left: 1vw
 
       span:nth-of-type(5)
         position: fixed
-        left: 57.4vw
+        right: 33vw
 
       span:nth-of-type(6)
         position: fixed
-        left: 70.25vw
+        right: 18.5vw
 
       span:nth-of-type(7)
         position: fixed
-        left: 83.1vw
+        right: 5vw
