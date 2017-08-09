@@ -10,7 +10,7 @@ $(document).ready(() => {
   // UI & INTERACTIONS
   $('.showGroups').click(() => {
     socket.emit('getList', {org: org})
-    $('.groups').toggleClass('hide')
+    $('.groups').fadeIn()
   })
 
   $('.list .addGroup').click(() => {
@@ -19,7 +19,7 @@ $(document).ready(() => {
     $('.new').toggleClass('hide')
   })
 
-  $('.new button').click(() => {
+  $('.new .create').click(() => {
     var arr = []
     for (var i = 0; i < $('.names').children().length; i++) {
       if ($($('.names').children()[i]).hasClass('selected')) {
@@ -34,8 +34,23 @@ $(document).ready(() => {
     $('.groupName').val("")
   })
 
-  $('.groups .header img').click(() => {
-    $('.groups').toggleClass('hide')
+  $('.new .cancel').click(() => {
+    $('.new').toggleClass('hide')
+    $('.list').toggleClass('hide')
+    $('.names').empty()
+    $('.groupName').val("")
+  })
+
+
+  $('.groups .header span:last-of-type').click(() => {
+    ASQ($('.groups').fadeOut())
+    .then(() => {
+      $('.new').addClass('hide')
+      $('.list').removeClass('hide')
+      $('.names').empty()
+      $('.groupName').val("")
+    })
+
   })
 
   $('.submenu').click(() => {
