@@ -323,6 +323,19 @@ io.on('connection', (socket) => {
     })
   })
 
+  socket.on('requestMembersForMessage', (data) => {
+    Group.find({
+      organization: data.data
+    }, (err, groups) => {
+      if (err) return console.error(err)
+      for (var i = 0; i < groups.length; i++) {
+        socket.emit('showGroupsForMessage', {
+          data: groups[i]
+        })
+      }
+    })
+  })
+
   socket.on('createGroup', (data) => {
     console.log(data.groupMembers)
     var newGroup = new Group({

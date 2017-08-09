@@ -1,49 +1,52 @@
-.groups.hide
-  opacity: 0
-  // transition: opacity 1s
-  top: -107vh
 .groups
-  opacity: 1
-  transition: opacity 1s
+  display: none
   width: 100vw
-  background-color: white
+  background-color: $bodyBackground
   position: absolute
   top: 0
   z-index: 2
   min-height: 105vh
   .header
+    position: fixed
+    width: 100vw
     text-align: center
-    padding-bottom: 4vh
-    img
-      position: absolute
-      left: 6vw
-      top: 3vh
-      width: 10vw
-      display: inline-block
-    p
+    padding-top: 4vh
+    background-color: $siteMain
+    line-height: 6vh
+    height: 9vh
+    color: white
+    box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75)
+    font-weight: 500
+    span:first-of-type
       display: inline-block
       line-height: 0vh
-      font-size: 10vw
+      font-size: 5vw
+    span:last-of-type
+      right: 5vw
+      position: absolute
   .list, .new
-    background-color: $siteGrey
-    color: white
+    background-color: white
+    color: $siteMain
     width: 84vw
-    font-size: 6vw
-    border-radius: 4vw
+    border-radius: 1vw
+    margin-top: 20vh
+    box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75)
   .list
+    font-size: 6vw
     opacity: 1
     left: 8vw
     transition: opacity .8s
-    padding-top: 5vh
     margin-left: 8vw
     text-align: center
     padding-bottom: 2vh
     div
-      border: 1vw dotted
-      width: 50vw
-      border-radius: 5vw
-      padding: 3vw
-      margin-left: 12.5vw
+      width: 84vw
+      font-size: 4vw
+      padding-top: 6vw
+      padding-bottom: 6vw
+      background-color: $siteMain
+      font-weight: 500
+      color: white
   .list.hide
     opacity: 0
     left: -100vw
@@ -56,48 +59,66 @@
     opacity: 0
     transition: opacity 1.1s
   .new
-    bottom: 0
     margin-left: 8vw
     transition: opacity 1.1s
     transition-delay: .3s
     opacity: 1
     margin-bottom: 6vh
+    padding-bottom: 4vh
+    text-align: center
     input
-      width: 77.5vw
+      width: 84vw
       left: 0
       top: 0
-      font-size: 5.7vw
+      font-size: 4vw
+      text-align: center
       height: 7vh
-      border-radius: 4vw 4vw 0vw 0vw
-      padding-left: 5vw
-      margin-bottom: 1vh
-    button
-      width: 84vw
-      height: 10vh
+      border-radius: 2vw 2vw 0vw 0vw
       border: none
-      border-radius: 0vw 0vw 4vw 4vw
-      font-size: 7vw
+      padding-top: 6vh
+      font-weight: 500
+    button
+      width: 28vw
+      height: 7vh
+      border: none
+      border-radius: 1vh
+      font-size: 5vw
+      -webkit-box-shadow: none
       box-shadow: none
       color: white
-      background-color: green
       margin: 0
+      box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35)
+      font-weight: 300
+      &:first-of-type
+        background-color: $siteGreen
+        margin-right: 6vw
+      &:last-of-type
+        background-color: $siteRed
+        font-weight: 500
     .names
       margin-top: 3.5vh
+      text-align: left
+      margin-bottom: 8vh
       div.selected
-        background-color: lightgrey
+        background-color: $siteMain
+        color: white
+        p
+          font-weight: 500
       div
-        margin-bottom: 3.5vh
-        padding-left: 5vw
-        padding-bottom: 1vh
-        padding-top: 1vh
-        transition: background-color .5s
+        padding-left: 16vw
+        padding-bottom: 2.4vh
+        padding-top: 2.4vh
+        transition: background-color .7s, color .2s
         img
           width: 10vw
           vertical-align: middle
+          border-radius: 6vw
         p
           display: inline
           vertical-align: middle
           padding-left: 4vw
+          font-weight: 300
+          transition: font-weight .6s
 
 .group-name
   color: white

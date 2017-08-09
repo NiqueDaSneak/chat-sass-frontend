@@ -1,7 +1,7 @@
 footer
   position: fixed
   width: 100vw
-  background-color: $siteGrey
+  background-color: $siteMain
   bottom: 0
   font-size: 6vw
   padding-top: 4vh
@@ -11,73 +11,77 @@ footer
   justify-content: center
   align-items: center
   transition: bottom 1s
-  height: 2vh
-
-  .toggle
-    cursor: pointer
-    padding-left: 8vw
-    width: 33vw
-    vertical-align: middle
-    display: inline-block
-
-    img
-      width: 4vw
-      transition: transform 1s
-
-  .add-new
-    cursor: pointer
-    width: 33vw
-    display: inline-block
-    vertical-align: middle
-
-    div
-      width: 11vw
-      height: 0.3vh
-      background-color: lightgrey
-      border-radius: 50px
-      margin-left: 7vw
-      margin-right: 16vw
-
-      &:first-of-type
-        transform: rotate(90deg)
-
-      +tablet
-        width: 7.4vw
-        margin-left: 9vw
-
-  .hamburger
-    cursor: pointer
-    width: 33vw
-    vertical-align: middle
-    display: inline-block
-
-    div
-      width: 16vw
-      max-width: 10vw
-      height: 0.4vh
-      background-color: lightgrey
-      border-radius: 50px
-      margin-left: 4vw
-
-      &:first-of-type
-        margin-bottom: 1.1vh
-
-      &:nth-of-type(2)
-        margin-bottom: 1vh
-
-      &:nth-of-type(3)
-
-footer.active
-  bottom: 49vh
-
-footer.sub
-  bottom: 21vh
-
+  height: 5vh
+  // box-shadow: 0vw -0.1vh 1vh 0vh rgba(0, 0, 0, 0.75)
   img
-    transform: rotate(-180deg)
+    &:first-of-type
+      width: 12vw
+    &:nth-of-type(2)
+      padding-left: 20vw
+      padding-right: 20vw
+      width: 15vw
+    &:last-of-type
+      width: 12vw
 
-  +tablet
-    bottom: 44vh
+  // .toggle
+  //   cursor: pointer
+  //   padding-left: 8vw
+  //   width: 33vw
+  //   vertical-align: middle
+  //   display: inline-block
+  //
+  //   img
+  //     width: 4vw
+  //     transition: transform 1s
+  //
+  // .add-new
+  //   cursor: pointer
+  //   width: 33vw
+  //   display: inline-block
+  //   vertical-align: middle
+  //
+  //   div
+  //     width: 11vw
+  //     height: 0.3vh
+  //     background-color: lightgrey
+  //     border-radius: 50px
+  //     margin-left: 7vw
+  //     margin-right: 16vw
+  //
+  //     &:first-of-type
+  //       transform: rotate(90deg)
+  //
+  //     +tablet
+  //       width: 7.4vw
+  //       margin-left: 9vw
+  //
+  // .hamburger
+  //   cursor: pointer
+  //   width: 33vw
+  //   vertical-align: middle
+  //   display: inline-block
+  //
+  //   div
+  //     width: 16vw
+  //     max-width: 10vw
+  //     height: 0.4vh
+  //     background-color: lightgrey
+  //     border-radius: 50px
+  //     margin-left: 4vw
+  //
+  //     &:first-of-type
+  //       margin-bottom: 1.1vh
+  //
+  //     &:nth-of-type(2)
+  //       margin-bottom: 1vh
+  //
+  //     &:nth-of-type(3)
+  //
+  // img
+  //   transform: rotate(-180deg)
+  //
+  // +tablet
+  //   bottom: 44vh
 
 .main-calendar
   font-size: 15vw
@@ -106,13 +110,10 @@ nav
       right: 10vw
 
 .todays-msgs
-  text-align: center
   font-size: 6vw
   transition: padding-left 1s, opacity .7s
-  .header
-    padding-top: 4vh
-  img
-    width: 60vw
+  padding-top: 20vh
+  padding-bottom: 25vh
 .todays-msgs.inactive
   opacity: 0
 
@@ -154,40 +155,53 @@ nav
     &:nth-child(4)
       bottom: -20vh
 
+.hide
+  display: none
+
+header
+  background-color: $siteMain
+  height: 9vh
+  color: white
+  vertical-align: middle
+  padding-left: 5vw
+  padding-top: 4vh
+  // box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75)
+  font-weight: 300
+  position: fixed
+  width: 100vw
+  top: 0
+  span:first-of-type
+      img
+        width: 8vw
+        vertical-align: middle
+        margin-right: 3vw
+  .go-to-today
+    line-height: 5vh
+    position: fixed
+    right: 5vw
+    font-weight: 500
+
+.loading
+  opacity: 0
+  display: none
+  text-align: center
+  position: fixed
+  top: 0
+  background-color: black
+  opacity: 0.7
+  height: 100vh
+  width: 100vw
+  img
+    height: 20vh
+    margin-top: 40vh
+    animation: rotate 1.9s linear infinite
 
 
-// .submenu
-//   position: fixed
-//   bottom: -20vh
-//   transition: bottom 1s
-//   div
-//     bottom: -20vh
-// .submenu.active
-//   bottom: 0
-//   right: 50vw
-//   div
-//     // position: absolute
-//     background-color: green
-//     width: 50vw
-//     height: 10vh
-//     // transition: bottom 1s
-//     &:first-of-type
-//       bottom: 10vh
-//       background-color: green
-//       left: 0vw
-//       transition: bottom 1s
-//     &:nth-of-type(2)
-//       bottom: 10vh
-//       background-color: red
-//       right: 0vw
-//       transition: bottom 1s
-//     &:nth-of-type(3)
-//       bottom: 0vh
-//       background-color: yellow
-//       left: 0vw
-//       transition: bottom 1s
-//     &:nth-of-type(4)
-//       bottom: 0vh
-//       background-color: blue
-//       right: 0vw
-//       transition: bottom 1s
+@keyframes rotate
+  from
+    transform: rotate(0deg)
+  50%
+    height: 15vh
+    margin-top: 42.5vh
+  to
+    transform: rotate(360deg)

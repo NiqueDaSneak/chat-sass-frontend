@@ -4,13 +4,12 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="/socket.io/socket.io.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
   <script
     src="https://code.jquery.com/jquery-2.2.4.js"
     integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
     crossorigin="anonymous"></script>
-  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
   <meta charset="utf-8">
   <script src="/js/asq.js" charset="utf-8"></script>
   <script src="/js/calendar.js" charset="utf-8"></script>
@@ -22,34 +21,30 @@
 </head>
 
 <body>
+  <header>
+      <span class="toggle">
+        <img class="open" src="/imgs/cal.svg" alt="">
+        <img class="close hide" src="/imgs/x.svg" alt="">
+        <span class="header-month"></span>
+        <span class="header-date"></span>
+      </span>
+      <span class="go-to-today">Go To Today</span>
+  </header>
 
-  <nav>
-    <img class="left" src="/imgs/left-arrow.svg" alt="Left Arrow">
-    <span class="main-calendar"></span>
-    <img class="right" src="/imgs/right-arrow.svg" alt="Right Arrow">
-  </nav>
-
-  <div class="todays-msgs">
-
-  </div>
+  <div class="todays-msgs"></div>
 
   <footer>
-    <div class="toggle">
-      <span class="month"></span>
-      <img src="/imgs/triangle.svg" alt="toggle calendar">
-    </div>
-    <div class="add-new">
-      <div></div>
-      <div></div>
-    </div>
-    <div class="hamburger">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+    <img class="showGroups" src="/imgs/groups.svg" alt="">
+    <img class="add-new" src="/imgs/add.svg" alt="">
+    <img src="/imgs/more.svg" alt="">
   </footer>
 
   <div class="toggle-calendar">
+    <nav>
+      <img class="left" src="/imgs/left-arrow.svg" alt="Left Arrow">
+      <span class="controls-month"></span>
+      <img class="right" src="/imgs/right-arrow.svg" alt="Right Arrow">
+    </nav>
     <div class="weekdays">
       <span>Su</span>
       <span>Mo</span>
@@ -76,52 +71,62 @@
     <div class="showGroups">Groups</div>
   </div>
 
-  <div class="groups hide">
+  <div class="groups">
     <div class="header">
-      <img src="/imgs/close-icon.svg" alt="">
-      <p>Groups</p>
+      <span>Groups</span>
+      <span>Exit</span>
     </div>
 
     <div class="list">
-      <div class="addGroup">Add Group</div>
+      <div class="addGroup">Create New Group</div>
       <span class="listNames">
 
       </span>
     </div>
 
     <div class="new hide">
-      <input class="groupName" placeholder="Give the group a name" type="text" name="groupName" value="">
+      <input class="groupName" placeholder="Tap &amp; give the group a name" type="text" name="groupName" value="">
       <div class="names"></div>
-      <!-- <ul>
-      </ul> -->
       <button class="create" type="button" name="create">Create</button>
+      <button class="cancel" type="button" name="cancel">Cancel</button>
     </div>
   </div>
 
   <div class="chat-ui">
-    <div class="botMessages"></div>
-    <!-- <form class="msg-data" action="https://chat-sass-image-uploader.herokuapp.com/submit-data" method="post" enctype="multipart/form-data"> -->
+    <div class="header">
+      <span>Create Message</span>
+      <span>Exit</span>
+    </div>
 
+    <!-- <form class="msg-data" action="https://chat-sass-image-uploader.herokuapp.com/submit-data" method="post" enctype="multipart/form-data"> -->
     <form class="msg-data" action="http://localhost:4000/submit-data" method="post" enctype="multipart/form-data">
+      <span>All fields are optional. Include content for what you have and want to send; we will handle the rest.</span>
+      <img class="previewImg" src="/imgs/image-placeholder.svg" alt="">
+      <label class="uploader">
+        <input name="uploadedImage" type="file"/>
+        <span>Choose an image</span>
+      </label>
+      <span>What text would you like to include with your message?</span>
+      <textarea name="msgText" rows="4" cols="30"></textarea>
+      <span>Select a date and time for us to send the message:</span>
+      <span>Date</span>
+      <input type="date" name="date" value="">
+      <span>Time</span>
+      <input type="time" name="time" value="">
+      <span>Add a link if you want to include a video:</span>
+      <input type="text" name="videoURL" value="">
       <input class="organization" type="hidden" name="organization" value="">
-      <input class="id" type="hidden" name="id" value="">
-      <input class="input1" type="text" name="type" value="">
-      <input class="input2" type="text" name="date" value="">
-      <input class="input3" type="text" name="" value="">
-      <input class="input4" type="text" name="" value="">
-      <input class="input5" type="text" name="msgText" value="">
-      <input class="input6" type="text" name="time" value="">
-      <input class="input7" type="text" name="groupNames" value="">
-      <input class="file-upload" type="file" name="uploadedImage" value="">
+      <span>Select a group to send your message to. If you want to send to all users, select none:</span>
+      <section class="msgGroupList"></section>
+      <div class="btn-holder">
+        <button class="create" type="button" name="create">Create</button>
+        <button class="cancel" type="button" name="cancel">Cancel</button>
+      </div>
     </form>
-    <img class="send1" src="/imgs/send.svg" alt="Send Button">
-    <img class="send2" src="/imgs/send.svg" alt="Send Button">
-    <img class="send3" src="/imgs/send.svg" alt="Send Button">
-    <img class="send4" src="/imgs/send.svg" alt="Send Button">
-    <img class="send5" src="/imgs/send.svg" alt="Send Button">
-    <img class="send6" src="/imgs/send.svg" alt="Send Button">
-    <img class="send7" src="/imgs/send.svg" alt="Send Button">
-  </div>
+
+    <div class="loading">
+      <img src="/imgs/loading.svg" alt="">
+    </div>
 </body>
 
 </html>
