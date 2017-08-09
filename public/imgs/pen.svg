@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="46px" height="46px" viewBox="0 0 46 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>pen</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Android_L_Discover" transform="translate(-532.000000, -836.000000)" fill-rule="nonzero" fill="#506BA2">
+            <g id="pen" transform="translate(532.000000, 836.000000)">
+                <path d="M28.6039361,7.63939482 L37.9613767,16.9967484 L14.2751107,40.6830145 L4.92297545,31.3256609 L28.6039361,7.63939482 Z M45.0618642,5.38261568 L40.8888058,1.20955726 C39.2760627,-0.403185752 36.6573014,-0.403185752 35.0390791,1.20955726 L31.0417064,5.20692993 L40.399147,14.5643705 L45.0618642,9.90165327 C46.3127119,8.65071854 46.3127119,6.63346344 45.0618642,5.38261568 Z M0.0260395492,44.4781746 C-0.144253867,45.2445819 0.547704467,45.9313219 1.31419879,45.7449384 L11.741496,43.2167161 L2.38936079,33.8593625 L0.0260395492,44.4781746 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
