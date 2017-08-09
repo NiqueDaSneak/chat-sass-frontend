@@ -12,7 +12,7 @@ footer
   align-items: center
   transition: bottom 1s
   height: 5vh
-  box-shadow: 0vw -0.1vh 1vh 0vh rgba(0, 0, 0, 0.75)
+  // box-shadow: 0vw -0.1vh 1vh 0vh rgba(0, 0, 0, 0.75)
   img
     &:first-of-type
       width: 12vw
@@ -110,13 +110,10 @@ nav
       right: 10vw
 
 .todays-msgs
-  text-align: center
   font-size: 6vw
   transition: padding-left 1s, opacity .7s
-  .header
-    padding-top: 4vh
-  img
-    width: 60vw
+  padding-top: 20vh
+  padding-bottom: 25vh
 .todays-msgs.inactive
   opacity: 0
 
@@ -168,8 +165,11 @@ header
   vertical-align: middle
   padding-left: 5vw
   padding-top: 4vh
-  box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75)
+  // box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75)
   font-weight: 300
+  position: fixed
+  width: 100vw
+  top: 0
   span:first-of-type
       img
         width: 8vw
@@ -177,7 +177,7 @@ header
         margin-right: 3vw
   .go-to-today
     line-height: 5vh
-    position: absolute
+    position: fixed
     right: 5vw
     font-weight: 500
 
