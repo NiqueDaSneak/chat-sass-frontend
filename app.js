@@ -69,7 +69,6 @@ var Group = mongoose.model('Group', groupSchema)
 // PASSPORTJS CONFIG
 const passport = require('passport')
 const FacebookStrategy = require('passport-facebook').Strategy
-const refresh = require('passport-oauth2-refresh')
 
 // BCRYPT
 var bcrypt = require('bcryptjs')
