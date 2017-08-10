@@ -17,6 +17,7 @@ $(document).ready(() => {
   // UI
   $('.add-new').click(() => {
     $('.chat-ui').toggleClass('live-chat')
+    $('.todays-msgs').addClass('inactive')
     socket.emit('requestMembersForMessage', {data: org})
   })
 
@@ -45,6 +46,9 @@ $(".uploader input").change(function(){
   $('.chat-ui .header span:last-of-type').click(() => {
     if ($('.chat-ui').hasClass('live-chat')) {
       $('.chat-ui').toggleClass('live-chat')
+      $('.msgGroupList').empty()
+      $('.chat-ui input').val('')
+      $('.todays-msgs').removeClass('inactive')
     } else {
       $('.chat-ui').toggleClass('live-chat')
     }
