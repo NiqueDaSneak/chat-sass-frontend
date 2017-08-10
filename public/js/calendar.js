@@ -71,10 +71,12 @@ $(document).ready(() => {
     msgs = data.data
     console.log(msgs)
     for (var i = 0; i < msgs.length; i++) {
-      var month = data.data[i].date.split('-')[1]
-      var day = data.data[i].date.split('-')[2]
-      var year = data.data[i].date.split('-')[0]
-      var fromNow = moment(month + day + year, 'MMDDYYYY').fromNow()
+      var month = msgs[i].date.split('-')[1]
+      var day = msgs[i].date.split('-')[2]
+      var year = msgs[i].date.split('-')[0]
+      var hour = msgs[i].time.split(':')[0]
+      var min = msgs[i].time.split(':')[1]
+      var fromNow = moment(month + day + year + hour + min, 'MMDDYYYYHHmm').fromNow()
       if (Number(day) === Number(displayDay)) {
         if (msgs[i].videoURL) {
 
@@ -84,17 +86,17 @@ $(document).ready(() => {
           }
           var videoID = YouTubeGetID(msgs[i].videoURL)
 
-          $('.todays-msgs').append("<div class='card'><div class='card-top'>Video Message</div><span class='card-middle'><a target='_blank' href='" + msgs[i].videoURL + "'><img src='https://img.youtube.com/vi/" + videoID + "/0.jpg' alt=''></a></span><div class='card-bottom'><img src='/imgs/clock.svg' alt=''><span>" + fromNow + "</span><img src='/imgs/pen.svg' alt=''></div></div>")
+          $('.todays-msgs').prepend("<div class='card'><div class='card-top'>Video Message</div><span class='card-middle'><a target='_blank' href='" + msgs[i].videoURL + "'><img src='https://img.youtube.com/vi/" + videoID + "/0.jpg' alt=''></a></span><div class='card-bottom'><img src='/imgs/clock.svg' alt=''><span>" + fromNow + "</span><img src='/imgs/pen.svg' alt=''></div></div>")
         }
 
         if (msgs[i].image) {
           console.log(msgs[i].image)
-          $('.todays-msgs').append("<div class='card'><div class='card-top'>Image Message</div><span class='card-middle'><img src='" + msgs[i].image + "' alt=''></span><div class='card-bottom'><img src='/imgs/clock.svg' alt=''><span>" + fromNow + "</span><img src='/imgs/pen.svg' alt=''></div></div>")
+          $('.todays-msgs').prepend("<div class='card'><div class='card-top'>Image Message</div><span class='card-middle'><img src='" + msgs[i].image + "' alt=''></span><div class='card-bottom'><img src='/imgs/clock.svg' alt=''><span>" + fromNow + "</span><img src='/imgs/pen.svg' alt=''></div></div>")
         }
 
         if (msgs[i].text) {
           console.log(msgs[i].text)
-          $('.todays-msgs').append("<div class='card'><div class='card-top'>Text Message</div><span class='card-middle'><p>'" + msgs[i].text + "'</p></span><div class='card-bottom'><img src='/imgs/clock.svg' alt=''><span>" + fromNow + "</span><img src='/imgs/pen.svg' alt=''></div></div>")
+          $('.todays-msgs').prepend("<div class='card'><div class='card-top'>Text Message</div><span class='card-middle'><p>'" + msgs[i].text + "'</p></span><div class='card-bottom'><img src='/imgs/clock.svg' alt=''><span>" + fromNow + "</span><img src='/imgs/pen.svg' alt=''></div></div>")
         }
 
       }
