@@ -27,7 +27,8 @@ var userSchema = mongoose.Schema({
     userID: Number,
     pageID: Number,
     pageAccessToken: String,
-    userAccessToken: String
+    userAccessToken: String,
+    refreshToken: String
   }
 })
 
@@ -66,8 +67,9 @@ var groupSchema = mongoose.Schema({
 var Group = mongoose.model('Group', groupSchema)
 
 // PASSPORTJS CONFIG
-var passport = require('passport')
-var FacebookStrategy = require('passport-facebook').Strategy
+const passport = require('passport')
+const FacebookStrategy = require('passport-facebook').Strategy
+const refresh = require('passport-oauth2-refresh')
 
 // BCRYPT
 var bcrypt = require('bcryptjs')
@@ -97,11 +99,12 @@ app.use(passport.session())
 passport.use(new FacebookStrategy({
     clientID: '372903006444693',
     clientSecret: 'e0cf0b310d6931c9140969a115efefa9',
-    // callbackURL: "http://localhost:3000/auth/check-pages"
-    callbackURL: "http://chat-sass-frontend.herokuapp.com/auth/check-pages",
+    callbackURL: "http://localhost:3000/auth/check-pages",
+    // callbackURL: "http://chat-sass-frontend.herokuapp.com/auth/check-pages",
     profileFields: ['id', 'emails', 'name']
   },
   function(accessToken, refreshToken, profile, done) {
+    console.log(refreshToken)
     User.findOne({
       'facebook.userID': profile.id
     }, (err, user) => {
@@ -117,6 +120,7 @@ passport.use(new FacebookStrategy({
         }
         newUser.facebook.userID = profile.id
         newUser.facebook.userAccessToken = accessToken
+        newUser.facebook.refreshToken = refreshToken
         newUser.save((err, user) => {
           if (err) return console.error(err)
           return done(null, user)
@@ -131,10 +135,20 @@ passport.use(new FacebookStrategy({
 //     /auth/facebook/callback
 app.get('/auth/facebook', passport.authenticate('facebook', { scope: [ 'publish_pages', 'user_likes', 'pages_messaging', 'user_friends', 'ads_management', 'email', 'pages_show_list', 'manage_pages'] }))
 
-// Facebook will redirect the user to this URL after approval.  Finish the
-// authentication process by attempting to obtain an access token.  If
-// access was granted, the user will be logged in.  Otherwise,
-// authentication has failed.
+app.post('/token-refresh', (req, res) => {
+  refresh.requestNewAccessToken('facebook', req.body.refreshToken, function(err, accessToken, refreshToken) {
+    console.log('accessToken: ' + accessToken )
+  // You have a new access token, store it in the user object,
+  // or use it to make a new request.
+  // `refreshToken` may or may not exist, depending on the strategy you are using.
+  // You probably don't need it anyway, as according to the OAuth 2.0 spec,
+  // it should be the same as the initial refresh token.
+
+  })
+  res.sendStatus(200)
+})
+
+// Facebook redirect
 var id
 app.get('/auth/check-pages', passport.authenticate('facebook', {
   failureRedirect: '/',
