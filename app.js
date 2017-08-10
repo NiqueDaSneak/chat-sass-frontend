@@ -179,7 +179,7 @@ app.get('/save-page', (req, res) => {
       var webhookPromise = new Promise(function(resolve, reject) {
         var webhookOptions = {
           method: 'post',
-          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/subscribed_apps?access_token=' + user.facebook.accessToken
+          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/subscribed_apps?access_token=' + user.facebook.pageAccessToken
         }
 
         request(webhookOptions, (err, res, body) => {
@@ -206,7 +206,7 @@ app.get('/save-page', (req, res) => {
           method: 'post',
           body: getStarted,
           json: true,
-          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/messenger_profile?access_token=' + user.facebook.accessToken
+          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/messenger_profile?access_token=' + user.facebook.pageAccessToken
         }
 
         request(getStartedOptions, (err, res, body) => {
