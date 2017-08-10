@@ -210,13 +210,15 @@ nav {
 
 .todays-msgs {
   font-size: 6vw;
-  -webkit-transition: padding-left 1s, opacity .7s;
-  transition: padding-left 1s, opacity .7s;
+  -webkit-transition: opacity .7s;
+  transition: opacity .7s;
   padding-top: 20vh;
-  padding-bottom: 25vh; }
+  padding-bottom: 25vh;
+  opacity: 1; }
 
 .todays-msgs.inactive {
-  opacity: 0; }
+  opacity: 0;
+  display: none; }
 
 .submenu div {
   position: fixed;
@@ -854,7 +856,8 @@ header {
     .card .card-bottom img:last-of-type {
       width: 6vw;
       vertical-align: middle;
-      padding-left: 20vw; }
+      position: absolute;
+      right: 23vw; }
 
 body {
   margin: 0;
