@@ -11,6 +11,7 @@ $(document).ready(() => {
   $('.showGroups').click(() => {
     socket.emit('getList', {org: org})
     $('.groups').fadeIn()
+    $('.todays-msgs').fadeOut()
   })
 
   $('.list .addGroup').click(() => {
@@ -45,6 +46,7 @@ $(document).ready(() => {
   $('.groups .header span:last-of-type').click(() => {
     ASQ($('.groups').fadeOut())
     .then(() => {
+      $('.todays-msgs').fadeIn()
       $('.new').addClass('hide')
       $('.list').removeClass('hide')
       $('.names').empty()
