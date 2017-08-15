@@ -311,6 +311,7 @@ io.on('connection', (socket) => {
     Message.find({
       organization: data.data
     }, (err, msgs) => {
+      console.log(msgs)
       socket.emit('sendMsgs', {
         data: msgs
       })

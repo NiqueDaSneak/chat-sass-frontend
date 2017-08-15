@@ -52,10 +52,11 @@ $(document).ready(() => {
     } else if ($(event.target).is('div')) {
       console.log('its a div!')
     } else {
+      console.log('clicked')
       displayDay = Number($(event.target).text())
       $('.header-date').text(Number($(event.target).text()))
       loadActiveDay()
-      // loadTodayMsgs()
+      loadTodayMsgs()
     }
   })
 
@@ -65,48 +66,6 @@ $(document).ready(() => {
     $('footer').toggleClass('active')
     ASQ($('.todays-msgs').toggleClass('inactive'))
     .then($('.toggle-calendar').toggleClass('active'))
-  })
-
-  socket.emit('requestMsgs', {data: org})
-
-  socket.on('sendMsgs', (data) => {
-    msgs = data.data
-    console.log(msgs)
-    for (var i = 0; i < msgs.length; i++) {
-      var month = msgs[i].date.split('-')[1]
-      var day = msgs[i].date.split('-')[2]
-      var year = msgs[i].date.split('-')[0]
-      var hour = msgs[i].time.split(':')[0]
-      var min = msgs[i].time.split(':')[1]
-      var fromNow = moment(month + day + year + hour + min, 'MMDDYYYYHHmm').fromNow()
-      if (Number(day) === Number(displayDay)) {
-        if (msgs[i].videoURL) {
-
-          function YouTubeGetID(url){
-            url = url.split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
-            return (url[2] !== undefined) ? url[2].split(/[^0-9a-z_\-]/i)[0] : url[0];
-          }
-          var videoID = YouTubeGetID(msgs[i].videoURL)
-
-          $('.todays-msgs').prepend("<div class='card'><div class='card-top'>Video Message</div><span class='card-middle'><a target='_blank' href='" + msgs[i].videoURL + "'><img src='https://img.youtube.com/vi/" + videoID + "/0.jpg' alt=''></a></span><div class='card-bottom'><img src='/imgs/clock.svg' alt=''><span>" + fromNow + "</span><img src='/imgs/pen.svg' alt=''></div></div>")
-        }
-
-        if (msgs[i].image) {
-          console.log(msgs[i].image)
-          $('.todays-msgs').prepend("<div class='card'><div class='card-top'>Image Message</div><span class='card-middle'><img src='" + msgs[i].image + "' alt=''></span><div class='card-bottom'><img src='/imgs/clock.svg' alt=''><span>" + fromNow + "</span><img src='/imgs/pen.svg' alt=''></div></div>")
-        }
-
-        if (msgs[i].text) {
-          console.log(msgs[i].text)
-          $('.todays-msgs').prepend("<div class='card'><div class='card-top'>Text Message</div><span class='card-middle'><p>'" + msgs[i].text + "'</p></span><div class='card-bottom'><img src='/imgs/clock.svg' alt=''><span>" + fromNow + "</span><img src='/imgs/pen.svg' alt=''></div></div>")
-        }
-
-      }
-    }
-    // $('.todays-msgs').empty()
-    // $('.todays-msgs').append(imgAppend)
-    // $('.todays-msgs').append(textAppend)
-    // $('.todays-msgs').append(bothAppend)
   })
 
   //
@@ -386,37 +345,10 @@ $(document).ready(() => {
   //   })
   // }
   //
-  // // LOOP THRU MESSAGES, AND SEE IF ONE HAS THE DISPLAYDAYNUMBER => PUT MESSAGE INFO ON SCREEN
-  // function loadTodayMsgs() {
-  //   var msgs
-  //   var imgAppend
-  //   var textAppend
-  //   var bothAppend
-  //
-  //   socket.emit('requestMsgs', {data: org})
-  //
-  //   socket.on('sendMsgs', (data) => {
-  //     msgs = data.data
-  //     for (var i = 0; i < msgs.length; i++) {
-  //       var month = data.data[i].date.split('-')[0]
-  //       var day = data.data[i].date.split('-')[1]
-  //       var year = data.data[i].date.split('-')[2]
-  //       if (Number(day) === displayDayNumber) {
-  //         if (msgs[i].assetManifest.image && msgs[i].assetManifest.text) {
-  //           bothAppend = "<p class='header'>Text & Image Message</p><p>" + msgs[i].assetManifest.text + "</p><img src='" + msgs[i].assetManifest.image + "'>"
-  //         } else if (msgs[i].assetManifest.image) {
-  //           imgAppend = "<p class='header'>Image Message</p><img src='" + msgs[i].assetManifest.image + "'>"
-  //         } else {
-  //           textAppend = "<p class='header'>Text Message</p><p>" + msgs[i].assetManifest.text + "</p>"
-  //         }
-  //       }
-  //     }
-  //     $('.todays-msgs').empty()
-  //     $('.todays-msgs').append(imgAppend)
-  //     $('.todays-msgs').append(textAppend)
-  //     $('.todays-msgs').append(bothAppend)
-  //   })
-  // }
+  // // LOOP THRU MESSAGES, AND SEE IF ONE HAS THE DISPLAYDAY => PUT MESSAGE INFO ON SCREEN
+  function loadTodayMsgs() {
+    socket.emit('requestMsgs', {data: org})
+  }
   //
   // // FIGURE OUT WHAT THE CURRENT DAY IS AND HIGHLIGHT IT
   function loadActiveDay() {
@@ -431,5 +363,37 @@ $(document).ready(() => {
       }
     }
   }
+
+  socket.on('sendMsgs', (data) => {
+    var dataArray = data.data
+    $('.todays-msgs').empty()
+    for (let msg of dataArray) {
+      var month = msg.date.split('-')[1]
+      var day = msg.date.split('-')[2]
+      var year = msg.date.split('-')[0]
+      var hour = msg.time.split(':')[0]
+      var min = msg.time.split(':')[1]
+      var fromNow = moment(month + day + year + hour + min, 'MMDDYYYYHHmm').fromNow()
+      if (Number(day) === Number(displayDay)) {
+        if (msg.videoURL) {
+          function YouTubeGetID(url){
+            url = url.split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
+            return (url[2] !== undefined) ? url[2].split(/[^0-9a-z_\-]/i)[0] : url[0];
+          }
+          var videoID = YouTubeGetID(msg.videoURL)
+          $('.todays-msgs').prepend("<div class='card'><div class='card-top'>Video Message</div><span class='card-middle'><a target='_blank' href='" + msg.videoURL + "'><img src='https://img.youtube.com/vi/" + videoID + "/0.jpg' alt=''></a></span><div class='card-bottom'><img src='/imgs/clock.svg' alt=''><span>" + fromNow + "</span><img src='/imgs/pen.svg' alt=''></div></div>")
+        }
+
+        if (msg.image) {
+          $('.todays-msgs').prepend("<div class='card'><div class='card-top'>Image Message</div><span class='card-middle'><img src='" + msg.image + "' alt=''></span><div class='card-bottom'><img src='/imgs/clock.svg' alt=''><span>" + fromNow + "</span><img src='/imgs/pen.svg' alt=''></div></div>")
+        }
+
+        if (msg.text) {
+          $('.todays-msgs').prepend("<div class='card'><div class='card-top'>Text Message</div><span class='card-middle'><p>'" + msg.text + "'</p></span><div class='card-bottom'><img src='/imgs/clock.svg' alt=''><span>" + fromNow + "</span><img src='/imgs/pen.svg' alt=''></div></div>")
+        }
+      }
+
+    }
+  })
 
 })
