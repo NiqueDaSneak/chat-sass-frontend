@@ -52,7 +52,7 @@ $(document).ready(() => {
     } else if ($(event.target).is('div') || $(event.target).is('img') ) {
       console.log('its a div or image!')
     } else {
-      displayDay = Number($(event.target).text())
+      displayDay = $(event.target).text()
       $('.header-date').text(Number($(event.target).text()))
       loadActiveDay()
       loadTodayMsgs()
@@ -71,8 +71,8 @@ $(document).ready(() => {
      console.log('displayDay: ' + displayDay)
     if (displayDay === '1') {
        var daysInNextMonth = moment(displayMonth + '-' + displayDay, "MMM-D").subtract('1', 'months').daysInMonth()
-       displayDay = daysInNextMonth.toString()
        displayMonth = moment(displayMonth + '-' + displayDay, "MMM-D").subtract('1', 'months').format('MMM')
+       displayDay = daysInNextMonth.toString()
        $('.header-month').text(displayMonth)
        $('.controls-month').text(displayMonth)
        $('.header-date').text(Number(displayDay))
@@ -87,10 +87,44 @@ $(document).ready(() => {
        $('.header-date').text(yesterday)
        loadActiveDay()
      }
+     loadTodayMsgs()
   })
 
   $('.right').click(() => {
-    console.log('works right')
+    if (displayDay === '30' && moment(displayMonth, "MMM").daysInMonth() === 30) {
+      if (displayMonth === 'Dec') {
+        displayYear = moment(displayYear, "YYYY").add('1', 'years').format('YYYY')
+      }
+      displayMonth = moment(displayMonth + '-' + displayDay, "MMM-D").add('1', 'months').format('MMM')
+      $('.header-month').text(displayMonth)
+      $('.controls-month').text(displayMonth)
+      displayDay = '1'
+      $('.header-date').text(displayDay)
+      generateMonthCalendar()
+    } else if (displayDay === '31' && moment(displayMonth, "MMM").daysInMonth() === 31) {
+      if (displayMonth === 'Dec') {
+        displayYear = moment(displayYear, "YYYY").add('1', 'years').format('YYYY')
+      }
+      displayMonth = moment(displayMonth + '-' + displayDay, "MMM-D").add('1', 'months').format('MMM')
+      $('.header-month').text(displayMonth)
+      $('.controls-month').text(displayMonth)
+      displayDay = '1'
+      $('.header-date').text(displayDay)
+      generateMonthCalendar()
+    } else if (displayDay === '28' && moment(displayMonth, "MMM").daysInMonth() === 28) {
+      displayMonth = moment(displayMonth + '-' + displayDay, "MMM-D").add('1', 'months').format('MMM')
+      $('.header-month').text(displayMonth)
+      $('.controls-month').text(displayMonth)
+      displayDay = '1'
+      $('.header-date').text(displayDay)
+      generateMonthCalendar()
+    } else {
+      var tomorrow = Number(displayDay) + 1
+      displayDay = tomorrow.toString()
+      $('.header-date').text(displayDay)
+      loadActiveDay()
+    }
+    loadTodayMsgs()
   })
   //
   // // $('.left').click(() => {
@@ -114,41 +148,41 @@ $(document).ready(() => {
   // //   }
   // // })
   //
-  // // $('.right').click(() => {
-  // //   if (displayDayNumber === 30 && moment(displayMonthLong, "MMM").daysInMonth() === 30) {
-  // //     if (displayMonth === '12') {
-  // //       displayYear = moment(displayYear, "YYYY").add('1', 'years').format('YYYY')
-  // //     }
-  // //     displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").add('1', 'months').format('MM')
-  // //     displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
-  // //     $('.header-month').text(displayMonthLong)
-  // //     $('.header-date').text(1)
-  // //     displayDayNumber = 1
-  // //     generateMonthCalendar()
-  // //   } else if (displayDayNumber === 31 && moment(displayMonthLong, "MMM").daysInMonth() === 31) {
-  // //     if (displayMonth === '12') {
-  // //       displayYear = moment(displayYear, "YYYY").add('1', 'years').format('YYYY')
-  // //     }
-  // //     displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").add('1', 'months').format('MM')
-  // //     displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
-  // //     $('.header-month').text(displayMonthLong)
-  // //     $('.header-date').text(1)
-  // //     displayDayNumber = 1
-  // //     generateMonthCalendar()
-  // //   } else if (displayDayNumber === 28 && moment(displayMonthLong, "MMM").daysInMonth() === 28) {
-  // //     displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").add('1', 'months').format('MM')
-  // //     displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
-  // //     $('.header-month').text(displayMonthLong)
-  // //     $('.header-date').text(1)
-  // //     displayDayNumber = 1
-  // //     generateMonthCalendar()
-  // //   } else {
-  // //     displayDayNumber = displayDayNumber + 1
-  // //     $('.header-date').text(displayDayNumber)
-  // //     loadActiveDay()
-  // //   }
-  // //   loadTodayMsgs()
-  // // })
+  // $('.right').click(() => {
+  //   if (displayDayNumber === 30 && moment(displayMonthLong, "MMM").daysInMonth() === 30) {
+  //     if (displayMonth === '12') {
+  //       displayYear = moment(displayYear, "YYYY").add('1', 'years').format('YYYY')
+  //     }
+  //     displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").add('1', 'months').format('MM')
+  //     displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
+  //     $('.header-month').text(displayMonthLong)
+  //     $('.header-date').text(1)
+  //     displayDayNumber = 1
+  //     generateMonthCalendar()
+  //   } else if (displayDayNumber === 31 && moment(displayMonthLong, "MMM").daysInMonth() === 31) {
+  //     if (displayMonth === '12') {
+  //       displayYear = moment(displayYear, "YYYY").add('1', 'years').format('YYYY')
+  //     }
+  //     displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").add('1', 'months').format('MM')
+  //     displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
+  //     $('.header-month').text(displayMonthLong)
+  //     $('.header-date').text(1)
+  //     displayDayNumber = 1
+  //     generateMonthCalendar()
+  //   } else if (displayDayNumber === 28 && moment(displayMonthLong, "MMM").daysInMonth() === 28) {
+  //     displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").add('1', 'months').format('MM')
+  //     displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
+  //     $('.header-month').text(displayMonthLong)
+  //     $('.header-date').text(1)
+  //     displayDayNumber = 1
+  //     generateMonthCalendar()
+  //   } else {
+  //     displayDayNumber = displayDayNumber + 1
+  //     $('.header-date').text(displayDayNumber)
+  //     loadActiveDay()
+  //   }
+  //   loadTodayMsgs()
+  // })
   //
   // // CALENDAR SETUP
   function generateMonthCalendar() {
