@@ -39,20 +39,19 @@ $(document).ready(() => {
   //
   // // UI & INTERACTIONS
   //
-  // $('.go-to-today').click(() => {
-  //   displayDayNumber = Number(moment().format('D'))
-  //   $('.header-date').text(Number(displayDay))
-  //   loadTodayMsgs()
-  //   loadActiveDay()
-  // })
+  $('.go-to-today').click(() => {
+    displayDay = moment().format('D')
+    $('.header-date').text(Number(displayDay))
+    loadTodayMsgs()
+    loadActiveDay()
+  })
 
   $('.toggle-calendar').click((event) => {
     if (isNaN($(event.target).text())) {
       console.log('not a number')
-    } else if ($(event.target).is('div')) {
-      console.log('its a div!')
+    } else if ($(event.target).is('div') || $(event.target).is('img') ) {
+      console.log('its a div or image!')
     } else {
-      console.log('clicked')
       displayDay = Number($(event.target).text())
       $('.header-date').text(Number($(event.target).text()))
       loadActiveDay()
@@ -68,16 +67,31 @@ $(document).ready(() => {
     .then($('.toggle-calendar').toggleClass('active'))
   })
 
-  //
-  // $('.left').click(() => {
-  //   console.log('works left')
-  //   console.log('day: ' + displayDayNumber)
-  // })
-  //
-  // $('.right').click(() => {
-  //   console.log('works right')
-  //   console.log('day: ' + displayDayNumber)
-  // })
+  $('.left').click(() => {
+     console.log('displayDay: ' + displayDay)
+    if (displayDay === '1') {
+       var daysInNextMonth = moment(displayMonth + '-' + displayDay, "MMM-D").subtract('1', 'months').daysInMonth()
+       displayDay = daysInNextMonth.toString()
+       displayMonth = moment(displayMonth + '-' + displayDay, "MMM-D").subtract('1', 'months').format('MMM')
+       $('.header-month').text(displayMonth)
+       $('.controls-month').text(displayMonth)
+       $('.header-date').text(Number(displayDay))
+       if (displayMonth === 'Jan') {
+         displayYear = moment(displayYear, "YYYY").subtract('1', 'years').format('YYYY')
+       }
+       generateMonthCalendar()
+     } else {
+       var yesterday = Number(displayDay) - 1
+       displayDay = yesterday.toString()
+       console.log(displayDay)
+       $('.header-date').text(yesterday)
+       loadActiveDay()
+     }
+  })
+
+  $('.right').click(() => {
+    console.log('works right')
+  })
   //
   // // $('.left').click(() => {
   // //   loadTodayMsgs()
