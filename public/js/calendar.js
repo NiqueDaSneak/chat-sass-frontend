@@ -45,18 +45,20 @@ $(document).ready(() => {
   //   loadTodayMsgs()
   //   loadActiveDay()
   // })
-  //
-  // $('.toggle-calendar').click((event) => {
-  //   if (isNaN($(event.target).text())) {
-  //     console.log('not a number')
-  //   } else {
-  //     displayDayNumber = Number($(event.target).text())
-  //     $('.header-date').text(Number($(event.target).text()))
-  //     loadActiveDay()
-  //     loadTodayMsgs()
-  //   }
-  // })
-  //
+
+  $('.toggle-calendar').click((event) => {
+    if (isNaN($(event.target).text())) {
+      console.log('not a number')
+    } else if ($(event.target).is('div')) {
+      console.log('its a div!')
+    } else {
+      displayDay = Number($(event.target).text())
+      $('.header-date').text(Number($(event.target).text()))
+      loadActiveDay()
+      // loadTodayMsgs()
+    }
+  })
+
   $('.toggle').click(() => {
     $('.toggle .open').toggleClass('hide')
     $('.toggle .close').toggleClass('hide')
