@@ -832,7 +832,8 @@ header {
       color: #3b5998;
       padding-bottom: 4vh;
       display: block;
-      font-weight: 100; }
+      font-weight: 100;
+      text-decoration: none; }
 
 .card {
   width: 60vw;
