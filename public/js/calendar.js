@@ -353,11 +353,25 @@ $(document).ready(() => {
           $('.fifth').append("<span>" + (i - 5) + "</span>")
         }
       }
-      $('.fifth').append("<span>" + (months[displayMonth] - 4) + "</span>")
-      $('.fifth').append("<span>" + (months[displayMonth] - 3) + "</span>")
-      $('.fifth').append("<span>" + (months[displayMonth] - 2) + "</span>")
-      $('.fifth').append("<span>" + (months[displayMonth] - 1) + "</span>")
-      $('.sixth').append("<span>" + months[displayMonth] + "</span>")
+      // $('.fifth').append("<span>" + (months[displayMonth] - 4) + "</span>")
+      // $('.fifth').append("<span>" + (months[displayMonth] - 3) + "</span>")
+      // $('.fifth').append("<span>" + (months[displayMonth] - 2) + "</span>")
+      // $('.fifth').append("<span>" + (months[displayMonth] - 1) + "</span>")
+      // $('.sixth').append("<span>" + months[displayMonth] + "</span>")
+      if (months[displayMonth] === 30) {
+        $('.fifth').append("<span>" + (months[displayMonth] - 4) + "</span>")
+        $('.fifth').append("<span>" + (months[displayMonth] - 3) + "</span>")
+        $('.fifth').append("<span>" + (months[displayMonth] - 2) + "</span>")
+        $('.fifth').append("<span>" + (months[displayMonth] - 1) + "</span>")
+        $('.fifth').append("<span>" + months[displayMonth] + "</span>")
+      }
+      if (months[displayMonth] === 31) {
+        $('.fifth').append("<span>" + (months[displayMonth] - 4) + "</span>")
+        $('.fifth').append("<span>" + (months[displayMonth] - 3) + "</span>")
+        $('.fifth').append("<span>" + (months[displayMonth] - 2) + "</span>")
+        $('.fifth').append("<span>" + (months[displayMonth] - 1) + "</span>")
+        $('.sixth').append("<span>" + months[displayMonth] + "</span>")
+      }
     }
     if (firstDayOfWeek === "Sa") {
       for (var i = 1; i <= months[displayMonth]; i++) {
