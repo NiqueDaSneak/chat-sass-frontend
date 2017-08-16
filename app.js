@@ -98,7 +98,6 @@ app.use(passport.session())
 passport.use(new FacebookStrategy({
     clientID: '372903006444693',
     clientSecret: 'e0cf0b310d6931c9140969a115efefa9',
-    // callbackURL: "http://localhost:3000/auth/check-pages",
     callbackURL: "http://chat-sass-frontend.herokuapp.com/auth/check-pages",
     profileFields: ['id', 'emails', 'name']
   },
@@ -129,23 +128,7 @@ passport.use(new FacebookStrategy({
   }))
 
 // ROUTES
-// Redirect the user to Facebook for authentication.  When complete,
-// Facebook will redirect the user back to the application at
-//     /auth/facebook/callback
 app.get('/auth/facebook', passport.authenticate('facebook', { scope: [ 'publish_pages', 'user_likes', 'pages_messaging', 'user_friends', 'ads_management', 'email', 'pages_show_list', 'manage_pages'] }))
-
-app.post('/token-refresh', (req, res) => {
-  refresh.requestNewAccessToken('facebook', req.body.refreshToken, function(err, accessToken, refreshToken) {
-    console.log('accessToken: ' + accessToken )
-  // You have a new access token, store it in the user object,
-  // or use it to make a new request.
-  // `refreshToken` may or may not exist, depending on the strategy you are using.
-  // You probably don't need it anyway, as according to the OAuth 2.0 spec,
-  // it should be the same as the initial refresh token.
-
-  })
-  res.sendStatus(200)
-})
 
 // Facebook redirect
 var id
@@ -360,7 +343,6 @@ io.on('connection', (socket) => {
       if (err) {
         return console.error(err)
       } else {
-        // console.log('saved group: ' + group)
       }
     })
   })
@@ -372,7 +354,6 @@ io.on('connection', (socket) => {
       if (err) {
         return console.error(err)
       } else {
-        // console.log('group: ' + group)
         socket.emit('showList', {
           data: group
         })
@@ -387,7 +368,6 @@ io.on('connection', (socket) => {
       if (err) {
         return console.error(err)
       } else {
-        // console.log('group: ' + group)
         socket.emit('groups', {
           data: group
         })

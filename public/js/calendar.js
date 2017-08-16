@@ -2,11 +2,6 @@ $(document).ready(() => {
 
   // INITIALIZERS
 
-  // $.mobile.loadingMessage = false
-  // if ($.mobile.loadingMessage) {
-  //   $.mobile.loadingMessage = false
-  // }
-
   // socket connection
   var socket = io.connect()
 
@@ -15,31 +10,22 @@ $(document).ready(() => {
   var org = pathname[pathname.length - 1]
 
   // date variables
-  // var month = moment().format("MM")
-  // var day = "01"
-  // var year = moment().format("YYYY")
-  //
-  // var displayMonth = moment().format("MM")
   var displayMonth = moment().format("MMM")
   var displayDay = moment().format('DD')
-  // var displayDayNumber = Number(moment().format('DD'))
   var displayYear = moment().format('YYYY')
   generateMonthCalendar()
-  // loadActiveDay()
+  loadActiveDay()
   loadTodayMsgs()
   loadMsgsForCal()
-  //
+
   // set date for toggle ui element
   $('.header-month').text(displayMonth)
   $('.controls-month').text(displayMonth)
-  //
+
   // set number for header-date
   $('.header-date').text(Number(displayDay))
-  //
-  //
-  //
+
   // // UI & INTERACTIONS
-  //
   $('.go-to-today').click(() => {
     displayDay = moment().format('D')
     $('.header-date').text(Number(displayDay))
@@ -153,65 +139,8 @@ $(document).ready(() => {
     }
     loadTodayMsgs()
   })
-  //
-  // // $('.dayLeft').click(() => {
-  // //   loadTodayMsgs()
-  // //   console.log(displayDayNumber)
-  // //   if (displayDayNumber === 1) {
-  // //     var daysInNextMonth = moment(displayMonth + '-' + displayDay, "MM-DD").subtract('1', 'months').daysInMonth()
-  // //     displayDayNumber = daysInNextMonth
-  // //     displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").subtract('1', 'months').format('MM')
-  // //     displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
-  // //     $('.header-month').text(displayMonthLong)
-  // //     $('.header-date').text(Number(daysInNextMonth))
-  // //     if (displayMonth === '01') {
-  // //       displayYear = moment(displayYear, "YYYY").subtract('1', 'years').format('YYYY')
-  // //     }
-  // //     generateMonthCalendar()
-  // //   } else {
-  // //     displayDayNumber = displayDayNumber - 1
-  // //     $('.header-date').text(Number(displayDayNumber))
-  // //     loadActiveDay()
-  // //   }
-  // // })
-  //
-  // $('.dayRight').click(() => {
-  //   if (displayDayNumber === 30 && moment(displayMonthLong, "MMM").daysInMonth() === 30) {
-  //     if (displayMonth === '12') {
-  //       displayYear = moment(displayYear, "YYYY").add('1', 'years').format('YYYY')
-  //     }
-  //     displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").add('1', 'months').format('MM')
-  //     displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
-  //     $('.header-month').text(displayMonthLong)
-  //     $('.header-date').text(1)
-  //     displayDayNumber = 1
-  //     generateMonthCalendar()
-  //   } else if (displayDayNumber === 31 && moment(displayMonthLong, "MMM").daysInMonth() === 31) {
-  //     if (displayMonth === '12') {
-  //       displayYear = moment(displayYear, "YYYY").add('1', 'years').format('YYYY')
-  //     }
-  //     displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").add('1', 'months').format('MM')
-  //     displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
-  //     $('.header-month').text(displayMonthLong)
-  //     $('.header-date').text(1)
-  //     displayDayNumber = 1
-  //     generateMonthCalendar()
-  //   } else if (displayDayNumber === 28 && moment(displayMonthLong, "MMM").daysInMonth() === 28) {
-  //     displayMonth = moment(displayMonth + '-' + displayDay, "MM-DD").add('1', 'months').format('MM')
-  //     displayMonthLong = moment(displayMonth + '-' + displayDay, "MM-DD").format('MMM')
-  //     $('.header-month').text(displayMonthLong)
-  //     $('.header-date').text(1)
-  //     displayDayNumber = 1
-  //     generateMonthCalendar()
-  //   } else {
-  //     displayDayNumber = displayDayNumber + 1
-  //     $('.header-date').text(displayDayNumber)
-  //     loadActiveDay()
-  //   }
-  //   loadTodayMsgs()
-  // })
-  //
-  // // CALENDAR SETUP
+
+  // CALENDAR SETUP
   function generateMonthCalendar() {
     $('.first').empty()
     $('.second').empty()
@@ -353,11 +282,6 @@ $(document).ready(() => {
           $('.fifth').append("<span>" + (i - 5) + "</span>")
         }
       }
-      // $('.fifth').append("<span>" + (months[displayMonth] - 4) + "</span>")
-      // $('.fifth').append("<span>" + (months[displayMonth] - 3) + "</span>")
-      // $('.fifth').append("<span>" + (months[displayMonth] - 2) + "</span>")
-      // $('.fifth').append("<span>" + (months[displayMonth] - 1) + "</span>")
-      // $('.sixth').append("<span>" + months[displayMonth] + "</span>")
       if (months[displayMonth] === 30) {
         $('.fifth').append("<span>" + (months[displayMonth] - 4) + "</span>")
         $('.fifth').append("<span>" + (months[displayMonth] - 3) + "</span>")
@@ -414,19 +338,19 @@ $(document).ready(() => {
       $('.toggle-calendar').css('height', '57vh')
     }
   }
-  //
+
   // FIND CREATED MSGS AND ADD A FLAG IN THE UI OVER THE DATE
   function loadMsgsForCal() {
     var msgs
     socket.emit('requestScheduledMsg', {data: org})
   }
-  //
-  // // LOOP THRU MESSAGES, AND SEE IF ONE HAS THE DISPLAYDAY => PUT MESSAGE INFO ON SCREEN
+
+  // LOOP THRU MESSAGES, AND SEE IF ONE HAS THE DISPLAYDAY => PUT MESSAGE INFO ON SCREEN
   function loadTodayMsgs() {
     socket.emit('requestMsgs', {data: org})
   }
-  //
-  // // FIGURE OUT WHAT THE CURRENT DAY IS AND HIGHLIGHT IT
+
+  // FIGURE OUT WHAT THE CURRENT DAY IS AND HIGHLIGHT IT
   function loadActiveDay() {
     for (var i = 0; i <= $('.days').children().children().length; i++) {
       if (Number($($('.days').children().children()[i]).text()) === Number(displayDay)) {
@@ -440,6 +364,7 @@ $(document).ready(() => {
     }
   }
 
+  // SOCKET RECIEVERS
   socket.on('sendMsgs', (data) => {
     var dataArray = data.data
     $('.todays-msgs').empty()
