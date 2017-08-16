@@ -28,16 +28,21 @@ $(document).ready(() => {
   // // UI & INTERACTIONS
   $('.go-to-today').click(() => {
     displayDay = moment().format('D')
+    displayMonth = moment().format('MMM')
+    $('.header-month').text(displayMonth)
     $('.header-date').text(Number(displayDay))
+    $('.controls-month').text(displayMonth)
+    generateMonthCalendar()
     loadTodayMsgs()
     loadActiveDay()
+    loadMsgsForCal()
   })
 
   $('.toggle-calendar').click((event) => {
     if (isNaN($(event.target).text())) {
-      console.log('not a number')
+
     } else if ($(event.target).is('div') || $(event.target).is('img') ) {
-      console.log('its a div or image!')
+
     } else {
       displayDay = $(event.target).text()
       $('.header-date').text(Number($(event.target).text()))
@@ -77,7 +82,6 @@ $(document).ready(() => {
   })
 
   $('.dayLeft').click(() => {
-     console.log('displayDay: ' + displayDay)
     if (displayDay === '1') {
        var daysInNextMonth = moment(displayMonth + '-' + displayDay, "MMM-D").subtract('1', 'months').daysInMonth()
        displayMonth = moment(displayMonth + '-' + displayDay, "MMM-D").subtract('1', 'months').format('MMM')
@@ -93,7 +97,6 @@ $(document).ready(() => {
      } else {
        var yesterday = Number(displayDay) - 1
        displayDay = yesterday.toString()
-       console.log(displayDay)
        $('.header-date').text(yesterday)
        loadActiveDay()
      }
@@ -399,15 +402,11 @@ $(document).ready(() => {
 
   socket.on('scheduledMsgs', (data) => {
     msgs = data.data
-    console.log(msgs)
     for (var i = 0; i < msgs.length; i++) {
       var month = moment(data.data[i].date.split('-')[1], "MM").format("MMM")
 
       var day = data.data[i].date.split('-')[2]
       var year = data.data[i].date.split('-')[0]
-      console.log('month: ' + month)
-      console.log('displayMonth: ' + displayMonth)
-      console.log('day: ' + day)
       if (month === displayMonth) {
         for (var x = 0; x < $('.days').children().children().length; x++) {
           if (Number(day) === Number($($('.days').children().children()[x]).text())) {
