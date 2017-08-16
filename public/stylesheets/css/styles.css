@@ -327,12 +327,12 @@ header {
             transform: rotate(360deg); } }
 
 .active-day {
-  color: #869ECC;
+  color: #224389;
   -webkit-transition: color 1.3s;
   transition: color 1.3s; }
 
 .msg-day {
-  color: #5772AC;
+  color: #869ECC;
   border-radius: 16px;
   padding: 0.3vh;
   width: 4vh;
@@ -351,28 +351,41 @@ header {
   font-size: 3.9vw;
   position: fixed;
   bottom: -64vh;
-  -webkit-transition: opacity .6s, bottom .6s;
-  transition: opacity .6s, bottom .6s;
+  -webkit-transition: opacity .6s, bottom .6s, height .4s;
+  transition: opacity .6s, bottom .6s, height .4s;
   -webkit-transition-delay: bottom .4s;
           transition-delay: bottom .4s;
   background-color: #14306B;
   color: white;
   width: 100vw;
-  height: 58vh;
+  height: 57vh;
   padding-bottom: 6vh; }
   .toggle-calendar nav {
-    padding-bottom: 3vh;
+    padding-bottom: 4vh;
     text-align: center;
     padding-top: 3vh; }
     .toggle-calendar nav .controls-month {
       font-weight: 100;
-      line-height: 10vh;
+      line-height: 8vh;
       font-size: 10vw;
       margin-bottom: 3vh; }
     .toggle-calendar nav img {
+      display: inline-block;
+      vertical-align: middle;
       z-index: 2;
       position: fixed;
-      width: 10vw; }
+      width: 8vw;
+      height: 7vh; }
+      .toggle-calendar nav img:first-of-type, .toggle-calendar nav img:last-of-type {
+        width: 6vw; }
+      .toggle-calendar nav img:first-of-type {
+        left: 5vw; }
+      .toggle-calendar nav img:nth-of-type(2) {
+        left: 22vw; }
+      .toggle-calendar nav img:nth-of-type(3) {
+        right: 22vw; }
+      .toggle-calendar nav img:last-of-type {
+        right: 5vw; }
   .toggle-calendar span {
     line-height: 4.5vh; }
   .toggle-calendar .weekdays {
