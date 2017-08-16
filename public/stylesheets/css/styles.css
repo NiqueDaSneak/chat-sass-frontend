@@ -815,17 +815,24 @@ header {
 .pages {
   text-align: center;
   font-size: 7vw; }
-  .pages .pageList {
-    min-height: 55vh;
-    width: 84vw;
+  .pages p {
     font-size: 6vw;
-    background-color: grey;
-    margin-left: 8vw;
+    margin: 7vh; }
+  .pages .pageList {
     padding-top: 4vh;
-    color: white; }
+    background-color: white;
+    width: 84vw;
+    border-radius: 1vw;
+    padding-bottom: 4vh;
+    -webkit-box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75);
+            box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75);
+    margin-left: 8vw; }
     .pages .pageList a {
+      font-size: 6vw;
+      color: #3b5998;
       padding-bottom: 4vh;
-      display: block; }
+      display: block;
+      font-weight: 100; }
 
 .card {
   width: 60vw;
