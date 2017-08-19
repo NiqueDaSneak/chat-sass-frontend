@@ -12,12 +12,14 @@ $(document).ready(() => {
     socket.emit('getList', {org: org})
     $('.groups').fadeIn()
     $('.todays-msgs').fadeOut()
+    $(this).scrollTop(0)
   })
 
   $('.list .addGroup').click(() => {
     socket.emit('requestMembers', {data: org})
     $('.list').toggleClass('hide')
     $('.new').toggleClass('hide')
+    $(this).scrollTop(0)
   })
 
   $('.new .create').click(() => {
@@ -46,10 +48,12 @@ $(document).ready(() => {
     $('.list').toggleClass('hide')
     $('.names').empty()
     $('.groupName').val("")
+    $(this).scrollTop(0)
   })
 
 
   $('.groups .header span:last-of-type').click(() => {
+    $(this).scrollTop(0)
     ASQ($('.groups').fadeOut())
     .then(() => {
       $('.todays-msgs').fadeIn()
@@ -58,7 +62,6 @@ $(document).ready(() => {
       $('.names').empty()
       $('.groupName').val("")
     })
-
   })
 
   $('.submenu').click(() => {
