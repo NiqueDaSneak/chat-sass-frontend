@@ -395,8 +395,8 @@ $(document).ready(() => {
         if (msg.text) {
           $('.todays-msgs').prepend("<div class='card'><div class='card-top'>Text Message</div><span class='card-middle'><p>'" + msg.text + "'</p></span><div class='card-bottom'><img src='/imgs/clock.svg' alt=''><span>" + fromNow + "</span><img src='/imgs/pen.svg' alt=''></div></div>")
         }
+        $('.todays-msgs').prepend("<hr>")
       }
-
     }
   })
 
