@@ -333,10 +333,6 @@ header {
 
 .msg-day {
   color: #869ECC;
-  border-radius: 16px;
-  padding: 0.3vh;
-  width: 4vh;
-  height: 4vh;
   -webkit-transition: background-color .9s;
   transition: background-color .9s; }
 
@@ -345,7 +341,7 @@ header {
   bottom: 0vh; }
 
 .toggle-calendar {
-  border-radius: 1vh;
+  border-radius: 1vh 1vh 0vh 0vh;
   opacity: 0;
   text-align: center;
   font-size: 3.9vw;
@@ -761,6 +757,18 @@ header {
       border: none;
       padding-top: 6vh;
       font-weight: 500; }
+    .groups .new input.warning::-webkit-input-placeholder {
+      -webkit-transition: color .8s;
+      transition: color .8s;
+      color: red; }
+    .groups .new input.warning:-ms-input-placeholder {
+      -webkit-transition: color .8s;
+      transition: color .8s;
+      color: red; }
+    .groups .new input.warning::placeholder {
+      -webkit-transition: color .8s;
+      transition: color .8s;
+      color: red; }
     .groups .new button {
       width: 28vw;
       height: 7vh;

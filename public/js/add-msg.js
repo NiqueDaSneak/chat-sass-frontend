@@ -6,6 +6,7 @@ $(document).ready(() => {
   var pathname = window.location.pathname.split('/')
   var org = pathname[pathname.length - 1]
   $('.organization').val(org)
+  console.log($('.organization').val())
 
   // SOCKET CONNECTION
   var socket = io.connect()

@@ -21,18 +21,24 @@ $(document).ready(() => {
   })
 
   $('.new .create').click(() => {
-    var arr = []
-    for (var i = 0; i < $('.names').children().length; i++) {
-      if ($($('.names').children()[i]).hasClass('selected')) {
-        arr.push($($('.names').children()[i]).data('fbid'))
+    if ($('.groupName').val("") || $('.groupName').val(" ") || $('.groupName').val("  ")) {
+      console.log('empty')
+      $('.groupName').addClass('warning')
+      $(this).scrollTop(0)
+    } else {
+      var arr = []
+      for (var i = 0; i < $('.names').children().length; i++) {
+        if ($($('.names').children()[i]).hasClass('selected')) {
+          arr.push($($('.names').children()[i]).data('fbid'))
+        }
       }
+      socket.emit('createGroup', {groupMembers: arr, groupName: $('.groupName').val(), org: org})
+      socket.emit('getList', {org: org})
+      $('.new').toggleClass('hide')
+      $('.list').toggleClass('hide')
+      $('.names').empty()
+      $('.groupName').val("")
     }
-    socket.emit('createGroup', {groupMembers: arr, groupName: $('.groupName').val(), org: org})
-    socket.emit('getList', {org: org})
-    $('.new').toggleClass('hide')
-    $('.list').toggleClass('hide')
-    $('.names').empty()
-    $('.groupName').val("")
   })
 
   $('.new .cancel').click(() => {
