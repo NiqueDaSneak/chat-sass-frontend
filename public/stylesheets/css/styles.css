@@ -889,11 +889,6 @@ header {
       width: 6vw;
       vertical-align: middle;
       padding-left: 2vw; }
-    .card .card-bottom img:last-of-type {
-      width: 6vw;
-      vertical-align: middle;
-      position: absolute;
-      right: 23vw; }
 
 body {
   margin: 0;
