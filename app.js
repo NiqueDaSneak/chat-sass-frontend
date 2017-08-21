@@ -384,6 +384,14 @@ io.on('connection', (socket) => {
     requestPages(id)
   })
 
+  socket.on('requestEdit', (data) => {
+    console.log(data.data)
+    Message.findOne({'_id': data.data}, (err, msg) => {
+      socket.emit('editData', {data: msg})
+    })
+  })
+
+
   function requestPages(id) {
     var options = {
       method: 'get',
