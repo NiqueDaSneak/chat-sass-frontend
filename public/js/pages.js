@@ -12,7 +12,7 @@ $(document).ready(() => {
   socket.emit('requestPages', {userID: userID, userAccessToken: userAccessToken})
 
   socket.on('addPages', (data) => {
-    $('.pageList').append("<a href='/save-page?access_token=" + data.page.access_token + "&pageid=" + data.page.id + "&userid=" + ID + "&org=" + data.page.name + "'>" + data.page.name + "</a>")
+    $('.pageList').append("<a href='/save-page?access_token=" + data.page.access_token + "&pageid=" + data.page.id + "&userid=" + userID + "&org=" + data.page.name + "'>" + data.page.name + "</a>")
   })
 
 })

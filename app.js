@@ -402,6 +402,7 @@ io.on('connection', (socket) => {
       if (err) {
         console.error(err)
       }
+      console.log('its works! number of pages: ' + data.data.length)
       console.log(body)
       var data = JSON.parse(body)
       for (var i = 0; i < data.data.length; i++) {
