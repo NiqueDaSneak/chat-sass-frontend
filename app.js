@@ -402,9 +402,9 @@ io.on('connection', (socket) => {
       if (err) {
         console.error(err)
       }
-      console.log('its works! number of pages: ' + data.data.length)
-      console.log(body)
+      console.log('BODY!!!! ' + body)
       var data = JSON.parse(body)
+      console.log('its works! number of pages: ' + data.data.length)
       for (var i = 0; i < data.data.length; i++) {
         socket.emit('addPages', {
           page: data.data[i]
