@@ -29,7 +29,6 @@ var userSchema = mongoose.Schema({
     pageID: Number,
     pageAccessToken: String,
     userAccessToken: String,
-    refreshToken: String
   }
 })
 
@@ -103,7 +102,6 @@ passport.use(new FacebookStrategy({
     profileFields: ['id', 'emails', 'name']
   },
   function(accessToken, refreshToken, profile, done) {
-    console.log(refreshToken)
     User.findOne({
       'facebook.userID': profile.id
     }, (err, user) => {
@@ -119,7 +117,6 @@ passport.use(new FacebookStrategy({
         }
         newUser.facebook.userID = profile.id
         newUser.facebook.userAccessToken = accessToken
-        newUser.facebook.refreshToken = refreshToken
         newUser.save((err, user) => {
           if (err) return console.error(err)
           return done(null, user)
@@ -132,19 +129,23 @@ passport.use(new FacebookStrategy({
 app.get('/auth/facebook', passport.authenticate('facebook', { scope: [ 'publish_pages', 'user_likes', 'pages_messaging', 'user_friends', 'ads_management', 'email', 'pages_show_list', 'manage_pages'] }))
 
 // Facebook redirect
-var id
 app.get('/auth/check-pages', passport.authenticate('facebook', {
   failureRedirect: '/',
   session: false
 }), (req, res, next) => {
   if (req.user.facebook.pageID) {
-    console.log('USER: ' + JSON.stringify(req.user))
     res.redirect('/dashboard/' + req.user.organization)
   } else {
-    res.sendFile(path.join(__dirname + '/views/pages.html'))
     console.log('USER: ' + JSON.stringify(req.user))
-    id = req.user.facebook.userID
+    res.redirect('/choose-page/' + req.user.facebook.userID + '/' + req.user.facebook.userAccessToken)
+    // redirect to '/render-pages-path/:userid/:userAccessToken'
+    // res.sendFile(path.join(__dirname + '/views/pages.html'))
+    // id = req.user.facebook.userID
   }
+})
+
+app.get('/choose-page/:userID/:userAccessToken', (req, res, next) => {
+  res.sendFile(path.join(__dirname + '/views/pages.html'))
 })
 
 app.get('/save-page', (req, res) => {
@@ -376,12 +377,12 @@ io.on('connection', (socket) => {
     })
   })
 
-  socket.on('requestPages', () => {
+  socket.on('requestPages', (data) => {
     console.log('...requesting')
-    socket.emit('userID', {
-      id: id
-    })
-    requestPages(id)
+    // socket.emit('userID', {
+    //   id: id
+    // })
+    requestPages(data.userID, data.userAccessToken)
   })
 
   socket.on('requestEdit', (data) => {
@@ -392,10 +393,10 @@ io.on('connection', (socket) => {
   })
 
 
-  function requestPages(id) {
+  function requestPages(userID, userAccessToken) {
     var options = {
       method: 'get',
-      url: "https://graph.facebook.com/v2.6/" + id + "/accounts?access_token=EAAFTJz88HJUBAAuDTlDz2QflnfI2nM8E7rZCkxTWHJrlhngEIUqNHWpVAnwvOhyEZCbRB3wxL2en3Pca7eZAW7WJmIKyrgRFHgyt1oupDz7n2v0BBZCiMSozLoZAxOvdSeZCBLFfFirffklKfN2e4a5JBZCd7p7s5Y2Us6VVEcgeQZDZD"
+      url: "https://graph.facebook.com/v2.6/" + id + "/accounts?access_token=" + userAccessToken
     }
     request(options, function(err, res, body) {
       if (err) {
