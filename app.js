@@ -396,7 +396,7 @@ io.on('connection', (socket) => {
   function requestPages(userID, userAccessToken) {
     var options = {
       method: 'get',
-      url: "https://graph.facebook.com/v2.6/" + id + "/accounts?access_token=" + userAccessToken
+      url: "https://graph.facebook.com/v2.6/" + userID + "/accounts?access_token=" + userAccessToken
     }
     request(options, function(err, res, body) {
       if (err) {
