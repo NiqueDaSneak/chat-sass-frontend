@@ -126,7 +126,7 @@ passport.use(new FacebookStrategy({
   }))
 
 // ROUTES
-app.get('/auth/facebook', passport.authenticate('facebook', { scope: [ 'publish_pages', 'user_likes', 'pages_messaging', 'user_friends', 'ads_management', 'email', 'pages_show_list', 'manage_pages'] }))
+app.get('/auth/facebook', passport.authenticate('facebook', { scope: [ 'manage_pages', 'publish_pages', 'user_likes', 'pages_messaging', 'user_friends', 'ads_management', 'email', 'pages_show_list'] }))
 
 // Facebook redirect
 app.get('/auth/check-pages', passport.authenticate('facebook', {

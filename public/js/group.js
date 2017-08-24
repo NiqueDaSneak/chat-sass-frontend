@@ -22,8 +22,8 @@ $(document).ready(() => {
     $(this).scrollTop(0)
   })
 
-  $('.new .create').click(() => {
-    if ($('.groupName').val("") || $('.groupName').val(" ") || $('.groupName').val("  ")) {
+  $('.create').click(() => {
+    if (!$('.groupName').val()) {
       console.log('empty')
       $('.groupName').addClass('warning')
       $(this).scrollTop(0)
@@ -39,11 +39,12 @@ $(document).ready(() => {
       $('.new').toggleClass('hide')
       $('.list').toggleClass('hide')
       $('.names').empty()
+      $('.groupName').removeClass('warning')
       $('.groupName').val("")
     }
   })
 
-  $('.new .cancel').click(() => {
+  $('.cancel').click(() => {
     $('.new').toggleClass('hide')
     $('.list').toggleClass('hide')
     $('.names').empty()
