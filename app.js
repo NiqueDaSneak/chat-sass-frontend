@@ -11,9 +11,6 @@ const io = require('socket.io')(server)
 const request = require('request')
 const util = require('util')
 
-// CHAT CONTENT
-const content = JSON.parse(fs.readFileSync('content/chat.json', 'utf8'))
-
 // DATABASE SETUP
 const mongoose = require('mongoose')
 // mongoose.connect('mongodb://dom:Losangeleslakers47@ds123182.mlab.com:23182/chat-sass-frontend')
@@ -98,7 +95,7 @@ app.use(passport.session())
 passport.use(new FacebookStrategy({
     clientID: '372903006444693',
     clientSecret: 'e0cf0b310d6931c9140969a115efefa9',
-    callbackURL: "http://chat-sass-frontend.herokuapp.com/auth/check-pages",
+    callbackURL: "http://www.irrigatemessaging.com/auth/check-pages",
     profileFields: ['id', 'emails', 'name']
   },
   function(accessToken, refreshToken, profile, done) {
