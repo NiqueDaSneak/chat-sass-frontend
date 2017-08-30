@@ -65,11 +65,6 @@ $(document).ready(() => {
     })
   })
 
-  $('.submenu').click(() => {
-    $('footer').toggleClass('sub')
-    $('.submenu').toggleClass('inactive')
-  })
-
   $('.new').click((event) => {
     $(event.target).parent().toggleClass('selected')
   })

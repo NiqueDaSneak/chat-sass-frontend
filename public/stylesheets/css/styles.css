@@ -13,7 +13,7 @@
     position: fixed;
     left: 16vw;
     bottom: 10vh;
-    font-weight: 100;
+    font-weight: 400;
     padding: 2vh 2vw 2vh 2vw;
     width: 68vw; }
 
@@ -213,7 +213,8 @@ nav {
   transition: opacity .7s;
   padding-top: 20vh;
   padding-bottom: 25vh;
-  opacity: 1; }
+  opacity: 1;
+  min-height: 100vh; }
   .todays-msgs hr {
     width: 75vw;
     margin-bottom: 8vw;
@@ -228,13 +229,13 @@ nav {
 .submenu div {
   position: fixed;
   height: 10vh;
-  width: 49vw;
-  background-color: #474747;
-  border: .5vh solid lightgrey;
+  width: 50vw;
+  background-color: #5772AC;
   line-height: 10vh;
   text-align: center;
   color: white;
-  font-size: 4.9vw; }
+  font-size: 4.6vw;
+  font-weight: 300; }
   .submenu div:first-of-type {
     bottom: 10vh;
     left: 0vw;

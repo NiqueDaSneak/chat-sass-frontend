@@ -1,7 +1,12 @@
 $(document).ready(() => {
 
-  $('.hamburger').click(() => {
-    $('footer').toggleClass('sub')
+  $('.show-more').click(() => {
     $('.submenu').toggleClass('inactive')
+  })
+
+  $('.todays-msgs').click((event) => {
+    if (!$('.submenu').hasClass('inactive')) {
+        $('.submenu').toggleClass('inactive')
+      }
   })
 })

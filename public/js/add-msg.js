@@ -5,9 +5,7 @@ $(document).ready(() => {
   // GRAB ORG NAME FOR URL TO GET DATA FROM SERVER
   var pathname = window.location.pathname.split('/')
   var org = pathname[pathname.length - 1]
-  console.log('org: ' + org)
   $('.organization').val(org)
-  console.log($('.organization').val())
 
   // SOCKET CONNECTION
   var socket = io.connect()
