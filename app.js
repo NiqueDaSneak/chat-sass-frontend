@@ -131,13 +131,11 @@ app.get('/auth/check-pages', passport.authenticate('facebook', {
   session: false
 }), (req, res, next) => {
   if (req.user.facebook.pageID) {
+    req.session.user = req.user
     res.redirect('/dashboard/' + req.user.organization)
   } else {
     console.log('USER: ' + JSON.stringify(req.user))
     res.redirect('/choose-page/' + req.user.facebook.userID + '/' + req.user.facebook.userAccessToken)
-    // redirect to '/render-pages-path/:userid/:userAccessToken'
-    // res.sendFile(path.join(__dirname + '/views/pages.html'))
-    // id = req.user.facebook.userID
   }
 })
 
@@ -255,22 +253,22 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/views/index.html'))
 })
 
-app.get('/auth', (req, res) => {
-  res.sendFile(path.join(__dirname + '/views/auth.html'))
-})
+// app.get('/auth', (req, res) => {
+//   res.sendFile(path.join(__dirname + '/views/auth.html'))
+// })
 
-app.get('/auth-error', (req, res) => {
-  res.sendFile(path.join(__dirname + '/views/auth-error.html'))
-})
+// app.get('/auth-error', (req, res) => {
+//   res.sendFile(path.join(__dirname + '/views/auth-error.html'))
+// })
 
 app.get('/dashboard/:organization', (req, res) => {
-  // if (req.session.email) {
+  if (req.session.user) {
   res.sendFile(path.join(__dirname + '/views/dashboard.html'))
-  // console.log('logged in: ' + req.session.email)
-  // } else {
+  console.log('logged in: ' + req.session.user)
+  } else {
   // console.log('not logged in')
-  // res.redirect('/auth')
-  // }
+  res.redirect('/auth/facebook')
+  }
 })
 
 app.post('/message', (req, res) => {
