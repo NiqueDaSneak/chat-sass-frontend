@@ -21,6 +21,7 @@ db.on('error', console.error.bind(console, 'connection error:'))
 var userSchema = mongoose.Schema({
   email: String,
   organization: String,
+  onboarded: Boolean,
   facebook: {
     userID: Number,
     pageID: Number,
@@ -112,6 +113,7 @@ passport.use(new FacebookStrategy({
         if (profile.emails[0].value) {
           newUser.email = profile.emails[0].value
         }
+        newUser.onboarded = false
         newUser.facebook.userID = profile.id
         newUser.facebook.userAccessToken = accessToken
         newUser.save((err, user) => {
