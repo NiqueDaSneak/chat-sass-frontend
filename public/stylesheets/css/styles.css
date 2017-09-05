@@ -890,6 +890,39 @@ header {
       vertical-align: middle;
       padding-left: 2vw; }
 
+.onboarding {
+  margin-top: 20vh;
+  text-align: center; }
+  .onboarding div {
+    width: 80vw;
+    margin-left: 10vw;
+    background-color: #3b5998;
+    color: white;
+    border-radius: 0vw 0vw 3vw 3vw; }
+    .onboarding div img {
+      width: 10vw;
+      padding-top: 3vh; }
+    .onboarding div p:first-of-type {
+      font-size: 8vw;
+      font-weight: 400; }
+    .onboarding div p:last-of-type {
+      padding-left: 8vw;
+      padding-right: 8vw;
+      font-size: 5.5vw;
+      padding-bottom: 7vh;
+      font-weight: 100; }
+    .onboarding div button {
+      position: relative;
+      color: blue;
+      font-size: 6vw;
+      width: 80vw;
+      bottom: 0;
+      background-color: white;
+      border: none;
+      padding-top: 2vh;
+      padding-bottom: 2vh;
+      border-radius: 0vw 0vw 3vw 3vw; }
+
 body {
   margin: 0;
   background-color: #E0E0E0;
