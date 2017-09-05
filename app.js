@@ -255,13 +255,13 @@ app.get('/', (req, res) => {
 })
 
 app.get('/dashboard/:organization', (req, res) => {
-  if (req.session.user) {
+  // if (req.session.user) {
   res.sendFile(path.join(__dirname + '/views/dashboard.html'))
   console.log('LOGGED IN: ' + JSON.stringify(req.session.user))
-  } else {
-  console.log('not logged in')
-  res.redirect('/auth/facebook')
-  }
+  // } else {
+  // console.log('not logged in')
+  // res.redirect('/auth/facebook')
+  // }
 })
 
 app.post('/message', (req, res) => {
@@ -288,7 +288,7 @@ io.on('connection', (socket) => {
     Message.find({
       organization: data.data
     }, (err, msgs) => {
-      console.log(msgs)
+      // console.log(msgs)
       socket.emit('sendMsgs', {
         data: msgs
       })
@@ -384,6 +384,15 @@ io.on('connection', (socket) => {
     })
   })
 
+  socket.on('isOnboarded?', (data) => {
+    User.findOne({'organization': data.data}, (err, user) => {
+      if (user.onboarded === true) {
+        console.log('already onboarded')
+      } else {
+        socket.emit('onboardUser')
+      }
+    })
+  })
 
   function requestPages(userID, userAccessToken) {
     var options = {

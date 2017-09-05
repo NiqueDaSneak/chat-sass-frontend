@@ -890,18 +890,29 @@ header {
       vertical-align: middle;
       padding-left: 2vw; }
 
+.onboard-dark {
+  position: fixed;
+  top: 0;
+  background-color: #777777;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  opacity: 0.8; }
+
 .onboarding {
-  margin-top: 20vh;
-  text-align: center; }
+  margin-top: 10vh;
+  text-align: center;
+  z-index: 3;
+  position: fixed; }
   .onboarding div {
     width: 80vw;
     margin-left: 10vw;
     background-color: #3b5998;
     color: white;
-    border-radius: 0vw 0vw 3vw 3vw; }
+    border-radius: 0vw 0vw 3vw 3vw;
+    padding-top: 3vh; }
     .onboarding div img {
-      width: 10vw;
-      padding-top: 3vh; }
+      width: 10vw; }
     .onboarding div p:first-of-type {
       font-size: 8vw;
       font-weight: 400; }
@@ -913,7 +924,7 @@ header {
       font-weight: 100; }
     .onboarding div button {
       position: relative;
-      color: blue;
+      color: #3b5998;
       font-size: 6vw;
       width: 80vw;
       bottom: 0;
@@ -921,7 +932,21 @@ header {
       border: none;
       padding-top: 2vh;
       padding-bottom: 2vh;
-      border-radius: 0vw 0vw 3vw 3vw; }
+      border-radius: 0vw 0vw 3vw 3vw;
+      font-weight: 500; }
+
+.onboard-promote p:last-of-type {
+  padding-bottom: 1vh; }
+
+.onboard-promote textarea {
+  background-color: #E0E0E0;
+  margin-bottom: 10vh;
+  border-radius: 3vw;
+  font-size: 4.2vw;
+  padding: 2vh;
+  border: none;
+  width: 66vw;
+  height: 20vh; }
 
 body {
   margin: 0;
