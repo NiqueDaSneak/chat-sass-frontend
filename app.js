@@ -386,12 +386,32 @@ io.on('connection', (socket) => {
 
   socket.on('isOnboarded?', (data) => {
     User.findOne({'organization': data.data}, (err, user) => {
+      if (err) {
+        console.log(err)
+      }
       if (user.onboarded === true) {
         console.log('already onboarded')
       } else {
         socket.emit('onboardUser')
       }
     })
+  })
+
+  socket.on('onboardComplete', (data) => {
+    User.findOne({'organization': data.data}, (err, user) => {
+      if (err) {
+        console.log(err)
+      }
+      user.onboarded = true
+      user.save((err, user) => {
+        if (err) {
+          console.log(err)
+        } else {
+          console.log('are they onboarded? ' + user.onboarded)
+        }
+      })
+    })
+
   })
 
   function requestPages(userID, userAccessToken) {

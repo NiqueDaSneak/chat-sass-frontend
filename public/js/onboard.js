@@ -22,6 +22,7 @@ $(document).ready(() => {
     if ($(event.target).hasClass('promote-on-facebook')) {
       $('.onboarding').remove()
       $('.onboard-dark').remove()
+      socket.emit('onboardComplete', {data: org})
     } else {
       $(event.target).parent().addClass('hide')
       $(event.target).parent().next().removeClass('hide')
