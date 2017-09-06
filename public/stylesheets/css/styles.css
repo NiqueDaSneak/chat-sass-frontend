@@ -900,7 +900,7 @@ header {
   opacity: 0.8; }
 
 .onboarding {
-  margin-top: 10vh;
+  margin-top: 6vh;
   text-align: center;
   z-index: 3;
   position: fixed; }
@@ -920,7 +920,6 @@ header {
       padding-left: 8vw;
       padding-right: 8vw;
       font-size: 5.5vw;
-      padding-bottom: 7vh;
       font-weight: 100; }
     .onboarding div button {
       position: relative;
@@ -940,7 +939,7 @@ header {
 
 .onboard-promote textarea {
   background-color: #E0E0E0;
-  margin-bottom: 10vh;
+  margin-bottom: 4vh;
   border-radius: 3vw;
   font-size: 4.2vw;
   padding: 2vh;
