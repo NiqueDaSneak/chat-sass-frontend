@@ -25,6 +25,8 @@ $weekPadding: 7vh
   width: 100vw
   height: 57vh
   padding-bottom: 6vh
+  @include desktop
+    font-size: 1.9vw
   nav
     padding-bottom: 4vh
     text-align: center
@@ -34,6 +36,8 @@ $weekPadding: 7vh
       line-height: 8vh
       font-size: 10vw
       margin-bottom: 3vh
+      @include desktop
+        font-size: 4vw
     img
       display: inline-block
       vertical-align: middle
@@ -45,44 +49,68 @@ $weekPadding: 7vh
         width: 6vw
       &:first-of-type
         left: 5vw
+        @include desktop
+          left: 30vw
       &:nth-of-type(2)
         left: 22vw
+        @include desktop
+          left: 35vw
       &:nth-of-type(3)
         right: 22vw
+        @include desktop
+          right: 35vw
       &:last-of-type
         right: 5vw
+        @include desktop
+          right: 30vw
   span
     line-height: 4.5vh
   .weekdays
     font-weight: 500
     font-size: 5vw
+    @include desktop
+      font-size: 3vw
     span:nth-of-type(1)
       position: fixed
       left: 5vw
+      @include desktop
+        left: 15vw
 
     span:nth-of-type(2)
       position: fixed
       left: 18.5vw
+      @include desktop
+        left: 25.5vw
 
     span:nth-of-type(3)
       position: fixed
       left: 33vw
+      @include desktop
+        left: 37vw
 
     span:nth-of-type(4)
       position: fixed
       left: 46vw
+      @include desktop
+        left: 48vw
 
     span:nth-of-type(5)
       position: fixed
       right: 33vw
+      @include desktop
+        right: 37vw
 
     span:nth-of-type(6)
       position: fixed
       right: 18.5vw
+      @include desktop
+        right: 25.5vw
 
     span:nth-of-type(7)
       position: fixed
       right: 5vw
+      @include desktop
+        right: 15vw
 
   .days
     .first
@@ -91,31 +119,45 @@ $weekPadding: 7vh
       span:nth-of-type(1)
         position: fixed
         left: 5vw
+        @include desktop
+          left: 15vw
 
       span:nth-of-type(2)
         position: fixed
         left: 18.5vw
+        @include desktop
+          left: 25.5vw
 
       span:nth-of-type(3)
         position: fixed
         left: 33vw
+        @include desktop
+          left: 37vw
 
       span:nth-of-type(4)
         position: fixed
         left: 46vw
         padding-left: 1vw
+        @include desktop
+          left: 48vw
 
       span:nth-of-type(5)
         position: fixed
         right: 33vw
+        @include desktop
+          right: 37vw
 
       span:nth-of-type(6)
         position: fixed
         right: 18.5vw
+        @include desktop
+          right: 25.5vw
 
       span:nth-of-type(7)
         position: fixed
         right: 5vw
+        @include desktop
+          right: 15vw
 
     .second
       padding-top: $weekPadding
@@ -123,31 +165,45 @@ $weekPadding: 7vh
       span:nth-of-type(1)
         position: fixed
         left: 5vw
+        @include desktop
+          left: 15vw
 
       span:nth-of-type(2)
         position: fixed
         left: 18.5vw
+        @include desktop
+          left: 25.5vw
 
       span:nth-of-type(3)
         position: fixed
         left: 33vw
+        @include desktop
+          left: 37vw
 
       span:nth-of-type(4)
         position: fixed
         left: 46vw
         padding-left: 1vw
+        @include desktop
+          left: 48vw
 
       span:nth-of-type(5)
         position: fixed
         right: 33vw
+        @include desktop
+          right: 37vw
 
       span:nth-of-type(6)
         position: fixed
         right: 18.5vw
+        @include desktop
+          right: 25.5vw
 
       span:nth-of-type(7)
         position: fixed
         right: 5vw
+        @include desktop
+          right: 15vw
 
     .third
       padding-top: $weekPadding
@@ -155,31 +211,45 @@ $weekPadding: 7vh
       span:nth-of-type(1)
         position: fixed
         left: 5vw
+        @include desktop
+          left: 15vw
 
       span:nth-of-type(2)
         position: fixed
         left: 18.5vw
+        @include desktop
+          left: 25.5vw
 
       span:nth-of-type(3)
         position: fixed
         left: 33vw
+        @include desktop
+          left: 37vw
 
       span:nth-of-type(4)
         position: fixed
         left: 46vw
         padding-left: 1vw
+        @include desktop
+          left: 48vw
 
       span:nth-of-type(5)
         position: fixed
         right: 33vw
+        @include desktop
+          right: 37vw
 
       span:nth-of-type(6)
         position: fixed
         right: 18.5vw
+        @include desktop
+          right: 25.5vw
 
       span:nth-of-type(7)
         position: fixed
         right: 5vw
+        @include desktop
+          right: 15vw
 
     .fourth
       padding-top: $weekPadding
@@ -187,31 +257,45 @@ $weekPadding: 7vh
       span:nth-of-type(1)
         position: fixed
         left: 5vw
+        @include desktop
+          left: 15vw
 
       span:nth-of-type(2)
         position: fixed
         left: 18.5vw
+        @include desktop
+          left: 25.5vw
 
       span:nth-of-type(3)
         position: fixed
         left: 33vw
+        @include desktop
+          left: 37vw
 
       span:nth-of-type(4)
         position: fixed
         left: 46vw
         padding-left: 1vw
+        @include desktop
+          left: 48vw
 
       span:nth-of-type(5)
         position: fixed
         right: 33vw
+        @include desktop
+          right: 37vw
 
       span:nth-of-type(6)
         position: fixed
         right: 18.5vw
+        @include desktop
+          right: 25.5vw
 
       span:nth-of-type(7)
         position: fixed
         right: 5vw
+        @include desktop
+          right: 15vw
 
     .fifth
       padding-top: $weekPadding
@@ -219,59 +303,87 @@ $weekPadding: 7vh
       span:nth-of-type(1)
         position: fixed
         left: 5vw
+        @include desktop
+          left: 15vw
 
       span:nth-of-type(2)
         position: fixed
         left: 18.5vw
+        @include desktop
+          left: 25.5vw
 
       span:nth-of-type(3)
         position: fixed
         left: 33vw
+        @include desktop
+          left: 37vw
 
       span:nth-of-type(4)
         position: fixed
         left: 46vw
         padding-left: 1vw
+        @include desktop
+          left: 48vw
 
       span:nth-of-type(5)
         position: fixed
         right: 33vw
+        @include desktop
+          right: 37vw
 
       span:nth-of-type(6)
         position: fixed
         right: 18.5vw
+        @include desktop
+          right: 25.5vw
 
       span:nth-of-type(7)
         position: fixed
         right: 5vw
+        @include desktop
+          right: 15vw
     .sixth
       padding-top: $weekPadding
 
       span:nth-of-type(1)
         position: fixed
         left: 5vw
+        @include desktop
+          left: 15vw
 
       span:nth-of-type(2)
         position: fixed
         left: 18.5vw
+        @include desktop
+          left: 25.5vw
 
       span:nth-of-type(3)
         position: fixed
         left: 33vw
+        @include desktop
+          left: 37vw
 
       span:nth-of-type(4)
         position: fixed
         left: 46vw
         padding-left: 1vw
+        @include desktop
+          left: 48vw
 
       span:nth-of-type(5)
         position: fixed
         right: 33vw
+        @include desktop
+          right: 37vw
 
       span:nth-of-type(6)
         position: fixed
         right: 18.5vw
+        @include desktop
+          right: 25.5vw
 
       span:nth-of-type(7)
         position: fixed
         right: 5vw
+        @include desktop
+          right: 15vw

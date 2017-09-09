@@ -395,6 +395,9 @@ header {
   width: 100vw;
   height: 57vh;
   padding-bottom: 6vh; }
+  @media only screen and (min-width: 1025px) {
+    .toggle-calendar {
+      font-size: 1.9vw; } }
   .toggle-calendar nav {
     padding-bottom: 4vh;
     text-align: center;
@@ -404,6 +407,9 @@ header {
       line-height: 8vh;
       font-size: 10vw;
       margin-bottom: 3vh; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar nav .controls-month {
+          font-size: 4vw; } }
     .toggle-calendar nav img {
       display: inline-block;
       vertical-align: middle;
@@ -415,182 +421,344 @@ header {
         width: 6vw; }
       .toggle-calendar nav img:first-of-type {
         left: 5vw; }
+        @media only screen and (min-width: 1025px) {
+          .toggle-calendar nav img:first-of-type {
+            left: 30vw; } }
       .toggle-calendar nav img:nth-of-type(2) {
         left: 22vw; }
+        @media only screen and (min-width: 1025px) {
+          .toggle-calendar nav img:nth-of-type(2) {
+            left: 35vw; } }
       .toggle-calendar nav img:nth-of-type(3) {
         right: 22vw; }
+        @media only screen and (min-width: 1025px) {
+          .toggle-calendar nav img:nth-of-type(3) {
+            right: 35vw; } }
       .toggle-calendar nav img:last-of-type {
         right: 5vw; }
+        @media only screen and (min-width: 1025px) {
+          .toggle-calendar nav img:last-of-type {
+            right: 30vw; } }
   .toggle-calendar span {
     line-height: 4.5vh; }
   .toggle-calendar .weekdays {
     font-weight: 500;
     font-size: 5vw; }
+    @media only screen and (min-width: 1025px) {
+      .toggle-calendar .weekdays {
+        font-size: 3vw; } }
     .toggle-calendar .weekdays span:nth-of-type(1) {
       position: fixed;
       left: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .weekdays span:nth-of-type(1) {
+          left: 15vw; } }
     .toggle-calendar .weekdays span:nth-of-type(2) {
       position: fixed;
       left: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .weekdays span:nth-of-type(2) {
+          left: 25.5vw; } }
     .toggle-calendar .weekdays span:nth-of-type(3) {
       position: fixed;
       left: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .weekdays span:nth-of-type(3) {
+          left: 37vw; } }
     .toggle-calendar .weekdays span:nth-of-type(4) {
       position: fixed;
       left: 46vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .weekdays span:nth-of-type(4) {
+          left: 48vw; } }
     .toggle-calendar .weekdays span:nth-of-type(5) {
       position: fixed;
       right: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .weekdays span:nth-of-type(5) {
+          right: 37vw; } }
     .toggle-calendar .weekdays span:nth-of-type(6) {
       position: fixed;
       right: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .weekdays span:nth-of-type(6) {
+          right: 25.5vw; } }
     .toggle-calendar .weekdays span:nth-of-type(7) {
       position: fixed;
       right: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .weekdays span:nth-of-type(7) {
+          right: 15vw; } }
   .toggle-calendar .days .first {
     padding-top: 7vh; }
     .toggle-calendar .days .first span:nth-of-type(1) {
       position: fixed;
       left: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .first span:nth-of-type(1) {
+          left: 15vw; } }
     .toggle-calendar .days .first span:nth-of-type(2) {
       position: fixed;
       left: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .first span:nth-of-type(2) {
+          left: 25.5vw; } }
     .toggle-calendar .days .first span:nth-of-type(3) {
       position: fixed;
       left: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .first span:nth-of-type(3) {
+          left: 37vw; } }
     .toggle-calendar .days .first span:nth-of-type(4) {
       position: fixed;
       left: 46vw;
       padding-left: 1vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .first span:nth-of-type(4) {
+          left: 48vw; } }
     .toggle-calendar .days .first span:nth-of-type(5) {
       position: fixed;
       right: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .first span:nth-of-type(5) {
+          right: 37vw; } }
     .toggle-calendar .days .first span:nth-of-type(6) {
       position: fixed;
       right: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .first span:nth-of-type(6) {
+          right: 25.5vw; } }
     .toggle-calendar .days .first span:nth-of-type(7) {
       position: fixed;
       right: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .first span:nth-of-type(7) {
+          right: 15vw; } }
   .toggle-calendar .days .second {
     padding-top: 7vh; }
     .toggle-calendar .days .second span:nth-of-type(1) {
       position: fixed;
       left: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .second span:nth-of-type(1) {
+          left: 15vw; } }
     .toggle-calendar .days .second span:nth-of-type(2) {
       position: fixed;
       left: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .second span:nth-of-type(2) {
+          left: 25.5vw; } }
     .toggle-calendar .days .second span:nth-of-type(3) {
       position: fixed;
       left: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .second span:nth-of-type(3) {
+          left: 37vw; } }
     .toggle-calendar .days .second span:nth-of-type(4) {
       position: fixed;
       left: 46vw;
       padding-left: 1vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .second span:nth-of-type(4) {
+          left: 48vw; } }
     .toggle-calendar .days .second span:nth-of-type(5) {
       position: fixed;
       right: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .second span:nth-of-type(5) {
+          right: 37vw; } }
     .toggle-calendar .days .second span:nth-of-type(6) {
       position: fixed;
       right: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .second span:nth-of-type(6) {
+          right: 25.5vw; } }
     .toggle-calendar .days .second span:nth-of-type(7) {
       position: fixed;
       right: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .second span:nth-of-type(7) {
+          right: 15vw; } }
   .toggle-calendar .days .third {
     padding-top: 7vh; }
     .toggle-calendar .days .third span:nth-of-type(1) {
       position: fixed;
       left: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .third span:nth-of-type(1) {
+          left: 15vw; } }
     .toggle-calendar .days .third span:nth-of-type(2) {
       position: fixed;
       left: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .third span:nth-of-type(2) {
+          left: 25.5vw; } }
     .toggle-calendar .days .third span:nth-of-type(3) {
       position: fixed;
       left: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .third span:nth-of-type(3) {
+          left: 37vw; } }
     .toggle-calendar .days .third span:nth-of-type(4) {
       position: fixed;
       left: 46vw;
       padding-left: 1vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .third span:nth-of-type(4) {
+          left: 48vw; } }
     .toggle-calendar .days .third span:nth-of-type(5) {
       position: fixed;
       right: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .third span:nth-of-type(5) {
+          right: 37vw; } }
     .toggle-calendar .days .third span:nth-of-type(6) {
       position: fixed;
       right: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .third span:nth-of-type(6) {
+          right: 25.5vw; } }
     .toggle-calendar .days .third span:nth-of-type(7) {
       position: fixed;
       right: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .third span:nth-of-type(7) {
+          right: 15vw; } }
   .toggle-calendar .days .fourth {
     padding-top: 7vh; }
     .toggle-calendar .days .fourth span:nth-of-type(1) {
       position: fixed;
       left: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fourth span:nth-of-type(1) {
+          left: 15vw; } }
     .toggle-calendar .days .fourth span:nth-of-type(2) {
       position: fixed;
       left: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fourth span:nth-of-type(2) {
+          left: 25.5vw; } }
     .toggle-calendar .days .fourth span:nth-of-type(3) {
       position: fixed;
       left: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fourth span:nth-of-type(3) {
+          left: 37vw; } }
     .toggle-calendar .days .fourth span:nth-of-type(4) {
       position: fixed;
       left: 46vw;
       padding-left: 1vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fourth span:nth-of-type(4) {
+          left: 48vw; } }
     .toggle-calendar .days .fourth span:nth-of-type(5) {
       position: fixed;
       right: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fourth span:nth-of-type(5) {
+          right: 37vw; } }
     .toggle-calendar .days .fourth span:nth-of-type(6) {
       position: fixed;
       right: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fourth span:nth-of-type(6) {
+          right: 25.5vw; } }
     .toggle-calendar .days .fourth span:nth-of-type(7) {
       position: fixed;
       right: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fourth span:nth-of-type(7) {
+          right: 15vw; } }
   .toggle-calendar .days .fifth {
     padding-top: 7vh; }
     .toggle-calendar .days .fifth span:nth-of-type(1) {
       position: fixed;
       left: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fifth span:nth-of-type(1) {
+          left: 15vw; } }
     .toggle-calendar .days .fifth span:nth-of-type(2) {
       position: fixed;
       left: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fifth span:nth-of-type(2) {
+          left: 25.5vw; } }
     .toggle-calendar .days .fifth span:nth-of-type(3) {
       position: fixed;
       left: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fifth span:nth-of-type(3) {
+          left: 37vw; } }
     .toggle-calendar .days .fifth span:nth-of-type(4) {
       position: fixed;
       left: 46vw;
       padding-left: 1vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fifth span:nth-of-type(4) {
+          left: 48vw; } }
     .toggle-calendar .days .fifth span:nth-of-type(5) {
       position: fixed;
       right: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fifth span:nth-of-type(5) {
+          right: 37vw; } }
     .toggle-calendar .days .fifth span:nth-of-type(6) {
       position: fixed;
       right: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fifth span:nth-of-type(6) {
+          right: 25.5vw; } }
     .toggle-calendar .days .fifth span:nth-of-type(7) {
       position: fixed;
       right: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fifth span:nth-of-type(7) {
+          right: 15vw; } }
   .toggle-calendar .days .sixth {
     padding-top: 7vh; }
     .toggle-calendar .days .sixth span:nth-of-type(1) {
       position: fixed;
       left: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .sixth span:nth-of-type(1) {
+          left: 15vw; } }
     .toggle-calendar .days .sixth span:nth-of-type(2) {
       position: fixed;
       left: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .sixth span:nth-of-type(2) {
+          left: 25.5vw; } }
     .toggle-calendar .days .sixth span:nth-of-type(3) {
       position: fixed;
       left: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .sixth span:nth-of-type(3) {
+          left: 37vw; } }
     .toggle-calendar .days .sixth span:nth-of-type(4) {
       position: fixed;
       left: 46vw;
       padding-left: 1vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .sixth span:nth-of-type(4) {
+          left: 48vw; } }
     .toggle-calendar .days .sixth span:nth-of-type(5) {
       position: fixed;
       right: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .sixth span:nth-of-type(5) {
+          right: 37vw; } }
     .toggle-calendar .days .sixth span:nth-of-type(6) {
       position: fixed;
       right: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .sixth span:nth-of-type(6) {
+          right: 25.5vw; } }
     .toggle-calendar .days .sixth span:nth-of-type(7) {
       position: fixed;
       right: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .sixth span:nth-of-type(7) {
+          right: 15vw; } }
 
 .chat-ui.live-chat {
   left: 0vw;
