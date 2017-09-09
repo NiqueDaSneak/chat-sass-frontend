@@ -417,7 +417,7 @@ io.on('connection', (socket) => {
       if (user.onboarded === true) {
         console.log('already onboarded')
       } else {
-        socket.emit('onboardUser')
+        socket.emit('onboardUser',{data: user.username})
       }
     })
   })
