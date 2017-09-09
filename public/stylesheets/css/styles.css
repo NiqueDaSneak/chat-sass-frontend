@@ -4,6 +4,9 @@
   .landing p {
     font-size: 6vw;
     padding-top: 6vh; }
+    @media only screen and (min-width: 1025px) {
+      .landing p {
+        padding-bottom: 40vh; } }
   .landing a {
     text-decoration: none;
     color: white;
@@ -16,6 +19,10 @@
     font-weight: 400;
     padding: 2vh 2vw 2vh 2vw;
     width: 68vw; }
+    @media only screen and (min-width: 1025px) {
+      .landing a {
+        width: 18vw;
+        font-size: 1.6vw; } }
 
 .login {
   background-color: #474747;
@@ -1178,6 +1185,9 @@ header {
   .pages p {
     font-size: 6vw;
     margin: 7vh; }
+    @media only screen and (min-width: 1025px) {
+      .pages p {
+        font-size: 2vw; } }
   .pages .pageList {
     padding-top: 4vh;
     background-color: white;
@@ -1187,6 +1197,10 @@ header {
     -webkit-box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75);
             box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75);
     margin-left: 8vw; }
+    @media only screen and (min-width: 1025px) {
+      .pages .pageList {
+        margin-left: 23vw;
+        width: 54vw; } }
     .pages .pageList a {
       font-size: 6vw;
       color: #3b5998;
@@ -1194,6 +1208,9 @@ header {
       display: block;
       font-weight: 100;
       text-decoration: none; }
+      @media only screen and (min-width: 1025px) {
+        .pages .pageList a {
+          font-size: 3vw; } }
 
 .card {
   width: 60vw;

@@ -4,6 +4,8 @@
   p
     font-size: 6vw
     margin: 7vh
+    @include desktop
+      font-size: 2vw
   .pageList
     padding-top: 4vh
     background-color: white
@@ -12,6 +14,9 @@
     padding-bottom: 4vh
     box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75)
     margin-left: 8vw
+    @include desktop
+      margin-left: 23vw
+      width: 54vw
     a
       font-size: 6vw
       color: $siteMain
@@ -19,3 +24,5 @@
       display: block
       font-weight: 100
       text-decoration: none
+      @include desktop
+        font-size: 3vw
