@@ -152,9 +152,35 @@ app.get('/save-page', (req, res) => {
     'facebook.userID': req.query.userid
   }, (err, user) => {
     if (err) return console.error(err)
-    user.facebook.pageID = req.query.pageid
-    user.organization = req.query.org.split(' ').join('').toLowerCase()
-    user.facebook.pageAccessToken = req.query.access_token
+
+    var getUsername = new Promise(function(resolve, reject) {
+      let options = {
+        method: 'get',
+        url: 'https://graph.facebook.com/v2.10/' + user.facebook.pageID + '?fields=username&access_token=' + req.query.access_token
+      }
+
+      request(options, (err, res, body) => {
+        if (err) {
+          console.error('error with getting username: ' + err)
+          throw err
+        }
+
+        user.facebook.username = body.username
+        
+        var headers = res.headers
+        var statusCode = res.statusCode
+        console.log('headers: ', headers)
+        console.log('statusCode: ', statusCode)
+        console.log('body: ', body)
+        resolve()
+      })
+    })
+
+    getUsername.then(() => {
+      user.facebook.pageID = req.query.pageid
+      user.organization = req.query.org.split(' ').join('').toLowerCase()
+      user.facebook.pageAccessToken = req.query.access_token
+    })
     user.save((err, user) => {
       if (err) return console.error(err)
 
@@ -162,12 +188,12 @@ app.get('/save-page', (req, res) => {
       var webhookPromise = new Promise(function(resolve, reject) {
         var webhookOptions = {
           method: 'post',
-          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/subscribed_apps?access_token=' + user.facebook.pageAccessToken
+          url: 'https://graph.facebook.com/v2.10/' + user.facebook.pageID + '/subscribed_apps?access_token=' + user.facebook.pageAccessToken
         }
 
         request(webhookOptions, (err, res, body) => {
           if (err) {
-            console.error('error posting json: ', err)
+            console.error('error with webhook: ', err)
             throw err
           }
           var headers = res.headers
@@ -189,7 +215,7 @@ app.get('/save-page', (req, res) => {
           method: 'post',
           body: getStarted,
           json: true,
-          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/messenger_profile?access_token=' + user.facebook.pageAccessToken
+          url: 'https://graph.facebook.com/v2.10/' + user.facebook.pageID + '/messenger_profile?access_token=' + user.facebook.pageAccessToken
         }
 
         request(getStartedOptions, (err, res, body) => {
@@ -218,12 +244,12 @@ app.get('/save-page', (req, res) => {
           method: 'post',
           body: setGreeting,
           json: true,
-          url: 'https://graph.facebook.com/v2.6/' + user.facebook.pageID + '/thread_settings?access_token=' + user.facebook.pageAccessToken
+          url: 'https://graph.facebook.com/v2.10/' + user.facebook.pageID + '/thread_settings?access_token=' + user.facebook.pageAccessToken
         }
 
         request(setGreetingOptions, (err, res, body) => {
           if (err) {
-            console.error('error with get started button: ', err)
+            console.error('error with greeting: ', err)
             throw err
           }
           var headers = res.headers
@@ -416,7 +442,7 @@ io.on('connection', (socket) => {
   function requestPages(userID, userAccessToken) {
     var options = {
       method: 'get',
-      url: "https://graph.facebook.com/v2.6/" + userID + "/accounts?access_token=" + userAccessToken
+      url: "https://graph.facebook.com/v2.10/" + userID + "/accounts?access_token=" + userAccessToken
     }
     request(options, function(err, res, body) {
       if (err) {
