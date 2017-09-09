@@ -157,7 +157,7 @@ app.get('/save-page', (req, res) => {
     var getUsername = new Promise(function(resolve, reject) {
       let options = {
         method: 'get',
-        url: 'https://graph.facebook.com/v2.10/' + user.facebook.pageID + '?fields=username&access_token=' + req.query.access_token
+        url: 'https://graph.facebook.com/v2.10/' + req.query.pageid + '?fields=username&access_token=' + req.query.access_token
       }
 
       request(options, (err, res, body) => {
