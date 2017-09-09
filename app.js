@@ -181,86 +181,85 @@ app.get('/save-page', (req, res) => {
       user.facebook.pageID = req.query.pageid
       user.organization = req.query.org.split(' ').join('').toLowerCase()
       user.facebook.pageAccessToken = req.query.access_token
-    })
-    user.save((err, user) => {
-      if (err) return console.error(err)
+      user.save((err, user) => {
+        if (err) return console.error(err)
 
-      // send this to subscribe the page to our webhook
-      var webhookPromise = new Promise(function(resolve, reject) {
-        var webhookOptions = {
-          method: 'post',
-          url: 'https://graph.facebook.com/v2.10/' + user.facebook.pageID + '/subscribed_apps?access_token=' + user.facebook.pageAccessToken
-        }
-
-        request(webhookOptions, (err, res, body) => {
-          if (err) {
-            console.error('error with webhook: ', err)
-            throw err
+        // send this to subscribe the page to our webhook
+        var webhookPromise = new Promise(function(resolve, reject) {
+          var webhookOptions = {
+            method: 'post',
+            url: 'https://graph.facebook.com/v2.10/' + user.facebook.pageID + '/subscribed_apps?access_token=' + user.facebook.pageAccessToken
           }
-          var headers = res.headers
-          var statusCode = res.statusCode
-          console.log('headers: ', headers)
-          console.log('statusCode: ', statusCode)
-          console.log('body: ', body)
-          resolve()
+
+          request(webhookOptions, (err, res, body) => {
+            if (err) {
+              console.error('error with webhook: ', err)
+              throw err
+            }
+            var headers = res.headers
+            var statusCode = res.statusCode
+            console.log('headers: ', headers)
+            console.log('statusCode: ', statusCode)
+            console.log('body: ', body)
+            resolve()
+          })
         })
-      })
-      var getStartedPromise = new Promise(function(resolve, reject) {
-        // send this to implement a get started button
-        var getStarted = {
-          "get_started": {
-            "payload": "GET_STARTED_PAYLOAD"
+        var getStartedPromise = new Promise(function(resolve, reject) {
+          // send this to implement a get started button
+          var getStarted = {
+            "get_started": {
+              "payload": "GET_STARTED_PAYLOAD"
+            }
           }
-        }
-        var getStartedOptions = {
-          method: 'post',
-          body: getStarted,
-          json: true,
-          url: 'https://graph.facebook.com/v2.10/' + user.facebook.pageID + '/messenger_profile?access_token=' + user.facebook.pageAccessToken
-        }
+          var getStartedOptions = {
+            method: 'post',
+            body: getStarted,
+            json: true,
+            url: 'https://graph.facebook.com/v2.10/' + user.facebook.pageID + '/messenger_profile?access_token=' + user.facebook.pageAccessToken
+          }
 
-        request(getStartedOptions, (err, res, body) => {
-          if (err) {
-            console.error('error with get started button: ', err)
-            throw err
-          }
-          var headers = res.headers
-          var statusCode = res.statusCode
-          console.log('headers: ', headers)
-          console.log('statusCode: ', statusCode)
-          console.log('body: ', body)
-          resolve()
+          request(getStartedOptions, (err, res, body) => {
+            if (err) {
+              console.error('error with get started button: ', err)
+              throw err
+            }
+            var headers = res.headers
+            var statusCode = res.statusCode
+            console.log('headers: ', headers)
+            console.log('statusCode: ', statusCode)
+            console.log('body: ', body)
+            resolve()
+          })
         })
-      })
 
-      var setGreetingPromise = new Promise(function(resolve, reject) {
-        // send this to implement a get started button
-        var setGreeting = {
-          "setting_type": "greeting",
-          "greeting": {
-            "text": "Welcome {{user_first_name}}! Go ahead and tap Get Started to sign up!"
+        var setGreetingPromise = new Promise(function(resolve, reject) {
+          // send this to implement a get started button
+          var setGreeting = {
+            "setting_type": "greeting",
+            "greeting": {
+              "text": "Welcome {{user_first_name}}! Go ahead and tap Get Started to sign up!"
+            }
           }
-        }
-        var setGreetingOptions = {
-          method: 'post',
-          body: setGreeting,
-          json: true,
-          url: 'https://graph.facebook.com/v2.10/' + user.facebook.pageID + '/thread_settings?access_token=' + user.facebook.pageAccessToken
-        }
+          var setGreetingOptions = {
+            method: 'post',
+            body: setGreeting,
+            json: true,
+            url: 'https://graph.facebook.com/v2.10/' + user.facebook.pageID + '/thread_settings?access_token=' + user.facebook.pageAccessToken
+          }
 
-        request(setGreetingOptions, (err, res, body) => {
-          if (err) {
-            console.error('error with greeting: ', err)
-            throw err
-          }
-          var headers = res.headers
-          var statusCode = res.statusCode
-          console.log('headers: ', headers)
-          console.log('statusCode: ', statusCode)
-          console.log('body: ', body)
-          resolve()
+          request(setGreetingOptions, (err, res, body) => {
+            if (err) {
+              console.error('error with greeting: ', err)
+              throw err
+            }
+            var headers = res.headers
+            var statusCode = res.statusCode
+            console.log('headers: ', headers)
+            console.log('statusCode: ', statusCode)
+            console.log('body: ', body)
+            resolve()
+          })
         })
-      })
 
         webhookPromise.then(() => {
           console.log('subscribed to webhook')
@@ -271,7 +270,8 @@ app.get('/save-page', (req, res) => {
             })
           })
         })
-      res.redirect('/dashboard/' + user.organization)
+        res.redirect('/dashboard/' + user.organization)
+      })
     })
   })
 })
