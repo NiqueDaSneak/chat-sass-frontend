@@ -7,27 +7,40 @@
   z-index: 2
   opacity: 0.8
 .onboarding
-  margin-top: 6vh
   text-align: center
   z-index: 3
   position: fixed
+  margin-top: 10vh
+  @include tablet
+    margin-top: 5vh
   div
     width: 80vw
     margin-left: 10vw
     background-color: $siteMain
     color: white
-    border-radius: 0vw 0vw 3vw 3vw
+    border-radius: 3vw
     padding-top: 3vh
+    box-shadow: 0px 4px 34px 0px rgba(0,0,0,0.75)
+    @include desktop
+      width: 50vw
+      margin-left: 25vw
+      padding-top: 3vh
     img
       width: 10vw
+      @include desktop
+        width: 5vw
     p:first-of-type
       font-size: 8vw
       font-weight: 400
+      @include desktop
+        font-size: 3vw
     p:last-of-type
       padding-left: 8vw
       padding-right: 8vw
       font-size: 5.5vw
       font-weight: 100
+      @include desktop
+        font-size: 2.5vw
     button
       position: relative
       color: $siteMain
@@ -40,16 +53,23 @@
       padding-bottom: 2vh
       border-radius: 0vw 0vw 3vw 3vw
       font-weight: 500
-
+      @include desktop
+        font-size: 3vw
+        width: 50vw
 .onboard-promote
   p:last-of-type
     padding-bottom: 1vh
   textarea
     background-color: $bodyBackground
     margin-bottom: 4vh
-    border-radius: 3vw
+    border-radius: 1vw
     font-size: 4.2vw
     padding: 2vh
     border: none
     width: 66vw
     height: 20vh
+    color: #565656
+    @include desktop
+      font-size: 1.6vw
+      width: 43vw
+      height: 13vh

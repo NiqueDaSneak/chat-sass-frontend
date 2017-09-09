@@ -12,16 +12,23 @@ footer
   align-items: center
   transition: bottom 1s
   height: 5vh
-  // box-shadow: 0vw -0.1vh 1vh 0vh rgba(0, 0, 0, 0.75)
   img
     &:first-of-type
       width: 12vw
+      @include desktop
+        width: 7vw
     &:nth-of-type(2)
       padding-left: 20vw
       padding-right: 20vw
       width: 15vw
+      @include desktop
+        width: 5vw
+      @include tablet
+        width: 12vw
     &:last-of-type
       width: 12vw
+      @include desktop
+        width: 7vw
 
 .main-calendar
   font-size: 15vw
@@ -77,6 +84,8 @@ nav
     color: white
     font-size: 4.6vw
     font-weight: 300
+    @include desktop
+      font-size: 2vw
     &:first-of-type
       bottom: 10vh
       left: 0vw
@@ -124,11 +133,25 @@ header
         width: 8vw
         vertical-align: middle
         margin-right: 3vw
+        vertical-align: bottom
+        @include desktop
+          width: 3vw
+
   .go-to-today
     line-height: 5vh
     position: fixed
     right: 5vw
     font-weight: 500
+    @include desktop
+      font-size: 2vw
+    @include tablet
+      font-size: 3vw
+
+.header-month, .header-date
+  @include desktop
+    font-size: 2vw
+  @include tablet
+    font-size: 4vw
 
 .loading
   opacity: 0

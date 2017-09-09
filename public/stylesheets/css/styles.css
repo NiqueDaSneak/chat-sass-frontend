@@ -180,12 +180,24 @@ footer {
   height: 5vh; }
   footer img:first-of-type {
     width: 12vw; }
+    @media only screen and (min-width: 1025px) {
+      footer img:first-of-type {
+        width: 7vw; } }
   footer img:nth-of-type(2) {
     padding-left: 20vw;
     padding-right: 20vw;
     width: 15vw; }
+    @media only screen and (min-width: 1025px) {
+      footer img:nth-of-type(2) {
+        width: 5vw; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      footer img:nth-of-type(2) {
+        width: 12vw; } }
   footer img:last-of-type {
     width: 12vw; }
+    @media only screen and (min-width: 1025px) {
+      footer img:last-of-type {
+        width: 7vw; } }
 
 .main-calendar {
   font-size: 15vw; }
@@ -236,6 +248,9 @@ nav {
   color: white;
   font-size: 4.6vw;
   font-weight: 300; }
+  @media only screen and (min-width: 1025px) {
+    .submenu div {
+      font-size: 2vw; } }
   .submenu div:first-of-type {
     bottom: 10vh;
     left: 0vw;
@@ -287,12 +302,30 @@ header {
   header span:first-of-type img {
     width: 8vw;
     vertical-align: middle;
-    margin-right: 3vw; }
+    margin-right: 3vw;
+    vertical-align: bottom; }
+    @media only screen and (min-width: 1025px) {
+      header span:first-of-type img {
+        width: 3vw; } }
   header .go-to-today {
     line-height: 5vh;
     position: fixed;
     right: 5vw;
     font-weight: 500; }
+    @media only screen and (min-width: 1025px) {
+      header .go-to-today {
+        font-size: 2vw; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      header .go-to-today {
+        font-size: 3vw; } }
+
+@media only screen and (min-width: 1025px) {
+  .header-month, .header-date {
+    font-size: 2vw; } }
+
+@media only screen and (max-width: 1024px) and (min-width: 415px) {
+  .header-month, .header-date {
+    font-size: 4vw; } }
 
 .loading {
   opacity: 0;
@@ -593,9 +626,18 @@ header {
       display: inline-block;
       line-height: 0vh;
       font-size: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .chat-ui .header span:first-of-type {
+          font-size: 2.5vw; } }
     .chat-ui .header span:last-of-type {
       right: 5vw;
       position: absolute; }
+      @media only screen and (min-width: 1025px) {
+        .chat-ui .header span:last-of-type {
+          font-size: 2vw; } }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .chat-ui .header span:last-of-type {
+          font-size: 4vw; } }
   .chat-ui form {
     text-align: center;
     padding-top: 20vh;
@@ -617,16 +659,31 @@ header {
         margin: 0;
         -webkit-box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
                 box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35); }
+        @media only screen and (min-width: 1025px) {
+          .chat-ui form .btn-holder button {
+            width: 12vw;
+            font-size: 2vw; } }
         .chat-ui form .btn-holder button:first-of-type {
           background-color: #70B51F;
           margin-right: 6vw; }
+          @media only screen and (min-width: 1025px) {
+            .chat-ui form .btn-holder button:first-of-type {
+              margin-right: 3vw; } }
         .chat-ui form .btn-holder button:last-of-type {
           background-color: #D0021B;
           font-weight: 500; }
     .chat-ui form span {
       font-size: 5vw;
       display: block;
-      padding-bottom: 4vh; }
+      padding-bottom: 4vh;
+      font-weight: 100; }
+      .chat-ui form span:first-of-type {
+        font-weight: 400; }
+      @media only screen and (min-width: 1025px) {
+        .chat-ui form span {
+          font-size: 2vw;
+          display: block;
+          padding-bottom: 4vh; } }
       .chat-ui form span:nth-of-type(4) {
         font-weight: 500;
         padding-bottom: 1vh; }
@@ -636,23 +693,63 @@ header {
     .chat-ui form img {
       width: 50vw;
       margin-bottom: 4vh; }
+      @media only screen and (min-width: 1025px) {
+        .chat-ui form img {
+          width: 15vw;
+          margin-bottom: 4vh;
+          display: block;
+          margin-left: 32.5vw;
+          padding-bottom: 6vh; } }
     .chat-ui form input, .chat-ui form textarea {
       margin-bottom: 4vh;
       font-size: 4vw;
       padding: 3vw;
       border-radius: 1vw;
-      border: none; }
+      border: none;
+      width: 75vw; }
+      @media only screen and (min-width: 1025px) {
+        .chat-ui form input, .chat-ui form textarea {
+          margin-bottom: 14vh; } }
+    .chat-ui form input {
+      padding-bottom: 4vh;
+      height: 10vh;
+      font-size: 5.2vw;
+      padding: 1vw; }
+      @media only screen and (min-width: 1025px) {
+        .chat-ui form input {
+          font-size: 1vw;
+          padding: 2vw;
+          border-radius: 1vw;
+          border: none;
+          width: 24vw; } }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .chat-ui form input {
+          font-size: 3.2vw; } }
     .chat-ui form textarea {
       padding-bottom: 4vh; }
+      @media only screen and (min-width: 1025px) {
+        .chat-ui form textarea {
+          width: 24vw;
+          height: 10vh;
+          font-size: 1.2vw;
+          padding: 1vw; } }
     .chat-ui form input[type='date'], .chat-ui form input[type='time'] {
       padding: 2vw;
       border: none;
       background-color: #3b5998;
       color: white;
-      width: 50vw;
+      width: 75vw;
+      height: 5vh;
       font-size: 5vw;
       -webkit-box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
               box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35); }
+      @media only screen and (min-width: 1025px) {
+        .chat-ui form input[type='date'], .chat-ui form input[type='time'] {
+          width: 24vw;
+          font-size: 2vw;
+          margin-bottom: 14vh; } }
+    .chat-ui form input[type='date'] {
+      margin-bottom: 0vh; }
     .chat-ui form .uploader input[type="file"] {
       position: fixed;
       top: -1000px; }
@@ -668,15 +765,43 @@ header {
       padding-right: 2vw;
       -webkit-box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
               box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35); }
+      @media only screen and (min-width: 1025px) {
+        .chat-ui form .uploader {
+          border-radius: 0.5vw;
+          margin-bottom: 14vh; } }
       .chat-ui form .uploader span {
         padding-bottom: 0; }
 
 .msgGroupList {
   padding-bottom: 0; }
+  .msgGroupList input[type='checkbox'] {
+    display: none; }
   .msgGroupList div {
-    padding-top: 0;
-    padding-bottom: 0vh;
-    font-size: 5vw; }
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    font-size: 4.5vw;
+    width: 23vw;
+    border-radius: 1vw;
+    margin-bottom: 3vh;
+    color: #5772AC;
+    border: #5772AC 0.1vh solid;
+    background-color: rgba(87, 114, 172, 0);
+    -webkit-transition: background-color .5s, color 1.6s;
+    transition: background-color .5s, color 1.6s;
+    display: inline-block;
+    min-width: 34vw;
+    min-height: 6vh; }
+    @media only screen and (min-width: 1025px) {
+      .msgGroupList div {
+        width: 24vw;
+        font-size: 2vw;
+        min-width: 24vw;
+        min-height: 0vh; } }
+
+.checked {
+  background-color: #5772AC !important;
+  border: white 0.1vh solid !important;
+  color: white !important; }
 
 .groups {
   display: none;
@@ -702,9 +827,18 @@ header {
       display: inline-block;
       line-height: 0vh;
       font-size: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .groups .header span:first-of-type {
+          font-size: 2.5vw; } }
     .groups .header span:last-of-type {
       right: 5vw;
       position: absolute; }
+      @media only screen and (min-width: 1025px) {
+        .groups .header span:last-of-type {
+          font-size: 2vw; } }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .groups .header span:last-of-type {
+          font-size: 4vw; } }
   .groups .list, .groups .new {
     background-color: white;
     color: #3b5998;
@@ -713,6 +847,9 @@ header {
     margin-top: 20vh;
     -webkit-box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75);
             box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75); }
+    @media only screen and (min-width: 1025px) {
+      .groups .list, .groups .new {
+        width: 50vw; } }
   .groups .list {
     font-size: 6vw;
     opacity: 1;
@@ -722,6 +859,11 @@ header {
     margin-left: 8vw;
     text-align: center;
     padding-bottom: 2vh; }
+    @media only screen and (min-width: 1025px) {
+      .groups .list {
+        font-size: 2vw;
+        margin-left: 25vw;
+        padding-bottom: 2vh; } }
     .groups .list div {
       width: 84vw;
       font-size: 4vw;
@@ -730,6 +872,12 @@ header {
       background-color: #3b5998;
       font-weight: 500;
       color: white; }
+      @media only screen and (min-width: 1025px) {
+        .groups .list div {
+          width: 50vw;
+          font-size: 2vw;
+          padding-top: 3vw;
+          padding-bottom: 3vw; } }
   .groups .list.hide {
     opacity: 0;
     left: -100vw;
@@ -752,6 +900,9 @@ header {
     margin-bottom: 6vh;
     padding-bottom: 4vh;
     text-align: center; }
+    @media only screen and (min-width: 1025px) {
+      .groups .new {
+        margin-left: 25vw; } }
     .groups .new input {
       width: 84vw;
       left: 0;
@@ -763,6 +914,10 @@ header {
       border: none;
       padding-top: 6vh;
       font-weight: 500; }
+      @media only screen and (min-width: 1025px) {
+        .groups .new input {
+          width: 49vw;
+          font-size: 1.6vw; } }
     .groups .new input.warning::-webkit-input-placeholder {
       -webkit-transition: color .8s;
       transition: color .8s;
@@ -788,9 +943,16 @@ header {
       -webkit-box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
               box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
       font-weight: 300; }
+      @media only screen and (min-width: 1025px) {
+        .groups .new button {
+          font-size: 1.5vw;
+          width: 10vw; } }
       .groups .new button:first-of-type {
         background-color: #70B51F;
         margin-right: 6vw; }
+        @media only screen and (min-width: 1025px) {
+          .groups .new button:first-of-type {
+            margin-right: 2vw; } }
       .groups .new button:last-of-type {
         background-color: #D0021B;
         font-weight: 500; }
@@ -798,6 +960,12 @@ header {
       margin-top: 3.5vh;
       text-align: left;
       margin-bottom: 8vh; }
+      @media only screen and (min-width: 1025px) {
+        .groups .new .names {
+          font-size: 2vw; } }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .groups .new .names {
+          font-size: 3.5vw; } }
       .groups .new .names div.selected {
         background-color: #3b5998;
         color: white; }
@@ -809,10 +977,20 @@ header {
         padding-top: 2.4vh;
         -webkit-transition: background-color .7s, color .2s;
         transition: background-color .7s, color .2s; }
+        @media only screen and (min-width: 1025px) {
+          .groups .new .names div {
+            padding-left: 10vw;
+            padding-bottom: 2.4vh; } }
+        @media only screen and (max-width: 1024px) and (min-width: 415px) {
+          .groups .new .names div {
+            padding-left: 18vw; } }
         .groups .new .names div img {
           width: 10vw;
           vertical-align: middle;
           border-radius: 6vw; }
+          @media only screen and (min-width: 1025px) {
+            .groups .new .names div img {
+              width: 5vw; } }
         .groups .new .names div p {
           display: inline;
           vertical-align: middle;
@@ -900,27 +1078,46 @@ header {
   opacity: 0.8; }
 
 .onboarding {
-  margin-top: 6vh;
   text-align: center;
   z-index: 3;
-  position: fixed; }
+  position: fixed;
+  margin-top: 10vh; }
+  @media only screen and (max-width: 1024px) and (min-width: 415px) {
+    .onboarding {
+      margin-top: 5vh; } }
   .onboarding div {
     width: 80vw;
     margin-left: 10vw;
     background-color: #3b5998;
     color: white;
-    border-radius: 0vw 0vw 3vw 3vw;
-    padding-top: 3vh; }
+    border-radius: 3vw;
+    padding-top: 3vh;
+    -webkit-box-shadow: 0px 4px 34px 0px rgba(0, 0, 0, 0.75);
+            box-shadow: 0px 4px 34px 0px rgba(0, 0, 0, 0.75); }
+    @media only screen and (min-width: 1025px) {
+      .onboarding div {
+        width: 50vw;
+        margin-left: 25vw;
+        padding-top: 3vh; } }
     .onboarding div img {
       width: 10vw; }
+      @media only screen and (min-width: 1025px) {
+        .onboarding div img {
+          width: 5vw; } }
     .onboarding div p:first-of-type {
       font-size: 8vw;
       font-weight: 400; }
+      @media only screen and (min-width: 1025px) {
+        .onboarding div p:first-of-type {
+          font-size: 3vw; } }
     .onboarding div p:last-of-type {
       padding-left: 8vw;
       padding-right: 8vw;
       font-size: 5.5vw;
       font-weight: 100; }
+      @media only screen and (min-width: 1025px) {
+        .onboarding div p:last-of-type {
+          font-size: 2.5vw; } }
     .onboarding div button {
       position: relative;
       color: #3b5998;
@@ -933,6 +1130,10 @@ header {
       padding-bottom: 2vh;
       border-radius: 0vw 0vw 3vw 3vw;
       font-weight: 500; }
+      @media only screen and (min-width: 1025px) {
+        .onboarding div button {
+          font-size: 3vw;
+          width: 50vw; } }
 
 .onboard-promote p:last-of-type {
   padding-bottom: 1vh; }
@@ -940,12 +1141,18 @@ header {
 .onboard-promote textarea {
   background-color: #E0E0E0;
   margin-bottom: 4vh;
-  border-radius: 3vw;
+  border-radius: 1vw;
   font-size: 4.2vw;
   padding: 2vh;
   border: none;
   width: 66vw;
-  height: 20vh; }
+  height: 20vh;
+  color: #565656; }
+  @media only screen and (min-width: 1025px) {
+    .onboard-promote textarea {
+      font-size: 1.6vw;
+      width: 43vw;
+      height: 13vh; } }
 
 body {
   margin: 0;

@@ -21,9 +21,15 @@
       display: inline-block
       line-height: 0vh
       font-size: 5vw
+      @include desktop
+        font-size: 2.5vw
     span:last-of-type
       right: 5vw
       position: absolute
+      @include desktop
+       font-size: 2vw
+      @include tablet
+        font-size: 4vw
   .list, .new
     background-color: white
     color: $siteMain
@@ -31,6 +37,8 @@
     border-radius: 1vw
     margin-top: 20vh
     box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75)
+    @include desktop
+      width: 50vw
   .list
     font-size: 6vw
     opacity: 1
@@ -39,6 +47,10 @@
     margin-left: 8vw
     text-align: center
     padding-bottom: 2vh
+    @include desktop
+      font-size: 2vw
+      margin-left: 25vw
+      padding-bottom: 2vh
     div
       width: 84vw
       font-size: 4vw
@@ -47,6 +59,11 @@
       background-color: $siteMain
       font-weight: 500
       color: white
+      @include desktop
+        width: 50vw
+        font-size: 2vw
+        padding-top: 3vw
+        padding-bottom: 3vw
   .list.hide
     opacity: 0
     left: -100vw
@@ -66,6 +83,8 @@
     margin-bottom: 6vh
     padding-bottom: 4vh
     text-align: center
+    @include desktop
+        margin-left: 25vw
     input
       width: 84vw
       left: 0
@@ -77,6 +96,9 @@
       border: none
       padding-top: 6vh
       font-weight: 500
+      @include desktop
+        width: 49vw
+        font-size: 1.6vw
     input.warning
       &::placeholder
         transition: color .8s
@@ -93,9 +115,14 @@
       margin: 0
       box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35)
       font-weight: 300
+      @include desktop
+        font-size: 1.5vw
+        width: 10vw
       &:first-of-type
         background-color: $siteGreen
         margin-right: 6vw
+        @include desktop
+          margin-right: 2vw
       &:last-of-type
         background-color: $siteRed
         font-weight: 500
@@ -103,6 +130,10 @@
       margin-top: 3.5vh
       text-align: left
       margin-bottom: 8vh
+      @include desktop
+        font-size: 2vw
+      @include tablet
+        font-size: 3.5vw
       div.selected
         background-color: $siteMain
         color: white
@@ -113,10 +144,17 @@
         padding-bottom: 2.4vh
         padding-top: 2.4vh
         transition: background-color .7s, color .2s
+        @include desktop
+          padding-left: 10vw
+          padding-bottom: 2.4vh
+        @include tablet
+          padding-left: 18vw
         img
           width: 10vw
           vertical-align: middle
           border-radius: 6vw
+          @include desktop
+            width: 5vw
         p
           display: inline
           vertical-align: middle

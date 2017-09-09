@@ -23,6 +23,17 @@ $(document).ready(() => {
     $('.loading').fadeIn()
   })
 
+  $('.msgGroupList').click((event) => {
+    for (var i = 0; i < $("input[type='checkbox']").length; i++) {
+      if ($("input[type='checkbox']")[i].checked === true) {
+        $($("input[type='checkbox']")[i]).parent().parent().addClass('checked')
+      }
+      if ($("input[type='checkbox']")[i].checked === false) {
+          $($("input[type='checkbox']")[i]).parent().parent().removeClass('checked')
+      }
+    }
+  })
+
   function readURL(input) {
 
     if (input.files && input.files[0]) {

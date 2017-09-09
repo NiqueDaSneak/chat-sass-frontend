@@ -46,7 +46,6 @@ var memberSchema = mongoose.Schema({
   organization: String,
   fbID: Number,
   fullName: String,
-  enrolled: Boolean,
   timezone: Number,
   photo: String
 })
@@ -125,7 +124,7 @@ passport.use(new FacebookStrategy({
   }))
 
 // ROUTES
-app.get('/auth/facebook', passport.authenticate('facebook', { scope: [ 'manage_pages', 'publish_pages', 'user_likes', 'pages_messaging', 'user_friends', 'ads_management', 'email', 'pages_show_list'] }))
+app.get('/auth/facebook', passport.authenticate('facebook', { scope: [ 'manage_pages', 'publish_pages', 'pages_messaging', 'email', 'pages_show_list'] }))
 
 // Facebook redirect
 app.get('/auth/check-pages', passport.authenticate('facebook', {
