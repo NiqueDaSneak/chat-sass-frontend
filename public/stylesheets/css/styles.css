@@ -22,7 +22,8 @@
     @media only screen and (min-width: 1025px) {
       .landing a {
         width: 18vw;
-        font-size: 1.6vw; } }
+        font-size: 1.6vw;
+        position: inherit; } }
 
 .login {
   background-color: #474747;
