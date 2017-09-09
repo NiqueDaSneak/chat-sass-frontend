@@ -29,6 +29,7 @@ $(document).ready(() => {
   $('.go-to-today').click(() => {
     displayDay = moment().format('D')
     displayMonth = moment().format('MMM')
+    displayYear = moment().format('YYYY')
     $('.header-month').text(displayMonth)
     $('.header-date').text(Number(displayDay))
     $('.controls-month').text(displayMonth)
