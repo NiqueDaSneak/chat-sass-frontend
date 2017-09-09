@@ -422,6 +422,53 @@ io.on('connection', (socket) => {
     })
   })
 
+  socket.on('promoteOnFacebook', (data) => {
+    User.findOne({'organization': data.org}, (err, user) => {
+      let options = {
+        method: 'post',
+        url: 'https://graph.facebook.com/v2.10/'  + user.pageID + '/feed?message=' + data.post + '&access_token=' + user.pageAccessToken
+      }
+
+      request(options, (err, res, body) => {
+        if (err) {
+          console.error('error with webhook: ', err)
+          throw err
+        }
+        var headers = res.headers
+        var statusCode = res.statusCode
+        console.log('headers: ', headers)
+        console.log('statusCode: ', statusCode)
+        console.log('body: ', body)
+        let bodyResponse = JSON.parse(body)
+        // link to the post
+          // 'https://www.facebook.com/' + bodyResponse.id
+      })
+    })
+
+    var webhookPromise = new Promise(function(resolve, reject) {
+      var webhookOptions = {
+        method: 'post',
+        url: 'https://graph.facebook.com/v2.10/' + user.pageID + '/subscribed_apps?access_token=' + user.pageAccessToken
+      }
+
+      request(webhookOptions, (err, res, body) => {
+        if (err) {
+          console.error('error with webhook: ', err)
+          throw err
+        }
+        var headers = res.headers
+        var statusCode = res.statusCode
+        console.log('headers: ', headers)
+        console.log('statusCode: ', statusCode)
+        console.log('body: ', body)
+        resolve()
+      })
+    })
+    console.log(data.post)
+    console.log(data.org)
+
+  })
+
   socket.on('onboardComplete', (data) => {
     User.findOne({'organization': data.data}, (err, user) => {
       if (err) {
