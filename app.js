@@ -166,18 +166,19 @@ app.get('/save-page', (req, res) => {
           throw err
         }
 
-        user.facebook.username = body.username
 
         var headers = res.headers
         var statusCode = res.statusCode
         console.log('headers: ', headers)
         console.log('statusCode: ', statusCode)
         console.log('body: ', body)
-        resolve()
+        resolve(body)
       })
     })
 
-    getUsername.then(() => {
+    getUsername.then((body) => {
+      console.log('BODY111: ' + body)
+      user.facebook.username = body.username
       user.facebook.pageID = req.query.pageid
       user.organization = req.query.org.split(' ').join('').toLowerCase()
       user.facebook.pageAccessToken = req.query.access_token
