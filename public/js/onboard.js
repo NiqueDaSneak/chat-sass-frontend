@@ -21,11 +21,10 @@ $(document).ready(() => {
 
   $('body').on('click', '.onboarding button', (event) => {
     if ($(event.target).hasClass('promote-on-facebook')) {
-      console.log($('.promoteText').val())
       socket.emit('promoteOnFacebook', {post: $('.promoteText').val(), org: org})
       $('.onboarding').remove()
       $('.onboard-dark').remove()
-      // socket.emit('onboardComplete', {data: org})
+      socket.emit('onboardComplete', {data: org})
     } else {
       $(event.target).parent().addClass('hide')
       $(event.target).parent().next().removeClass('hide')
