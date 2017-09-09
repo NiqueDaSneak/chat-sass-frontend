@@ -23,6 +23,7 @@ var userSchema = mongoose.Schema({
   organization: String,
   onboarded: Boolean,
   facebook: {
+    username: String,
     userID: Number,
     pageID: Number,
     pageAccessToken: String,
@@ -166,7 +167,7 @@ app.get('/save-page', (req, res) => {
         }
 
         user.facebook.username = body.username
-        
+
         var headers = res.headers
         var statusCode = res.statusCode
         console.log('headers: ', headers)
