@@ -175,8 +175,8 @@ app.get('/save-page', (req, res) => {
     })
 
     getUsername.then((body) => {
-      let body = JSON.parse(body)
-      user.username = body.username
+      let userObj = JSON.parse(body)
+      user.username = userObj.username
       user.pageID = req.query.pageid
       user.organization = req.query.org.split(' ').join('').toLowerCase()
       user.pageAccessToken = req.query.access_token
