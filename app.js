@@ -22,13 +22,11 @@ var userSchema = mongoose.Schema({
   email: String,
   organization: String,
   onboarded: Boolean,
-  facebook: {
-    username: String,
-    userID: Number,
-    pageID: Number,
-    pageAccessToken: String,
-    userAccessToken: String,
-  }
+  username: String,
+  userID: Number,
+  pageID: Number,
+  pageAccessToken: String,
+  userAccessToken: String,
 })
 
 var User = mongoose.model('User', userSchema)
@@ -101,7 +99,7 @@ passport.use(new FacebookStrategy({
   },
   function(accessToken, refreshToken, profile, done) {
     User.findOne({
-      'facebook.userID': profile.id
+      'userID': profile.id
     }, (err, user) => {
       if (err) {
         console.log(err)
@@ -114,8 +112,8 @@ passport.use(new FacebookStrategy({
           newUser.email = profile.emails[0].value
         }
         newUser.onboarded = false
-        newUser.facebook.userID = profile.id
-        newUser.facebook.userAccessToken = accessToken
+        newUser.userID = profile.id
+        newUser.userAccessToken = accessToken
         newUser.save((err, user) => {
           if (err) return console.error(err)
           return done(null, user)
@@ -133,10 +131,10 @@ app.get('/auth/check-pages', passport.authenticate('facebook', {
   session: false
 }), (req, res, next) => {
   req.session.user = req.user
-  if (req.user.facebook.pageID) {
+  if (req.user.pageID) {
     res.redirect('/dashboard/' + req.user.organization)
   } else {
-    res.redirect('/choose-page/' + req.user.facebook.userID + '/' + req.user.facebook.userAccessToken)
+    res.redirect('/choose-page/' + req.user.userID + '/' + req.user.userAccessToken)
   }
 })
 
@@ -150,7 +148,7 @@ app.get('/choose-page/:userID/:userAccessToken', (req, res, next) => {
 
 app.get('/save-page', (req, res) => {
   User.findOne({
-    'facebook.userID': req.query.userid
+    'userID': req.query.userid
   }, (err, user) => {
     if (err) return console.error(err)
 
@@ -177,11 +175,11 @@ app.get('/save-page', (req, res) => {
     })
 
     getUsername.then((body) => {
-      console.log('BODY111: ' + body)
-      user.facebook.username = body.username
-      user.facebook.pageID = req.query.pageid
+      let body = JSON.parse(body)
+      user.username = body.username
+      user.pageID = req.query.pageid
       user.organization = req.query.org.split(' ').join('').toLowerCase()
-      user.facebook.pageAccessToken = req.query.access_token
+      user.pageAccessToken = req.query.access_token
       user.save((err, user) => {
         if (err) return console.error(err)
 
@@ -189,7 +187,7 @@ app.get('/save-page', (req, res) => {
         var webhookPromise = new Promise(function(resolve, reject) {
           var webhookOptions = {
             method: 'post',
-            url: 'https://graph.facebook.com/v2.10/' + user.facebook.pageID + '/subscribed_apps?access_token=' + user.facebook.pageAccessToken
+            url: 'https://graph.facebook.com/v2.10/' + user.pageID + '/subscribed_apps?access_token=' + user.pageAccessToken
           }
 
           request(webhookOptions, (err, res, body) => {
@@ -216,7 +214,7 @@ app.get('/save-page', (req, res) => {
             method: 'post',
             body: getStarted,
             json: true,
-            url: 'https://graph.facebook.com/v2.10/' + user.facebook.pageID + '/messenger_profile?access_token=' + user.facebook.pageAccessToken
+            url: 'https://graph.facebook.com/v2.10/' + user.pageID + '/messenger_profile?access_token=' + user.pageAccessToken
           }
 
           request(getStartedOptions, (err, res, body) => {
@@ -245,7 +243,7 @@ app.get('/save-page', (req, res) => {
             method: 'post',
             body: setGreeting,
             json: true,
-            url: 'https://graph.facebook.com/v2.10/' + user.facebook.pageID + '/thread_settings?access_token=' + user.facebook.pageAccessToken
+            url: 'https://graph.facebook.com/v2.10/' + user.pageID + '/thread_settings?access_token=' + user.pageAccessToken
           }
 
           request(setGreetingOptions, (err, res, body) => {
