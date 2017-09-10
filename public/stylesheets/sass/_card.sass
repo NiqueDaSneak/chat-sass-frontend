@@ -4,6 +4,9 @@
   margin-left: 20vw
   border-radius: 2vw
   margin-bottom: 6vh
+  @include desktop
+    width: 30vw
+    margin-left: 35vw
   .card-top
     background-color: $siteMain
     color: white
@@ -13,19 +16,30 @@
     font-weight: 300
     border-radius: 2vw 2vw 0vw 0vw
     padding-left: 5vw
+    @include desktop
+      font-size: 1.3vw
+      padding-left: 2vw
   .card-middle
     text-align: center
     background-color: white
     img
       width: 60vw
+      @include desktop
+        width: 30vw
     p
       font-size: 5vw
+      @include desktop
+        font-size: 2vw
   .card-bottom
     width: 60vw
     background-color: white
     border-radius: 0vw 0vw 2vw 2vw
     padding-bottom: 1vh
     padding-top: 0.7vh
+    @include desktop
+      width: 30vw
+      height: 5vh
+      display: flex
     span
       vertical-align: middle
       font-weight: 300
@@ -33,11 +47,17 @@
       color: $siteMain
       vertical-align: middle
       padding-left: 2vw
+      @include desktop
+        font-size: 1.2vw
+        line-height: 5.1vh
+        padding-left: 1vw
     img
       &:first-of-type
         width: 6vw
         vertical-align: middle
         padding-left: 2vw
+        @include desktop
+          width: 2vw
       // the below styles are for the edit button
       // &:last-of-type
       //   width: 6vw
