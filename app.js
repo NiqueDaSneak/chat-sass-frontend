@@ -282,7 +282,7 @@ app.get('/', (req, res) => {
 app.get('/dashboard/:organization', (req, res) => {
   // if (req.session.user) {
   res.sendFile(path.join(__dirname + '/views/dashboard.html'))
-  console.log('LOGGED IN: ' + JSON.stringify(req.session.user))
+  // console.log('LOGGED IN: ' + JSON.stringify(req.session.user))
   // } else {
   // console.log('not logged in')
   // res.redirect('/auth/facebook')
@@ -483,7 +483,26 @@ io.on('connection', (socket) => {
         }
       })
     })
+  })
 
+  socket.on('deleteGroup', (data) => {
+    console.log(data.groupName)
+    Group.findOneAndRemove({'groupName': data.groupName}, (err) => {
+      if (err) {
+        console.log(err)
+      }
+      Group.find({
+        organization: data.org
+      }, (err, group) => {
+        if (err) {
+          return console.error(err)
+        } else {
+          socket.emit('showList', {
+            data: group
+          })
+        }
+      })
+    })
   })
 
   function requestPages(userID, userAccessToken) {
