@@ -379,7 +379,9 @@ $(document).ready(() => {
       var hour = msg.time.split(':')[0]
       var min = msg.time.split(':')[1]
       var fromNow = moment(month + day + year + hour + min, 'MMDDYYYYHHmm').fromNow()
-      if (Number(day) === Number(displayDay)) {
+      console.log('displayMonth: ' + displayMonth)
+      console.log('month: ' + moment(month).format('MMM'))
+      if (Number(day) === Number(displayDay) && moment(month).format('MMM') === displayMonth) {
         if (msg.videoURL) {
           function YouTubeGetID(url){
             url = url.split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
