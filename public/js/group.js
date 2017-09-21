@@ -65,6 +65,10 @@ $(document).ready(() => {
     })
   })
 
+  $('.list').on('click', '.deleteGroup', (event) => {
+    socket.emit('deleteGroup', { groupName: $(event.target).data('groupname'), org: org })
+  })
+
   $('.new').click((event) => {
     $(event.target).parent().toggleClass('selected')
   })
@@ -76,7 +80,7 @@ $(document).ready(() => {
   socket.on('showList', (data) => {
     $('.listNames').empty()
     for (var i = 0; i < data.data.length; i++) {
-      $('.list .listNames').append("<p>" + data.data[i].groupName + "</p>")
+      $('.list .listNames').append("<div><img class='deleteGroup' data-groupname='"+ data.data[i].groupName + "' src='/imgs/delete.svg' alt='Delete Icon'><p>" + data.data[i].groupName + "</p></div>")
     }
   })
 

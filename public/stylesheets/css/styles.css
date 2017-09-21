@@ -1038,23 +1038,24 @@ header {
     -webkit-transition: opacity .8s;
     transition: opacity .8s;
     margin-left: 8vw;
-    text-align: center;
-    padding-bottom: 2vh; }
+    padding-bottom: 4vh; }
     @media only screen and (min-width: 1025px) {
       .groups .list {
         font-size: 2vw;
         margin-left: 25vw;
         padding-bottom: 2vh; } }
-    .groups .list div {
+    .groups .list .addGroup {
       width: 84vw;
       font-size: 4vw;
       padding-top: 6vw;
       padding-bottom: 6vw;
       background-color: #3b5998;
       font-weight: 500;
-      color: white; }
+      color: white;
+      margin-bottom: 2vh;
+      text-align: center; }
       @media only screen and (min-width: 1025px) {
-        .groups .list div {
+        .groups .list .addGroup {
           width: 50vw;
           font-size: 2vw;
           padding-top: 3vw;
@@ -1085,7 +1086,7 @@ header {
       .groups .new {
         margin-left: 25vw; } }
     .groups .new input {
-      width: 84vw;
+      width: 83vw;
       left: 0;
       top: 0;
       font-size: 4vw;
@@ -1184,6 +1185,15 @@ header {
   color: white;
   font-size: 4vw;
   padding-top: 2vh; }
+
+.listNames div p {
+  display: inline-block;
+  margin-left: 5vw;
+  margin-bottom: 2vh; }
+
+.listNames div img {
+  width: 5vw;
+  margin-left: 10vw; }
 
 .pages {
   text-align: center;
@@ -1373,31 +1383,6 @@ header {
       font-size: 1.6vw;
       width: 43vw;
       height: 13vh; } }
-
-.coming-soon {
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  background-color: #FFC600;
-  z-index: 1;
-  text-align: center; }
-  .coming-soon img {
-    width: 100vw;
-    height: auto;
-    position: fixed;
-    bottom: 0;
-    left: 0; }
-    @media only screen and (min-width: 1025px) {
-      .coming-soon img {
-        width: 30vw;
-        position: initial; } }
-  .coming-soon p {
-    font-size: 10vw;
-    margin-top: 20vh; }
-    @media only screen and (min-width: 1025px) {
-      .coming-soon p {
-        font-size: 6vw;
-        margin-top: 0vh; } }
 
 body {
   margin: 0;
