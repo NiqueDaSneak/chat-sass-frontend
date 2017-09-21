@@ -1310,8 +1310,9 @@ header {
 .onboarding {
   text-align: center;
   z-index: 3;
-  position: fixed;
-  margin-top: 10vh; }
+  position: fixed; }
+  .onboarding .onboard-promote {
+    margin-top: 4vh; }
   @media only screen and (max-width: 1024px) and (min-width: 415px) {
     .onboarding {
       margin-top: 5vh; } }
@@ -1323,7 +1324,8 @@ header {
     border-radius: 3vw;
     padding-top: 3vh;
     -webkit-box-shadow: 0px 4px 34px 0px rgba(0, 0, 0, 0.75);
-            box-shadow: 0px 4px 34px 0px rgba(0, 0, 0, 0.75); }
+            box-shadow: 0px 4px 34px 0px rgba(0, 0, 0, 0.75);
+    margin-top: 10vh; }
     @media only screen and (min-width: 1025px) {
       .onboarding div {
         width: 50vw;
@@ -1365,7 +1367,8 @@ header {
           font-size: 3vw;
           width: 50vw; } }
     .onboarding div .promote-on-facebook {
-      border-radius: 0vw; }
+      border-radius: 0vw;
+      border-bottom: 0.1vh solid #14306B; }
 
 .onboard-promote p:last-of-type {
   padding-bottom: 1vh; }
