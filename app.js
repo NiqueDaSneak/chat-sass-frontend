@@ -110,9 +110,12 @@ passport.use(new FacebookStrategy({
         var newUser = new User()
         console.log('PROFILE: ' + JSON.stringify(profile))
         console.log('PROFILE.EMAILS: ' + profile.emails)
-        if (profile.emails[0].value) {
+        if (profile.emails === undefined) {
+          console.log('no email')
+        } else {
           newUser.email = profile.emails[0].value
         }
+  
         newUser.onboarded = false
         newUser.userID = profile.id
         newUser.userAccessToken = accessToken
