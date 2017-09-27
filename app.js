@@ -108,6 +108,8 @@ passport.use(new FacebookStrategy({
         return done(null, user)
       } else {
         var newUser = new User()
+        console.log('PROFILE: ' + profile)
+        console.log('PROFILE.EMAILS: ' + profile.emails)
         if (profile.emails[0].value) {
           newUser.email = profile.emails[0].value
         }
