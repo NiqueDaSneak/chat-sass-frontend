@@ -1304,6 +1304,9 @@ header {
       vertical-align: middle;
       position: absolute;
       right: 2vw; }
+      @media only screen and (min-width: 1025px) {
+        .card .card-bottom img:last-of-type {
+          width: 2.2vw; } }
 
 .are-you-sure {
   z-index: 3;
@@ -1317,10 +1320,17 @@ header {
   border-radius: 2vh;
   -webkit-box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
           box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35); }
+  @media only screen and (min-width: 1025px) {
+    .are-you-sure {
+      width: 60vw;
+      margin-left: 20vw; } }
   .are-you-sure p {
     color: white;
     font-size: 9vw;
     font-weight: 100; }
+    @media only screen and (min-width: 1025px) {
+      .are-you-sure p {
+        font-size: 5vw; } }
   .are-you-sure button {
     width: 28vw;
     height: 7vh;
@@ -1332,6 +1342,10 @@ header {
     -webkit-box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
             box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
     font-weight: 300; }
+    @media only screen and (min-width: 1025px) {
+      .are-you-sure button {
+        font-size: 2vw;
+        width: 14vw; } }
     .are-you-sure button:first-of-type {
       background-color: #70B51F;
       margin-right: 5vw; }

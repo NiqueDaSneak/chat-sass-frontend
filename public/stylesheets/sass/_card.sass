@@ -65,6 +65,8 @@
         vertical-align: middle
         position: absolute
         right: 2vw
+        @include desktop
+          width: 2.2vw
 
 .are-you-sure
   z-index: 3
@@ -77,10 +79,15 @@
   padding-bottom: 5vh
   border-radius: 2vh
   box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35)
+  @include desktop
+    width: 60vw
+    margin-left: 20vw
   p
     color: white
     font-size: 9vw
     font-weight: 100
+    @include desktop
+      font-size: 5vw
   button
     width: 28vw
     height: 7vh
@@ -91,6 +98,9 @@
     margin: 0
     box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35)
     font-weight: 300
+    @include desktop
+      font-size: 2vw
+      width: 14vw
     &:first-of-type
       background-color: $siteGreen
       margin-right: 5vw
