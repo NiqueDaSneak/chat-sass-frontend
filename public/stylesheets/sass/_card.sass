@@ -27,7 +27,8 @@
       @include desktop
         width: 30vw
     p
-      font-size: 5vw
+      font-size: 4.2vw
+      max-width: 60vw
       @include desktop
         font-size: 2vw
   .card-bottom
@@ -36,6 +37,7 @@
     border-radius: 0vw 0vw 2vw 2vw
     padding-bottom: 1vh
     padding-top: 0.7vh
+    position: relative
     @include desktop
       width: 30vw
       height: 5vh
@@ -45,7 +47,6 @@
       font-weight: 300
       font-size: 4vw
       color: $siteMain
-      vertical-align: middle
       padding-left: 2vw
       @include desktop
         font-size: 1.2vw
@@ -58,10 +59,40 @@
         padding-left: 2vw
         @include desktop
           width: 2vw
-      // the below styles are for the edit button
-      // &:last-of-type
-      //   width: 6vw
-      //   vertical-align: middle
-      //   position: absolute
-      //   right: 23vw
-      //   cursor: pointer
+      &:last-of-type
+        cursor: pointer
+        width: 6vw
+        vertical-align: middle
+        position: absolute
+        right: 2vw
+
+.are-you-sure
+  z-index: 3
+  position: fixed
+  background-color: $siteMain
+  text-align: center
+  width: 90vw
+  margin-left: 5vw
+  margin-top: 30vh
+  padding-bottom: 5vh
+  border-radius: 2vh
+  box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35)
+  p
+    color: white
+    font-size: 9vw
+    font-weight: 100
+  button
+    width: 28vw
+    height: 7vh
+    border-radius: 1vh
+    border: none
+    font-size: 5vw
+    color: white
+    margin: 0
+    box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35)
+    font-weight: 300
+    &:first-of-type
+      background-color: $siteGreen
+      margin-right: 5vw
+    &:last-of-type
+      background-color: $siteRed

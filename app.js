@@ -115,7 +115,7 @@ passport.use(new FacebookStrategy({
         } else {
           newUser.email = profile.emails[0].value
         }
-  
+
         newUser.onboarded = false
         newUser.userID = profile.id
         newUser.userAccessToken = accessToken
@@ -399,17 +399,15 @@ io.on('connection', (socket) => {
   })
 
   socket.on('requestPages', (data) => {
-    console.log('...requesting')
-    // socket.emit('userID', {
-    //   id: id
-    // })
     requestPages(data.userID, data.userAccessToken)
   })
 
-  socket.on('requestEdit', (data) => {
-    console.log(data.data)
-    Message.findOne({'_id': data.data}, (err, msg) => {
-      socket.emit('editData', {data: msg})
+  socket.on('requestDelete', (data) => {
+    Message.findOneAndRemove({'_id': data.data}, (err) => {
+      if (err) {
+        console.log(err)
+      }
+      socket.emit('reloadPage')
     })
   })
 
@@ -490,7 +488,6 @@ io.on('connection', (socket) => {
   })
 
   socket.on('deleteGroup', (data) => {
-    console.log(data.groupName)
     Group.findOneAndRemove({'groupName': data.groupName}, (err) => {
       if (err) {
         console.log(err)

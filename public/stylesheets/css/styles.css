@@ -1119,7 +1119,7 @@ header {
       border-radius: 1vh;
       font-size: 5vw;
       -webkit-box-shadow: none;
-      box-shadow: none;
+              box-shadow: none;
       color: white;
       margin: 0;
       -webkit-box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
@@ -1261,7 +1261,8 @@ header {
         .card .card-middle img {
           width: 30vw; } }
     .card .card-middle p {
-      font-size: 5vw; }
+      font-size: 4.2vw;
+      max-width: 60vw; }
       @media only screen and (min-width: 1025px) {
         .card .card-middle p {
           font-size: 2vw; } }
@@ -1270,7 +1271,8 @@ header {
     background-color: white;
     border-radius: 0vw 0vw 2vw 2vw;
     padding-bottom: 1vh;
-    padding-top: 0.7vh; }
+    padding-top: 0.7vh;
+    position: relative; }
     @media only screen and (min-width: 1025px) {
       .card .card-bottom {
         width: 30vw;
@@ -1283,7 +1285,6 @@ header {
       font-weight: 300;
       font-size: 4vw;
       color: #3b5998;
-      vertical-align: middle;
       padding-left: 2vw; }
       @media only screen and (min-width: 1025px) {
         .card .card-bottom span {
@@ -1297,6 +1298,45 @@ header {
       @media only screen and (min-width: 1025px) {
         .card .card-bottom img:first-of-type {
           width: 2vw; } }
+    .card .card-bottom img:last-of-type {
+      cursor: pointer;
+      width: 6vw;
+      vertical-align: middle;
+      position: absolute;
+      right: 2vw; }
+
+.are-you-sure {
+  z-index: 3;
+  position: fixed;
+  background-color: #3b5998;
+  text-align: center;
+  width: 90vw;
+  margin-left: 5vw;
+  margin-top: 30vh;
+  padding-bottom: 5vh;
+  border-radius: 2vh;
+  -webkit-box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
+          box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35); }
+  .are-you-sure p {
+    color: white;
+    font-size: 9vw;
+    font-weight: 100; }
+  .are-you-sure button {
+    width: 28vw;
+    height: 7vh;
+    border-radius: 1vh;
+    border: none;
+    font-size: 5vw;
+    color: white;
+    margin: 0;
+    -webkit-box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
+            box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
+    font-weight: 300; }
+    .are-you-sure button:first-of-type {
+      background-color: #70B51F;
+      margin-right: 5vw; }
+    .are-you-sure button:last-of-type {
+      background-color: #D0021B; }
 
 .onboard-dark {
   position: fixed;
