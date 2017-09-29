@@ -1189,11 +1189,13 @@ header {
 .listNames div p {
   display: inline-block;
   margin-left: 5vw;
-  margin-bottom: 2vh; }
+  margin-bottom: 2vh;
+  font-size: 3.6vw; }
 
 .listNames div img {
   width: 5vw;
-  margin-left: 10vw; }
+  margin-left: 10vw;
+  vertical-align: middle; }
 
 .pages {
   text-align: center;
