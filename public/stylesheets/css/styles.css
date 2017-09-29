@@ -960,7 +960,7 @@ header {
   .msgGroupList div {
     padding-top: 2vh;
     padding-bottom: 2vh;
-    font-size: 3.8vw;
+    font-size: 3.2vw;
     width: 23vw;
     border-radius: 1vw;
     margin-bottom: 3vh;
@@ -970,8 +970,14 @@ header {
     -webkit-transition: background-color .5s, color 1.6s;
     transition: background-color .5s, color 1.6s;
     display: inline-block;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
     min-width: 34vw;
-    min-height: 6vh; }
+    min-height: 6vh;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
     @media only screen and (min-width: 1025px) {
       .msgGroupList div {
         width: 24vw;
