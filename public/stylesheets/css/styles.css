@@ -981,7 +981,7 @@ header {
     @media only screen and (min-width: 1025px) {
       .msgGroupList div {
         width: 24vw;
-        font-size: 2vw;
+        font-size: 1.2vw;
         min-width: 24vw;
         min-height: 0vh; } }
 
@@ -1197,11 +1197,18 @@ header {
   margin-left: 5vw;
   margin-bottom: 2vh;
   font-size: 3.6vw; }
+  @media only screen and (min-width: 1025px) {
+    .listNames div p {
+      font-size: 1.5vw; } }
 
 .listNames div img {
   width: 5vw;
   margin-left: 10vw;
   vertical-align: middle; }
+  @media only screen and (min-width: 1025px) {
+    .listNames div img {
+      width: 2vw;
+      margin-left: 5vw; } }
 
 .pages {
   text-align: center;
