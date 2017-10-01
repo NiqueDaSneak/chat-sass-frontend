@@ -1,11 +1,16 @@
 .landing {
   color: #474747;
-  text-align: center; }
-  .landing p {
+  text-align: center;
+  height: 100vh;
+  background-image: url("/imgs/landing-bg.jpg");
+  background-size: cover;
+  background-position-x: center; }
+  .landing span {
     font-size: 6vw;
-    padding-top: 6vh; }
+    padding-top: 6vh;
+    display: block; }
     @media only screen and (min-width: 1025px) {
-      .landing p {
+      .landing span {
         padding-bottom: 40vh; } }
   .landing a {
     text-decoration: none;
