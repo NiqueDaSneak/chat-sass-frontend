@@ -5,19 +5,21 @@
   background-image: url("/imgs/landing-bg.jpg");
   background-size: cover;
   background-position-x: center; }
-  .landing span {
-    font-size: 6vw;
-    padding-top: 6vh;
-    display: block; }
+  .landing img {
+    width: 70vw;
+    margin-top: 10vh; }
     @media only screen and (min-width: 1025px) {
-      .landing span {
-        padding-bottom: 40vh; } }
+      .landing img {
+        width: 40vw;
+        margin-top: 10vh;
+        margin-bottom: 20vh;
+        margin-left: 2vw; } }
   .landing a {
     text-decoration: none;
     color: white;
     font-size: 5vw;
     border-radius: 1vh;
-    background-color: #3b5998;
+    background-color: #150958;
     position: fixed;
     left: 16vw;
     bottom: 10vh;
@@ -28,7 +30,9 @@
       .landing a {
         width: 18vw;
         font-size: 1.6vw;
-        position: inherit; } }
+        position: inherit;
+        display: block;
+        margin-left: 41vw; } }
 
 .login {
   background-color: #474747;
@@ -173,7 +177,7 @@
 footer {
   position: fixed;
   width: 100vw;
-  background-color: #3b5998;
+  background-color: #150958;
   bottom: 0;
   font-size: 6vw;
   padding-top: 4vh;
@@ -306,7 +310,7 @@ nav {
   display: none; }
 
 header {
-  background-color: #3b5998;
+  background-color: #150958;
   height: 9vh;
   color: white;
   vertical-align: middle;
@@ -384,12 +388,12 @@ header {
             transform: rotate(360deg); } }
 
 .active-day {
-  color: #224389;
+  color: #8a8a8a;
   -webkit-transition: color 1.3s;
   transition: color 1.3s; }
 
 .msg-day {
-  color: #869ECC;
+  color: #150958;
   -webkit-transition: background-color .9s;
   transition: background-color .9s; }
 
@@ -408,7 +412,7 @@ header {
   transition: opacity .6s, bottom .6s, height .4s;
   -webkit-transition-delay: bottom .4s;
           transition-delay: bottom .4s;
-  background-color: #14306B;
+  background-color: #00AEEF;
   color: white;
   width: 100vw;
   height: 57vh;
@@ -801,7 +805,7 @@ header {
     width: 100vw;
     text-align: center;
     padding-top: 4vh;
-    background-color: #3b5998;
+    background-color: #150958;
     line-height: 6vh;
     height: 9vh;
     color: white;
@@ -829,7 +833,7 @@ header {
     padding-top: 20vh;
     width: 80vw;
     padding-left: 10vw;
-    color: #3b5998; }
+    color: #150958; }
     .chat-ui form .btn-holder {
       padding-top: 4vh;
       padding-bottom: 4vh; }
@@ -922,7 +926,7 @@ header {
     .chat-ui form input[type='date'], .chat-ui form input[type='time'] {
       padding: 2vw;
       border: none;
-      background-color: #3b5998;
+      background-color: #150958;
       color: white;
       width: 75vw;
       height: 5vh;
@@ -942,7 +946,7 @@ header {
     .chat-ui form .uploader {
       border-radius: 2vw;
       color: white;
-      background: #3b5998;
+      background: #150958;
       display: inline-block;
       margin-bottom: 4vh;
       padding-top: 2vh;
@@ -1008,7 +1012,7 @@ header {
     width: 100vw;
     text-align: center;
     padding-top: 4vh;
-    background-color: #3b5998;
+    background-color: #150958;
     line-height: 6vh;
     height: 9vh;
     color: white;
@@ -1033,7 +1037,7 @@ header {
           font-size: 4vw; } }
   .groups .list, .groups .new {
     background-color: white;
-    color: #3b5998;
+    color: #150958;
     width: 84vw;
     border-radius: 1vw;
     margin-top: 20vh;
@@ -1060,7 +1064,7 @@ header {
       font-size: 4vw;
       padding-top: 6vw;
       padding-bottom: 6vw;
-      background-color: #3b5998;
+      background-color: #150958;
       font-weight: 500;
       color: white;
       margin-bottom: 2vh;
@@ -1160,7 +1164,7 @@ header {
         .groups .new .names {
           font-size: 3.5vw; } }
       .groups .new .names div.selected {
-        background-color: #3b5998;
+        background-color: #150958;
         color: white; }
         .groups .new .names div.selected p {
           font-weight: 500; }
@@ -1239,7 +1243,7 @@ header {
         width: 54vw; } }
     .pages .pageList a {
       font-size: 6vw;
-      color: #3b5998;
+      color: #150958;
       padding-bottom: 4vh;
       display: block;
       font-weight: 100;
@@ -1260,7 +1264,7 @@ header {
       width: 30vw;
       margin-left: 35vw; } }
   .card .card-top {
-    background-color: #3b5998;
+    background-color: #150958;
     color: white;
     font-size: 4vw;
     padding-top: 3vh;
@@ -1304,7 +1308,7 @@ header {
       vertical-align: middle;
       font-weight: 300;
       font-size: 4vw;
-      color: #3b5998;
+      color: #150958;
       padding-left: 2vw; }
       @media only screen and (min-width: 1025px) {
         .card .card-bottom span {
@@ -1331,7 +1335,7 @@ header {
 .are-you-sure {
   z-index: 3;
   position: fixed;
-  background-color: #3b5998;
+  background-color: #150958;
   text-align: center;
   width: 90vw;
   margin-left: 5vw;
@@ -1393,7 +1397,7 @@ header {
   .onboarding div {
     width: 80vw;
     margin-left: 10vw;
-    background-color: #3b5998;
+    background-color: #150958;
     color: white;
     border-radius: 3vw;
     padding-top: 3vh;
@@ -1426,7 +1430,7 @@ header {
           font-size: 2.5vw; } }
     .onboarding div button {
       position: relative;
-      color: #3b5998;
+      color: #150958;
       font-size: 6vw;
       width: 80vw;
       bottom: 0;
@@ -1442,7 +1446,7 @@ header {
           width: 50vw; } }
     .onboarding div .promote-on-facebook {
       border-radius: 0vw;
-      border-bottom: 0.1vh solid #14306B; }
+      border-bottom: 0.1vh solid #00AEEF; }
 
 .onboard-promote p:last-of-type {
   padding-bottom: 1vh; }
