@@ -6,8 +6,10 @@ $(document).ready(() => {
   var org = pathname[pathname.length - 1]
 
   $('.todays-msgs').click('.delete', (event) => {
-    $('body').prepend("<div class='onboard-dark'></div>")
-    $('body').prepend("<div class='are-you-sure'><p>Are you sure?</p><button class='delete-msg' data-id=" + $(event.target).data('id') + " type='button' name='Delete'>Delete</button><button class='cancel-delete-msg' type='button' name='cancel'>Cancel</button></div>")
+    if ($(event.target).hasClass('delete')) {
+      $('body').prepend("<div class='onboard-dark'></div>")
+      $('body').prepend("<div class='are-you-sure'><p>Are you sure?</p><button class='delete-msg' data-id=" + $(event.target).data('id') + " type='button' name='Delete'>Delete</button><button class='cancel-delete-msg' type='button' name='cancel'>Cancel</button></div>")
+    }
   })
 
   $('button').click('.delete-msg', (event) => {
