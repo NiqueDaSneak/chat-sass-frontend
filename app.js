@@ -280,12 +280,23 @@ app.get('/save-page', (req, res) => {
   })
 })
 
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
   var host = req.get('host')
   if (!req.connection.encrypted) {
-    res.redirect('https://' + host + req.url)
+    console.log('not https')
+    if (host === 'localhost:3000') {
+      console.log('localhost')
+    } else {
+      console.log( 'redirecting to https')
+      res.redirect('https://' + host + req.url)
+    }
+  } else {
+    console.log('https')
   }
-    res.sendFile(path.join(__dirname + '/views/index.html'))
+})
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname + '/views/index.html'))
 })
 
 app.get('/dashboard/:organization', (req, res) => {
