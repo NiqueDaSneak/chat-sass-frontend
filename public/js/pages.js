@@ -17,7 +17,7 @@ $(document).ready(() => {
 
   socket.on('noPages', () => {
     $('.pageList').append('<p>Looks like you are not an admin for any Facebook Pages. Follow the link below so you can create one:</p>')
-    $('.pageList').append("<a class='no-pages-link' href='#'>Go To Facebook</a>")
+    $('.pageList').append("<a class='no-pages-link' href='https://www.facebook.com/pages/create/'>Go To Facebook</a>")
   })
 
 })
