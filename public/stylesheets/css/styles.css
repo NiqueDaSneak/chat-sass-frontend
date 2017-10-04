@@ -1255,7 +1255,7 @@ header {
 .no-pages-link {
   background-color: #150958;
   padding-top: 2vh;
-  padding-bottom: 2vh;
+  padding-bottom: 2vh !important;
   color: white !important;
   width: 70vw;
   margin-left: 7vw; }
