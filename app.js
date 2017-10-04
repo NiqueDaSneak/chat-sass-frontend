@@ -527,17 +527,18 @@ io.on('connection', (socket) => {
       }
       console.log('BODY!!!! ' + body)
       var data = JSON.parse(body)
-      if ( typeof data.data.length === 'undefined') {
-        console.log('no pages')
-        socket.emit('noPages')
-      } else {
+      
+      if (data.data.length) {
         for (var i = 0; i < data.data.length; i++) {
           socket.emit('addPages', {
             page: data.data[i]
           })
-          console.log('pageName!!!!' + data.data[i].name)
-          console.log('access_token!!!!' + data.data[i].access_token)
         }
+      }
+
+      if (body.error) {
+        console.log('no pages')
+        socket.emit('noPages')
       }
     })
   }
