@@ -10,6 +10,8 @@ const server = require('http').createServer(app)
 const io = require('socket.io')(server)
 const request = require('request')
 const util = require('util')
+const favicon = require('serve-favicon')
+
 
 // DATABASE SETUP
 const mongoose = require('mongoose')
@@ -77,6 +79,7 @@ app.use((req, res, next) => {
   }
   next()
 })
+app.use(favicon(path.join(__dirname, 'public/imgs', 'favicon.ico')))
 app.use(express.static('public'))
 app.use(express.static(__dirname + 'view'))
 var session = require('cookie-session')
