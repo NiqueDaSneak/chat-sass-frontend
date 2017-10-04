@@ -66,10 +66,13 @@ var Group = mongoose.model('Group', groupSchema)
 const passport = require('passport')
 const FacebookStrategy = require('passport-facebook').Strategy
 
-// BCRYPT
-var bcrypt = require('bcryptjs')
-
 // EXPRESS SETUP
+app.use((req, res, next) => {
+  if(!req.secure) {
+    return res.redirect(['https://', req.get('Host'), req.url].join(''))
+  }
+  next()
+})
 app.use(express.static('public'))
 app.use(express.static(__dirname + 'view'))
 var session = require('cookie-session')
@@ -278,28 +281,6 @@ app.get('/save-page', (req, res) => {
       })
     })
   })
-})
-
-// app.get('*', (req, res) => {
-//   var host = req.get('host')
-//   if (!req.connection.encrypted) {
-//     console.log('not https')
-//     if (host === 'localhost:3000') {
-//       console.log('localhost')
-//     } else {
-//       console.log( 'redirecting to https')
-//       res.redirect('https://' + host + req.url)
-//     }
-//   } else {
-//     console.log('https')
-//   }
-// })
-
-app.use((req, res, next) => {
-  if(!req.secure) {
-    return res.redirect(['https://', req.get('Host'), req.url].join(''));
-  }
-  next()
 })
 
 app.get('/', (req, res) => {
