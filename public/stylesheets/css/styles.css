@@ -1252,6 +1252,17 @@ header {
         .pages .pageList a {
           font-size: 3vw; } }
 
+.no-pages-link {
+  background-color: blue;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  color: white;
+  width: 70vw;
+  margin-left: 7vw; }
+  @media only screen and (min-width: 1025px) {
+    .no-pages-link {
+      width: 40vw; } }
+
 .card {
   width: 60vw;
   -webkit-box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75);
