@@ -527,7 +527,7 @@ io.on('connection', (socket) => {
       }
       console.log('BODY!!!! ' + body)
       var data = JSON.parse(body)
-      
+
       if (data.data.length) {
         for (var i = 0; i < data.data.length; i++) {
           socket.emit('addPages', {
@@ -543,8 +543,6 @@ io.on('connection', (socket) => {
     })
   }
 })
-
-
 
 // SET UP SERVER ENVIRONMENT
 var port = process.env.PORT || 3000
