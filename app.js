@@ -527,8 +527,7 @@ io.on('connection', (socket) => {
       }
       console.log('BODY!!!! ' + body)
       var data = JSON.parse(body)
-      console.log('its works! number of pages: ' + data.data.length)
-      if (data.data.length === 0) {
+      if (data.data.length === undefined) {
         socket.emit('noPages')
       } else {
         for (var i = 0; i < data.data.length; i++) {
