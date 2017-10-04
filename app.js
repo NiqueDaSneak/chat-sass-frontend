@@ -528,12 +528,12 @@ io.on('connection', (socket) => {
       console.log('BODY!!!! ' + body)
       var data = JSON.parse(body)
 
-      if (body.error) {
+      if (body['error']) {
         console.log('no pages')
         socket.emit('noPages')
       }
-      
-      if (body.data) {
+
+      if (body['data']) {
         for (var i = 0; i < data.data.length; i++) {
           socket.emit('addPages', {
             page: data.data[i]
