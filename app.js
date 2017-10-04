@@ -283,24 +283,28 @@ app.get('/save-page', (req, res) => {
 app.get('/', (req, res) => {
   var host = req.get('host')
   if (!req.connection.encrypted) {
+    console.log('not https')
     if (host === 'localhost:3000') {
+      console.log('localhost')
       res.sendFile(path.join(__dirname + '/views/index.html'))
     } else {
+      console.log('https')
       res.redirect('https://' + host + req.url)
     }
   } else {
+    console.log('https')
     res.sendFile(path.join(__dirname + '/views/index.html'))
   }
 })
 
 app.get('/dashboard/:organization', (req, res) => {
-  // if (req.session.user) {
+  if (req.session.user) {
   res.sendFile(path.join(__dirname + '/views/dashboard.html'))
-  // console.log('LOGGED IN: ' + JSON.stringify(req.session.user))
-  // } else {
-  // console.log('not logged in')
-  // res.redirect('/auth/facebook')
-  // }
+  console.log('LOGGED IN: ' + JSON.stringify(req.session.user))
+  } else {
+  console.log('not logged in')
+  res.redirect('/auth/facebook')
+  }
 })
 
 app.post('/message', (req, res) => {
