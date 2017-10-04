@@ -286,7 +286,6 @@ app.get('/', (req, res) => {
     res.redirect('https://' + host + req.url)
   }
     res.sendFile(path.join(__dirname + '/views/index.html'))
-  }
 })
 
 app.get('/dashboard/:organization', (req, res) => {
