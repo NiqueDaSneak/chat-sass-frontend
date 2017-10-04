@@ -283,16 +283,8 @@ app.get('/save-page', (req, res) => {
 app.get('/', (req, res) => {
   var host = req.get('host')
   if (!req.connection.encrypted) {
-    console.log('not https')
-    if (host === 'localhost:3000') {
-      console.log('localhost')
-      res.sendFile(path.join(__dirname + '/views/index.html'))
-    } else {
-      console.log('https')
-      res.redirect('https://' + host + req.url)
-    }
-  } else {
-    console.log('https')
+    res.redirect('https://' + host + req.url)
+  }
     res.sendFile(path.join(__dirname + '/views/index.html'))
   }
 })
