@@ -281,7 +281,16 @@ app.get('/save-page', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname + '/views/index.html'))
+  var host = req.get('host')
+  if (!req.connection.encrypted) {
+    if (host === 'localhost:3000') {
+      res.sendFile(path.join(__dirname + '/views/index.html'))
+    } else {
+      res.redirect('https://' + host + req.url)
+    }
+  } else {
+    res.sendFile(path.join(__dirname + '/views/index.html'))
+  }
 })
 
 app.get('/dashboard/:organization', (req, res) => {
