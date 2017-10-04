@@ -280,19 +280,26 @@ app.get('/save-page', (req, res) => {
   })
 })
 
-app.get('*', (req, res) => {
-  var host = req.get('host')
-  if (!req.connection.encrypted) {
-    console.log('not https')
-    if (host === 'localhost:3000') {
-      console.log('localhost')
-    } else {
-      console.log( 'redirecting to https')
-      res.redirect('https://' + host + req.url)
-    }
-  } else {
-    console.log('https')
+// app.get('*', (req, res) => {
+//   var host = req.get('host')
+//   if (!req.connection.encrypted) {
+//     console.log('not https')
+//     if (host === 'localhost:3000') {
+//       console.log('localhost')
+//     } else {
+//       console.log( 'redirecting to https')
+//       res.redirect('https://' + host + req.url)
+//     }
+//   } else {
+//     console.log('https')
+//   }
+// })
+
+app.use((req, res, next) => {
+  if(!req.secure) {
+    return res.redirect(['https://', req.get('Host'), req.url].join(''));
   }
+  next()
 })
 
 app.get('/', (req, res) => {
