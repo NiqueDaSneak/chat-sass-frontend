@@ -69,7 +69,11 @@ const FacebookStrategy = require('passport-facebook').Strategy
 // EXPRESS SETUP
 app.use((req, res, next) => {
   if(!req.secure) {
-    return res.redirect(['https://', req.get('Host'), req.url].join(''))
+    if (req.get('Host') === 'localhost:3000') {
+      console.log('localhost')
+    } else {
+      return res.redirect(['https://', req.get('Host'), req.url].join(''))
+    }
   }
   next()
 })
@@ -521,12 +525,16 @@ io.on('connection', (socket) => {
       console.log('BODY!!!! ' + body)
       var data = JSON.parse(body)
       console.log('its works! number of pages: ' + data.data.length)
-      for (var i = 0; i < data.data.length; i++) {
-        socket.emit('addPages', {
-          page: data.data[i]
-        })
-        console.log('pageName!!!!' + data.data[i].name)
-        console.log('access_token!!!!' + data.data[i].access_token)
+      if (data.data.length === 0) {
+        socket.emit('noPages')
+      } else {
+        for (var i = 0; i < data.data.length; i++) {
+          socket.emit('addPages', {
+            page: data.data[i]
+          })
+          console.log('pageName!!!!' + data.data[i].name)
+          console.log('access_token!!!!' + data.data[i].access_token)
+        }
       }
     })
   }
