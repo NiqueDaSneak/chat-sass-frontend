@@ -25,6 +25,9 @@ $(document).ready(() => {
   // set number for header-date
   $('.header-date').text(Number(displayDay))
 
+  // hide button because it loads on today
+  $('.go-to-today').css('color', '#150958')
+
   // // UI & INTERACTIONS
   $('.go-to-today').click(() => {
     displayDay = moment().format('D')
@@ -352,6 +355,12 @@ $(document).ready(() => {
   // LOOP THRU MESSAGES, AND SEE IF ONE HAS THE DISPLAYDAY => PUT MESSAGE INFO ON SCREEN
   function loadTodayMsgs() {
     socket.emit('requestMsgs', {data: org})
+    if (displayDay === moment().format('D') && displayMonth === moment().format('MMM')) {
+      console.log('you are on today!')
+      $('.go-to-today').css('color', '#150958')
+    } else {
+      $('.go-to-today').css('color', 'white')
+    }
   }
 
   // FIGURE OUT WHAT THE CURRENT DAY IS AND HIGHLIGHT IT
