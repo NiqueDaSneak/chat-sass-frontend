@@ -65,6 +65,41 @@ $(document).ready(() => {
     })
   })
 
+  $('.list').click('.name', (event) => {
+      socket.emit('findGroup', { name: $(event.target).data('name'), organization: org })
+  })
+
+  socket.on('editGroupMembers', (data) => {
+    let hidePromise = new Promise(function(resolve, reject) {
+      $('.list').toggleClass('hide')
+      $('.new').toggleClass('hide')
+      $(this).scrollTop(0)
+    })
+
+    let addMembers = new Promise(function(resolve, reject) {
+      for (var i = 0; i < data.members.length; i++) {
+        for (var x = 0; x < data.group.groupMembers.length; x++) {
+          console.log(data.members[i].fbID)
+          console.log(data.group.groupMembers[x])
+          console.log('--')
+          if (data.members[i].fbID === data.group.groupMembers[x]) {
+            console.log('found a match')
+            $('.groupName').val(data.name)
+            $('.new .names').prepend("<div class='selected' data-fbid=" + data.members[i].fbID + "><img src='" + data.members[i].photo + "' alt='profile photo'><p>" + data.members[i].fullName + "</p></div>")
+          } else {
+            console.log('not match')
+            $('.new .names').prepend("<div data-fbid=" + data.members[i].fbID + "><img src='" + data.members[i].photo + "' alt='profile photo'><p>" + data.members[i].fullName + "</p></div>")
+          }
+        }
+      }
+    })
+
+    hidePromise.then(() => {
+      addMembers
+    })
+
+  })
+
   $('.list').on('click', '.deleteGroup', (event) => {
     socket.emit('deleteGroup', { groupName: $(event.target).data('groupname'), org: org })
   })
@@ -80,7 +115,7 @@ $(document).ready(() => {
   socket.on('showList', (data) => {
     $('.listNames').empty()
     for (var i = 0; i < data.data.length; i++) {
-      $('.list .listNames').append("<div><img class='deleteGroup' data-groupname='"+ data.data[i].groupName + "' src='/imgs/delete.svg' alt='Delete Icon'><p>" + data.data[i].groupName + "</p></div>")
+      $('.list .listNames').append("<div><img class='deleteGroup' data-groupname='"+ data.data[i].groupName + "' src='/imgs/delete.svg' alt='Delete Icon'><p class='name' data-name='"+ data.data[i].groupName +"'>" + data.data[i].groupName + "</p></div>")
     }
   })
 

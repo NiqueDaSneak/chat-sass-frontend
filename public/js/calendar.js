@@ -356,7 +356,6 @@ $(document).ready(() => {
   function loadTodayMsgs() {
     socket.emit('requestMsgs', {data: org})
     if (displayDay === moment().format('D') && displayMonth === moment().format('MMM')) {
-      console.log('you are on today!')
       $('.go-to-today').css('color', '#150958')
     } else {
       $('.go-to-today').css('color', 'white')

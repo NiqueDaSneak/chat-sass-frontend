@@ -295,13 +295,13 @@ app.get('/', (req, res) => {
 })
 
 app.get('/dashboard/:organization', (req, res) => {
-  if (req.session.user) {
+  // if (req.session.user) {
   res.sendFile(path.join(__dirname + '/views/dashboard.html'))
   console.log('LOGGED IN: ' + JSON.stringify(req.session.user))
-  } else {
-  console.log('not logged in')
-  res.redirect('/auth/facebook')
-  }
+  // } else {
+  // console.log('not logged in')
+  // res.redirect('/auth/facebook')
+  // }
 })
 
 app.post('/message', (req, res) => {
@@ -497,8 +497,20 @@ io.on('connection', (socket) => {
     })
   })
 
+  socket.on('findGroup', (data) => {
+    Group.findOne({ 'groupName': data.name }, (err, group) => {
+      if (err) {
+        console.log(err)
+      }
+      Member.find({ 'organization': data.organization }, (err, members) => {
+        console.log('memebers: ' + members)
+        socket.emit('editGroupMembers', { group: group, name: data.name, members: members })
+      })
+    })
+  })
+
   socket.on('deleteGroup', (data) => {
-    Group.findOneAndRemove({'groupName': data.groupName}, (err) => {
+    Group.findOneAndRemove({ 'groupName': data.groupName }, (err) => {
       if (err) {
         console.log(err)
       }
