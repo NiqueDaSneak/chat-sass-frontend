@@ -367,9 +367,6 @@ io.on('connection', (socket) => {
   })
 
   socket.on('createGroup', (data) => {
-    // if data.groupName exists, in Group
-      // save group with new array of groupMembers
-    // else create a new group
     Group.findOne({ groupName: data.groupName }, (err, group) => {
       if (err) {
         console.log(err)
@@ -397,7 +394,6 @@ io.on('connection', (socket) => {
         })
       }
     })
-    // console.log(data.groupMembers)
   })
 
   socket.on('getList', (data) => {
@@ -523,7 +519,6 @@ io.on('connection', (socket) => {
         console.log(err)
       }
       Member.find({ 'organization': data.organization }, (err, members) => {
-        console.log('members: ' + members)
         socket.emit('editGroupMembers', { group: group, name: data.name, members: members })
       })
     })
