@@ -15,7 +15,7 @@ $(document).ready(() => {
     $(this).scrollTop(0)
   })
 
-  $('.list .addGroup').click(() => {
+  $('.addGroup').click(() => {
     socket.emit('requestMembers', {data: org})
     $('.list').toggleClass('hide')
     $('.new').toggleClass('hide')
@@ -65,7 +65,7 @@ $(document).ready(() => {
     })
   })
 
-  $('.list').click('.name', (event) => {
+  $('.list').on('click', 'p', (event) => {
       socket.emit('findGroup', { name: $(event.target).data('name'), organization: org })
   })
 
@@ -77,21 +77,40 @@ $(document).ready(() => {
     })
 
     let addMembers = new Promise(function(resolve, reject) {
+      $('.groupName').val(data.name)
       for (var i = 0; i < data.members.length; i++) {
-        for (var x = 0; x < data.group.groupMembers.length; x++) {
-          console.log(data.members[i].fbID)
-          console.log(data.group.groupMembers[x])
-          console.log('--')
-          if (data.members[i].fbID === data.group.groupMembers[x]) {
-            console.log('found a match')
-            $('.groupName').val(data.name)
-            $('.new .names').prepend("<div class='selected' data-fbid=" + data.members[i].fbID + "><img src='" + data.members[i].photo + "' alt='profile photo'><p>" + data.members[i].fullName + "</p></div>")
-          } else {
-            console.log('not match')
-            $('.new .names').prepend("<div data-fbid=" + data.members[i].fbID + "><img src='" + data.members[i].photo + "' alt='profile photo'><p>" + data.members[i].fullName + "</p></div>")
+        $('.new .names').prepend("<div data-fbid=" + data.members[i].fbID + "><img src='" + data.members[i].photo + "' alt='profile photo'><p>" + data.members[i].fullName + "</p></div>")
+      }
+
+      for (var i = 0; i < data.group.groupMembers.length; i++) {
+        for (var x = 0; x < $('.names').children().length; x++) {
+          console.log(data.group.groupMembers[i].fbID)
+          console.log($($('.names').children()[x]).data('fbid'))
+          if (data.group.groupMembers[i] === $($('.names').children()[x]).data('fbid')) {
+            console.log('match')
+            $($('.names').children()[x]).addClass('selected')
           }
         }
       }
+        // if ($($('.names').children()[i]).hasClass('selected')) {
+        //   arr.push($($('.names').children()[i]).data('fbid'))
+        // }
+      //   for (var x = 0; x < data.group.groupMembers.length; x++) {
+      //     for (var i = 0; i < data.members.length; i++) {
+      //       console.log(data.members[i].fbID)
+      //       console.log(data.group.groupMembers[x])
+      //       console.log('--')
+      //       if (data.members[i].fbID === data.group.groupMembers[x]) {
+      //         console.log('found a match')
+      //         $('.new .names').prepend("<div class='selected' data-fbid=" + data.members[i].fbID + "><img src='" + data.members[i].photo + "' alt='profile photo'><p>" + data.members[i].fullName + "</p></div>")
+      //       } else {
+      //         console.log('not match')
+      //         // $('.new .names').prepend("<div data-fbid=" + data.members[i].fbID + "><img src='" + data.members[i].photo + "' alt='profile photo'><p>" + data.members[i].fullName + "</p></div>")
+      //       }
+      //     }
+      // }
+
+
     })
 
     hidePromise.then(() => {
