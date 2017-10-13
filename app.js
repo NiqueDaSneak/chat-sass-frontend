@@ -25,8 +25,8 @@ var userSchema = mongoose.Schema({
   organization: String,
   onboarded: Boolean,
   username: String,
-  userID: Number,
-  pageID: Number,
+  userID: String,
+  pageID: String,
   pageAccessToken: String,
   userAccessToken: String,
 })
@@ -125,7 +125,6 @@ passport.use(new FacebookStrategy({
         } else {
           newUser.email = profile.emails[0].value
         }
-
         newUser.onboarded = false
         newUser.userID = profile.id
         newUser.userAccessToken = accessToken
