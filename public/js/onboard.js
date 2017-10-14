@@ -23,7 +23,15 @@ $(document).ready(() => {
     if ($(event.target).hasClass('promote-on-facebook')) {
       socket.emit('promoteOnFacebook', {post: $('.promoteText').val(), org: org})
       $('.onboarding').remove()
-      $('.onboard-dark').remove()
+      $('body').prepend("<img class='success-check' src='/imgs/checkmark.svg' alt='Success Check'>")
+      setTimeout(() => {
+        $('.success-check').fadeOut('slow')
+        $('.onboard-dark').fadeOut('slow')
+      }, 800)
+      setTimeout(() => {
+        $('.success-check').remove()
+        $('.onboard-dark').remove()
+      }, 1000)
       socket.emit('onboardComplete', {data: org})
     } else if ($(event.target).hasClass('promote-later')) {
       $('.onboarding').remove()
