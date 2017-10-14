@@ -1480,6 +1480,13 @@ header {
       width: 43vw;
       height: 13vh; } }
 
+.success-check {
+  width: 40vw;
+  z-index: 3;
+  position: fixed;
+  margin-left: 30vw;
+  margin-top: 30vh; }
+
 body {
   margin: 0;
   background-color: #E0E0E0;
