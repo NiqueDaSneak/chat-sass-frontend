@@ -389,6 +389,30 @@ header {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
 
+.send-now {
+  border: 0.2vw solid #150958;
+  font-size: 5vw;
+  padding-top: 1.5vh;
+  padding-bottom: 1.5vh;
+  border-radius: 5vw;
+  color: #150958;
+  font-weight: 300;
+  -webkit-transition: background-color 1s, color 1s, border 3s;
+  transition: background-color 1s, color 1s, border 3s; }
+  @media only screen and (min-width: 1025px) {
+    .send-now {
+      width: 24vw;
+      font-size: 2vw;
+      text-align: center;
+      margin-left: 28vw;
+      border: 0.1vw solid #150958; } }
+
+.send-now.selected {
+  background-color: #869ECC;
+  font-weight: 100;
+  color: white;
+  border: none; }
+
 .active-day {
   color: #8a8a8a;
   -webkit-transition: color 1.3s;
