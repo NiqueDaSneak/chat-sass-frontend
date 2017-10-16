@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150px" height="150px" viewBox="0 0 150 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>facebook-messenger</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-47" transform="translate(-282.000000, -2856.000000)" fill-rule="nonzero" fill="#0084FF">
+            <g id="Group-30" transform="translate(0.000000, 2561.000000)">
+                <g id="Group-24" transform="translate(100.000000, 295.000000)">
+                    <g id="Group-23" transform="translate(182.000000, 0.000000)">
+                        <g id="facebook-messenger">
+                            <path d="M75,0 C33.5785714,0 0,31.0782736 0,69.4155641 C0,91.2606421 10.9062112,110.746054 27.9503106,123.470389 L27.9503106,149.937618 L53.4871118,135.928169 C60.3023292,137.813496 67.5223602,138.831128 75,138.831128 C116.421429,138.831128 150,107.752855 150,69.4155641 C150,31.0782736 116.421429,0 75,0 Z M82.4534161,93.4796263 L63.3540373,73.1177275 L26.0869565,93.4796263 L67.0807453,49.9792062 L86.6459627,70.341105 L123.447205,49.9792062 L82.4534161,93.4796263 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
