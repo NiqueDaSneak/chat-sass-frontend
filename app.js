@@ -52,10 +52,13 @@ var memberSchema = mongoose.Schema({
 })
 var Member = mongoose.model('Member', memberSchema)
 
-var affirmationSchema = mongoose.Schema({
-  text: String
+var organizationSchema = mongoose.Schema({
+  name: String,
+  tier: String,
+  createdDate: Date,
+  memberList: Array
 })
-var Affirmation = mongoose.model('Affirmation', affirmationSchema)
+var Organization = mongoose.model('Organization', organizationSchema)
 
 var groupSchema = mongoose.Schema({
   groupName: String,
