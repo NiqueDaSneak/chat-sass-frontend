@@ -182,3 +182,24 @@ header
     margin-top: 42.5vh
   to
     transform: rotate(360deg)
+
+.send-now
+  border: 0.2vw solid #150958
+  font-size: 5vw
+  padding-top: 1.5vh
+  padding-bottom: 1.5vh
+  border-radius: 5vw
+  color: #150958
+  font-weight: 300
+  transition: background-color 1s, color 1s, border 3s
+  @include desktop
+    width: 24vw
+    font-size: 2vw
+    text-align: center
+    margin-left: 28vw
+    border: 0.1vw solid #150958
+.send-now.selected
+  background-color: #869ECC
+  font-weight: 100
+  color: white
+  border: none

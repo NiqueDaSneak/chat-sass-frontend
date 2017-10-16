@@ -19,8 +19,23 @@ $(document).ready(() => {
   })
 
   $('.msg-data .btn-holder .create').click(() => {
-    $('.msg-data').submit()
-    $('.loading').fadeIn()
+    if ($('.send-now').hasClass('selected')) {
+      $("input[type='time']").val(moment().add(2,'m').format('hh:mm'))
+      $("input[type='date']").val(moment().format('YYYY-MM-DD'))
+      $('.loading').fadeIn()
+      $('.msg-data').submit()
+    } else {
+      $('.loading').fadeIn()
+      $('.msg-data').submit()
+    }
+  })
+
+  $('.send-now').click(() => {
+    $('.send-now').toggleClass('selected')
+    $('.chat-ui form span:nth-of-type(4)').toggle('fast')
+    $(".chat-ui form input[type='date']").toggle('fast')
+    $('.chat-ui form span:nth-of-type(5)').toggle('fast')
+    $(".chat-ui form input[type='time']").toggle('fast')
   })
 
   $('.msgGroupList').click((event) => {
