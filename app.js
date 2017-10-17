@@ -48,7 +48,12 @@ var memberSchema = mongoose.Schema({
   fbID: Number,
   fullName: String,
   timezone: Number,
-  photo: String
+  photo: String,
+  gender: String,
+  createdDate: Date
+})
+memberSchema.virtual('firstName').get(() => {
+  return this.fullName.split(' ')[0]
 })
 var Member = mongoose.model('Member', memberSchema)
 
@@ -297,13 +302,17 @@ app.get('/', (req, res) => {
 })
 
 app.get('/dashboard/:organization', (req, res) => {
-  // if (req.session.user) {
-  res.sendFile(path.join(__dirname + '/views/dashboard.html'))
-  console.log('LOGGED IN: ' + JSON.stringify(req.session.user))
-  // } else {
-  // console.log('not logged in')
-  // res.redirect('/auth/facebook')
-  // }
+  if (req.get('Host') === 'localhost:3000') {
+    res.sendFile(path.join(__dirname + '/views/dashboard.html'))
+  } else {
+    if (req.session.user) {
+      res.sendFile(path.join(__dirname + '/views/dashboard.html'))
+      console.log('LOGGED IN: ' + JSON.stringify(req.session.user))
+    } else {
+      console.log('not logged in')
+      res.redirect('/auth/facebook')
+    }
+  }
 })
 
 app.post('/message', (req, res) => {

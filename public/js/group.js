@@ -92,24 +92,6 @@ $(document).ready(() => {
           }
         }
       }
-        // if ($($('.names').children()[i]).hasClass('selected')) {
-        //   arr.push($($('.names').children()[i]).data('fbid'))
-        // }
-      //   for (var x = 0; x < data.group.groupMembers.length; x++) {
-      //     for (var i = 0; i < data.members.length; i++) {
-      //       console.log(data.members[i].fbID)
-      //       console.log(data.group.groupMembers[x])
-      //       console.log('--')
-      //       if (data.members[i].fbID === data.group.groupMembers[x]) {
-      //         console.log('found a match')
-      //         $('.new .names').prepend("<div class='selected' data-fbid=" + data.members[i].fbID + "><img src='" + data.members[i].photo + "' alt='profile photo'><p>" + data.members[i].fullName + "</p></div>")
-      //       } else {
-      //         console.log('not match')
-      //         // $('.new .names').prepend("<div data-fbid=" + data.members[i].fbID + "><img src='" + data.members[i].photo + "' alt='profile photo'><p>" + data.members[i].fullName + "</p></div>")
-      //       }
-      //     }
-      // }
-
 
     })
 
@@ -128,7 +110,16 @@ $(document).ready(() => {
   })
 
   socket.on('addUser', (data) => {
-    $('.new .names').prepend("<div data-fbid=" + data.data.fbID + "><img src='" + data.data.photo + "' alt='profile photo'><p>" + data.data.fullName + "</p></div>")
+    if (data.data.createdDate) {
+      let day = data.data.createdDate.split("-")[2].split('T')[0]
+      let month = data.data.createdDate.split("-")[1]
+      let year = data.data.createdDate.split("-")[0]
+      if (moment(month + '-' + day + '-' + year ).diff(moment(), 'days') >= -12) {
+        $('.new .names').prepend("<div data-fbid=" + data.data.fbID + "><img src='" + data.data.photo + "' alt='profile photo'><p>" + data.data.fullName + "</p><img class='new-user-icon' src='/imgs/star-icon.svg' alt='New User'></div>")
+      }
+    } else {
+      $('.new .names').prepend("<div data-fbid=" + data.data.fbID + "><img src='" + data.data.photo + "' alt='profile photo'><p>" + data.data.fullName + "</p></div>")
+    }
   })
 
   socket.on('showList', (data) => {
