@@ -413,6 +413,10 @@ header {
   color: white;
   border: none; }
 
+.new-user-icon {
+  width: 5vw !important;
+  margin-right: 3vw; }
+
 .active-day {
   color: #8a8a8a;
   -webkit-transition: color 1.3s;
@@ -1195,7 +1199,7 @@ header {
         .groups .new .names div.selected p {
           font-weight: 500; }
       .groups .new .names div {
-        padding-left: 16vw;
+        padding-left: 11vw;
         padding-bottom: 2.4vh;
         padding-top: 2.4vh;
         -webkit-transition: background-color .7s, color .2s;
