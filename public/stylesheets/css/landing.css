@@ -5,7 +5,7 @@ header {
   width: 100vw;
   z-index: 1; }
   header img {
-    margin: 1.5vh 0vw 1.5vh 0vw;
+    margin: 1.5vh 0vw 1.5vh 1vw;
     height: 7vh;
     width: 8vw;
     float: left;
@@ -14,20 +14,21 @@ header {
     text-decoration: none;
     font-weight: 100;
     display: inline-block;
-    float: right;
     vertical-align: middle;
-    margin: 3vh 0vw 3vh 0vw; }
+    margin: 3vh 2vw 3vh 2vw; }
     @media only screen and (min-width: 1025px) {
       header a {
         font-size: 1.7vw;
-        padding: 0 4vw 0 4vw; } }
+        padding: 0 4vw 0 4vw;
+        float: right; } }
   header #headerButton {
     display: inline-block;
     text-decoration: none;
     color: white;
-    font-size: 2em;
+    font-size: 2vw;
     border-radius: 1vh;
     background-color: #150958;
+    vertical-align: middle;
     float: right;
     clear: right;
     font-weight: 400;
@@ -46,7 +47,7 @@ header {
 .landing {
   color: #474747;
   text-align: center;
-  height: 90vh;
+  height: 100vh;
   background-image: url("/imgs/landing-bg.jpg");
   background-size: cover;
   background-position-x: center; }
@@ -89,7 +90,7 @@ header {
   .landing .chevron {
     width: 15vw;
     position: center;
-    margin: 4vh;
+    margin: 6vh;
     padding-top: 4vh; }
     @media only screen and (min-width: 1025px) {
       .landing .chevron {
@@ -107,14 +108,14 @@ input[type="submit"] {
   font-weight: 400;
   cursor: pointer;
   padding: 2vh 3vw;
-  margin: 6vh 0vh 0vw 0vw; }
+  margin: 9vh 0vh 0vw 0vw; }
   @media only screen and (min-width: 1025px) {
     input[type="submit"] {
       padding: 2vh 3vw;
       margin: 2vh 0vw; } }
 
 .subtitle {
-  margin-left: 20vw;
+  margin: 10vh 0 2vh 20vw;
   width: 60vw;
   font-size: 6vw;
   font-weight: 100;
@@ -126,7 +127,7 @@ input[type="submit"] {
       font-size: 3vw; } }
 
 .market {
-  height: 75vh;
+  height: 80vh;
   background-image: url("/imgs/landing-bg.jpg");
   background-size: cover;
   background-position-x: center; }
@@ -149,7 +150,8 @@ input[type="submit"] {
   .market .soon {
     font-size: 4vw;
     color: #474747;
-    padding-top: 1vh;
+    padding-top: 0vh;
+    margin-top: 0;
     padding-right: 29vw; }
     @media only screen and (min-width: 1025px) {
       .market .soon {
@@ -159,7 +161,7 @@ input[type="submit"] {
   .market .social {
     display: block;
     margin: 0;
-    padding-top: 1vh;
+    padding-top: 4vh;
     position: top;
     top: 4vh;
     height: auto;
@@ -201,7 +203,7 @@ input[type="submit"] {
     font-weight: 300;
     color: #150958;
     text-align: left;
-    width: 70vw;
+    width: 80vw;
     padding: 0vh 0vw 2vh 8vw;
     margin: 0 0 2.5vh 0; }
     @media only screen and (min-width: 1025px) {
@@ -245,7 +247,7 @@ input[type="submit"] {
   padding: 0 0;
   position: relative;
   top: 4vh;
-  height: 85.33;
+  height: 85;
   line-height: 3vh;
   max-width: auto;
   clear: both; }
@@ -258,8 +260,8 @@ input[type="submit"] {
     margin: 0 4vw 0 0;
     padding: 0 0 0 8vw;
     vertical-align: middle;
-    -webkit-transform: translate(-50%, -40%);
-            transform: translate(-50%, -40%); }
+    -webkit-transform: translate(-50%, -35%);
+            transform: translate(-50%, -35%); }
     @media only screen and (min-width: 1025px) {
       .circles img {
         height: 14vh;
@@ -271,7 +273,7 @@ input[type="submit"] {
                 transform: translate(-50%, -20%); } }
 
 #footer {
-  height: 5vh;
+  height: 3vh;
   width: 100vw;
   vertical-align: bottom; }
   #footer a {
