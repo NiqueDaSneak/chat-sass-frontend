@@ -1,9 +1,47 @@
 header {
-  background: #474747;
-  height: 3vh; }
+  background: white;
+  text-align: center;
+  position: fixed;
+  width: 100vw;
+  z-index: 1; }
   header img {
+    margin: 1.5vh 0vw 1.5vh 0vw;
     height: 7vh;
-    width: 8vw; }
+    width: 8vw;
+    float: left;
+    display: inline-block; }
+  header a {
+    text-decoration: none;
+    font-weight: 100;
+    display: inline-block;
+    float: right;
+    vertical-align: middle;
+    margin: 3vh 0vw 3vh 0vw; }
+    @media only screen and (min-width: 1025px) {
+      header a {
+        font-size: 1.7vw;
+        padding: 0 4vw 0 4vw; } }
+  header #headerButton {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-size: 2em;
+    border-radius: 1vh;
+    background-color: #150958;
+    float: right;
+    clear: right;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 2vh 3vw;
+    margin: 6vh 0vh 0vw 0vw; }
+    @media only screen and (min-width: 1025px) {
+      header #headerButton {
+        height: 2vh;
+        width: 2vw;
+        text-align: center;
+        font-size: 1vh;
+        vertical-align: middle;
+        margin: 0; } }
 
 .landing {
   color: #474747;
@@ -30,6 +68,24 @@ header {
     text-align: left;
     width: 70vw;
     padding: 10vh 0vw 5vh 8vw; }
+    @media only screen and (min-width: 1025px) {
+      .landing h3 {
+        font-size: 3vw;
+        width: 40vw;
+        text-transform: uppercase; } }
+  .landing h5 {
+    font-size: 5vw;
+    font-weight: 300;
+    color: #150958;
+    text-align: right;
+    width: 70vw;
+    padding: 0vh 0vw 2vh 20vw;
+    margin: 0 0 2.5vh 0; }
+    @media only screen and (min-width: 1025px) {
+      .landing h5 {
+        font-size: 3vw;
+        width: 60vw;
+        padding: 0vh 0vw 2vh 30vw; } }
   .landing .chevron {
     width: 15vw;
     position: center;
@@ -70,13 +126,13 @@ input[type="submit"] {
       font-size: 3vw; } }
 
 .market {
-  height: 80vh;
+  height: 75vh;
   background-image: url("/imgs/landing-bg.jpg");
   background-size: cover;
   background-position-x: center; }
   @media only screen and (min-width: 1025px) {
     .market {
-      height: 110vh; } }
+      height: 100vh; } }
   .market p {
     font-weight: 200;
     font-size: 6vw;
@@ -85,20 +141,33 @@ input[type="submit"] {
     text-align: right;
     width: 70vw;
     padding-right: 8vw; }
+    @media only screen and (min-width: 1025px) {
+      .market p {
+        font-size: 4vh;
+        width: 55vw;
+        font-weight: 300; } }
   .market .soon {
     font-size: 4vw;
     color: #474747;
     padding-top: 1vh;
     padding-right: 29vw; }
+    @media only screen and (min-width: 1025px) {
+      .market .soon {
+        font-size: 1.2vw;
+        padding-right: 30%;
+        margin: 0 0 10vh 0; } }
   .market .social {
     display: block;
     margin: 0;
-    padding: 0;
-    position: relative;
+    padding-top: 1vh;
+    position: top;
     top: 4vh;
     height: auto;
     max-width: auto;
     overflow-y: hidden; }
+    @media only screen and (min-width: 1025px) {
+      .market .social {
+        height: 12vh; } }
   .market .socialIcons {
     display: inline;
     width: 10vw;
@@ -109,29 +178,36 @@ input[type="submit"] {
     @media only screen and (min-width: 1025px) {
       .market .socialIcons {
         width: 6vw;
-        height: 6vh; } }
+        height: 6vh;
+        padding-bottom: 0; } }
   .market .grey {
     border-bottom: 2px solid #474747;
     text-decoration: none; }
 
 .features {
-  height: 150vh;
+  height: 170vh;
   background-image: url("/imgs/landing-bg.jpg");
   background-size: cover;
   background-position-x: center; }
+  @media only screen and (min-width: 1025px) {
+    .features {
+      height: 205vh; } }
   .features h3 {
-    padding: 5vh 2vw 0vh 8vw;
+    padding: 10vh 2vw 0vh 8vw;
     margin-bottom: 1vh;
-    font-size: 6vw;
     font-weight: 500; }
   .features h5 {
     font-size: 5vw;
     font-weight: 300;
     color: #150958;
     text-align: left;
-    width: 90vw;
+    width: 70vw;
     padding: 0vh 0vw 2vh 8vw;
     margin: 0 0 2.5vh 0; }
+    @media only screen and (min-width: 1025px) {
+      .features h5 {
+        font-size: 3vw;
+        width: 60vw; } }
   .features h6 {
     color: #150958;
     font-size: 4vw;
@@ -142,6 +218,10 @@ input[type="submit"] {
     margin: 0 0 0 0;
     margin-right: 0;
     clear: left; }
+    @media only screen and (min-width: 1025px) {
+      .features h6 {
+        font-size: 2vw;
+        margin: 5vh 0 0 5vw; } }
   .features p {
     font-weight: 300;
     font-size: 4vw;
@@ -152,6 +232,12 @@ input[type="submit"] {
     width: 60vw;
     padding: 0 0 2vh 8vw;
     margin-top: 0; }
+    @media only screen and (min-width: 1025px) {
+      .features p {
+        font-size: 2vw;
+        font-weight: 100;
+        margin: 3vh 0 8vh 5vw;
+        width: 55vw; } }
 
 .circles {
   display: block;
@@ -174,6 +260,23 @@ input[type="submit"] {
     vertical-align: middle;
     -webkit-transform: translate(-50%, -40%);
             transform: translate(-50%, -40%); }
+    @media only screen and (min-width: 1025px) {
+      .circles img {
+        height: 14vh;
+        width: 14vw;
+        margin: 0 10vw 0 0;
+        padding: 0 8vw 0 5vw;
+        vertical-align: middle;
+        -webkit-transform: translate(-50%, -20%);
+                transform: translate(-50%, -20%); } }
+
+#footer {
+  height: 5vh;
+  width: 100vw;
+  vertical-align: bottom; }
+  #footer a {
+    float: right;
+    display: block; }
 
 .login {
   background-color: #474747;
