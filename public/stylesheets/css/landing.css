@@ -1,48 +1,33 @@
 header {
   background: white;
-  text-align: center;
   position: fixed;
   width: 100vw;
-  z-index: 1; }
+  z-index: 1;
+  text-align: center;
+  padding-top: 3vh;
+  padding-bottom: 3vh; }
   header img {
-    margin: 1.5vh 0vw 1.5vh 1vw;
-    height: 7vh;
-    width: 8vw;
-    float: left;
-    display: inline-block; }
+    width: 7vw;
+    vertical-align: middle;
+    margin-right: 4vw; }
   header a {
     text-decoration: none;
     font-weight: 100;
-    display: inline-block;
     vertical-align: middle;
-    margin: 3vh 2vw 3vh 2vw; }
-    @media only screen and (min-width: 1025px) {
-      header a {
-        font-size: 1.7vw;
-        padding: 0 4vw 0 4vw;
-        float: right; } }
-  header #headerButton {
-    display: inline-block;
-    text-decoration: none;
-    color: white;
-    font-size: 2vw;
-    border-radius: 1vh;
+    font-size: 3.5vw;
+    color: #150958;
+    margin-right: 5.8vw; }
+  header .headerButton {
     background-color: #150958;
-    vertical-align: middle;
-    float: right;
-    clear: right;
-    font-weight: 400;
-    cursor: pointer;
-    padding: 2vh 3vw;
-    margin: 6vh 0vh 0vw 0vw; }
-    @media only screen and (min-width: 1025px) {
-      header #headerButton {
-        height: 2vh;
-        width: 2vw;
-        text-align: center;
-        font-size: 1vh;
-        vertical-align: middle;
-        margin: 0; } }
+    padding: 3vw;
+    border-radius: 2.5vw;
+    color: white;
+    margin-right: 0vw; }
+    header .headerButton img {
+      width: 3vw;
+      margin-right: 1vw; }
+    header .headerButton span {
+      font-weight: 500; }
 
 .landing {
   color: #474747;

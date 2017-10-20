@@ -1,47 +1,54 @@
 header
   background: white
-  text-align: center
   position: fixed
   width: 100vw
   z-index: 1
+  text-align: center
+  padding-top: 3vh
+  padding-bottom: 3vh
   img
-    margin: 1.5vh 0vw 1.5vh 1vw
-    height: 7vh
-    width: 8vw
-    float: left
-    display: inline-block
+    width: 7vw
+    vertical-align: middle
+    margin-right: 4vw
   a
     text-decoration: none
     font-weight: 100
-    display: inline-block
     vertical-align: middle
-    margin: 3vh 2vw 3vh 2vw
-    @include desktop
-      font-size: 1.7vw
-      padding: 0 4vw 0 4vw
-      float: right
-
-  #headerButton
-    display: inline-block
-    text-decoration: none
-    color: white
-    font-size: 2vw
-    border-radius: 1vh
+    font-size: 3.5vw
+    color: $siteMain
+    margin-right: 5.8vw
+  .headerButton
     background-color: $siteMain
-    vertical-align: middle
-    float: right
-    clear: right
-    font-weight: 400
-    cursor: pointer
-    padding: 2vh 3vw
-    margin: 6vh 0vh 0vw 0vw
-    @include desktop
-      height: 2vh
-      width: 2vw
-      text-align: center
-      font-size: 1vh
-      vertical-align: middle
-      margin: 0
+    padding: 3vw
+    border-radius: 2.5vw
+    color: white
+    margin-right: 0vw
+    img
+      width: 3vw
+      margin-right: 1vw
+    span
+      font-weight: 500
+
+  //   display: inline-block
+  //   text-decoration: none
+  //   color: white
+  //   font-size: 2vw
+  //   border-radius: 1vh
+  //   background-color: $siteMain
+  //   vertical-align: middle
+  //   float: right
+  //   clear: right
+  //   font-weight: 400
+  //   cursor: pointer
+  //   padding: 2vh 3vw
+  //   margin: 6vh 0vh 0vw 0vw
+  //   @include desktop
+  //     height: 2vh
+  //     width: 2vw
+  //     text-align: center
+  //     font-size: 1vh
+  //     vertical-align: middle
+  //     margin: 0
 
 .landing
   color: $siteGrey
