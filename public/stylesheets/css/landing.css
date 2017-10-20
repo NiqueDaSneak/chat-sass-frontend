@@ -268,7 +268,7 @@ input[type="submit"] {
 body {
   margin: 0;
   background-color: #E0E0E0;
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Open Sans', sans-serif; }
 
 input:focus, select:focus, textarea:focus, button:focus {
   outline: none; }
