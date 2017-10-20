@@ -12,11 +12,15 @@ header
     margin-right: 4vw
   a
     text-decoration: none
-    font-weight: 600
+    font-weight: 300
     vertical-align: middle
     font-size: 3.5vw
     color: $siteMain
-    margin-right: 5.8vw
+    margin-right: 4.8vw
+    @include desktop
+      font-size: 1.7vw
+      padding: 0 4vw 0 4vw
+      float: right
   .headerButton
     background-color: $siteMain
     padding: 3vw
@@ -27,48 +31,46 @@ header
       width: 3vw
       margin-right: 1vw
     span
-      font-weight: 700
+      font-weight: 400
+      vertical-align: middle
 
-  //   display: inline-block
-  //   text-decoration: none
-  //   color: white
-  //   font-size: 2vw
-  //   border-radius: 1vh
-  //   background-color: $siteMain
-  //   vertical-align: middle
-  //   float: right
-  //   clear: right
-  //   font-weight: 600
-  //   cursor: pointer
-  //   padding: 2vh 3vw
-  //   margin: 6vh 0vh 0vw 0vw
-  //   @include desktop
-  //     height: 2vh
-  //     width: 2vw
-  //     text-align: center
-  //     font-size: 1vh
-  //     vertical-align: middle
-  //     margin: 0
 
 .landing
   color: $siteGrey
-  text-align: center
   height: 100vh
   background-image: url('/imgs/landing-bg.jpg')
   background-size: cover
   background-position-x: center
   @include desktop
     height: 110vh
-  img
+  .logo
     width: 70vw
-    margin: 16vh 0vh 10vh 0vh
+    margin: 16vh 0vw 0vh 15vw
     @include desktop
       padding-top: 3vw
       width: 40vw
       margin: 10vh 0vh 6vh 0vh
+  a
+    display: inline-block
+    text-decoration: none
+    width: 80vw
+    margin-left: 10vw
+    text-align: center
+    background-color: $siteMain
+    padding-top: 2vh
+    padding-bottom: 2vh
+    border-radius: 2vw
+    img
+      width: 4vw
+      margin-right: 4vw
+      vertical-align: middle
+    span
+      vertical-align: middle
+      color: white
+      font-weight: 300
   h3
     font-size: 6vw
-    font-weight: 700
+    font-weight: 500
     color: $siteMain
     text-align: left
     width: 70vw
@@ -79,7 +81,7 @@ header
       text-transform: uppercase
   h5
     font-size: 5vw
-    font-weight: 600
+    font-weight: 300
     color: $siteMain
     text-align: right
     width: 70vw
@@ -92,9 +94,9 @@ header
 
   .chevron
     width: 15vw
-    position: center
-    margin: 6vh
     padding-top: 4vh
+    margin-left: 42.5vw
+    margin-top: 7vh
     @include desktop
       width: 8vw
       padding-top: 2vh
@@ -108,7 +110,7 @@ input[type="submit"]
   border-radius: 1vh
   background-color: $siteMain
   position: center
-  font-weight: 600
+  font-weight: 400
   cursor: pointer
   padding: 2vh 3vw
   margin: 9vh 0vh 0vw 0vw
@@ -117,11 +119,12 @@ input[type="submit"]
     margin: 2vh 0vw
 
 .subtitle
-  margin: 10vh 0 2vh 20vw
+  margin: 10vh 0 16vh 20vw
   width: 60vw
   font-size: 6vw
-  font-weight: 600
+  font-weight: 300
   color: $siteMain
+  text-align: center
   @include desktop
     margin-left: 35vw
     width: 30vw
@@ -145,7 +148,7 @@ input[type="submit"]
     @include desktop
       font-size: 4vh
       width: 55vw
-      font-weight: 600
+      font-weight: 300
   .soon
     font-size: 4vw
     color: $siteGrey
@@ -202,10 +205,10 @@ input[type="submit"]
     padding: 10vh 2vw 0vh 8vw
     margin-bottom: 1vh
     // font-size: 6vw
-    font-weight: 700
+    font-weight: 500
   h5
     font-size: 5vw
-    font-weight: 600
+    font-weight: 300
     color: $siteMain
     text-align: left
     width: 80vw
@@ -217,7 +220,7 @@ input[type="submit"]
   h6
     color: $siteMain
     font-size: 4vw
-    font-weight: 700
+    font-weight: 500
     text-align: left
     width: 60vw
     padding: 2vh 2vw 0vh 8vw
@@ -228,7 +231,7 @@ input[type="submit"]
       font-size: 2vw
       margin: 5vh 0 0 5vw
   p
-    font-weight: 600
+    font-weight: 300
     font-size: 4vw
     color: $siteMain
     float: left
@@ -239,7 +242,7 @@ input[type="submit"]
     margin-top: 0
     @include desktop
       font-size: 2vw
-      font-weight: 600
+      font-weight: 100
       margin: 3vh 0 8vh 5vw
       width: 55vw
 

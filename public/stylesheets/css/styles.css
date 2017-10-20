@@ -12,11 +12,16 @@ header {
     margin-right: 4vw; }
   header a {
     text-decoration: none;
-    font-weight: 100;
+    font-weight: 300;
     vertical-align: middle;
     font-size: 3.5vw;
     color: #150958;
-    margin-right: 5.8vw; }
+    margin-right: 4.8vw; }
+    @media only screen and (min-width: 1025px) {
+      header a {
+        font-size: 1.7vw;
+        padding: 0 4vw 0 4vw;
+        float: right; } }
   header .headerButton {
     background-color: #150958;
     padding: 3vw;
@@ -27,11 +32,11 @@ header {
       width: 3vw;
       margin-right: 1vw; }
     header .headerButton span {
-      font-weight: 500; }
+      font-weight: 400;
+      vertical-align: middle; }
 
 .landing {
   color: #474747;
-  text-align: center;
   height: 100vh;
   background-image: url("/imgs/landing-bg.jpg");
   background-size: cover;
@@ -39,14 +44,32 @@ header {
   @media only screen and (min-width: 1025px) {
     .landing {
       height: 110vh; } }
-  .landing img {
+  .landing .logo {
     width: 70vw;
-    margin: 16vh 0vh 10vh 0vh; }
+    margin: 16vh 0vw 0vh 15vw; }
     @media only screen and (min-width: 1025px) {
-      .landing img {
+      .landing .logo {
         padding-top: 3vw;
         width: 40vw;
         margin: 10vh 0vh 6vh 0vh; } }
+  .landing a {
+    display: inline-block;
+    text-decoration: none;
+    width: 80vw;
+    margin-left: 10vw;
+    text-align: center;
+    background-color: #150958;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    border-radius: 2vw; }
+    .landing a img {
+      width: 4vw;
+      margin-right: 4vw;
+      vertical-align: middle; }
+    .landing a span {
+      vertical-align: middle;
+      color: white;
+      font-weight: 300; }
   .landing h3 {
     font-size: 6vw;
     font-weight: 500;
@@ -74,9 +97,9 @@ header {
         padding: 0vh 0vw 2vh 30vw; } }
   .landing .chevron {
     width: 15vw;
-    position: center;
-    margin: 6vh;
-    padding-top: 4vh; }
+    padding-top: 4vh;
+    margin-left: 42.5vw;
+    margin-top: 7vh; }
     @media only screen and (min-width: 1025px) {
       .landing .chevron {
         width: 8vw;
@@ -100,11 +123,12 @@ input[type="submit"] {
       margin: 2vh 0vw; } }
 
 .subtitle {
-  margin: 10vh 0 2vh 20vw;
+  margin: 10vh 0 16vh 20vw;
   width: 60vw;
   font-size: 6vw;
-  font-weight: 100;
-  color: #150958; }
+  font-weight: 300;
+  color: #150958;
+  text-align: center; }
   @media only screen and (min-width: 1025px) {
     .subtitle {
       margin-left: 35vw;
@@ -265,146 +289,6 @@ input[type="submit"] {
     float: right;
     display: block; }
 
-.login {
-  background-color: #474747;
-  color: white;
-  text-align: center;
-  width: 84vw;
-  position: fixed;
-  left: 8vw;
-  height: 60vh;
-  top: 20vh;
-  font-size: 6vw;
-  padding-top: 5vh;
-  -webkit-transition: left .8s, -webkit-transform .8s;
-  transition: left .8s, -webkit-transform .8s;
-  transition: transform .8s, left .8s;
-  transition: transform .8s, left .8s, -webkit-transform .8s; }
-  @media only screen and (max-width: 1024px) and (min-width: 415px) {
-    .login {
-      height: 68vh;
-      top: 16vh; } }
-  @media only screen and (min-width: 1025px) {
-    .login {
-      font-size: 2vw; } }
-  .login p {
-    font-size: 2.6vw;
-    margin: 0vh 0vw 1vh 0vw;
-    padding: 0vh 0vw 0vh 0vw;
-    color: red; }
-  .login hr {
-    width: 40vw; }
-  .login form label {
-    display: block;
-    padding-top: 3vh; }
-  .login form input[type='text'], .login form input[type='password'] {
-    font-size: 6vw; }
-    @media only screen and (min-width: 1025px) {
-      .login form input[type='text'], .login form input[type='password'] {
-        font-size: 2vw; } }
-  .login form input[type='password'] {
-    margin-bottom: 5vh; }
-  .login form input[type='submit'] {
-    display: block;
-    width: 30vw;
-    margin: 0 auto;
-    font-size: 6vw;
-    background-color: white;
-    margin-bottom: 7vh; }
-    @media only screen and (max-width: 1024px) and (min-width: 415px) {
-      .login form input[type='submit'] {
-        margin-bottom: 3vh; } }
-    @media only screen and (min-width: 1025px) {
-      .login form input[type='submit'] {
-        font-size: 2vw;
-        width: 14vw; } }
-  .login a:last-of-type {
-    color: white;
-    font-size: 5.6vw; }
-    @media only screen and (max-width: 1024px) and (min-width: 415px) {
-      .login a:last-of-type {
-        font-size: 3.4vw; } }
-    @media only screen and (min-width: 1025px) {
-      .login a:last-of-type {
-        font-size: 1.6vw; } }
-
-.signup {
-  background-color: #474747;
-  color: white;
-  text-align: center;
-  width: 84vw;
-  position: fixed;
-  left: 8vw;
-  height: 80vh;
-  top: 8vh;
-  font-size: 6vw;
-  padding-top: 5vh;
-  -webkit-transition: left .8s, -webkit-transform .8s;
-  transition: left .8s, -webkit-transform .8s;
-  transition: transform .8s, left .8s;
-  transition: transform .8s, left .8s, -webkit-transform .8s; }
-  @media only screen and (max-width: 1024px) and (min-width: 415px) {
-    .signup {
-      height: 80vh; } }
-  @media only screen and (min-width: 1025px) {
-    .signup {
-      font-size: 2vw; } }
-  .signup hr {
-    width: 40vw; }
-  .signup form label {
-    display: block;
-    padding-top: 5vh; }
-  .signup form input[type='text'], .signup form input[type='password'] {
-    font-size: 6vw; }
-    @media only screen and (min-width: 1025px) {
-      .signup form input[type='text'], .signup form input[type='password'] {
-        font-size: 2vw; } }
-  .signup form input[type='password'] {
-    margin-bottom: 5vh; }
-  .signup form input[type='submit'] {
-    display: block;
-    width: 30vw;
-    margin: 0 auto;
-    font-size: 6vw;
-    background-color: white;
-    margin-bottom: 7vh; }
-    @media only screen and (max-width: 1024px) and (min-width: 415px) {
-      .signup form input[type='submit'] {
-        margin-bottom: 3vh; } }
-    @media only screen and (min-width: 1025px) {
-      .signup form input[type='submit'] {
-        font-size: 2vw;
-        width: 14vw; } }
-  .signup a:last-of-type {
-    color: white;
-    font-size: 5.6vw; }
-    @media only screen and (max-width: 1024px) and (min-width: 415px) {
-      .signup a:last-of-type {
-        font-size: 3.4vw; } }
-    @media only screen and (min-width: 1025px) {
-      .signup a:last-of-type {
-        font-size: 1.6vw; } }
-
-.signup.rotate {
-  left: 128vw;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg); }
-  @media only screen and (max-width: 1024px) and (min-width: 415px) {
-    .signup.rotate {
-      left: 110vw;
-      -webkit-transform: rotate(-90deg);
-              transform: rotate(-90deg); } }
-
-.login.rotate {
-  left: -95vw;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg); }
-  @media only screen and (max-width: 1024px) and (min-width: 415px) {
-    .login.rotate {
-      left: -86vw;
-      -webkit-transform: rotate(90deg);
-              transform: rotate(90deg); } }
-
 footer {
   position: fixed;
   width: 100vw;
@@ -500,7 +384,7 @@ nav {
   text-align: center;
   color: white;
   font-size: 4.6vw;
-  font-weight: 300; }
+  font-weight: 600; }
   @media only screen and (min-width: 1025px) {
     .submenu div {
       font-size: 2vw; } }
@@ -547,7 +431,7 @@ header {
   vertical-align: middle;
   padding-left: 5vw;
   padding-top: 4vh;
-  font-weight: 300;
+  font-weight: 600;
   z-index: 1;
   position: fixed;
   width: 100vw;
@@ -564,7 +448,7 @@ header {
     line-height: 5vh;
     position: fixed;
     right: 5vw;
-    font-weight: 500;
+    font-weight: 700;
     -webkit-transition: color .5s;
     transition: color .5s; }
     @media only screen and (min-width: 1025px) {
@@ -627,7 +511,7 @@ header {
   padding-bottom: 1.5vh;
   border-radius: 5vw;
   color: #150958;
-  font-weight: 300;
+  font-weight: 600;
   -webkit-transition: background-color 1s, color 1s, border 3s;
   transition: background-color 1s, color 1s, border 3s; }
   @media only screen and (min-width: 1025px) {
@@ -640,7 +524,7 @@ header {
 
 .send-now.selected {
   background-color: #869ECC;
-  font-weight: 100;
+  font-weight: 600;
   color: white;
   border: none; }
 
@@ -682,7 +566,7 @@ header {
     text-align: center;
     padding-top: 3vh; }
     .toggle-calendar nav .controls-month {
-      font-weight: 100;
+      font-weight: 600;
       line-height: 8vh;
       font-size: 10vw;
       margin-bottom: 3vh; }
@@ -721,7 +605,7 @@ header {
   .toggle-calendar span {
     line-height: 4.5vh; }
   .toggle-calendar .weekdays {
-    font-weight: 500;
+    font-weight: 700;
     font-size: 5vw; }
     @media only screen and (min-width: 1025px) {
       .toggle-calendar .weekdays {
@@ -1066,7 +950,7 @@ header {
     line-height: 6vh;
     height: 9vh;
     color: white;
-    font-weight: 500;
+    font-weight: 700;
     -webkit-box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75);
             box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75); }
     .chat-ui .header span:first-of-type {
@@ -1118,24 +1002,24 @@ header {
               margin-right: 3vw; } }
         .chat-ui form .btn-holder button:last-of-type {
           background-color: #D0021B;
-          font-weight: 500; }
+          font-weight: 700; }
     .chat-ui form span {
       font-size: 5vw;
       display: block;
       padding-bottom: 4vh;
-      font-weight: 100; }
+      font-weight: 600; }
       .chat-ui form span:first-of-type {
-        font-weight: 400; }
+        font-weight: 600; }
       @media only screen and (min-width: 1025px) {
         .chat-ui form span {
           font-size: 2vw;
           display: block;
           padding-bottom: 4vh; } }
       .chat-ui form span:nth-of-type(4) {
-        font-weight: 500;
+        font-weight: 700;
         padding-bottom: 1vh; }
       .chat-ui form span:nth-of-type(5) {
-        font-weight: 500;
+        font-weight: 700;
         padding-bottom: 1vh; }
     .chat-ui form img {
       width: 50vw;
@@ -1275,7 +1159,7 @@ header {
     color: white;
     -webkit-box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75);
             box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75);
-    font-weight: 500; }
+    font-weight: 700; }
     .groups .header span:first-of-type {
       display: inline-block;
       line-height: 0vh;
@@ -1322,7 +1206,7 @@ header {
       padding-top: 6vw;
       padding-bottom: 6vw;
       background-color: #150958;
-      font-weight: 500;
+      font-weight: 700;
       color: white;
       margin-bottom: 2vh;
       text-align: center; }
@@ -1367,7 +1251,7 @@ header {
       border-radius: 2vw 2vw 0vw 0vw;
       border: none;
       padding-top: 6vh;
-      font-weight: 500; }
+      font-weight: 700; }
       @media only screen and (min-width: 1025px) {
         .groups .new input {
           width: 49vw;
@@ -1396,7 +1280,7 @@ header {
       margin: 0;
       -webkit-box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
               box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
-      font-weight: 300; }
+      font-weight: 600; }
       @media only screen and (min-width: 1025px) {
         .groups .new button {
           font-size: 1.5vw;
@@ -1409,7 +1293,7 @@ header {
             margin-right: 2vw; } }
       .groups .new button:last-of-type {
         background-color: #D0021B;
-        font-weight: 500; }
+        font-weight: 700; }
     .groups .new .names {
       margin-top: 3.5vh;
       text-align: left;
@@ -1424,7 +1308,7 @@ header {
         background-color: #150958;
         color: white; }
         .groups .new .names div.selected p {
-          font-weight: 500; }
+          font-weight: 700; }
       .groups .new .names div {
         padding-left: 16vw;
         padding-bottom: 2.4vh;
@@ -1449,7 +1333,7 @@ header {
           display: inline;
           vertical-align: middle;
           padding-left: 4vw;
-          font-weight: 300;
+          font-weight: 600;
           -webkit-transition: font-weight .6s;
           transition: font-weight .6s; }
 
@@ -1503,7 +1387,7 @@ header {
       color: #150958;
       padding-bottom: 4vh;
       display: block;
-      font-weight: 100;
+      font-weight: 600;
       text-decoration: none; }
       @media only screen and (min-width: 1025px) {
         .pages .pageList a {
@@ -1537,7 +1421,7 @@ header {
     font-size: 4vw;
     padding-top: 3vh;
     padding-bottom: 2vh;
-    font-weight: 300;
+    font-weight: 600;
     border-radius: 2vw 2vw 0vw 0vw;
     padding-left: 5vw; }
     @media only screen and (min-width: 1025px) {
@@ -1574,7 +1458,7 @@ header {
         display: flex; } }
     .card .card-bottom span {
       vertical-align: middle;
-      font-weight: 300;
+      font-weight: 600;
       font-size: 4vw;
       color: #150958;
       padding-left: 2vw; }
@@ -1619,7 +1503,7 @@ header {
   .are-you-sure p {
     color: white;
     font-size: 9vw;
-    font-weight: 100; }
+    font-weight: 600; }
     @media only screen and (min-width: 1025px) {
       .are-you-sure p {
         font-size: 5vw; } }
@@ -1633,7 +1517,7 @@ header {
     margin: 0;
     -webkit-box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
             box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
-    font-weight: 300; }
+    font-weight: 600; }
     @media only screen and (min-width: 1025px) {
       .are-you-sure button {
         font-size: 2vw;
@@ -1684,7 +1568,7 @@ header {
           width: 5vw; } }
     .onboarding div p:first-of-type {
       font-size: 8vw;
-      font-weight: 400; }
+      font-weight: 600; }
       @media only screen and (min-width: 1025px) {
         .onboarding div p:first-of-type {
           font-size: 3vw; } }
@@ -1692,7 +1576,7 @@ header {
       padding-left: 8vw;
       padding-right: 8vw;
       font-size: 5.5vw;
-      font-weight: 100; }
+      font-weight: 600; }
       @media only screen and (min-width: 1025px) {
         .onboarding div p:last-of-type {
           font-size: 2.5vw; } }
@@ -1707,7 +1591,7 @@ header {
       padding-top: 2vh;
       padding-bottom: 2vh;
       border-radius: 0vw 0vw 3vw 3vw;
-      font-weight: 500; }
+      font-weight: 700; }
       @media only screen and (min-width: 1025px) {
         .onboarding div button {
           font-size: 3vw;
