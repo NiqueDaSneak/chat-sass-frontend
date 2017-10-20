@@ -1,5 +1,8 @@
 header {
-  background: white;
+  -webkit-transition: background .8s, -webkit-box-shadow 1s;
+  transition: background .8s, -webkit-box-shadow 1s;
+  transition: background .8s, box-shadow 1s;
+  transition: background .8s, box-shadow 1s, -webkit-box-shadow 1s;
   position: fixed;
   width: 100vw;
   z-index: 1;
