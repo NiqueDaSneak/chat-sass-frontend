@@ -279,10 +279,58 @@ input[type="submit"]
       transform: translate(-50%, -20%)
 
 
-#footer
-  height: 3vh
-  width: 100vw
-  vertical-align: bottom
-  a
-    float: right
-    display: block
+footer
+  height: fit-content
+  background-color: $siteMain
+  position: relative
+  img
+    width: 35vw
+    top: 2.5vh
+    position: relative
+    left: 5vw
+  .link-holder
+    position: relative
+    right: 5vw
+    top: -2.5vh
+    a
+      text-decoration: none
+      color: white
+      display: block
+      font-weight: 300
+      text-align: right
+      font-size: 3.5vw
+      margin-bottom: 3vh
+  .footer-icons
+    position: absolute
+    top: 9.5vh
+    .footer-login
+      display: inline
+      vertical-align: middle
+      img
+        width: 5vw
+        vertical-align: middle
+      p
+        display: inline
+    a
+      vertical-align: middle
+      &:first-of-type
+        img
+          width: 8vw
+      &:nth-of-type(2)
+        img
+          width: 4vw
+      &:nth-of-type(3)
+        img
+          width: 7vw
+      &:nth-of-type(4)
+        img
+          width: 18vw
+      img
+        vertical-align: middle
+        margin-right: 5vw
+  span:last-of-type
+    position: absolute
+    bottom: 5.5vh
+    color: white
+    font-size: 2.3vw
+    left: 5vw
