@@ -69,29 +69,7 @@ header
       vertical-align: middle
       color: white
       font-weight: 300
-  h3
-    font-size: 6vw
-    font-weight: 500
-    color: $siteMain
-    text-align: left
-    width: 70vw
-    padding: 10vh 0vw 5vh 8vw
-    @include desktop
-      font-size: 3vw
-      width: 40vw
-      text-transform: uppercase
-  h5
-    font-size: 5vw
-    font-weight: 300
-    color: $siteMain
-    text-align: right
-    width: 70vw
-    padding: 0vh 0vw 2vh 20vw
-    margin: 0 0 2.5vh 0
-    @include desktop
-      font-size: 3vw
-      width: 60vw
-      padding: 0vh 0vw 2vh 30vw
+      font-size: 4.5vw
 
   .chevron
     width: 15vw
@@ -132,12 +110,35 @@ input[type="submit"]
     font-size: 3vw
 
 .market
-  height: 80vh
+  height: 100vh
   background-image: url('/imgs/landing-bg.jpg')
   background-size: cover
   background-position-x: center
   @include desktop
     height: 100vh
+  h3
+    font-size: 6vw
+    font-weight: 700
+    color: $siteMain
+    text-align: left
+    width: 70vw
+    padding: 10vh 0vw 5vh 8vw
+    @include desktop
+      font-size: 3vw
+      width: 40vw
+      text-transform: uppercase
+  h5
+    font-size: 5vw
+    font-weight: 400
+    color: $siteMain
+    text-align: right
+    width: 70vw
+    padding: 0vh 0vw 2vh 20vw
+    margin: 0 0 2.5vh 0
+    @include desktop
+      font-size: 3vw
+      width: 60vw
+      padding: 0vh 0vw 2vh 30vw
   p
     font-weight: 200
     font-size: 6vw
@@ -162,17 +163,10 @@ input[type="submit"]
       margin: 0 0 10vh 0
 
   .social
-    display: block
-    margin: 0
     padding-top: 4vh
     position: top
-    top: 4vh
-    height: auto
     max-width: auto
-    overflow-y: hidden
-    overflow-x:auto
-    word-wrap:normal
-    white-space:nowrap
+    text-align: center
     @include desktop
       height: 12vh
 
@@ -188,11 +182,12 @@ input[type="submit"]
       width: 6vw
       height: 6vh
       padding-bottom: 0
-  .grey
-    border-bottom: 2px solid $siteGrey
-    text-decoration: none
 
-
+.grey
+  width: 46vw
+  display: inline-block
+  margin-left: 38vw
+  background-color: black
 // .blue
 
 .features

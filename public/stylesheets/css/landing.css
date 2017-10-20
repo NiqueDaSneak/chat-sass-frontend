@@ -72,32 +72,8 @@ header {
     .landing a span {
       vertical-align: middle;
       color: white;
-      font-weight: 300; }
-  .landing h3 {
-    font-size: 6vw;
-    font-weight: 500;
-    color: #150958;
-    text-align: left;
-    width: 70vw;
-    padding: 10vh 0vw 5vh 8vw; }
-    @media only screen and (min-width: 1025px) {
-      .landing h3 {
-        font-size: 3vw;
-        width: 40vw;
-        text-transform: uppercase; } }
-  .landing h5 {
-    font-size: 5vw;
-    font-weight: 300;
-    color: #150958;
-    text-align: right;
-    width: 70vw;
-    padding: 0vh 0vw 2vh 20vw;
-    margin: 0 0 2.5vh 0; }
-    @media only screen and (min-width: 1025px) {
-      .landing h5 {
-        font-size: 3vw;
-        width: 60vw;
-        padding: 0vh 0vw 2vh 30vw; } }
+      font-weight: 300;
+      font-size: 4.5vw; }
   .landing .chevron {
     width: 15vw;
     padding-top: 4vh;
@@ -139,13 +115,38 @@ input[type="submit"] {
       font-size: 3vw; } }
 
 .market {
-  height: 80vh;
+  height: 100vh;
   background-image: url("/imgs/landing-bg.jpg");
   background-size: cover;
   background-position-x: center; }
   @media only screen and (min-width: 1025px) {
     .market {
       height: 100vh; } }
+  .market h3 {
+    font-size: 6vw;
+    font-weight: 700;
+    color: #150958;
+    text-align: left;
+    width: 70vw;
+    padding: 10vh 0vw 5vh 8vw; }
+    @media only screen and (min-width: 1025px) {
+      .market h3 {
+        font-size: 3vw;
+        width: 40vw;
+        text-transform: uppercase; } }
+  .market h5 {
+    font-size: 5vw;
+    font-weight: 400;
+    color: #150958;
+    text-align: right;
+    width: 70vw;
+    padding: 0vh 0vw 2vh 20vw;
+    margin: 0 0 2.5vh 0; }
+    @media only screen and (min-width: 1025px) {
+      .market h5 {
+        font-size: 3vw;
+        width: 60vw;
+        padding: 0vh 0vw 2vh 30vw; } }
   .market p {
     font-weight: 200;
     font-size: 6vw;
@@ -171,14 +172,10 @@ input[type="submit"] {
         padding-right: 30%;
         margin: 0 0 10vh 0; } }
   .market .social {
-    display: block;
-    margin: 0;
     padding-top: 4vh;
     position: top;
-    top: 4vh;
-    height: auto;
     max-width: auto;
-    overflow-y: hidden; }
+    text-align: center; }
     @media only screen and (min-width: 1025px) {
       .market .social {
         height: 12vh; } }
@@ -194,9 +191,12 @@ input[type="submit"] {
         width: 6vw;
         height: 6vh;
         padding-bottom: 0; } }
-  .market .grey {
-    border-bottom: 2px solid #474747;
-    text-decoration: none; }
+
+.grey {
+  width: 46vw;
+  display: inline-block;
+  margin-left: 38vw;
+  background-color: black; }
 
 .features {
   height: 170vh;
