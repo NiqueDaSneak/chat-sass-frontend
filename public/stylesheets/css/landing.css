@@ -123,25 +123,24 @@ input[type="submit"] {
     .market {
       height: 100vh; } }
   .market h3 {
-    font-size: 6vw;
+    font-size: 6.5vw;
     font-weight: 700;
     color: #150958;
     text-align: left;
-    width: 70vw;
-    padding: 10vh 0vw 5vh 8vw; }
+    width: 80vw;
+    padding: 10vh 0vw 5vh 5vw; }
     @media only screen and (min-width: 1025px) {
       .market h3 {
         font-size: 3vw;
         width: 40vw;
         text-transform: uppercase; } }
   .market h5 {
-    font-size: 5vw;
+    font-size: 6.5vw;
     font-weight: 400;
     color: #150958;
     text-align: right;
-    width: 70vw;
-    padding: 0vh 0vw 2vh 20vw;
-    margin: 0 0 2.5vh 0; }
+    width: 80vw;
+    padding: 0vh 0vw 2vh 15vw; }
     @media only screen and (min-width: 1025px) {
       .market h5 {
         font-size: 3vw;
@@ -197,6 +196,28 @@ input[type="submit"] {
   display: inline-block;
   margin-left: 38vw;
   background-color: black; }
+
+.blue {
+  color: white; }
+  .blue div {
+    margin-bottom: 30vh;
+    padding-top: 6vh; }
+    .blue div .device {
+      width: 35vw;
+      display: inline-block;
+      margin-left: 5vw; }
+    .blue div .content-holder {
+      display: inline-block;
+      width: 50vw;
+      vertical-align: top;
+      margin-left: 5vw;
+      padding-top: 0; }
+      .blue div .content-holder span:first-of-type {
+        margin-bottom: 6vh;
+        font-weight: 700;
+        display: block; }
+      .blue div .content-holder span:last-of-type {
+        font-weight: 400; }
 
 .features {
   height: 170vh;
@@ -288,7 +309,6 @@ footer {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  background-color: #150958;
   position: relative; }
   footer img {
     width: 35vw;
