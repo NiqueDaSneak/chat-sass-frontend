@@ -215,9 +215,11 @@ input[type="submit"] {
       .blue div .content-holder span:first-of-type {
         margin-bottom: 6vh;
         font-weight: 700;
-        display: block; }
+        display: block;
+        font-size: 6vw; }
       .blue div .content-holder span:last-of-type {
-        font-weight: 400; }
+        font-weight: 400;
+        font-size: 4.2vw; }
 
 .features {
   height: 170vh;
