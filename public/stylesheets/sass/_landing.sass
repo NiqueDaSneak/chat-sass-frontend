@@ -1,33 +1,375 @@
-.landing
-  color: $siteGrey
+header
+  // background: white
+  transition: background .8s, box-shadow 1s
+  position: fixed
+  width: 100vw
+  z-index: 1
   text-align: center
-  height: 100vh
-  background-image: url('/imgs/landing-bg.jpg')
-  background-size: cover
-  background-position-x: center
+  padding-top: 3vh
+  padding-bottom: 3vh
   img
-    width: 70vw
-    margin-top: 10vh
-    @include desktop
-      width: 40vw
-      margin-top: 10vh
-      margin-bottom: 20vh
-      margin-left: 2vw
+    width: 7vw
+    vertical-align: middle
+    margin-right: 4vw
   a
     text-decoration: none
-    color: white
-    font-size: 5vw
-    border-radius: 1vh
-    background-color: $siteMain
-    position: fixed
-    left: 16vw
-    bottom: 10vh
-    font-weight: 400
-    padding: 2vh 2vw 2vh 2vw
-    width: 68vw
+    font-weight: 300
+    vertical-align: middle
+    font-size: 3.5vw
+    color: $siteMain
+    margin-right: 4.8vw
     @include desktop
-      width: 18vw
-      font-size: 1.6vw
-      position: inherit
+      font-size: 1.7vw
+      padding: 0 4vw 0 4vw
+      float: right
+  .headerButton
+    background-color: $siteMain
+    padding: 3vw
+    border-radius: 2.5vw
+    color: white
+    margin-right: 0vw
+    img
+      width: 3vw
+      margin-right: 1vw
+    span
+      font-weight: 400
+      vertical-align: middle
+
+
+.landing
+  color: $siteGrey
+  height: 100vh
+  // background-image: url('/imgs/landing-bg.jpg')
+  background-size: cover
+  background-position-x: center
+  @include desktop
+    height: 110vh
+  .logo
+    width: 70vw
+    margin: 16vh 0vw 0vh 15vw
+    @include desktop
+      padding-top: 3vw
+      width: 40vw
+      margin: 10vh 0vh 6vh 0vh
+  a
+    display: inline-block
+    text-decoration: none
+    width: 80vw
+    margin-left: 10vw
+    text-align: center
+    background-color: $siteMain
+    padding-top: 2vh
+    padding-bottom: 2vh
+    border-radius: 2vw
+    img
+      width: 4vw
+      margin-right: 4vw
+      vertical-align: middle
+    span
+      vertical-align: middle
+      color: white
+      font-weight: 300
+      font-size: 4.5vw
+
+  .chevron
+    width: 15vw
+    padding-top: 4vh
+    margin-left: 42.5vw
+    margin-top: 7vh
+    @include desktop
+      width: 8vw
+      padding-top: 2vh
+      padding-bottom: 3vh
+
+
+input[type="submit"]
+  text-decoration: none
+  color: white
+  font-size: 1em
+  border-radius: 1vh
+  background-color: $siteMain
+  position: center
+  font-weight: 400
+  cursor: pointer
+  padding: 2vh 3vw
+  margin: 9vh 0vh 0vw 0vw
+  @include desktop
+    padding: 2vh 3vw
+    margin: 2vh 0vw
+
+.subtitle
+  margin: 10vh 0 16vh 20vw
+  width: 60vw
+  font-size: 6vw
+  font-weight: 300
+  color: $siteMain
+  text-align: center
+  @include desktop
+    margin-left: 35vw
+    width: 30vw
+    font-size: 3vw
+
+.market
+  height: 100vh
+  // background-image: url('/imgs/landing-bg.jpg')
+  background-size: cover
+  background-position-x: center
+  @include desktop
+    height: 100vh
+  h3
+    font-size: 6.5vw
+    font-weight: 700
+    color: $siteMain
+    text-align: left
+    width: 80vw
+    padding: 10vh 0vw 5vh 5vw
+    @include desktop
+      font-size: 3vw
+      width: 40vw
+      text-transform: uppercase
+  h5
+    font-size: 6.5vw
+    font-weight: 400
+    color: $siteMain
+    text-align: right
+    width: 80vw
+    padding: 0vh 0vw 2vh 15vw
+    @include desktop
+      font-size: 3vw
+      width: 60vw
+      padding: 0vh 0vw 2vh 30vw
+  p
+    font-weight: 200
+    font-size: 6vw
+    color: $siteMain
+    float: right
+    text-align: right
+    width: 70vw
+    padding-right: 7vw
+    @include desktop
+      font-size: 4vh
+      width: 55vw
+      font-weight: 300
+  .soon
+    font-size: 4vw
+    color: white
+    padding-top: 0vh
+    margin-top: 0
+    padding-right: 8vw
+    @include desktop
+      font-size: 1.2vw
+      padding-right: 30%
+      margin: 0 0 10vh 0
+
+  .social
+    padding-top: 4vh
+    position: top
+    max-width: auto
+    text-align: center
+    @include desktop
+      height: 12vh
+  .socialIcons
+    display: inline
+    width: 17vw
+    vertical-align: middle
+    &:first-of-type
+      margin-right: 16vw
+      animation: pulse .8s infinite
+    @include desktop
+      width: 6vw
+      height: 6vh
+      padding-bottom: 0
+
+@keyframes pulse
+  0%
+    filter: drop-shadow(white 0px 0px 5px)
+  25%
+    filter: drop-shadow(white 0px 0px 15px)
+  100%
+    filter: drop-shadow(white 0px 0px 5px)
+
+
+
+
+.grey
+  width: 46vw
+  display: inline-block
+  margin-left: 38vw
+  background-color: black
+
+.blue
+  color: white
+  height: 380vh
+  .three-phones
+    padding-top: 30vh
+    .device
+      width: 35vw
+      display: inline-block
+      margin-left: 5vw
+    .content-holder.right
+      text-align: right
+    .content-holder
+      display: inline-block
+      width: 50vw
+      vertical-align: top
+      margin-left: 5vw
+      padding-top: 0
+      span
+        &:first-of-type
+          margin-bottom: 6vh
+          font-weight: 700
+          display: block
+          font-size: 6vw
+        &:last-of-type
+          font-weight: 400
+          font-size: 4.2vw
+  .why
+    margin-top: 26vh
+    font-size: 6.8vw
+    font-weight: 600
+    width: 63vw
+    margin-left: 18.5vw
+    text-align: center
+    display: block
+  .because
+    text-align: center
+    display: block
+    font-size: 6vw
+    font-weight: 300
+  .stats
+    margin-bottom: 0vh
+    padding-top: 15vh
+    span
+      &:first-of-type
+        // display: inline
+        line-height: 8vh
+        position: absolute
+        left: 14vw
+        font-size: 17vw
+        font-weight: 300
+      &:last-of-type
+        width: 44vw
+        display: inline-block
+        position: absolute
+        right: 8vw
+        font-weight: 600
+
+  .stats.first
+    height: 10vh
+  .stats.second
+    height: 20vh
+    span
+      // line-height: 18vh
+  .stats.third
+    height: 23vh
+
+.features
+  // background-size: cover
+  // background-position-x: center
+  @include desktop
+    height: 205vh
+  h3
+    padding: 10vh 2vw 0vh 8vw
+    margin-bottom: 1vh
+    font-weight: 500
+    font-size: 8vw
+    color: $siteMain
+  h5
+    font-size: 5vw
+    font-weight: 300
+    color: $siteMain
+    text-align: left
+    width: 80vw
+    padding: 0vh 0vw 2vh 8vw
+    margin: 0 0 2.5vh 0
+    @include desktop
+      font-size: 3vw
+      width: 60vw
+  h6
+    color: $siteMain
+    font-weight: 700
+    font-size: 4.2vw
+    margin: 0
+    @include desktop
+      font-size: 2vw
+      margin: 5vh 0 0 5vw
+  p
+    font-weight: 300
+    font-size: 5vw
+    color: #150958
+    width: 60vw
+    margin: 0
+    @include desktop
+      font-size: 2vw
+      font-weight: 100
+      margin: 3vh 0 8vh 5vw
+      width: 55vw
+
+.circles
+  div
+    display: inline-block
+    margin-bottom: 10vh
+    margin-left: 10vw
+    margin-right: 5vw
+  img
+    width: 14vw
+    vertical-align: top
+
+
+footer
+  height: fit-content
+  position: relative
+  img
+    width: 35vw
+    top: 2.5vh
+    position: relative
+    left: 5vw
+  .link-holder
+    position: relative
+    right: 5vw
+    top: -2.5vh
+    a
+      text-decoration: none
+      color: white
       display: block
-      margin-left: 41vw
+      font-weight: 300
+      text-align: right
+      font-size: 3.5vw
+      margin-bottom: 3vh
+  .footer-icons
+    position: absolute
+    top: 9.5vh
+    .footer-login
+      display: inline
+      vertical-align: middle
+      img
+        width: 5vw
+        vertical-align: middle
+      p
+        display: inline
+    a
+      vertical-align: middle
+      &:first-of-type
+        img
+          width: 8vw
+      &:nth-of-type(2)
+        img
+          width: 4vw
+      &:nth-of-type(3)
+        img
+          width: 7vw
+      &:nth-of-type(4)
+        img
+          width: 18vw
+      img
+        vertical-align: middle
+        margin-right: 5vw
+  span:last-of-type
+    position: absolute
+    bottom: 5.5vh
+    color: white
+    font-size: 2.3vw
+    left: 5vw
+
+.multiple-mobile-wrapper
+  height: 110% !important

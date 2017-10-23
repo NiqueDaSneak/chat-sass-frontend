@@ -160,6 +160,10 @@ app.get('/auth/check-pages', passport.authenticate('facebook', {
   }
 })
 
+app.get('/pricing', (req, res) => {
+  res.sendFile(path.join(__dirname + '/views/pricing.html'))
+})
+
 app.get('/privacy-policy', (req, res) => {
   res.sendFile(path.join(__dirname + '/views/privacy-policy.html'))
 })
@@ -302,22 +306,14 @@ app.get('/', (req, res) => {
 })
 
 app.get('/dashboard/:organization', (req, res) => {
-  if (req.get('Host') === 'localhost:3000') {
-    res.sendFile(path.join(__dirname + '/views/dashboard.html'))
-  } else {
-    if (req.session.user) {
-      res.sendFile(path.join(__dirname + '/views/dashboard.html'))
-      console.log('LOGGED IN: ' + JSON.stringify(req.session.user))
-    } else {
-      console.log('not logged in')
-      res.redirect('/auth/facebook')
-    }
-  }
-})
 
-app.post('/message', (req, res) => {
-  console.log(req.body)
-  res.sendStatus(200)
+  if (req.session.user) {
+  res.sendFile(path.join(__dirname + '/views/dashboard.html'))
+  console.log('LOGGED IN: ' + JSON.stringify(req.session.user))
+  } else {
+  console.log('not logged in')
+  res.redirect('/auth/facebook')
+  }
 })
 
 // SOCKET.IO
