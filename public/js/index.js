@@ -97,7 +97,13 @@ $(document).ready(() => {
 
   var rand2 = Math.floor(Math.random() * 11) + 1
 
-  $('.features').css('background-image', "url('/imgs/nature-photos/" + rand2 + ".png')")
+
+  var naturePhoto = new Multiple({
+    selector: '.features',
+    background: "url('/imgs/nature-photos/" + rand2 + ".png')"
+  })
+
+  // $('.features').css('background', "url('/imgs/nature-photos/" + rand2 + ".png')")
 
   switch (rand2) {
     default:
