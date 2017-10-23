@@ -9,9 +9,10 @@
   <meta charset="utf-8">
   <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/stylesheets/css/landing.css">
-  <script type="text/javascript" src='/js/index.js'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/multiple.js/0.0.1/multiple.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/multiple.js/0.0.1/multiple.js"></script>
+  <script type="text/javascript" src='/js/index.js'></script>
 
-  </script>
   <title>Irrigate</title>
 </head>
 
@@ -27,8 +28,8 @@
       </a>
   </header>
 
-  <div class="landing">
-    <img class='logo' src="/imgs/logo.png" alt="Logo">
+  <div class="landing biz-photo">
+    <img class='logo' alt="Logo">
     <p class="subtitle">How small businesses engage and grow</p>
     <a href="/auth/facebook">
           <img src="/imgs/landing-page/small-fb-icon.svg" alt="Facebook Icon">
@@ -37,7 +38,7 @@
     <img class='chevron' src="/imgs/landing-page/down-chevron.svg" alt="Down">
   </div>
 
-  <div class="market">
+  <div class="market biz-photo">
     <div class="social">
       <img class='socialIcons' src="/imgs/landing-page/fullcolor-facebook-messenger-icon.svg" alt="Social Icon">
       <img class='socialIcons' src="/imgs/landing-page/grey-imessage-logo.svg" alt="Social Icon">
@@ -52,32 +53,47 @@
         can do better.</h5>
   </div>
 
-  <div class="blue">
-    <div class="how">
-      <h4>Spark the connection</h4>
-      <p>People choose to receive your messages. Starting a conversation always beats sending spam.</p>
-
-      <h4>Foster relationships</h4>
-      <p>Emails talk like corporations. Messages chat like friends. Nice to meet you too.</p>
-
-      <h4>Make it easy</h4>
-      <p>Nothing to download, no new technology to master. If you can text, you can Irrigate.</p>
+  <div class="blue grad">
+    <div class="three-phones">
+      <img class="device" src="/imgs/landing-page/android-device.svg" alt="">
+      <div class="content-holder">
+        <span>Spark the connection</span>
+        <span>People choose to receive your messages. Starting a conversation always beats sending spam.</span>
+      </div>
     </div>
-    <div class="audience">
-      <h3>Why talk through a messaging app?</h3>
-      <h5>Because your audience is:</h5>
 
-      <h2>1.2</h2>
-      <p>billion people are on Facebook Messenger right now</p>
-
-      <h2>3</h2>
-      <p>years ago more people started communicating on mobile apps instead of sitting down at a computer.</p>
-
-      <h2>70</h2>
-      <p>% more people opened Facebook messages from a company than emails from the #1 email marketing company in 2016.</p>
-
+    <div class="three-phones">
+      <div class="content-holder right">
+        <span>Foster relationships</span>
+        <span>Emails talk like corporations. Messages chat like friends. Nice to meet you too.</span>
+      </div>
+      <img class="device" src="/imgs/landing-page/iphone-x.svg" alt="">
     </div>
-  </div>
+    <div class="three-phones">
+      <img class="device" src="/imgs/landing-page/android-device.svg" alt="">
+      <div class="content-holder">
+        <span>Make it easy</span>
+        <span>Nothing to download, no new technology to master. If you can text, you can Irrigate.</span>
+      </div>
+    </div>
+      <span class="why">Why talk through a messaging app?</span>
+      <span class="because">Because your audience is:</span>
+
+      <div class="stats first">
+        <span>1.2</span>
+        <span>billion people are on Facebook Messenger right now</span>
+      </div>
+
+      <div class="stats second">
+        <span>3</span>
+        <span>years ago more people started communicating on mobile apps instead of sitting down at a computer.</span>
+      </div>
+
+      <div class="stats third">
+        <span>70</span>
+        <span>% more people opened Facebook messages from a company than emails from the #1 email marketing company in 2016.</span>
+      </div>
+    </div>
 
   <div class="features">
     <h3>Key features</h3>
@@ -128,7 +144,7 @@
   </div>
 
 
-  <footer class="footer">
+  <footer class="grad">
     <img src="/imgs/landing-page/logo-white-side.svg" alt="Logo">
     <div class="link-holder">
       <a href="/">Request Demo</a>
