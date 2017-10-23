@@ -145,17 +145,17 @@ input[type="submit"]
     float: right
     text-align: right
     width: 70vw
-    padding-right: 8vw
+    padding-right: 7vw
     @include desktop
       font-size: 4vh
       width: 55vw
       font-weight: 300
   .soon
     font-size: 4vw
-    color: $siteGrey
+    color: white
     padding-top: 0vh
     margin-top: 0
-    padding-right: 29vw
+    padding-right: 8vw
     @include desktop
       font-size: 1.2vw
       padding-right: 30%
@@ -168,19 +168,28 @@ input[type="submit"]
     text-align: center
     @include desktop
       height: 12vh
-
-
   .socialIcons
     display: inline
-    width: 10vw
-    height: 8vh
-    margin: 2.5vw
-    padding: 0
+    width: 17vw
     vertical-align: middle
+    &:first-of-type
+      margin-right: 16vw
+      animation: pulse .8s infinite
     @include desktop
       width: 6vw
       height: 6vh
       padding-bottom: 0
+
+@keyframes pulse
+  0%
+    filter: drop-shadow(white 0px 0px 5px)
+  25%
+    filter: drop-shadow(white 0px 0px 15px)
+  100%
+    filter: drop-shadow(white 0px 0px 5px)
+
+
+
 
 .grey
   width: 46vw
