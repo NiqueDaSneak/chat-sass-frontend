@@ -283,7 +283,8 @@ input[type="submit"] {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  padding-top: 10vh; }
+  padding-top: 10vh;
+  clip: rect(0, auto, auto, 0); }
   @media only screen and (min-width: 1025px) {
     .features {
       height: 205vh; } }
@@ -338,10 +339,11 @@ input[type="submit"] {
   vertical-align: top; }
 
 footer {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  position: relative; }
+  height: auto;
+  width: 100vw;
+  z-index: 1;
+  bottom: -734vh;
+  position: absolute; }
   footer img {
     width: 35vw;
     top: 2.5vh;

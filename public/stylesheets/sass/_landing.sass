@@ -268,6 +268,7 @@ input[type="submit"]
   background-position: center
   background-attachment: fixed
   padding-top: 10vh
+  clip: rect(0, auto, auto, 0)
   @include desktop
     height: 205vh
   span:first-of-type
@@ -319,8 +320,11 @@ input[type="submit"]
 
 
 footer
-  height: fit-content
-  position: relative
+  height: auto
+  width: 100vw
+  z-index: 1
+  bottom: -734vh
+  position: absolute
   img
     width: 35vw
     top: 2.5vh
