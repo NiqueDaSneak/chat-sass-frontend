@@ -282,8 +282,7 @@ input[type="submit"] {
 .features {
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
-  padding-top: 10vh; }
+  background-attachment: fixed; }
   @media only screen and (min-width: 1025px) {
     .features {
       height: 205vh; } }
@@ -292,7 +291,8 @@ input[type="submit"] {
     margin-bottom: 1vh;
     font-weight: 500;
     font-size: 8vw;
-    color: #150958; }
+    color: #150958;
+    display: block; }
   .features h5 {
     font-size: 5vw;
     font-weight: 300;
