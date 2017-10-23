@@ -264,16 +264,16 @@ input[type="submit"]
     height: 23vh
 
 .features
-  height: 170vh
-  background-image: url('/imgs/landing-bg.jpg')
-  background-size: cover
-  background-position-x: center
+  // background-size: cover
+  // background-position-x: center
   @include desktop
     height: 205vh
   h3
     padding: 10vh 2vw 0vh 8vw
     margin-bottom: 1vh
     font-weight: 500
+    font-size: 8vw
+    color: $siteMain
   h5
     font-size: 5vw
     font-weight: 300
@@ -287,27 +287,18 @@ input[type="submit"]
       width: 60vw
   h6
     color: $siteMain
-    font-size: 4vw
-    font-weight: 500
-    text-align: left
-    width: 60vw
-    padding: 2vh 2vw 0vh 8vw
-    margin: 0 0 0 0
-    margin-right: 0
-    clear: left
+    font-weight: 700
+    font-size: 4.2vw
+    margin: 0
     @include desktop
       font-size: 2vw
       margin: 5vh 0 0 5vw
   p
     font-weight: 300
-    font-size: 4vw
-    color: $siteMain
-    float: left
-    clear: right
-    text-align: left
+    font-size: 5vw
+    color: #150958
     width: 60vw
-    padding: 0 0 2vh 8vw
-    margin-top: 0
+    margin: 0
     @include desktop
       font-size: 2vw
       font-weight: 100
@@ -315,41 +306,18 @@ input[type="submit"]
       width: 55vw
 
 .circles
-  display: block
-  margin: 0 0
-  padding: 0 0
-  position: relative
-  top: 4vh
-  height: 85
-  line-height: 3vh
-  max-width: auto
-  clear: both
-  // overflow-y: hidden
-  // overflow-x:auto
-  // word-wrap:normal
-  // white-space:nowrap
+  div
+    display: inline-block
+    margin-bottom: 10vh
+    margin-left: 10vw
+    margin-right: 5vw
   img
-    position: absolute
-    height: 14vh
     width: 14vw
-    float: right
-    display: inline
-    margin: 0 4vw 0 0
-    padding: 0 0 0 8vw
-    vertical-align: middle
-    transform: translate(-50%, -35%)
-    @include desktop
-      height: 14vh
-      width: 14vw
-      margin: 0 10vw 0 0
-      padding: 0 8vw 0 5vw
-      vertical-align: middle
-      transform: translate(-50%, -20%)
+    vertical-align: top
 
 
 footer
   height: fit-content
-  // background-color: $siteMain
   position: relative
   img
     width: 35vw
