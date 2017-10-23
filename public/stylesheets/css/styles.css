@@ -1,4 +1,5 @@
 header {
+  background-color: white;
   -webkit-transition: background .8s, -webkit-box-shadow 1s;
   transition: background .8s, -webkit-box-shadow 1s;
   transition: background .8s, box-shadow 1s;
@@ -278,52 +279,53 @@ input[type="submit"] {
   .blue .stats.third {
     height: 23vh; }
 
-@media only screen and (min-width: 1025px) {
-  .features {
-    height: 205vh; } }
-
-.features h3 {
-  padding: 10vh 2vw 0vh 8vw;
-  margin-bottom: 1vh;
-  font-weight: 500;
-  font-size: 8vw;
-  color: #150958; }
-
-.features h5 {
-  font-size: 5vw;
-  font-weight: 300;
-  color: #150958;
-  text-align: left;
-  width: 80vw;
-  padding: 0vh 0vw 2vh 8vw;
-  margin: 0 0 2.5vh 0; }
+.features {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding-top: 10vh; }
   @media only screen and (min-width: 1025px) {
-    .features h5 {
-      font-size: 3vw;
-      width: 60vw; } }
-
-.features h6 {
-  color: #150958;
-  font-weight: 700;
-  font-size: 4.2vw;
-  margin: 0; }
-  @media only screen and (min-width: 1025px) {
-    .features h6 {
-      font-size: 2vw;
-      margin: 5vh 0 0 5vw; } }
-
-.features p {
-  font-weight: 300;
-  font-size: 5vw;
-  color: #150958;
-  width: 60vw;
-  margin: 0; }
-  @media only screen and (min-width: 1025px) {
-    .features p {
-      font-size: 2vw;
-      font-weight: 100;
-      margin: 3vh 0 8vh 5vw;
-      width: 55vw; } }
+    .features {
+      height: 205vh; } }
+  .features span:first-of-type {
+    padding: 10vh 2vw 0vh 8vw;
+    margin-bottom: 1vh;
+    font-weight: 500;
+    font-size: 8vw;
+    color: #150958; }
+  .features h5 {
+    font-size: 5vw;
+    font-weight: 300;
+    color: #150958;
+    text-align: left;
+    width: 80vw;
+    padding: 0vh 0vw 2vh 8vw;
+    margin: 0 0 2.5vh 0; }
+    @media only screen and (min-width: 1025px) {
+      .features h5 {
+        font-size: 3vw;
+        width: 60vw; } }
+  .features h6 {
+    color: #150958;
+    font-weight: 700;
+    font-size: 4.2vw;
+    margin: 0; }
+    @media only screen and (min-width: 1025px) {
+      .features h6 {
+        font-size: 2vw;
+        margin: 5vh 0 0 5vw; } }
+  .features p {
+    font-weight: 300;
+    font-size: 5vw;
+    color: #150958;
+    width: 60vw;
+    margin: 0; }
+    @media only screen and (min-width: 1025px) {
+      .features p {
+        font-size: 2vw;
+        font-weight: 100;
+        margin: 3vh 0 8vh 5vw;
+        width: 55vw; } }
 
 .circles div {
   display: inline-block;

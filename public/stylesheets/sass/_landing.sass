@@ -1,5 +1,5 @@
 header
-  // background: white
+  background-color: white
   transition: background .8s, box-shadow 1s
   position: fixed
   width: 100vw
@@ -264,11 +264,13 @@ input[type="submit"]
     height: 23vh
 
 .features
-  // background-size: cover
-  // background-position-x: center
+  background-size: cover
+  background-position: center
+  background-attachment: fixed
+  padding-top: 10vh
   @include desktop
     height: 205vh
-  h3
+  span:first-of-type
     padding: 10vh 2vw 0vh 8vw
     margin-bottom: 1vh
     font-weight: 500
