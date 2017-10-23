@@ -190,13 +190,15 @@ input[type="submit"]
 
 .blue
   color: white
-  div
-    margin-bottom: 30vh
-    padding-top: 6vh
+  height: 380vh
+  .three-phones
+    padding-top: 30vh
     .device
       width: 35vw
       display: inline-block
       margin-left: 5vw
+    .content-holder.right
+      text-align: right
     .content-holder
       display: inline-block
       width: 50vw
@@ -212,7 +214,45 @@ input[type="submit"]
         &:last-of-type
           font-weight: 400
           font-size: 4.2vw
+  .why
+    margin-top: 26vh
+    font-size: 6.8vw
+    font-weight: 600
+    width: 63vw
+    margin-left: 18.5vw
+    text-align: center
+    display: block
+  .because
+    text-align: center
+    display: block
+    font-size: 6vw
+    font-weight: 300
+  .stats
+    margin-bottom: 0vh
+    padding-top: 15vh
+    span
+      &:first-of-type
+        // display: inline
+        line-height: 8vh
+        position: absolute
+        left: 14vw
+        font-size: 17vw
+        font-weight: 300
+      &:last-of-type
+        width: 44vw
+        display: inline-block
+        position: absolute
+        right: 8vw
+        font-weight: 600
 
+  .stats.first
+    height: 10vh
+  .stats.second
+    height: 20vh
+    span
+      // line-height: 18vh
+  .stats.third
+    height: 23vh
 
 .features
   height: 170vh
@@ -353,3 +393,6 @@ footer
     color: white
     font-size: 2.3vw
     left: 5vw
+
+.multiple-mobile-wrapper
+  height: 110% !important

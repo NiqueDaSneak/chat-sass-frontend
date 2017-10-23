@@ -198,28 +198,64 @@ input[type="submit"] {
   background-color: black; }
 
 .blue {
-  color: white; }
-  .blue div {
-    margin-bottom: 30vh;
-    padding-top: 6vh; }
-    .blue div .device {
+  color: white;
+  height: 380vh; }
+  .blue .three-phones {
+    padding-top: 30vh; }
+    .blue .three-phones .device {
       width: 35vw;
       display: inline-block;
       margin-left: 5vw; }
-    .blue div .content-holder {
+    .blue .three-phones .content-holder.right {
+      text-align: right; }
+    .blue .three-phones .content-holder {
       display: inline-block;
       width: 50vw;
       vertical-align: top;
       margin-left: 5vw;
       padding-top: 0; }
-      .blue div .content-holder span:first-of-type {
+      .blue .three-phones .content-holder span:first-of-type {
         margin-bottom: 6vh;
         font-weight: 700;
         display: block;
         font-size: 6vw; }
-      .blue div .content-holder span:last-of-type {
+      .blue .three-phones .content-holder span:last-of-type {
         font-weight: 400;
         font-size: 4.2vw; }
+  .blue .why {
+    margin-top: 26vh;
+    font-size: 6.8vw;
+    font-weight: 600;
+    width: 63vw;
+    margin-left: 18.5vw;
+    text-align: center;
+    display: block; }
+  .blue .because {
+    text-align: center;
+    display: block;
+    font-size: 6vw;
+    font-weight: 300; }
+  .blue .stats {
+    margin-bottom: 0vh;
+    padding-top: 15vh; }
+    .blue .stats span:first-of-type {
+      line-height: 8vh;
+      position: absolute;
+      left: 14vw;
+      font-size: 17vw;
+      font-weight: 300; }
+    .blue .stats span:last-of-type {
+      width: 44vw;
+      display: inline-block;
+      position: absolute;
+      right: 8vw;
+      font-weight: 600; }
+  .blue .stats.first {
+    height: 10vh; }
+  .blue .stats.second {
+    height: 20vh; }
+  .blue .stats.third {
+    height: 23vh; }
 
 .features {
   height: 170vh;
@@ -359,6 +395,9 @@ footer {
     color: white;
     font-size: 2.3vw;
     left: 5vw; }
+
+.multiple-mobile-wrapper {
+  height: 110% !important; }
 
 body {
   margin: 0;
