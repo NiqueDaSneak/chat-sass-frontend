@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="133px" height="151px" viewBox="0 0 133 151" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 29</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M80.2727273,38 L14,38 L14,38 C6.2680135,38 8.29461588e-16,44.2680135 1.77635684e-15,52 L0,52 L0,81 C9.46895252e-16,88.7319865 6.2680135,95 14,95 L81.3181818,95 L120,132 L120,0 L80.2727273,38 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-29">
+            <g id="Group-17">
+                <g id="Group">
+                    <polygon id="Path" stroke="#FFFFFF" stroke-width="6" fill="#150958" stroke-linecap="round" stroke-linejoin="round" points="18.9416329 81.9977937 30.7608627 147.757795 55.0876969 147.757795 42.3595481 58.772398"></polygon>
+                    <polygon id="Path-2" stroke="#FFFFFF" stroke-width="6" fill="#150958" stroke-linejoin="round" points="103.30887 82.9576929 129.192983 73.4706286 129.192983 57.0735797 97.9902161 46.242535"></polygon>
+                    <g id="Combined-Shape">
+                        <use fill="#150958" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <path stroke="#FFFFFF" stroke-width="7" d="M116.5,123.808834 L116.5,8.19116579 L81.6771279,41.5 L14,41.5 C8.20101013,41.5 3.5,46.2010101 3.5,52 L3.5,81 C3.5,86.7989899 8.20101013,91.5 14,91.5 L82.7225824,91.5 L116.5,123.808834 Z"></path>
+                    </g>
+                </g>
+                <path d="" id="Path-3" stroke="#979797"></path>
+                <path d="M63.0629777,43.7069868 L63.0629777,90.9511327" id="Path-4" stroke="#FFFFFF" stroke-width="6"></path>
+            </g>
+        </g>
+    </g>
+</svg>
