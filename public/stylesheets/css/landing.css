@@ -184,8 +184,8 @@ input[type="submit"] {
     .market .socialIcons:first-of-type {
       width: 17vw;
       margin-right: 10vw;
-      -webkit-animation: pulse .8s infinite;
-              animation: pulse .8s infinite; }
+      -webkit-animation: pulse 1.4s infinite ease-in-out;
+              animation: pulse 1.4s infinite ease-in-out; }
     @media only screen and (min-width: 1025px) {
       .market .socialIcons {
         width: 6vw;
