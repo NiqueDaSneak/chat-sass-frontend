@@ -163,7 +163,7 @@ input[type="submit"] {
     color: white;
     padding-top: 0vh;
     margin-top: 0;
-    padding-right: 8vw; }
+    padding-right: 23vw; }
     @media only screen and (min-width: 1025px) {
       .market .soon {
         font-size: 1.2vw;
@@ -179,10 +179,11 @@ input[type="submit"] {
         height: 12vh; } }
   .market .socialIcons {
     display: inline;
-    width: 17vw;
+    width: 12vw;
     vertical-align: middle; }
     .market .socialIcons:first-of-type {
-      margin-right: 16vw;
+      width: 17vw;
+      margin-right: 10vw;
       -webkit-animation: pulse .8s infinite;
               animation: pulse .8s infinite; }
     @media only screen and (min-width: 1025px) {
