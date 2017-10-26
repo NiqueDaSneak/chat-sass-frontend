@@ -394,6 +394,22 @@ footer {
 .multiple-mobile-wrapper {
   height: 110% !important; }
 
+.gif1 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  position: absolute;
+  top: 116.3vh;
+  right: -5.3vw;
+  width: 53.5vw; }
+
+.gif2 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  position: absolute;
+  top: 191.3vh;
+  left: -4.1vw;
+  width: 53.5vw; }
+
 body {
   margin: 0;
   background-color: #E0E0E0;
