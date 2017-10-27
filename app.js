@@ -334,6 +334,16 @@ io.on('connection', (socket) => {
     })
   })
 
+  socket.on('onboardUserAgain', (data) => {
+    User.findOne({'organization': data.data}, (err, user) => {
+      if (err) {
+        console.log(err)
+      }
+      console.log(user)
+        socket.emit('onboardingAgain', {data: user.username})
+    })
+  })
+
   socket.on('requestMsgs', (data) => {
     Message.find({
       organization: data.data

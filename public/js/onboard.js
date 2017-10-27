@@ -22,7 +22,7 @@ $(document).ready(() => {
   $('body').on('click', '.onboarding button', (event) => {
     if ($(event.target).hasClass('promote-on-facebook')) {
       socket.emit('promoteOnFacebook', {post: $('.promoteText').val(), org: org})
-      $('.onboarding').remove() 
+      $('.onboarding').remove()
       $('body').prepend("<img class='success-check' src='/imgs/checkmark.svg' alt='Success Check'>")
       setTimeout(() => {
         $('.success-check').fadeOut('slow')
