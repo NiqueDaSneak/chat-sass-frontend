@@ -35,7 +35,8 @@ footer {
       footer img:nth-of-type(2) {
         width: 12vw; } }
   footer img:last-of-type {
-    width: 12vw; }
+    width: 12vw;
+    opacity: 0; }
     @media only screen and (min-width: 1025px) {
       footer img:last-of-type {
         width: 7vw; } }
