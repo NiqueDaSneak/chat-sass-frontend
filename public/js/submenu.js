@@ -33,6 +33,9 @@ $(document).ready(() => {
     switch ($(event.target).text()) {
       case 'Help':
         socket.emit('onboardUserAgain', {data: org})
+        setTimeout(() => {
+          $('.submenu').addClass('inactive')
+        }, 1000)
         break;
       case 'Share Templates':
         console.log($(event.target).text())
