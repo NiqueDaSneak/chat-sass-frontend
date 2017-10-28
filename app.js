@@ -306,13 +306,16 @@ app.get('/', (req, res) => {
 })
 
 app.get('/dashboard/:organization', (req, res) => {
-
-  if (req.session.user) {
-  res.sendFile(path.join(__dirname + '/views/dashboard.html'))
-  console.log('LOGGED IN: ' + JSON.stringify(req.session.user))
+  if (req.get('Host') === 'localhost:3000') {
+    res.sendFile(path.join(__dirname + '/views/dashboard.html'))
   } else {
-  console.log('not logged in')
-  res.redirect('/auth/facebook')
+    if (req.session.user) {
+      res.sendFile(path.join(__dirname + '/views/dashboard.html'))
+      console.log('LOGGED IN: ' + JSON.stringify(req.session.user))
+    } else {
+      console.log('not logged in')
+      res.redirect('/auth/facebook')
+    }
   }
 })
 
@@ -331,6 +334,16 @@ io.on('connection', (socket) => {
     })
   })
 
+  socket.on('onboardUserAgain', (data) => {
+    User.findOne({'organization': data.data}, (err, user) => {
+      if (err) {
+        console.log(err)
+      }
+      console.log(user)
+        socket.emit('onboardingAgain', {data: user.username})
+    })
+  })
+
   socket.on('requestMsgs', (data) => {
     Message.find({
       organization: data.data
@@ -338,6 +351,15 @@ io.on('connection', (socket) => {
       socket.emit('sendMsgs', {
         data: msgs
       })
+    })
+  })
+
+  socket.on('getUsername', (data) => {
+    User.findOne({organization: data.data}, (err, user) => {
+      if (err) {
+        console.log(err)
+      }
+      socket.emit('addToClipboard', {data: user.username})
     })
   })
 

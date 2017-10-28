@@ -35,8 +35,7 @@ footer {
       footer img:nth-of-type(2) {
         width: 12vw; } }
   footer img:last-of-type {
-    width: 12vw;
-    opacity: 0; }
+    width: 12vw; }
     @media only screen and (min-width: 1025px) {
       footer img:last-of-type {
         width: 7vw; } }
@@ -88,7 +87,7 @@ nav {
   position: fixed;
   height: 10vh;
   width: 50vw;
-  background-color: #5772AC;
+  background-color: #00AEEF;
   line-height: 10vh;
   text-align: center;
   color: white;
@@ -110,8 +109,8 @@ nav {
   .submenu div:nth-of-type(3) {
     bottom: 0vh;
     left: 0vw;
-    -webkit-transition: bottom 1s;
-    transition: bottom 1s; }
+    -webkit-transition: bottom 1s, background-color 1s;
+    transition: bottom 1s, background-color 1s; }
   .submenu div:nth-of-type(4) {
     bottom: 0vh;
     right: 0vw;
@@ -1288,7 +1287,7 @@ header {
       padding-left: 8vw;
       padding-right: 8vw;
       font-size: 5.5vw;
-      font-weight: 600; }
+      font-weight: 300; }
       @media only screen and (min-width: 1025px) {
         .onboarding div p:last-of-type {
           font-size: 2.5vw; } }
