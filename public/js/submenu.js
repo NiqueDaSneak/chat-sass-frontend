@@ -25,7 +25,7 @@ $(document).ready(() => {
       $('.submenu').addClass('inactive')
     }, 1000)
     setTimeout(() => {
-      $('.submenu div:nth-of-type(3)').css('background-color', '#5772AC')
+      $('.submenu div:nth-of-type(3)').css('background-color', '#00AEEF')
     }, 1000)
   })
 
