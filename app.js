@@ -354,6 +354,15 @@ io.on('connection', (socket) => {
     })
   })
 
+  socket.on('getUsername', (data) => {
+    User.findOne({organization: data.data}, (err, user) => {
+      if (err) {
+        console.log(err)
+      }
+      socket.emit('addToClipboard', {data: user.username})
+    })
+  })
+
   socket.on('sendData', (data) => {
     socket.emit('botMessage', {
       content: content[data.query]

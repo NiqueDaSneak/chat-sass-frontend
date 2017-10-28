@@ -109,8 +109,8 @@ nav {
   .submenu div:nth-of-type(3) {
     bottom: 0vh;
     left: 0vw;
-    -webkit-transition: bottom 1s;
-    transition: bottom 1s; }
+    -webkit-transition: bottom 1s, background-color 1s;
+    transition: bottom 1s, background-color 1s; }
   .submenu div:nth-of-type(4) {
     bottom: 0vh;
     right: 0vw;

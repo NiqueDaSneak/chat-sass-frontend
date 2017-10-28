@@ -5,6 +5,10 @@ $(document).ready(() => {
   var org = pathname[pathname.length - 1]
   var socket = io.connect()
 
+  socket.emit('getUsername', {data: org})
+
+  new Clipboard('.clipboard-link')
+
   $('.show-more').click(() => {
     $('.submenu').toggleClass('inactive')
   })
@@ -15,6 +19,16 @@ $(document).ready(() => {
     }
   })
 
+  $('.clipboard-link').click(() => {
+    $('.submenu div:nth-of-type(3)').css('background-color', 'green')
+    setTimeout(() => {
+      $('.submenu').addClass('inactive')
+    }, 1000)
+    setTimeout(() => {
+      $('.submenu div:nth-of-type(3)').css('background-color', '#5772AC')
+    }, 1000)
+  })
+
   $('.submenu div').click((event) => {
     switch ($(event.target).text()) {
       case 'Help':
@@ -23,15 +37,16 @@ $(document).ready(() => {
       case 'Share Templates':
         console.log($(event.target).text())
         break;
-      case 'Copy Messenger Link':
-        console.log($(event.target).text())
-        break;
       case 'Account Settings':
         console.log($(event.target).text())
         break;
       default:
 
     }
+  })
+
+  socket.on('addToClipboard', (data) => {
+    $('.clipboard-link').attr('data-clipboard-text', $('.clipboard-link').data('clipboard-text') + data.data)
   })
 
   socket.on('onboardingAgain', (data) => {
