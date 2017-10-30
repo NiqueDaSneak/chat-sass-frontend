@@ -22,11 +22,30 @@
   <script src="/js/group.js" charset="utf-8"></script>
   <script src="/js/delete.js" charset="utf-8"></script>
   <script src="/js/onboard.js" charset="utf-8"></script>
+  <script src="/js/quick-view.js" charset="utf-8"></script>
   <link rel="stylesheet" href="/stylesheets/css/styles.css">
   <title>Irrigate</title>
 </head>
 
 <body>
+  <!-- <section>
+    <div class="quick-view-header">
+      <img src="/imgs/x.svg" alt="Close icon">
+      <img src="/imgs/home.svg" alt="Home Icon">
+      <span>Quick View</span>
+    </div>
+
+    <div class="new-users">
+      <span>New Users, Past Week: </span>
+      <span>12</span>
+    </div>
+
+    <div class="next-msg-preview">
+      <span>Next Scheduled Message: </span>
+      <span>12/30</span>
+    </div>
+    <div class='onboard-dark'></div>
+  </section> -->
   <header>
       <span class="toggle">
         <img class="open" src="/imgs/cal.svg" alt="">
@@ -37,8 +56,12 @@
       <span class="go-to-today">Go To Today</span>
   </header>
 
-  <div class="todays-msgs"></div>
-
+  <div class="quick-view">
+    <img src="/imgs/home.svg" alt="Home Icon">
+    <span>Quick View</span>
+  </div>
+  <div class="todays-msgs">
+  </div>
   <footer>
     <img class="showGroups" src="/imgs/groups.svg" alt="">
     <img class="add-new" src="/imgs/add.svg" alt="">

@@ -65,7 +65,7 @@ nav {
   font-size: 6vw;
   -webkit-transition: opacity .7s;
   transition: opacity .7s;
-  padding-top: 20vh;
+  padding-top: 2vh;
   padding-bottom: 25vh;
   opacity: 1;
   min-height: 100vh; }
@@ -239,6 +239,24 @@ header {
 .new-user-icon {
   width: 5vw !important;
   margin-left: 3vw; }
+
+.quick-view {
+  margin-top: 16vh;
+  width: 23vw;
+  color: white;
+  border-radius: 6vw;
+  padding: 2vw;
+  font-size: 3vw;
+  background-color: #150958;
+  margin-left: 68vw;
+  font-weight: 300;
+  -webkit-box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75);
+          box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75); }
+  .quick-view img {
+    width: 6vw;
+    vertical-align: middle; }
+  .quick-view span {
+    vertical-align: middle; }
 
 .active-day {
   color: #8a8a8a;
@@ -1337,6 +1355,57 @@ header {
   position: fixed;
   margin-left: 30vw;
   margin-top: 30vh; }
+
+.quick-view-header {
+  text-align: center;
+  width: 100vw;
+  top: 5vh;
+  z-index: 3;
+  position: absolute;
+  color: white;
+  font-size: 8vw; }
+  .quick-view-header img:first-of-type {
+    vertical-align: middle;
+    width: 8vw;
+    position: absolute;
+    left: 5vw;
+    top: -2vh; }
+  .quick-view-header img:last-of-type {
+    vertical-align: middle;
+    width: 13vw;
+    z-index: 3;
+    margin-right: 3vw; }
+  .quick-view-header span {
+    vertical-align: middle;
+    font-weight: 300; }
+
+.new-users {
+  position: absolute;
+  z-index: 4;
+  margin-top: 2vh;
+  font-size: 6vw;
+  color: white;
+  text-align: center;
+  width: 100vw; }
+  .new-users span:first-of-type {
+    font-weight: 700;
+    font-size: 5vw; }
+  .new-users span:last-of-type {
+    font-weight: 300; }
+
+.next-msg-preview {
+  position: absolute;
+  z-index: 4;
+  margin-top: 10vh;
+  font-size: 6vw;
+  color: white;
+  text-align: center;
+  width: 100vw; }
+  .next-msg-preview span:first-of-type {
+    font-weight: 700;
+    font-size: 5vw; }
+  .next-msg-preview span:last-of-type {
+    font-weight: 300; }
 
 body {
   margin: 0;
