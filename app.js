@@ -11,6 +11,7 @@ const io = require('socket.io')(server)
 const request = require('request')
 const util = require('util')
 const favicon = require('serve-favicon')
+const moment = require('moment')
 
 
 // DATABASE SETUP
@@ -34,12 +35,15 @@ var userSchema = mongoose.Schema({
 var User = mongoose.model('User', userSchema)
 
 var messageSchema = mongoose.Schema({
-  type: String,
   date: String,
-  assetManifest: Object,
+  time: String,
+  text: String,
+  image: String,
+  videoURL: String,
   organization: String,
   groupNames: Array,
-  id: Number
+  id: String,
+  createdDate: String
 })
 var Message = mongoose.model('Message', messageSchema)
 
@@ -50,7 +54,7 @@ var memberSchema = mongoose.Schema({
   timezone: Number,
   photo: String,
   gender: String,
-  createdDate: Date
+  createdDate: Date,
 })
 memberSchema.virtual('firstName').get(() => {
   return this.fullName.split(' ')[0]
@@ -112,7 +116,7 @@ app.use(passport.session())
 passport.use(new FacebookStrategy({
     clientID: '372903006444693',
     clientSecret: 'e0cf0b310d6931c9140969a115efefa9',
-    callbackURL: "https://www.irrigatemessaging.com/auth/check-pages",
+    callbackURL: "https://www.irrigatemsg.com/auth/check-pages",
     profileFields: ['id', 'emails', 'name']
   },
   function(accessToken, refreshToken, profile, done) {
@@ -474,8 +478,52 @@ io.on('connection', (socket) => {
       if (user.onboarded === true) {
         console.log('already onboarded')
       } else {
-        socket.emit('onboardUser',{data: user.username})
+        socket.emit('onboardUser', { data: user.username })
       }
+    })
+  })
+
+  socket.on('getMembersAndNewMsg', (data) => {
+    Member.find({ organization: data.data }, (err, members) => {
+      if (err) {
+        console.log(err)
+      }
+      let matchingMembers = []
+      for (var i = 0; i < members.length; i++) {
+        if (members[i].createdDate) {
+          let day = members[i].createdDate.toString().split(" ")[2]
+          let month = members[i].createdDate.toString().split(" ")[1]
+          let year = members[i].createdDate.toString().split(" ")[3]
+          if (moment(month + '-' + day + '-' + year, 'MMM-DD-YYYY').diff(moment(), 'days') >= -14) {
+            matchingMembers.push(members[i])
+          }
+        }
+      }
+      socket.emit('quickViewMembers', { members: matchingMembers })
+    })
+
+    Message.find({ organization: data.data }, (err, msgs) => {
+      if (err) {
+        console.log(err)
+      }
+      let nextMsg = undefined
+      for (var i = 0; i < msgs.length; i++) {
+        let day = msgs[i].date.split("-")[2]
+        let month = msgs[i].date.split("-")[1]
+        let year = msgs[i].date.split("-")[0]
+        if (moment(month + '-' + day + '-' + year, 'MM-DD-YYYY').diff(moment(), 'days') >= 0) {
+          if (moment(month + '-' + day + '-' + year, 'MM-DD-YYYY').format('MM-DD-YYYY') != moment().format('MM-DD-YYYY')) {
+            if (nextMsg === undefined) {
+              nextMsg = msgs[i]
+            }
+            if (moment(month + '-' + day + '-' + year, 'MM-DD-YYYY').diff(moment(), 'days') < moment(nextMsg.date.split("-")[1] + '-' + nextMsg.date.split("-")[2] + '-' + nextMsg.date.split("-")[0], 'MM-DD-YYYY').diff(moment(), 'days')) {
+              nextMsg = msgs[i]
+            }
+          }
+        }
+      }
+      socket.emit('quickViewNextMsg', { data: nextMsg })
+      console.log(nextMsg)
     })
   })
 
