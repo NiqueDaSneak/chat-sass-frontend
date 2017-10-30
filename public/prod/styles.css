@@ -1,0 +1,1416 @@
+footer {
+  position: fixed;
+  width: 100vw;
+  background-color: #150958;
+  bottom: 0;
+  font-size: 6vw;
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: bottom 1s;
+  transition: bottom 1s;
+  height: 5vh; }
+  footer img:first-of-type {
+    width: 12vw; }
+    @media only screen and (min-width: 1025px) {
+      footer img:first-of-type {
+        width: 7vw; } }
+  footer img:nth-of-type(2) {
+    padding-left: 20vw;
+    padding-right: 20vw;
+    width: 15vw; }
+    @media only screen and (min-width: 1025px) {
+      footer img:nth-of-type(2) {
+        width: 5vw; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      footer img:nth-of-type(2) {
+        width: 12vw; } }
+  footer img:last-of-type {
+    width: 12vw;
+    opacity: 0; }
+    @media only screen and (min-width: 1025px) {
+      footer img:last-of-type {
+        width: 7vw; } }
+
+.main-calendar {
+  font-size: 15vw; }
+
+nav {
+  text-align: center;
+  padding-top: 5vh; }
+  nav img {
+    z-index: 2;
+    position: fixed;
+    width: 4vw; }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      nav img:first-of-type {
+        left: 20vw; }
+      nav img:last-of-type {
+        right: 20vw; } }
+    nav img:first-of-type {
+      left: 10vw; }
+    nav img:last-of-type {
+      right: 10vw; }
+
+.todays-msgs {
+  font-size: 6vw;
+  -webkit-transition: opacity .7s;
+  transition: opacity .7s;
+  padding-top: 2vh;
+  padding-bottom: 25vh;
+  opacity: 1;
+  min-height: 100vh; }
+  .todays-msgs hr {
+    width: 75vw;
+    margin-bottom: 8vw;
+    background-color: #5772AC;
+    border: #cccccc 0.1vh solid;
+    border-radius: 10vw; }
+    @media only screen and (min-width: 1025px) {
+      .todays-msgs hr {
+        width: 45vw;
+        margin-bottom: 3vw; } }
+
+.todays-msgs.inactive {
+  opacity: 0;
+  display: none; }
+
+.submenu div {
+  position: fixed;
+  height: 10vh;
+  width: 50vw;
+  background-color: #00AEEF;
+  line-height: 10vh;
+  text-align: center;
+  color: white;
+  font-size: 4.6vw;
+  font-weight: 600; }
+  @media only screen and (min-width: 1025px) {
+    .submenu div {
+      font-size: 2vw; } }
+  .submenu div:first-of-type {
+    bottom: 10vh;
+    left: 0vw;
+    -webkit-transition: bottom 1s;
+    transition: bottom 1s; }
+  .submenu div:nth-of-type(2) {
+    bottom: 10vh;
+    right: 0vw;
+    -webkit-transition: bottom 1s;
+    transition: bottom 1s; }
+  .submenu div:nth-of-type(3) {
+    bottom: 0vh;
+    left: 0vw;
+    -webkit-transition: bottom 1s, background-color 1s;
+    transition: bottom 1s, background-color 1s; }
+  .submenu div:nth-of-type(4) {
+    bottom: 0vh;
+    right: 0vw;
+    -webkit-transition: bottom 1s;
+    transition: bottom 1s; }
+
+.submenu.inactive div:nth-child(1) {
+  bottom: -15vh; }
+
+.submenu.inactive div:nth-child(2) {
+  bottom: -15vh; }
+
+.submenu.inactive div:nth-child(3) {
+  bottom: -20vh; }
+
+.submenu.inactive div:nth-child(4) {
+  bottom: -20vh; }
+
+.hide {
+  display: none; }
+
+header {
+  background-color: #150958;
+  height: 9vh;
+  color: white;
+  vertical-align: middle;
+  padding-left: 5vw;
+  padding-top: 4vh;
+  font-weight: 600;
+  z-index: 1;
+  position: fixed;
+  width: 100vw;
+  top: 0; }
+  header span:first-of-type img {
+    width: 8vw;
+    vertical-align: middle;
+    margin-right: 3vw; }
+    @media only screen and (min-width: 1025px) {
+      header span:first-of-type img {
+        width: 3vw; } }
+  header .go-to-today {
+    line-height: 5vh;
+    position: fixed;
+    right: 5vw;
+    font-weight: 700;
+    -webkit-transition: color .5s;
+    transition: color .5s; }
+    @media only screen and (min-width: 1025px) {
+      header .go-to-today {
+        font-size: 2vw; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      header .go-to-today {
+        font-size: 3vw; } }
+
+@media only screen and (min-width: 1025px) {
+  .header-month, .header-date {
+    font-size: 2vw; } }
+
+@media only screen and (max-width: 1024px) and (min-width: 415px) {
+  .header-month, .header-date {
+    font-size: 4vw; } }
+
+.loading {
+  opacity: 0;
+  display: none;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  background-color: black;
+  opacity: 0.7;
+  height: 100vh;
+  width: 100vw; }
+  .loading img {
+    height: 20vh;
+    margin-top: 40vh;
+    -webkit-animation: rotate 1.9s linear infinite;
+            animation: rotate 1.9s linear infinite; }
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  50% {
+    height: 15vh;
+    margin-top: 42.5vh; }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  50% {
+    height: 15vh;
+    margin-top: 42.5vh; }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+.send-now {
+  border: 0.2vw solid #150958;
+  font-size: 5vw;
+  padding-top: 1.5vh;
+  padding-bottom: 1.5vh;
+  border-radius: 5vw;
+  color: #150958;
+  font-weight: 600;
+  -webkit-transition: background-color 1s, color 1s, border 3s;
+  transition: background-color 1s, color 1s, border 3s; }
+  @media only screen and (min-width: 1025px) {
+    .send-now {
+      width: 24vw;
+      font-size: 2vw;
+      text-align: center;
+      margin-left: 28vw;
+      border: 0.1vw solid #150958; } }
+
+.send-now.selected {
+  background-color: #869ECC;
+  font-weight: 600;
+  color: white;
+  border: none; }
+
+.new-user-icon {
+  width: 5vw !important;
+  margin-left: 3vw; }
+
+.quick-view {
+  margin-top: 16vh;
+  width: 23vw;
+  color: white;
+  border-radius: 6vw;
+  padding: 2vw;
+  font-size: 3vw;
+  background-color: #150958;
+  margin-left: 68vw;
+  font-weight: 300;
+  -webkit-box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75);
+          box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75); }
+  .quick-view img {
+    width: 6vw;
+    vertical-align: middle; }
+  .quick-view span {
+    vertical-align: middle; }
+
+.active-day {
+  color: #8a8a8a;
+  -webkit-transition: color 1.3s;
+  transition: color 1.3s; }
+
+.msg-day {
+  color: #150958;
+  -webkit-transition: background-color .9s;
+  transition: background-color .9s; }
+
+.toggle-calendar.active {
+  opacity: 1;
+  bottom: 0vh; }
+
+.toggle-calendar {
+  border-radius: 1vh 1vh 0vh 0vh;
+  opacity: 0;
+  text-align: center;
+  font-size: 3.9vw;
+  position: fixed;
+  bottom: -64vh;
+  -webkit-transition: opacity .6s, bottom .6s, height .4s;
+  transition: opacity .6s, bottom .6s, height .4s;
+  -webkit-transition-delay: bottom .4s;
+          transition-delay: bottom .4s;
+  background-color: #00AEEF;
+  color: white;
+  width: 100vw;
+  height: 57vh;
+  padding-bottom: 6vh; }
+  @media only screen and (min-width: 1025px) {
+    .toggle-calendar {
+      font-size: 1.9vw; } }
+  .toggle-calendar nav {
+    padding-bottom: 4vh;
+    text-align: center;
+    padding-top: 3vh; }
+    .toggle-calendar nav .controls-month {
+      font-weight: 600;
+      line-height: 8vh;
+      font-size: 10vw;
+      margin-bottom: 3vh; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar nav .controls-month {
+          font-size: 4vw; } }
+    .toggle-calendar nav img {
+      display: inline-block;
+      vertical-align: middle;
+      z-index: 2;
+      position: fixed;
+      width: 8vw;
+      height: 7vh; }
+      .toggle-calendar nav img:first-of-type, .toggle-calendar nav img:last-of-type {
+        width: 6vw; }
+      .toggle-calendar nav img:first-of-type {
+        left: 5vw; }
+        @media only screen and (min-width: 1025px) {
+          .toggle-calendar nav img:first-of-type {
+            left: 30vw; } }
+      .toggle-calendar nav img:nth-of-type(2) {
+        left: 22vw; }
+        @media only screen and (min-width: 1025px) {
+          .toggle-calendar nav img:nth-of-type(2) {
+            left: 35vw; } }
+      .toggle-calendar nav img:nth-of-type(3) {
+        right: 22vw; }
+        @media only screen and (min-width: 1025px) {
+          .toggle-calendar nav img:nth-of-type(3) {
+            right: 35vw; } }
+      .toggle-calendar nav img:last-of-type {
+        right: 5vw; }
+        @media only screen and (min-width: 1025px) {
+          .toggle-calendar nav img:last-of-type {
+            right: 30vw; } }
+  .toggle-calendar span {
+    line-height: 4.5vh; }
+  .toggle-calendar .weekdays {
+    font-weight: 700;
+    font-size: 5vw; }
+    @media only screen and (min-width: 1025px) {
+      .toggle-calendar .weekdays {
+        font-size: 3vw; } }
+    .toggle-calendar .weekdays span:nth-of-type(1) {
+      position: fixed;
+      left: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .weekdays span:nth-of-type(1) {
+          left: 15vw; } }
+    .toggle-calendar .weekdays span:nth-of-type(2) {
+      position: fixed;
+      left: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .weekdays span:nth-of-type(2) {
+          left: 25.5vw; } }
+    .toggle-calendar .weekdays span:nth-of-type(3) {
+      position: fixed;
+      left: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .weekdays span:nth-of-type(3) {
+          left: 37vw; } }
+    .toggle-calendar .weekdays span:nth-of-type(4) {
+      position: fixed;
+      left: 46vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .weekdays span:nth-of-type(4) {
+          left: 48vw; } }
+    .toggle-calendar .weekdays span:nth-of-type(5) {
+      position: fixed;
+      right: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .weekdays span:nth-of-type(5) {
+          right: 37vw; } }
+    .toggle-calendar .weekdays span:nth-of-type(6) {
+      position: fixed;
+      right: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .weekdays span:nth-of-type(6) {
+          right: 25.5vw; } }
+    .toggle-calendar .weekdays span:nth-of-type(7) {
+      position: fixed;
+      right: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .weekdays span:nth-of-type(7) {
+          right: 15vw; } }
+  .toggle-calendar .days .first {
+    padding-top: 7vh; }
+    .toggle-calendar .days .first span:nth-of-type(1) {
+      position: fixed;
+      left: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .first span:nth-of-type(1) {
+          left: 15vw; } }
+    .toggle-calendar .days .first span:nth-of-type(2) {
+      position: fixed;
+      left: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .first span:nth-of-type(2) {
+          left: 25.5vw; } }
+    .toggle-calendar .days .first span:nth-of-type(3) {
+      position: fixed;
+      left: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .first span:nth-of-type(3) {
+          left: 37vw; } }
+    .toggle-calendar .days .first span:nth-of-type(4) {
+      position: fixed;
+      left: 46vw;
+      padding-left: 1vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .first span:nth-of-type(4) {
+          left: 48vw; } }
+    .toggle-calendar .days .first span:nth-of-type(5) {
+      position: fixed;
+      right: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .first span:nth-of-type(5) {
+          right: 37vw; } }
+    .toggle-calendar .days .first span:nth-of-type(6) {
+      position: fixed;
+      right: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .first span:nth-of-type(6) {
+          right: 25.5vw; } }
+    .toggle-calendar .days .first span:nth-of-type(7) {
+      position: fixed;
+      right: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .first span:nth-of-type(7) {
+          right: 15vw; } }
+  .toggle-calendar .days .second {
+    padding-top: 7vh; }
+    .toggle-calendar .days .second span:nth-of-type(1) {
+      position: fixed;
+      left: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .second span:nth-of-type(1) {
+          left: 15vw; } }
+    .toggle-calendar .days .second span:nth-of-type(2) {
+      position: fixed;
+      left: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .second span:nth-of-type(2) {
+          left: 25.5vw; } }
+    .toggle-calendar .days .second span:nth-of-type(3) {
+      position: fixed;
+      left: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .second span:nth-of-type(3) {
+          left: 37vw; } }
+    .toggle-calendar .days .second span:nth-of-type(4) {
+      position: fixed;
+      left: 46vw;
+      padding-left: 1vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .second span:nth-of-type(4) {
+          left: 48vw; } }
+    .toggle-calendar .days .second span:nth-of-type(5) {
+      position: fixed;
+      right: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .second span:nth-of-type(5) {
+          right: 37vw; } }
+    .toggle-calendar .days .second span:nth-of-type(6) {
+      position: fixed;
+      right: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .second span:nth-of-type(6) {
+          right: 25.5vw; } }
+    .toggle-calendar .days .second span:nth-of-type(7) {
+      position: fixed;
+      right: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .second span:nth-of-type(7) {
+          right: 15vw; } }
+  .toggle-calendar .days .third {
+    padding-top: 7vh; }
+    .toggle-calendar .days .third span:nth-of-type(1) {
+      position: fixed;
+      left: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .third span:nth-of-type(1) {
+          left: 15vw; } }
+    .toggle-calendar .days .third span:nth-of-type(2) {
+      position: fixed;
+      left: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .third span:nth-of-type(2) {
+          left: 25.5vw; } }
+    .toggle-calendar .days .third span:nth-of-type(3) {
+      position: fixed;
+      left: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .third span:nth-of-type(3) {
+          left: 37vw; } }
+    .toggle-calendar .days .third span:nth-of-type(4) {
+      position: fixed;
+      left: 46vw;
+      padding-left: 1vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .third span:nth-of-type(4) {
+          left: 48vw; } }
+    .toggle-calendar .days .third span:nth-of-type(5) {
+      position: fixed;
+      right: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .third span:nth-of-type(5) {
+          right: 37vw; } }
+    .toggle-calendar .days .third span:nth-of-type(6) {
+      position: fixed;
+      right: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .third span:nth-of-type(6) {
+          right: 25.5vw; } }
+    .toggle-calendar .days .third span:nth-of-type(7) {
+      position: fixed;
+      right: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .third span:nth-of-type(7) {
+          right: 15vw; } }
+  .toggle-calendar .days .fourth {
+    padding-top: 7vh; }
+    .toggle-calendar .days .fourth span:nth-of-type(1) {
+      position: fixed;
+      left: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fourth span:nth-of-type(1) {
+          left: 15vw; } }
+    .toggle-calendar .days .fourth span:nth-of-type(2) {
+      position: fixed;
+      left: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fourth span:nth-of-type(2) {
+          left: 25.5vw; } }
+    .toggle-calendar .days .fourth span:nth-of-type(3) {
+      position: fixed;
+      left: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fourth span:nth-of-type(3) {
+          left: 37vw; } }
+    .toggle-calendar .days .fourth span:nth-of-type(4) {
+      position: fixed;
+      left: 46vw;
+      padding-left: 1vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fourth span:nth-of-type(4) {
+          left: 48vw; } }
+    .toggle-calendar .days .fourth span:nth-of-type(5) {
+      position: fixed;
+      right: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fourth span:nth-of-type(5) {
+          right: 37vw; } }
+    .toggle-calendar .days .fourth span:nth-of-type(6) {
+      position: fixed;
+      right: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fourth span:nth-of-type(6) {
+          right: 25.5vw; } }
+    .toggle-calendar .days .fourth span:nth-of-type(7) {
+      position: fixed;
+      right: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fourth span:nth-of-type(7) {
+          right: 15vw; } }
+  .toggle-calendar .days .fifth {
+    padding-top: 7vh; }
+    .toggle-calendar .days .fifth span:nth-of-type(1) {
+      position: fixed;
+      left: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fifth span:nth-of-type(1) {
+          left: 15vw; } }
+    .toggle-calendar .days .fifth span:nth-of-type(2) {
+      position: fixed;
+      left: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fifth span:nth-of-type(2) {
+          left: 25.5vw; } }
+    .toggle-calendar .days .fifth span:nth-of-type(3) {
+      position: fixed;
+      left: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fifth span:nth-of-type(3) {
+          left: 37vw; } }
+    .toggle-calendar .days .fifth span:nth-of-type(4) {
+      position: fixed;
+      left: 46vw;
+      padding-left: 1vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fifth span:nth-of-type(4) {
+          left: 48vw; } }
+    .toggle-calendar .days .fifth span:nth-of-type(5) {
+      position: fixed;
+      right: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fifth span:nth-of-type(5) {
+          right: 37vw; } }
+    .toggle-calendar .days .fifth span:nth-of-type(6) {
+      position: fixed;
+      right: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fifth span:nth-of-type(6) {
+          right: 25.5vw; } }
+    .toggle-calendar .days .fifth span:nth-of-type(7) {
+      position: fixed;
+      right: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .fifth span:nth-of-type(7) {
+          right: 15vw; } }
+  .toggle-calendar .days .sixth {
+    padding-top: 7vh; }
+    .toggle-calendar .days .sixth span:nth-of-type(1) {
+      position: fixed;
+      left: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .sixth span:nth-of-type(1) {
+          left: 15vw; } }
+    .toggle-calendar .days .sixth span:nth-of-type(2) {
+      position: fixed;
+      left: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .sixth span:nth-of-type(2) {
+          left: 25.5vw; } }
+    .toggle-calendar .days .sixth span:nth-of-type(3) {
+      position: fixed;
+      left: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .sixth span:nth-of-type(3) {
+          left: 37vw; } }
+    .toggle-calendar .days .sixth span:nth-of-type(4) {
+      position: fixed;
+      left: 46vw;
+      padding-left: 1vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .sixth span:nth-of-type(4) {
+          left: 48vw; } }
+    .toggle-calendar .days .sixth span:nth-of-type(5) {
+      position: fixed;
+      right: 33vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .sixth span:nth-of-type(5) {
+          right: 37vw; } }
+    .toggle-calendar .days .sixth span:nth-of-type(6) {
+      position: fixed;
+      right: 18.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .sixth span:nth-of-type(6) {
+          right: 25.5vw; } }
+    .toggle-calendar .days .sixth span:nth-of-type(7) {
+      position: fixed;
+      right: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .toggle-calendar .days .sixth span:nth-of-type(7) {
+          right: 15vw; } }
+
+.chat-ui.live-chat {
+  left: 0vw;
+  z-index: 2;
+  opacity: 1;
+  position: absolute; }
+
+.chat-ui {
+  top: 0vh;
+  opacity: 0;
+  min-height: 100vh;
+  position: fixed;
+  left: 100vw;
+  background-color: #E0E0E0;
+  width: 100vw;
+  -webkit-transition: opacity .6s, left .6s;
+  transition: opacity .6s, left .6s;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out; }
+  .chat-ui .header {
+    position: fixed;
+    width: 100vw;
+    text-align: center;
+    padding-top: 4vh;
+    background-color: #150958;
+    line-height: 6vh;
+    height: 9vh;
+    color: white;
+    font-weight: 700;
+    -webkit-box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75);
+            box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75); }
+    .chat-ui .header span:first-of-type {
+      display: inline-block;
+      line-height: 0vh;
+      font-size: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .chat-ui .header span:first-of-type {
+          font-size: 2.5vw; } }
+    .chat-ui .header span:last-of-type {
+      right: 5vw;
+      position: absolute; }
+      @media only screen and (min-width: 1025px) {
+        .chat-ui .header span:last-of-type {
+          font-size: 2vw; } }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .chat-ui .header span:last-of-type {
+          font-size: 4vw; } }
+  .chat-ui form {
+    text-align: center;
+    padding-top: 20vh;
+    width: 80vw;
+    padding-left: 10vw;
+    color: #150958; }
+    .chat-ui form .btn-holder {
+      padding-top: 4vh;
+      padding-bottom: 4vh; }
+      .chat-ui form .btn-holder button {
+        width: 28vw;
+        height: 7vh;
+        border: none;
+        border-radius: 1vh;
+        font-size: 5vw;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: white;
+        margin: 0;
+        -webkit-box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
+                box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35); }
+        @media only screen and (min-width: 1025px) {
+          .chat-ui form .btn-holder button {
+            width: 12vw;
+            font-size: 2vw; } }
+        .chat-ui form .btn-holder button:first-of-type {
+          background-color: #70B51F;
+          margin-right: 6vw; }
+          @media only screen and (min-width: 1025px) {
+            .chat-ui form .btn-holder button:first-of-type {
+              margin-right: 3vw; } }
+        .chat-ui form .btn-holder button:last-of-type {
+          background-color: #D0021B;
+          font-weight: 700; }
+    .chat-ui form span {
+      font-size: 5vw;
+      display: block;
+      padding-bottom: 4vh;
+      font-weight: 600; }
+      .chat-ui form span:first-of-type {
+        font-weight: 600; }
+      @media only screen and (min-width: 1025px) {
+        .chat-ui form span {
+          font-size: 2vw;
+          display: block;
+          padding-bottom: 4vh; } }
+      .chat-ui form span:nth-of-type(4) {
+        font-weight: 700;
+        padding-bottom: 1vh; }
+      .chat-ui form span:nth-of-type(5) {
+        font-weight: 700;
+        padding-bottom: 1vh; }
+    .chat-ui form img {
+      width: 50vw;
+      margin-bottom: 4vh; }
+      @media only screen and (min-width: 1025px) {
+        .chat-ui form img {
+          width: 15vw;
+          margin-bottom: 4vh;
+          display: block;
+          margin-left: 32.5vw;
+          padding-bottom: 6vh; } }
+    .chat-ui form input, .chat-ui form textarea {
+      margin-bottom: 4vh;
+      font-size: 4vw;
+      padding: 3vw;
+      border-radius: 1vw;
+      border: none;
+      width: 75vw; }
+      @media only screen and (min-width: 1025px) {
+        .chat-ui form input, .chat-ui form textarea {
+          margin-bottom: 14vh; } }
+    .chat-ui form input {
+      padding-bottom: 4vh;
+      height: 10vh;
+      font-size: 5.2vw;
+      padding: 1vw; }
+      @media only screen and (min-width: 1025px) {
+        .chat-ui form input {
+          font-size: 1vw;
+          padding: 2vw;
+          border-radius: 1vw;
+          border: none;
+          width: 24vw; } }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .chat-ui form input {
+          font-size: 3.2vw; } }
+    .chat-ui form textarea {
+      padding-bottom: 4vh; }
+      @media only screen and (min-width: 1025px) {
+        .chat-ui form textarea {
+          width: 24vw;
+          height: 10vh;
+          font-size: 1.2vw;
+          padding: 1vw; } }
+    .chat-ui form input[type='date'], .chat-ui form input[type='time'] {
+      padding: 2vw;
+      border: none;
+      background-color: #150958;
+      color: white;
+      width: 75vw;
+      height: 5vh;
+      font-size: 5vw;
+      -webkit-box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
+              box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35); }
+      @media only screen and (min-width: 1025px) {
+        .chat-ui form input[type='date'], .chat-ui form input[type='time'] {
+          width: 24vw;
+          font-size: 2vw;
+          margin-bottom: 14vh; } }
+    .chat-ui form input[type='date'] {
+      margin-bottom: 0vh; }
+    .chat-ui form .uploader input[type="file"] {
+      position: fixed;
+      top: -1000px; }
+    .chat-ui form .uploader {
+      border-radius: 2vw;
+      color: white;
+      background: #150958;
+      display: inline-block;
+      margin-bottom: 4vh;
+      padding-top: 2vh;
+      padding-bottom: 2vh;
+      padding-left: 2vw;
+      padding-right: 2vw;
+      -webkit-box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
+              box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35); }
+      @media only screen and (min-width: 1025px) {
+        .chat-ui form .uploader {
+          border-radius: 0.5vw;
+          margin-bottom: 14vh; } }
+      .chat-ui form .uploader span {
+        padding-bottom: 0; }
+
+.msgGroupList {
+  padding-bottom: 0; }
+  .msgGroupList input[type='checkbox'] {
+    display: none; }
+  .msgGroupList div {
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    font-size: 3.2vw;
+    width: 23vw;
+    border-radius: 1vw;
+    margin-bottom: 3vh;
+    color: #5772AC;
+    border: #5772AC 0.1vh solid;
+    background-color: rgba(87, 114, 172, 0);
+    -webkit-transition: background-color .5s, color 1.6s;
+    transition: background-color .5s, color 1.6s;
+    display: inline-block;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    min-width: 34vw;
+    min-height: 6vh;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    @media only screen and (min-width: 1025px) {
+      .msgGroupList div {
+        width: 24vw;
+        font-size: 1.2vw;
+        min-width: 24vw;
+        min-height: 0vh; } }
+
+.checked {
+  background-color: #5772AC !important;
+  border: white 0.1vh solid !important;
+  color: white !important; }
+
+.groups {
+  display: none;
+  width: 100vw;
+  background-color: #E0E0E0;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  min-height: 105vh; }
+  .groups .header {
+    position: fixed;
+    width: 100vw;
+    text-align: center;
+    padding-top: 4vh;
+    background-color: #150958;
+    line-height: 6vh;
+    height: 9vh;
+    color: white;
+    -webkit-box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75);
+            box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75);
+    font-weight: 700; }
+    .groups .header span:first-of-type {
+      display: inline-block;
+      line-height: 0vh;
+      font-size: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .groups .header span:first-of-type {
+          font-size: 2.5vw; } }
+    .groups .header span:last-of-type {
+      right: 5vw;
+      position: absolute; }
+      @media only screen and (min-width: 1025px) {
+        .groups .header span:last-of-type {
+          font-size: 2vw; } }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .groups .header span:last-of-type {
+          font-size: 4vw; } }
+  .groups .list, .groups .new {
+    background-color: white;
+    color: #150958;
+    width: 84vw;
+    border-radius: 1vw;
+    margin-top: 20vh;
+    -webkit-box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75);
+            box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75); }
+    @media only screen and (min-width: 1025px) {
+      .groups .list, .groups .new {
+        width: 50vw; } }
+  .groups .list {
+    font-size: 6vw;
+    opacity: 1;
+    left: 8vw;
+    -webkit-transition: opacity .8s;
+    transition: opacity .8s;
+    margin-left: 8vw;
+    padding-bottom: 4vh; }
+    @media only screen and (min-width: 1025px) {
+      .groups .list {
+        font-size: 2vw;
+        margin-left: 25vw;
+        padding-bottom: 2vh; } }
+    .groups .list .addGroup {
+      width: 84vw;
+      font-size: 4vw;
+      padding-top: 6vw;
+      padding-bottom: 6vw;
+      background-color: #150958;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 2vh;
+      text-align: center; }
+      @media only screen and (min-width: 1025px) {
+        .groups .list .addGroup {
+          width: 50vw;
+          font-size: 2vw;
+          padding-top: 3vw;
+          padding-bottom: 3vw; } }
+  .groups .list.hide {
+    opacity: 0;
+    left: -100vw;
+    position: fixed;
+    left: -102vw; }
+  .groups .new.hide {
+    position: initial;
+    height: 40vh;
+    bottom: -44vh;
+    opacity: 0;
+    -webkit-transition: opacity 1.1s;
+    transition: opacity 1.1s; }
+  .groups .new {
+    margin-left: 8vw;
+    -webkit-transition: opacity 1.1s;
+    transition: opacity 1.1s;
+    -webkit-transition-delay: .3s;
+            transition-delay: .3s;
+    opacity: 1;
+    margin-bottom: 6vh;
+    padding-bottom: 4vh;
+    text-align: center; }
+    @media only screen and (min-width: 1025px) {
+      .groups .new {
+        margin-left: 25vw; } }
+    .groups .new input {
+      width: 83vw;
+      left: 0;
+      top: 0;
+      font-size: 4vw;
+      text-align: center;
+      height: 7vh;
+      border-radius: 2vw 2vw 0vw 0vw;
+      border: none;
+      padding-top: 6vh;
+      font-weight: 700; }
+      @media only screen and (min-width: 1025px) {
+        .groups .new input {
+          width: 49vw;
+          font-size: 1.6vw; } }
+    .groups .new input.warning::-webkit-input-placeholder {
+      -webkit-transition: color .8s;
+      transition: color .8s;
+      color: red; }
+    .groups .new input.warning:-ms-input-placeholder {
+      -webkit-transition: color .8s;
+      transition: color .8s;
+      color: red; }
+    .groups .new input.warning::placeholder {
+      -webkit-transition: color .8s;
+      transition: color .8s;
+      color: red; }
+    .groups .new button {
+      width: 28vw;
+      height: 7vh;
+      border: none;
+      border-radius: 1vh;
+      font-size: 5vw;
+      -webkit-box-shadow: none;
+              box-shadow: none;
+      color: white;
+      margin: 0;
+      -webkit-box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
+              box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
+      font-weight: 600; }
+      @media only screen and (min-width: 1025px) {
+        .groups .new button {
+          font-size: 1.5vw;
+          width: 10vw; } }
+      .groups .new button:first-of-type {
+        background-color: #70B51F;
+        margin-right: 6vw; }
+        @media only screen and (min-width: 1025px) {
+          .groups .new button:first-of-type {
+            margin-right: 2vw; } }
+      .groups .new button:last-of-type {
+        background-color: #D0021B;
+        font-weight: 700; }
+    .groups .new .names {
+      margin-top: 3.5vh;
+      text-align: left;
+      margin-bottom: 8vh; }
+      @media only screen and (min-width: 1025px) {
+        .groups .new .names {
+          font-size: 2vw; } }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .groups .new .names {
+          font-size: 3.5vw; } }
+      .groups .new .names div.selected {
+        background-color: #150958;
+        color: white; }
+        .groups .new .names div.selected p {
+          font-weight: 700; }
+      .groups .new .names div {
+        padding-left: 11vw;
+        padding-bottom: 2.4vh;
+        padding-top: 2.4vh;
+        -webkit-transition: background-color .7s, color .2s;
+        transition: background-color .7s, color .2s; }
+        @media only screen and (min-width: 1025px) {
+          .groups .new .names div {
+            padding-left: 10vw;
+            padding-bottom: 2.4vh; } }
+        @media only screen and (max-width: 1024px) and (min-width: 415px) {
+          .groups .new .names div {
+            padding-left: 18vw; } }
+        .groups .new .names div img {
+          width: 10vw;
+          vertical-align: middle;
+          border-radius: 6vw; }
+          @media only screen and (min-width: 1025px) {
+            .groups .new .names div img {
+              width: 5vw; } }
+        .groups .new .names div p {
+          display: inline;
+          vertical-align: middle;
+          padding-left: 4vw;
+          font-weight: 600;
+          -webkit-transition: font-weight .6s;
+          transition: font-weight .6s; }
+
+.group-name {
+  color: white;
+  font-size: 4vw;
+  padding-top: 2vh; }
+
+.listNames div p {
+  display: inline-block;
+  margin-left: 5vw;
+  margin-bottom: 2vh;
+  font-size: 3.6vw; }
+  @media only screen and (min-width: 1025px) {
+    .listNames div p {
+      font-size: 1.5vw; } }
+
+.listNames div img {
+  width: 5vw;
+  margin-left: 10vw;
+  vertical-align: middle; }
+  @media only screen and (min-width: 1025px) {
+    .listNames div img {
+      width: 2vw;
+      margin-left: 5vw; } }
+
+.pages {
+  text-align: center;
+  font-size: 7vw; }
+  .pages p {
+    font-size: 6vw;
+    margin: 7vh; }
+    @media only screen and (min-width: 1025px) {
+      .pages p {
+        font-size: 2vw; } }
+  .pages .pageList {
+    padding-top: 4vh;
+    background-color: white;
+    width: 84vw;
+    border-radius: 1vw;
+    padding-bottom: 4vh;
+    -webkit-box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75);
+            box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75);
+    margin-left: 8vw; }
+    @media only screen and (min-width: 1025px) {
+      .pages .pageList {
+        margin-left: 23vw;
+        width: 54vw; } }
+    .pages .pageList a {
+      font-size: 6vw;
+      color: #150958;
+      padding-bottom: 4vh;
+      display: block;
+      font-weight: 600;
+      text-decoration: none; }
+      @media only screen and (min-width: 1025px) {
+        .pages .pageList a {
+          font-size: 3vw; } }
+
+.no-pages-link {
+  background-color: #150958;
+  padding-top: 2vh;
+  padding-bottom: 2vh !important;
+  color: white !important;
+  width: 70vw;
+  margin-left: 7vw; }
+  @media only screen and (min-width: 1025px) {
+    .no-pages-link {
+      width: 40vw; } }
+
+.card {
+  width: 60vw;
+  -webkit-box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75);
+          box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75);
+  margin-left: 20vw;
+  border-radius: 2vw;
+  margin-bottom: 6vh; }
+  @media only screen and (min-width: 1025px) {
+    .card {
+      width: 30vw;
+      margin-left: 35vw; } }
+  .card .card-top {
+    background-color: #150958;
+    color: white;
+    font-size: 4vw;
+    padding-top: 3vh;
+    padding-bottom: 2vh;
+    font-weight: 600;
+    border-radius: 2vw 2vw 0vw 0vw;
+    padding-left: 5vw; }
+    @media only screen and (min-width: 1025px) {
+      .card .card-top {
+        font-size: 1.3vw;
+        padding-left: 2vw; } }
+  .card .card-middle {
+    text-align: center;
+    background-color: white; }
+    .card .card-middle img {
+      width: 60vw; }
+      @media only screen and (min-width: 1025px) {
+        .card .card-middle img {
+          width: 30vw; } }
+    .card .card-middle p {
+      font-size: 4.2vw;
+      max-width: 60vw; }
+      @media only screen and (min-width: 1025px) {
+        .card .card-middle p {
+          font-size: 2vw; } }
+  .card .card-bottom {
+    width: 60vw;
+    background-color: white;
+    border-radius: 0vw 0vw 2vw 2vw;
+    padding-bottom: 1vh;
+    padding-top: 0.7vh;
+    position: relative; }
+    @media only screen and (min-width: 1025px) {
+      .card .card-bottom {
+        width: 30vw;
+        height: 5vh;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; } }
+    .card .card-bottom span {
+      vertical-align: middle;
+      font-weight: 600;
+      font-size: 4vw;
+      color: #150958;
+      padding-left: 2vw; }
+      @media only screen and (min-width: 1025px) {
+        .card .card-bottom span {
+          font-size: 1.2vw;
+          line-height: 5.1vh;
+          padding-left: 1vw; } }
+    .card .card-bottom img:first-of-type {
+      width: 6vw;
+      vertical-align: middle;
+      padding-left: 2vw; }
+      @media only screen and (min-width: 1025px) {
+        .card .card-bottom img:first-of-type {
+          width: 2vw; } }
+    .card .card-bottom img:last-of-type {
+      cursor: pointer;
+      width: 6vw;
+      vertical-align: middle;
+      position: absolute;
+      right: 2vw; }
+      @media only screen and (min-width: 1025px) {
+        .card .card-bottom img:last-of-type {
+          width: 2.2vw; } }
+
+.are-you-sure {
+  z-index: 3;
+  position: fixed;
+  background-color: #150958;
+  text-align: center;
+  width: 90vw;
+  margin-left: 5vw;
+  margin-top: 30vh;
+  padding-bottom: 5vh;
+  border-radius: 2vh;
+  -webkit-box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
+          box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35); }
+  @media only screen and (min-width: 1025px) {
+    .are-you-sure {
+      width: 60vw;
+      margin-left: 20vw; } }
+  .are-you-sure p {
+    color: white;
+    font-size: 9vw;
+    font-weight: 600; }
+    @media only screen and (min-width: 1025px) {
+      .are-you-sure p {
+        font-size: 5vw; } }
+  .are-you-sure button {
+    width: 28vw;
+    height: 7vh;
+    border-radius: 1vh;
+    border: none;
+    font-size: 5vw;
+    color: white;
+    margin: 0;
+    -webkit-box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
+            box-shadow: 0vw 0.2vh 0.6vh 0vh rgba(0, 0, 0, 0.35);
+    font-weight: 600; }
+    @media only screen and (min-width: 1025px) {
+      .are-you-sure button {
+        font-size: 2vw;
+        width: 14vw; } }
+    .are-you-sure button:first-of-type {
+      background-color: #70B51F;
+      margin-right: 5vw; }
+    .are-you-sure button:last-of-type {
+      background-color: #D0021B; }
+
+.onboard-dark {
+  position: fixed;
+  top: 0;
+  background-color: #777777;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  opacity: 0.8; }
+
+.onboarding {
+  text-align: center;
+  z-index: 3;
+  position: fixed; }
+  .onboarding .onboard-promote {
+    margin-top: 4vh; }
+  @media only screen and (max-width: 1024px) and (min-width: 415px) {
+    .onboarding {
+      margin-top: 5vh; } }
+  .onboarding div {
+    width: 80vw;
+    margin-left: 10vw;
+    background-color: #150958;
+    color: white;
+    border-radius: 3vw;
+    padding-top: 3vh;
+    -webkit-box-shadow: 0px 4px 34px 0px rgba(0, 0, 0, 0.75);
+            box-shadow: 0px 4px 34px 0px rgba(0, 0, 0, 0.75);
+    margin-top: 10vh; }
+    @media only screen and (min-width: 1025px) {
+      .onboarding div {
+        width: 50vw;
+        margin-left: 25vw;
+        padding-top: 3vh; } }
+    .onboarding div img {
+      width: 10vw; }
+      @media only screen and (min-width: 1025px) {
+        .onboarding div img {
+          width: 5vw; } }
+    .onboarding div p:first-of-type {
+      font-size: 8vw;
+      font-weight: 600; }
+      @media only screen and (min-width: 1025px) {
+        .onboarding div p:first-of-type {
+          font-size: 3vw; } }
+    .onboarding div p:last-of-type {
+      padding-left: 8vw;
+      padding-right: 8vw;
+      font-size: 5.5vw;
+      font-weight: 300; }
+      @media only screen and (min-width: 1025px) {
+        .onboarding div p:last-of-type {
+          font-size: 2.5vw; } }
+    .onboarding div button {
+      position: relative;
+      color: #150958;
+      font-size: 6vw;
+      width: 80vw;
+      bottom: 0;
+      background-color: white;
+      border: none;
+      padding-top: 2vh;
+      padding-bottom: 2vh;
+      border-radius: 0vw 0vw 3vw 3vw;
+      font-weight: 700; }
+      @media only screen and (min-width: 1025px) {
+        .onboarding div button {
+          font-size: 3vw;
+          width: 50vw; } }
+    .onboarding div .promote-on-facebook {
+      border-radius: 0vw;
+      border-bottom: 0.1vh solid #00AEEF; }
+
+.onboard-promote p:last-of-type {
+  padding-bottom: 1vh; }
+
+.onboard-promote textarea {
+  background-color: #E0E0E0;
+  margin-bottom: 4vh;
+  border-radius: 1vw;
+  font-size: 4.2vw;
+  padding: 2vh;
+  border: none;
+  width: 66vw;
+  height: 5vh;
+  color: #565656; }
+  @media only screen and (min-width: 1025px) {
+    .onboard-promote textarea {
+      font-size: 1.6vw;
+      width: 43vw;
+      height: 13vh; } }
+
+.success-check {
+  width: 40vw;
+  z-index: 3;
+  position: fixed;
+  margin-left: 30vw;
+  margin-top: 30vh; }
+
+.quick-view-header {
+  text-align: center;
+  width: 100vw;
+  top: 5vh;
+  z-index: 3;
+  position: absolute;
+  color: white;
+  font-size: 8vw; }
+  .quick-view-header img:first-of-type {
+    vertical-align: middle;
+    width: 8vw;
+    position: absolute;
+    left: 5vw;
+    top: -2vh; }
+  .quick-view-header img:last-of-type {
+    vertical-align: middle;
+    width: 13vw;
+    z-index: 3;
+    margin-right: 3vw; }
+  .quick-view-header span {
+    vertical-align: middle;
+    font-weight: 300; }
+
+.new-users {
+  position: absolute;
+  z-index: 4;
+  margin-top: 2vh;
+  font-size: 6vw;
+  color: white;
+  text-align: center;
+  width: 100vw; }
+  .new-users span:first-of-type {
+    font-weight: 700;
+    font-size: 5vw; }
+  .new-users span:last-of-type {
+    font-weight: 300; }
+
+.next-msg-preview {
+  position: absolute;
+  z-index: 4;
+  margin-top: 10vh;
+  font-size: 6vw;
+  color: white;
+  text-align: center;
+  width: 100vw; }
+  .next-msg-preview span:first-of-type {
+    font-weight: 700;
+    font-size: 5vw; }
+  .next-msg-preview span:last-of-type {
+    font-weight: 300; }
+
+body {
+  margin: 0;
+  background-color: #E0E0E0;
+  font-family: 'Open Sans', sans-serif; }
+
+input:focus, select:focus, textarea:focus, button:focus {
+  outline: none; }

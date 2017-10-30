@@ -1,4 +1,3 @@
-$(document).ready(() => {
 
   // INITIALIZERS
 
@@ -431,5 +430,3 @@ $(document).ready(() => {
       }
     }
   })
-
-})

@@ -1,4 +1,3 @@
-$(document).ready(() => {
 
   var pathname = window.location.pathname.split('/')
   var userAccessToken = pathname[pathname.length - 1]
@@ -19,5 +18,3 @@ $(document).ready(() => {
     $('.pageList').append('<p>Looks like you are not an admin for any Facebook Pages. Follow the link below so you can create one:</p>')
     $('.pageList').append("<a class='no-pages-link' href='https://www.facebook.com/pages/create/'>Go To Facebook</a>")
   })
-
-})
