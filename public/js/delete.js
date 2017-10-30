@@ -1,4 +1,3 @@
-$(document).ready(() => {
 
   var socket = io.connect()
   // grab org name for url to get data from server
@@ -44,5 +43,3 @@ $(document).ready(() => {
   socket.on('reloadPage', () => {
     location.reload(true)
   })
-
-})

@@ -1,6 +1,5 @@
 "use strict"
 
-$(document).ready(() => {
 
   // GRAB ORG NAME FOR URL TO GET DATA FROM SERVER
   var pathname = window.location.pathname.split('/')
@@ -89,5 +88,3 @@ $(".uploader input").change(function(){
   socket.on('showGroupsForMessage', (data) => {
     $('.msgGroupList').prepend("<div><label><input type='checkbox' name='groupNames' value='" + data.data.groupName + "'>"+ data.data.groupName + "</label></div>")
   })
-
-})

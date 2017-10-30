@@ -1,4 +1,3 @@
-$(document).ready(() => {
 
   // find org name from URL
   var pathname = window.location.pathname.split('/')
@@ -128,5 +127,3 @@ $(document).ready(() => {
       $('.list .listNames').append("<div><img class='deleteGroup' data-groupname='"+ data.data[i].groupName + "' src='/imgs/delete.svg' alt='Delete Icon'><p class='name' data-name='"+ data.data[i].groupName +"'>" + data.data[i].groupName + "</p></div>")
     }
   })
-
-})

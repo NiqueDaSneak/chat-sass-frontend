@@ -1,4 +1,3 @@
-$(document).ready(() => {
 
   // GRAB ORG NAME FOR URL TO GET DATA FROM SERVER
   var pathname = window.location.pathname.split('/')
@@ -61,6 +60,3 @@ $(document).ready(() => {
     "<div class='onboard-promote hide'><p>Let’s Promote!</p><p>...but before we can use these tools, we need to get people on board! Please alter this text if you need before you hit post.</p><textarea class='promoteText' name='name' rows='8' cols='45'>Now you can interact with us on Messenger! Follow the link for exclusive content, deals and fun stuff from us! You can sign up to use it by going to m.me/" + data.data + "</textarea><button class='promote-on-facebook' type='button' name='button'>Post To Facebook</button><button class='promote-later' type='button' name='button'>Post Later</button></div></div>" +
     "<div class='onboard-dark'></div>")
   })
-
-
-})

@@ -1,4 +1,3 @@
-$(document).ready(() => {
 
   // GRAB ORG NAME FOR URL TO GET DATA FROM SERVER
   var pathname = window.location.pathname.split('/')
@@ -29,5 +28,3 @@ $(document).ready(() => {
   socket.on('quickViewMembers', (data) => {
     $('.new-users span:last-of-type').text(data.members.length)
   })
-
-})
