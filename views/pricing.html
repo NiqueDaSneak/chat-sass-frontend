@@ -1,31 +1,200 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500" rel="stylesheet">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <meta charset="utf-8">
-    <script
-      src="https://code.jquery.com/jquery-2.2.4.js"
-      integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-      crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/stylesheets/css/landing.css">
-    <title>Irrigate</title>
-  </head>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <meta charset="utf-8">
+  <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/multiple.js/0.0.1/multiple.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/multiple.js/0.0.1/multiple.js"></script>
+  <link rel="stylesheet" href="/prod/website.css">
+  <script type="text/javascript" src='/js/index.js'>
 
-  <body>
+  </script>
+  <title>Irrigate - Pricing</title>
+</head>
+
+  <body class="body">
     <header>
-      <div id="header">
-        <img class='smallLogo' src="/imgs/landing-page/irrigate-icon-truecolor.svg" alt="Logo">
-        <a href="/">Pricing</a>
-        <a href="/">Customize</a>
-        <a href="/">About Us</a>
-          <button id="headerButton" type="submit" onclick="location.href = '/auth/facebook';">Log In</button>
-      </div>
+      <img class='smallLogo' src="/imgs/landing-page/irrigate-icon-truecolor.svg" alt="Logo">
+      <a href="/pricing">Pricing</a>
+      <a href="/">Customize</a>
+      <a href="/">About Us</a>
+      <a class='headerButton' href='/auth/facebook'>
+          <img src="/imgs/landing-page/small-fb-icon.svg" alt="Facebook Icon">
+          <span>Log In</span>
+        </a>
     </header>
 
-    <div class="landing">
+      <div class="pricing">
+        <h2 class="pricingTitle">Pricing</h2>
+      </div>
+
+        <div id="cards">
+              <div class="card">
+                <div class="cardTitle">
+                  <h4>Lite - $22</h4>
+                  <p class="month">/ month</p>
+                  <p class="members">1000 members max</p>
+                  <p class="users">Users: 1</p>
+                </div>
+
+                  <ul class="liteList list">
+                    <li class="listItem">&#x2713; Optimized for Mobile</li>
+                    <li class="listItem">&#x2713; Message Scheduling</li>
+                    <li class="listItem">&#x2713; Group Creation</li>
+                    <li class="listItem">&#x2713; Send Text</li>
+                    <li class="listItem"></li>
+                    <li class="listItem"></li>
+                    <li class="listItem"></li>
+                    <li class="listItem"></li>
+                  </ul>
+                  <div class="button">
+                  <a class='cardButton' href='/auth/facebook'>
+                      <img src="/imgs/landing-page/small-fb-icon.svg" alt="Facebook Icon">
+                      <span>Sign Up Now</span>
+                    </a>
+                  </div>
+            </div>
+
+
+            <div class="card">
+              <div class="cardTitle">
+                <h4>Pro - $65</h4>
+                <p class="month">/ month</p>
+                <p class="members">2500 members max</p>
+                <p class="users">Users: 5 max</p>
+              </div>
+
+                <ul class="proList list">
+                  <li class="listItem">&#x2713; Optimized for Mobile</li>
+                  <li class="listItem">&#x2713; Message Scheduling</li>
+                  <li class="listItem">&#x2713; Group Creation</li>
+                  <li class="listItem">&#x2713; Send Text</li>
+                  <li class="listItem">&#x2713; Send Any Multi-media</li>
+                  <li class="listItem">&#x2713; Filter Groups</li>
+                  <li class="listItem">&#x2713; Message Forwarding</li>
+                </ul>
+                <div class="button">
+                  <a class='cardButton' href='/auth/facebook'>
+                      <img src="/imgs/landing-page/small-fb-icon.svg" alt="Facebook Icon">
+                      <span>Sign Up Now</span>
+                    </a>
+                </div>
+          </div>
+
+          <div class="card">
+            <div class="cardTitle">
+              <h4>Elite - $120</h4>
+              <p class="month">/ month</p>
+              <p class="members">5000 members max</p>
+              <p class="users">Users: 10 max</p>
+            </div>
+              <p id="elite">All the Pro features, plus:</p>
+              <ul class="eliteList list">
+                <!-- <p id="elite">All the Pro features, plus:</p> -->
+                <!-- <li class="listItem">&#x2713; Optimized for Mobile</li>
+                <li class="listItem">&#x2713; Message Scheduling</li>
+                <li class="listItem">&#x2713; Group Creation</li>
+                <li class="listItem">&#x2713; Send Text</li> -->
+                <li class="listItem">&#x2713; Send Any Multi-media</li>
+                <li class="listItem">&#x2713; Filter Groups</li>
+                <li class="listItem">&#x2713; Message Forwarding</li>
+                <li class="listItem">&#x2713; Reporting/Analytics</li>
+                <li class="listItem">&#x2733; Payment Processing</li>
+                <li class="listItem">&#x2733; Reciepts</li>
+                <li class="listItem">&#x2733; Digital Coupons</li>
+                <li class="listItem">&#x2733; Surveys</li>
+                <li id="soon" class="listItem">&#x2733;Coming Soon</li>
+              </ul>
+              <a class='cardButton' href='/auth/facebook'>
+                  <img src="/imgs/landing-page/small-fb-icon.svg" alt="Facebook Icon">
+                  <span>Sign Up Now</span>
+                </a>
+          </div>
+    </div>
+
+      <div class="pricingTable">
+        <table>
+          <tr class="headings">
+            <th class="left"></th>
+            <th>Lite<p>$22/mo</p></th>
+            <th>Pro<p>$65/mo</p></th>
+            <th>Elite<p>$120/mo</p></th>
+          </tr>
+          <tr>
+            <td id="mobile" class="left">Optimized for Mobile</td>
+            <td>&#x2713;</td>
+            <td>&#x2713;</td>
+            <td>&#x2713;</td>
+          </tr>
+          <tr>
+            <td class="left">Message Scheduling</td>
+            <td>&#x2713;</td>
+            <td>&#x2713;</td>
+            <td>&#x2713;</td>
+          </tr>
+          <tr>
+            <td class="left">Group Creation</td>
+            <td>&#x2713;</td>
+            <td>&#x2713;</td>
+            <td>&#x2713;</td>
+          </tr>
+          <tr>
+            <td class="left">Send Text</td>
+            <td>&#x2713;</td>
+            <td>&#x2713;</td>
+            <td>&#x2713;</td>
+          </tr>
+          <tr>
+            <td class="left">Send Any Multi-media</td>
+            <td></td>
+            <td>&#x2713;</td>
+            <td>&#x2713;</td>
+          </tr>
+          <tr>
+            <td class="left">Filter Groups</td>
+            <td></td>
+            <td>&#x2713;</td>
+            <td>&#x2713;</td>
+          </tr>
+          <tr>
+            <td class="left">Message Forwarding</td>
+            <td></td>
+            <td>&#x2713;</td>
+            <td>&#x2713;</td>
+          </tr>
+          <tr>
+            <td class="left">Payment Processing</td>
+            <td></td>
+            <td></td>
+            <td>&#x2713;</td>
+          </tr>
+          <tr>
+            <td class="left">Digital Coupons</td>
+            <td></td>
+            <td></td>
+            <td>&#x2713;</td>
+          </tr>
+          <tr>
+            <td class="left">Reciepts</td>
+            <td></td>
+            <td></td>
+            <td>&#x2713;</td>
+          </tr>
+          <tr>
+            <td class="left bottom">Reporting/Analytics</td>
+            <td class="bottom"></td>
+            <td class="bottom"></td>
+            <td class="bottom">&#x2713;</td>
+          </tr>
+        </table>
+      </div>
+
+    <div class="add">
+      <p id="analytics">*Add-on: analytics can be added to any package for $60/mo</p>
     </div>
 
   </body>

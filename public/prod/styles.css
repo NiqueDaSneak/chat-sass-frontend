@@ -994,6 +994,10 @@ header {
       -webkit-transition: color .8s;
       transition: color .8s;
       color: red; }
+    .groups .new input.warning::-ms-input-placeholder {
+      -webkit-transition: color .8s;
+      transition: color .8s;
+      color: red; }
     .groups .new input.warning::placeholder {
       -webkit-transition: color .8s;
       transition: color .8s;
