@@ -18,17 +18,17 @@ gulp.task('sass', function(){
   .pipe(gulp.dest('./public/prod'))
 })
 
-gulp.task('landingSass', () => {
-  return gulp.src('./public/stylesheets/sass/landing-page.sass')
+gulp.task('websiteSass', () => {
+  return gulp.src('./public/stylesheets/sass/website.sass')
   .pipe(sass({style: 'compressed'}))
   .pipe(postcss([ autoprefixer() ]))
-  .pipe(rename('landing.css'))
+  .pipe(rename('website.css'))
   .on('error', gutil.log)
   .pipe(gulp.dest('./public/prod'))
 })
 
 gulp.task('watch', function(){
-  gulp.watch('public/stylesheets/sass/*.sass', ['sass', 'landingSass'])
+  gulp.watch('public/stylesheets/sass/*.sass', ['sass','websiteSass'])
 })
 
-gulp.task('default', ['watch', 'sass', 'landingSass'])
+gulp.task('default', ['watch', 'sass', 'websiteSass'])
