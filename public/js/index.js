@@ -29,7 +29,7 @@ $(document).ready(() => {
     $('.features p').css('color', 'white').css('text-shadow', '0px 0px 60px black')
 
 var pricingPhoto = new Multiple({
-  selector: '.body',
+  selector: '.body-bg',
   background: "url('/imgs/pricingSteps.jpg')"
 })
 
