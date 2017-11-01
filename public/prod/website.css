@@ -18,10 +18,9 @@ header {
   padding-top: 3vh;
   padding-bottom: 3vh;
   top: 0; }
-  header img {
+  header .smallLogo {
     width: 7vw;
-    vertical-align: middle;
-    margin-right: 4vw; }
+    vertical-align: middle; }
   header a {
     text-decoration: none;
     font-weight: 300;
@@ -279,8 +278,7 @@ header {
   padding-bottom: 3vh; }
   header img {
     width: 7vw;
-    vertical-align: middle;
-    margin-right: 4vw; }
+    vertical-align: middle; }
   header a {
     text-decoration: none;
     font-weight: 300;
