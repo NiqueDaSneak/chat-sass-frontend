@@ -262,7 +262,7 @@ tbody tr:nth-child(odd) {
   color: white; }
 
 tbody tr:nth-child(even) {
-  background-color: #c7c7c7;
+  background-color: rgba(199, 199, 199, 0.68);
   font-weight: 500; }
 
 header {
