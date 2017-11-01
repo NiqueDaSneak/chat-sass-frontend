@@ -33,4 +33,9 @@ var pricingPhoto = new Multiple({
   background: "url('/imgs/pricingSteps.jpg')"
 })
 
+var aboutGrad = new Multiple({
+  selector: '.about-copy',
+  background: 'linear-gradient(#150958, #00AEEF)'
+})
+
 })
