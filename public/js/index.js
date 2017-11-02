@@ -39,6 +39,7 @@ $(document).ready(() => {
   })
 
   window.addEventListener('scroll', _.throttle(() => {
+    $('.scroll-indicator').remove()
     $('.about-copy span').each((index) => {
       if (index === 0) {
         if ($(`.about-copy .multiple-mobile-wrapper .multiple-mobile-content span:first-of-type`).isOnScreen()) {
