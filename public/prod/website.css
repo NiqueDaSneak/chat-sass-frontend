@@ -701,9 +701,8 @@ input[type="submit"] {
       @media only screen and (min-width: 1025px) {
         .about-copy span:nth-of-type(2) {
           padding-bottom: 53vh; } }
-    .about-copy span:nth-of-type(3) {
-      font-weight: 600; }
     .about-copy span:nth-of-type(4) {
+      font-weight: 600;
       margin-bottom: 24vh; }
       @media only screen and (min-width: 1025px) {
         .about-copy span:nth-of-type(4) {
@@ -721,18 +720,16 @@ input[type="submit"] {
         .about-copy span:nth-of-type(7) {
           padding-bottom: 22vh; } }
     .about-copy span:nth-of-type(8) {
+      font-weight: 600; }
+    .about-copy span:nth-of-type(9) {
+      padding-bottom: 22vh;
       margin-bottom: 24vh; }
-      @media only screen and (min-width: 1025px) {
-        .about-copy span:nth-of-type(8) {
-          padding-bottom: 22vh; } }
     .about-copy span:nth-of-type(10) {
       font-weight: 600;
       margin-bottom: 24vh; }
       @media only screen and (min-width: 1025px) {
         .about-copy span:nth-of-type(10) {
           padding-bottom: 22vh; } }
-    .about-copy span:nth-of-type(11) {
-      font-weight: 600; }
     .about-copy span:last-of-type {
       margin-bottom: 24vh; }
       @media only screen and (min-width: 1025px) {
