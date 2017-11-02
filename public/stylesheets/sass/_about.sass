@@ -37,3 +37,16 @@
       font-weight: 600
     &:last-of-type
       margin-bottom: 24vh
+
+.scroll-indicator
+  position: fixed
+  width: 20vw
+  left: 40vw
+  top: 50vh
+  animation: drag 1.4s infinite cubic-bezier(0.4, 0, 0.2, 1)
+
+@keyframes drag
+  0%
+    top: 50vh
+  100%
+    top: 57vh

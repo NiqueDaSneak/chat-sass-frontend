@@ -248,6 +248,7 @@ td {
       padding: 5vh 0vw 0vh 10vw;
       margin-top: 1%; } }
   .add p {
+    margin-top: 20vh;
     font-size: 2.25vh;
     text-align: left;
     padding-bottom: 10%;
@@ -713,6 +714,26 @@ footer {
       font-weight: 600; }
     .about-copy span:last-of-type {
       margin-bottom: 24vh; }
+
+.scroll-indicator {
+  position: fixed;
+  width: 20vw;
+  left: 40vw;
+  top: 50vh;
+  -webkit-animation: drag 1.4s infinite cubic-bezier(0.4, 0, 0.2, 1);
+          animation: drag 1.4s infinite cubic-bezier(0.4, 0, 0.2, 1); }
+
+@-webkit-keyframes drag {
+  0% {
+    top: 50vh; }
+  100% {
+    top: 57vh; } }
+
+@keyframes drag {
+  0% {
+    top: 50vh; }
+  100% {
+    top: 57vh; } }
 
 body {
   margin: 0;
