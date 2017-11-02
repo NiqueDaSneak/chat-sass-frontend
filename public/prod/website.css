@@ -675,6 +675,45 @@ footer {
   left: -4.1vw;
   width: 53.5vw; }
 
+.about-copy {
+  margin-top: 10vh;
+  color: white;
+  font-size: 4.5vw; }
+  .about-copy span {
+    width: 90vw;
+    margin-left: 5vw;
+    display: inline-block;
+    font-weight: 300;
+    -webkit-transition: opacity 1s;
+    transition: opacity 1s;
+    opacity: 0; }
+    .about-copy span:first-of-type {
+      padding-top: 17vh;
+      opacity: 1; }
+    .about-copy span:nth-of-type(2) {
+      padding-bottom: 24vh;
+      font-weight: 600;
+      opacity: 1; }
+    .about-copy span:nth-of-type(3) {
+      font-weight: 600; }
+    .about-copy span:nth-of-type(4) {
+      margin-bottom: 24vh; }
+    .about-copy span:nth-of-type(5) {
+      margin-bottom: 24vh; }
+    .about-copy span:nth-of-type(6) {
+      font-weight: 600; }
+    .about-copy span:nth-of-type(7) {
+      margin-bottom: 24vh; }
+    .about-copy span:nth-of-type(8) {
+      margin-bottom: 24vh; }
+    .about-copy span:nth-of-type(10) {
+      font-weight: 600;
+      margin-bottom: 24vh; }
+    .about-copy span:nth-of-type(11) {
+      font-weight: 600; }
+    .about-copy span:last-of-type {
+      margin-bottom: 24vh; }
+
 body {
   margin: 0;
   background-color: #E0E0E0;
