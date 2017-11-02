@@ -324,8 +324,7 @@ input[type="submit"] {
       font-size: 4.6vw; } }
 
 .market {
-  background-size: cover;
-  background-position-x: center; }
+  height: 90vh; }
   @media only screen and (min-width: 1025px) {
     .market {
       padding-bottom: 15vh; } }
@@ -437,7 +436,8 @@ input[type="submit"] {
   background-color: black; }
 
 .blue {
-  color: white; }
+  color: white;
+  height: 275vh; }
   @media only screen and (min-width: 1025px) {
     .blue {
       height: 255vh;
