@@ -35,22 +35,11 @@ $(document).ready(() => {
 
   var aboutGrad = new Multiple({
     selector: '.about-copy',
-    background: 'linear-gradient(#150958, #00AEEF)'
+    background: 'linear-gradient(#00AEEF, #150958)'
   })
 
   window.addEventListener('scroll', _.throttle(() => {
     $('.about-copy span').each((index) => {
-      // var string
-      // if (index === 0) {
-      //   console.log(index)
-      //   string = '.about-copy .multiple-mobile-wrapper .multiple-mobile-content span:first-of-type'
-      // } else if (index === 11) {
-      //   console.log(index)
-      //   string = '.about-copy .multiple-mobile-wrapper .multiple-mobile-content span:last-of-type'
-      // } else {
-      //   console.log(index)
-      //   string = `.about-copy .multiple-mobile-wrapper .multiple-mobile-content span:nth-of-type(${index})`
-      // }
       if (index === 0) {
         if ($(`.about-copy .multiple-mobile-wrapper .multiple-mobile-content span:first-of-type`).isOnScreen()) {
           $(`.about-copy .multiple-mobile-wrapper .multiple-mobile-content span:first-of-type`).css('opacity', '1')
