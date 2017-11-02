@@ -5,44 +5,6 @@ html
   margin: 0
   padding: 0
 
-header
-  transition: background .8s, box-shadow 1s
-  position: fixed
-  width: 100vw
-  z-index: 1
-  text-align: center
-  padding-top: 3vh
-  padding-bottom: 3vh
-  top: 0
-  .smallLogo
-    width: 7vw
-    vertical-align: middle
-    // margin-right: 4vw
-  a
-    text-decoration: none
-    font-weight: 300
-    vertical-align: middle
-    font-size: 3.5vw
-    color: $siteMain
-    margin-right: 4.8vw
-    @include desktop
-      font-size: 1.7vw
-      padding: 0 4vw 0 4vw
-      float: right
-.headerButton
-  background-color: $siteMain
-  padding: 3vw
-  border-radius: 2.5vw
-  color: white
-  margin-right: 0vw
-  img
-    width: 3vw
-    margin-right: 1vw
-  span
-    font-weight: 400
-    vertical-align: middle
-
-//PRICING PAGE//
 .pricingTitle
   font-size: 7vw
   margin-top: 0
@@ -236,6 +198,8 @@ td
     text-align: left
     padding-bottom: 10%
     color: white
+    @include desktop
+      margin-top: 0vh
 
 .headings
   background-color: rgba(0, 0, 0, 0)
@@ -246,3 +210,6 @@ tbody tr:nth-child(odd)
 tbody tr:nth-child(even)
   background-color: rgba(199, 199, 199, 0.68)
   font-weight: 500
+
+.body-bg.multiple-desktop
+  height: fit-content

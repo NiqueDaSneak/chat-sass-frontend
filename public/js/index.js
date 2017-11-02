@@ -40,21 +40,39 @@ $(document).ready(() => {
 
   window.addEventListener('scroll', _.throttle(() => {
     $('.scroll-indicator').remove()
-    $('.about-copy span').each((index) => {
-      if (index === 0) {
-        if ($(`.about-copy .multiple-mobile-wrapper .multiple-mobile-content span:first-of-type`).isOnScreen()) {
-          $(`.about-copy .multiple-mobile-wrapper .multiple-mobile-content span:first-of-type`).css('opacity', '1')
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      $('.about-copy span').each((index) => {
+        if (index === 0) {
+          if ($(`.about-copy .multiple-mobile-wrapper .multiple-mobile-content span:first-of-type`).isOnScreen()) {
+            $(`.about-copy .multiple-mobile-wrapper .multiple-mobile-content span:first-of-type`).css('opacity', '1')
+          }
+        } else if (index === 11) {
+          if ($(`.about-copy .multiple-mobile-wrapper .multiple-mobile-content span:last-of-type`).isOnScreen()) {
+            $(`.about-copy .multiple-mobile-wrapper .multiple-mobile-content span:last-of-type`).css('opacity', '1')
+          }
+        } else {
+          if ($(`.about-copy .multiple-mobile-wrapper .multiple-mobile-content span:nth-of-type(${index + 1})`).isOnScreen()) {
+            $(`.about-copy .multiple-mobile-wrapper .multiple-mobile-content span:nth-of-type(${index + 1})`).css('opacity', '1')
+          }
         }
-      } else if (index === 11) {
-        if ($(`.about-copy .multiple-mobile-wrapper .multiple-mobile-content span:last-of-type`).isOnScreen()) {
-          $(`.about-copy .multiple-mobile-wrapper .multiple-mobile-content span:last-of-type`).css('opacity', '1')
+      })
+    } else {
+      $('.about-copy span').each((index) => {
+        if (index === 0) {
+          if ($(`.about-copy span:first-of-type`).isOnScreen()) {
+            $(`.about-copy span:first-of-type`).css('opacity', '1')
+          }
+        } else if (index === 11) {
+          if ($(`.about-copy span:last-of-type`).isOnScreen()) {
+            $(`.about-copy span:last-of-type`).css('opacity', '1')
+          }
+        } else {
+          if ($(`.about-copy span:nth-of-type(${index + 1})`).isOnScreen()) {
+            $(`.about-copy span:nth-of-type(${index + 1})`).css('opacity', '1')
+          }
         }
-      } else {
-        if ($(`.about-copy .multiple-mobile-wrapper .multiple-mobile-content span:nth-of-type(${index + 1})`).isOnScreen()) {
-          $(`.about-copy .multiple-mobile-wrapper .multiple-mobile-content span:nth-of-type(${index + 1})`).css('opacity', '1')
-        }
-      }
-    })
+      })
+    }
   }, 1000))
 
   $.fn.isOnScreen = function() {

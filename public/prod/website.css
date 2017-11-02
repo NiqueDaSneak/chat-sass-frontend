@@ -6,47 +6,6 @@ html {
   margin: 0;
   padding: 0; }
 
-header {
-  -webkit-transition: background .8s, -webkit-box-shadow 1s;
-  transition: background .8s, -webkit-box-shadow 1s;
-  transition: background .8s, box-shadow 1s;
-  transition: background .8s, box-shadow 1s, -webkit-box-shadow 1s;
-  position: fixed;
-  width: 100vw;
-  z-index: 1;
-  text-align: center;
-  padding-top: 3vh;
-  padding-bottom: 3vh;
-  top: 0; }
-  header .smallLogo {
-    width: 7vw;
-    vertical-align: middle; }
-  header a {
-    text-decoration: none;
-    font-weight: 300;
-    vertical-align: middle;
-    font-size: 3.5vw;
-    color: #150958;
-    margin-right: 4.8vw; }
-    @media only screen and (min-width: 1025px) {
-      header a {
-        font-size: 1.7vw;
-        padding: 0 4vw 0 4vw;
-        float: right; } }
-
-.headerButton {
-  background-color: #150958;
-  padding: 3vw;
-  border-radius: 2.5vw;
-  color: white;
-  margin-right: 0vw; }
-  .headerButton img {
-    width: 3vw;
-    margin-right: 1vw; }
-  .headerButton span {
-    font-weight: 400;
-    vertical-align: middle; }
-
 .pricingTitle {
   font-size: 7vw;
   margin-top: 0;
@@ -253,6 +212,9 @@ td {
     text-align: left;
     padding-bottom: 10%;
     color: white; }
+    @media only screen and (min-width: 1025px) {
+      .add p {
+        margin-top: 0vh; } }
 
 .headings {
   background-color: transparent; }
@@ -265,45 +227,10 @@ tbody tr:nth-child(even) {
   background-color: rgba(199, 199, 199, 0.68);
   font-weight: 500; }
 
-header {
-  background-color: white;
-  -webkit-transition: background .8s, -webkit-box-shadow 1s;
-  transition: background .8s, -webkit-box-shadow 1s;
-  transition: background .8s, box-shadow 1s;
-  transition: background .8s, box-shadow 1s, -webkit-box-shadow 1s;
-  position: fixed;
-  width: 100vw;
-  z-index: 1;
-  text-align: center;
-  padding-top: 3vh;
-  padding-bottom: 3vh; }
-  header img {
-    width: 7vw;
-    vertical-align: middle; }
-  header a {
-    text-decoration: none;
-    font-weight: 300;
-    vertical-align: middle;
-    font-size: 3.5vw;
-    color: #150958;
-    margin-right: 4.8vw; }
-    @media only screen and (min-width: 1025px) {
-      header a {
-        font-size: 1.7vw;
-        padding: 0 4vw 0 4vw;
-        float: right; } }
-  header .headerButton {
-    background-color: #150958;
-    padding: 3vw;
-    border-radius: 2.5vw;
-    color: white;
-    margin-right: 0vw; }
-    header .headerButton img {
-      width: 3vw;
-      margin-right: 1vw; }
-    header .headerButton span {
-      font-weight: 400;
-      vertical-align: middle; }
+.body-bg.multiple-desktop {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content; }
 
 .landing {
   color: #474747;
@@ -315,12 +242,13 @@ header {
       height: 110vh; } }
   .landing .logo {
     width: 70vw;
-    margin: 16vh 0vw 0vh 15vw; }
+    margin-left: 15vw;
+    margin-top: 17vh; }
     @media only screen and (min-width: 1025px) {
       .landing .logo {
-        padding-top: 3vw;
-        width: 40vw;
-        margin: 10vh 0vh 6vh 0vh; } }
+        margin-top: 24vh;
+        width: 28vw;
+        margin-left: 36vw; } }
   .landing a {
     display: inline-block;
     text-decoration: none;
@@ -331,15 +259,27 @@ header {
     padding-top: 2vh;
     padding-bottom: 2vh;
     border-radius: 2vw; }
+    @media only screen and (min-width: 1025px) {
+      .landing a {
+        width: 50vw;
+        margin-left: 25vw;
+        border: 0.2vw solid white !important; } }
     .landing a img {
       width: 4vw;
       margin-right: 4vw;
       vertical-align: middle; }
+      @media only screen and (min-width: 1025px) {
+        .landing a img {
+          width: 2.3vw;
+          margin-right: 2vw; } }
     .landing a span {
       vertical-align: middle;
       color: white;
       font-weight: 300;
       font-size: 4.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .landing a span {
+          font-size: 2.4vw; } }
   .landing .chevron {
     width: 15vw;
     padding-top: 4vh;
@@ -378,15 +318,17 @@ input[type="submit"] {
     .subtitle {
       margin-left: 35vw;
       width: 30vw;
-      font-size: 3vw; } }
+      font-size: 1.9vw; } }
+  @media only screen and (max-width: 1024px) and (min-width: 415px) {
+    .subtitle {
+      font-size: 4.6vw; } }
 
 .market {
-  height: 100vh;
   background-size: cover;
   background-position-x: center; }
   @media only screen and (min-width: 1025px) {
     .market {
-      height: 100vh; } }
+      padding-bottom: 15vh; } }
   .market h3 {
     font-size: 6.5vw;
     font-weight: 700;
@@ -396,9 +338,12 @@ input[type="submit"] {
     padding: 10vh 0vw 5vh 5vw; }
     @media only screen and (min-width: 1025px) {
       .market h3 {
-        font-size: 3vw;
+        font-size: 2.2vw;
         width: 40vw;
-        text-transform: uppercase; } }
+        padding: 10vh 0vw 5vh 15vw; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .market h3 {
+        font-size: 5.2vw; } }
   .market h5 {
     font-size: 6.5vw;
     font-weight: 400;
@@ -408,9 +353,12 @@ input[type="submit"] {
     padding: 0vh 0vw 2vh 15vw; }
     @media only screen and (min-width: 1025px) {
       .market h5 {
-        font-size: 3vw;
+        font-size: 2.2vw;
         width: 60vw;
         padding: 0vh 0vw 2vh 30vw; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .market h5 {
+        font-size: 5.2vw; } }
   .market p {
     font-weight: 200;
     font-size: 6vw;
@@ -433,8 +381,7 @@ input[type="submit"] {
     @media only screen and (min-width: 1025px) {
       .market .soon {
         font-size: 1.2vw;
-        padding-right: 30%;
-        margin: 0 0 10vh 0; } }
+        padding-right: 39vw; } }
   .market .social {
     padding-top: 4vh;
     position: top;
@@ -447,16 +394,19 @@ input[type="submit"] {
     display: inline;
     width: 12vw;
     vertical-align: middle; }
+    @media only screen and (min-width: 1025px) {
+      .market .socialIcons {
+        width: 5vw;
+        padding-bottom: 0; } }
     .market .socialIcons:first-of-type {
       width: 17vw;
       margin-right: 10vw;
       -webkit-animation: pulse 1.4s infinite ease-in-out;
               animation: pulse 1.4s infinite ease-in-out; }
-    @media only screen and (min-width: 1025px) {
-      .market .socialIcons {
-        width: 6vw;
-        height: 6vh;
-        padding-bottom: 0; } }
+      @media only screen and (min-width: 1025px) {
+        .market .socialIcons:first-of-type {
+          width: 7vw;
+          margin-right: 7vw; } }
 
 @-webkit-keyframes pulse {
   0% {
@@ -487,14 +437,28 @@ input[type="submit"] {
   background-color: black; }
 
 .blue {
-  color: white;
-  height: 380vh; }
+  color: white; }
+  @media only screen and (min-width: 1025px) {
+    .blue {
+      height: 255vh;
+      padding-top: 25vh; } }
+  @media only screen and (max-width: 1024px) and (min-width: 415px) {
+    .blue {
+      height: 270vh; } }
   .blue .three-phones {
-    padding-top: 30vh; }
+    padding-top: 15vh; }
+    @media only screen and (min-width: 1025px) {
+      .blue .three-phones {
+        padding-top: 5vh;
+        width: 76vw;
+        margin-left: 12vw; } }
     .blue .three-phones .device {
       width: 35vw;
       display: inline-block;
       margin-left: 5vw; }
+      @media only screen and (min-width: 1025px) {
+        .blue .three-phones .device {
+          width: 15vw; } }
     .blue .three-phones .content-holder.right {
       text-align: right; }
     .blue .three-phones .content-holder {
@@ -508,9 +472,16 @@ input[type="submit"] {
         font-weight: 700;
         display: block;
         font-size: 6vw; }
+        @media only screen and (min-width: 1025px) {
+          .blue .three-phones .content-holder span:first-of-type {
+            font-size: 2vw;
+            margin-bottom: 2vh; } }
       .blue .three-phones .content-holder span:last-of-type {
         font-weight: 400;
         font-size: 4.2vw; }
+        @media only screen and (min-width: 1025px) {
+          .blue .three-phones .content-holder span:last-of-type {
+            font-size: 2vw; } }
   .blue .why {
     margin-top: 26vh;
     font-size: 6.8vw;
@@ -519,32 +490,77 @@ input[type="submit"] {
     margin-left: 18.5vw;
     text-align: center;
     display: block; }
+    @media only screen and (min-width: 1025px) {
+      .blue .why {
+        font-size: 3vw; } }
   .blue .because {
     text-align: center;
     display: block;
     font-size: 6vw;
     font-weight: 300; }
+    @media only screen and (min-width: 1025px) {
+      .blue .because {
+        font-size: 3vw; } }
   .blue .stats {
     margin-bottom: 0vh;
     padding-top: 15vh; }
+    @media only screen and (min-width: 1025px) {
+      .blue .stats {
+        padding-top: 18vh; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .blue .stats {
+        height: 0;
+        padding-top: 21vh; } }
     .blue .stats span:first-of-type {
       line-height: 8vh;
       position: absolute;
       left: 14vw;
       font-size: 17vw;
       font-weight: 300; }
+      @media only screen and (min-width: 1025px) {
+        .blue .stats span:first-of-type {
+          left: 24vw;
+          font-size: 7vw; } }
     .blue .stats span:last-of-type {
       width: 44vw;
       display: inline-block;
       position: absolute;
       right: 8vw;
       font-weight: 600; }
+      @media only screen and (min-width: 1025px) {
+        .blue .stats span:last-of-type {
+          right: 14vw; } }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .blue .stats span:last-of-type {
+          font-weight: 300;
+          font-size: 3vw; } }
   .blue .stats.first {
     height: 10vh; }
+    @media only screen and (min-width: 1025px) {
+      .blue .stats.first {
+        height: 0vh;
+        padding-top: 9vh; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .blue .stats.first {
+        padding-top: 10vh;
+        height: 0; } }
   .blue .stats.second {
     height: 20vh; }
+    @media only screen and (min-width: 1025px) {
+      .blue .stats.second {
+        height: 0vh; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .blue .stats.second {
+        height: 0; } }
   .blue .stats.third {
-    height: 23vh; }
+    height: 23vh;
+    margin-bottom: 10vh; }
+    @media only screen and (min-width: 1025px) {
+      .blue .stats.third {
+        height: 0vh; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .blue .stats.third {
+        height: 0; } }
 
 .features {
   background-size: cover;
@@ -552,7 +568,7 @@ input[type="submit"] {
   background-attachment: fixed; }
   @media only screen and (min-width: 1025px) {
     .features {
-      height: 205vh; } }
+      padding-bottom: 20vh; } }
   .features span:first-of-type {
     padding: 10vh 2vw 0vh 5vw;
     margin-bottom: 1vh;
@@ -560,6 +576,9 @@ input[type="submit"] {
     font-size: 8vw;
     color: #150958;
     display: block; }
+    @media only screen and (min-width: 1025px) {
+      .features span:first-of-type {
+        font-size: 4vw; } }
   .features h5 {
     font-size: 5vw;
     font-weight: 300;
@@ -570,8 +589,7 @@ input[type="submit"] {
     margin: 0 0 2.5vh 0; }
     @media only screen and (min-width: 1025px) {
       .features h5 {
-        font-size: 3vw;
-        width: 60vw; } }
+        font-size: 1.7vw; } }
   .features h6 {
     color: #150958;
     font-weight: 700;
@@ -599,10 +617,236 @@ input[type="submit"] {
   margin-bottom: 10vh;
   margin-left: 5vw;
   margin-right: 5vw; }
+  @media only screen and (min-width: 1025px) {
+    .circles div {
+      margin-bottom: 0vh; } }
 
 .circles img {
   width: 24vw;
   vertical-align: top; }
+
+.multiple-mobile-wrapper {
+  height: 110% !important; }
+
+.gif1 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  position: absolute;
+  right: -5.3vw;
+  width: 53.5vw;
+  margin-top: 12vh; }
+  @media only screen and (min-width: 1025px) {
+    .gif1 {
+      right: 8.6vw;
+      width: 23.3vw;
+      margin-top: 14.6vh; } }
+  @media only screen and (max-width: 1024px) and (min-width: 415px) {
+    .gif1 {
+      right: -4.8vw;
+      margin-top: 14vh; } }
+
+.gif2 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  position: absolute;
+  left: -4.1vw;
+  width: 53.5vw;
+  margin-top: 12vh; }
+  @media only screen and (min-width: 1025px) {
+    .gif2 {
+      width: 23.3vw;
+      margin-top: 14.6vh;
+      left: 12.9vw; } }
+  @media only screen and (max-width: 1024px) and (min-width: 415px) {
+    .gif2 {
+      left: -4.3vw;
+      margin-top: 14.2vh; } }
+
+.about-copy {
+  color: white;
+  font-size: 4.5vw; }
+  @media only screen and (min-width: 1025px) {
+    .about-copy {
+      margin-top: 10vh;
+      font-size: 1.8vw; } }
+  @media only screen and (max-width: 1024px) and (min-width: 415px) {
+    .about-copy {
+      font-size: 3.4vw; } }
+  .about-copy span {
+    width: 90vw;
+    margin-left: 5vw;
+    display: inline-block;
+    font-weight: 300;
+    -webkit-transition: opacity 1s;
+    transition: opacity 1s;
+    opacity: 0; }
+    @media only screen and (min-width: 1025px) {
+      .about-copy span {
+        width: 50vw;
+        margin-left: 25vw; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .about-copy span {
+        width: 60vw;
+        margin-left: 20vw; } }
+    .about-copy span:first-of-type {
+      padding-top: 27vh;
+      opacity: 1; }
+      @media only screen and (min-width: 1025px) {
+        .about-copy span:first-of-type {
+          padding-top: 27vh; } }
+    .about-copy span:nth-of-type(2) {
+      padding-bottom: 24vh;
+      font-weight: 600;
+      opacity: 1; }
+      @media only screen and (min-width: 1025px) {
+        .about-copy span:nth-of-type(2) {
+          padding-bottom: 53vh; } }
+    .about-copy span:nth-of-type(3) {
+      font-weight: 600; }
+    .about-copy span:nth-of-type(4) {
+      margin-bottom: 24vh; }
+      @media only screen and (min-width: 1025px) {
+        .about-copy span:nth-of-type(4) {
+          padding-bottom: 22vh; } }
+    .about-copy span:nth-of-type(5) {
+      margin-bottom: 24vh; }
+      @media only screen and (min-width: 1025px) {
+        .about-copy span:nth-of-type(5) {
+          padding-bottom: 22vh; } }
+    .about-copy span:nth-of-type(6) {
+      font-weight: 600; }
+    .about-copy span:nth-of-type(7) {
+      margin-bottom: 24vh; }
+      @media only screen and (min-width: 1025px) {
+        .about-copy span:nth-of-type(7) {
+          padding-bottom: 22vh; } }
+    .about-copy span:nth-of-type(8) {
+      margin-bottom: 24vh; }
+      @media only screen and (min-width: 1025px) {
+        .about-copy span:nth-of-type(8) {
+          padding-bottom: 22vh; } }
+    .about-copy span:nth-of-type(10) {
+      font-weight: 600;
+      margin-bottom: 24vh; }
+      @media only screen and (min-width: 1025px) {
+        .about-copy span:nth-of-type(10) {
+          padding-bottom: 22vh; } }
+    .about-copy span:nth-of-type(11) {
+      font-weight: 600; }
+    .about-copy span:last-of-type {
+      margin-bottom: 24vh; }
+      @media only screen and (min-width: 1025px) {
+        .about-copy span:last-of-type {
+          padding-bottom: 0vh; } }
+
+.scroll-indicator {
+  position: fixed;
+  width: 20vw;
+  left: 40vw;
+  top: 50vh;
+  -webkit-animation: drag 1.4s infinite cubic-bezier(0.4, 0, 0.2, 1);
+          animation: drag 1.4s infinite cubic-bezier(0.4, 0, 0.2, 1); }
+  @media only screen and (min-width: 1025px) {
+    .scroll-indicator {
+      left: 46.5vw;
+      width: 7vw;
+      top: 70vh; } }
+
+@-webkit-keyframes drag {
+  0% {
+    top: 70vh; }
+  100% {
+    top: 77vh; } }
+
+@keyframes drag {
+  0% {
+    top: 70vh; }
+  100% {
+    top: 77vh; } }
+
+body {
+  margin: 0;
+  background-color: #E0E0E0;
+  font-family: 'Open Sans', sans-serif; }
+
+input:focus, select:focus, textarea:focus, button:focus {
+  outline: none; }
+
+header {
+  background-color: white;
+  -webkit-transition: background .8s, -webkit-box-shadow 1s;
+  transition: background .8s, -webkit-box-shadow 1s;
+  transition: background .8s, box-shadow 1s;
+  transition: background .8s, box-shadow 1s, -webkit-box-shadow 1s;
+  position: fixed;
+  width: 100vw;
+  z-index: 1;
+  text-align: center;
+  padding-top: 3vh;
+  padding-bottom: 3vh; }
+  @media only screen and (min-width: 1025px) {
+    header {
+      top: 0; } }
+  header img {
+    width: 7vw;
+    vertical-align: middle; }
+  header .smallLogo {
+    width: 7vw;
+    vertical-align: middle; }
+    @media only screen and (min-width: 1025px) {
+      header .smallLogo {
+        width: 4vw;
+        margin-left: 5vw; } }
+  header a {
+    text-decoration: none;
+    font-weight: 300;
+    vertical-align: middle;
+    font-size: 3.5vw;
+    color: #150958;
+    margin-right: 4.8vw; }
+    @media only screen and (min-width: 1025px) {
+      header a {
+        font-size: 1.7vw;
+        margin-right: 12.6vw; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      header a {
+        font-size: 3.1vw;
+        margin-right: 6.3vw; } }
+  header .headerButton {
+    background-color: #150958;
+    padding: 3vw;
+    border-radius: 2.5vw;
+    color: white;
+    margin-right: 0vw; }
+    @media only screen and (min-width: 1025px) {
+      header .headerButton {
+        padding: 1.4vw;
+        border-radius: 1.2vw;
+        font-size: 1.3vw;
+        padding-left: 1.4vw;
+        padding-right: 1.4vw;
+        padding-top: 2vh;
+        padding-bottom: 2.4vh; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      header .headerButton {
+        padding: 2.1vw;
+        border-radius: 1.7vw; } }
+    header .headerButton img {
+      width: 3vw;
+      margin-right: 1vw; }
+      @media only screen and (min-width: 1025px) {
+        header .headerButton img {
+          width: 1.3vw;
+          margin-right: 2.1vw; } }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        header .headerButton img {
+          width: 2.2vw; } }
+    header .headerButton span {
+      font-weight: 400;
+      vertical-align: middle; }
+      @media only screen and (min-width: 1025px) {
+        header .headerButton span {
+          font-weight: 300; } }
 
 footer {
   height: -webkit-fit-content;
@@ -614,6 +858,9 @@ footer {
     top: 2.5vh;
     position: relative;
     left: 5vw; }
+    @media only screen and (min-width: 1025px) {
+      footer img {
+        width: 18vw; } }
   footer .link-holder {
     position: relative;
     right: 5vw;
@@ -626,9 +873,18 @@ footer {
       text-align: right;
       font-size: 3.5vw;
       margin-bottom: 3vh; }
+      @media only screen and (min-width: 1025px) {
+        footer .link-holder a {
+          font-size: 1.6vw; } }
   footer .footer-icons {
     position: absolute;
     top: 9.5vh; }
+    @media only screen and (min-width: 1025px) {
+      footer .footer-icons {
+        top: 13.2vh; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      footer .footer-icons {
+        top: 11.5vh; } }
     footer .footer-icons .footer-login {
       display: inline;
       vertical-align: middle; }
@@ -641,104 +897,36 @@ footer {
       vertical-align: middle; }
       footer .footer-icons a:first-of-type img {
         width: 8vw; }
+        @media only screen and (min-width: 1025px) {
+          footer .footer-icons a:first-of-type img {
+            width: 3vw; } }
       footer .footer-icons a:nth-of-type(2) img {
         width: 4vw; }
+        @media only screen and (min-width: 1025px) {
+          footer .footer-icons a:nth-of-type(2) img {
+            width: 1.6vw; } }
       footer .footer-icons a:nth-of-type(3) img {
         width: 7vw; }
+        @media only screen and (min-width: 1025px) {
+          footer .footer-icons a:nth-of-type(3) img {
+            width: 3.7vw; } }
       footer .footer-icons a:nth-of-type(4) img {
         width: 18vw; }
+        @media only screen and (min-width: 1025px) {
+          footer .footer-icons a:nth-of-type(4) img {
+            width: 7vw; } }
       footer .footer-icons a img {
         vertical-align: middle;
         margin-right: 5vw; }
+        @media only screen and (min-width: 1025px) {
+          footer .footer-icons a img {
+            margin-right: 2vw; } }
   footer span:last-of-type {
     position: absolute;
     bottom: 5.5vh;
     color: white;
     font-size: 2.3vw;
     left: 5vw; }
-
-.multiple-mobile-wrapper {
-  height: 110% !important; }
-
-.gif1 {
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  position: absolute;
-  right: -5.3vw;
-  width: 53.5vw;
-  margin-top: 12vh; }
-
-.gif2 {
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  position: absolute;
-  left: -4.1vw;
-  width: 53.5vw;
-  margin-top: 12vh; }
-
-.about-copy {
-  margin-top: 10vh;
-  color: white;
-  font-size: 4.5vw; }
-  .about-copy span {
-    width: 90vw;
-    margin-left: 5vw;
-    display: inline-block;
-    font-weight: 300;
-    -webkit-transition: opacity 1s;
-    transition: opacity 1s;
-    opacity: 0; }
-    .about-copy span:first-of-type {
-      padding-top: 17vh;
-      opacity: 1; }
-    .about-copy span:nth-of-type(2) {
-      padding-bottom: 24vh;
-      font-weight: 600;
-      opacity: 1; }
-    .about-copy span:nth-of-type(3) {
-      font-weight: 600; }
-    .about-copy span:nth-of-type(4) {
-      margin-bottom: 24vh; }
-    .about-copy span:nth-of-type(5) {
-      margin-bottom: 24vh; }
-    .about-copy span:nth-of-type(6) {
-      font-weight: 600; }
-    .about-copy span:nth-of-type(7) {
-      margin-bottom: 24vh; }
-    .about-copy span:nth-of-type(8) {
-      margin-bottom: 24vh; }
-    .about-copy span:nth-of-type(10) {
-      font-weight: 600;
-      margin-bottom: 24vh; }
-    .about-copy span:nth-of-type(11) {
-      font-weight: 600; }
-    .about-copy span:last-of-type {
-      margin-bottom: 24vh; }
-
-.scroll-indicator {
-  position: fixed;
-  width: 20vw;
-  left: 40vw;
-  top: 50vh;
-  -webkit-animation: drag 1.4s infinite cubic-bezier(0.4, 0, 0.2, 1);
-          animation: drag 1.4s infinite cubic-bezier(0.4, 0, 0.2, 1); }
-
-@-webkit-keyframes drag {
-  0% {
-    top: 50vh; }
-  100% {
-    top: 57vh; } }
-
-@keyframes drag {
-  0% {
-    top: 50vh; }
-  100% {
-    top: 57vh; } }
-
-body {
-  margin: 0;
-  background-color: #E0E0E0;
-  font-family: 'Open Sans', sans-serif; }
-
-input:focus, select:focus, textarea:focus, button:focus {
-  outline: none; }
+    @media only screen and (min-width: 1025px) {
+      footer span:last-of-type {
+        font-size: 0.7vw; } }

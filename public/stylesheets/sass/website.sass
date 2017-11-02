@@ -11,3 +11,143 @@ body
 
 input:focus, select:focus, textarea:focus, button:focus
   outline: none
+
+header
+  background-color: white
+  transition: background .8s, box-shadow 1s
+  position: fixed
+  width: 100vw
+  z-index: 1
+  text-align: center
+  padding-top: 3vh
+  padding-bottom: 3vh
+  @include desktop
+    top: 0
+  img
+    width: 7vw
+    vertical-align: middle
+  .smallLogo
+    width: 7vw
+    vertical-align: middle
+    // margin-right: 4vw
+    @include desktop
+      width: 4vw
+      margin-left: 5vw
+  a
+    text-decoration: none
+    font-weight: 300
+    vertical-align: middle
+    font-size: 3.5vw
+    color: $siteMain
+    margin-right: 4.8vw
+    @include desktop
+      font-size: 1.7vw
+      margin-right: 12.6vw
+    @include tablet
+      font-size: 3.1vw
+      margin-right: 6.3vw
+  .headerButton
+    background-color: $siteMain
+    padding: 3vw
+    border-radius: 2.5vw
+    color: white
+    margin-right: 0vw
+    @include desktop
+      padding: 1.4vw
+      border-radius: 1.2vw
+      font-size: 1.3vw
+      padding-left: 1.4vw
+      padding-right: 1.4vw
+      padding-top: 2vh
+      padding-bottom: 2.4vh
+    @include tablet
+      padding: 2.1vw
+      border-radius: 1.7vw
+    img
+      width: 3vw
+      margin-right: 1vw
+      @include desktop
+        width: 1.3vw
+        margin-right: 2.1vw
+      @include tablet
+        width: 2.2vw
+    span
+      font-weight: 400
+      vertical-align: middle
+      @include desktop
+        font-weight: 300
+
+footer
+  height: fit-content
+  position: relative
+  img
+    width: 35vw
+    top: 2.5vh
+    position: relative
+    left: 5vw
+    @include desktop
+      width: 18vw
+  .link-holder
+    position: relative
+    right: 5vw
+    top: -2.5vh
+    a
+      text-decoration: none
+      color: white
+      display: block
+      font-weight: 300
+      text-align: right
+      font-size: 3.5vw
+      margin-bottom: 3vh
+      @include desktop
+        font-size: 1.6vw
+  .footer-icons
+    position: absolute
+    top: 9.5vh
+    @include desktop
+      top: 13.2vh
+    @include tablet
+      top: 11.5vh
+    .footer-login
+      display: inline
+      vertical-align: middle
+      img
+        width: 5vw
+        vertical-align: middle
+      p
+        display: inline
+    a
+      vertical-align: middle
+      &:first-of-type
+        img
+          width: 8vw
+          @include desktop
+            width: 3vw
+      &:nth-of-type(2)
+        img
+          width: 4vw
+          @include desktop
+            width: 1.6vw
+      &:nth-of-type(3)
+        img
+          width: 7vw
+          @include desktop
+            width: 3.7vw
+      &:nth-of-type(4)
+        img
+          width: 18vw
+          @include desktop
+            width: 7vw
+      img
+        vertical-align: middle
+        margin-right: 5vw
+        @include desktop
+          margin-right: 2vw
+  span:last-of-type
+    position: absolute
+    bottom: 5.5vh
+    color: white
+    font-size: 2.3vw
+    left: 5vw
+    @include desktop
+      font-size: 0.7vw
