@@ -31,7 +31,7 @@ html {
   .card {
     margin: 10vh 2.5% 0 2.5%;
     width: 20%;
-    padding-bottom: 2vh;
+    padding-bottom: 7vh;
     display: inline-block;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
@@ -61,7 +61,7 @@ html {
     padding: 3vh 0 1vh 2vw;
     height: 0;
     margin: 2vh 0;
-    font-size: 3.25vh;
+    font-size: 4vh;
     display: inline-block;
     color: white; } }
 
@@ -101,12 +101,12 @@ html {
 @media only screen and (min-width: 1025px) {
   .eliteList.list {
     padding-top: 0vh;
-    margin: 5vh 0 20vh 0; } }
+    margin: 5vh 0 19vh 0; } }
 
 @media only screen and (min-width: 1025px) {
   ul.proList.list {
     padding-top: 2vh;
-    margin: 9vh 0 18.5vh 0; } }
+    margin: 9vh 0 18vh 0; } }
 
 @media only screen and (min-width: 1025px) {
   ul.liteList.list {
@@ -145,15 +145,14 @@ html {
     padding: 1vw;
     border-radius: 1vw;
     color: white;
-    margin: 2vh 5vw 0 5vw;
+    margin: 2vh 22% 0 22.5%;
     text-decoration: none; }
     .cardButton img {
       width: 1vw;
-      margin-right: 1vw;
+      margin-right: .5vw;
       vertical-align: middle; }
     .cardButton span {
-      font-weight: 400;
-      vertical-align: middle; } }
+      font-weight: 400; } }
 
 .pricingTable {
   height: 54vh;
@@ -200,7 +199,7 @@ td {
 
 .add {
   clear: both;
-  margin: 25% 6% 0 7%;
+  margin: 35% 6% 0 7%;
   text-align: center; }
   @media only screen and (min-width: 1025px) {
     .add {
@@ -214,7 +213,9 @@ td {
     color: white; }
     @media only screen and (min-width: 1025px) {
       .add p {
-        margin-top: 0vh; } }
+        margin-top: 0vh;
+        font-size: 2.75vh;
+        font-weight: 600; } }
 
 .headings {
   background-color: transparent; }
@@ -263,7 +264,7 @@ tbody tr:nth-child(even) {
       .landing a {
         width: 50vw;
         margin-left: 25vw;
-        border: 0.2vw solid #150958 !important; } }
+        border: 0.3vw solid #150958 !important; } }
     .landing a img {
       width: 4vw;
       margin-right: 4vw;
@@ -279,7 +280,8 @@ tbody tr:nth-child(even) {
       font-size: 4.5vw; }
       @media only screen and (min-width: 1025px) {
         .landing a span {
-          font-size: 2.4vw; } }
+          font-size: 2.4vw;
+          font-weight: 400; } }
   .landing .chevron {
     width: 15vw;
     padding-top: 4vh;
