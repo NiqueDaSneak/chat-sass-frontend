@@ -764,6 +764,21 @@ input[type="submit"] {
   100% {
     top: 77vh; } }
 
+.display-none {
+  display: none; }
+
+.hide-orientation {
+  position: fixed;
+  background-color: #c1c1c1;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  top: 0; }
+  .hide-orientation img {
+    width: 30vw;
+    margin-left: 35vw;
+    margin-top: 30vh; }
+
 body {
   margin: 0;
   background-color: #E0E0E0;
