@@ -12,32 +12,44 @@ $(document).ready(() => {
     background: "url('/imgs/biz-photos/7.png')"
   })
 
+  // nature photo landing page
+  var naturePhoto = new Multiple({
+    selector: '.features',
+    background: "url('/imgs/nature-photos/8.jpg')"
+  })
+
+  // pricing page photo
+  var pricingPhoto = new Multiple({
+    selector: '.body-bg',
+    background: "url('/imgs/pricingSteps.jpg')"
+  })
+
+  // about page gradient
+  var aboutGrad = new Multiple({
+    selector: '.about-copy',
+    background: 'linear-gradient(#00AEEF, #150958)'
+  })
+
+  // customize page image
+  var customizeImg = new Multiple({
+    selector: '.customize-content',
+    background: "url('/imgs/nature-photos/10.png')"
+  })
+
+  // landing page landing screen css updates
   $('.logo').attr('src', '/imgs/new-logo.png').css('filter', 'drop-shadow(black 0px 0px 15px)')
   $('.subtitle').css('color', 'white').css('text-shadow', '0px 0px 60px black').css('font-weight', '400')
   $('.market h3').css('color', 'white').css('text-shadow', '0px 0px 60px black')
   $('.market h5').css('color', 'white').css('text-shadow', '0px 0px 60px black')
   $('.landing a').css('border', '#00AEEF solid .5vw').css('background-color', 'rgba(21, 9, 88, 0)')
 
-  var naturePhoto = new Multiple({
-    selector: '.features',
-    background: "url('/imgs/nature-photos/8.jpg')"
-  })
-
+  // landing page feature section css updates
   $('.features span:first-of-type').css('color', 'white')
   $('.features h5').css('color', 'white')
   $('.features h6').css('color', 'white').css('text-shadow', '0px 0px 60px black')
   $('.features p').css('color', 'white').css('text-shadow', '0px 0px 60px black')
 
-  var pricingPhoto = new Multiple({
-    selector: '.body-bg',
-    background: "url('/imgs/pricingSteps.jpg')"
-  })
-
-  var aboutGrad = new Multiple({
-    selector: '.about-copy',
-    background: 'linear-gradient(#00AEEF, #150958)'
-  })
-
+  // scroll listener for checking if elements on about us page are in viewport
   window.addEventListener('scroll', _.throttle(() => {
     $('.scroll-indicator').remove()
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
@@ -75,6 +87,7 @@ $(document).ready(() => {
     }
   }, 1000))
 
+  // is visible logic
   $.fn.isOnScreen = function() {
     var win = $(window)
     var viewport = {
