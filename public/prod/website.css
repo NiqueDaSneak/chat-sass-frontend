@@ -797,8 +797,11 @@ input[type="submit"] {
 
 .customize-content {
   color: #150958;
-  text-shadow: 0px 0px 60px white; }
-  .customize-content span {
+  text-shadow: 0px 0px 60px white;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content; }
+  .customize-content .bullets {
     display: block;
     width: 70vw;
     margin-left: 15vw;
@@ -806,9 +809,15 @@ input[type="submit"] {
     margin-bottom: 2vh;
     font-size: 5.4vw;
     font-weight: 400; }
-    .customize-content span:first-of-type {
+    @media only screen and (min-width: 1025px) {
+      .customize-content .bullets {
+        font-size: 2.7vw; } }
+    .customize-content .bullets:first-of-type {
       padding-top: 18vh; }
-    .customize-content span:last-of-type {
+      @media only screen and (min-width: 1025px) {
+        .customize-content .bullets:first-of-type {
+          padding-top: 28vh; } }
+    .customize-content .bullets:last-of-type {
       margin-bottom: 6vh; }
   .customize-content p {
     width: 90vw;
@@ -816,6 +825,45 @@ input[type="submit"] {
     font-size: 4.6vw;
     font-weight: 300;
     margin-bottom: 5vh; }
+    @media only screen and (min-width: 1025px) {
+      .customize-content p {
+        font-size: 1.7vw; } }
+  .customize-content .btn-holder-customize {
+    margin-bottom: 7vh;
+    margin-top: 7vh; }
+    @media only screen and (min-width: 1025px) {
+      .customize-content .btn-holder-customize {
+        margin-bottom: 17vh;
+        margin-top: 10vh; } }
+    .customize-content .btn-holder-customize a {
+      background-color: #150958;
+      text-decoration: none;
+      width: 0vw;
+      padding: 2vh;
+      color: white;
+      margin-left: 8vw;
+      border-radius: 1.5vw; }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .customize-content .btn-holder-customize a {
+          padding: 3.2vh; } }
+      @media only screen and (min-width: 1025px) {
+        .customize-content .btn-holder-customize a {
+          border-radius: 0.8vw;
+          margin-left: 22.5vw;
+          padding: 3.1vh; } }
+      .customize-content .btn-holder-customize a img {
+        width: 4vw;
+        vertical-align: middle; }
+        @media only screen and (min-width: 1025px) {
+          .customize-content .btn-holder-customize a img {
+            width: 1.7vw; } }
+      .customize-content .btn-holder-customize a .btn-copy {
+        vertical-align: middle;
+        font-size: 4vw;
+        margin-left: 2vw; }
+        @media only screen and (min-width: 1025px) {
+          .customize-content .btn-holder-customize a .btn-copy {
+            font-size: 1.6vw; } }
 
 .display-none {
   display: none; }
