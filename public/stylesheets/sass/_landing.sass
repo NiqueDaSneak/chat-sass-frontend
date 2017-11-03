@@ -25,15 +25,16 @@
     padding-bottom: 2vh
     border-radius: 2vw
     @include desktop
-      width: 50vw
-      margin-left: 25vw
+      width: 28vw
+      margin-left: 36vw
       border: 0.3vw solid $siteMain !important
+      border-radius: 1.1vw
     img
       width: 4vw
       margin-right: 4vw
       vertical-align: middle
       @include desktop
-        width: 2.3vw
+        width: 1.4vw
         margin-right: 2vw
     span
       vertical-align: middle
@@ -41,7 +42,7 @@
       font-weight: 300
       font-size: 4.5vw
       @include desktop
-        font-size: 2.4vw
+        font-size: 1.3vw
         font-weight: 400
 
   .chevron
@@ -177,12 +178,12 @@ input[type="submit"]
 
 .blue
   color: white
-  height: 275vh
+  height: 404vh
   @include desktop
-    height: 255vh
+    height: 384vh
     padding-top: 25vh
   @include tablet
-    height: 270vh
+    height: 417vh
   .three-phones
     padding-top: 15vh
     @include desktop
@@ -371,3 +372,32 @@ input[type="submit"]
   @include tablet
     left: -4.3vw
     margin-top: 14.2vh
+
+.steps
+  .a-step
+    margin-bottom: 10vh
+    width: 50vw
+    display: inline-block
+    margin-left: 25vw
+    text-align: center
+    &:first-of-type
+      margin-top: 15vh
+    &:last-of-type
+      margin-bottom: 25vh
+    img
+      width: 18vw
+      @include desktop
+        width: 8vw
+    span
+      display: block
+      &:first-of-type
+        font-weight: 700
+        font-size: 7vw
+        margin-top: 2vh
+        @include desktop
+          font-size: 3.4vw
+      &:last-of-type
+        font-weight: 300
+        font-size: 4vw
+        @include desktop
+          font-size: 2vw
