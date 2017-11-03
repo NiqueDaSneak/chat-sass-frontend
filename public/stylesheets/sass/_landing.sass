@@ -178,16 +178,15 @@ input[type="submit"]
 
 .blue
   color: white
-  height: 404vh
+  height: 374vh
   @include desktop
     height: 384vh
-    padding-top: 25vh
   @include tablet
-    height: 417vh
+    height: 397vh
   .three-phones
     padding-top: 15vh
     @include desktop
-      padding-top: 5vh
+      padding-top: 15vh
       width: 76vw
       margin-left: 12vw
     .device
@@ -219,7 +218,7 @@ input[type="submit"]
           @include desktop
             font-size: 2vw
   .why
-    margin-top: 26vh
+    margin-top: 6vh
     font-size: 6.8vw
     font-weight: 600
     width: 63vw
@@ -290,8 +289,6 @@ input[type="submit"]
   background-size: cover
   background-position: center
   background-attachment: fixed
-  @include desktop
-    padding-bottom: 20vh
   span:first-of-type
     padding: 10vh 2vw 0vh 5vw
     margin-bottom: 1vh
@@ -374,6 +371,13 @@ input[type="submit"]
     margin-top: 14.2vh
 
 .steps
+  p
+    font-size: 6vw
+    text-align: center
+    margin-top: 12vh
+    font-weight: 600
+    @include desktop
+      font-size: 2.5vw
   .a-step
     margin-bottom: 10vh
     width: 50vw
@@ -381,9 +385,7 @@ input[type="submit"]
     margin-left: 25vw
     text-align: center
     &:first-of-type
-      margin-top: 15vh
-    &:last-of-type
-      margin-bottom: 25vh
+      margin-top: 2vh
     img
       width: 18vw
       @include desktop

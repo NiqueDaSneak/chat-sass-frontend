@@ -440,19 +440,18 @@ input[type="submit"] {
 
 .blue {
   color: white;
-  height: 404vh; }
+  height: 374vh; }
   @media only screen and (min-width: 1025px) {
     .blue {
-      height: 384vh;
-      padding-top: 25vh; } }
+      height: 384vh; } }
   @media only screen and (max-width: 1024px) and (min-width: 415px) {
     .blue {
-      height: 417vh; } }
+      height: 397vh; } }
   .blue .three-phones {
     padding-top: 15vh; }
     @media only screen and (min-width: 1025px) {
       .blue .three-phones {
-        padding-top: 5vh;
+        padding-top: 15vh;
         width: 76vw;
         margin-left: 12vw; } }
     .blue .three-phones .device {
@@ -486,7 +485,7 @@ input[type="submit"] {
           .blue .three-phones .content-holder span:last-of-type {
             font-size: 2vw; } }
   .blue .why {
-    margin-top: 26vh;
+    margin-top: 6vh;
     font-size: 6.8vw;
     font-weight: 600;
     width: 63vw;
@@ -569,9 +568,6 @@ input[type="submit"] {
   background-size: cover;
   background-position: center;
   background-attachment: fixed; }
-  @media only screen and (min-width: 1025px) {
-    .features {
-      padding-bottom: 20vh; } }
   .features span:first-of-type {
     padding: 10vh 2vw 0vh 5vw;
     margin-bottom: 1vh;
@@ -665,6 +661,15 @@ input[type="submit"] {
       left: -4.3vw;
       margin-top: 14.2vh; } }
 
+.steps p {
+  font-size: 6vw;
+  text-align: center;
+  margin-top: 12vh;
+  font-weight: 600; }
+  @media only screen and (min-width: 1025px) {
+    .steps p {
+      font-size: 2.5vw; } }
+
 .steps .a-step {
   margin-bottom: 10vh;
   width: 50vw;
@@ -672,9 +677,7 @@ input[type="submit"] {
   margin-left: 25vw;
   text-align: center; }
   .steps .a-step:first-of-type {
-    margin-top: 15vh; }
-  .steps .a-step:last-of-type {
-    margin-bottom: 25vh; }
+    margin-top: 2vh; }
   .steps .a-step img {
     width: 18vw; }
     @media only screen and (min-width: 1025px) {
