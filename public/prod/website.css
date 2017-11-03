@@ -795,6 +795,28 @@ input[type="submit"] {
   100% {
     top: 77vh; } }
 
+.customize-content {
+  color: #150958;
+  text-shadow: 0px 0px 60px white; }
+  .customize-content span {
+    display: block;
+    width: 70vw;
+    margin-left: 15vw;
+    text-align: center;
+    margin-bottom: 2vh;
+    font-size: 5.4vw;
+    font-weight: 400; }
+    .customize-content span:first-of-type {
+      padding-top: 18vh; }
+    .customize-content span:last-of-type {
+      margin-bottom: 6vh; }
+  .customize-content p {
+    width: 90vw;
+    margin-left: 5vw;
+    font-size: 4.6vw;
+    font-weight: 300;
+    margin-bottom: 5vh; }
+
 .display-none {
   display: none; }
 
