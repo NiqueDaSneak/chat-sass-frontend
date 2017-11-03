@@ -20,11 +20,11 @@ $(document).ready(() => {
 
   var naturePhoto = new Multiple({
     selector: '.features',
-    background: "url('/imgs/nature-photos/9.png')"
+    background: "url('/imgs/nature-photos/8.jpg')"
   })
 
-  $('.features span:first-of-type').css('color', '#00AEEF')
-  $('.features h5').css('color', '#00AEEF')
+  $('.features span:first-of-type').css('color', 'white')
+  $('.features h5').css('color', 'white')
   $('.features h6').css('color', 'white').css('text-shadow', '0px 0px 60px black')
   $('.features p').css('color', 'white').css('text-shadow', '0px 0px 60px black')
 
