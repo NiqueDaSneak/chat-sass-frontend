@@ -175,6 +175,10 @@ app.get('/privacy-policy', (req, res) => {
   res.sendFile(path.join(__dirname + '/views/privacy-policy.html'))
 })
 
+app.get('/customize', (req, res) => {
+  res.sendFile(path.join(__dirname + '/views/customize.html'))
+})
+
 app.get('/choose-page/:userID/:userAccessToken', (req, res, next) => {
   res.sendFile(path.join(__dirname + '/views/pages.html'))
 })
