@@ -262,16 +262,17 @@ tbody tr:nth-child(even) {
     border-radius: 2vw; }
     @media only screen and (min-width: 1025px) {
       .landing a {
-        width: 50vw;
-        margin-left: 25vw;
-        border: 0.3vw solid #150958 !important; } }
+        width: 28vw;
+        margin-left: 36vw;
+        border: 0.3vw solid #150958 !important;
+        border-radius: 1.1vw; } }
     .landing a img {
       width: 4vw;
       margin-right: 4vw;
       vertical-align: middle; }
       @media only screen and (min-width: 1025px) {
         .landing a img {
-          width: 2.3vw;
+          width: 1.4vw;
           margin-right: 2vw; } }
     .landing a span {
       vertical-align: middle;
@@ -280,7 +281,7 @@ tbody tr:nth-child(even) {
       font-size: 4.5vw; }
       @media only screen and (min-width: 1025px) {
         .landing a span {
-          font-size: 2.4vw;
+          font-size: 1.3vw;
           font-weight: 400; } }
   .landing .chevron {
     width: 15vw;
@@ -439,14 +440,14 @@ input[type="submit"] {
 
 .blue {
   color: white;
-  height: 275vh; }
+  height: 404vh; }
   @media only screen and (min-width: 1025px) {
     .blue {
-      height: 255vh;
+      height: 384vh;
       padding-top: 25vh; } }
   @media only screen and (max-width: 1024px) and (min-width: 415px) {
     .blue {
-      height: 270vh; } }
+      height: 417vh; } }
   .blue .three-phones {
     padding-top: 15vh; }
     @media only screen and (min-width: 1025px) {
@@ -663,6 +664,37 @@ input[type="submit"] {
     .gif2 {
       left: -4.3vw;
       margin-top: 14.2vh; } }
+
+.steps .a-step {
+  margin-bottom: 10vh;
+  width: 50vw;
+  display: inline-block;
+  margin-left: 25vw;
+  text-align: center; }
+  .steps .a-step:first-of-type {
+    margin-top: 15vh; }
+  .steps .a-step:last-of-type {
+    margin-bottom: 25vh; }
+  .steps .a-step img {
+    width: 18vw; }
+    @media only screen and (min-width: 1025px) {
+      .steps .a-step img {
+        width: 8vw; } }
+  .steps .a-step span {
+    display: block; }
+    .steps .a-step span:first-of-type {
+      font-weight: 700;
+      font-size: 7vw;
+      margin-top: 2vh; }
+      @media only screen and (min-width: 1025px) {
+        .steps .a-step span:first-of-type {
+          font-size: 3.4vw; } }
+    .steps .a-step span:last-of-type {
+      font-weight: 300;
+      font-size: 4vw; }
+      @media only screen and (min-width: 1025px) {
+        .steps .a-step span:last-of-type {
+          font-size: 2vw; } }
 
 .about-copy {
   color: white;
