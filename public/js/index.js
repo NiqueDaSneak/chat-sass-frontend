@@ -37,11 +37,11 @@ $(document).ready(() => {
   })
 
   // landing page landing screen css updates
-  $('.logo').attr('src', '/imgs/new-logo.png').css('filter', 'drop-shadow(black 0px 0px 15px)')
-  $('.subtitle').css('color', 'white').css('text-shadow', '0px 0px 60px black').css('font-weight', '400')
-  $('.market h3').css('color', 'white').css('text-shadow', '0px 0px 60px black')
-  $('.market h5').css('color', 'white').css('text-shadow', '0px 0px 60px black')
-  $('.landing a').css('border', '#00AEEF solid .5vw').css('background-color', 'rgba(21, 9, 88, 0)')
+  // $('.logo').attr('src', '/imgs/new-logo.png').css('filter', 'drop-shadow(black 0px 0px 15px)')
+  // $('.subtitle').css('color', 'white').css('text-shadow', '0px 0px 60px black').css('font-weight', '400')
+  // $('.market h3').css('color', 'white').css('text-shadow', '0px 0px 60px black')
+  // $('.market h5').css('color', 'white').css('text-shadow', '0px 0px 60px black')
+  // $('.landing a').css('border', '#00AEEF solid .5vw').css('background-color', 'rgba(21, 9, 88, 0)')
 
   // landing page feature section css updates
   $('.features span:first-of-type').css('color', 'white')

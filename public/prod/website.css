@@ -235,16 +235,15 @@ tbody tr:nth-child(even) {
 
 .landing {
   color: #474747;
-  height: 100vh;
+  height: 200vh;
   background-size: cover;
   background-position-x: center; }
-  @media only screen and (min-width: 1025px) {
-    .landing {
-      height: 110vh; } }
   .landing .logo {
     width: 70vw;
     margin-left: 15vw;
-    margin-top: 17vh; }
+    margin-top: 17vh;
+    -webkit-filter: drop-shadow(black 0px 0px 15px);
+            filter: drop-shadow(black 0px 0px 15px); }
     @media only screen and (min-width: 1025px) {
       .landing .logo {
         margin-top: 24vh;
@@ -256,10 +255,12 @@ tbody tr:nth-child(even) {
     width: 80vw;
     margin-left: 10vw;
     text-align: center;
-    background-color: #150958;
+    background-color: rgba(21, 9, 88, 0);
     padding-top: 2vh;
     padding-bottom: 2vh;
-    border-radius: 2vw; }
+    border-radius: 2vw;
+    border: 0.5vw solid #00AEEF;
+    margin-bottom: 14vh; }
     @media only screen and (min-width: 1025px) {
       .landing a {
         width: 28vw;
@@ -278,18 +279,89 @@ tbody tr:nth-child(even) {
       vertical-align: middle;
       color: #150958;
       font-weight: 300;
-      font-size: 4.5vw; }
+      font-size: 4.5vw;
+      color: white; }
       @media only screen and (min-width: 1025px) {
         .landing a span {
           font-size: 1.3vw;
           font-weight: 400; } }
-  .landing .chevron {
+  .landing .soon {
+    font-size: 4vw;
+    color: white;
+    padding-top: 0vh;
+    margin-top: 0;
+    padding-left: 51vw; }
+    @media only screen and (min-width: 1025px) {
+      .landing .soon {
+        padding-left: 51.3vw;
+        font-size: 1.7vw; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .landing .soon {
+        font-size: 3.1vw;
+        padding-left: 53.6vw; } }
+  .landing h3 {
+    font-size: 6.5vw;
+    font-weight: 700;
+    color: white;
+    text-align: left;
+    width: 80vw;
+    padding: 10vh 0vw 5vh 5vw; }
+    @media only screen and (min-width: 1025px) {
+      .landing h3 {
+        font-size: 2.2vw;
+        width: 40vw;
+        padding: 10vh 0vw 5vh 15vw; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .landing h3 {
+        font-size: 5.2vw; } }
+  .landing h5 {
+    font-size: 6.5vw;
+    font-weight: 400;
+    color: white;
+    text-align: right;
+    width: 80vw;
+    padding: 0vh 0vw 2vh 15vw; }
+    @media only screen and (min-width: 1025px) {
+      .landing h5 {
+        font-size: 2.2vw;
+        width: 60vw;
+        padding: 0vh 0vw 2vh 30vw; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .landing h5 {
+        font-size: 5.2vw; } }
+
+.social {
+  padding-top: 4vh;
+  position: top;
+  max-width: auto;
+  text-align: center; }
+  @media only screen and (min-width: 1025px) {
+    .social {
+      height: 12vh; } }
+  .social .socialIcons {
+    display: inline;
+    width: 12vw;
+    vertical-align: middle; }
+    @media only screen and (min-width: 1025px) {
+      .social .socialIcons {
+        width: 5vw;
+        padding-bottom: 0; } }
+    .social .socialIcons:first-of-type {
+      width: 17vw;
+      margin-right: 10vw;
+      -webkit-animation: pulse 1.4s infinite ease-in-out;
+              animation: pulse 1.4s infinite ease-in-out; }
+      @media only screen and (min-width: 1025px) {
+        .social .socialIcons:first-of-type {
+          width: 7vw;
+          margin-right: 7vw; } }
+  .social .chevron {
     width: 15vw;
     padding-top: 4vh;
     margin-left: 42.5vw;
     margin-top: 7vh; }
     @media only screen and (min-width: 1025px) {
-      .landing .chevron {
+      .social .chevron {
         width: 8vw;
         padding-top: 2vh;
         padding-bottom: 3vh; } }
@@ -314,9 +386,10 @@ input[type="submit"] {
   margin: 10vh 0 10vh 20vw;
   width: 60vw;
   font-size: 6vw;
-  font-weight: 300;
-  color: #150958;
-  text-align: center; }
+  font-weight: 400;
+  color: white;
+  text-align: center;
+  text-shadow: black 0px 0px 60px; }
   @media only screen and (min-width: 1025px) {
     .subtitle {
       margin-left: 35vw;
@@ -331,36 +404,6 @@ input[type="submit"] {
   @media only screen and (min-width: 1025px) {
     .market {
       padding-bottom: 15vh; } }
-  .market h3 {
-    font-size: 6.5vw;
-    font-weight: 700;
-    color: #150958;
-    text-align: left;
-    width: 80vw;
-    padding: 10vh 0vw 5vh 5vw; }
-    @media only screen and (min-width: 1025px) {
-      .market h3 {
-        font-size: 2.2vw;
-        width: 40vw;
-        padding: 10vh 0vw 5vh 15vw; } }
-    @media only screen and (max-width: 1024px) and (min-width: 415px) {
-      .market h3 {
-        font-size: 5.2vw; } }
-  .market h5 {
-    font-size: 6.5vw;
-    font-weight: 400;
-    color: #150958;
-    text-align: right;
-    width: 80vw;
-    padding: 0vh 0vw 2vh 15vw; }
-    @media only screen and (min-width: 1025px) {
-      .market h5 {
-        font-size: 2.2vw;
-        width: 60vw;
-        padding: 0vh 0vw 2vh 30vw; } }
-    @media only screen and (max-width: 1024px) and (min-width: 415px) {
-      .market h5 {
-        font-size: 5.2vw; } }
   .market p {
     font-weight: 200;
     font-size: 6vw;
@@ -374,41 +417,6 @@ input[type="submit"] {
         font-size: 4vh;
         width: 55vw;
         font-weight: 300; } }
-  .market .soon {
-    font-size: 4vw;
-    color: white;
-    padding-top: 0vh;
-    margin-top: 0;
-    padding-right: 23vw; }
-    @media only screen and (min-width: 1025px) {
-      .market .soon {
-        font-size: 1.2vw;
-        padding-right: 39vw; } }
-  .market .social {
-    padding-top: 4vh;
-    position: top;
-    max-width: auto;
-    text-align: center; }
-    @media only screen and (min-width: 1025px) {
-      .market .social {
-        height: 12vh; } }
-  .market .socialIcons {
-    display: inline;
-    width: 12vw;
-    vertical-align: middle; }
-    @media only screen and (min-width: 1025px) {
-      .market .socialIcons {
-        width: 5vw;
-        padding-bottom: 0; } }
-    .market .socialIcons:first-of-type {
-      width: 17vw;
-      margin-right: 10vw;
-      -webkit-animation: pulse 1.4s infinite ease-in-out;
-              animation: pulse 1.4s infinite ease-in-out; }
-      @media only screen and (min-width: 1025px) {
-        .market .socialIcons:first-of-type {
-          width: 7vw;
-          margin-right: 7vw; } }
 
 @-webkit-keyframes pulse {
   0% {

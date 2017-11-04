@@ -1,15 +1,14 @@
 .landing
   color: $siteGrey
-  height: 100vh
+  height: 200vh
   // background-image: url('/imgs/landing-bg.jpg')
   background-size: cover
   background-position-x: center
-  @include desktop
-    height: 110vh
   .logo
     width: 70vw
     margin-left: 15vw
     margin-top: 17vh
+    filter: drop-shadow(black 0px 0px 15px)
     @include desktop
       margin-top: 24vh
       width: 28vw
@@ -20,10 +19,12 @@
     width: 80vw
     margin-left: 10vw
     text-align: center
-    background-color: $siteMain
+    background-color: rgba(21, 9, 88, 0)
     padding-top: 2vh
     padding-bottom: 2vh
     border-radius: 2vw
+    border: 0.5vw solid $fifthMain
+    margin-bottom: 14vh
     @include desktop
       width: 28vw
       margin-left: 36vw
@@ -41,9 +42,73 @@
       color: $siteMain
       font-weight: 300
       font-size: 4.5vw
+      color: white
       @include desktop
         font-size: 1.3vw
         font-weight: 400
+  .soon
+    font-size: 4vw
+    color: white
+    padding-top: 0vh
+    margin-top: 0
+    padding-left: 51vw
+    @include desktop
+      padding-left: 51.3vw
+      font-size: 1.7vw
+    @include tablet
+      font-size: 3.1vw
+      padding-left: 53.6vw
+  h3
+    font-size: 6.5vw
+    font-weight: 700
+    color: white
+    text-align: left
+    width: 80vw
+    padding: 10vh 0vw 5vh 5vw
+    @include desktop
+      font-size: 2.2vw
+      width: 40vw
+      padding: 10vh 0vw 5vh 15vw
+    @include tablet
+      font-size: 5.2vw
+  h5
+    font-size: 6.5vw
+    font-weight: 400
+    color: white
+    text-align: right
+    width: 80vw
+    padding: 0vh 0vw 2vh 15vw
+    @include desktop
+      font-size: 2.2vw
+      width: 60vw
+      padding: 0vh 0vw 2vh 30vw
+    @include tablet
+      font-size: 5.2vw
+
+//   @include desktop
+//     font-size: 1.2vw
+//     padding-right: 39vw
+.social
+  padding-top: 4vh
+  position: top
+  max-width: auto
+  text-align: center
+  @include desktop
+    height: 12vh
+  .socialIcons
+    display: inline
+    width: 12vw
+    vertical-align: middle
+    @include desktop
+      width: 5vw
+      padding-bottom: 0
+    &:first-of-type
+      width: 17vw
+      margin-right: 10vw
+      animation: pulse 1.4s infinite ease-in-out
+      @include desktop
+        width: 7vw
+        margin-right: 7vw
 
   .chevron
     width: 15vw
@@ -75,9 +140,10 @@ input[type="submit"]
   margin: 10vh 0 10vh 20vw
   width: 60vw
   font-size: 6vw
-  font-weight: 300
-  color: $siteMain
+  font-weight: 400
+  color: white
   text-align: center
+  text-shadow: black 0px 0px 60px
   @include desktop
     margin-left: 35vw
     width: 30vw
@@ -89,32 +155,7 @@ input[type="submit"]
   height: 100vh
   @include desktop
     padding-bottom: 15vh
-  h3
-    font-size: 6.5vw
-    font-weight: 700
-    color: $siteMain
-    text-align: left
-    width: 80vw
-    padding: 10vh 0vw 5vh 5vw
-    @include desktop
-      font-size: 2.2vw
-      width: 40vw
-      padding: 10vh 0vw 5vh 15vw
-    @include tablet
-      font-size: 5.2vw
-  h5
-    font-size: 6.5vw
-    font-weight: 400
-    color: $siteMain
-    text-align: right
-    width: 80vw
-    padding: 0vh 0vw 2vh 15vw
-    @include desktop
-      font-size: 2.2vw
-      width: 60vw
-      padding: 0vh 0vw 2vh 30vw
-    @include tablet
-      font-size: 5.2vw
+
   p
     font-weight: 200
     font-size: 6vw
@@ -127,36 +168,28 @@ input[type="submit"]
       font-size: 4vh
       width: 55vw
       font-weight: 300
-  .soon
-    font-size: 4vw
-    color: white
-    padding-top: 0vh
-    margin-top: 0
-    padding-right: 23vw
-    @include desktop
-      font-size: 1.2vw
-      padding-right: 39vw
-  .social
-    padding-top: 4vh
-    position: top
-    max-width: auto
-    text-align: center
-    @include desktop
-      height: 12vh
-  .socialIcons
-    display: inline
-    width: 12vw
-    vertical-align: middle
-    @include desktop
-      width: 5vw
-      padding-bottom: 0
-    &:first-of-type
-      width: 17vw
-      margin-right: 10vw
-      animation: pulse 1.4s infinite ease-in-out
-      @include desktop
-        width: 7vw
-        margin-right: 7vw
+
+  // .social
+  //   padding-top: 4vh
+  //   position: top
+  //   max-width: auto
+  //   text-align: center
+  //   @include desktop
+  //     height: 12vh
+  // .socialIcons
+  //   display: inline
+  //   width: 12vw
+  //   vertical-align: middle
+  //   @include desktop
+  //     width: 5vw
+  //     padding-bottom: 0
+  //   &:first-of-type
+  //     width: 17vw
+  //     margin-right: 10vw
+  //     animation: pulse 1.4s infinite ease-in-out
+  //     @include desktop
+  //       width: 7vw
+  //       margin-right: 7vw
 
 
 @keyframes pulse
