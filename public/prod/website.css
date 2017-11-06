@@ -237,6 +237,9 @@ tbody tr:nth-child(even) {
   color: #474747;
   background-size: cover;
   background-position-x: center; }
+  @media only screen and (min-width: 1025px) {
+    .landing {
+      height: 200vh; } }
   .landing .logo {
     width: 70vw;
     margin-left: 15vw;
@@ -637,35 +640,35 @@ input[type="submit"] {
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
   position: absolute;
-  right: -5.3vw;
-  width: 53.5vw;
-  margin-top: 12vh; }
+  right: -6.9vw;
+  width: 57.2vw;
+  margin-top: 11.2vh; }
   @media only screen and (min-width: 1025px) {
     .gif1 {
-      right: 8.6vw;
-      width: 23.3vw;
-      margin-top: 14.6vh; } }
+      right: 8vw;
+      width: 24.6vw;
+      margin-top: 15.9vh; } }
   @media only screen and (max-width: 1024px) and (min-width: 415px) {
     .gif1 {
-      right: -4.8vw;
-      margin-top: 14vh; } }
+      right: -6.5vw;
+      margin-top: 14.9vh; } }
 
 .gif2 {
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
   position: absolute;
-  left: -4.1vw;
-  width: 53.5vw;
-  margin-top: 12vh; }
+  left: -6.1vw;
+  width: 57.2vw;
+  margin-top: 11.2vh; }
   @media only screen and (min-width: 1025px) {
     .gif2 {
-      width: 23.3vw;
-      margin-top: 14.6vh;
-      left: 12.9vw; } }
+      width: 24.6vw;
+      margin-top: 15.8vh;
+      left: 12.2vw; } }
   @media only screen and (max-width: 1024px) and (min-width: 415px) {
     .gif2 {
-      left: -4.3vw;
-      margin-top: 14.2vh; } }
+      left: -6.1vw;
+      margin-top: 14.9vh; } }
 
 .steps p {
   font-size: 6vw;
