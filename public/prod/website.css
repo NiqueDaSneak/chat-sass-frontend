@@ -235,7 +235,6 @@ tbody tr:nth-child(even) {
 
 .landing {
   color: #474747;
-  height: 200vh;
   background-size: cover;
   background-position-x: center; }
   .landing .logo {
@@ -447,8 +446,7 @@ input[type="submit"] {
   background-color: black; }
 
 .blue {
-  color: white;
-  height: 384vh; }
+  color: white; }
   @media only screen and (min-width: 1025px) {
     .blue {
       height: 384vh; } }
