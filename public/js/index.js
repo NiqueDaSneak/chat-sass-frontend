@@ -1,10 +1,10 @@
 $(document).ready(() => {
 
   // blue gradient background
-  var blueGradient = new Multiple({
-    selector: '.grad',
-    background: 'radial-gradient(#00AEEF, #150958)'
-  })
+  // var blueGradient = new Multiple({
+  //   selector: '.grad',
+  //   background: 'radial-gradient(#00AEEF, #150958)'
+  // })
 
   // about page gradient
   var aboutGrad = new Multiple({

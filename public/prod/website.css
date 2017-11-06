@@ -710,6 +710,9 @@ input[type="submit"] {
         .steps .a-step span:last-of-type {
           font-size: 2vw; } }
 
+.grad {
+  background-color: #150958; }
+
 .about-copy {
   color: white;
   font-size: 4.5vw; }
