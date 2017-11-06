@@ -450,8 +450,7 @@ input[type="submit"] {
   background-color: black; }
 
 .blue {
-  color: white;
-  padding-bottom: 10vh; }
+  color: white; }
   @media only screen and (min-width: 1025px) {
     .blue {
       height: 384vh; } }
@@ -517,6 +516,8 @@ input[type="submit"] {
   .blue .stats {
     margin-bottom: 0vh;
     padding-top: 15vh; }
+    .blue .stats:last-of-type {
+      padding-bottom: 10vh; }
     @media only screen and (min-width: 1025px) {
       .blue .stats {
         padding-top: 18vh; } }
