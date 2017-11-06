@@ -8,7 +8,7 @@ $(document).ready(() => {
         }
       })
     }
-  }, 1000))
+  }, 500))
 
 
   // is visible logic
