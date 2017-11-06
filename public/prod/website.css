@@ -448,7 +448,7 @@ input[type="submit"] {
 
 .blue {
   color: white;
-  height: 374vh; }
+  height: 384vh; }
   @media only screen and (min-width: 1025px) {
     .blue {
       height: 384vh; } }
