@@ -21,7 +21,7 @@ $(document).ready(() => {
   // pricing page photo
   var pricingPhoto = new Multiple({
     selector: '.body-bg',
-    background: "url('/imgs/pricingSteps.jpg')"
+    background: "url('/imgs/pricingSteps.png')"
   })
 
   // about page gradient
