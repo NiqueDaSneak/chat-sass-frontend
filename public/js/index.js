@@ -6,42 +6,92 @@ $(document).ready(() => {
     background: 'radial-gradient(#00AEEF, #150958)'
   })
 
-  // business photo in first 2 sections
-  var bizPhoto = new Multiple({
-    selector: '.biz-photo',
-    background: "url('/imgs/biz-photos/7.png')"
-  })
-
-  // nature photo landing page
-  var naturePhoto = new Multiple({
-    selector: '.features',
-    background: "url('/imgs/nature-photos/8.jpg')"
-  })
-
-  // pricing page photo
-  var pricingPhoto = new Multiple({
-    selector: '.body-bg',
-    background: "url('/imgs/pricingSteps.png')"
-  })
-
   // about page gradient
   var aboutGrad = new Multiple({
     selector: '.about-copy',
     background: 'linear-gradient(#00AEEF, #150958)'
   })
 
-  // customize page image
-  var customizeImg = new Multiple({
-    selector: '.customize-content',
-    background: "url('/imgs/nature-photos/10.png')"
-  })
+  if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 
-  // landing page landing screen css updates
-  // $('.logo').attr('src', '/imgs/new-logo.png').css('filter', 'drop-shadow(black 0px 0px 15px)')
-  // $('.subtitle').css('color', 'white').css('text-shadow', '0px 0px 60px black').css('font-weight', '400')
-  // $('.market h3').css('color', 'white').css('text-shadow', '0px 0px 60px black')
-  // $('.market h5').css('color', 'white').css('text-shadow', '0px 0px 60px black')
-  // $('.landing a').css('border', '#00AEEF solid .5vw').css('background-color', 'rgba(21, 9, 88, 0)')
+    // business photo in first 2 sections
+    var bizPhoto = new Multiple({
+      selector: '.biz-photo',
+      background: "url('/imgs/biz-photos/7-mobile.jpg')"
+    })
+
+    // nature photo landing page
+    var naturePhoto = new Multiple({
+      selector: '.features',
+      background: "url('/imgs/nature-photos/8-mobile.jpg')"
+    })
+
+    // pricing page photo
+    var pricingPhoto = new Multiple({
+      selector: '.body-bg',
+      background: "url('/imgs/pricingSteps-mobile.jpg')"
+    })
+
+    // customize page image
+    var customizeImg = new Multiple({
+      selector: '.customize-content',
+      background: "url('/imgs/nature-photos/10-mobile.jpg')"
+    })
+
+  } else if ( /iPad/i.test(navigator.userAgent) ) {
+
+    // business photo in first 2 sections
+    var bizPhoto = new Multiple({
+      selector: '.biz-photo',
+      background: "url('/imgs/biz-photos/7-tab.jpg')"
+    })
+
+    // nature photo landing page
+    var naturePhoto = new Multiple({
+      selector: '.features',
+      background: "url('/imgs/nature-photos/8-tab.jpg')"
+    })
+
+    // pricing page photo
+    var pricingPhoto = new Multiple({
+      selector: '.body-bg',
+      background: "url('/imgs/pricingSteps-tab.jpg')"
+    })
+
+    // customize page image
+    var customizeImg = new Multiple({
+      selector: '.customize-content',
+      background: "url('/imgs/nature-photos/10-tab.jpg')"
+    })
+
+  } else {
+
+    // business photo in first 2 sections
+    var bizPhoto = new Multiple({
+      selector: '.biz-photo',
+      background: "url('/imgs/biz-photos/7.png')"
+    })
+
+    // nature photo landing page
+    var naturePhoto = new Multiple({
+      selector: '.features',
+      background: "url('/imgs/nature-photos/8.jpg')"
+    })
+
+    // pricing page photo
+    var pricingPhoto = new Multiple({
+      selector: '.body-bg',
+      background: "url('/imgs/pricingSteps.png')"
+    })
+
+    // customize page image
+    var customizeImg = new Multiple({
+      selector: '.customize-content',
+      background: "url('/imgs/nature-photos/10.png')"
+    })
+  }
+
+
 
   // landing page feature section css updates
   $('.features span:first-of-type').css('color', 'white')
