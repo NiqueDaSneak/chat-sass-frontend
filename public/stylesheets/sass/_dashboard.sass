@@ -219,8 +219,21 @@ header
   margin-left: 68vw
   font-weight: 300
   box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75)
+  @include desktop
+    width: 10vw
+    margin-left: 84vw
+    text-align: center
+    border-radius: 1.1vw
+    padding-top: 0.5vh
+    padding-bottom: 1vh
+    padding-left: 1vw
+    padding-right: 1vw
   img
     width: 6vw
     vertical-align: middle
+    @include desktop
+      width: 1.4vw
   span
     vertical-align: middle
+    @include desktop
+      font-size: 1.4vw
