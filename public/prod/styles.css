@@ -1386,14 +1386,24 @@ header {
     position: absolute;
     left: 5vw;
     top: -2vh; }
+    @media only screen and (min-width: 1025px) {
+      .quick-view-header img:first-of-type {
+        width: 3vw;
+        top: 2vh; } }
   .quick-view-header img:last-of-type {
     vertical-align: middle;
     width: 13vw;
     z-index: 3;
     margin-right: 3vw; }
+    @media only screen and (min-width: 1025px) {
+      .quick-view-header img:last-of-type {
+        width: 6vw; } }
   .quick-view-header span {
     vertical-align: middle;
     font-weight: 300; }
+    @media only screen and (min-width: 1025px) {
+      .quick-view-header span {
+        font-size: 3vw; } }
 
 .new-users {
   position: absolute;
@@ -1406,8 +1416,14 @@ header {
   .new-users span:first-of-type {
     font-weight: 700;
     font-size: 5vw; }
+    @media only screen and (min-width: 1025px) {
+      .new-users span:first-of-type {
+        font-size: 2.2vw; } }
   .new-users span:last-of-type {
     font-weight: 300; }
+    @media only screen and (min-width: 1025px) {
+      .new-users span:last-of-type {
+        font-size: 2.2vw; } }
 
 .next-msg-preview {
   position: absolute;
@@ -1420,8 +1436,14 @@ header {
   .next-msg-preview span:first-of-type {
     font-weight: 700;
     font-size: 5vw; }
+    @media only screen and (min-width: 1025px) {
+      .next-msg-preview span:first-of-type {
+        font-size: 2.2vw; } }
   .next-msg-preview span:last-of-type {
     font-weight: 300; }
+    @media only screen and (min-width: 1025px) {
+      .next-msg-preview span:last-of-type {
+        font-size: 2.2vw; } }
 
 body {
   margin: 0;

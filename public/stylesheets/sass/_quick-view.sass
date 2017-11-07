@@ -13,14 +13,21 @@
       position: absolute
       left: 5vw
       top: -2vh
+      @include desktop
+        width: 3vw
+        top: 2vh
     &:last-of-type
       vertical-align: middle
       width: 13vw
       z-index: 3
       margin-right: 3vw
+      @include desktop
+        width: 6vw
   span
     vertical-align: middle
     font-weight: 300
+    @include desktop
+      font-size: 3vw
 
 .new-users
   position: absolute
@@ -34,8 +41,12 @@
     &:first-of-type
       font-weight: 700
       font-size: 5vw
+      @include desktop
+        font-size: 2.2vw
     &:last-of-type
       font-weight: 300
+      @include desktop
+        font-size: 2.2vw
 
 .next-msg-preview
   position: absolute
@@ -49,5 +60,9 @@
     &:first-of-type
       font-weight: 700
       font-size: 5vw
+      @include desktop
+        font-size: 2.2vw
     &:last-of-type
       font-weight: 300
+      @include desktop
+        font-size: 2.2vw
