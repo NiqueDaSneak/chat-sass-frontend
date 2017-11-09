@@ -115,6 +115,11 @@ app.use(bodyParser.urlencoded({
 app.use(passport.initialize())
 app.use(passport.session())
 
+// ROUTES
+app.get('/auth/facebook', passport.authenticate('facebook', {
+  scope: ['manage_pages', 'publish_pages', 'pages_messaging', 'email', 'pages_show_list']
+}))
+
 passport.use(new FacebookStrategy({
     clientID: '372903006444693',
     clientSecret: 'e0cf0b310d6931c9140969a115efefa9',
@@ -148,54 +153,16 @@ passport.use(new FacebookStrategy({
     })
   }))
 
-// ROUTES
-app.get('/auth/facebook', passport.authenticate('facebook', {
-  scope: ['manage_pages', 'publish_pages', 'pages_messaging', 'email', 'pages_show_list']
-}))
-
 // Facebook redirect
 app.get('/auth/redirect', passport.authenticate('facebook', {
   failureRedirect: '/',
   session: false
 }), (req, res, next) => {
-
   if (req.user.pageID) {
     res.redirect('/dashboard/' + req.user.organization)
   } else {
     res.redirect('/tiers/' + req.user.userID + '/' + req.user.userAccessToken)
   }
-
-
-  // req.session.user = req.user
-  // if (req.user.pageID) {
-  //   res.redirect('/dashboard/' + req.user.organization)
-  // } else {
-  //   // create Stripe customer
-  //   stripe.customers.create({
-  //     facebookID: req.user.userID
-  //   }, (err, customer) => {
-  //     if (err) {
-  //       console.log(err)
-  //     }
-  //     User.findOne({
-  //       userID: req.user.userID
-  //     }, (err, user) => {
-  //       if (err) {
-  //         console.log(err)
-  //       }
-  //       user.stripeID = customer.id
-  //       user.save((err, user) => {
-  //         if (err) {
-  //           console.log(err)
-  //         }
-  //         console.log(user)
-  //       })
-  //     })
-  //     console.log(customer)
-  //   })
-  //   res.redirect('/tiers/' + req.user.userID + '/' + req.user.userAccessToken)
-  //   // res.redirect('/choose-page/' + req.user.userID + '/' + req.user.userAccessToken)
-  // }
 })
 
 app.get('/tiers/:userID/:userAccessToken', (req, res) => {
