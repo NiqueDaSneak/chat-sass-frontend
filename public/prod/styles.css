@@ -1286,7 +1286,8 @@ header {
 .onboarding {
   text-align: center;
   z-index: 3;
-  position: fixed; }
+  position: fixed;
+  top: 7vh; }
   .onboarding .onboard-promote {
     margin-top: 4vh; }
   @media only screen and (max-width: 1024px) and (min-width: 415px) {
@@ -1300,8 +1301,7 @@ header {
     border-radius: 3vw;
     padding-top: 3vh;
     -webkit-box-shadow: 0px 4px 34px 0px rgba(0, 0, 0, 0.75);
-            box-shadow: 0px 4px 34px 0px rgba(0, 0, 0, 0.75);
-    margin-top: 10vh; }
+            box-shadow: 0px 4px 34px 0px rgba(0, 0, 0, 0.75); }
     @media only screen and (min-width: 1025px) {
       .onboarding div {
         width: 50vw;
@@ -1321,7 +1321,7 @@ header {
     .onboarding div p:last-of-type {
       padding-left: 8vw;
       padding-right: 8vw;
-      font-size: 5.5vw;
+      font-size: 3.8vw;
       font-weight: 300; }
       @media only screen and (min-width: 1025px) {
         .onboarding div p:last-of-type {
@@ -1353,11 +1353,11 @@ header {
   background-color: #E0E0E0;
   margin-bottom: 4vh;
   border-radius: 1vw;
-  font-size: 4.2vw;
+  font-size: 3.3vw;
   padding: 2vh;
   border: none;
   width: 66vw;
-  height: 5vh;
+  height: 8vh;
   color: #565656; }
   @media only screen and (min-width: 1025px) {
     .onboard-promote textarea {
@@ -1471,7 +1471,11 @@ header {
   .tiers-holder p {
     font-weight: 600;
     cursor: pointer;
-    font-size: 6vw; }
+    font-size: 6vw;
+    color: #150958; }
+    @media only screen and (min-width: 1025px) {
+      .tiers-holder p {
+        font-size: 3vw; } }
     .tiers-holder p:first-of-type {
       padding-top: 5vh; }
     .tiers-holder p:last-of-type {
