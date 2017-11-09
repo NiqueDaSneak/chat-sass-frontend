@@ -115,15 +115,10 @@ app.use(bodyParser.urlencoded({
 app.use(passport.initialize())
 app.use(passport.session())
 
-// ROUTES
-app.get('/auth/facebook', passport.authenticate('facebook', {
-  scope: ['manage_pages', 'publish_pages', 'pages_messaging', 'email', 'pages_show_list']
-}))
-
 passport.use(new FacebookStrategy({
     clientID: '372903006444693',
     clientSecret: 'e0cf0b310d6931c9140969a115efefa9',
-    callbackURL: "https://www.irrigatemsg.com/auth/redirect",
+    callbackURL: "https://www.irrigatemsg.com/facebook/redirect",
     profileFields: ['id', 'emails', 'name']
   },
   function(accessToken, refreshToken, profile, done) {
@@ -153,11 +148,17 @@ passport.use(new FacebookStrategy({
     })
   }))
 
+// ROUTES
+app.get('/auth/facebook', passport.authenticate('facebook', {
+  scope: ['manage_pages', 'publish_pages', 'pages_messaging', 'email', 'pages_show_list']
+}))
+
 // Facebook redirect
-app.get('/auth/redirect', passport.authenticate('facebook', {
+app.get('/facebook/redirect', passport.authenticate('facebook', {
   failureRedirect: '/',
   session: false
 }), (req, res, next) => {
+  console.log('user: ' + req.user)
   if (req.user.pageID) {
     res.redirect('/dashboard/' + req.user.organization)
   } else {
