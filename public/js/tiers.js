@@ -8,6 +8,12 @@ $(document).ready(() => {
   var userID = pathname[2]
   var userAccessToken = pathname[3]
 
+  let i = 0
+  if (window.location.search === '?failed') {
+    $('body').prepend("<p class='err-msg'>Error Processing Payment. Try Again.</p>")
+    $('.tiers-header').css('margin-top', '4vh')
+  }
+
   var planVar
 
   var handler = StripeCheckout.configure({
@@ -62,6 +68,10 @@ $(document).ready(() => {
   })
 
   socket.on('redirect', (data) => {
-    $(location).attr('href','/choose-page/' + userID + '/' + userAccessToken)
+    if (data.data === true) {
+      $(location).attr('href','/choose-page/' + userID + '/' + userAccessToken)
+    } else {
+      $(location).attr('href','/tiers/' + userID + '/' + userAccessToken + '?failed')
+    }
   })
 })
