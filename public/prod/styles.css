@@ -1469,8 +1469,9 @@ header {
       margin-left: 30vw;
       font-size: 1.8vw; } }
   .tiers-holder p {
-    font-weight: 300;
-    cursor: pointer; }
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 6vw; }
     .tiers-holder p:first-of-type {
       padding-top: 5vh; }
     .tiers-holder p:last-of-type {
