@@ -115,6 +115,8 @@
       let year = data.data.createdDate.split("-")[0]
       if (moment(month + '-' + day + '-' + year ).diff(moment(), 'days') >= -12) {
         $('.new .names').prepend("<div data-fbid=" + data.data.fbID + "><img src='" + data.data.photo + "' alt='profile photo'><p>" + data.data.fullName + "</p><img class='new-user-icon' src='/imgs/star-icon.svg' alt='New User'></div>")
+      } else {
+        $('.new .names').prepend("<div data-fbid=" + data.data.fbID + "><img src='" + data.data.photo + "' alt='profile photo'><p>" + data.data.fullName + "</p></div>")
       }
     } else {
       $('.new .names').prepend("<div data-fbid=" + data.data.fbID + "><img src='" + data.data.photo + "' alt='profile photo'><p>" + data.data.fullName + "</p></div>")

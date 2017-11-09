@@ -400,11 +400,11 @@ io.on('connection', (socket) => {
   socket.on('requestMembers', (data) => {
     Member.find({
       organization: data.data
-    }, (err, users) => {
+    }, (err, members) => {
       if (err) return console.error(err)
-      for (var i = 0; i < users.length; i++) {
+      for (var i = 0; i < members.length; i++) {
         socket.emit('addUser', {
-          data: users[i]
+          data: members[i]
         })
       }
     })
