@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <script src="/socket.io/socket.io.js"></script>
+  <script
+    src="https://code.jquery.com/jquery-2.2.4.js"
+    integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/prod/styles.css">
+  <script src="/js/tiers.js" charset="utf-8"></script>
+  <script type="text/javascript" src='/js/rotate.js'></script>
+  <script src="https://checkout.stripe.com/checkout.js"></script>
+  <script type="text/javascript" src='/js/tiers.js'></script>
+  <title>Choose A Tier:</title>
+</head>
+  <body>
+    <p class="tiers-header">Choose a tier:</p>
+    <div class="tiers-holder">
+      <p class='free-tier'>Free Tier - Free!</p>
+      <hr>
+      <p class='lite-tier'>Lite Tier - $22/mo</p>
+      <hr>
+      <p class='pro-tier'>Pro Tier - $65/mo</p>
+      <hr>
+      <p class='elite-tier'>Elite Tier - $120/mo</p>
+    </div>
+    <input class="plan" type="hidden" name="" value="">
+  </body>
+</html>
