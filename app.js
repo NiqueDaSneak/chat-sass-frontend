@@ -12,11 +12,13 @@ const request = require('request')
 const util = require('util')
 const favicon = require('serve-favicon')
 const moment = require('moment')
-
+var stripe = require("stripe")("sk_test_8Df2wXol56EATQAeBpYwInGZ")
 
 // DATABASE SETUP
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://domclemmer:domclemmerpasswordirrigate@ds153173-a0.mlab.com:53173,ds153173-a1.mlab.com:53173/irrigate?replicaSet=rs-ds153173', {useMongoClient: true})
+mongoose.connect('mongodb://domclemmer:domclemmerpasswordirrigate@ds153173-a0.mlab.com:53173,ds153173-a1.mlab.com:53173/irrigate?replicaSet=rs-ds153173', {
+  useMongoClient: true
+})
 var db = mongoose.connection
 db.on('error', console.error.bind(console, 'connection error:'))
 
@@ -29,6 +31,8 @@ var userSchema = mongoose.Schema({
   pageID: String,
   pageAccessToken: String,
   userAccessToken: String,
+  stripeID: String,
+  stripeCharges: []
 })
 
 var User = mongoose.model('User', userSchema)
@@ -81,7 +85,7 @@ const FacebookStrategy = require('passport-facebook').Strategy
 
 // EXPRESS SETUP
 app.use((req, res, next) => {
-  if(!req.secure) {
+  if (!req.secure) {
     if (req.get('Host') === 'localhost:3000') {
       console.log('localhost')
     } else {
@@ -115,7 +119,7 @@ app.use(passport.session())
 passport.use(new FacebookStrategy({
     clientID: '372903006444693',
     clientSecret: 'e0cf0b310d6931c9140969a115efefa9',
-    callbackURL: "https://www.irrigatemsg.com/auth/check-pages",
+    callbackURL: "https://www.irrigatemsg.com/auth/redirect",
     profileFields: ['id', 'emails', 'name']
   },
   function(accessToken, refreshToken, profile, done) {
@@ -148,10 +152,12 @@ passport.use(new FacebookStrategy({
   }))
 
 // ROUTES
-app.get('/auth/facebook', passport.authenticate('facebook', { scope: [ 'manage_pages', 'publish_pages', 'pages_messaging', 'email', 'pages_show_list'] }))
+app.get('/auth/facebook', passport.authenticate('facebook', {
+  scope: ['manage_pages', 'publish_pages', 'pages_messaging', 'email', 'pages_show_list']
+}))
 
 // Facebook redirect
-app.get('/auth/check-pages', passport.authenticate('facebook', {
+app.get('/auth/redirect', passport.authenticate('facebook', {
   failureRedirect: '/',
   session: false
 }), (req, res, next) => {
@@ -159,8 +165,36 @@ app.get('/auth/check-pages', passport.authenticate('facebook', {
   if (req.user.pageID) {
     res.redirect('/dashboard/' + req.user.organization)
   } else {
-    res.redirect('/choose-page/' + req.user.userID + '/' + req.user.userAccessToken)
+    // create Stripe customer
+    stripe.customers.create({
+      facebookID: req.user.userID
+    }, (err, customer) => {
+      if (err) {
+        console.log(err)
+      }
+      User.findOne({
+        userID: req.user.userID
+      }, (err, user) => {
+        if (err) {
+          console.log(err)
+        }
+        user.stripeID = customer.id
+        user.save((err, user) => {
+          if (err) {
+            console.log(err)
+          }
+          console.log(user)
+        })
+      })
+      console.log(customer)
+    })
+    res.redirect('/tiers/' + req.user.userID + '/' + req.user.userAccessToken)
+    // res.redirect('/choose-page/' + req.user.userID + '/' + req.user.userAccessToken)
   }
+})
+
+app.get('/tiers/:userID/:userAccessToken', (req, res) => {
+  res.sendFile(path.join(__dirname + '/views/tiers.html'))
 })
 
 app.get('/pricing', (req, res) => {
@@ -346,12 +380,16 @@ io.on('connection', (socket) => {
   })
 
   socket.on('onboardUserAgain', (data) => {
-    User.findOne({'organization': data.data}, (err, user) => {
+    User.findOne({
+      'organization': data.data
+    }, (err, user) => {
       if (err) {
         console.log(err)
       }
       console.log(user)
-        socket.emit('onboardingAgain', {data: user.username})
+      socket.emit('onboardingAgain', {
+        data: user.username
+      })
     })
   })
 
@@ -366,11 +404,15 @@ io.on('connection', (socket) => {
   })
 
   socket.on('getUsername', (data) => {
-    User.findOne({organization: data.data}, (err, user) => {
+    User.findOne({
+      organization: data.data
+    }, (err, user) => {
       if (err) {
         console.log(err)
       }
-      socket.emit('addToClipboard', {data: user.username})
+      socket.emit('addToClipboard', {
+        data: user.username
+      })
     })
   })
 
@@ -407,7 +449,9 @@ io.on('connection', (socket) => {
   })
 
   socket.on('createGroup', (data) => {
-    Group.findOne({ groupName: data.groupName }, (err, group) => {
+    Group.findOne({
+      groupName: data.groupName
+    }, (err, group) => {
       if (err) {
         console.log(err)
       }
@@ -469,7 +513,9 @@ io.on('connection', (socket) => {
   })
 
   socket.on('requestDelete', (data) => {
-    Message.findOneAndRemove({'_id': data.data}, (err) => {
+    Message.findOneAndRemove({
+      '_id': data.data
+    }, (err) => {
       if (err) {
         console.log(err)
       }
@@ -478,20 +524,26 @@ io.on('connection', (socket) => {
   })
 
   socket.on('isOnboarded?', (data) => {
-    User.findOne({'organization': data.data}, (err, user) => {
+    User.findOne({
+      'organization': data.data
+    }, (err, user) => {
       if (err) {
         console.log(err)
       }
       if (user.onboarded === true) {
         console.log('already onboarded')
       } else {
-        socket.emit('onboardUser', { data: user.username })
+        socket.emit('onboardUser', {
+          data: user.username
+        })
       }
     })
   })
 
   socket.on('getMembersAndNewMsg', (data) => {
-    Member.find({ organization: data.data }, (err, members) => {
+    Member.find({
+      organization: data.data
+    }, (err, members) => {
       if (err) {
         console.log(err)
       }
@@ -506,10 +558,14 @@ io.on('connection', (socket) => {
           }
         }
       }
-      socket.emit('quickViewMembers', { members: matchingMembers })
+      socket.emit('quickViewMembers', {
+        members: matchingMembers
+      })
     })
 
-    Message.find({ organization: data.data }, (err, msgs) => {
+    Message.find({
+      organization: data.data
+    }, (err, msgs) => {
       if (err) {
         console.log(err)
       }
@@ -529,16 +585,20 @@ io.on('connection', (socket) => {
           }
         }
       }
-      socket.emit('quickViewNextMsg', { data: nextMsg })
+      socket.emit('quickViewNextMsg', {
+        data: nextMsg
+      })
       console.log(nextMsg)
     })
   })
 
   socket.on('promoteOnFacebook', (data) => {
-    User.findOne({'organization': data.org}, (err, user) => {
+    User.findOne({
+      'organization': data.org
+    }, (err, user) => {
       let options = {
         method: 'post',
-        url: 'https://graph.facebook.com/v2.10/'  + user.pageID + '/feed?message=' + data.post + '&access_token=' + user.pageAccessToken
+        url: 'https://graph.facebook.com/v2.10/' + user.pageID + '/feed?message=' + data.post + '&access_token=' + user.pageAccessToken
       }
 
       request(options, (err, res, body) => {
@@ -553,7 +613,7 @@ io.on('connection', (socket) => {
         console.log('body: ', body)
         let bodyResponse = JSON.parse(body)
         // link to the post
-          // 'https://www.facebook.com/' + bodyResponse.id
+        // 'https://www.facebook.com/' + bodyResponse.id
       })
     })
 
@@ -582,7 +642,9 @@ io.on('connection', (socket) => {
   })
 
   socket.on('onboardComplete', (data) => {
-    User.findOne({'organization': data.data}, (err, user) => {
+    User.findOne({
+      'organization': data.data
+    }, (err, user) => {
       if (err) {
         console.log(err)
       }
@@ -598,18 +660,28 @@ io.on('connection', (socket) => {
   })
 
   socket.on('findGroup', (data) => {
-    Group.findOne({ 'groupName': data.name }, (err, group) => {
+    Group.findOne({
+      'groupName': data.name
+    }, (err, group) => {
       if (err) {
         console.log(err)
       }
-      Member.find({ 'organization': data.organization }, (err, members) => {
-        socket.emit('editGroupMembers', { group: group, name: data.name, members: members })
+      Member.find({
+        'organization': data.organization
+      }, (err, members) => {
+        socket.emit('editGroupMembers', {
+          group: group,
+          name: data.name,
+          members: members
+        })
       })
     })
   })
 
   socket.on('deleteGroup', (data) => {
-    Group.findOneAndRemove({ 'groupName': data.groupName }, (err) => {
+    Group.findOneAndRemove({
+      'groupName': data.groupName
+    }, (err) => {
       if (err) {
         console.log(err)
       }
@@ -625,6 +697,46 @@ io.on('connection', (socket) => {
         }
       })
     })
+  })
+
+  socket.on('savePaymentToken', (data) => {
+    stripe.customers.create({
+      email: data.stripeToken.email,
+      source: data.stripeToken.id
+    }, function(err, customer) {
+      if (err) {
+        console.log(err)
+      }
+      console.log('data: ' + data)
+      console.log('userID: ' + data.userID)
+      User.findOne({ userID: data.userID.toString() }, (err, user) => {
+        if (err) {
+          console.log(err)
+        }
+        user.stripeID = customer.id
+        user.save((err, user) => {
+          if (err) {
+            console.log(err)
+          }
+          console.log('user info saved: ' + user.stripeID)
+        })
+      })
+      stripe.subscriptions.create({
+        customer: customer.id,
+        items: [
+          {
+            plan: data.plan,
+          },
+        ],
+      }, function(err, subscription) {
+        // asynchronously called
+        if (err) {
+          console.log(err)
+        }
+        console.log(subscription)
+      })
+    })
+
   })
 
   function requestPages(userID, userAccessToken) {
