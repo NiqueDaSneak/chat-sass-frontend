@@ -17,9 +17,7 @@ $(document).ready(() => {
     zipCode: true,
     // data-zip-code="true",
     token: function(token) {
-      console.log('payment processed')
       socket.emit('savePaymentToken', { userID: userID, accessToken: userAccessToken, stripeToken: token, plan: planVar })
-      console.log('token.id' + token.id)
     }
   })
 
@@ -61,5 +59,9 @@ $(document).ready(() => {
       amount: 12000
     })
     event.preventDefault()
+  })
+
+  socket.on('redirect', (data) => {
+    $(location).attr('href','/choose-page/' + userID + '/' + userAccessToken)
   })
 })
