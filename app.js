@@ -119,7 +119,8 @@ passport.use(new FacebookStrategy({
     clientID: '372903006444693',
     clientSecret: 'e0cf0b310d6931c9140969a115efefa9',
     callbackURL: "https://www.irrigatemsg.com/facebook/redirect",
-    profileFields: ['id', 'emails', 'name']
+    profileFields: ['id', 'emails', 'name'],
+    enableProof: true
   },
   function(accessToken, refreshToken, profile, done) {
     User.findOne({
