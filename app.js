@@ -707,8 +707,6 @@ io.on('connection', (socket) => {
       if (err) {
         console.log(err)
       }
-      console.log('data: ' + data)
-      console.log('userID: ' + data.userID)
       User.findOne({ userID: data.userID.toString() }, (err, user) => {
         if (err) {
           console.log(err)
@@ -729,14 +727,13 @@ io.on('connection', (socket) => {
           },
         ],
       }, function(err, subscription) {
-        // asynchronously called
         if (err) {
           console.log(err)
         }
         console.log(subscription)
+        socket.emit('redirect')
       })
     })
-
   })
 
   function requestPages(userID, userAccessToken) {
