@@ -1445,6 +1445,48 @@ header {
       .next-msg-preview span:last-of-type {
         font-size: 2.2vw; } }
 
+.tiers-header {
+  text-align: center;
+  margin-top: 9vh;
+  font-size: 8vw;
+  font-weight: 600;
+  margin-bottom: 4vh; }
+  @media only screen and (min-width: 1025px) {
+    .tiers-header {
+      font-size: 2.8vw; } }
+
+.tiers-holder {
+  background-color: white;
+  width: 80vw;
+  margin-left: 10vw;
+  text-align: center;
+  font-size: 5vw;
+  -webkit-box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75);
+          box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75); }
+  @media only screen and (min-width: 1025px) {
+    .tiers-holder {
+      width: 40vw;
+      margin-left: 30vw;
+      font-size: 1.8vw; } }
+  .tiers-holder p {
+    font-weight: 300;
+    cursor: pointer; }
+    .tiers-holder p:first-of-type {
+      padding-top: 5vh; }
+    .tiers-holder p:last-of-type {
+      padding-bottom: 5vh; }
+  .tiers-holder hr {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    width: 50vw;
+    background-color: #00AEEF;
+    border-width: 0;
+    height: 0.2vh; }
+    @media only screen and (min-width: 1025px) {
+      .tiers-holder hr {
+        width: 26vw;
+        height: 0.3vh; } }
+
 body {
   margin: 0;
   background-color: #E0E0E0;

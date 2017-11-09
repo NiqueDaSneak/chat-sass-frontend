@@ -1,0 +1,37 @@
+.tiers-header
+  text-align: center
+  margin-top: 9vh
+  font-size: 8vw
+  font-weight: 600
+  margin-bottom: 4vh
+  @include desktop
+    font-size: 2.8vw
+
+.tiers-holder
+  background-color: white
+  width: 80vw
+  margin-left: 10vw
+  text-align: center
+  font-size: 5vw
+  box-shadow: 0vw 0vh 1vh 0vh rgba(0, 0, 0, 0.75)
+  @include desktop
+    width: 40vw
+    margin-left: 30vw
+    font-size: 1.8vw
+  p
+    font-weight: 300
+    cursor: pointer
+    &:first-of-type
+      padding-top: 5vh
+    &:last-of-type
+      padding-bottom: 5vh
+  hr
+    margin-top: 5vh
+    margin-bottom: 5vh
+    width: 50vw
+    background-color: $fifthMain
+    border-width: 0
+    height: 0.2vh
+    @include desktop
+      width: 26vw
+      height: 0.3vh
