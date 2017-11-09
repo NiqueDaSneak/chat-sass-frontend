@@ -32,7 +32,6 @@ var userSchema = mongoose.Schema({
   pageAccessToken: String,
   userAccessToken: String,
   stripeID: String,
-  stripeCharges: []
 })
 
 var User = mongoose.model('User', userSchema)
@@ -133,8 +132,6 @@ passport.use(new FacebookStrategy({
         return done(null, user)
       } else {
         var newUser = new User()
-        console.log('PROFILE: ' + JSON.stringify(profile))
-        console.log('PROFILE.EMAILS: ' + profile.emails)
         if (profile.emails === undefined) {
           console.log('no email')
         } else {
@@ -161,36 +158,44 @@ app.get('/auth/redirect', passport.authenticate('facebook', {
   failureRedirect: '/',
   session: false
 }), (req, res, next) => {
-  req.session.user = req.user
+
   if (req.user.pageID) {
     res.redirect('/dashboard/' + req.user.organization)
   } else {
-    // create Stripe customer
-    stripe.customers.create({
-      facebookID: req.user.userID
-    }, (err, customer) => {
-      if (err) {
-        console.log(err)
-      }
-      User.findOne({
-        userID: req.user.userID
-      }, (err, user) => {
-        if (err) {
-          console.log(err)
-        }
-        user.stripeID = customer.id
-        user.save((err, user) => {
-          if (err) {
-            console.log(err)
-          }
-          console.log(user)
-        })
-      })
-      console.log(customer)
-    })
     res.redirect('/tiers/' + req.user.userID + '/' + req.user.userAccessToken)
-    // res.redirect('/choose-page/' + req.user.userID + '/' + req.user.userAccessToken)
   }
+
+
+  // req.session.user = req.user
+  // if (req.user.pageID) {
+  //   res.redirect('/dashboard/' + req.user.organization)
+  // } else {
+  //   // create Stripe customer
+  //   stripe.customers.create({
+  //     facebookID: req.user.userID
+  //   }, (err, customer) => {
+  //     if (err) {
+  //       console.log(err)
+  //     }
+  //     User.findOne({
+  //       userID: req.user.userID
+  //     }, (err, user) => {
+  //       if (err) {
+  //         console.log(err)
+  //       }
+  //       user.stripeID = customer.id
+  //       user.save((err, user) => {
+  //         if (err) {
+  //           console.log(err)
+  //         }
+  //         console.log(user)
+  //       })
+  //     })
+  //     console.log(customer)
+  //   })
+  //   res.redirect('/tiers/' + req.user.userID + '/' + req.user.userAccessToken)
+  //   // res.redirect('/choose-page/' + req.user.userID + '/' + req.user.userAccessToken)
+  // }
 })
 
 app.get('/tiers/:userID/:userAccessToken', (req, res) => {
@@ -729,9 +734,10 @@ io.on('connection', (socket) => {
       }, function(err, subscription) {
         if (err) {
           console.log(err)
+          socket.emit('redirect', { data: false })
         }
         console.log(subscription)
-        socket.emit('redirect')
+        socket.emit('redirect', { data: true })
       })
     })
   })
