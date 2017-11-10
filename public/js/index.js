@@ -12,84 +12,84 @@ $(document).ready(() => {
     background: 'linear-gradient(#00AEEF, #150958)'
   })
 
-  if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-
-    // business photo in first 2 sections
-    var bizPhoto = new Multiple({
-      selector: '.biz-photo',
-      background: "url('/imgs/biz-photos/7-mobile.jpg')"
-    })
-
-    // nature photo landing page
-    var naturePhoto = new Multiple({
-      selector: '.features',
-      background: "url('/imgs/nature-photos/8-mobile.jpg')"
-    })
-
-    // pricing page photo
-    var pricingPhoto = new Multiple({
-      selector: '.body-bg',
-      background: "url('/imgs/pricingSteps-mobile.jpg')"
-    })
-
-    // customize page image
-    var customizeImg = new Multiple({
-      selector: '.customize-content',
-      background: "url('/imgs/nature-photos/10-mobile.jpg')"
-    })
-
-  } else if ( /iPad/i.test(navigator.userAgent) ) {
-
-    // business photo in first 2 sections
-    var bizPhoto = new Multiple({
-      selector: '.biz-photo',
-      background: "url('/imgs/biz-photos/7-tab.jpg')"
-    })
-
-    // nature photo landing page
-    var naturePhoto = new Multiple({
-      selector: '.features',
-      background: "url('/imgs/nature-photos/8-tab.jpg')"
-    })
-
-    // pricing page photo
-    var pricingPhoto = new Multiple({
-      selector: '.body-bg',
-      background: "url('/imgs/pricingSteps-tab.jpg')"
-    })
-
-    // customize page image
-    var customizeImg = new Multiple({
-      selector: '.customize-content',
-      background: "url('/imgs/nature-photos/10-tab.jpg')"
-    })
-
-  } else {
-
-    // business photo in first 2 sections
-    var bizPhoto = new Multiple({
-      selector: '.biz-photo',
-      background: "url('/imgs/biz-photos/7.png')"
-    })
-
-    // nature photo landing page
-    var naturePhoto = new Multiple({
-      selector: '.features',
-      background: "url('/imgs/nature-photos/8.jpg')"
-    })
-
-    // pricing page photo
-    var pricingPhoto = new Multiple({
-      selector: '.body-bg',
-      background: "url('/imgs/pricingSteps.png')"
-    })
-
-    // customize page image
-    var customizeImg = new Multiple({
-      selector: '.customize-content',
-      background: "url('/imgs/nature-photos/10.png')"
-    })
-  }
+  // if( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  //
+  //   // business photo in first 2 sections
+  //   var bizPhoto = new Multiple({
+  //     selector: '.biz-photo',
+  //     background: "url('/imgs/biz-photos/7-mobile.jpg')"
+  //   })
+  //
+  //   // nature photo landing page
+  //   var naturePhoto = new Multiple({
+  //     selector: '.features',
+  //     background: "url('/imgs/nature-photos/8-mobile.jpg')"
+  //   })
+  //
+  //   // pricing page photo
+  //   var pricingPhoto = new Multiple({
+  //     selector: '.body-bg',
+  //     background: "url('/imgs/pricingSteps-mobile.jpg')"
+  //   })
+  //
+  //   // customize page image
+  //   var customizeImg = new Multiple({
+  //     selector: '.customize-content',
+  //     background: "url('/imgs/nature-photos/10-mobile.jpg')"
+  //   })
+  //
+  // } else if ( /iPad/i.test(navigator.userAgent) ) {
+  //
+  //   // business photo in first 2 sections
+  //   var bizPhoto = new Multiple({
+  //     selector: '.biz-photo',
+  //     background: "url('/imgs/biz-photos/7-tab.jpg')"
+  //   })
+  //
+  //   // nature photo landing page
+  //   var naturePhoto = new Multiple({
+  //     selector: '.features',
+  //     background: "url('/imgs/nature-photos/8-tab.jpg')"
+  //   })
+  //
+  //   // pricing page photo
+  //   var pricingPhoto = new Multiple({
+  //     selector: '.body-bg',
+  //     background: "url('/imgs/pricingSteps-tab.jpg')"
+  //   })
+  //
+  //   // customize page image
+  //   var customizeImg = new Multiple({
+  //     selector: '.customize-content',
+  //     background: "url('/imgs/nature-photos/10-tab.jpg')"
+  //   })
+  //
+  // } else {
+  //
+  //   // business photo in first 2 sections
+  //   var bizPhoto = new Multiple({
+  //     selector: '.biz-photo',
+  //     background: "url('/imgs/biz-photos/7.png')"
+  //   })
+  //
+  //   // nature photo landing page
+  //   var naturePhoto = new Multiple({
+  //     selector: '.features',
+  //     background: "url('/imgs/nature-photos/8.jpg')"
+  //   })
+  //
+  //   // pricing page photo
+  //   var pricingPhoto = new Multiple({
+  //     selector: '.body-bg',
+  //     background: "url('/imgs/pricingSteps.png')"
+  //   })
+  //
+  //   // customize page image
+  //   var customizeImg = new Multiple({
+  //     selector: '.customize-content',
+  //     background: "url('/imgs/nature-photos/10.png')"
+  //   })
+  // }
 
 
 

@@ -576,9 +576,20 @@ input[type="submit"] {
         height: 0; } }
 
 .features {
+  background-image: url("/imgs/nature-photos/10-mobile.jpg");
   background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height: 100%;
   background-position: center;
-  background-attachment: fixed; }
+  background-attachment: fixed;
+  background-repeat: no-repeat; }
+  @media only screen and (min-width: 1025px) {
+    .features {
+      background-attachment: fixed;
+      background: url("/imgs/nature-photos/10-mobile.jpg") no-repeat center fixed;
+      background-size: cover; } }
   .features span:first-of-type {
     padding: 10vh 2vw 0vh 5vw;
     margin-bottom: 1vh;
@@ -712,6 +723,19 @@ input[type="submit"] {
 
 .grad {
   background-color: #150958; }
+
+.parallax {
+  background-image: url("/imgs/nature-photos/8-mobile.jpg");
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.text {
+  height: 20vh;
+  color: white;
+  background-attachment: scroll; }
 
 .about-copy {
   color: white;
