@@ -940,8 +940,8 @@ header {
   width: 100vw;
   z-index: 1;
   text-align: center;
-  padding-top: 3vh;
-  padding-bottom: 3vh; }
+  padding-top: 1.5vh;
+  padding-bottom: 1.75vh; }
   @media only screen and (min-width: 1025px) {
     header {
       top: 0; } }
@@ -994,8 +994,8 @@ header {
       margin-right: 1vw; }
       @media only screen and (min-width: 1025px) {
         header .headerButton img {
-          width: 1.3vw;
-          margin-right: 2.1vw; } }
+          width: 1vw;
+          margin-right: 1vw; } }
       @media only screen and (max-width: 1024px) and (min-width: 415px) {
         header .headerButton img {
           width: 2.2vw; } }
