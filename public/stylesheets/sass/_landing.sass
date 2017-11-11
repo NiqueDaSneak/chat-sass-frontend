@@ -7,7 +7,7 @@
   background-size: cover
   background-position-x: center
   @include desktop
-    height: 200vh
+    height: 140vh
   .logo
     width: 70vw
     margin-left: 15vw
@@ -27,11 +27,11 @@
     padding-top: 2vh
     padding-bottom: 2vh
     border-radius: 2vw
-    border: 0.5vw solid $fifthMain
+    border: 0.5vw solid $siteMain
     margin-bottom: 14vh
     @include desktop
-      width: 28vw
-      margin-left: 36vw
+      width: 20%
+      margin-left: 40%
       border: 0.3vw solid $siteMain !important
       border-radius: 1.1vw
     img
@@ -57,8 +57,8 @@
     margin-top: 0
     padding-left: 51vw
     @include desktop
-      padding-left: 51.3vw
-      font-size: 1.7vw
+      padding-left: 53vw
+      font-size: 1.3vw
     @include tablet
       font-size: 3.1vw
       padding-left: 53.6vw
@@ -93,8 +93,9 @@
 //   @include desktop
 //     font-size: 1.2vw
 //     padding-right: 39vw
+
 .social
-  padding-top: 4vh
+  padding-top: 6vh
   position: top
   max-width: auto
   text-align: center
@@ -114,16 +115,16 @@
       @include desktop
         width: 7vw
         margin-right: 7vw
-
-  .chevron
-    width: 15vw
-    padding-top: 4vh
-    margin-left: 42.5vw
-    margin-top: 7vh
-    @include desktop
-      width: 8vw
-      padding-top: 2vh
-      padding-bottom: 3vh
+  //may not be in use
+  // .chevron
+  //   width: 15vw
+  //   padding-top: 4vh
+  //   margin-left: 42.5vw
+  //   margin-top: 7vh
+  //   @include desktop
+  //     width: 8vw
+  //     padding-top: 2vh
+  //     padding-bottom: 3vh
 
 
 input[type="submit"]
@@ -142,16 +143,14 @@ input[type="submit"]
     margin: 2vh 0vw
 
 .subtitle
-  margin: 10vh 0 10vh 20vw
-  width: 60vw
-  font-size: 6vw
+  margin: 10vh 0 10vh 0vw
+  width: 100%
   font-weight: 400
   color: white
   text-align: center
   text-shadow: black 0px 0px 60px
+  padding: 0
   @include desktop
-    margin-left: 35vw
-    width: 30vw
     font-size: 1.9vw
   @include tablet
      font-size: 4.6vw
@@ -160,41 +159,6 @@ input[type="submit"]
   height: 100vh
   @include desktop
     padding-bottom: 15vh
-
-  p
-    font-weight: 200
-    font-size: 6vw
-    color: $siteMain
-    float: right
-    text-align: right
-    width: 70vw
-    padding-right: 7vw
-    @include desktop
-      font-size: 4vh
-      width: 55vw
-      font-weight: 300
-
-  // .social
-  //   padding-top: 4vh
-  //   position: top
-  //   max-width: auto
-  //   text-align: center
-  //   @include desktop
-  //     height: 12vh
-  // .socialIcons
-  //   display: inline
-  //   width: 12vw
-  //   vertical-align: middle
-  //   @include desktop
-  //     width: 5vw
-  //     padding-bottom: 0
-  //   &:first-of-type
-  //     width: 17vw
-  //     margin-right: 10vw
-  //     animation: pulse 1.4s infinite ease-in-out
-  //     @include desktop
-  //       width: 7vw
-  //       margin-right: 7vw
 
 
 @keyframes pulse
@@ -207,7 +171,7 @@ input[type="submit"]
 
 
 
-
+// may not be in use
 .grey
   width: 46vw
   display: inline-block
@@ -219,7 +183,7 @@ input[type="submit"]
   // height: 384vh
   // padding-bottom: 10vh
   @include desktop
-    height: 384vh
+    height: auto
   @include tablet
     height: 397vh
   .three-phones
@@ -249,15 +213,41 @@ input[type="submit"]
           display: block
           font-size: 6vw
           @include desktop
-            font-size: 2vw
+            font-size: 2.125vw
             margin-bottom: 2vh
         &:last-of-type
           font-weight: 400
           font-size: 4.2vw
           @include desktop
-            font-size: 2vw
+            font-size: 1.5vw
+
+    .content-holder.top
+      @include desktop
+        padding: 15vh 0 30vh 0
+        width: 70vw
+        margin: 0
+        // color: white
+        // padding-top: 7vh
+        // width: 76vw
+        // margin-left: 12vw
+        span
+          &:first-of-type
+            // margin-bottom: 6vh
+            // font-weight: 700
+            // display: block
+            // font-size: 6vw
+            @include desktop
+              font-size: 3vw
+              // margin-bottom: 2vh
+          &:last-of-type
+            font-weight: 400
+            font-size: 4.2vw
+            @include desktop
+              font-size: 1.75vw
+
+
   .why
-    margin-top: 6vh
+    margin-top: 15vh
     font-size: 6.8vw
     font-weight: 600
     width: 63vw
@@ -272,7 +262,7 @@ input[type="submit"]
     font-size: 6vw
     font-weight: 300
     @include desktop
-      font-size: 3vw
+      font-size: 2.25vw
   .stats
     margin-bottom: 0vh
     padding-top: 15vh
@@ -292,7 +282,7 @@ input[type="submit"]
         font-weight: 300
         @include desktop
           left: 24vw
-          font-size: 7vw
+          font-size: 5vw
       &:last-of-type
         width: 44vw
         display: inline-block
@@ -303,7 +293,8 @@ input[type="submit"]
           right: 14vw
         @include tablet
           font-weight: 300
-          font-size: 3vw
+          font-size: 1.125vw
+
   .stats.first
     height: 10vh
     @include desktop
@@ -321,7 +312,7 @@ input[type="submit"]
   .stats.third
     height: 23vh
     @include desktop
-      height: 0vh
+      height: 20vh
     @include tablet
       height: 0
 
@@ -342,31 +333,33 @@ input[type="submit"]
     background: url('/imgs/nature-photos/10-mobile.jpg')  no-repeat center fixed
     background-size: cover
   span:first-of-type
-    padding: 10vh 2vw 0vh 5vw
+    padding: 15vh 2vw 2vh 5vw
     margin-bottom: 1vh
     font-weight: 500
     font-size: 8vw
     color: $siteMain
     display: block
     @include desktop
-      font-size: 4vw
+      font-size: 2.75vw
+      font-weight: 600
   h5
     font-size: 5vw
-    font-weight: 300
+    font-weight: 400
     color: $siteMain
     text-align: left
     width: 80vw
     padding: 0vh 0vw 2vh 5vw
     margin: 0 0 2.5vh 0
     @include desktop
-      font-size: 1.7vw
+      font-size: 2.125vw
+      padding-bottom: 10vh
   h6
     color: $siteMain
-    font-weight: 700
+    font-weight: 500
     font-size: 4.2vw
     margin: 0
     @include desktop
-      font-size: 2vw
+      font-size: 1.75vw
       margin: 5vh 0 0 5vw
   p
     font-weight: 300
@@ -375,7 +368,7 @@ input[type="submit"]
     width: 60vw
     margin: 0
     @include desktop
-      font-size: 2vw
+      font-size: 1.5vw
       font-weight: 100
       margin: 3vh 0 8vh 5vw
       width: 55vw
@@ -426,22 +419,37 @@ input[type="submit"]
   p
     font-size: 6vw
     text-align: center
-    margin-top: 12vh
+    margin-top: 30vh
     font-weight: 600
     @include desktop
-      font-size: 2.5vw
+      font-size: 3vw
+      padding-top: 15vh
+  .stepOne
+    width: 33%
+    float: left
+    margin-left: .5%
+    margin-bottom: 25vh
+  .stepTwo
+    width: 33%
+    float: left
+    margin-bottom: 25vh
+  .stepThree
+    width: 33%
+    float: right
+    margin-right: .5%
+    margin-bottom: 25vh
   .a-step
     margin-bottom: 10vh
-    width: 50vw
+    // width: 50vw
     display: inline-block
-    margin-left: 25vw
+    // margin-left: 25vw
     text-align: center
     &:first-of-type
       margin-top: 2vh
     img
       width: 18vw
       @include desktop
-        width: 8vw
+        width: 25%
     span
       display: block
       &:first-of-type
@@ -449,26 +457,18 @@ input[type="submit"]
         font-size: 7vw
         margin-top: 2vh
         @include desktop
-          font-size: 3.4vw
+          font-size: 1.75vw
+          margin: 4vh 0 1vh 0
       &:last-of-type
         font-weight: 300
         font-size: 4vw
         @include desktop
-          font-size: 2vw
+          font-size: 1.25vw
+          padding: 0 12.5% 0 12.5%
 
 .grad
   background-color: #150958
 
-
-
-  //testing parallax
-.parallax
-  background-image: url('/imgs/nature-photos/8-mobile.jpg')
-  height: 100vh
-  background-attachment: fixed
-  background-position: center
-  background-repeat: no-repeat
-  background-size: cover
 
 .text
   height: 20vh
