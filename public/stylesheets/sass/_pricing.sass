@@ -165,7 +165,7 @@ ul li
   @include desktop
     margin-right: 3%
   @include tablet
-    width: 24%
+    width: 23%
     margin-right: 1%
     margin-left: 1%
     line-height: 1.75vh
@@ -311,111 +311,113 @@ tbody tr:nth-child(even)
   height: fit-content
 
 
-*, *:before, *:after
-  box-sizing: border-box
-body
+// *, *:before, *:after
+//   box-sizing: border-box
+// body
+//
+// .modal-container
+//   margin: 60px auto
+//   padding-top: 0px
+//   position: relative
+//   width: 200px
+//   @include desktop
+//     width: 400px
+//     padding-bottom: 5%
+//   @include tablet
+//     width: 400px
+//     padding-bottom: 5%
+// .modal-content
+//   height: 0
+//   width: auto
+//   opacity: 0
+//   visibility: hidden
+//   overflow: hidden
+//   cursor: pointer
+//   transition: opacity 0.2s ease-in
+//   overflow-y: scroll
+// .modal-backdrop
+//   height: 0
+//   width: 0
+//   opacity: 0
+//   visibility: hidden
+//   overflow: hidden
+//   cursor: pointer
+//   transition: opacity 0.2s ease-in
+// .modal-close
+//   color: #aaa
+//   position: absolute
+//   right: 5px
+//   top: 5px
+//   padding-top: 3px
+//   background: #fff
+//   font-size: 16px
+//   width: 25px
+//   height: 25px
+//   font-weight: bold
+//   text-align: center
+//   cursor: pointer
+//   &:hover
+//     color: #333
+// .modal-content-btn
+//   position: absolute
+//   text-align: center
+//   cursor: pointer
+//   bottom: 20px
+//   right: 30px
+//   background: #446CB3
+//   color: #fff
+//   width: 75px
+//   border-radius: 2px
+//   font-size: 14px
+//   height: 32px
+//   padding: 6px 0 6px 0
+//   font-weight: normal
+//   text-decoration: none
+//   &:hover
+//     color: #fff
+//     background: #365690
+// #modal-toggle
+//   display: none
+//   &.active ~ .modal-backdrop
+//   &:checked ~ .modal-backdrop
+//     background-color: rgba(0, 0, 0, 0.6)
+//     width: 100vw
+//     height: 100vh
+//     position: fixed
+//     left: 0
+//     top: 0
+//     z-index: 9
+//     visibility: visible
+//     opacity: 1
+//     transition: opacity 0.2s ease-in
+//   &.active ~ .modal-content,
+//   &:checked ~ .modal-content
+//     opacity: 1
+//     background-color: #fff
+//     max-width: 400px
+//     width: 300px
+//     height: 280px
+//     padding: 10px 30px
+//     position: fixed
+//     // left: calc(50% - 200px)
+//     left: 5%
+//     top: 12%
+//     border-radius: 4px
+//     z-index: 999
+//     pointer-events: auto
+//     cursor: auto
+//     visibility: visible
+//     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.6)
+//     @include desktop
+//       width: 400px
+//       left: calc(50% - 200px)
+//     @include tablet
+//       width: 400px
+//       left: calc(50% - 200px)
 
-.modal-container
-  margin: 60px auto
-  padding-top: 0px
-  position: relative
-  width: 200px
-  @include desktop
-    width: 400px
-    padding-bottom: 5%
-  @include tablet
-    width: 400px
-    padding-bottom: 5%
-.modal-content
-  height: 0
-  width: auto
-  opacity: 0
-  visibility: hidden
-  overflow: hidden
-  cursor: pointer
-  transition: opacity 0.2s ease-in
-  overflow-y: scroll
-.modal-backdrop
-  height: 0
-  width: 0
-  opacity: 0
-  visibility: hidden
-  overflow: hidden
-  cursor: pointer
-  transition: opacity 0.2s ease-in
-.modal-close
-  color: #aaa
-  position: absolute
-  right: 5px
-  top: 5px
-  padding-top: 3px
-  background: #fff
-  font-size: 16px
-  width: 25px
-  height: 25px
-  font-weight: bold
-  text-align: center
-  cursor: pointer
-  &:hover
-    color: #333
-.modal-content-btn
-  position: absolute
-  text-align: center
-  cursor: pointer
-  bottom: 20px
-  right: 30px
-  background: #446CB3
-  color: #fff
-  width: 75px
-  border-radius: 2px
-  font-size: 14px
-  height: 32px
-  padding: 6px 0 6px 0
-  font-weight: normal
-  text-decoration: none
-  &:hover
-    color: #fff
-    background: #365690
-#modal-toggle
-  display: none
-  &.active ~ .modal-backdrop
-  &:checked ~ .modal-backdrop
-    background-color: rgba(0, 0, 0, 0.6)
-    width: 100vw
-    height: 100vh
-    position: fixed
-    left: 0
-    top: 0
-    z-index: 9
-    visibility: visible
-    opacity: 1
-    transition: opacity 0.2s ease-in
-  &.active ~ .modal-content,
-  &:checked ~ .modal-content
-    opacity: 1
-    background-color: #fff
-    max-width: 400px
-    width: 300px
-    height: 280px
-    padding: 10px 30px
-    position: fixed
-    // left: calc(50% - 200px)
-    left: 5%
-    top: 12%
-    border-radius: 4px
-    z-index: 999
-    pointer-events: auto
-    cursor: auto
-    visibility: visible
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.6)
-    @include desktop
-      width: 400px
-      left: calc(50% - 200px)
-    @include tablet
-      width: 400px
-      left: calc(50% - 200px)
-
-.modalButton
+.button
+  margin-bottom: 15%
+.fbButton
   background-color: $thirdMain
   color: white
   text-decoration: none
@@ -426,11 +428,11 @@ body
   &:hover
     background: $fifthMain
   @include desktop
-    padding: 1.5vh 2.25vw 1.5vh 2.25vw
+    padding: 1vh 2vw 1.25vh 2vw
     border-radius: .5vw
-    margin-left: 30%
+    margin-left: 42.5%
     margin-bottom: 15%
-    font-size: 2.5vh
+    font-size: 1.75vh
     vertical-align: middle
     span
       font-weight: 300
@@ -439,8 +441,23 @@ body
     margin-left: 25%
     border-radius: .5vw
     vertical-align: middle
+    margin-bottom: 15%
 
-
+.underButton
+  margin: 3% 0 0 42.5%
+  text-align: center
+  @include desktop
+    width: 30%
+    margin: 3% 0 0 35%
+  @include tablet
+    width: 40%
+    margin: 3% 0 0 30%
+.smallText
+  color: #c1c1c1
+  @include desktop
+    font-size: 1.5vh
+  @include tablet
+    font-size: 1.25vh
 
 
   // .modal-btn
