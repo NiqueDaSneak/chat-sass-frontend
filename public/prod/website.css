@@ -458,21 +458,31 @@ input[type="submit"] {
     .blue {
       height: 397vh; } }
   .blue .three-phones {
-    padding-top: 15vh; }
+    padding-top: 15vh;
+    position: relative; }
     @media only screen and (min-width: 1025px) {
       .blue .three-phones {
         padding-top: 15vh;
         width: 76vw;
         margin-left: 12vw; } }
     .blue .three-phones .device {
-      width: 35vw;
-      display: inline-block;
-      margin-left: 5vw; }
+      width: 56vw;
+      margin-left: 5vw;
+      position: absolute;
+      -webkit-transform: rotate(-90deg);
+              transform: rotate(-90deg); }
+      .blue .three-phones .device:first-of-type {
+        top: 23vh;
+        right: -6vw; }
+    .blue .three-phones .device.left {
+      left: -11vw; }
       @media only screen and (min-width: 1025px) {
-        .blue .three-phones .device {
+        .blue .three-phones .device.left {
           width: 15vw; } }
-    .blue .three-phones .content-holder.right {
+    .blue .three-phones .content-holder.left {
       text-align: right; }
+    .blue .three-phones .content-holder.right {
+      margin-left: 45vw; }
     .blue .three-phones .content-holder {
       display: inline-block;
       width: 50vw;
@@ -672,43 +682,44 @@ input[type="submit"] {
       left: -6.1vw;
       margin-top: 14.9vh; } }
 
-.steps p {
-  font-size: 6vw;
-  text-align: center;
-  margin-top: 12vh;
-  font-weight: 600; }
-  @media only screen and (min-width: 1025px) {
-    .steps p {
-      font-size: 2.5vw; } }
-
-.steps .a-step {
-  margin-bottom: 10vh;
-  width: 50vw;
-  display: inline-block;
-  margin-left: 25vw;
-  text-align: center; }
-  .steps .a-step:first-of-type {
-    margin-top: 2vh; }
-  .steps .a-step img {
-    width: 18vw; }
+.steps {
+  padding-top: 24vh; }
+  .steps p {
+    font-size: 6vw;
+    text-align: center;
+    margin-top: 12vh;
+    font-weight: 600; }
     @media only screen and (min-width: 1025px) {
-      .steps .a-step img {
-        width: 8vw; } }
-  .steps .a-step span {
-    display: block; }
-    .steps .a-step span:first-of-type {
-      font-weight: 700;
-      font-size: 7vw;
+      .steps p {
+        font-size: 2.5vw; } }
+  .steps .a-step {
+    margin-bottom: 10vh;
+    width: 50vw;
+    display: inline-block;
+    margin-left: 25vw;
+    text-align: center; }
+    .steps .a-step:first-of-type {
       margin-top: 2vh; }
+    .steps .a-step img {
+      width: 18vw; }
       @media only screen and (min-width: 1025px) {
-        .steps .a-step span:first-of-type {
-          font-size: 3.4vw; } }
-    .steps .a-step span:last-of-type {
-      font-weight: 300;
-      font-size: 4vw; }
-      @media only screen and (min-width: 1025px) {
-        .steps .a-step span:last-of-type {
-          font-size: 2vw; } }
+        .steps .a-step img {
+          width: 8vw; } }
+    .steps .a-step span {
+      display: block; }
+      .steps .a-step span:first-of-type {
+        font-weight: 700;
+        font-size: 7vw;
+        margin-top: 2vh; }
+        @media only screen and (min-width: 1025px) {
+          .steps .a-step span:first-of-type {
+            font-size: 3.4vw; } }
+      .steps .a-step span:last-of-type {
+        font-weight: 300;
+        font-size: 4vw; }
+        @media only screen and (min-width: 1025px) {
+          .steps .a-step span:last-of-type {
+            font-size: 2vw; } }
 
 .grad {
   background-color: #150958; }
