@@ -234,23 +234,30 @@ input[type="submit"]
       margin-left: 5vw
       position: absolute
       transform: rotate(-90deg)
+      @include desktop
+        width: 31vw
+        top: 29vh
       &:first-of-type
-        top: 23vh
+        top: 28vh
         right: -6vw
     .device.left
       left: -11vw
       @include desktop
-        width: 15vw
+        top: 69vh
     .content-holder.left
       text-align: right
     .content-holder.right
       margin-left: 45vw
+      @include desktop
+        margin-left: 25vw
     .content-holder
       display: inline-block
       width: 50vw
       vertical-align: top
       margin-left: 5vw
       padding-top: 0
+      @include desktop
+        margin-left: 0vw
       span
         &:first-of-type
           margin-bottom: 6vh
@@ -428,6 +435,7 @@ input[type="submit"]
     font-weight: 600
     @include desktop
       font-size: 2.5vw
+      margin-top: 32vh
   .a-step
     margin-bottom: 10vh
     width: 50vw
@@ -456,3 +464,7 @@ input[type="submit"]
 
 .grad
   background-color: #150958
+
+.spacer
+  @include desktop
+    padding-top: 54vh !important

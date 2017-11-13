@@ -471,24 +471,34 @@ input[type="submit"] {
       position: absolute;
       -webkit-transform: rotate(-90deg);
               transform: rotate(-90deg); }
+      @media only screen and (min-width: 1025px) {
+        .blue .three-phones .device {
+          width: 31vw;
+          top: 29vh; } }
       .blue .three-phones .device:first-of-type {
-        top: 23vh;
+        top: 28vh;
         right: -6vw; }
     .blue .three-phones .device.left {
       left: -11vw; }
       @media only screen and (min-width: 1025px) {
         .blue .three-phones .device.left {
-          width: 15vw; } }
+          top: 69vh; } }
     .blue .three-phones .content-holder.left {
       text-align: right; }
     .blue .three-phones .content-holder.right {
       margin-left: 45vw; }
+      @media only screen and (min-width: 1025px) {
+        .blue .three-phones .content-holder.right {
+          margin-left: 25vw; } }
     .blue .three-phones .content-holder {
       display: inline-block;
       width: 50vw;
       vertical-align: top;
       margin-left: 5vw;
       padding-top: 0; }
+      @media only screen and (min-width: 1025px) {
+        .blue .three-phones .content-holder {
+          margin-left: 0vw; } }
       .blue .three-phones .content-holder span:first-of-type {
         margin-bottom: 6vh;
         font-weight: 700;
@@ -691,7 +701,8 @@ input[type="submit"] {
     font-weight: 600; }
     @media only screen and (min-width: 1025px) {
       .steps p {
-        font-size: 2.5vw; } }
+        font-size: 2.5vw;
+        margin-top: 32vh; } }
   .steps .a-step {
     margin-bottom: 10vh;
     width: 50vw;
@@ -723,6 +734,10 @@ input[type="submit"] {
 
 .grad {
   background-color: #150958; }
+
+@media only screen and (min-width: 1025px) {
+  .spacer {
+    padding-top: 54vh !important; } }
 
 .about-copy {
   color: white;
