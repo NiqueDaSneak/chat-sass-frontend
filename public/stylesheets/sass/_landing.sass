@@ -224,18 +224,27 @@ input[type="submit"]
     height: 397vh
   .three-phones
     padding-top: 15vh
+    position: relative
     @include desktop
       padding-top: 15vh
       width: 76vw
       margin-left: 12vw
     .device
-      width: 35vw
-      display: inline-block
+      width: 56vw
       margin-left: 5vw
+      position: absolute
+      transform: rotate(-90deg)
+      &:first-of-type
+        top: 23vh
+        right: -6vw
+    .device.left
+      left: -11vw
       @include desktop
         width: 15vw
-    .content-holder.right
+    .content-holder.left
       text-align: right
+    .content-holder.right
+      margin-left: 45vw
     .content-holder
       display: inline-block
       width: 50vw
@@ -411,6 +420,7 @@ input[type="submit"]
     margin-top: 14.9vh
 
 .steps
+  padding-top: 24vh
   p
     font-size: 6vw
     text-align: center
