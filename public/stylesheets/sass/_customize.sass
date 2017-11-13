@@ -1,7 +1,20 @@
 .customize-content
   color: #150958
-  text-shadow: 0px 0px 60px white
-  height: fit-content
+  height: 40vh
+  background: url("imgs/nature-photos/10.png") top no-repeat
+  .customizeTitle
+    h2
+      @include desktop
+        padding-top: 20vh
+        text-align: center
+        color: white
+        font-size: 4vh
+        text-transform: uppercase
+
+
+
+
+.content
   @include desktop
   .bullets
     display: block
@@ -14,9 +27,7 @@
     @include desktop
       font-size: 2.7vw
     &:first-of-type
-      padding-top: 18vh
       @include desktop
-        padding-top: 28vh
     &:last-of-type
       margin-bottom: 6vh
   p
@@ -27,34 +38,34 @@
     margin-bottom: 5vh
     @include desktop
       font-size: 1.7vw
-  .btn-holder-customize
-    margin-bottom: 7vh
-    margin-top: 7vh
-    @include desktop
-      margin-bottom: 17vh
-      margin-top: 10vh
-    a
-      background-color: $siteMain
-      text-decoration: none
-      width: 0vw
-      padding: 2vh
-      color: white
-      margin-left: 8vw
-      border-radius: 1.5vw
-      @include tablet
-        padding: 3.2vh
-      @include desktop
-        border-radius: 0.8vw
-        margin-left: 22.5vw
-        padding: 3.1vh
-      img
-        width: 4vw
-        vertical-align: middle
-        @include desktop
-          width: 1.7vw
-      .btn-copy
-        vertical-align: middle
-        font-size: 4vw
-        margin-left: 2vw
-        @include desktop
-          font-size: 1.6vw
+  // .btn-holder-customize
+  //   margin-bottom: 7vh
+  //   margin-top: 7vh
+  //   @include desktop
+  //     margin-bottom: 17vh
+  //     margin-top: 10vh
+  //   a
+  //     background-color: $siteMain
+  //     text-decoration: none
+  //     width: 0vw
+  //     padding: 2vh
+  //     color: white
+  //     margin-left: 8vw
+  //     border-radius: 1.5vw
+  //     @include tablet
+  //       padding: 3.2vh
+  //     @include desktop
+  //       border-radius: 0.8vw
+  //       margin-left: 22.5vw
+  //       padding: 3.1vh
+  //     img
+  //       width: 4vw
+  //       vertical-align: middle
+  //       @include desktop
+  //         width: 1.7vw
+  //     .btn-copy
+  //       vertical-align: middle
+  //       font-size: 4vw
+  //       margin-left: 2vw
+  //       @include desktop
+  //         font-size: 1.6vw

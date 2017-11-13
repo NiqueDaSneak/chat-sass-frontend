@@ -16,7 +16,7 @@ html
     font-size: 3vw
     margin: 7vh
   @include tablet
-    font-size: 3vw
+    font-size: 5vw
     margin: 7vh
 
 
@@ -33,7 +33,7 @@ html
 .card
   @include desktop
     width: 20%
-    height: 60vh
+    height: 65vh
     margin: 0 2% 0 2%
     padding-bottom: 7vh
     display: inline-block
@@ -41,67 +41,29 @@ html
     box-shadow: 0 21px 56px rgba(0,43,121,.07)
     background-color: #c7c7c7
     vertical-align: top
-    p.end
-      @include desktop
-        vertical-align: bottom
-        text-align: center
-        position: absolute
-        width: 20%
   @include tablet
-    width: 20%
-    height: 60vh
-    margin: 0 2% 0 2%
+    width: 23%
+    height: 70vh
+    margin: 0 1% 0 1%
     padding-bottom: 7vh
     display: inline-block
     z-index: 2
     box-shadow: 0 21px 56px rgba(0,43,121,.07)
     background-color: #c7c7c7
     vertical-align: top
-    p.end
-      @include tablet
-        vertical-align: bottom
-        text-align: center
-        position: absolute
-        width: 20%
+
 
 .cardTitle
   @include desktop
     height: 18vh
     background-color: $siteGrey
     border: 1px solid $siteGrey
-  h4
-    @include desktop
-      text-align: left
-      padding: 3vh 0 1vh 2vw
-      height: 0
-      margin: 2vh 0
-      font-size: 2vw
-      display: inline-block
-      color: white
-  p.month
-    @include desktop
-      font-size: 1.75vh
-      display: inline
-      color: white
-  p.admins
-    @include desktop
-      text-align: left
-      padding: .75vh 0 5% 2vw
-      font-size: 1.75vh
-      margin-top: 0vh
-      font-style: italic
-      color: $secondMain
-    a
-      text-decoration: none
-      color: $secondMain
-
-
   @include tablet
     height: 18vh
     background-color: $siteGrey
     border: 1px solid $siteGrey
   h4
-    @include tablet
+    @include desktop
       text-align: left
       padding: 3vh 0 1vh 2vw
       height: 0
@@ -109,26 +71,37 @@ html
       font-size: 2vw
       display: inline-block
       color: white
-  p.month
     @include tablet
-      font-size: 1.75vh
-      display: inline
-      color: white
-  p.admins
-    @include tablet
+      font-size: 2.25vw
+      font-weight: 400
       text-align: left
-      padding: .75vh 0 5% 2vw
-      font-size: 1.75vh
-      margin-top: 0vh
-      font-style: italic
-      color: $secondMain
-    a
-      text-decoration: none
-      color: $secondMain
-      @include tablet
-        height: 18vh
-        background-color: $siteGrey
-        border: 1px solid $siteGrey
+      padding: 3vh 0 1vh 2vw
+      height: 0
+      margin: 2vh 0
+      display: inline-block
+      color: white
+.month
+  display: inline
+  color: white
+  @include desktop
+    font-size: 1.75vh
+  @include tablet
+    font-size: 1.25vh
+p.admins
+  text-align: left
+  font-style: italic
+  color: $secondMain
+  @include desktop
+    padding: .75vh 0 5% 2vw
+    font-size: 1.75vh
+    margin-top: 0vh
+  @include tablet
+    padding: .75vh 0 5% 2vw
+    font-size: 1.5vh
+    margin-top: 0vh
+  a
+    text-decoration: none
+    color: $secondMain
 
 p#pro
   @include desktop
@@ -155,7 +128,8 @@ ul.customList.list
   @include desktop
     margin-top: 8%
   @include tablet
-    margin-top: 8%
+    margin-top: 9%
+    padding: 0 4% 0 7%
 
 ul
   @include desktop
@@ -191,49 +165,45 @@ ul li
   @include desktop
     margin-right: 3%
   @include tablet
-    width: 18%
-    margin-right: 3%
+    width: 24%
+    margin-right: 1%
+    margin-left: 1%
+    line-height: 1.75vh
 .card.free
   @include desktop
     margin-left: 3%
   @include tablet
-    margin-left: 4%
+    margin-left: 2%
+    width: 19%
 
 
-div.button
-  clear: both
-  margin: 20% 0 20% 37.5%
-  @include desktop
-    margin: 0% 0 10% 45%
-  @include tablet
-    margin: 0% 0 10% 45%
-.cardButton
+.customButtonDiv
+  padding-top: 33%
+  // @include desktop
+  //   margin: 0% 0 10% 45%
+  // @include tablet
+  //   margin: 0% 0 10% 45%
+.customButton
   background-color: $thirdMain
   color: white
   text-decoration: none
   border-radius: 1.5vw
-  padding: 1.5vh 2.5vw 2vh 2.5vw
+  padding: 1.25vh 2.5vw 1.25vh 2.5vw
+  margin-left: 30%
+  font-size: 3vh
   @include desktop
     padding: 1.5vh 2.5vw 2vh 2.5vw
     border-radius: .75vw
-    img
-      // width: 1vw
-      // margin-right: .5vw
-      // vertical-align: middle
     span
       font-weight: 300
       vertical-align: middle
   @include tablet
     padding: 1.5vh 2.5vw 2vh 2.5vw
     border-radius: .75vw
-    img
-      // width: 1vw
-      // margin-right: .5vw
-      // vertical-align: middle
+    margin-left: 35%
     span
       font-weight: 300
       vertical-align: middle
-
 
 
 .pricingTable
@@ -283,6 +253,8 @@ td
   padding: 5% 10% 5% 10%
   text-align: center
   @include desktop
+  @include tablet
+    padding: 4% 10% 0% 10%
   p
     padding-top: 0
     padding-bottom: 5%
@@ -294,7 +266,7 @@ td
       font-weight: 500
 
 div.customCallout
-  height: 50vh
+  height: 53vh
   background-color: $fifthMain
   color: white
   text-align: center
@@ -337,3 +309,154 @@ tbody tr:nth-child(even)
 
 .body-bg.multiple-desktop
   height: fit-content
+
+
+*, *:before, *:after
+  box-sizing: border-box
+body
+
+.modal-container
+  margin: 60px auto
+  padding-top: 0px
+  position: relative
+  width: 200px
+  @include desktop
+    width: 400px
+    padding-bottom: 5%
+  @include tablet
+    width: 400px
+    padding-bottom: 5%
+.modal-content
+  height: 0
+  width: auto
+  opacity: 0
+  visibility: hidden
+  overflow: hidden
+  cursor: pointer
+  transition: opacity 0.2s ease-in
+  overflow-y: scroll
+.modal-backdrop
+  height: 0
+  width: 0
+  opacity: 0
+  visibility: hidden
+  overflow: hidden
+  cursor: pointer
+  transition: opacity 0.2s ease-in
+.modal-close
+  color: #aaa
+  position: absolute
+  right: 5px
+  top: 5px
+  padding-top: 3px
+  background: #fff
+  font-size: 16px
+  width: 25px
+  height: 25px
+  font-weight: bold
+  text-align: center
+  cursor: pointer
+  &:hover
+    color: #333
+.modal-content-btn
+  position: absolute
+  text-align: center
+  cursor: pointer
+  bottom: 20px
+  right: 30px
+  background: #446CB3
+  color: #fff
+  width: 75px
+  border-radius: 2px
+  font-size: 14px
+  height: 32px
+  padding: 6px 0 6px 0
+  font-weight: normal
+  text-decoration: none
+  &:hover
+    color: #fff
+    background: #365690
+#modal-toggle
+  display: none
+  &.active ~ .modal-backdrop
+  &:checked ~ .modal-backdrop
+    background-color: rgba(0, 0, 0, 0.6)
+    width: 100vw
+    height: 100vh
+    position: fixed
+    left: 0
+    top: 0
+    z-index: 9
+    visibility: visible
+    opacity: 1
+    transition: opacity 0.2s ease-in
+  &.active ~ .modal-content,
+  &:checked ~ .modal-content
+    opacity: 1
+    background-color: #fff
+    max-width: 400px
+    width: 300px
+    height: 280px
+    padding: 10px 30px
+    position: fixed
+    // left: calc(50% - 200px)
+    left: 5%
+    top: 12%
+    border-radius: 4px
+    z-index: 999
+    pointer-events: auto
+    cursor: auto
+    visibility: visible
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.6)
+    @include desktop
+      width: 400px
+      left: calc(50% - 200px)
+    @include tablet
+      width: 400px
+      left: calc(50% - 200px)
+
+.modalButton
+  background-color: $thirdMain
+  color: white
+  text-decoration: none
+  border-radius: 1.5vw
+  padding: 1.25vh 2.5vw 1.25vh 2.5vw
+  margin-left: 20%
+  font-size: 3vh
+  &:hover
+    background: $fifthMain
+  @include desktop
+    padding: 1.5vh 2.25vw 1.5vh 2.25vw
+    border-radius: .5vw
+    margin-left: 30%
+    margin-bottom: 15%
+    font-size: 2.5vh
+    vertical-align: middle
+    span
+      font-weight: 300
+      vertical-align: middle
+  @include tablet
+    margin-left: 25%
+    border-radius: .5vw
+    vertical-align: middle
+
+
+
+
+  // .modal-btn
+  //   display: block
+  //   margin: 0 auto
+  //   color: #fff
+  //   width: 160px
+  //   height: 50px
+  //   line-height: 50px
+  //   background: #446CB3
+  //   font-size: 22px
+  //   border: 0
+  //   border-radius: 3px
+  //   cursor: pointer
+  //   text-align: center
+  //   box-shadow: 0 5px 5px -5px #333
+  //   transition: background 0.3s ease-in
+  //   &:hover
+  //     background: #365690

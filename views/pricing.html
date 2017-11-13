@@ -244,14 +244,37 @@
         <li class="listItem soon personalize">&#10038; Brand persona</li>
         <li class="listItem soon personalize">&#10038; Customer service</li>
       </ul>
+
+      <div class="customButtonDiv">
+        <a class='customButton' href="mailto:dom@irrigatemsg.com?Subject=Irrigate%20Inquiry" target="_blank">
+          <!-- <img src="/imgs/landing-page/small-fb-icon.svg" alt="Facebook Icon"> -->
+          <span>Get a Quote</span>
+        </a>
+      </div>
     </div>
 
-    <div class="button">
-      <a class='cardButton' href='/auth/facebook'>
+   <!-- <div class="button">
+      <a class='cardButton' href='/auth/facebook' target="_blank"> -->
         <!-- <img src="/imgs/landing-page/small-fb-icon.svg" alt="Facebook Icon"> -->
-        <span>Get Started</span>
+        <!-- <span>Get Started</span>
       </a>
+    </div>  -->
+
+    <div class="modal-container">
+      <input id="modal-toggle" type="checkbox">
+      <label class="modalButton" for="modal-toggle" href='/auth/facebook' target="_blank">Get Started</label>
+      <label class="modal-backdrop" for="modal-toggle"></label>
+      <div class="modal-content">
+        <label class="modal-close" for="modal-toggle">&#x2715;</label>
+          <h2>WELCOME</h2><hr />
+          <p>You will now be redirected to Facebook where you will
+          select your plan and complete registration.</p>
+        <a class="modal-content-btn" href='/auth/facebook' target="_blank">
+          <span>Continue</span>
+        </a>
+      </div>
     </div>
+
 
 
   </div>
