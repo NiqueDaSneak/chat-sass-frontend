@@ -9,12 +9,15 @@ html
   font-size: 7vw
   margin-top: 0
   text-transform: uppercase
-  padding: 15vh 0vw 5vh 8vw
+  text-align: center
+  padding: 15vh 0vw 5vh 0vw
   color: white
   @include desktop
-    padding: 30vh 0vw 10vh 8vw
     font-size: 3vw
-    margin-bottom: 0
+    margin: 7vh
+  @include tablet
+    font-size: 3vw
+    margin: 7vh
 
 
 #cards
@@ -23,24 +26,39 @@ html
   @include desktop
     display: inline-block
     width: 100%
-    margin: 0 12.5% 0 12.5%
+  @include tablet
+    display: inline-block
+    width: 100%
 
 .card
   @include desktop
-    margin: 10vh 2.5% 0 2.5%
     width: 20%
+    height: 60vh
+    margin: 0 2% 0 2%
     padding-bottom: 7vh
     display: inline-block
-    flex-wrap: nowrap
-    height: 85vh
     z-index: 2
     box-shadow: 0 21px 56px rgba(0,43,121,.07)
-    border: 1px solid #c7c7c7
     background-color: #c7c7c7
-    border-radius: 4px
     vertical-align: top
     p.end
       @include desktop
+        vertical-align: bottom
+        text-align: center
+        position: absolute
+        width: 20%
+  @include tablet
+    width: 20%
+    height: 60vh
+    margin: 0 2% 0 2%
+    padding-bottom: 7vh
+    display: inline-block
+    z-index: 2
+    box-shadow: 0 21px 56px rgba(0,43,121,.07)
+    background-color: #c7c7c7
+    vertical-align: top
+    p.end
+      @include tablet
         vertical-align: bottom
         text-align: center
         position: absolute
@@ -50,13 +68,14 @@ html
   @include desktop
     height: 18vh
     background-color: $siteGrey
+    border: 1px solid $siteGrey
   h4
     @include desktop
       text-align: left
       padding: 3vh 0 1vh 2vw
       height: 0
       margin: 2vh 0
-      font-size: 4vh
+      font-size: 2vw
       display: inline-block
       color: white
   p.month
@@ -64,94 +83,166 @@ html
       font-size: 1.75vh
       display: inline
       color: white
-  p.members
+  p.admins
     @include desktop
       text-align: left
-      padding: 0 0 0 2vw
+      padding: .75vh 0 5% 2vw
       font-size: 1.75vh
       margin-top: 0vh
       font-style: italic
       color: $secondMain
-  p.users
-    @include desktop
-      text-align: left
-      padding: 0 0 5% 2vw
-      font-size: 1.75vh
-      margin-top: 0vh
-      font-style: italic
+    a
+      text-decoration: none
       color: $secondMain
 
-p#elite
+
+  @include tablet
+    height: 18vh
+    background-color: $siteGrey
+    border: 1px solid $siteGrey
+  h4
+    @include tablet
+      text-align: left
+      padding: 3vh 0 1vh 2vw
+      height: 0
+      margin: 2vh 0
+      font-size: 2vw
+      display: inline-block
+      color: white
+  p.month
+    @include tablet
+      font-size: 1.75vh
+      display: inline
+      color: white
+  p.admins
+    @include tablet
+      text-align: left
+      padding: .75vh 0 5% 2vw
+      font-size: 1.75vh
+      margin-top: 0vh
+      font-style: italic
+      color: $secondMain
+    a
+      text-decoration: none
+      color: $secondMain
+      @include tablet
+        height: 18vh
+        background-color: $siteGrey
+        border: 1px solid $siteGrey
+
+p#pro
   @include desktop
     padding: 0 5% 0 5%
-    margin: 12% 5% 10% 5%
+    margin-top: 10%
+    text-align: center
+    color: $fourthMain
+    text-transform: uppercase
+    font-weight: 600
+  @include tablet
+    padding: 0 5% 0 5%
+    margin-top: 10%
     text-align: center
     color: $fourthMain
     text-transform: uppercase
     font-weight: 600
 
-.eliteList.list
-  @include desktop
-    padding-top: 0vh
-    margin: -3vh 0 19vh 0
-
 ul.proList.list
   @include desktop
-    padding-top: 2vh
-    margin: 9vh 0 18vh 0
-
-ul.liteList.list
+    margin-top: 8%
+  @include tablet
+    margin-top: 8%
+ul.customList.list
   @include desktop
-    padding-top: 2vh
-    margin: 9vh 0 17vh 0
+    margin-top: 8%
+  @include tablet
+    margin-top: 8%
+
+ul
+  @include desktop
+    padding: 0% 5% 0 10%
+    margin-top: 15%
+  @include tablet
+    padding: 0% 5% 0 10%
+    margin-top: 15%
 
 ul li
   @include desktop
-    line-height: 1vh
-#soon
-  @include desktop
-  font-size: 1.5vh
-  text-indent: 1.5vw
-  line-height: .5vh
-.list
-  @include desktop
-    margin: 9vh 0 12vh 0
-    padding-top: 2vh
-    text-align: left
     list-style: none
+  @include tablet
+    list-style: none
+.listItem.soon
+  @include desktop
+    font-size: 1.5vh
+    text-indent: 1.5vw
+  @include tablet
+    font-size: 1.5vh
+    text-indent: 1.5vw
+
 .listItem
   @include desktop
     padding-bottom: 2vh
-    margin-bottom: 2vh
-    // border-bottom: 1px solid #e0e6ed
+    font-size: 1.75vh
+  @include tablet
+    padding-bottom: 2vh
     font-size: 1.75vh
 
+.card.custom
+  border: 4px solid $fifthMain
+  @include desktop
+    margin-right: 3%
+  @include tablet
+    width: 18%
+    margin-right: 3%
+.card.free
+  @include desktop
+    margin-left: 3%
+  @include tablet
+    margin-left: 4%
+
+
 div.button
+  clear: both
+  margin: 20% 0 20% 37.5%
   @include desktop
-    margin: 4vh 0 0 0
+    margin: 0% 0 10% 45%
+  @include tablet
+    margin: 0% 0 10% 45%
 .cardButton
+  background-color: $thirdMain
+  color: white
+  text-decoration: none
+  border-radius: 1.5vw
+  padding: 1.5vh 2.5vw 2vh 2.5vw
   @include desktop
-    background-color: $siteMain
-    padding: 1vw
-    border-radius: 1vw
-    color: white
-    margin: 2vh 22% 0 22.5%
-    text-decoration: none
+    padding: 1.5vh 2.5vw 2vh 2.5vw
+    border-radius: .75vw
     img
-      width: 1vw
-      margin-right: .5vw
-      vertical-align: middle
+      // width: 1vw
+      // margin-right: .5vw
+      // vertical-align: middle
     span
-      font-weight: 400
+      font-weight: 300
+      vertical-align: middle
+  @include tablet
+    padding: 1.5vh 2.5vw 2vh 2.5vw
+    border-radius: .75vw
+    img
+      // width: 1vw
+      // margin-right: .5vw
+      // vertical-align: middle
+    span
+      font-weight: 300
+      vertical-align: middle
+
 
 
 .pricingTable
-  height: 54vh
+  height: auto
   display: block
   @include desktop
     display: none
-    height: 100vh
-    text-align: center
+  @include tablet
+    display: none
 table
   width: 90%
   margin: 0 5% 0 5%
@@ -177,40 +268,72 @@ td
   text-align: center
   font-size: 1.75vh
   padding: 1vh 0 1vh 0
+  font-weight: 100
+  color: white
 .left
   text-align: left
   border-left: 0px
   padding-left: 1.5vw
+.left.stripe
+  padding-left: 3vw
 .bottom
   border-bottom: 0px
 
 .add
-  clear: both
-  margin: 35% 6% 0 7%
+  padding: 5% 10% 5% 10%
   text-align: center
   @include desktop
-    padding: 5vh 0vw 0vh 10vw
-    margin-top: 1%
   p
-    margin-top: 20vh
+    padding-top: 0
+    padding-bottom: 5%
     font-size: 2.25vh
-    text-align: left
-    padding-bottom: 10%
+    text-align: center
     color: white
     @include desktop
-      margin-top: 0vh
-      font-size: 2.75vh
-      font-weight: 600
+      font-size: 1.25vw
+      font-weight: 500
+
+div.customCallout
+  height: 50vh
+  background-color: $fifthMain
+  color: white
+  text-align: center
+  h3
+    padding: 7% 6% 0 6%
+    margin-bottom: 0
+  h4
+    margin-top: 4%
+  ul
+    list-style: none
+    padding: 0
+    margin-top: 3%
+  ul.integrations
+    float: left
+    width: 50%
+  ul.possibilities
+    float: right
+    width: 50%
+  @include desktop
+    display: none
+  @include tablet
+    display: none
+
+
+.listItem.callout
+  font-size: 3.75vw
+.listItem.soon.personalize
+  font-size: 2.9vw
+
+
 
 .headings
   background-color: rgba(0, 0, 0, 0)
 
 tbody tr:nth-child(odd)
   background: rgba(0, 0, 0, 0)
-  color: white
+  // color: white
 tbody tr:nth-child(even)
   background-color: rgba(199, 199, 199, 0.68)
-  font-weight: 500
 
 .body-bg.multiple-desktop
   height: fit-content
