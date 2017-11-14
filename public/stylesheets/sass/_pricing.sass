@@ -6,7 +6,7 @@ html
   padding: 0
 
 .pricingTitle
-  font-size: 7vw
+  font-size: 6vh
   margin-top: 0
   text-transform: uppercase
   text-align: center
@@ -17,7 +17,7 @@ html
     margin: 7vh
   @include tablet
     font-size: 5vw
-    margin: 7vh
+    margin: 8vh
 
 
 #cards
@@ -27,7 +27,7 @@ html
     display: inline-block
     width: 100%
   @include tablet
-    display: inline-block
+    display: none
     width: 100%
 
 .card
@@ -177,42 +177,13 @@ ul li
     width: 19%
 
 
-.customButtonDiv
-  padding-top: 33%
-  // @include desktop
-  //   margin: 0% 0 10% 45%
-  // @include tablet
-  //   margin: 0% 0 10% 45%
-.customButton
-  background-color: $thirdMain
-  color: white
-  text-decoration: none
-  border-radius: 1.5vw
-  padding: 1.25vh 2.5vw 1.25vh 2.5vw
-  margin-left: 30%
-  font-size: 3vh
-  @include desktop
-    padding: 1.5vh 2.5vw 2vh 2.5vw
-    border-radius: .75vw
-    span
-      font-weight: 300
-      vertical-align: middle
-  @include tablet
-    padding: 1.5vh 2.5vw 2vh 2.5vw
-    border-radius: .75vw
-    margin-left: 35%
-    span
-      font-weight: 300
-      vertical-align: middle
-
-
 .pricingTable
   height: auto
   display: block
   @include desktop
     display: none
   @include tablet
-    display: none
+    display: block
 table
   width: 90%
   margin: 0 5% 0 5%
@@ -240,6 +211,8 @@ td
   padding: 1vh 0 1vh 0
   font-weight: 100
   color: white
+  @include tablet
+    font-weight: 100
 .left
   text-align: left
   border-left: 0px
@@ -249,10 +222,12 @@ td
 .bottom
   border-bottom: 0px
 
+
 .add
   padding: 5% 10% 5% 10%
   text-align: center
   @include desktop
+    padding: 5% 10% 0% 10%
   @include tablet
     padding: 4% 10% 0% 10%
   p
@@ -266,15 +241,20 @@ td
       font-weight: 500
 
 div.customCallout
-  height: 53vh
+  height: auto
   background-color: $fifthMain
   color: white
   text-align: center
-  h3
-    padding: 7% 6% 0 6%
+  h2
+    padding: 7% 5% 0 5%
     margin-bottom: 0
-  h4
+    @include tablet
+      font-size: 5vw
+  h3
     margin-top: 4%
+    @include tablet
+      font-size: 3.75vw
+      margin-bottom: 7%
   ul
     list-style: none
     padding: 0
@@ -288,15 +268,51 @@ div.customCallout
   @include desktop
     display: none
   @include tablet
-    display: none
+    display: block
+    height: 73vh
+    margin-top: 20%
 
 
 .listItem.callout
-  font-size: 3.75vw
+  font-size: 4.25vw
+  @include tablet
+    font-size: 4vw
 .listItem.soon.personalize
-  font-size: 2.9vw
+  font-size: 3vw
 
 
+.customButtonDiv
+  padding-top: 33%
+  // @include desktop
+  //   margin: 0% 0 10% 45%
+  @include tablet
+    padding-top: 0
+.customButton
+  background-color: $thirdMain
+  color: white
+  text-decoration: none
+  border-radius: 1.5vw
+  padding: 1.25vh 2.5vw 1.25vh 2.5vw
+  margin: 0 30% 0 30%
+  font-size: 3vh
+  display: inline-block
+  width: 40%
+  @include desktop
+    padding: 1.5vh 2.5vw 2vh 2.5vw
+    border-radius: .75vw
+    width: 40%
+    margin: 0 30% 0 30%
+    span
+      font-weight: 300
+      vertical-align: inherit
+  @include tablet
+    padding: 1% 1% 1% 1%
+    border-radius: .75vw
+    margin: 0 30% 0 30%
+    width: 40%
+    span
+      font-weight: 300
+      vertical-align: middle
 
 .headings
   background-color: rgba(0, 0, 0, 0)
@@ -416,35 +432,44 @@ tbody tr:nth-child(even)
 //       left: calc(50% - 200px)
 
 .button
+  margin-top: 30%
   margin-bottom: 15%
+  @include desktop
+    margin: 0% 0 10% 0
 .fbButton
   background-color: $thirdMain
   color: white
   text-decoration: none
   border-radius: 1.5vw
-  padding: 1.25vh 2.5vw 1.25vh 2.5vw
-  margin-left: 20%
+  padding: 1% 1% 1% 1%
+  margin: 0 20% 0 20%
   font-size: 3vh
+  display: block
+  width: 60%
+  @include desktop
+    border-radius: .5vw
+    margin: 0 40% 0 40%
+    width: 20%
+    font-size: 2.75vh
+    vertical-align: middle
+    text-align: center
+  @include tablet
+    border-radius: 1vw
+    vertical-align: middle
+    margin: 0 25% 0 25%
+    padding: 1% 1% 1% 1%
+    width: 50%
+    text-align: center
   &:hover
     background: $fifthMain
-  @include desktop
-    padding: 1vh 2vw 1.25vh 2vw
-    border-radius: .5vw
-    margin-left: 42.5%
-    margin-bottom: 15%
-    font-size: 1.75vh
-    vertical-align: middle
     span
       font-weight: 300
       vertical-align: middle
-  @include tablet
-    margin-left: 25%
-    border-radius: .5vw
-    vertical-align: middle
-    margin-bottom: 15%
+
 
 .underButton
-  margin: 3% 0 0 42.5%
+  width: 70%
+  margin: 7% 0 0 15%
   text-align: center
   @include desktop
     width: 30%
@@ -454,10 +479,18 @@ tbody tr:nth-child(even)
     margin: 3% 0 0 30%
 .smallText
   color: #c1c1c1
+  font-size: 2.75vw
   @include desktop
     font-size: 1.5vh
   @include tablet
     font-size: 1.25vh
+
+.smallText.FB
+  display: inline-block
+  padding-bottom: 2vh
+.smallText.TC
+  display: inline-block
+
 
 
   // .modal-btn

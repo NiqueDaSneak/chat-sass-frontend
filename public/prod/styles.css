@@ -1452,12 +1452,12 @@ header {
 .tiers-header {
   text-align: center;
   margin-top: 9vh;
-  font-size: 8vw;
+  font-size: 6vh;
   font-weight: 600;
   margin-bottom: 4vh; }
   @media only screen and (min-width: 1025px) {
     .tiers-header {
-      font-size: 2.8vw; } }
+      font-size: 2.75vw; } }
 
 .tiers-holder {
   background-color: white;
@@ -1475,11 +1475,11 @@ header {
   .tiers-holder p {
     font-weight: 600;
     cursor: pointer;
-    font-size: 6vw;
+    font-size: 5vw;
     color: #150958; }
     @media only screen and (min-width: 1025px) {
       .tiers-holder p {
-        font-size: 3vw; } }
+        font-size: 2.5vw; } }
     .tiers-holder p:first-of-type {
       padding-top: 5vh; }
     .tiers-holder p:last-of-type {
@@ -1500,6 +1500,15 @@ header {
   text-align: center;
   color: red;
   margin-top: 7vh; }
+  .err-msg span:last-of-type {
+    position: absolute;
+    bottom: 5.5vh;
+    color: white;
+    font-size: 2.3vw;
+    left: 5vw; }
+    @media only screen and (min-width: 1025px) {
+      .err-msg span:last-of-type {
+        font-size: 0.7vw; } }
 
 body {
   margin: 0;
