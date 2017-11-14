@@ -155,11 +155,6 @@ input[type="submit"]
   @include tablet
      font-size: 4.6vw
 
-.market
-  height: 100vh
-  @include desktop
-    padding-bottom: 15vh
-
 
 @keyframes pulse
   0%
@@ -171,12 +166,6 @@ input[type="submit"]
 
 
 
-// may not be in use
-.grey
-  width: 46vw
-  display: inline-block
-  margin-left: 38vw
-  background-color: black
 
 .blue
   color: white
@@ -188,15 +177,23 @@ input[type="submit"]
     height: 397vh
   .three-phones
     padding-top: 15vh
+    width: 76vw
+    margin-left: 12vw
     @include desktop
       padding-top: 15vh
       width: 76vw
       margin-left: 12vw
+    @include tablet
+      // padding-top: 15vh
+      // width: 76vw
+      // margin-left: 12vw
     .device
       width: 35vw
       display: inline-block
       margin-left: 5vw
       @include desktop
+        width: 15vw
+      @include tablet
         width: 15vw
     .content-holder.right
       text-align: right
@@ -215,16 +212,28 @@ input[type="submit"]
           @include desktop
             font-size: 2.125vw
             margin-bottom: 2vh
+          @include tablet
+            font-size: 2.125vw
+            margin-bottom: 2vh
         &:last-of-type
           font-weight: 400
           font-size: 4.2vw
           @include desktop
             font-size: 1.5vw
+          @include tablet
+            font-size: 1.5vw
 
     .content-holder.top
+      padding: 0 0 20vh 0
+      width: 80vw
+      margin: 0
       @include desktop
         padding: 15vh 0 30vh 0
         width: 70vw
+        margin: 0
+      @include tablet
+        padding: 15vh 0 30vh 0
+        width: 80vw
         margin: 0
         // color: white
         // padding-top: 7vh
@@ -238,12 +247,15 @@ input[type="submit"]
             // font-size: 6vw
             @include desktop
               font-size: 3vw
-              // margin-bottom: 2vh
+            @include tablet
+              font-size: 6vw
           &:last-of-type
             font-weight: 400
             font-size: 4.2vw
             @include desktop
               font-size: 1.75vw
+            @include tablet
+              font-size: 3vw
 
 
   .why
@@ -364,6 +376,8 @@ input[type="submit"]
     @include desktop
       font-size: 1.75vw
       margin: 5vh 0 0 5vw
+    @include tablet
+      font-size: 4vw
   p
     font-weight: 300
     font-size: 5vw
@@ -375,6 +389,8 @@ input[type="submit"]
       font-weight: 100
       margin: .5vh 0 8vh 5vw
       width: 55vw
+    @include tablet
+      font-size: 3vw
 
 .circles
   div
@@ -384,9 +400,14 @@ input[type="submit"]
     margin-right: 5vw
     @include desktop
       margin-bottom: 0vh
-  img
-    width: 24vw
-    vertical-align: top
+    @include tablet
+      // text-align: center
+    .text
+      text-align: center
+      color: red
+  // img
+  //   width: 24vw
+  //   vertical-align: top
 
 .multiple-mobile-wrapper
   height: 110% !important
@@ -419,6 +440,7 @@ input[type="submit"]
     margin-top: 14.9vh
 
 .steps
+  width: 100%
   p
     font-size: 6vw
     text-align: center
@@ -427,20 +449,26 @@ input[type="submit"]
     @include desktop
       font-size: 3vw
       padding-top: 15vh
+    @include tablet
+      font-size: 6vw
+      padding-top: 25vh
   .stepOne
-    width: 33%
+    width: 31%
     float: left
-    margin-left: .5%
+    margin-left: 1.25%
     margin-bottom: 25vh
+    padding: 0 .75% 0 .75%
   .stepTwo
-    width: 33%
+    width: 31%
     float: left
     margin-bottom: 25vh
+    padding: 0 .75% 0 .75%
   .stepThree
-    width: 33%
+    width: 31%
     float: right
-    margin-right: .5%
+    margin-right: 1.25%
     margin-bottom: 25vh
+    padding: 0 .75% 0 .75%
   .a-step
     margin-bottom: 10vh
     // width: 50vw
@@ -457,17 +485,23 @@ input[type="submit"]
       display: block
       &:first-of-type
         font-weight: 700
-        font-size: 7vw
+        font-size: 5vw
         margin-top: 2vh
         @include desktop
           font-size: 1.75vw
           margin: 4vh 0 1vh 0
+        @include tablet
+          font-size: 4.5vw
+          // margin: 4vh 0 1vh 0
       &:last-of-type
         font-weight: 300
         font-size: 4vw
         @include desktop
           font-size: 1.25vw
           padding: 0 12.5% 0 12.5%
+        @include tablet
+          font-size: 3vw
+          // padding: 0 12.5% 0 12.5%
 
 .grad
   background-color: #150958
