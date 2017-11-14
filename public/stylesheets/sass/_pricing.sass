@@ -147,10 +147,10 @@ ul li
 .listItem.soon
   @include desktop
     font-size: 1.5vh
-    text-indent: 1.5vw
+    // text-indent: 1.5vw
   @include tablet
     font-size: 1.5vh
-    text-indent: 1.5vw
+    // text-indent: 1.5vw
 
 .listItem
   @include desktop
@@ -213,11 +213,12 @@ td
   color: white
   @include tablet
     font-weight: 100
-.left
+.leftTD
   text-align: left
   border-left: 0px
+  float: none
   padding-left: 1.5vw
-.left.stripe
+.leftTD.stripe
   padding-left: 3vw
 .bottom
   border-bottom: 0px
@@ -241,7 +242,7 @@ td
       font-weight: 500
 
 div.customCallout
-  height: auto
+  // height: auto
   background-color: $fifthMain
   color: white
   text-align: center
@@ -283,8 +284,7 @@ div.customCallout
 
 .customButtonDiv
   padding-top: 33%
-  // @include desktop
-  //   margin: 0% 0 10% 45%
+  // margin-bottom: 3vh
   @include tablet
     padding-top: 0
 .customButton
@@ -293,12 +293,12 @@ div.customCallout
   text-decoration: none
   border-radius: 1.5vw
   padding: 1.25vh 2.5vw 1.25vh 2.5vw
-  margin: 0 30% 0 30%
+  margin: 0 30% 3vh 30%
   font-size: 3vh
   display: inline-block
   width: 40%
   @include desktop
-    padding: 1.5vh 2.5vw 2vh 2.5vw
+    // padding: 1.5vh 2.5vw 2vh 2.5vw
     border-radius: .75vw
     width: 40%
     margin: 0 30% 0 30%
@@ -327,110 +327,6 @@ tbody tr:nth-child(even)
   height: fit-content
 
 
-// *, *:before, *:after
-//   box-sizing: border-box
-// body
-//
-// .modal-container
-//   margin: 60px auto
-//   padding-top: 0px
-//   position: relative
-//   width: 200px
-//   @include desktop
-//     width: 400px
-//     padding-bottom: 5%
-//   @include tablet
-//     width: 400px
-//     padding-bottom: 5%
-// .modal-content
-//   height: 0
-//   width: auto
-//   opacity: 0
-//   visibility: hidden
-//   overflow: hidden
-//   cursor: pointer
-//   transition: opacity 0.2s ease-in
-//   overflow-y: scroll
-// .modal-backdrop
-//   height: 0
-//   width: 0
-//   opacity: 0
-//   visibility: hidden
-//   overflow: hidden
-//   cursor: pointer
-//   transition: opacity 0.2s ease-in
-// .modal-close
-//   color: #aaa
-//   position: absolute
-//   right: 5px
-//   top: 5px
-//   padding-top: 3px
-//   background: #fff
-//   font-size: 16px
-//   width: 25px
-//   height: 25px
-//   font-weight: bold
-//   text-align: center
-//   cursor: pointer
-//   &:hover
-//     color: #333
-// .modal-content-btn
-//   position: absolute
-//   text-align: center
-//   cursor: pointer
-//   bottom: 20px
-//   right: 30px
-//   background: #446CB3
-//   color: #fff
-//   width: 75px
-//   border-radius: 2px
-//   font-size: 14px
-//   height: 32px
-//   padding: 6px 0 6px 0
-//   font-weight: normal
-//   text-decoration: none
-//   &:hover
-//     color: #fff
-//     background: #365690
-// #modal-toggle
-//   display: none
-//   &.active ~ .modal-backdrop
-//   &:checked ~ .modal-backdrop
-//     background-color: rgba(0, 0, 0, 0.6)
-//     width: 100vw
-//     height: 100vh
-//     position: fixed
-//     left: 0
-//     top: 0
-//     z-index: 9
-//     visibility: visible
-//     opacity: 1
-//     transition: opacity 0.2s ease-in
-//   &.active ~ .modal-content,
-//   &:checked ~ .modal-content
-//     opacity: 1
-//     background-color: #fff
-//     max-width: 400px
-//     width: 300px
-//     height: 280px
-//     padding: 10px 30px
-//     position: fixed
-//     // left: calc(50% - 200px)
-//     left: 5%
-//     top: 12%
-//     border-radius: 4px
-//     z-index: 999
-//     pointer-events: auto
-//     cursor: auto
-//     visibility: visible
-//     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.6)
-//     @include desktop
-//       width: 400px
-//       left: calc(50% - 200px)
-//     @include tablet
-//       width: 400px
-//       left: calc(50% - 200px)
-
 .button
   margin-top: 30%
   margin-bottom: 15%
@@ -441,8 +337,8 @@ tbody tr:nth-child(even)
   color: white
   text-decoration: none
   border-radius: 1.5vw
-  padding: 1% 1% 1% 1%
-  margin: 0 20% 0 20%
+  padding: 3% 10% 3% 10%
+  margin-left: 10%
   font-size: 3vh
   display: block
   width: 60%
