@@ -607,6 +607,12 @@ input[type="submit"] {
     .subtitle {
       font-size: 4.6vw; } }
 
+.market {
+  height: 100vh; }
+  @media only screen and (min-width: 1025px) {
+    .market {
+      padding-bottom: 15vh; } }
+
 @-webkit-keyframes pulse {
   0% {
     -webkit-filter: drop-shadow(white 0px 0px 5px);
@@ -629,6 +635,12 @@ input[type="submit"] {
     -webkit-filter: drop-shadow(white 0px 0px 5px);
             filter: drop-shadow(white 0px 0px 5px); } }
 
+.grey {
+  width: 46vw;
+  display: inline-block;
+  margin-left: 38vw;
+  background-color: black; }
+
 .blue {
   color: white; }
   @media only screen and (min-width: 1025px) {
@@ -638,9 +650,7 @@ input[type="submit"] {
     .blue {
       height: 397vh; } }
   .blue .three-phones {
-    padding-top: 15vh;
-    width: 76vw;
-    margin-left: 12vw; }
+    padding-top: 15vh; }
     @media only screen and (min-width: 1025px) {
       .blue .three-phones {
         padding-top: 15vh;
@@ -651,9 +661,6 @@ input[type="submit"] {
       display: inline-block;
       margin-left: 5vw; }
       @media only screen and (min-width: 1025px) {
-        .blue .three-phones .device {
-          width: 15vw; } }
-      @media only screen and (max-width: 1024px) and (min-width: 415px) {
         .blue .three-phones .device {
           width: 15vw; } }
     .blue .three-phones .content-holder.right {
@@ -673,49 +680,27 @@ input[type="submit"] {
           .blue .three-phones .content-holder span:first-of-type {
             font-size: 2.125vw;
             margin-bottom: 2vh; } }
-        @media only screen and (max-width: 1024px) and (min-width: 415px) {
-          .blue .three-phones .content-holder span:first-of-type {
-            font-size: 2.125vw;
-            margin-bottom: 2vh; } }
       .blue .three-phones .content-holder span:last-of-type {
         font-weight: 400;
         font-size: 4.2vw; }
         @media only screen and (min-width: 1025px) {
           .blue .three-phones .content-holder span:last-of-type {
             font-size: 1.5vw; } }
-        @media only screen and (max-width: 1024px) and (min-width: 415px) {
-          .blue .three-phones .content-holder span:last-of-type {
-            font-size: 1.5vw; } }
-    .blue .three-phones .content-holder.top {
-      padding: 0 0 20vh 0;
-      width: 80vw;
-      margin: 0; }
-      @media only screen and (min-width: 1025px) {
-        .blue .three-phones .content-holder.top {
-          padding: 15vh 0 30vh 0;
-          width: 70vw;
-          margin: 0; } }
-      @media only screen and (max-width: 1024px) and (min-width: 415px) {
-        .blue .three-phones .content-holder.top {
-          padding: 15vh 0 30vh 0;
-          width: 80vw;
-          margin: 0; } }
-  @media only screen and (max-width: 1024px) and (min-width: 415px) and (min-width: 1025px) {
+    @media only screen and (min-width: 1025px) {
+      .blue .three-phones .content-holder.top {
+        padding: 15vh 0 30vh 0;
+        width: 70vw;
+        margin: 0; } }
+  @media only screen and (min-width: 1025px) and (min-width: 1025px) {
     .blue .three-phones .content-holder.top span:first-of-type {
       font-size: 3vw; } }
-  @media only screen and (max-width: 1024px) and (min-width: 415px) and (max-width: 1024px) and (min-width: 415px) {
-    .blue .three-phones .content-holder.top span:first-of-type {
-      font-size: 6vw; } }
-      @media only screen and (max-width: 1024px) and (min-width: 415px) {
-          .blue .three-phones .content-holder.top span:last-of-type {
-            font-weight: 400;
-            font-size: 4.2vw; } }
-    @media only screen and (max-width: 1024px) and (min-width: 415px) and (min-width: 1025px) {
+    @media only screen and (min-width: 1025px) {
+        .blue .three-phones .content-holder.top span:last-of-type {
+          font-weight: 400;
+          font-size: 4.2vw; } }
+    @media only screen and (min-width: 1025px) and (min-width: 1025px) {
       .blue .three-phones .content-holder.top span:last-of-type {
         font-size: 1.75vw; } }
-    @media only screen and (max-width: 1024px) and (min-width: 415px) and (max-width: 1024px) and (min-width: 415px) {
-      .blue .three-phones .content-holder.top span:last-of-type {
-        font-size: 3vw; } }
   .blue .why {
     margin-top: 15vh;
     font-size: 6.8vw;
@@ -847,9 +832,6 @@ input[type="submit"] {
       .features h6 {
         font-size: 1.75vw;
         margin: 5vh 0 0 5vw; } }
-    @media only screen and (max-width: 1024px) and (min-width: 415px) {
-      .features h6 {
-        font-size: 4vw; } }
   .features p {
     font-weight: 300;
     font-size: 5vw;
@@ -862,9 +844,6 @@ input[type="submit"] {
         font-weight: 100;
         margin: .5vh 0 8vh 5vw;
         width: 55vw; } }
-    @media only screen and (max-width: 1024px) and (min-width: 415px) {
-      .features p {
-        font-size: 3vw; } }
 
 .circles div {
   display: inline-block;
@@ -874,9 +853,10 @@ input[type="submit"] {
   @media only screen and (min-width: 1025px) {
     .circles div {
       margin-bottom: 0vh; } }
-  .circles div .text {
-    text-align: center;
-    color: red; }
+
+.circles img {
+  width: 24vw;
+  vertical-align: top; }
 
 .multiple-mobile-wrapper {
   height: 110% !important; }
@@ -915,72 +895,61 @@ input[type="submit"] {
       left: -6.1vw;
       margin-top: 14.9vh; } }
 
-.steps {
-  width: 100%; }
-  .steps p {
-    font-size: 6vw;
-    text-align: center;
-    margin-top: 30vh;
-    font-weight: 600; }
+.steps p {
+  font-size: 6vw;
+  text-align: center;
+  margin-top: 30vh;
+  font-weight: 600; }
+  @media only screen and (min-width: 1025px) {
+    .steps p {
+      font-size: 3vw;
+      padding-top: 15vh; } }
+
+.steps .stepOne {
+  width: 33%;
+  float: left;
+  margin-left: .5%;
+  margin-bottom: 25vh; }
+
+.steps .stepTwo {
+  width: 33%;
+  float: left;
+  margin-bottom: 25vh; }
+
+.steps .stepThree {
+  width: 33%;
+  float: right;
+  margin-right: .5%;
+  margin-bottom: 25vh; }
+
+.steps .a-step {
+  margin-bottom: 10vh;
+  display: inline-block;
+  text-align: center; }
+  .steps .a-step:first-of-type {
+    margin-top: 2vh; }
+  .steps .a-step img {
+    width: 18vw; }
     @media only screen and (min-width: 1025px) {
-      .steps p {
-        font-size: 3vw;
-        padding-top: 15vh; } }
-    @media only screen and (max-width: 1024px) and (min-width: 415px) {
-      .steps p {
-        font-size: 6vw;
-        padding-top: 25vh; } }
-  .steps .stepOne {
-    width: 31%;
-    float: left;
-    margin-left: 1.25%;
-    margin-bottom: 25vh;
-    padding: 0 .75% 0 .75%; }
-  .steps .stepTwo {
-    width: 31%;
-    float: left;
-    margin-bottom: 25vh;
-    padding: 0 .75% 0 .75%; }
-  .steps .stepThree {
-    width: 31%;
-    float: right;
-    margin-right: 1.25%;
-    margin-bottom: 25vh;
-    padding: 0 .75% 0 .75%; }
-  .steps .a-step {
-    margin-bottom: 10vh;
-    display: inline-block;
-    text-align: center; }
-    .steps .a-step:first-of-type {
+      .steps .a-step img {
+        width: 25%; } }
+  .steps .a-step span {
+    display: block; }
+    .steps .a-step span:first-of-type {
+      font-weight: 700;
+      font-size: 7vw;
       margin-top: 2vh; }
-    .steps .a-step img {
-      width: 18vw; }
       @media only screen and (min-width: 1025px) {
-        .steps .a-step img {
-          width: 25%; } }
-    .steps .a-step span {
-      display: block; }
-      .steps .a-step span:first-of-type {
-        font-weight: 700;
-        font-size: 5vw;
-        margin-top: 2vh; }
-        @media only screen and (min-width: 1025px) {
-          .steps .a-step span:first-of-type {
-            font-size: 1.75vw;
-            margin: 4vh 0 1vh 0; } }
-        @media only screen and (max-width: 1024px) and (min-width: 415px) {
-          .steps .a-step span:first-of-type {
-            font-size: 4.5vw; } }
-      .steps .a-step span:last-of-type {
-        font-weight: 300;
-        font-size: 4vw; }
-        @media only screen and (min-width: 1025px) {
-          .steps .a-step span:last-of-type {
-            font-size: 1.25vw;
-            padding: 0 12.5% 0 12.5%; } }
-        @media only screen and (max-width: 1024px) and (min-width: 415px) {
-          .steps .a-step span:last-of-type {
-            font-size: 3vw; } }
+        .steps .a-step span:first-of-type {
+          font-size: 1.75vw;
+          margin: 4vh 0 1vh 0; } }
+    .steps .a-step span:last-of-type {
+      font-weight: 300;
+      font-size: 4vw; }
+      @media only screen and (min-width: 1025px) {
+        .steps .a-step span:last-of-type {
+          font-size: 1.25vw;
+          padding: 0 12.5% 0 12.5%; } }
 
 .grad {
   background-color: #150958; }
