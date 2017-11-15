@@ -1447,13 +1447,17 @@ header {
 
 .tiers-header {
   text-align: center;
-  margin-top: 9vh;
   font-size: 8vw;
   font-weight: 600;
   margin-bottom: 4vh; }
   @media only screen and (min-width: 1025px) {
     .tiers-header {
       font-size: 2.8vw; } }
+
+.tier-logo {
+  width: 20vw;
+  margin-left: 40vw;
+  margin-top: 4vh; }
 
 .tiers-holder {
   background-color: white;
