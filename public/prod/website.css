@@ -710,7 +710,6 @@ input[type="submit"] {
           width: 31vw;
           top: 29vh; } }
       .blue .three-phones .device:first-of-type {
-        top: 23vh;
         right: -6vw; }
         @media only screen and (max-width: 1024px) and (min-width: 415px) {
           .blue .three-phones .device:first-of-type {
