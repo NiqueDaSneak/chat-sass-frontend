@@ -37,7 +37,18 @@
         }, 1000)
         break;
       case 'Share Templates':
-        console.log($(event.target).text())
+        $('body').append("<div class='share-templates'><img src='/imgs/white-icon.svg' alt=''><img src='/imgs/x.svg' alt='Close'><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend lobortis libero, sed ullamcorper nisl. Sed eget cursus lacus, vitae tempor ligula. Nullam lacus augue, imperdiet vitae leo vitae, euismod pellentesque enim.</span><p>Social Post Template</p><textarea name='name' rows='8' cols='80'></textarea><p>Email Template</p><textarea name='name' rows='8' cols='80'></textarea></div>")
+        $('.share-templates textarea:first-of-type').val('penis')
+        $('.share-templates textarea:last-of-type').val('penis')
+        setTimeout(() => {
+          $('.share-templates').css('left', '0')
+          $('.share-templates img:last-of-type').click(() => {
+            $('.share-templates').remove()
+          })
+        }, 100)
+        setTimeout(() => {
+          $('.submenu').addClass('inactive')
+        }, 1000)
         break;
       case 'Account Settings':
         console.log($(event.target).text())
