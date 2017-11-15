@@ -1,9 +1,5 @@
 .landing
   color: $siteGrey
-  // height: 200vh
-  // background-repeat: no-repeat
-  // background-attachment: fixed
-  // background-image: url('/imgs/biz-photos/7-mobile.png')
   background-size: cover
   background-position-x: center
   @include desktop
@@ -56,43 +52,15 @@
     padding-top: 0vh
     margin-top: 0
     padding-left: 51vw
+    padding-bottom: 15vh
+    display: inline-block
     @include desktop
       padding-left: 51.3vw
       font-size: 1.7vw
     @include tablet
       font-size: 3.1vw
       padding-left: 53.6vw
-  h3
-    font-size: 6.5vw
-    font-weight: 700
-    color: white
-    text-align: left
-    width: 80vw
-    padding: 10vh 0vw 5vh 5vw
-    @include desktop
-      font-size: 2.2vw
-      width: 40vw
-      padding: 10vh 0vw 5vh 15vw
-    @include tablet
-      font-size: 5.2vw
-  .h5
-    font-size: 6.5vw
-    font-weight: 400
-    color: white
-    text-align: right
-    width: 80vw
-    padding: 0vh 0vw 12vh 15vw
-    display: block
-    @include desktop
-      font-size: 2.2vw
-      width: 60vw
-      padding: 0vh 0vw 2vh 30vw
-    @include tablet
-      font-size: 5.2vw
 
-//   @include desktop
-//     font-size: 1.2vw
-//     padding-right: 39vw
 .social
   padding-top: 4vh
   position: top
@@ -174,29 +142,6 @@ input[type="submit"]
       width: 55vw
       font-weight: 300
 
-  // .social
-  //   padding-top: 4vh
-  //   position: top
-  //   max-width: auto
-  //   text-align: center
-  //   @include desktop
-  //     height: 12vh
-  // .socialIcons
-  //   display: inline
-  //   width: 12vw
-  //   vertical-align: middle
-  //   @include desktop
-  //     width: 5vw
-  //     padding-bottom: 0
-  //   &:first-of-type
-  //     width: 17vw
-  //     margin-right: 10vw
-  //     animation: pulse 1.4s infinite ease-in-out
-  //     @include desktop
-  //       width: 7vw
-  //       margin-right: 7vw
-
-
 @keyframes pulse
   0%
     filter: drop-shadow(white 0px 0px 5px)
@@ -204,9 +149,6 @@ input[type="submit"]
     filter: drop-shadow(white 0px 0px 15px)
   100%
     filter: drop-shadow(white 0px 0px 5px)
-
-
-
 
 .grey
   width: 46vw
@@ -216,12 +158,36 @@ input[type="submit"]
 
 .blue
   color: white
-  // height: 384vh
-  // padding-bottom: 10vh
+  padding-top: 10vh
   @include desktop
     height: 384vh
   @include tablet
     height: 397vh
+  .h3
+    display: block
+    text-align: center
+    margin-bottom: 3vh
+    font-size: 6vw
+    @include desktop
+      font-size: 2.2vw
+      width: 40vw
+      padding: 10vh 0vw 5vh 15vw
+    @include tablet
+      font-size: 5.2vw
+  .h5
+    font-size: 4.9vw
+    font-weight: 400
+    color: white
+    text-align: center
+    width: 80vw
+    display: block
+    margin-left: 10vw
+    @include desktop
+      font-size: 2.2vw
+      width: 60vw
+      padding: 0vh 0vw 2vh 30vw
+    @include tablet
+      font-size: 5.2vw
   .three-phones
     padding-top: 15vh
     position: relative
@@ -238,7 +204,7 @@ input[type="submit"]
         width: 31vw
         top: 29vh
       &:first-of-type
-        top: 28vh
+        top: 23vh
         right: -6vw
     .device.left
       left: -11vw
