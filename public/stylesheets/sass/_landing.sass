@@ -159,6 +159,7 @@ input[type="submit"]
 .blue
   color: white
   padding-top: 10vh
+  padding-bottom: 10vh
   @include desktop
     height: 384vh
   @include tablet
@@ -187,7 +188,7 @@ input[type="submit"]
       width: 60vw
       padding: 0vh 0vw 2vh 30vw
     @include tablet
-      font-size: 5.2vw
+      font-size: 3.9vw
   .three-phones
     padding-top: 15vh
     position: relative
@@ -206,6 +207,8 @@ input[type="submit"]
       &:first-of-type
         top: 23vh
         right: -6vw
+        @include tablet
+          top: 26vh
     .device.left
       left: -11vw
       @include desktop
@@ -342,7 +345,7 @@ input[type="submit"]
     font-weight: 300
     font-size: 5vw
     color: #150958
-    width: 60vw
+    width: 90vw
     margin: 0
     @include desktop
       font-size: 2vw

@@ -292,7 +292,9 @@ tbody tr:nth-child(even) {
     color: white;
     padding-top: 0vh;
     margin-top: 0;
-    padding-left: 51vw; }
+    padding-left: 51vw;
+    padding-bottom: 15vh;
+    display: inline-block; }
     @media only screen and (min-width: 1025px) {
       .landing .soon {
         padding-left: 51.3vw;
@@ -301,37 +303,6 @@ tbody tr:nth-child(even) {
       .landing .soon {
         font-size: 3.1vw;
         padding-left: 53.6vw; } }
-  .landing h3 {
-    font-size: 6.5vw;
-    font-weight: 700;
-    color: white;
-    text-align: left;
-    width: 80vw;
-    padding: 10vh 0vw 5vh 5vw; }
-    @media only screen and (min-width: 1025px) {
-      .landing h3 {
-        font-size: 2.2vw;
-        width: 40vw;
-        padding: 10vh 0vw 5vh 15vw; } }
-    @media only screen and (max-width: 1024px) and (min-width: 415px) {
-      .landing h3 {
-        font-size: 5.2vw; } }
-  .landing .h5 {
-    font-size: 6.5vw;
-    font-weight: 400;
-    color: white;
-    text-align: right;
-    width: 80vw;
-    padding: 0vh 0vw 12vh 15vw;
-    display: block; }
-    @media only screen and (min-width: 1025px) {
-      .landing .h5 {
-        font-size: 2.2vw;
-        width: 60vw;
-        padding: 0vh 0vw 2vh 30vw; } }
-    @media only screen and (max-width: 1024px) and (min-width: 415px) {
-      .landing .h5 {
-        font-size: 5.2vw; } }
 
 .social {
   padding-top: 4vh;
@@ -450,13 +421,44 @@ input[type="submit"] {
   background-color: black; }
 
 .blue {
-  color: white; }
+  color: white;
+  padding-top: 10vh;
+  padding-bottom: 10vh; }
   @media only screen and (min-width: 1025px) {
     .blue {
       height: 384vh; } }
   @media only screen and (max-width: 1024px) and (min-width: 415px) {
     .blue {
       height: 397vh; } }
+  .blue .h3 {
+    display: block;
+    text-align: center;
+    margin-bottom: 3vh;
+    font-size: 6vw; }
+    @media only screen and (min-width: 1025px) {
+      .blue .h3 {
+        font-size: 2.2vw;
+        width: 40vw;
+        padding: 10vh 0vw 5vh 15vw; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .blue .h3 {
+        font-size: 5.2vw; } }
+  .blue .h5 {
+    font-size: 4.9vw;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    width: 80vw;
+    display: block;
+    margin-left: 10vw; }
+    @media only screen and (min-width: 1025px) {
+      .blue .h5 {
+        font-size: 2.2vw;
+        width: 60vw;
+        padding: 0vh 0vw 2vh 30vw; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .blue .h5 {
+        font-size: 3.9vw; } }
   .blue .three-phones {
     padding-top: 15vh;
     position: relative; }
@@ -476,8 +478,11 @@ input[type="submit"] {
           width: 31vw;
           top: 29vh; } }
       .blue .three-phones .device:first-of-type {
-        top: 28vh;
+        top: 23vh;
         right: -6vw; }
+        @media only screen and (max-width: 1024px) and (min-width: 415px) {
+          .blue .three-phones .device:first-of-type {
+            top: 26vh; } }
     .blue .three-phones .device.left {
       left: -11vw; }
       @media only screen and (min-width: 1025px) {
@@ -633,7 +638,7 @@ input[type="submit"] {
     font-weight: 300;
     font-size: 5vw;
     color: #150958;
-    width: 60vw;
+    width: 90vw;
     margin: 0; }
     @media only screen and (min-width: 1025px) {
       .features p {
