@@ -197,11 +197,13 @@ input[type="submit"]
       transform: rotate(-90deg)
       @include desktop
         width: 31vw
+    .device.right
+      right: -6vw
+      top: 23vh
+      @include desktop
         top: 29vh
-      &:first-of-type
-        right: -6vw
-        @include tablet
-          top: 26vh
+      @include tablet
+        top: 26vh
     .device.left
       left: -11vw
       top: 60vh

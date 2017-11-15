@@ -704,13 +704,16 @@ input[type="submit"] {
               transform: rotate(-90deg); }
       @media only screen and (min-width: 1025px) {
         .blue .three-phones .device {
-          width: 31vw;
+          width: 31vw; } }
+    .blue .three-phones .device.right {
+      right: -6vw;
+      top: 23vh; }
+      @media only screen and (min-width: 1025px) {
+        .blue .three-phones .device.right {
           top: 29vh; } }
-      .blue .three-phones .device:first-of-type {
-        right: -6vw; }
-        @media only screen and (max-width: 1024px) and (min-width: 415px) {
-          .blue .three-phones .device:first-of-type {
-            top: 26vh; } }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .blue .three-phones .device.right {
+          top: 26vh; } }
     .blue .three-phones .device.left {
       left: -11vw;
       top: 60vh; }
