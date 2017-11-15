@@ -1,60 +1,134 @@
+header
+  top: 0
+
 .customize-content
   color: #150958
-  text-shadow: 0px 0px 60px white
-  height: fit-content
+  height: 166vh
+  background: url("imgs/nature-photos/10.png") top no-repeat
+  position: relative
   @include desktop
+    width: 100vw
+    z-index: -1
+  @include tablet
+    width: 100vw
+    height: 198vh
+    z-index: -1
+  .customizeTitle
+    h2
+      font-size: 6vh
+      padding-top: 12vh
+      text-transform: uppercase
+      text-align: center
+      color: white
+      @include desktop
+        padding-top: 20vh
+        font-size: 3vw
+      @include tablet
+        padding-top: 15vh
+        font-size: 7vh
+
+.content
+  background-color: rgba(255, 255, 255, 0.65)
+  position: absolute
+  height: auto
+  width: 100vw
+  top: 31vh
+  display: block
+  @include desktop
+    top: 42vh
+    padding: 5% 0 5% 0
+  @include tablet
+    top: 37vh
+    padding: 5% 0 5% 0
   .bullets
     display: block
-    width: 70vw
-    margin-left: 15vw
+    width: 80vw
+    margin: 5vh 0 2vh 10vw
     text-align: center
-    margin-bottom: 2vh
-    font-size: 5.4vw
-    font-weight: 400
+    font-size: 5.75vw
+    font-weight: 600
+    color: $fourthMain
     @include desktop
-      font-size: 2.7vw
+      font-size: 2.125vw
+      font-weight: 700
+    @include tablet
+      width: 80%
+      margin-left: 10%
+      font-size: 4.2vw
+      font-weight: 700
     &:first-of-type
-      padding-top: 18vh
-      @include desktop
-        padding-top: 28vh
+      @include tablet
     &:last-of-type
       margin-bottom: 6vh
+      @include desktop
+        margin-bottom: 8%
   p
     width: 90vw
-    margin-left: 5vw
     font-size: 4.6vw
-    font-weight: 600
-    margin-bottom: 5vh
+    font-weight: 100
+    margin: 4% 0 5vh 5vw
+    color: $siteMain
     @include desktop
-      font-size: 1.7vw
+      font-size: 1.5vw
+
   .btn-holder-customize
     margin-bottom: 7vh
     margin-top: 7vh
+    height: 5vh
     @include desktop
       margin-bottom: 17vh
       margin-top: 10vh
+    @include tablet
     a
       background-color: $siteMain
       text-decoration: none
-      width: 0vw
-      padding: 2vh
+      width: 20%
+      height: 5vh
       color: white
-      margin-left: 8vw
-      border-radius: 1.5vw
+      border-radius: 2vw
+      padding: 1.25vh 2vw 1.25vh 2vw
       @include tablet
-        padding: 3.2vh
+        padding: 4vw
       @include desktop
         border-radius: 0.8vw
-        margin-left: 22.5vw
-        padding: 3.1vh
+        width: 15vw
+        padding: 1vw
       img
         width: 4vw
+        height: 4vh
         vertical-align: middle
+        padding: .5% .5% .5% 1%
+        margin: 0
         @include desktop
-          width: 1.7vw
+          width: 3vw
+        @include tablet
+          width: 5.8vw
+          margin-right: 2vw
       .btn-copy
         vertical-align: middle
+        text-align: center
         font-size: 4vw
-        margin-left: 2vw
+        padding-right: 1.5%
         @include desktop
-          font-size: 1.6vw
+          font-size: 1.4vw
+        @include tablet
+          font-size: 3.8vw
+
+.left
+  float: left
+  width: 50%
+  padding: 0
+  margin: 0
+  text-align: center
+.right
+  float: right
+  width: 50%
+  padding: 0
+  margin: 0
+  text-align: center
+  .btn-copy
+    @include desktop
+      padding: 0 4% 0 2.5%
+
+// .grad
+//   margin-top:

@@ -1078,75 +1078,150 @@ input[type="submit"] {
   100% {
     top: 77vh; } }
 
+header {
+  top: 0; }
+
 .customize-content {
   color: #150958;
-  text-shadow: 0px 0px 60px white;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content; }
-  .customize-content .bullets {
-    display: block;
-    width: 70vw;
-    margin-left: 15vw;
+  height: 166vh;
+  background: url("imgs/nature-photos/10.png") top no-repeat;
+  position: relative; }
+  @media only screen and (min-width: 1025px) {
+    .customize-content {
+      width: 100vw;
+      z-index: -1; } }
+  @media only screen and (max-width: 1024px) and (min-width: 415px) {
+    .customize-content {
+      width: 100vw;
+      height: 198vh;
+      z-index: -1; } }
+  .customize-content .customizeTitle h2 {
+    font-size: 6vh;
+    padding-top: 12vh;
+    text-transform: uppercase;
     text-align: center;
-    margin-bottom: 2vh;
-    font-size: 5.4vw;
-    font-weight: 400; }
+    color: white; }
     @media only screen and (min-width: 1025px) {
-      .customize-content .bullets {
-        font-size: 2.7vw; } }
-    .customize-content .bullets:first-of-type {
-      padding-top: 18vh; }
-      @media only screen and (min-width: 1025px) {
-        .customize-content .bullets:first-of-type {
-          padding-top: 28vh; } }
-    .customize-content .bullets:last-of-type {
-      margin-bottom: 6vh; }
-  .customize-content p {
-    width: 90vw;
-    margin-left: 5vw;
-    font-size: 4.6vw;
+      .customize-content .customizeTitle h2 {
+        padding-top: 20vh;
+        font-size: 3vw; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .customize-content .customizeTitle h2 {
+        padding-top: 15vh;
+        font-size: 7vh; } }
+
+.content {
+  background-color: rgba(255, 255, 255, 0.65);
+  position: absolute;
+  height: auto;
+  width: 100vw;
+  top: 31vh;
+  display: block; }
+  @media only screen and (min-width: 1025px) {
+    .content {
+      top: 42vh;
+      padding: 5% 0 5% 0; } }
+  @media only screen and (max-width: 1024px) and (min-width: 415px) {
+    .content {
+      top: 37vh;
+      padding: 5% 0 5% 0; } }
+  .content .bullets {
+    display: block;
+    width: 80vw;
+    margin: 5vh 0 2vh 10vw;
+    text-align: center;
+    font-size: 5.75vw;
     font-weight: 600;
-    margin-bottom: 5vh; }
+    color: #224389; }
     @media only screen and (min-width: 1025px) {
-      .customize-content p {
-        font-size: 1.7vw; } }
-  .customize-content .btn-holder-customize {
+      .content .bullets {
+        font-size: 2.125vw;
+        font-weight: 700; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .content .bullets {
+        width: 80%;
+        margin-left: 10%;
+        font-size: 4.2vw;
+        font-weight: 700; } }
+    .content .bullets:last-of-type {
+      margin-bottom: 6vh; }
+      @media only screen and (min-width: 1025px) {
+        .content .bullets:last-of-type {
+          margin-bottom: 8%; } }
+  .content p {
+    width: 90vw;
+    font-size: 4.6vw;
+    font-weight: 100;
+    margin: 4% 0 5vh 5vw;
+    color: #150958; }
+    @media only screen and (min-width: 1025px) {
+      .content p {
+        font-size: 1.5vw; } }
+  .content .btn-holder-customize {
     margin-bottom: 7vh;
-    margin-top: 7vh; }
+    margin-top: 7vh;
+    height: 5vh; }
     @media only screen and (min-width: 1025px) {
-      .customize-content .btn-holder-customize {
+      .content .btn-holder-customize {
         margin-bottom: 17vh;
         margin-top: 10vh; } }
-    .customize-content .btn-holder-customize a {
+    .content .btn-holder-customize a {
       background-color: #150958;
       text-decoration: none;
-      width: 0vw;
-      padding: 2vh;
+      width: 20%;
+      height: 5vh;
       color: white;
-      margin-left: 8vw;
-      border-radius: 1.5vw; }
+      border-radius: 2vw;
+      padding: 1.25vh 2vw 1.25vh 2vw; }
       @media only screen and (max-width: 1024px) and (min-width: 415px) {
-        .customize-content .btn-holder-customize a {
-          padding: 3.2vh; } }
+        .content .btn-holder-customize a {
+          padding: 4vw; } }
       @media only screen and (min-width: 1025px) {
-        .customize-content .btn-holder-customize a {
+        .content .btn-holder-customize a {
           border-radius: 0.8vw;
-          margin-left: 22.5vw;
-          padding: 3.1vh; } }
-      .customize-content .btn-holder-customize a img {
+          width: 15vw;
+          padding: 1vw; } }
+      .content .btn-holder-customize a img {
         width: 4vw;
-        vertical-align: middle; }
-        @media only screen and (min-width: 1025px) {
-          .customize-content .btn-holder-customize a img {
-            width: 1.7vw; } }
-      .customize-content .btn-holder-customize a .btn-copy {
+        height: 4vh;
         vertical-align: middle;
-        font-size: 4vw;
-        margin-left: 2vw; }
+        padding: .5% .5% .5% 1%;
+        margin: 0; }
         @media only screen and (min-width: 1025px) {
-          .customize-content .btn-holder-customize a .btn-copy {
-            font-size: 1.6vw; } }
+          .content .btn-holder-customize a img {
+            width: 3vw; } }
+        @media only screen and (max-width: 1024px) and (min-width: 415px) {
+          .content .btn-holder-customize a img {
+            width: 5.8vw;
+            margin-right: 2vw; } }
+      .content .btn-holder-customize a .btn-copy {
+        vertical-align: middle;
+        text-align: center;
+        font-size: 4vw;
+        padding-right: 1.5%; }
+        @media only screen and (min-width: 1025px) {
+          .content .btn-holder-customize a .btn-copy {
+            font-size: 1.4vw; } }
+        @media only screen and (max-width: 1024px) and (min-width: 415px) {
+          .content .btn-holder-customize a .btn-copy {
+            font-size: 3.8vw; } }
+
+.left {
+  float: left;
+  width: 50%;
+  padding: 0;
+  margin: 0;
+  text-align: center; }
+
+.right {
+  float: right;
+  width: 50%;
+  padding: 0;
+  margin: 0;
+  text-align: center; }
+  @media only screen and (min-width: 1025px) {
+    .right .btn-copy {
+      padding: 0 4% 0 2.5%; } }
 
 .display-none {
   display: none; }
