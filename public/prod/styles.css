@@ -35,8 +35,7 @@ footer {
       footer img:nth-of-type(2) {
         width: 12vw; } }
   footer img:last-of-type {
-    width: 12vw;
-    opacity: 0; }
+    width: 12vw; }
     @media only screen and (min-width: 1025px) {
       footer img:last-of-type {
         width: 7vw; } }
@@ -1458,6 +1457,11 @@ header {
   width: 20vw;
   margin-left: 40vw;
   margin-top: 4vh; }
+  @media only screen and (min-width: 1025px) {
+    .tier-logo {
+      width: 8vw;
+      margin-left: 46vw;
+      margin-top: 4vh; } }
 
 .tiers-holder {
   background-color: white;
@@ -1500,6 +1504,61 @@ header {
   text-align: center;
   color: red;
   margin-top: 7vh; }
+
+.share-templates {
+  position: fixed;
+  top: 0;
+  background-color: #00AEEF;
+  z-index: 6;
+  height: 100vh;
+  color: white;
+  width: 100vw;
+  left: -150vw;
+  -webkit-transition: left 1s;
+  transition: left 1s; }
+  .share-templates img:first-of-type {
+    width: 20vw;
+    margin-left: 40vw;
+    margin-top: 6vh;
+    margin-bottom: 4vh; }
+    @media only screen and (min-width: 1025px) {
+      .share-templates img:first-of-type {
+        margin-left: 47.5vw;
+        width: 5vw; } }
+  .share-templates img:last-of-type {
+    position: absolute;
+    width: 10vw;
+    left: 5vw;
+    top: 2vh; }
+    @media only screen and (min-width: 1025px) {
+      .share-templates img:last-of-type {
+        width: 3vw;
+        left: 2vw;
+        top: 3vh; } }
+  .share-templates span {
+    display: block;
+    width: 80vw;
+    margin-left: 10vw;
+    text-align: center;
+    margin-bottom: 5vh;
+    font-size: 3.5vw; }
+    @media only screen and (min-width: 1025px) {
+      .share-templates span {
+        font-size: 1.4vw; } }
+  .share-templates textarea {
+    width: 80vw;
+    margin-left: 10vw;
+    font-size: 4vw;
+    height: 15vh; }
+    @media only screen and (min-width: 1025px) {
+      .share-templates textarea {
+        font-size: 1.3vw; } }
+  .share-templates p {
+    width: 42vw;
+    margin-left: 10vw; }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .share-templates p {
+        font-size: 2.8vw; } }
 
 body {
   margin: 0;
