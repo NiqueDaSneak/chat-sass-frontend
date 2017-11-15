@@ -473,9 +473,6 @@ tbody tr:nth-child(even) {
   color: #474747;
   background-size: cover;
   background-position-x: center; }
-  @media only screen and (min-width: 1025px) {
-    .landing {
-      height: 200vh; } }
   .landing .logo {
     width: 70vw;
     margin-left: 15vw;
