@@ -28,13 +28,7 @@ $(document).ready(() => {
   })
 
   $('.free-tier').click((event) => {
-    planVar = 'free'
-    handler.open({
-      name: 'IRRIGATE MESSAGING LLC',
-      description: 'Free Tier',
-      amount: 0
-    })
-    event.preventDefault()
+    $(location).attr('href','/choose-page/' + userID + '/' + userAccessToken)
   })
 
   $('.lite-tier').click((event) => {
