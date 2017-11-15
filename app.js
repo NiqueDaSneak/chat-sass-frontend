@@ -12,7 +12,8 @@ const request = require('request')
 const util = require('util')
 const favicon = require('serve-favicon')
 const moment = require('moment')
-var stripe = require("stripe")("sk_test_8Df2wXol56EATQAeBpYwInGZ")
+// var stripe = require("stripe")("sk_test_8Df2wXol56EATQAeBpYwInGZ")
+var stripe = require("stripe")("sk_live_vCVX2baHRaQSbnF1Y5DMcQiN")
 
 // DATABASE SETUP
 const mongoose = require('mongoose')
