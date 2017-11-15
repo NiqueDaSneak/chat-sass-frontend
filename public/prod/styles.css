@@ -1505,22 +1505,46 @@ header {
   color: red;
   margin-top: 7vh; }
 
+@-webkit-keyframes pulse-logo {
+  0% {
+    -webkit-filter: drop-shadow(white 0px 0px 5px);
+            filter: drop-shadow(white 0px 0px 5px); }
+  25% {
+    -webkit-filter: drop-shadow(white 0px 0px 15px);
+            filter: drop-shadow(white 0px 0px 15px); }
+  100% {
+    -webkit-filter: drop-shadow(white 0px 0px 5px);
+            filter: drop-shadow(white 0px 0px 5px); } }
+
+@keyframes pulse-logo {
+  0% {
+    -webkit-filter: drop-shadow(white 0px 0px 5px);
+            filter: drop-shadow(white 0px 0px 5px); }
+  25% {
+    -webkit-filter: drop-shadow(white 0px 0px 15px);
+            filter: drop-shadow(white 0px 0px 15px); }
+  100% {
+    -webkit-filter: drop-shadow(white 0px 0px 5px);
+            filter: drop-shadow(white 0px 0px 5px); } }
+
 .share-templates {
-  position: fixed;
+  position: absolute;
   top: 0;
   background-color: #00AEEF;
   z-index: 6;
-  height: 100vh;
   color: white;
   width: 100vw;
   left: -150vw;
   -webkit-transition: left 1s;
-  transition: left 1s; }
+  transition: left 1s;
+  padding-bottom: 10vh; }
   .share-templates img:first-of-type {
     width: 20vw;
     margin-left: 40vw;
     margin-top: 6vh;
-    margin-bottom: 4vh; }
+    margin-bottom: 4vh;
+    -webkit-animation: pulse-logo 0.7s infinite ease-in-out;
+            animation: pulse-logo 0.7s infinite ease-in-out; }
     @media only screen and (min-width: 1025px) {
       .share-templates img:first-of-type {
         margin-left: 47.5vw;
@@ -1554,7 +1578,6 @@ header {
       .share-templates textarea {
         font-size: 1.3vw; } }
   .share-templates p {
-    width: 42vw;
     margin-left: 10vw; }
     @media only screen and (max-width: 1024px) and (min-width: 415px) {
       .share-templates p {

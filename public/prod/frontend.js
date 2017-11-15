@@ -659,9 +659,14 @@ $(".uploader input").change(function(){
         }, 1000)
         break;
       case 'Share Templates':
-        $('body').append("<div class='share-templates'><img src='/imgs/white-icon.svg' alt=''><img src='/imgs/x.svg' alt='Close'><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend lobortis libero, sed ullamcorper nisl. Sed eget cursus lacus, vitae tempor ligula. Nullam lacus augue, imperdiet vitae leo vitae, euismod pellentesque enim.</span><p>Social Post Template</p><textarea name='name' rows='8' cols='80'></textarea><p>Email Template</p><textarea name='name' rows='8' cols='80'></textarea></div>")
-        $('.share-templates textarea:first-of-type').val('penis')
-        $('.share-templates textarea:last-of-type').val('penis')
+        $('body').append("<div class='share-templates'><img src='/imgs/white-icon.svg' alt=''><img src='/imgs/x.svg' alt='Close'><span>Use these templates to drive traffic to your Messenger profile. This are just a few ideas to help guide you. How do you reach your customer today? Use those channels to encourage customers to “Get Started”. It’s as easy as dropping a link!</span><p>Email Template #1</p><textarea name='name' rows='8' cols='80'></textarea><p>Email Template #2</p><textarea name='name' rows='8' cols='80'></textarea><p>Email Template #3</p><textarea name='name' rows='8' cols='80'></textarea><p>Email Template #4</p><textarea name='name' rows='8' cols='80'></textarea><p>Social Post Template #1</p><textarea name='name' rows='8' cols='80'></textarea><p>Social Post Template #2</p><textarea name='name' rows='8' cols='80'></textarea><p>Social Post Template #3</p><textarea name='name' rows='8' cols='80'></textarea></div>")
+        $('.share-templates textarea:first-of-type').val("Subject: Connect with <company name> now on Messenger!\n\n<company name> can now be reached through FaceBook Messenger! Nothing new to download, speak with <company name> whenever, wherever.\n\nSpeak with us now at: https://m.me/" + org)
+        $('.share-templates textarea:nth-of-type(2)').val("Subject: Connect with <company name> now on Messenger!\n\nDon’t check email often? Join other <company name> VIPs and message us on Facebook! We are always striving to have better ways to connect with our customers. You can now have a conversation with us wherever you may be.\n\nHave a conversation with <company name> now at: https://m.me/" + org)
+        $('.share-templates textarea:nth-of-type(3)').val("Subject: Connect with <company name> now on Messenger!\n\nWe’ve made it even easier to connect with <company name>! Reach us on Facebook Messenger and get real time updates on <company name>. Come have a conversation at: https://m.me/" + org)
+        $('.share-templates textarea:nth-of-type(4)').val("Subject: Connect with <company name> on Messenger! Receive X% off all holiday orders!\n\n<company name> can now be reached through FaceBook Messenger. Join other VIPs and receive X% of your holiday purchases!\n\nJust follow the link below and click “Get Started”\n\nhttps://m.me/" + org)
+        $('.share-templates textarea:nth-of-type(5)').val("<company name> is now on Messenger! Start a conversation today @ https://m.me/" + org)
+        $('.share-templates textarea:nth-of-type(6)').val("<company name> is now on Messenger! Start speaking with us today! First 100 users will receive an additional X% off! https://m.me/" + org)
+        $('.share-templates textarea:last-of-type').val("Now it is even easier to connect with <company name>! Get Started @ https://m.me/" + org)
         setTimeout(() => {
           $('.share-templates').css('left', '0')
           $('.share-templates img:last-of-type').click(() => {
@@ -672,7 +677,8 @@ $(".uploader input").change(function(){
           $('.submenu').addClass('inactive')
         }, 1000)
         break;
-      case 'Account Settings':
+      case 'Log Out':
+      $(location).attr('href','/')
         console.log($(event.target).text())
         break;
       default:
