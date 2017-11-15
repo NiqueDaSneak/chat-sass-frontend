@@ -161,7 +161,7 @@ input[type="submit"]
   padding-top: 10vh
   padding-bottom: 10vh
   @include desktop
-    height: 384vh
+    padding-bottom: 20vh
   @include tablet
     height: 397vh
   .h3
@@ -171,8 +171,6 @@ input[type="submit"]
     font-size: 6vw
     @include desktop
       font-size: 2.2vw
-      width: 40vw
-      padding: 10vh 0vw 5vh 15vw
     @include tablet
       font-size: 5.2vw
   .h5
@@ -184,9 +182,7 @@ input[type="submit"]
     display: block
     margin-left: 10vw
     @include desktop
-      font-size: 2.2vw
-      width: 60vw
-      padding: 0vh 0vw 2vh 30vw
+      font-size: 1.4vw
     @include tablet
       font-size: 3.9vw
   .three-phones
@@ -211,12 +207,18 @@ input[type="submit"]
           top: 26vh
     .device.left
       left: -11vw
+      top: 60vh
+      @include tablet
+        top: 70vh
       @include desktop
-        top: 69vh
+        top: 91vh
     .content-holder.left
       text-align: right
     .content-holder.right
       margin-left: 45vw
+      padding-top: 24vh
+      text-align: left
+      float: none
       @include desktop
         margin-left: 25vw
     .content-holder
@@ -397,6 +399,11 @@ input[type="submit"]
 
 .steps
   padding-top: 24vh
+  @include desktop
+    padding-top: 24vh
+    width: 70vw
+    margin-left: 15vw
+    text-align: center
   p
     font-size: 6vw
     text-align: center
@@ -411,12 +418,17 @@ input[type="submit"]
     display: inline-block
     margin-left: 25vw
     text-align: center
-    &:first-of-type
-      margin-top: 2vh
+    @include desktop
+      width: 11vw
+      display: inline-block
+      text-align: center
+      margin-right: 6vw
+      margin-left: 6vw
+      vertical-align: top
     img
       width: 18vw
       @include desktop
-        width: 8vw
+        width: 4.4vw
     span
       display: block
       &:first-of-type
@@ -424,12 +436,12 @@ input[type="submit"]
         font-size: 7vw
         margin-top: 2vh
         @include desktop
-          font-size: 3.4vw
+          font-size: 1.9vw
       &:last-of-type
         font-weight: 300
         font-size: 4vw
         @include desktop
-          font-size: 2vw
+          font-size: 1.2vw
 
 .grad
   background-color: #150958
