@@ -1267,6 +1267,38 @@ header {
 #innerTextPP {
   padding-bottom: 4vh; }
 
+#termsBody {
+  background: white; }
+
+#termsBodyText {
+  font-size: 1.8vh;
+  width: 80vw;
+  margin: 0 10vw;
+  text-align: justify;
+  padding-bottom: 5vh;
+  color: #474747; }
+
+#termsHeader {
+  font-size: 3vw;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20vh 0 5vh 0;
+  text-align: center;
+  color: #150958; }
+
+.termsConsistencies {
+  display: none; }
+
+.termsText {
+  font-size: 2.125vh; }
+
+#innerTextTerms {
+  padding-bottom: 4vh; }
+
+.grayTextUL {
+  margin-top: 2%;
+  padding-left: 5%; }
+
 .display-none {
   display: none; }
 
