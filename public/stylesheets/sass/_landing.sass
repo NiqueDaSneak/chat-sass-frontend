@@ -122,23 +122,24 @@ input[type="submit"]
   @include tablet
      font-size: 4.6vw
 
-.market
-  height: 100vh
-  @include desktop
-    padding-bottom: 15vh
-
-  p
-    font-weight: 200
-    font-size: 6vw
-    color: $siteMain
-    float: right
-    text-align: right
-    width: 70vw
-    padding-right: 7vw
-    @include desktop
-      font-size: 4vh
-      width: 55vw
-      font-weight: 300
+// not in use
+// .market
+//   height: 100vh
+//   @include desktop
+//     padding-bottom: 15vh
+//
+//   p
+//     font-weight: 200
+//     font-size: 6vw
+//     color: $siteMain
+//     float: right
+//     text-align: right
+//     width: 70vw
+//     padding-right: 7vw
+//     @include desktop
+//       font-size: 4vh
+//       width: 55vw
+//       font-weight: 300
 
 @keyframes pulse
   0%
@@ -161,14 +162,18 @@ input[type="submit"]
   @include desktop
     padding-bottom: 20vh
   @include tablet
-    height: 397vh
+    height: 435vh
   .h3
     display: block
     text-align: center
     margin-bottom: 3vh
     font-size: 6vw
+    font-weight: 700
+    padding-top: 7vh
     @include desktop
-      font-size: 2.2vw
+      font-size: 2.5vw
+      font-weight: 700
+      padding-top: 5vh
     @include tablet
       font-size: 5.2vw
   .h5
@@ -179,8 +184,11 @@ input[type="submit"]
     width: 80vw
     display: block
     margin-left: 10vw
+    padding-bottom: 10vh
     @include desktop
-      font-size: 1.4vw
+      font-size: 1.7vw
+      width: 70vw
+      margin-left: 15vw
     @include tablet
       font-size: 3.9vw
   .three-phones
@@ -213,13 +221,32 @@ input[type="submit"]
         top: 91vh
     .content-holder.left
       text-align: right
+      @include desktop
+        margin-right: 25vw
+      span
+        &:last-of-type
+          padding-left: 20vw
+          @include tablet
+            padding-left: 0
     .content-holder.right
       margin-left: 45vw
       padding-top: 24vh
       text-align: left
       float: none
+      // display: block
       @include desktop
         margin-left: 25vw
+      @include tablet
+        padding-top: 34vh
+      span
+        &:first-of-type
+          @include tablet
+            padding-top: 8vh
+        &:last-of-type
+          display: block
+          @include desktop
+            padding-right: 20vw
+
     .content-holder
       display: inline-block
       width: 50vw
@@ -230,18 +257,29 @@ input[type="submit"]
         margin-left: 0vw
       span
         &:first-of-type
-          margin-bottom: 6vh
-          font-weight: 700
+          margin-bottom: 5.5vh
+          font-weight: 600
           display: block
           font-size: 6vw
+          padding-top: 2vh
           @include desktop
             font-size: 2vw
             margin-bottom: 2vh
+            padding-top: 5vh
+          @include tablet
+            font-size: 4.5vw
+            margin-bottom: 2vh
+            padding-top: 5vh
         &:last-of-type
-          font-weight: 400
+          font-weight: 300
           font-size: 4.2vw
           @include desktop
-            font-size: 2vw
+            font-size: 1.65vw
+          @include tablet
+            font-size: 3.5vw
+            margin-bottom: 2vh
+
+
   .why
     margin-top: 6vh
     font-size: 6.8vw
@@ -273,20 +311,23 @@ input[type="submit"]
       &:first-of-type
         line-height: 8vh
         position: absolute
-        left: 14vw
-        font-size: 17vw
-        font-weight: 300
+        left: 17vw
+        font-size: 12vw
+        font-weight: 500
         @include desktop
           left: 24vw
-          font-size: 7vw
+          font-size: 4vw
+          padding-left: 7vw
+          line-height: 8vh
       &:last-of-type
         width: 44vw
         display: inline-block
         position: absolute
-        right: 8vw
-        font-weight: 600
+        right: 10vw
+        font-weight: 300
         @include desktop
           right: 14vw
+          padding-top: 1.5vh
         @include tablet
           font-weight: 300
           font-size: 3vw
@@ -304,67 +345,107 @@ input[type="submit"]
       height: 0vh
     @include tablet
       height: 0
+    span
+      &:first-of-type
+        padding-left: 5vw
+        @include desktop
+          padding-left: 8.5vw
   .stats.third
     height: 23vh
     @include desktop
       height: 0vh
     @include tablet
       height: 0
+    span
+      &:first-of-type
+        padding-left: 2vw
+        @include desktop
+          padding-left: 7vw
 
 .features
   background-size: cover
   background-position: center
   background-attachment: fixed
+  @include desktop
+    // padding-bottom: 10vh
+  @include tablet
+    padding-bottom: 0
   span:first-of-type
-    padding: 10vh 2vw 0vh 5vw
+    padding: 10vh 0 0 0
+    text-align: center
     margin-bottom: 1vh
-    font-weight: 500
+    font-weight: 600
     font-size: 8vw
-    color: $siteMain
     display: block
     @include desktop
-      font-size: 4vw
+      font-size: 3.5vw
+      padding: 10vh 0 0vh 0
+      text-align: center
   h5
     font-size: 5vw
     font-weight: 300
-    color: $siteMain
     text-align: left
-    width: 80vw
-    padding: 0vh 0vw 2vh 5vw
-    margin: 0 0 2.5vh 0
+    width: 90vw
+    padding: 0 0 9vh 0
+    margin-top: 0
+    text-align: center
+    margin-left: 5vw
     @include desktop
-      font-size: 1.7vw
+      font-size: 2.125vw
+      font-weight: 400
+      padding: 0 0vw 7vh 0
+      text-align: center
+    @include tablet
+      font-size: 4.5vw
+      padding: 0 0 10vh 0
   h6
-    color: $siteMain
-    font-weight: 700
-    font-size: 4.2vw
+    font-weight: 500
+    font-size: 5vw
     margin: 0
+    padding-bottom: .75vh
     @include desktop
       font-size: 2vw
       margin: 5vh 0 0 5vw
+      text-align: center
+    @include tablet
+      font-size: 4vw
   p
     font-weight: 300
-    font-size: 5vw
-    color: #150958
-    width: 90vw
+    font-size: 4.2vw
     margin: 0
     @include desktop
-      font-size: 2vw
+      font-size: 1.5vw
       font-weight: 100
-      margin: 3vh 0 8vh 5vw
-      width: 55vw
+      margin: 1vh 0 3vh 0
+    @include tablet
+      font-size: 3vw
+      font-weight: 100
 
 .circles
   div
     display: inline-block
     margin-bottom: 10vh
-    margin-left: 5vw
     margin-right: 5vw
+    text-align: center
     @include desktop
       margin-bottom: 0vh
-  img
-    width: 24vw
-    vertical-align: top
+      margin-left: 0
+      margin-right: 0
+.featureItem
+  width: 100vw
+  margin-left: 0
+  margin-right: 0
+  text-align: center
+  h6
+    width: 100vw
+    margin-left: 0
+    margin-right: 0
+  p
+    width: 70vw
+    margin-left: 15vw
+    @include desktop
+      width: 50vw
+      margin-left: 25vw
 
 .multiple-mobile-wrapper
   height: 110% !important
@@ -398,13 +479,15 @@ input[type="submit"]
 
 .steps
   padding-top: 24vh
+  padding-bottom: 15vh
   @include desktop
     padding-top: 24vh
-    width: 70vw
-    margin-left: 15vw
+    padding-bottom: 15vh
+    width: 80vw
+    margin-left: 10vw
     text-align: center
   p
-    font-size: 6vw
+    font-size: 7vw
     text-align: center
     margin-top: 12vh
     font-weight: 600
@@ -418,7 +501,7 @@ input[type="submit"]
     margin-left: 25vw
     text-align: center
     @include desktop
-      width: 11vw
+      width: 13vw
       display: inline-block
       text-align: center
       margin-right: 6vw
@@ -431,8 +514,8 @@ input[type="submit"]
     span
       display: block
       &:first-of-type
-        font-weight: 700
-        font-size: 7vw
+        font-weight: 600
+        font-size: 6vw
         margin-top: 2vh
         @include desktop
           font-size: 1.9vw
