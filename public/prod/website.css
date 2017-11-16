@@ -1103,6 +1103,7 @@ header {
   @media only screen and (min-width: 1025px) {
     .customize-content {
       width: 100vw;
+      height: 158vh;
       z-index: -1; } }
   @media only screen and (max-width: 1024px) and (min-width: 415px) {
     .customize-content {
@@ -1118,7 +1119,8 @@ header {
     @media only screen and (min-width: 1025px) {
       .customize-content .customizeTitle h2 {
         padding-top: 20vh;
-        font-size: 3vw; } }
+        font-size: 3vw;
+        font-weight: 500; } }
     @media only screen and (max-width: 1024px) and (min-width: 415px) {
       .customize-content .customizeTitle h2 {
         padding-top: 15vh;
