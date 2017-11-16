@@ -185,6 +185,10 @@ app.get('/privacy-policy', (req, res) => {
   res.sendFile(path.join(__dirname + '/views/privacy-policy.html'))
 })
 
+app.get('/terms', (req, res) => {
+  res.sendFile(path.join(__dirname + '/views/terms.html'))
+})
+
 app.get('/customize', (req, res) => {
   res.sendFile(path.join(__dirname + '/views/customize.html'))
 })
