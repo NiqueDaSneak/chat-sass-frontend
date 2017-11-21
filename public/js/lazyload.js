@@ -1,6 +1,13 @@
 $(document).ready(() => {
-
+  let scrolled = false
   window.addEventListener('scroll', _.throttle(() => {
+
+    if (scrolled === false) {
+      console.log('scrolled')
+      scrolled = true
+      $('header').addClass('scrolled')
+    }
+
     if ($('.lazyload')) {
       $('.lazyload').each((index) => {
         if ($($('.lazyload')[index]).isOnScreen()) {
