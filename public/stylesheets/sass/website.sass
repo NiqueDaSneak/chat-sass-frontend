@@ -30,9 +30,36 @@ body
 input:focus, select:focus, textarea:focus, button:focus
   outline: none
 
+header.scrolled
+  height: 4vh
+  @include desktop
+  .headerButton
+    @include desktop
+      border-radius: 0.5vw
+      padding-top: 0.7vh
+      padding-bottom: 0.7vh
+    img
+      @include desktop
+        width: 0.7vw
+        margin-right: 1vw
+    span
+      @include desktop
+        width: 0.7vw
+  .smallLogo
+    @include desktop
+      width: 2.2vw
+  a
+    @include desktop
+      font-size: 1.2vw
+    &:first-of-type
+      margin-right: 52vw
+
+
 header
+  height: 8vh
   background-color: white
-  transition: background .8s, box-shadow 1s
+  transition: background .8s, box-shadow 1s, height 1s
+  transition-delay: .6s
   position: fixed
   width: 100vw
   z-index: 1
@@ -48,10 +75,12 @@ header
   .smallLogo
     width: 7vw
     vertical-align: middle
+    transition: width .8s
     @include desktop
       width: 4vw
       margin-left: 5vw
   a
+    transition: width .8s, margin-right .8s
     text-decoration: none
     font-weight: 300
     vertical-align: middle
@@ -67,6 +96,7 @@ header
       font-size: 3.1vw
       margin-right: 6.3vw
   .headerButton
+    transition: border-radius .8s, padding-top .8s, padding-bottom .8s
     background-color: $siteMain
     padding: 3vw
     border-radius: 2.5vw
@@ -86,6 +116,7 @@ header
     img
       width: 3vw
       margin-right: 1vw
+      transition: width .8s
       @include desktop
         width: 1.3vw
         margin-right: 2.1vw
@@ -93,7 +124,7 @@ header
         width: 2.2vw
     span
       font-weight: 400
-      vertical-align: middle
+      transition: width .8s
       @include desktop
         font-weight: 300
 

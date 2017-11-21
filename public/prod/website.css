@@ -1391,12 +1391,38 @@ body {
 input:focus, select:focus, textarea:focus, button:focus {
   outline: none; }
 
+header.scrolled {
+  height: 4vh; }
+  @media only screen and (min-width: 1025px) {
+    header.scrolled .headerButton {
+      border-radius: 0.5vw;
+      padding-top: 0.7vh;
+      padding-bottom: 0.7vh; } }
+  @media only screen and (min-width: 1025px) {
+    header.scrolled .headerButton img {
+      width: 0.7vw;
+      margin-right: 1vw; } }
+  @media only screen and (min-width: 1025px) {
+    header.scrolled .headerButton span {
+      width: 0.7vw; } }
+  @media only screen and (min-width: 1025px) {
+    header.scrolled .smallLogo {
+      width: 2.2vw; } }
+  @media only screen and (min-width: 1025px) {
+    header.scrolled a {
+      font-size: 1.2vw; } }
+  header.scrolled a:first-of-type {
+    margin-right: 52vw; }
+
 header {
+  height: 8vh;
   background-color: white;
-  -webkit-transition: background .8s, -webkit-box-shadow 1s;
-  transition: background .8s, -webkit-box-shadow 1s;
-  transition: background .8s, box-shadow 1s;
-  transition: background .8s, box-shadow 1s, -webkit-box-shadow 1s;
+  -webkit-transition: background .8s, height 1s, -webkit-box-shadow 1s;
+  transition: background .8s, height 1s, -webkit-box-shadow 1s;
+  transition: background .8s, box-shadow 1s, height 1s;
+  transition: background .8s, box-shadow 1s, height 1s, -webkit-box-shadow 1s;
+  -webkit-transition-delay: .6s;
+          transition-delay: .6s;
   position: fixed;
   width: 100vw;
   z-index: 1;
@@ -1412,12 +1438,16 @@ header {
     vertical-align: middle; }
   header .smallLogo {
     width: 7vw;
-    vertical-align: middle; }
+    vertical-align: middle;
+    -webkit-transition: width .8s;
+    transition: width .8s; }
     @media only screen and (min-width: 1025px) {
       header .smallLogo {
         width: 4vw;
         margin-left: 5vw; } }
   header a {
+    -webkit-transition: width .8s, margin-right .8s;
+    transition: width .8s, margin-right .8s;
     text-decoration: none;
     font-weight: 300;
     vertical-align: middle;
@@ -1435,6 +1465,8 @@ header {
         font-size: 3.1vw;
         margin-right: 6.3vw; } }
   header .headerButton {
+    -webkit-transition: border-radius .8s, padding-top .8s, padding-bottom .8s;
+    transition: border-radius .8s, padding-top .8s, padding-bottom .8s;
     background-color: #150958;
     padding: 3vw;
     border-radius: 2.5vw;
@@ -1455,7 +1487,9 @@ header {
         border-radius: 1.7vw; } }
     header .headerButton img {
       width: 3vw;
-      margin-right: 1vw; }
+      margin-right: 1vw;
+      -webkit-transition: width .8s;
+      transition: width .8s; }
       @media only screen and (min-width: 1025px) {
         header .headerButton img {
           width: 1.3vw;
@@ -1465,7 +1499,8 @@ header {
           width: 2.2vw; } }
     header .headerButton span {
       font-weight: 400;
-      vertical-align: middle; }
+      -webkit-transition: width .8s;
+      transition: width .8s; }
       @media only screen and (min-width: 1025px) {
         header .headerButton span {
           font-weight: 300; } }
