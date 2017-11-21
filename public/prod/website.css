@@ -1415,7 +1415,6 @@ header.scrolled {
     margin-right: 52vw; }
 
 header {
-  height: 8vh;
   background-color: white;
   -webkit-transition: background .8s, height 1s, -webkit-box-shadow 1s;
   transition: background .8s, height 1s, -webkit-box-shadow 1s;
@@ -1431,6 +1430,7 @@ header {
   padding-bottom: 3vh; }
   @media only screen and (min-width: 1025px) {
     header {
+      height: 8vh;
       text-align: start;
       top: 0; } }
   header img {
