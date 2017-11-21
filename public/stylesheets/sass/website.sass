@@ -40,6 +40,7 @@ header
   padding-top: 3vh
   padding-bottom: 3vh
   @include desktop
+    text-align: start
     top: 0
   img
     width: 7vw
@@ -47,7 +48,6 @@ header
   .smallLogo
     width: 7vw
     vertical-align: middle
-    // margin-right: 4vw
     @include desktop
       width: 4vw
       margin-left: 5vw
@@ -60,7 +60,9 @@ header
     margin-right: 4.8vw
     @include desktop
       font-size: 1.7vw
-      margin-right: 12.6vw
+      margin-right: 4vw
+      &:first-of-type
+        margin-right: 41vw
     @include tablet
       font-size: 3.1vw
       margin-right: 6.3vw

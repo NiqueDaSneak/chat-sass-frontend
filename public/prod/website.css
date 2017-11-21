@@ -418,7 +418,7 @@ tbody tr:nth-child(even) {
       font-size: 1.4vw;
       vertical-align: middle;
       text-align: center;
-      padding: 0.4vh; } }
+      padding: 1.4vh; } }
   @media only screen and (max-width: 1024px) and (min-width: 415px) {
     .fbButton {
       border-radius: 1vw;
@@ -437,7 +437,7 @@ tbody tr:nth-child(even) {
     margin-right: 6vw; }
     @media only screen and (min-width: 1025px) {
       .fbButton img {
-        width: 1.8vw;
+        width: 1.1vw;
         vertical-align: middle;
         margin-right: 2vw; } }
 
@@ -934,6 +934,9 @@ input[type="submit"] {
         font-size: 3vw;
         font-weight: 100; } }
 
+.circles:last-of-type {
+  margin-bottom: 15vh; }
+
 .circles div {
   display: inline-block;
   margin-bottom: 10vh;
@@ -1402,6 +1405,7 @@ header {
   padding-bottom: 3vh; }
   @media only screen and (min-width: 1025px) {
     header {
+      text-align: start;
       top: 0; } }
   header img {
     width: 7vw;
@@ -1423,7 +1427,9 @@ header {
     @media only screen and (min-width: 1025px) {
       header a {
         font-size: 1.7vw;
-        margin-right: 12.6vw; } }
+        margin-right: 4vw; }
+        header a:first-of-type {
+          margin-right: 41vw; } }
     @media only screen and (max-width: 1024px) and (min-width: 415px) {
       header a {
         font-size: 3.1vw;
