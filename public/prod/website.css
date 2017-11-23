@@ -1275,7 +1275,7 @@ header {
         margin: 0; }
         @media only screen and (min-width: 1025px) {
           .content .btn-holder-customize a img {
-            width: 3vw; } }
+            width: 1.7vw; } }
         @media only screen and (max-width: 1024px) and (min-width: 415px) {
           .content .btn-holder-customize a img {
             width: 5.8vw;
