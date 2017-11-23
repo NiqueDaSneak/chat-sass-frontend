@@ -33,6 +33,7 @@ var userSchema = mongoose.Schema({
   pageAccessToken: String,
   userAccessToken: String,
   stripeID: String,
+  createdDate: String
 })
 
 var User = mongoose.model('User', userSchema)
@@ -142,6 +143,7 @@ passport.use(new FacebookStrategy({
         newUser.onboarded = false
         newUser.userID = profile.id
         newUser.userAccessToken = accessToken
+        newUser.createdDate = moment().format('MM-DD-YYYY')
         newUser.save((err, user) => {
           if (err) return console.error(err)
           return done(null, user)
