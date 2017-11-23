@@ -872,7 +872,8 @@ input[type="submit"] {
 .features {
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; }
+  background-attachment: fixed;
+  padding-bottom: 1vh; }
   @media only screen and (max-width: 1024px) and (min-width: 415px) {
     .features {
       padding-bottom: 0; } }
@@ -1420,8 +1421,6 @@ header {
   transition: background .8s, height 1s, -webkit-box-shadow 1s;
   transition: background .8s, box-shadow 1s, height 1s;
   transition: background .8s, box-shadow 1s, height 1s, -webkit-box-shadow 1s;
-  -webkit-transition-delay: .6s;
-          transition-delay: .6s;
   position: fixed;
   width: 100vw;
   z-index: 1;
@@ -1446,8 +1445,10 @@ header {
         width: 4vw;
         margin-left: 5vw; } }
   header a {
-    -webkit-transition: width .8s, margin-right .8s;
-    transition: width .8s, margin-right .8s;
+    -webkit-transition: width .8s, margin-right .8s, font-size .8s;
+    transition: width .8s, margin-right .8s, font-size .8s;
+    -webkit-transition-delay: .4s;
+            transition-delay: .4s;
     text-decoration: none;
     font-weight: 300;
     vertical-align: middle;
