@@ -2,11 +2,16 @@ $(document).ready(() => {
   let scrolled = false
   window.addEventListener('scroll', _.throttle(() => {
 
-    // if (scrolled === false) {
-    //   console.log('scrolled')
-    //   scrolled = true
-    //   $('header').addClass('scrolled')
-    // }
+    if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
+      console.log('mobile')
+    } else {
+      if (scrolled === false) {
+        console.log('scrolled')
+        scrolled = true
+        $('header').addClass('scrolled')
+      }
+    }
+
 
     if ($('.lazyload')) {
       $('.lazyload').each((index) => {
