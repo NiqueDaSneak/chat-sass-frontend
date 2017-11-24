@@ -153,9 +153,15 @@ passport.use(new FacebookStrategy({
   }))
 
 // ROUTES
+
+
 app.get('/auth/facebook', passport.authenticate('facebook', {
   scope: ['manage_pages', 'publish_pages', 'pages_messaging', 'email', 'pages_show_list']
 }))
+
+app.get('/chat', (req, res) => {
+  res.redirect('https://www.m.me/irrigatemsg')
+})
 
 // Facebook redirect
 app.get('/facebook/redirect', passport.authenticate('facebook', {
