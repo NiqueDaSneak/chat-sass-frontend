@@ -108,19 +108,44 @@ input[type="submit"]
     margin: 2vh 0vw
 
 .subtitle
-  margin: 10vh 0 10vh 20vw
-  width: 60vw
+  margin: 20vh 0 2vh 10vw
+  width: 80vw
   font-size: 6vw
   font-weight: 400
   color: white
   text-align: center
   text-shadow: black 0px 0px 60px
   @include desktop
-    margin-left: 35vw
-    width: 30vw
+    margin-left: 5vw
+    width: 90vw
     font-size: 1.9vw
   @include tablet
      font-size: 4.6vw
+
+.directMessaging
+  width: 60%
+  margin-left: 20vw
+  margin-bottom: 10vh
+  @include desktop
+    margin-top: -3vh
+    width: 30%
+    margin-left: 35vw
+  i
+    color: $fifthMain
+    position: absolute
+    font-size: 3vh
+    padding-left: 1vw
+    padding-right: 1vw
+    @include desktop
+      font-size: 1.75vh
+  h6
+    border-bottom: 2px solid $fifthMain
+    color: white
+    font-size: 5vw
+    font-weight: 400
+    text-align: center
+    @include desktop
+      font-size: 1.75vw
 
 // not in use
 // .market
