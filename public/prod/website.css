@@ -590,8 +590,8 @@ input[type="submit"] {
       margin: 2vh 0vw; } }
 
 .subtitle {
-  margin: 10vh 0 10vh 20vw;
-  width: 60vw;
+  margin: 20vh 0 2vh 10vw;
+  width: 80vw;
   font-size: 6vw;
   font-weight: 400;
   color: white;
@@ -599,12 +599,50 @@ input[type="submit"] {
   text-shadow: black 0px 0px 60px; }
   @media only screen and (min-width: 1025px) {
     .subtitle {
-      margin-left: 35vw;
-      width: 30vw;
+      margin-left: 5vw;
+      width: 90vw;
       font-size: 1.9vw; } }
   @media only screen and (max-width: 1024px) and (min-width: 415px) {
     .subtitle {
       font-size: 4.6vw; } }
+
+.directMessaging {
+  width: 60%;
+  margin-left: 20vw;
+  margin-bottom: 10vh;
+  border-bottom: 2px solid #00AEEF; }
+  @media only screen and (min-width: 1025px) {
+    .directMessaging {
+      margin-top: 2vh;
+      width: 30%;
+      margin-left: 35vw;
+      padding-bottom: 1vh; } }
+  .directMessaging i {
+    color: #00AEEF;
+    font-size: 3vh;
+    padding-left: 1vw;
+    padding-right: 1vw; }
+    @media only screen and (min-width: 1025px) {
+      .directMessaging i {
+        font-size: 4.5vh; } }
+  .directMessaging span {
+    text-align: center;
+    font-weight: 400;
+    font-size: 5vw;
+    color: white;
+    margin-left: 3vw;
+    position: absolute;
+    bottom: 60vh;
+    opacity: 0;
+    -webkit-transition: bottom .6s, opacity .6s;
+    transition: bottom .6s, opacity .6s; }
+    @media only screen and (min-width: 1025px) {
+      .directMessaging span {
+        font-size: 1.75vw;
+        bottom: 7vh; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .directMessaging span {
+        font-size: 4vw; } }
 
 @-webkit-keyframes pulse {
   0% {
