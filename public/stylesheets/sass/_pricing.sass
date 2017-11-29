@@ -6,20 +6,24 @@ html
   padding: 0
 
 .pricing
-  padding-top: 20vh
+  padding-top: 25vh
   width: 100vw
   display: block
   text-align: center
   padding-bottom: 10vh
+  @include desktop
+    font-size: 3vw
+    padding-bottom: 15vh
 .pricingTitle
   font-size: 6vh
   text-transform: uppercase
   color: white
+  font-weight: 300
   @include desktop
-    font-size: 3vw
+    font-size: 4vw
     margin: 7vh
   @include tablet
-    font-size: 5vw
+    font-size: 7vw
     margin: 8vh
 
 
