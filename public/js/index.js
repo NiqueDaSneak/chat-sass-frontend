@@ -159,7 +159,7 @@ $(document).ready(() => {
       $('.directMessaging span:first-of-type').css('opacity', '1').css('bottom', '69.5vh')
 
     } else if (navigator.userAgent.match(/(iPhone|iPod|Android|BlackBerry|IEMobile)/)) {
-      $('.directMessaging span:first-of-type').css('opacity', '1').css('bottom', '65vh')
+      $('.directMessaging span:first-of-type').css('opacity', '1').css('bottom', '66.5vh')
     } else {
       $('.directMessaging span:first-of-type').css('opacity', '1').css('bottom', '14vh')
     }
@@ -173,7 +173,7 @@ $(document).ready(() => {
 
     } else if (navigator.userAgent.match(/(iPhone|iPod|Android|BlackBerry|IEMobile)/)) {
       $('.directMessaging span:first-of-type').css('opacity', '0').css('bottom', '76vh')
-      $('.directMessaging span:nth-of-type(2)').css('opacity', '1').css('bottom', '65vh')
+      $('.directMessaging span:nth-of-type(2)').css('opacity', '1').css('bottom', '66.5vh')
 
     } else {
       $('.directMessaging span:first-of-type').css('opacity', '0').css('bottom', '22vh')
@@ -190,7 +190,7 @@ $(document).ready(() => {
 
     } else if (navigator.userAgent.match(/(iPhone|iPod|Android|BlackBerry|IEMobile)/)) {
       $('.directMessaging span:nth-of-type(2)').css('opacity', '0').css('bottom', '76vh')
-      $('.directMessaging span:nth-of-type(3)').css('opacity', '1').css('bottom', '65vh')
+      $('.directMessaging span:nth-of-type(3)').css('opacity', '1').css('bottom', '66.5vh')
 
     } else {
       $('.directMessaging span:nth-of-type(2)').css('opacity', '0').css('bottom', '22vh')
@@ -207,7 +207,7 @@ $(document).ready(() => {
 
     } else if (navigator.userAgent.match(/(iPhone|iPod|Android|BlackBerry|IEMobile)/)) {
       $('.directMessaging span:nth-of-type(3)').css('opacity', '0').css('bottom', '76vh')
-      $('.directMessaging span:nth-of-type(4)').css('opacity', '1').css('bottom', '65vh')
+      $('.directMessaging span:nth-of-type(4)').css('opacity', '1').css('bottom', '66.5vh')
 
     } else {
       $('.directMessaging span:nth-of-type(3)').css('opacity', '0').css('bottom', '22vh')
