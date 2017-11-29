@@ -609,30 +609,40 @@ input[type="submit"] {
 .directMessaging {
   width: 60%;
   margin-left: 20vw;
-  margin-bottom: 10vh; }
+  margin-bottom: 10vh;
+  border-bottom: 2px solid #00AEEF; }
   @media only screen and (min-width: 1025px) {
     .directMessaging {
-      margin-top: -3vh;
+      margin-top: 2vh;
       width: 30%;
-      margin-left: 35vw; } }
+      margin-left: 35vw;
+      padding-bottom: 1vh; } }
   .directMessaging i {
     color: #00AEEF;
-    position: absolute;
     font-size: 3vh;
     padding-left: 1vw;
     padding-right: 1vw; }
     @media only screen and (min-width: 1025px) {
       .directMessaging i {
-        font-size: 1.75vh; } }
-  .directMessaging h6 {
-    border-bottom: 2px solid #00AEEF;
-    color: white;
-    font-size: 5vw;
+        font-size: 4.5vh; } }
+  .directMessaging span {
+    text-align: center;
     font-weight: 400;
-    text-align: center; }
+    font-size: 5vw;
+    color: white;
+    margin-left: 3vw;
+    position: absolute;
+    bottom: 60vh;
+    opacity: 0;
+    -webkit-transition: bottom .6s, opacity .6s;
+    transition: bottom .6s, opacity .6s; }
     @media only screen and (min-width: 1025px) {
-      .directMessaging h6 {
-        font-size: 1.75vw; } }
+      .directMessaging span {
+        font-size: 1.75vw;
+        bottom: 7vh; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .directMessaging span {
+        font-size: 4vw; } }
 
 @-webkit-keyframes pulse {
   0% {
