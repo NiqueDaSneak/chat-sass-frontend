@@ -1,5 +1,15 @@
 $(document).ready(() => {
 
+  if (navigator.userAgent.match(/(iPad)/)) {
+
+  } else if (navigator.userAgent.match(/(iPhone|iPod|Android|BlackBerry|IEMobile)/)) {
+
+  } else {
+    $('.subtitle').text('How small businesses engage and grow').css('margin-top', '8vh').css('margin-bottom', '15vh')
+    $('.directMessaging').remove()
+  }
+
+
   // blue gradient background
   // var blueGradient = new Multiple({
   //   selector: '.grad',
