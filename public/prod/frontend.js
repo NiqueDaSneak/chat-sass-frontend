@@ -545,7 +545,7 @@ $(document).ready(() => {
 
   $('.msg-data .btn-holder .create').click(() => {
     if ($('.send-now').hasClass('selected')) {
-      $("input[type='time']").val(moment().add(2,'m').format('hh:mm'))
+      $("input[type='time']").val(moment().add(2,'m').format('HH:mm'))
       $("input[type='date']").val(moment().format('YYYY-MM-DD'))
       $('.loading').fadeIn()
       $('.msg-data').submit()
