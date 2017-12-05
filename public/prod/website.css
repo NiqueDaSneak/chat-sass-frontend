@@ -671,11 +671,11 @@ input[type="submit"] {
       padding-bottom: 20vh; } }
   @media only screen and (max-width: 1024px) and (min-width: 415px) {
     .blue {
-      height: 435vh; } }
+      height: 480vh; } }
   .blue .h3 {
     display: block;
     text-align: center;
-    margin-bottom: 3vh;
+    margin-bottom: 4vh;
     font-size: 6vw;
     font-weight: 700;
     padding-top: 7vh; }
@@ -689,13 +689,13 @@ input[type="submit"] {
         font-size: 5.2vw; } }
   .blue .h5 {
     font-size: 4.9vw;
-    font-weight: 400;
+    font-weight: 300;
     color: white;
     text-align: center;
     width: 80vw;
     display: block;
     margin-left: 10vw;
-    padding-bottom: 10vh; }
+    padding-bottom: 8vh; }
     @media only screen and (min-width: 1025px) {
       .blue .h5 {
         font-size: 1.7vw;
@@ -704,6 +704,12 @@ input[type="submit"] {
     @media only screen and (max-width: 1024px) and (min-width: 415px) {
       .blue .h5 {
         font-size: 3.9vw; } }
+  .blue .h5.summary {
+    color: #00AEEF;
+    font-weight: 600; }
+    @media only screen and (min-width: 1025px) {
+      .blue .h5.summary {
+        color: #00AEEF; } }
   .blue .three-phones {
     padding-top: 15vh;
     position: relative; }
@@ -824,44 +830,57 @@ input[type="submit"] {
         font-size: 3vw; } }
   .blue .stats {
     margin-bottom: 0vh;
-    padding-top: 15vh; }
+    padding-top: 12vh; }
     .blue .stats:last-of-type {
       padding-bottom: 10vh; }
     @media only screen and (min-width: 1025px) {
       .blue .stats {
-        padding-top: 18vh; } }
+        padding-top: 12vh; } }
     @media only screen and (max-width: 1024px) and (min-width: 415px) {
       .blue .stats {
         height: 0;
         padding-top: 21vh; } }
     .blue .stats span:first-of-type {
-      line-height: 8vh;
+      line-height: 4vh;
       position: absolute;
-      left: 17vw;
-      font-size: 12vw;
-      font-weight: 500; }
+      left: 7vw;
+      font-size: 5vw;
+      font-weight: 500;
+      text-align: right;
+      width: 30vw; }
       @media only screen and (min-width: 1025px) {
         .blue .stats span:first-of-type {
           left: 24vw;
-          font-size: 4vw;
-          padding-left: 7vw;
-          line-height: 8vh; } }
+          font-size: 2vw;
+          padding-left: 8vw;
+          line-height: 5vh; } }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .blue .stats span:first-of-type {
+          left: 14vw;
+          line-height: 4vh;
+          width: 24vw;
+          font-size: 4vw; } }
     .blue .stats span:last-of-type {
-      width: 44vw;
+      width: 53vw;
       display: inline-block;
       position: absolute;
-      right: 10vw;
+      right: 5vw;
       font-weight: 300; }
       @media only screen and (min-width: 1025px) {
         .blue .stats span:last-of-type {
-          right: 14vw;
-          padding-top: 1.5vh; } }
+          width: 29vw;
+          right: 24vw;
+          padding-top: 1.5vh;
+          font-size: 1.25vw; } }
       @media only screen and (max-width: 1024px) and (min-width: 415px) {
         .blue .stats span:last-of-type {
+          width: 40vw;
           font-weight: 300;
-          font-size: 3vw; } }
+          font-size: 3vw;
+          right: 14vw; } }
   .blue .stats.first {
-    height: 10vh; }
+    height: 10vh;
+    padding-top: 9vh; }
     @media only screen and (min-width: 1025px) {
       .blue .stats.first {
         height: 0vh;
@@ -871,31 +890,29 @@ input[type="submit"] {
         padding-top: 10vh;
         height: 0; } }
   .blue .stats.second {
-    height: 20vh; }
+    height: 10vh;
+    padding-top: 4vh; }
     @media only screen and (min-width: 1025px) {
       .blue .stats.second {
         height: 0vh; } }
     @media only screen and (max-width: 1024px) and (min-width: 415px) {
       .blue .stats.second {
         height: 0; } }
-    .blue .stats.second span:first-of-type {
-      padding-left: 5vw; }
-      @media only screen and (min-width: 1025px) {
-        .blue .stats.second span:first-of-type {
-          padding-left: 8.5vw; } }
+    @media only screen and (min-width: 1025px) {
+      .blue .stats.second span:first-of-type {
+        padding-left: 8.5vw; } }
   .blue .stats.third {
-    height: 23vh; }
+    height: 10vh;
+    padding-top: 11vh; }
     @media only screen and (min-width: 1025px) {
       .blue .stats.third {
         height: 0vh; } }
     @media only screen and (max-width: 1024px) and (min-width: 415px) {
       .blue .stats.third {
         height: 0; } }
-    .blue .stats.third span:first-of-type {
-      padding-left: 2vw; }
-      @media only screen and (min-width: 1025px) {
-        .blue .stats.third span:first-of-type {
-          padding-left: 7vw; } }
+    @media only screen and (min-width: 1025px) {
+      .blue .stats.third span:first-of-type {
+        padding-left: 3vw; } }
 
 .features {
   background-size: cover;
@@ -1041,15 +1058,32 @@ input[type="submit"] {
       width: 80vw;
       margin-left: 10vw;
       text-align: center; } }
-  .steps p {
+  .steps h4 {
     font-size: 7vw;
     text-align: center;
     margin-top: 12vh;
-    font-weight: 600; }
+    font-weight: 600;
+    margin-bottom: 2vh; }
     @media only screen and (min-width: 1025px) {
-      .steps p {
+      .steps h4 {
         font-size: 2.5vw;
         margin-top: 32vh; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .steps h4 {
+        margin-top: 25vh; } }
+  .steps h5 {
+    font-size: 5vw;
+    text-align: center;
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 6vh; }
+    @media only screen and (min-width: 1025px) {
+      .steps h5 {
+        margin-bottom: 9vh;
+        font-size: 1.9vw; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .steps h5 {
+        margin-bottom: 12vh; } }
   .steps .a-step {
     margin-bottom: 10vh;
     width: 50vw;
