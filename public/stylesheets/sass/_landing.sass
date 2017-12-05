@@ -126,26 +126,34 @@ input[type="submit"]
   width: 60%
   margin-left: 20vw
   margin-bottom: 10vh
+  border-bottom: 2px solid $fifthMain
   @include desktop
-    margin-top: -3vh
+    margin-top: 2vh
     width: 30%
     margin-left: 35vw
+    padding-bottom: 1vh
   i
     color: $fifthMain
-    position: absolute
     font-size: 3vh
     padding-left: 1vw
     padding-right: 1vw
     @include desktop
-      font-size: 1.75vh
-  h6
-    border-bottom: 2px solid $fifthMain
-    color: white
-    font-size: 5vw
-    font-weight: 400
+      font-size: 4.5vh
+  span
     text-align: center
+    font-weight: 400
+    font-size: 5vw
+    color: white
+    margin-left: 3vw
+    position: absolute
+    bottom: 60vh
+    opacity: 0
+    transition: bottom .6s, opacity .6s
     @include desktop
       font-size: 1.75vw
+      bottom: 7vh
+    @include tablet
+      font-size: 4vw
 
 // not in use
 // .market
