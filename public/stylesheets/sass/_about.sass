@@ -1,3 +1,7 @@
+
+
+
+
 .about-copy
   color: white
   font-size: 4.5vw
@@ -20,10 +24,10 @@
       width: 60vw
       margin-left: 20vw
     &:first-of-type
-      padding-top: 27vh
+      padding-top: 12vh
       opacity: 1
       @include desktop
-        padding-top: 27vh
+        padding-top: 17vh
     &:nth-of-type(2)
       padding-bottom: 14vh
       font-weight: 600
@@ -64,6 +68,22 @@
       // font-weight: 600
     &:last-of-type
       margin-bottom: 14vh
+
+  .aboutTitle
+    h2
+      font-size: 6vh
+      padding-top: 17vh
+      text-transform: uppercase
+      text-align: center
+      color: white
+      font-weight: 400
+      @include desktop
+        padding-top: 12vh
+        font-size: 3vw
+        font-weight: 300
+      @include tablet
+        padding-top: 17vh
+        font-size: 4vh
 
 .scroll-indicator
   position: fixed

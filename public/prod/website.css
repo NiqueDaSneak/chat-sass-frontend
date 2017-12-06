@@ -1170,11 +1170,11 @@ input[type="submit"] {
         width: 60vw;
         margin-left: 20vw; } }
     .about-copy span:first-of-type {
-      padding-top: 27vh;
+      padding-top: 12vh;
       opacity: 1; }
       @media only screen and (min-width: 1025px) {
         .about-copy span:first-of-type {
-          padding-top: 27vh; } }
+          padding-top: 17vh; } }
     .about-copy span:nth-of-type(2) {
       padding-bottom: 14vh;
       font-weight: 600;
@@ -1215,6 +1215,22 @@ input[type="submit"] {
           margin-bottom: 30vh; } }
     .about-copy span:last-of-type {
       margin-bottom: 14vh; }
+  .about-copy .aboutTitle h2 {
+    font-size: 6vh;
+    padding-top: 17vh;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    font-weight: 400; }
+    @media only screen and (min-width: 1025px) {
+      .about-copy .aboutTitle h2 {
+        padding-top: 12vh;
+        font-size: 3vw;
+        font-weight: 300; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .about-copy .aboutTitle h2 {
+        padding-top: 17vh;
+        font-size: 4vh; } }
 
 .scroll-indicator {
   position: fixed;
@@ -1264,16 +1280,17 @@ header {
     padding-top: 12vh;
     text-transform: uppercase;
     text-align: center;
-    color: white; }
+    color: white;
+    font-weight: 400; }
     @media only screen and (min-width: 1025px) {
       .customize-content .customizeTitle h2 {
-        padding-top: 20vh;
+        padding-top: 18vh;
         font-size: 3vw;
-        font-weight: 500; } }
+        font-weight: 300; } }
     @media only screen and (max-width: 1024px) and (min-width: 415px) {
       .customize-content .customizeTitle h2 {
-        padding-top: 15vh;
-        font-size: 7vh; } }
+        padding-top: 17vh;
+        font-size: 4vh; } }
 
 .content {
   background-color: rgba(255, 255, 255, 0.65);
