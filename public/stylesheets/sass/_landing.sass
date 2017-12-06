@@ -195,7 +195,7 @@ input[type="submit"]
   @include desktop
     padding-bottom: 20vh
   @include tablet
-    height: 480vh
+    height: 440vh
   .h3
     display: block
     text-align: center
@@ -226,7 +226,7 @@ input[type="submit"]
       font-size: 3.9vw
   .h5.summary
     color: $fifthMain
-    font-weight: 600
+    font-weight: 300
     @include desktop
       color: $fifthMain
   .three-phones
@@ -355,10 +355,10 @@ input[type="submit"]
         text-align: right
         width: 30vw
         @include desktop
-          left: 24vw
+          left: 14vw
           font-size: 2vw
-          padding-left: 8vw
-          line-height: 5vh
+          // padding-left: 8vw
+          line-height: 6vh
         @include tablet
           left: 14vw
           line-height: 4vh
@@ -386,33 +386,30 @@ input[type="submit"]
     @include desktop
       height: 0vh
       padding-top: 9vh
+      padding-bottom: 8vh
     @include tablet
       padding-top: 10vh
+      padding-bottom: 5vh
       height: 0
   .stats.second
     height: 10vh
-    padding-top: 4vh
+    padding-top: 6vh
+    padding-bottom: 5vh
     @include desktop
       height: 0vh
     @include tablet
       height: 0
-    span
-      &:first-of-type
-        // padding-left: 5vw
-        @include desktop
-          padding-left: 8.5vw
+      padding-bottom: 10vh
+
   .stats.third
     height: 10vh
-    padding-top: 11vh
+    padding-top: 7vh
     @include desktop
       height: 0vh
+      padding-top: 10vh
     @include tablet
       height: 0
-    span
-      &:first-of-type
-        // padding-left: 2vw
-        @include desktop
-          padding-left: 3vw
+
 
 .features
   background-size: cover
@@ -576,22 +573,28 @@ input[type="submit"]
       margin-left: 6vw
       vertical-align: top
     img
-      width: 18vw
+      width: 12vw
       @include desktop
         width: 4.4vw
+      @include tablet
+        width: 10vw
     span
       display: block
       &:first-of-type
         font-weight: 600
         font-size: 6vw
-        margin-top: 2vh
+        margin-top: 1.75vh
         @include desktop
           font-size: 1.9vw
+        @include tablet
+          font-size: 4vw
       &:last-of-type
         font-weight: 300
         font-size: 4vw
         @include desktop
           font-size: 1.2vw
+        @include tablet
+          font-size: 3.5vw
 
 .grad
   background-color: #150958
