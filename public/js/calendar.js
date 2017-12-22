@@ -386,7 +386,7 @@
       var hour = msg.time.split(':')[0]
       var min = msg.time.split(':')[1]
       var fromNow = moment(month + day + year + hour + min, 'MMDDYYYYHHmm').fromNow()
-      if (Number(day) === Number(displayDay) && moment(month).format('MMM') === displayMonth) {
+      if (Number(day) === Number(displayDay) && moment(month, 'MM').format('MMM') === displayMonth) {
         if (msg.videoURL) {
           function YouTubeGetID(url){
             url = url.split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);

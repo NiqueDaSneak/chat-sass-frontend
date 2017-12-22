@@ -473,7 +473,7 @@ $(document).ready(() => {
       var hour = msg.time.split(':')[0]
       var min = msg.time.split(':')[1]
       var fromNow = moment(month + day + year + hour + min, 'MMDDYYYYHHmm').fromNow()
-      if (Number(day) === Number(displayDay) && moment(month).format('MMM') === displayMonth) {
+      if (Number(day) === Number(displayDay) && moment(month, 'MM').format('MMM') === displayMonth) {
         if (msg.videoURL) {
           function YouTubeGetID(url){
             url = url.split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
@@ -545,7 +545,7 @@ $(document).ready(() => {
 
   $('.msg-data .btn-holder .create').click(() => {
     if ($('.send-now').hasClass('selected')) {
-      $("input[type='time']").val(moment().add(2,'m').format('hh:mm'))
+      $("input[type='time']").val(moment().add(2,'m').format('HH:mm'))
       $("input[type='date']").val(moment().format('YYYY-MM-DD'))
       $('.loading').fadeIn()
       $('.msg-data').submit()

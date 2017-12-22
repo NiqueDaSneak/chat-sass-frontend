@@ -7,23 +7,28 @@ html {
   padding: 0; }
 
 .pricing {
-  padding-top: 20vh;
+  padding-top: 25vh;
   width: 100vw;
   display: block;
   text-align: center;
   padding-bottom: 10vh; }
+  @media only screen and (min-width: 1025px) {
+    .pricing {
+      font-size: 3vw;
+      padding-bottom: 15vh; } }
 
 .pricingTitle {
   font-size: 6vh;
   text-transform: uppercase;
-  color: white; }
+  color: white;
+  font-weight: 300; }
   @media only screen and (min-width: 1025px) {
     .pricingTitle {
-      font-size: 3vw;
+      font-size: 4vw;
       margin: 7vh; } }
   @media only screen and (max-width: 1024px) and (min-width: 415px) {
     .pricingTitle {
-      font-size: 5vw;
+      font-size: 7vw;
       margin: 8vh; } }
 
 #cards {
@@ -1417,12 +1422,18 @@ header {
   color: #474747; }
 
 #ppHeader {
-  font-size: 3vw;
+  font-size: 6vw;
   width: 100%;
   margin: 0 auto;
   padding: 20vh 0 5vh 0;
   text-align: center;
   color: #150958; }
+  @media only screen and (min-width: 1025px) {
+    #ppHeader {
+      font-size: 3vw; } }
+  @media only screen and (max-width: 1024px) and (min-width: 415px) {
+    #ppHeader {
+      font-size: 5vw; } }
 
 .ppConsistencies {
   display: none; }
@@ -1445,12 +1456,18 @@ header {
   color: #474747; }
 
 #termsHeader {
-  font-size: 3vw;
+  font-size: 6vw;
   width: 100%;
   margin: 0 auto;
   padding: 20vh 0 5vh 0;
   text-align: center;
   color: #150958; }
+  @media only screen and (min-width: 1025px) {
+    #termsHeader {
+      font-size: 3vw; } }
+  @media only screen and (max-width: 1024px) and (min-width: 415px) {
+    #termsHeader {
+      font-size: 5vw; } }
 
 .termsConsistencies {
   display: none; }
