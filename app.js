@@ -85,9 +85,11 @@ const passport = require('passport')
 const FacebookStrategy = require('passport-facebook').Strategy
 
 // EXPRESS SETUP
+
 app.use((req, res, next) => {
+  // console.log(req.get('Host'))
   if (!req.secure) {
-    if (req.get('Host') === 'localhost:3000') {
+    if (req.get('Host') === 'localhost:3000' || 'local') {
       console.log('localhost')
     } else {
       return res.redirect(['https://', req.get('Host'), req.url].join(''))
@@ -95,6 +97,7 @@ app.use((req, res, next) => {
   }
   next()
 })
+
 app.use(favicon(path.join(__dirname, 'public/imgs', 'favicon.ico')))
 app.use(express.static('public'))
 app.use(express.static(__dirname + 'view'))
@@ -351,6 +354,11 @@ app.get('/dashboard/:organization', (req, res) => {
     }
   }
 })
+
+app.get('/commerce', (req, res) => {
+  res.sendFile(path.join(__dirname + '/views/commerce.html'))
+})
+
 
 // SOCKET.IO
 io.on('connection', (socket) => {
