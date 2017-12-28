@@ -27,8 +27,19 @@ gulp.task('websiteSass', () => {
   .pipe(gulp.dest('./public/prod'))
 })
 
-gulp.task('watch', function(){
-  gulp.watch('public/stylesheets/sass/*.sass', ['sass','websiteSass'])
+gulp.task('commerceSass', () => {
+  return gulp.src('./public/stylesheets/sass/commerce/commerce.sass')
+  .pipe(sass({style: 'compressed'}))
+  .pipe(postcss([ autoprefixer() ]))
+  .pipe(rename('commerce.css'))
+  .on('error', gutil.log)
+  .pipe(gulp.dest('./public/prod'))
 })
 
-gulp.task('default', ['watch', 'sass', 'websiteSass'])
+
+gulp.task('watch', function(){
+  gulp.watch('public/stylesheets/sass/*.sass', ['sass','websiteSass'])
+  gulp.watch('public/stylesheets/sass/commerce/*.sass', ['commerceSass'])
+})
+
+gulp.task('default', ['watch', 'sass', 'websiteSass', 'commerceSass'])
