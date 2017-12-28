@@ -1,0 +1,281 @@
+.landing {
+  text-align: center;
+  height: 100vh; }
+  .landing .icon {
+    margin-top: 2vh;
+    width: 8vw; }
+  .landing .headers {
+    font-size: 7.6vw;
+    width: 80vw;
+    margin-left: 10vw;
+    margin-top: 1vh; }
+  .landing .imgs img:first-of-type {
+    width: 45vw;
+    margin-top: 7vh;
+    margin-bottom: 7vh; }
+  .landing .subheads {
+    width: 80vw;
+    margin-left: 10vw;
+    font-size: 3.4vw;
+    font-weight: 600; }
+  .landing .landing-nav {
+    margin-top: 4vh; }
+    .landing .landing-nav img {
+      vertical-align: middle;
+      width: 5vw; }
+      .landing .landing-nav img:last-of-type {
+        -webkit-transform: rotate(180deg);
+                transform: rotate(180deg); }
+    .landing .landing-nav span {
+      width: 2vw;
+      height: 2vw;
+      border-radius: 4vw;
+      border: #00AEEF 0.4vw solid;
+      display: inline-block;
+      vertical-align: middle; }
+      .landing .landing-nav span:first-of-type {
+        margin-left: 26vw; }
+      .landing .landing-nav span:nth-of-type(2) {
+        margin-left: 4vw;
+        margin-right: 4vw; }
+      .landing .landing-nav span:last-of-type {
+        margin-right: 26vw; }
+  .landing .down-chevron {
+    width: 15vw;
+    margin-top: 1vh;
+    -webkit-animation: slide 1s infinite;
+            animation: slide 1s infinite; }
+
+@-webkit-keyframes slide {
+  0% {
+    margin-top: 1vh; }
+  100% {
+    margin-top: 4vh; } }
+
+@keyframes slide {
+  0% {
+    margin-top: 1vh; }
+  100% {
+    margin-top: 4vh; } }
+
+.display-none {
+  display: none; }
+
+.hide-orientation {
+  position: fixed;
+  background-color: #c1c1c1;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  top: 0; }
+  .hide-orientation img {
+    width: 30vw;
+    margin-left: 35vw;
+    margin-top: 30vh; }
+
+body {
+  margin: 0;
+  background-color: #E0E0E0;
+  font-family: 'Open Sans', sans-serif; }
+
+input:focus, select:focus, textarea:focus, button:focus {
+  outline: none; }
+
+header.scrolled {
+  height: 4vh; }
+  @media only screen and (min-width: 1025px) {
+    header.scrolled .headerButton {
+      border-radius: 0.5vw;
+      padding-top: 0.7vh;
+      padding-bottom: 0.7vh; } }
+  @media only screen and (min-width: 1025px) {
+    header.scrolled .headerButton img {
+      width: 0.7vw;
+      margin-right: 1vw; } }
+  @media only screen and (min-width: 1025px) {
+    header.scrolled .headerButton span {
+      width: 0.7vw; } }
+  @media only screen and (min-width: 1025px) {
+    header.scrolled .smallLogo {
+      width: 2.2vw; } }
+  @media only screen and (min-width: 1025px) {
+    header.scrolled a {
+      font-size: 1.2vw; } }
+  header.scrolled a:first-of-type {
+    margin-right: 52vw; }
+
+header {
+  background-color: white;
+  -webkit-transition: background .8s, height 1s, -webkit-box-shadow 1s;
+  transition: background .8s, height 1s, -webkit-box-shadow 1s;
+  transition: background .8s, box-shadow 1s, height 1s;
+  transition: background .8s, box-shadow 1s, height 1s, -webkit-box-shadow 1s;
+  position: fixed;
+  width: 100vw;
+  z-index: 1;
+  text-align: center;
+  padding-top: 3vh;
+  padding-bottom: 3vh; }
+  @media only screen and (min-width: 1025px) {
+    header {
+      height: 8vh;
+      text-align: start;
+      top: 0; } }
+  header img {
+    width: 7vw;
+    vertical-align: middle; }
+  header .smallLogo {
+    width: 7vw;
+    vertical-align: middle;
+    -webkit-transition: width .8s;
+    transition: width .8s; }
+    @media only screen and (min-width: 1025px) {
+      header .smallLogo {
+        width: 4vw;
+        margin-left: 5vw; } }
+  header a {
+    -webkit-transition: width .8s, margin-right .8s, font-size .8s;
+    transition: width .8s, margin-right .8s, font-size .8s;
+    -webkit-transition-delay: .4s;
+            transition-delay: .4s;
+    text-decoration: none;
+    font-weight: 300;
+    vertical-align: middle;
+    font-size: 3.5vw;
+    color: #150958;
+    margin-right: 4.8vw; }
+    @media only screen and (min-width: 1025px) {
+      header a {
+        font-size: 1.7vw;
+        margin-right: 4vw; }
+        header a:first-of-type {
+          margin-right: 41vw; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      header a {
+        font-size: 3.1vw;
+        margin-right: 6.3vw; } }
+  header .headerButton {
+    -webkit-transition: border-radius .8s, padding-top .8s, padding-bottom .8s;
+    transition: border-radius .8s, padding-top .8s, padding-bottom .8s;
+    background-color: #150958;
+    padding: 3vw;
+    border-radius: 2.5vw;
+    color: white;
+    margin-right: 0vw; }
+    @media only screen and (min-width: 1025px) {
+      header .headerButton {
+        padding: 1.4vw;
+        border-radius: 1.2vw;
+        font-size: 1.3vw;
+        padding-left: 1.4vw;
+        padding-right: 1.4vw;
+        padding-top: 2vh;
+        padding-bottom: 2.4vh; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      header .headerButton {
+        padding: 2.1vw;
+        border-radius: 1.7vw; } }
+    header .headerButton img {
+      width: 3vw;
+      margin-right: 1vw;
+      -webkit-transition: width .8s;
+      transition: width .8s; }
+      @media only screen and (min-width: 1025px) {
+        header .headerButton img {
+          width: 1.3vw;
+          margin-right: 2.1vw; } }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        header .headerButton img {
+          width: 2.2vw; } }
+    header .headerButton span {
+      font-weight: 400;
+      -webkit-transition: width .8s;
+      transition: width .8s; }
+      @media only screen and (min-width: 1025px) {
+        header .headerButton span {
+          font-weight: 300; } }
+
+footer {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: relative;
+  background-color: #150958; }
+  footer img {
+    width: 35vw;
+    top: 2.5vh;
+    position: relative;
+    left: 5vw; }
+    @media only screen and (min-width: 1025px) {
+      footer img {
+        width: 18vw; } }
+  footer .link-holder {
+    position: relative;
+    top: -2.5vh; }
+    footer .link-holder a {
+      text-decoration: none;
+      color: white;
+      display: block;
+      font-weight: 300;
+      text-align: right;
+      font-size: 3.5vw;
+      margin-bottom: 3vh;
+      width: 20vw;
+      margin-left: 75vw; }
+      @media only screen and (min-width: 1025px) {
+        footer .link-holder a {
+          font-size: 1.6vw; } }
+  footer .footer-icons {
+    position: absolute;
+    top: 9.5vh; }
+    @media only screen and (min-width: 1025px) {
+      footer .footer-icons {
+        top: 13.2vh; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      footer .footer-icons {
+        top: 11.5vh; } }
+    footer .footer-icons .footer-login {
+      display: inline;
+      vertical-align: middle; }
+      footer .footer-icons .footer-login img {
+        width: 5vw;
+        vertical-align: middle; }
+      footer .footer-icons .footer-login p {
+        display: inline; }
+    footer .footer-icons a {
+      vertical-align: middle; }
+      footer .footer-icons a:first-of-type img {
+        width: 8vw; }
+        @media only screen and (min-width: 1025px) {
+          footer .footer-icons a:first-of-type img {
+            width: 3vw; } }
+      footer .footer-icons a:nth-of-type(2) img {
+        width: 4vw; }
+        @media only screen and (min-width: 1025px) {
+          footer .footer-icons a:nth-of-type(2) img {
+            width: 1.6vw; } }
+      footer .footer-icons a:nth-of-type(3) img {
+        width: 7vw; }
+        @media only screen and (min-width: 1025px) {
+          footer .footer-icons a:nth-of-type(3) img {
+            width: 3.7vw; } }
+      footer .footer-icons a:nth-of-type(4) img {
+        width: 18vw; }
+        @media only screen and (min-width: 1025px) {
+          footer .footer-icons a:nth-of-type(4) img {
+            width: 7vw; } }
+      footer .footer-icons a img {
+        vertical-align: middle;
+        margin-right: 5vw; }
+        @media only screen and (min-width: 1025px) {
+          footer .footer-icons a img {
+            margin-right: 2vw; } }
+  footer span:last-of-type {
+    position: absolute;
+    bottom: 5.5vh;
+    color: white;
+    font-size: 2.3vw;
+    left: 5vw; }
+    @media only screen and (min-width: 1025px) {
+      footer span:last-of-type {
+        font-size: 0.7vw; } }
