@@ -1,7 +1,8 @@
 .landing
   text-align: center
   height: 100vh
-
+  width: 100vw
+  position: relative
   .icon
     margin-top: 2vh
     width: 8vw
@@ -11,6 +12,21 @@
     margin-left: 10vw
     margin-top: 1vh
   .imgs
+    .alert
+      width: 8vw
+      height: 8vw
+      border-radius: 4vw
+      background-color: red
+      position: absolute
+      left: 63vw
+      bottom: 65vh
+      transform: scale(0)
+      animation: scale .3s cubic-bezier(0.17, 0.67, 0.07, 2.04)
+      animation-delay: 1.8s
+      animation-fill-mode: forwards
+      color: white
+      font-size: 6vw
+      font-weight: 100
     img
       &:first-of-type
         width: 45vw
@@ -47,10 +63,16 @@
   .down-chevron
     width: 15vw
     margin-top: 1vh
-    animation: slide 1s infinite 
+    animation: slide 1s infinite
 
 @keyframes slide
   0%
     margin-top: 1vh
   100%
-    margin-top: 4vh
+    margin-top: 10vh
+
+@keyframes scale
+  0%
+    transform: scale(0)
+  100%
+    transform: scale(1)
