@@ -55,18 +55,20 @@
       display: inline-block;
       vertical-align: middle; }
       .landing .landing-nav span:first-of-type {
-        margin-left: 26vw;
-        background-color: #00AEEF; }
+        margin-left: 26vw; }
       .landing .landing-nav span:nth-of-type(2) {
         margin-left: 4vw;
         margin-right: 4vw; }
       .landing .landing-nav span:last-of-type {
         margin-right: 26vw; }
+    .landing .landing-nav span.active {
+      background-color: #00AEEF; }
   .landing .down-chevron {
     width: 15vw;
     margin-top: 1vh;
     -webkit-animation: slide 1s infinite;
-            animation: slide 1s infinite; }
+            animation: slide 1s infinite;
+    opacity: 0; }
 
 @-webkit-keyframes slide {
   0% {
