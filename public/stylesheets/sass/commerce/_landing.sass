@@ -13,6 +13,7 @@
     margin-top: 1vh
   .imgs
     .alert
+      z-index: 1
       width: 8vw
       height: 8vw
       border-radius: 4vw
@@ -22,16 +23,27 @@
       bottom: 65vh
       transform: scale(0)
       animation: scale .3s cubic-bezier(0.17, 0.67, 0.07, 2.04)
-      animation-delay: 1.8s
+      animation-delay: 1.4s
       animation-fill-mode: forwards
       color: white
       font-size: 6vw
       font-weight: 100
+      box-shadow: -1px 2px 0px 0px rgba(0, 0, 0, 0.36)
     img
-      &:first-of-type
-        width: 45vw
-        margin-top: 7vh
-        margin-bottom: 7vh
+      width: 45vw
+      margin-top: 7vh
+      margin-bottom: 7vh
+      position: absolute
+      left: 130vw
+    img.active
+      // left: 27.5vw
+      animation: slide-in 1s cubic-bezier(0.42, 0, 0.17, 1.18)
+      animation-delay: .4s
+      animation-fill-mode: forwards
+      // &:first-of-type
+      //   width: 45vw
+      //   margin-top: 7vh
+      //   margin-bottom: 7vh
   .subheads
     width: 80vw
     margin-left: 10vw
@@ -64,17 +76,30 @@
   .down-chevron
     width: 15vw
     margin-top: 1vh
+    position: relative
+    top: 65vh
     animation: slide 1s infinite
     opacity: 0
 
 @keyframes slide
   0%
-    margin-top: 1vh
+    top: 65vh
   100%
-    margin-top: 10vh
+    top: 74vh
 
 @keyframes scale
   0%
     transform: scale(0)
   100%
     transform: scale(1)
+
+@keyframes slide-in
+  0%
+    left: 130vw
+  100%
+    left: 27.5vw
+
+.bottom-third
+  position: absolute
+  width: 100vw
+  bottom: 14vh

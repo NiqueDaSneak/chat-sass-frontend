@@ -12,6 +12,7 @@
     margin-left: 10vw;
     margin-top: 1vh; }
   .landing .imgs .alert {
+    z-index: 1;
     width: 8vw;
     height: 8vw;
     border-radius: 4vw;
@@ -23,17 +24,28 @@
             transform: scale(0);
     -webkit-animation: scale 0.3s cubic-bezier(0.17, 0.67, 0.07, 2.04);
             animation: scale 0.3s cubic-bezier(0.17, 0.67, 0.07, 2.04);
-    -webkit-animation-delay: 1.8s;
-            animation-delay: 1.8s;
+    -webkit-animation-delay: 1.4s;
+            animation-delay: 1.4s;
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
     color: white;
     font-size: 6vw;
-    font-weight: 100; }
-  .landing .imgs img:first-of-type {
+    font-weight: 100;
+    -webkit-box-shadow: -1px 2px 0px 0px rgba(0, 0, 0, 0.36);
+            box-shadow: -1px 2px 0px 0px rgba(0, 0, 0, 0.36); }
+  .landing .imgs img {
     width: 45vw;
     margin-top: 7vh;
-    margin-bottom: 7vh; }
+    margin-bottom: 7vh;
+    position: absolute;
+    left: 130vw; }
+  .landing .imgs img.active {
+    -webkit-animation: slide-in 1s cubic-bezier(0.42, 0, 0.17, 1.18);
+            animation: slide-in 1s cubic-bezier(0.42, 0, 0.17, 1.18);
+    -webkit-animation-delay: .4s;
+            animation-delay: .4s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
   .landing .subheads {
     width: 80vw;
     margin-left: 10vw;
@@ -66,21 +78,23 @@
   .landing .down-chevron {
     width: 15vw;
     margin-top: 1vh;
+    position: relative;
+    top: 65vh;
     -webkit-animation: slide 1s infinite;
             animation: slide 1s infinite;
     opacity: 0; }
 
 @-webkit-keyframes slide {
   0% {
-    margin-top: 1vh; }
+    top: 65vh; }
   100% {
-    margin-top: 10vh; } }
+    top: 74vh; } }
 
 @keyframes slide {
   0% {
-    margin-top: 1vh; }
+    top: 65vh; }
   100% {
-    margin-top: 10vh; } }
+    top: 74vh; } }
 
 @-webkit-keyframes scale {
   0% {
@@ -97,6 +111,23 @@
   100% {
     -webkit-transform: scale(1);
             transform: scale(1); } }
+
+@-webkit-keyframes slide-in {
+  0% {
+    left: 130vw; }
+  100% {
+    left: 27.5vw; } }
+
+@keyframes slide-in {
+  0% {
+    left: 130vw; }
+  100% {
+    left: 27.5vw; } }
+
+.bottom-third {
+  position: absolute;
+  width: 100vw;
+  bottom: 14vh; }
 
 .display-none {
   display: none; }
