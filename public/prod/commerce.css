@@ -139,6 +139,83 @@
   width: 100vw;
   bottom: 14vh; }
 
+.initial-hide {
+  display: none; }
+
+.infographics {
+  background-color: white;
+  padding-top: 6vh;
+  text-align: center; }
+  .infographics span {
+    display: block; }
+    .infographics span:first-of-type {
+      display: block;
+      font-size: 5vw;
+      font-weight: 400; }
+    .infographics span:nth-of-type(2) {
+      display: block;
+      font-size: 5vw;
+      font-weight: 700; }
+    .infographics span:last-of-type {
+      margin-top: 5vh;
+      margin-bottom: 5vh;
+      width: 70vw;
+      margin-left: 15vw;
+      font-weight: 600; }
+  .infographics img {
+    width: 100vw;
+    margin-top: 5vh; }
+
+.heads {
+  display: block;
+  font-size: 5vw;
+  font-weight: 700;
+  width: 80vw;
+  margin-left: 10vw;
+  margin-bottom: 6vh; }
+
+.gradient {
+  text-align: center;
+  padding-top: 6vh;
+  padding-bottom: 6vh;
+  color: white;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(21, 9, 88, 0.5)), color-stop(64%, rgba(21, 9, 88, 0.5)), to(rgba(0, 174, 239, 0.5)));
+  background: linear-gradient(to bottom, rgba(21, 9, 88, 0.5) 0%, rgba(21, 9, 88, 0.5) 64%, rgba(0, 174, 239, 0.5) 100%); }
+  .gradient .plus-messenger {
+    margin-bottom: 16vh; }
+  .gradient .every-lead {
+    margin-bottom: 16vh; }
+    .gradient .every-lead span {
+      display: block; }
+    .gradient .every-lead img {
+      margin-bottom: 2vh;
+      width: 40vw; }
+    .gradient .every-lead .title {
+      margin: 2vh; }
+    .gradient .every-lead .description {
+      width: 80vw;
+      display: block;
+      margin-left: 10vw;
+      margin-bottom: 6vh; }
+  .gradient .future .desc {
+    width: 80vw;
+    display: block;
+    margin-left: 10vw;
+    margin-bottom: 6vh; }
+  .gradient .future .news .title {
+    display: block;
+    font-weight: 600; }
+  .gradient .future .news .description {
+    width: 80vw;
+    display: block;
+    margin-left: 10vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh; }
+  .gradient .future .read-more {
+    font-weight: 600;
+    display: block;
+    font-size: 5vw; }
+
 .display-none {
   display: none; }
 
@@ -156,7 +233,8 @@
 
 body {
   margin: 0;
-  background-color: #E0E0E0;
+  background-image: url("/imgs/commerce/bg.png");
+  background-attachment: fixed;
   font-family: 'Open Sans', sans-serif; }
 
 input:focus, select:focus, textarea:focus, button:focus {
