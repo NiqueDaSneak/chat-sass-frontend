@@ -50,8 +50,7 @@ $(document).ready(() => {
             $('.imgs img:first-of-type').removeClass()
           }, 1000)
         })
-        $('.down-chevron').css('opacity', '1')
-        
+
         landingCount++
         // add active class to .subheads p:nth-of-type
         $('.landing-nav span:nth-of-type(' + landingCount + ')').addClass('active')
@@ -63,6 +62,8 @@ $(document).ready(() => {
         }, 200)
       } else if (landingCount === 2) {
         $('.landing-nav span:nth-of-type(' + landingCount + ')').removeClass('active')
+        $('.down-chevron').css('opacity', '1')
+        $('.initial-hide').css('display', 'initial')
         // $('subheads p').text('Capabilities')
 
         slideOut().then(() => {

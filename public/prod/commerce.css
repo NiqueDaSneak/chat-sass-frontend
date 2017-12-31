@@ -144,24 +144,26 @@
 
 .infographics {
   background-color: white;
-  padding-top: 6vh;
-  text-align: center; }
+  padding-top: 6vh; }
   .infographics span {
     display: block; }
     .infographics span:first-of-type {
       display: block;
       font-size: 5vw;
-      font-weight: 400; }
+      font-weight: 400;
+      margin-left: 10vw; }
     .infographics span:nth-of-type(2) {
       display: block;
       font-size: 5vw;
-      font-weight: 700; }
+      font-weight: 700;
+      margin-left: 10vw; }
     .infographics span:last-of-type {
       margin-top: 5vh;
       margin-bottom: 5vh;
       width: 70vw;
       margin-left: 15vw;
-      font-weight: 600; }
+      font-weight: 600;
+      margin-left: 10vw; }
   .infographics img {
     width: 100vw;
     margin-top: 5vh; }
@@ -171,11 +173,10 @@
   font-size: 5vw;
   font-weight: 700;
   width: 80vw;
-  margin-left: 10vw;
   margin-bottom: 6vh; }
 
 .gradient {
-  text-align: center;
+  padding-left: 10vw;
   padding-top: 6vh;
   padding-bottom: 6vh;
   color: white;
@@ -191,16 +192,16 @@
       margin-bottom: 2vh;
       width: 40vw; }
     .gradient .every-lead .title {
-      margin: 2vh; }
+      margin-top: 2vh;
+      margin-bottom: 2vh;
+      font-weight: 700; }
     .gradient .every-lead .description {
       width: 80vw;
       display: block;
-      margin-left: 10vw;
       margin-bottom: 6vh; }
   .gradient .future .desc {
     width: 80vw;
     display: block;
-    margin-left: 10vw;
     margin-bottom: 6vh; }
   .gradient .future .news .title {
     display: block;
@@ -208,7 +209,6 @@
   .gradient .future .news .description {
     width: 80vw;
     display: block;
-    margin-left: 10vw;
     margin-top: 2vh;
     margin-bottom: 2vh; }
   .gradient .future .read-more {
@@ -233,7 +233,7 @@
 
 body {
   margin: 0;
-  background-image: url("/imgs/commerce/bg.png");
+  background-image: url("/imgs/commerce/bg2.png");
   background-attachment: fixed;
   font-family: 'Open Sans', sans-serif; }
 
