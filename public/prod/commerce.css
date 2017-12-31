@@ -7,11 +7,14 @@
     margin-top: 2vh;
     width: 8vw; }
   .landing .headers {
-    font-size: 7.6vw;
+    font-size: 4.7vw;
     width: 80vw;
     margin-left: 10vw;
-    margin-top: 1vh; }
+    margin-top: 1vh;
+    font-weight: 700; }
   .landing .imgs .alert {
+    -webkit-transition: left 1s;
+    transition: left 1s;
     z-index: 1;
     width: 8vw;
     height: 8vw;
@@ -19,7 +22,7 @@
     background-color: red;
     position: absolute;
     left: 63vw;
-    bottom: 65vh;
+    bottom: 69vh;
     -webkit-transform: scale(0);
             transform: scale(0);
     -webkit-animation: scale 0.3s cubic-bezier(0.17, 0.67, 0.07, 2.04);
@@ -35,27 +38,34 @@
             box-shadow: -1px 2px 0px 0px rgba(0, 0, 0, 0.36); }
   .landing .imgs img {
     width: 45vw;
-    margin-top: 7vh;
-    margin-bottom: 7vh;
     position: absolute;
-    left: 130vw; }
+    left: 130vw;
+    -webkit-transition: left 1s;
+    transition: left 1s;
+    display: none; }
+    .landing .imgs img:first-of-type {
+      top: 25vh; }
+    .landing .imgs img:nth-of-type(2) {
+      top: 20vh; }
+    .landing .imgs img:nth-of-type(3) {
+      margin-top: 6vh; }
   .landing .imgs img.active {
-    -webkit-animation: slide-in 1s cubic-bezier(0.42, 0, 0.17, 1.18);
-            animation: slide-in 1s cubic-bezier(0.42, 0, 0.17, 1.18);
-    -webkit-animation-delay: .4s;
-            animation-delay: .4s;
-    -webkit-animation-fill-mode: forwards;
-            animation-fill-mode: forwards; }
+    left: 27.5vw; }
+  .landing .imgs img.inactive {
+    left: -50vw; }
   .landing .subheads {
     width: 80vw;
     margin-left: 10vw;
     font-size: 3.4vw;
-    font-weight: 600; }
+    font-weight: 600;
+    -webkit-transition: opacity .5s;
+    transition: opacity .5s; }
   .landing .landing-nav {
     margin-top: 4vh; }
     .landing .landing-nav img {
       vertical-align: middle;
-      width: 5vw; }
+      width: 5vw;
+      padding: 2vw; }
       .landing .landing-nav img:last-of-type {
         -webkit-transform: rotate(180deg);
                 transform: rotate(180deg); }
@@ -86,15 +96,15 @@
 
 @-webkit-keyframes slide {
   0% {
-    top: 65vh; }
+    top: 70vh; }
   100% {
-    top: 74vh; } }
+    top: 82vh; } }
 
 @keyframes slide {
   0% {
-    top: 65vh; }
+    top: 70vh; }
   100% {
-    top: 74vh; } }
+    top: 82vh; } }
 
 @-webkit-keyframes scale {
   0% {

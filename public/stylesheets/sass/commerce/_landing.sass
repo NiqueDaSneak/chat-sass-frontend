@@ -7,12 +7,14 @@
     margin-top: 2vh
     width: 8vw
   .headers
-    font-size: 7.6vw
+    font-size: 4.7vw
     width: 80vw
     margin-left: 10vw
     margin-top: 1vh
+    font-weight: 700
   .imgs
     .alert
+      transition: left 1s
       z-index: 1
       width: 8vw
       height: 8vw
@@ -20,7 +22,7 @@
       background-color: red
       position: absolute
       left: 63vw
-      bottom: 65vh
+      bottom: 69vh
       transform: scale(0)
       animation: scale .3s cubic-bezier(0.17, 0.67, 0.07, 2.04)
       animation-delay: 1.4s
@@ -31,16 +33,23 @@
       box-shadow: -1px 2px 0px 0px rgba(0, 0, 0, 0.36)
     img
       width: 45vw
-      margin-top: 7vh
-      margin-bottom: 7vh
       position: absolute
       left: 130vw
+      transition: left 1s
+      display: none
+      &:first-of-type
+        top: 25vh
+      &:nth-of-type(2)
+        top: 20vh
+      &:nth-of-type(3)
+        margin-top: 6vh
     img.active
-      // left: 27.5vw
-      animation: slide-in 1s cubic-bezier(0.42, 0, 0.17, 1.18)
-      animation-delay: .4s
-      animation-fill-mode: forwards
-      // &:first-of-type
+      left: 27.5vw
+    img.inactive
+      left: -50vw
+      // animation: slide-in 1s cubic-bezier(0.42, 0, 0.17, 1.18)
+      // animation-delay: .4s
+      // animation-fill-mode: forwards
       //   width: 45vw
       //   margin-top: 7vh
       //   margin-bottom: 7vh
@@ -49,12 +58,14 @@
     margin-left: 10vw
     font-size: 3.4vw
     font-weight: 600
+    transition: opacity .5s
   .landing-nav
     margin-top: 4vh
     // margin-bottom: 4vh
     img
       vertical-align: middle
       width: 5vw
+      padding: 2vw
       &:last-of-type
         transform: rotate(180deg)
     span
@@ -83,9 +94,9 @@
 
 @keyframes slide
   0%
-    top: 65vh
+    top: 70vh
   100%
-    top: 74vh
+    top: 82vh
 
 @keyframes scale
   0%
