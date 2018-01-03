@@ -4,8 +4,8 @@
   width: 100vw
   position: relative
   .icon
-    margin-top: 2vh
-    width: 8vw
+    margin-top: 3vh
+    width: 40vw
   .headers
     font-size: 4.7vw
     width: 80vw
@@ -25,14 +25,14 @@
       bottom: 69vh
       transform: scale(0)
       animation: scale .3s cubic-bezier(0.17, 0.67, 0.07, 2.04)
-      animation-delay: 1.4s
+      animation-delay: 2.8s
       animation-fill-mode: forwards
       color: white
       font-size: 6vw
       font-weight: 100
       box-shadow: -1px 2px 0px 0px rgba(0, 0, 0, 0.36)
     img
-      width: 45vw
+      width: 56vw
       position: absolute
       left: 130vw
       transition: left 1s
@@ -40,11 +40,11 @@
       &:first-of-type
         top: 25vh
       &:nth-of-type(2)
-        top: 20vh
+        top: 12vh
       &:nth-of-type(3)
         margin-top: 6vh
     img.active
-      left: 27.5vw
+      left: 22vw
     img.inactive
       left: -50vw
       // animation: slide-in 1s cubic-bezier(0.42, 0, 0.17, 1.18)
@@ -77,11 +77,9 @@
       vertical-align: middle
       &:first-of-type
         margin-left: 26vw
-      &:nth-of-type(2)
-        margin-left: 4vw
-        margin-right: 4vw
       &:last-of-type
         margin-right: 26vw
+        margin-left: 4vw
     span.active
       background-color: $fifthMain
   .down-chevron
@@ -94,7 +92,7 @@
 
 @keyframes slide
   0%
-    top: 70vh
+    top: 73vh
   100%
     top: 82vh
 
@@ -103,6 +101,12 @@
     transform: scale(0)
   100%
     transform: scale(1)
+
+@keyframes scale-down
+  0%
+    transform: scale(1)
+  100%
+    transform: scale(0)
 
 @keyframes slide-in
   0%
@@ -198,3 +202,81 @@
       font-weight: 600
       display: block
       font-size: 5vw
+
+.back
+  opacity: 0
+
+.email-icon
+  width: 12vw
+  position: absolute
+  z-index: 1
+  animation: scale-down
+  animation-delay: 1.7s
+  transform: scale(1)
+  animation-fill-mode: forwards
+  &:nth-of-type(even)
+    transform: rotate((random(20) * -1) + deg)
+    animation-duration: .3s
+  &:nth-of-type(odd)
+    transform: rotate(random(20) + deg)
+    animation-duration: .5s
+  &:nth-of-type(1)
+    top: (random(40vh) + 20) + vh
+    left: random(88) + vw
+  &:nth-of-type(2)
+    top: (random(40vh) + 20) + vh
+    left: random(88) + vw
+  &:nth-of-type(3)
+    top: (random(40vh) + 20) + vh
+    left: random(88) + vw
+  &:nth-of-type(4)
+    top: (random(40vh) + 20) + vh
+    left: random(88) + vw
+  &:nth-of-type(5)
+    top: (random(40vh) + 20) + vh
+    left: random(88) + vw
+  &:nth-of-type(6)
+    top: (random(40vh) + 20) + vh
+    left: random(88) + vw
+  &:nth-of-type(7)
+    top: (random(40vh) + 20) + vh
+    left: random(88) + vw
+  &:nth-of-type(8)
+    top: (random(40vh) + 20) + vh
+    left: random(88) + vw
+  &:nth-of-type(9)
+    top: (random(40vh) + 20) + vh
+    left: random(88) + vw
+  &:nth-of-type(10)
+    top: (random(40vh) + 20) + vh
+    left: random(88) + vw
+  &:nth-of-type(11)
+    top: (random(40vh) + 20) + vh
+    left: random(88) + vw
+  &:nth-of-type(12)
+    top: (random(40vh) + 20) + vh
+    left: random(88) + vw
+  &:nth-of-type(13)
+    top: (random(40vh) + 20) + vh
+    left: random(88) + vw
+  &:nth-of-type(14)
+    top: (random(40vh) + 20) + vh
+    left: random(88) + vw
+  &:nth-of-type(15)
+    top: (random(40vh) + 20) + vh
+    left: random(88) + vw
+  &:nth-of-type(16)
+    top: (random(40vh) + 20) + vh
+    left: random(88) + vw
+  &:nth-of-type(17)
+    top: (random(40vh) + 20) + vh
+    left: random(88) + vw
+  &:nth-of-type(18)
+    top: (random(40vh) + 20) + vh
+    left: random(88) + vw
+  &:nth-of-type(19)
+    top: (random(40vh) + 20) + vh
+    left: random(88) + vw
+  &:nth-of-type(20)
+    top: (random(40vh) + 20) + vh
+    left: random(88) + vw
