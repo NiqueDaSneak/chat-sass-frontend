@@ -13,6 +13,8 @@
     margin-top: 1vh
     font-weight: 700
   .imgs
+    width: 100vw
+    height: 46vh
     .alert
       transition: left 1s
       z-index: 1
@@ -21,8 +23,8 @@
       border-radius: 4vw
       background-color: red
       position: absolute
-      left: 66vw
-      bottom: 69vh
+      left: 64vw
+      bottom: 67vh
       transform: scale(0)
       animation: scale .3s cubic-bezier(0.17, 0.67, 0.07, 2.04)
       animation-delay: 2.8s
@@ -32,27 +34,19 @@
       font-weight: 100
       box-shadow: -1px 2px 0px 0px rgba(0, 0, 0, 0.36)
     img
-      width: 56vw
+      width: 45vw
       position: absolute
       left: 130vw
       transition: left 1s
       display: none
       &:first-of-type
-        top: 25vh
+        top: 27vh
       &:nth-of-type(2)
-        top: 12vh
-      &:nth-of-type(3)
-        margin-top: 6vh
-    img.active
-      left: 22vw
-    img.inactive
-      left: -50vw
-      // animation: slide-in 1s cubic-bezier(0.42, 0, 0.17, 1.18)
-      // animation-delay: .4s
-      // animation-fill-mode: forwards
-      //   width: 45vw
-      //   margin-top: 7vh
-      //   margin-bottom: 7vh
+        top: 22vh
+    img:first-of-type.active
+      left: 27.5vw
+    img:last-of-type.active
+      left: 27.5vw
   .subheads
     width: 80vw
     margin-left: 10vw
@@ -61,7 +55,6 @@
     transition: opacity .5s
   .landing-nav
     margin-top: 4vh
-    // margin-bottom: 4vh
     img
       vertical-align: middle
       width: 5vw
@@ -92,9 +85,9 @@
 
 @keyframes slide
   0%
-    top: 73vh
+    top: 17vh
   100%
-    top: 82vh
+    top: 36vh
 
 @keyframes scale
   0%
@@ -125,8 +118,6 @@
 .infographics
   background-color: white
   padding-top: 6vh
-  // padding-bottom: 6vh
-  // text-align: center
   span
     display: block
     &:first-of-type
@@ -155,18 +146,16 @@
   font-size: 5vw
   font-weight: 700
   width: 80vw
-  // margin-left: 10vw
   margin-bottom: 6vh
 
 .gradient
   padding-left: 10vw
-  // text-align: center
   padding-top: 6vh
   padding-bottom: 6vh
   color: white
   background: linear-gradient(to bottom, rgba(21,9,88,0.5) 0%,rgba(21,9,88,0.5) 64%,rgba(0,174,239,0.5) 100%)
   .plus-messenger
-    margin-bottom: 16vh
+    margin-bottom: 10vh
     width: 84vw
     div
       margin-bottom: 6vh
@@ -176,11 +165,10 @@
         margin-right: 3vw
       span
         vertical-align: middle
-        // margin-right: 10vw
         font-weight: 300
         font-style: italic
   .every-lead
-    margin-bottom: 16vh
+    margin-bottom: 10vh
     span
       display: block
     img
@@ -215,15 +203,15 @@
       display: block
       font-size: 5vw
 
-.back
-  opacity: 0
+// .back
+//   opacity: 0
 
 .email-icon
   width: 12vw
   position: absolute
   z-index: 1
   animation: scale-down
-  animation-delay: 1.7s
+  animation-delay: 2s
   transform: scale(1)
   animation-fill-mode: forwards
   &:nth-of-type(even)
