@@ -21,7 +21,7 @@
     border-radius: 4vw;
     background-color: red;
     position: absolute;
-    left: 63vw;
+    left: 66vw;
     bottom: 69vh;
     -webkit-transform: scale(0);
             transform: scale(0);
@@ -197,7 +197,18 @@
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(21, 9, 88, 0.5)), color-stop(64%, rgba(21, 9, 88, 0.5)), to(rgba(0, 174, 239, 0.5)));
   background: linear-gradient(to bottom, rgba(21, 9, 88, 0.5) 0%, rgba(21, 9, 88, 0.5) 64%, rgba(0, 174, 239, 0.5) 100%); }
   .gradient .plus-messenger {
-    margin-bottom: 16vh; }
+    margin-bottom: 16vh;
+    width: 84vw; }
+    .gradient .plus-messenger div {
+      margin-bottom: 6vh; }
+      .gradient .plus-messenger div img {
+        vertical-align: middle;
+        width: 12vw;
+        margin-right: 3vw; }
+      .gradient .plus-messenger div span {
+        vertical-align: middle;
+        font-weight: 300;
+        font-style: italic; }
   .gradient .every-lead {
     margin-bottom: 16vh; }
     .gradient .every-lead span {
@@ -246,75 +257,75 @@
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards; }
   .email-icon:nth-of-type(even) {
-    -webkit-transform: rotate(-12deg);
-            transform: rotate(-12deg);
+    -webkit-transform: rotate(-11deg);
+            transform: rotate(-11deg);
     -webkit-animation-duration: .3s;
             animation-duration: .3s; }
   .email-icon:nth-of-type(odd) {
-    -webkit-transform: rotate(13deg);
-            transform: rotate(13deg);
+    -webkit-transform: rotate(19deg);
+            transform: rotate(19deg);
     -webkit-animation-duration: .5s;
             animation-duration: .5s; }
   .email-icon:nth-of-type(1) {
-    top: 35vh;
-    left: 47vw; }
+    top: 31vh;
+    left: 45vw; }
   .email-icon:nth-of-type(2) {
-    top: 47vh;
-    left: 16vw; }
+    top: 60vh;
+    left: 75vw; }
   .email-icon:nth-of-type(3) {
-    top: 42vh;
-    left: 76vw; }
-  .email-icon:nth-of-type(4) {
-    top: 30vh;
-    left: 11vw; }
-  .email-icon:nth-of-type(5) {
-    top: 40vh;
-    left: 86vw; }
-  .email-icon:nth-of-type(6) {
-    top: 31vh;
-    left: 3vw; }
-  .email-icon:nth-of-type(7) {
-    top: 26vh;
-    left: 4vw; }
-  .email-icon:nth-of-type(8) {
-    top: 37vh;
-    left: 5vw; }
-  .email-icon:nth-of-type(9) {
-    top: 31vh;
-    left: 9vw; }
-  .email-icon:nth-of-type(10) {
-    top: 47vh;
-    left: 81vw; }
-  .email-icon:nth-of-type(11) {
-    top: 28vh;
-    left: 16vw; }
-  .email-icon:nth-of-type(12) {
-    top: 51vh;
-    left: 37vw; }
-  .email-icon:nth-of-type(13) {
-    top: 23vh;
-    left: 13vw; }
-  .email-icon:nth-of-type(14) {
-    top: 44vh;
+    top: 59vh;
     left: 57vw; }
-  .email-icon:nth-of-type(15) {
-    top: 33vh;
-    left: 55vw; }
-  .email-icon:nth-of-type(16) {
-    top: 31vh;
-    left: 30vw; }
-  .email-icon:nth-of-type(17) {
+  .email-icon:nth-of-type(4) {
+    top: 60vh;
+    left: 23vw; }
+  .email-icon:nth-of-type(5) {
+    top: 35vh;
+    left: 29vw; }
+  .email-icon:nth-of-type(6) {
+    top: 49vh;
+    left: 31vw; }
+  .email-icon:nth-of-type(7) {
+    top: 30vh;
+    left: 66vw; }
+  .email-icon:nth-of-type(8) {
+    top: 59vh;
+    left: 7vw; }
+  .email-icon:nth-of-type(9) {
     top: 57vh;
-    left: 53vw; }
+    left: 85vw; }
+  .email-icon:nth-of-type(10) {
+    top: 42vh;
+    left: 65vw; }
+  .email-icon:nth-of-type(11) {
+    top: 49vh;
+    left: 22vw; }
+  .email-icon:nth-of-type(12) {
+    top: 59vh;
+    left: 46vw; }
+  .email-icon:nth-of-type(13) {
+    top: 25vh;
+    left: 60vw; }
+  .email-icon:nth-of-type(14) {
+    top: 31vh;
+    left: 58vw; }
+  .email-icon:nth-of-type(15) {
+    top: 53vh;
+    left: 85vw; }
+  .email-icon:nth-of-type(16) {
+    top: 51vh;
+    left: 55vw; }
+  .email-icon:nth-of-type(17) {
+    top: 29vh;
+    left: 17vw; }
   .email-icon:nth-of-type(18) {
-    top: 49vh;
-    left: 34vw; }
+    top: 59vh;
+    left: 37vw; }
   .email-icon:nth-of-type(19) {
-    top: 49vh;
-    left: 47vw; }
+    top: 60vh;
+    left: 82vw; }
   .email-icon:nth-of-type(20) {
-    top: 49vh;
-    left: 87vw; }
+    top: 23vh;
+    left: 22vw; }
 
 .display-none {
   display: none; }
