@@ -3,7 +3,6 @@ $(document).ready(() => {
   window.addEventListener('scroll', _.throttle(() => {
 
     if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
-      console.log('mobile')
     } else {
       if (scrolled === false) {
         console.log('scrolled')
