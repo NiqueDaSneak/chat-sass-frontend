@@ -228,7 +228,7 @@
   .gradient .future .desc {
     width: 80vw;
     display: block;
-    margin-bottom: 6vh; }
+    margin-bottom: 14vh; }
   .gradient .future .news .title {
     display: block;
     font-weight: 600; }
@@ -241,6 +241,19 @@
     font-weight: 600;
     display: block;
     font-size: 5vw; }
+
+.news-icons {
+  width: 2vw;
+  height: 1vw;
+  border-radius: 4vw;
+  border: #00AEEF 0.4vw solid;
+  display: inline-block;
+  margin-right: 2vw;
+  -webkit-transition: background-color .5s;
+  transition: background-color .5s; }
+
+.news-icons.active {
+  background-color: #00AEEF; }
 
 .email-icon {
   width: 12vw;
@@ -255,75 +268,75 @@
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards; }
   .email-icon:nth-of-type(even) {
-    -webkit-transform: rotate(-15deg);
-            transform: rotate(-15deg);
+    -webkit-transform: rotate(-7deg);
+            transform: rotate(-7deg);
     -webkit-animation-duration: .3s;
             animation-duration: .3s; }
   .email-icon:nth-of-type(odd) {
-    -webkit-transform: rotate(14deg);
-            transform: rotate(14deg);
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
     -webkit-animation-duration: .5s;
             animation-duration: .5s; }
   .email-icon:nth-of-type(1) {
-    top: 56vh;
-    left: 6vw; }
+    top: 42vh;
+    left: 47vw; }
   .email-icon:nth-of-type(2) {
-    top: 25vh;
-    left: 25vw; }
+    top: 59vh;
+    left: 66vw; }
   .email-icon:nth-of-type(3) {
-    top: 57vh;
-    left: 67vw; }
+    top: 27vh;
+    left: 73vw; }
   .email-icon:nth-of-type(4) {
-    top: 46vh;
-    left: 85vw; }
-  .email-icon:nth-of-type(5) {
-    top: 29vh;
-    left: 33vw; }
-  .email-icon:nth-of-type(6) {
-    top: 41vh;
-    left: 85vw; }
-  .email-icon:nth-of-type(7) {
-    top: 26vh;
-    left: 59vw; }
-  .email-icon:nth-of-type(8) {
     top: 24vh;
-    left: 87vw; }
+    left: 55vw; }
+  .email-icon:nth-of-type(5) {
+    top: 26vh;
+    left: 3vw; }
+  .email-icon:nth-of-type(6) {
+    top: 45vh;
+    left: 84vw; }
+  .email-icon:nth-of-type(7) {
+    top: 23vh;
+    left: 18vw; }
+  .email-icon:nth-of-type(8) {
+    top: 45vh;
+    left: 47vw; }
   .email-icon:nth-of-type(9) {
-    top: 55vh;
-    left: 79vw; }
+    top: 21vh;
+    left: 73vw; }
   .email-icon:nth-of-type(10) {
-    top: 58vh;
-    left: 44vw; }
+    top: 29vh;
+    left: 8vw; }
   .email-icon:nth-of-type(11) {
-    top: 28vh;
-    left: 77vw; }
+    top: 33vh;
+    left: 83vw; }
   .email-icon:nth-of-type(12) {
-    top: 57vh;
-    left: 45vw; }
-  .email-icon:nth-of-type(13) {
-    top: 31vh;
-    left: 21vw; }
-  .email-icon:nth-of-type(14) {
     top: 25vh;
     left: 18vw; }
+  .email-icon:nth-of-type(13) {
+    top: 23vh;
+    left: 65vw; }
+  .email-icon:nth-of-type(14) {
+    top: 38vh;
+    left: 29vw; }
   .email-icon:nth-of-type(15) {
-    top: 54vh;
-    left: 47vw; }
+    top: 52vh;
+    left: 84vw; }
   .email-icon:nth-of-type(16) {
-    top: 36vh;
-    left: 52vw; }
+    top: 48vh;
+    left: 27vw; }
   .email-icon:nth-of-type(17) {
-    top: 33vh;
-    left: 37vw; }
+    top: 54vh;
+    left: 26vw; }
   .email-icon:nth-of-type(18) {
-    top: 58vh;
-    left: 81vw; }
+    top: 46vh;
+    left: 4vw; }
   .email-icon:nth-of-type(19) {
-    top: 51vh;
-    left: 63vw; }
+    top: 38vh;
+    left: 19vw; }
   .email-icon:nth-of-type(20) {
-    top: 34vh;
-    left: 59vw; }
+    top: 38vh;
+    left: 19vw; }
 
 .display-none {
   display: none; }
