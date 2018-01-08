@@ -2,8 +2,6 @@
 
 $(document).ready(() => {
 
-  // initial animation
-
   // make first img show up, but still off screen on mobile
   setTimeout(() => {
     $('.imgs img:first-of-type').css('display', 'initial')
@@ -19,12 +17,31 @@ $(document).ready(() => {
     $('.imgs img:first-of-type').addClass('active')
   }, 2000)
 
-  // change subheads
-  // setTimeout(() => {
-  //   $('.subheads p:first-child').remove()
-  //   // $('.subheads').append('<p>Transform Messenger into an interactive, all-in-one e-commerce tool to maximize engagement, foster relationships and sell more.</p>')
-  // }, 4000)
+  var counter = 1
+  // for news rotating
+  setInterval(() => {
 
+    if (counter === 2) {
+      $('.news-icons.active').toggleClass('active')
+      $('.future div:nth-of-type(3)').toggleClass('active')
+      counter++
+      // console.log(counter)
+    } else if (counter === 1) {
+      $('.news-icons.active').toggleClass('active')
+      $('.future div:nth-of-type(2)').toggleClass('active')
+      $('.news .title').text('How SnapTravel generated $1 million in less than a year and Sephora increase sales by 11%.')
+      $('.news .description').text("'Messenger can be an integral tool for business-to-consumer (B2C) communications, as it offers the 65 million active businesses on its platform an easy and seamless communications channel to reach its 1.2 billion monthly active users.'")
+      counter++
+      // console.log(counter)
+    } else {
+      $('.news-icons.active').toggleClass('active')
+      $('.future div:nth-of-type(4)').toggleClass('active')
+      counter = 1
+    }
+    console.log(counter)
+  }, 3000)
+
+  // for top scrolling imgs
   var messengerIcon = true
 
   $('.landing-nav').click((event) => {
@@ -69,45 +86,6 @@ $(document).ready(() => {
     }
 
   })
-
-  // $('.landing-nav').click((event) => {
-  //
-  //   function slideOut() {
-  //     return new Promise(function(resolve, reject) {
-  //       $('.imgs img.active').addClass('inactive')
-  //       $('.alert').css('left', '-77.5vw')
-  //       resolve()
-  //     })
-  //   }
-  //
-  //   if ($(event.target).hasClass('fwd')) {
-  //
-  //     if (landingCount === 1) {
-  //       $('.landing-nav span:first-of-type').removeClass('active')
-  //       $('.subheads').css('opacity', '0')
-  //
-  //       slideOut().then(() => {
-  //         setTimeout(() => {
-  //           $('.imgs img:first-of-type').css('display', 'none')
-  //           $('.imgs img:first-of-type').removeClass()
-  //         }, 1000)
-  //       })
-  //
-  //       landingCount++
-  //       $('.landing-nav span:nth-of-type(' + landingCount + ')').addClass('active')
-  //       $('.headers span').remove()
-  //       $('.imgs img:nth-of-type(' + landingCount + ')').css('display', 'initial')
-  //       setTimeout(() => {
-  //         $('.imgs img:nth-of-type(' + landingCount + ')').addClass('active')
-  //       }, 200)
-  //       $('.fwd').remove()
-  //       $('.back').remove()
-  //       $('.down-chevron').css('opacity', '1')
-  //       $('.initial-hide').css('display', 'initial')
-  //     }
-  //
-  //   }
-  // })
 
   let touchstartX = 0;
   let touchstartY = 0;
