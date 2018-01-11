@@ -180,6 +180,12 @@ app.get('/facebook/redirect', passport.authenticate('facebook', {
   }
 })
 
+
+app.get('/webview-checkout', (req, res) => {
+  res.sendFile(path.join(__dirname + '/views/webview-checkout.html'))
+})
+
+
 app.get('/tiers/:userID/:userAccessToken', (req, res) => {
   res.sendFile(path.join(__dirname + '/views/tiers.html'))
 })
