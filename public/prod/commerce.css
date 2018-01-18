@@ -1,21 +1,69 @@
+@media only screen and (min-width: 1025px) {
+  .green {
+    background-color: #70B51F;
+    height: 95vh; } }
+
+.green .headers {
+  font-size: 4.7vw;
+  width: 80vw;
+  margin-left: 10vw;
+  margin-top: 1vh;
+  font-weight: 700;
+  padding-top: 11vh; }
+  @media only screen and (min-width: 1025px) {
+    .green .headers {
+      padding-top: 60vh; } }
+  @media only screen and (max-width: 1024px) and (min-width: 415px) {
+    .green .headers {
+      padding-top: 40vh; } }
+  .green .headers span {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 300; }
+    @media only screen and (min-width: 1025px) {
+      .green .headers span {
+        font-weight: 700; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .green .headers span {
+        font-weight: 700; } }
+    @media only screen and (min-width: 1025px) {
+      .green .headers span:nth-of-type(2) {
+        font-size: 2vw; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .green .headers span:nth-of-type(2) {
+        font-size: 3vw; } }
+
 .landing {
   text-align: center;
   height: 100vh;
   width: 100vw;
   position: relative; }
-  .landing .icon {
-    margin-top: 3vh;
-    width: 40vw; }
   .landing .headers {
     font-size: 4.7vw;
     width: 80vw;
     margin-left: 10vw;
     margin-top: 1vh;
-    font-weight: 700; }
+    font-weight: 700;
+    padding-top: 11vh; }
+    @media only screen and (min-width: 1025px) {
+      .landing .headers {
+        display: none; } }
     .landing .headers span {
       display: block;
       text-transform: uppercase;
       font-weight: 300; }
+      @media only screen and (min-width: 1025px) {
+        .landing .headers span {
+          display: none; } }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .landing .headers span {
+          display: none; } }
+      @media only screen and (min-width: 1025px) {
+        .landing .headers span:nth-of-type(2) {
+          display: none; } }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .landing .headers span:nth-of-type(2) {
+          display: none; } }
   .landing .imgs {
     width: 100vw;
     height: 46vh; }
@@ -43,6 +91,13 @@
       font-weight: 100;
       -webkit-box-shadow: -1px 2px 0px 0px rgba(0, 0, 0, 0.36);
               box-shadow: -1px 2px 0px 0px rgba(0, 0, 0, 0.36); }
+      @media only screen and (min-width: 1025px) {
+        .landing .imgs .alert {
+          top: 39vh;
+          width: 3vw;
+          height: 3vw;
+          left: 36vw;
+          font-size: 2vw; } }
     .landing .imgs img {
       width: 45vw;
       position: absolute;
@@ -52,8 +107,19 @@
       display: none; }
       .landing .imgs img:first-of-type {
         top: 27vh; }
+        @media only screen and (min-width: 1025px) {
+          .landing .imgs img:first-of-type {
+            top: 40vh;
+            width: 12vw; } }
+        @media only screen and (max-width: 1024px) and (min-width: 415px) {
+          .landing .imgs img:first-of-type {
+            top: 55vh; } }
       .landing .imgs img:nth-of-type(2) {
         top: 22vh; }
+        @media only screen and (min-width: 1025px) {
+          .landing .imgs img:nth-of-type(2) {
+            width: 17vh;
+            padding-top: 17vh; } }
     .landing .imgs img:first-of-type.active {
       left: 27.5vw; }
     .landing .imgs img:last-of-type.active {
@@ -65,12 +131,22 @@
     font-weight: 600;
     -webkit-transition: opacity .5s;
     transition: opacity .5s; }
+    @media only screen and (min-width: 1025px) {
+      .landing .subheads {
+        font-size: 1.5vw;
+        font-weight: 400;
+        width: 25%;
+        float: right;
+        padding-right: 9vw; } }
   .landing .landing-nav {
     margin-top: 4vh; }
     .landing .landing-nav img {
       vertical-align: middle;
       width: 5vw;
       padding: 2vw; }
+      @media only screen and (min-width: 1025px) {
+        .landing .landing-nav img {
+          width: 3vw; } }
       .landing .landing-nav img:last-of-type {
         -webkit-transform: rotate(180deg);
                 transform: rotate(180deg); }
@@ -96,6 +172,9 @@
     -webkit-animation: slide 1s infinite;
             animation: slide 1s infinite;
     opacity: 0; }
+    @media only screen and (min-width: 1025px) {
+      .landing .down-chevron {
+        display: none; } }
 
 @-webkit-keyframes slide {
   0% {
@@ -164,28 +243,75 @@
 .infographics {
   background-color: white;
   padding-top: 6vh; }
-  .infographics span {
+  @media only screen and (min-width: 1025px) {
+    .infographics {
+      padding-top: 15vh; } }
+  .infographics .text span {
     display: block; }
-    .infographics span:first-of-type {
+    .infographics .text span:first-of-type {
       display: block;
       font-size: 5vw;
       font-weight: 400;
       margin-left: 10vw; }
-    .infographics span:nth-of-type(2) {
+      @media only screen and (min-width: 1025px) {
+        .infographics .text span:first-of-type {
+          font-size: 2.5vw;
+          margin-left: 12.5vw;
+          display: inline; } }
+    .infographics .text span:nth-of-type(2) {
       display: block;
       font-size: 5vw;
       font-weight: 700;
       margin-left: 10vw; }
-    .infographics span:last-of-type {
+      @media only screen and (min-width: 1025px) {
+        .infographics .text span:nth-of-type(2) {
+          font-size: 2.5vw;
+          margin-left: .5vw;
+          display: inline; } }
+    .infographics .text span:nth-of-type(3) {
       margin-top: 5vh;
+      width: 70vw;
+      margin-left: 15vw;
+      font-weight: 600;
+      margin-left: 10vw; }
+      @media only screen and (min-width: 1025px) {
+        .infographics .text span:nth-of-type(3) {
+          font-size: 2vw;
+          font-weight: 400;
+          width: 100%;
+          margin-left: 0;
+          text-align: center; } }
+    .infographics .text span:last-of-type {
       margin-bottom: 5vh;
       width: 70vw;
       margin-left: 15vw;
       font-weight: 600;
       margin-left: 10vw; }
+      @media only screen and (min-width: 1025px) {
+        .infographics .text span:last-of-type {
+          font-size: 2vw;
+          width: 100%;
+          font-weight: 400;
+          margin-left: 0;
+          text-align: center; } }
+  .infographics .graphics {
+    padding-bottom: 10vh; }
+    @media only screen and (min-width: 1025px) {
+      .infographics .graphics {
+        padding-bottom: 70vh;
+        width: 100%; } }
   .infographics img {
     width: 100vw;
     margin-top: 5vh; }
+    @media only screen and (min-width: 1025px) {
+      .infographics img {
+        width: 30%;
+        float: left;
+        display: inline-block;
+        margin-bottom: 5vh; } }
+    @media only screen and (min-width: 1025px) {
+      .infographics img:first-of-type {
+        padding-left: 5%; } }
 
 .heads {
   display: block;
@@ -199,27 +325,82 @@
   padding-top: 6vh;
   padding-bottom: 6vh;
   color: white;
-  background: -webkit-gradient(linear, left top, left bottom, from(#150958), color-stop(70%, #150958), to(#00aeef));
-  background: linear-gradient(to bottom, #150958 0%, #150958 70%, #00aeef 100%); }
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #5772ac), color-stop(55%, #00aeef), to(#70b51f));
+  background: linear-gradient(to bottom, #5772ac 20%, #00aeef 55%, #70b51f 100%); }
+  @media only screen and (min-width: 1025px) {
+    .gradient {
+      padding-left: 10vw;
+      padding-right: 10vw; } }
   .gradient .plus-messenger {
     margin-bottom: 10vh;
     width: 84vw; }
+    @media only screen and (min-width: 1025px) {
+      .gradient .plus-messenger {
+        width: 100%; } }
     .gradient .plus-messenger .capabilites {
       text-transform: uppercase;
       font-size: 6vw;
-      margin-bottom: 0vh; }
-    .gradient .plus-messenger div {
+      margin-bottom: 5vh; }
+      @media only screen and (min-width: 1025px) {
+        .gradient .plus-messenger .capabilites {
+          text-align: center;
+          width: 100%;
+          padding-left: 0;
+          margin-left: 0;
+          padding-top: 10vh;
+          padding-bottom: 20vh;
+          font-size: 3vw; } }
+    @media only screen and (min-width: 1025px) {
+      .gradient .plus-messenger .heads {
+        font-size: 2.25vw;
+        width: 33%;
+        margin-right: 0;
+        float: left; } }
+  .gradient .smallGraphics {
+    padding-bottom: 10vh; }
+    @media only screen and (min-width: 1025px) {
+      .gradient .smallGraphics {
+        width: 64%;
+        float: right;
+        padding-bottom: 15vh; } }
+    .gradient .smallGraphics div {
       margin-bottom: 6vh; }
-      .gradient .plus-messenger div img {
+      @media only screen and (min-width: 1025px) {
+        .gradient .smallGraphics div {
+          width: 35%;
+          float: left; } }
+      .gradient .smallGraphics div img {
         vertical-align: middle;
         width: 12vw;
         margin-right: 3vw; }
-      .gradient .plus-messenger div span {
+        @media only screen and (min-width: 1025px) {
+          .gradient .smallGraphics div img {
+            width: 2vw;
+            margin-right: 0; } }
+      .gradient .smallGraphics div span {
         vertical-align: middle;
         font-weight: 300;
-        font-style: italic; }
+        font-style: italic;
+        font-size: 1vw; }
+  .gradient .cost-effective {
+    display: none; }
+    @media only screen and (min-width: 1025px) {
+      .gradient .cost-effective {
+        display: inline-block;
+        width: 55%;
+        padding-top: 9vh; } }
   .gradient .every-lead {
     margin-bottom: 10vh; }
+    @media only screen and (min-width: 1025px) {
+      .gradient .every-lead {
+        float: right;
+        display: inline-block;
+        width: 35%; } }
+    @media only screen and (min-width: 1025px) {
+      .gradient .every-lead .heads {
+        font-size: 2.25vw;
+        width: 94%;
+        margin-right: 0; } }
     .gradient .every-lead span {
       display: block; }
     .gradient .every-lead img {
@@ -229,21 +410,47 @@
       margin-top: 2vh;
       margin-bottom: 2vh;
       font-weight: 700;
-      font-weight: 400;
       text-transform: uppercase; }
+      @media only screen and (min-width: 1025px) {
+        .gradient .every-lead .title {
+          font-size: 1.25vw;
+          font-weight: 400;
+          margin-bottom: 1vh; } }
     .gradient .every-lead .description {
       width: 80vw;
       display: block;
       margin-bottom: 6vh; }
+      @media only screen and (min-width: 1025px) {
+        .gradient .every-lead .description {
+          font-weight: 100;
+          width: 94%;
+          margin-bottom: 5vh; } }
+  @media only screen and (min-width: 1025px) {
+    .gradient .future {
+      clear: both;
+      padding-top: 10vh; } }
   .gradient .future .heads {
     display: block;
     text-transform: uppercase;
     font-weight: 500;
     margin-bottom: 2vh; }
+    @media only screen and (min-width: 1025px) {
+      .gradient .future .heads {
+        font-size: 2vw;
+        text-align: center;
+        margin-bottom: 4vh; } }
   .gradient .future .desc {
     width: 80vw;
     display: block;
     font-weight: 300; }
+    @media only screen and (min-width: 1025px) {
+      .gradient .future .desc {
+        font-size: 1.5vw;
+        font-weight: 100;
+        width: 70%;
+        margin-left: 15%;
+        text-align: center;
+        padding-bottom: 5vh; } }
   .gradient .future .news .title {
     display: block;
     font-weight: 600; }
@@ -282,76 +489,79 @@
           transform: scale(1);
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards; }
+  @media only screen and (min-width: 1025px) {
+    .email-icon {
+      padding-top: 80vh; } }
   .email-icon:nth-of-type(even) {
-    -webkit-transform: rotate(-19deg);
-            transform: rotate(-19deg);
+    -webkit-transform: rotate(-14deg);
+            transform: rotate(-14deg);
     -webkit-animation-duration: .3s;
             animation-duration: .3s; }
   .email-icon:nth-of-type(odd) {
-    -webkit-transform: rotate(18deg);
-            transform: rotate(18deg);
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
     -webkit-animation-duration: .5s;
             animation-duration: .5s; }
   .email-icon:nth-of-type(1) {
-    top: 24vh;
-    left: 1vw; }
-  .email-icon:nth-of-type(2) {
-    top: 36vh;
-    left: 79vw; }
-  .email-icon:nth-of-type(3) {
-    top: 59vh;
-    left: 5vw; }
-  .email-icon:nth-of-type(4) {
-    top: 55vh;
-    left: 19vw; }
-  .email-icon:nth-of-type(5) {
-    top: 47vh;
-    left: 54vw; }
-  .email-icon:nth-of-type(6) {
-    top: 33vh;
-    left: 76vw; }
-  .email-icon:nth-of-type(7) {
-    top: 36vh;
-    left: 18vw; }
-  .email-icon:nth-of-type(8) {
-    top: 56vh;
-    left: 49vw; }
-  .email-icon:nth-of-type(9) {
-    top: 40vh;
-    left: 6vw; }
-  .email-icon:nth-of-type(10) {
-    top: 45vh;
-    left: 68vw; }
-  .email-icon:nth-of-type(11) {
-    top: 53vh;
+    top: 49vh;
     left: 78vw; }
-  .email-icon:nth-of-type(12) {
+  .email-icon:nth-of-type(2) {
+    top: 21vh;
+    left: 60vw; }
+  .email-icon:nth-of-type(3) {
+    top: 32vh;
+    left: 8vw; }
+  .email-icon:nth-of-type(4) {
+    top: 28vh;
+    left: 77vw; }
+  .email-icon:nth-of-type(5) {
+    top: 42vh;
+    left: 62vw; }
+  .email-icon:nth-of-type(6) {
+    top: 56vh;
+    left: 61vw; }
+  .email-icon:nth-of-type(7) {
+    top: 41vh;
+    left: 49vw; }
+  .email-icon:nth-of-type(8) {
+    top: 32vh;
+    left: 11vw; }
+  .email-icon:nth-of-type(9) {
+    top: 56vh;
+    left: 36vw; }
+  .email-icon:nth-of-type(10) {
+    top: 23vh;
+    left: 10vw; }
+  .email-icon:nth-of-type(11) {
     top: 38vh;
+    left: 12vw; }
+  .email-icon:nth-of-type(12) {
+    top: 37vh;
     left: 39vw; }
   .email-icon:nth-of-type(13) {
-    top: 42vh;
-    left: 42vw; }
+    top: 36vh;
+    left: 22vw; }
   .email-icon:nth-of-type(14) {
-    top: 37vh;
-    left: 13vw; }
-  .email-icon:nth-of-type(15) {
-    top: 27vh;
-    left: 75vw; }
-  .email-icon:nth-of-type(16) {
-    top: 53vh;
-    left: 47vw; }
-  .email-icon:nth-of-type(17) {
     top: 46vh;
-    left: 87vw; }
-  .email-icon:nth-of-type(18) {
-    top: 58vh;
-    left: 70vw; }
-  .email-icon:nth-of-type(19) {
-    top: 26vh;
-    left: 69vw; }
-  .email-icon:nth-of-type(20) {
+    left: 18vw; }
+  .email-icon:nth-of-type(15) {
+    top: 45vh;
+    left: 8vw; }
+  .email-icon:nth-of-type(16) {
     top: 43vh;
-    left: 34vw; }
+    left: 58vw; }
+  .email-icon:nth-of-type(17) {
+    top: 34vh;
+    left: 7vw; }
+  .email-icon:nth-of-type(18) {
+    top: 22vh;
+    left: 27vw; }
+  .email-icon:nth-of-type(19) {
+    top: 22vh;
+    left: 71vw; }
+  .email-icon:nth-of-type(20) {
+    top: 22vh;
+    left: 70vw; }
 
 .display-none {
   display: none; }
@@ -495,7 +705,7 @@ footer {
   height: -moz-fit-content;
   height: fit-content;
   position: relative;
-  background-color: #150958; }
+  background-color: #c7c7c7; }
   footer img {
     width: 35vw;
     top: 2.5vh;
@@ -509,7 +719,7 @@ footer {
     top: -2.5vh; }
     footer .link-holder a {
       text-decoration: none;
-      color: white;
+      color: #150958;
       display: block;
       font-weight: 300;
       text-align: right;
