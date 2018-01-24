@@ -325,8 +325,8 @@
   padding-top: 6vh;
   padding-bottom: 6vh;
   color: white;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #5772ac), color-stop(55%, #00aeef), to(#70b51f));
-  background: linear-gradient(to bottom, #5772ac 20%, #00aeef 55%, #70b51f 100%); }
+  background: -webkit-gradient(linear, left top, left bottom, from(#150958), color-stop(70%, #150958), to(#00aeef));
+  background: linear-gradient(to bottom, #150958 0%, #150958 70%, #00aeef 100%); }
   @media only screen and (min-width: 1025px) {
     .gradient {
       padding-left: 10vw;
@@ -356,32 +356,33 @@
         width: 33%;
         margin-right: 0;
         float: left; } }
-  .gradient .smallGraphics {
-    padding-bottom: 10vh; }
+  @media only screen and (min-width: 1025px) {
+    .gradient .smallGraphics {
+      width: 64%;
+      float: right;
+      padding-bottom: 15vh; } }
+  .gradient .smallGraphics div {
+    margin-bottom: 6vh; }
     @media only screen and (min-width: 1025px) {
-      .gradient .smallGraphics {
-        width: 64%;
-        float: right;
-        padding-bottom: 15vh; } }
-    .gradient .smallGraphics div {
-      margin-bottom: 6vh; }
+      .gradient .smallGraphics div {
+        width: 35%;
+        float: left; } }
+    .gradient .smallGraphics div img {
+      vertical-align: middle;
+      width: 12vw;
+      margin-right: 3vw; }
       @media only screen and (min-width: 1025px) {
-        .gradient .smallGraphics div {
-          width: 35%;
-          float: left; } }
-      .gradient .smallGraphics div img {
-        vertical-align: middle;
-        width: 12vw;
-        margin-right: 3vw; }
-        @media only screen and (min-width: 1025px) {
-          .gradient .smallGraphics div img {
-            width: 2vw;
-            margin-right: 0; } }
-      .gradient .smallGraphics div span {
-        vertical-align: middle;
-        font-weight: 300;
-        font-style: italic;
-        font-size: 1vw; }
+        .gradient .smallGraphics div img {
+          width: 2vw;
+          margin-right: 0; } }
+    .gradient .smallGraphics div span {
+      vertical-align: middle;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 3.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .gradient .smallGraphics div span {
+          font-size: 1vw; } }
   .gradient .cost-effective {
     display: none; }
     @media only screen and (min-width: 1025px) {
@@ -493,75 +494,75 @@
     .email-icon {
       padding-top: 80vh; } }
   .email-icon:nth-of-type(even) {
-    -webkit-transform: rotate(-14deg);
-            transform: rotate(-14deg);
+    -webkit-transform: rotate(-1deg);
+            transform: rotate(-1deg);
     -webkit-animation-duration: .3s;
             animation-duration: .3s; }
   .email-icon:nth-of-type(odd) {
-    -webkit-transform: rotate(15deg);
-            transform: rotate(15deg);
+    -webkit-transform: rotate(16deg);
+            transform: rotate(16deg);
     -webkit-animation-duration: .5s;
             animation-duration: .5s; }
   .email-icon:nth-of-type(1) {
-    top: 49vh;
-    left: 78vw; }
+    top: 44vh;
+    left: 34vw; }
   .email-icon:nth-of-type(2) {
-    top: 21vh;
-    left: 60vw; }
+    top: 60vh;
+    left: 42vw; }
   .email-icon:nth-of-type(3) {
-    top: 32vh;
-    left: 8vw; }
+    top: 59vh;
+    left: 33vw; }
   .email-icon:nth-of-type(4) {
-    top: 28vh;
-    left: 77vw; }
+    top: 37vh;
+    left: 32vw; }
   .email-icon:nth-of-type(5) {
-    top: 42vh;
-    left: 62vw; }
+    top: 54vh;
+    left: 68vw; }
   .email-icon:nth-of-type(6) {
-    top: 56vh;
-    left: 61vw; }
+    top: 27vh;
+    left: 44vw; }
   .email-icon:nth-of-type(7) {
-    top: 41vh;
-    left: 49vw; }
+    top: 28vh;
+    left: 15vw; }
   .email-icon:nth-of-type(8) {
-    top: 32vh;
-    left: 11vw; }
-  .email-icon:nth-of-type(9) {
-    top: 56vh;
-    left: 36vw; }
-  .email-icon:nth-of-type(10) {
-    top: 23vh;
-    left: 10vw; }
-  .email-icon:nth-of-type(11) {
-    top: 38vh;
+    top: 27vh;
     left: 12vw; }
+  .email-icon:nth-of-type(9) {
+    top: 25vh;
+    left: 69vw; }
+  .email-icon:nth-of-type(10) {
+    top: 25vh;
+    left: 33vw; }
+  .email-icon:nth-of-type(11) {
+    top: 60vh;
+    left: 70vw; }
   .email-icon:nth-of-type(12) {
     top: 37vh;
-    left: 39vw; }
+    left: 13vw; }
   .email-icon:nth-of-type(13) {
-    top: 36vh;
-    left: 22vw; }
+    top: 48vh;
+    left: 64vw; }
   .email-icon:nth-of-type(14) {
-    top: 46vh;
-    left: 18vw; }
+    top: 24vh;
+    left: 31vw; }
   .email-icon:nth-of-type(15) {
-    top: 45vh;
-    left: 8vw; }
+    top: 30vh;
+    left: 3vw; }
   .email-icon:nth-of-type(16) {
-    top: 43vh;
-    left: 58vw; }
+    top: 42vh;
+    left: 9vw; }
   .email-icon:nth-of-type(17) {
-    top: 34vh;
-    left: 7vw; }
+    top: 49vh;
+    left: 34vw; }
   .email-icon:nth-of-type(18) {
-    top: 22vh;
-    left: 27vw; }
+    top: 43vh;
+    left: 76vw; }
   .email-icon:nth-of-type(19) {
-    top: 22vh;
-    left: 71vw; }
+    top: 26vh;
+    left: 52vw; }
   .email-icon:nth-of-type(20) {
-    top: 22vh;
-    left: 70vw; }
+    top: 59vh;
+    left: 83vw; }
 
 .display-none {
   display: none; }
@@ -620,12 +621,12 @@ header {
   z-index: 1;
   text-align: center;
   padding-top: 3vh;
-  padding-bottom: 3vh; }
+  padding-bottom: 3vh;
+  top: 0; }
   @media only screen and (min-width: 1025px) {
     header {
       height: 8vh;
-      text-align: start;
-      top: 0; } }
+      text-align: start; } }
   header img {
     width: 7vw;
     vertical-align: middle; }
@@ -705,7 +706,7 @@ footer {
   height: -moz-fit-content;
   height: fit-content;
   position: relative;
-  background-color: #c7c7c7; }
+  background-color: #041d0e; }
   footer img {
     width: 35vw;
     top: 2.5vh;
@@ -719,7 +720,7 @@ footer {
     top: -2.5vh; }
     footer .link-holder a {
       text-decoration: none;
-      color: #150958;
+      color: #ffffff;
       display: block;
       font-weight: 300;
       text-align: right;
