@@ -1,21 +1,76 @@
+@media only screen and (min-width: 1025px) {
+  .green {
+    background-color: black;
+    height: 95vh; } }
+
+.green .headers {
+  font-size: 4.7vw;
+  width: 80vw;
+  margin-left: 10vw;
+  margin-top: 1vh;
+  font-weight: 700;
+  padding-top: 11vh; }
+  @media only screen and (min-width: 1025px) {
+    .green .headers {
+      padding-top: 50vh;
+      color: white; } }
+  @media only screen and (max-width: 1024px) and (min-width: 415px) {
+    .green .headers {
+      padding-top: 40vh; } }
+  .green .headers span {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 300; }
+    @media only screen and (min-width: 1025px) {
+      .green .headers span {
+        font-weight: 700; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .green .headers span {
+        font-weight: 700; } }
+    @media only screen and (min-width: 1025px) {
+      .green .headers span:nth-of-type(2) {
+        font-size: 2vw; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .green .headers span:nth-of-type(2) {
+        font-size: 3vw; } }
+
+@media only screen and (min-width: 1025px) {
+  img.hide-desktop {
+    position: absolute;
+    top: 20vh;
+    right: 10vw;
+    width: 18vw; } }
+
 .landing {
   text-align: center;
   height: 100vh;
   width: 100vw;
-  position: relative; }
-  .landing .icon {
-    margin-top: 3vh;
-    width: 40vw; }
+  position: relative;
+  background-color: black; }
+  @media only screen and (min-width: 1025px) {
+    .landing {
+      height: 68vh; } }
   .landing .headers {
     font-size: 4.7vw;
     width: 80vw;
     margin-left: 10vw;
     margin-top: 1vh;
-    font-weight: 700; }
+    font-weight: 700;
+    padding-top: 11vh; }
+    @media only screen and (min-width: 1025px) {
+      .landing .headers {
+        display: none; } }
     .landing .headers span {
       display: block;
       text-transform: uppercase;
-      font-weight: 300; }
+      font-weight: 300;
+      color: white; }
+      @media only screen and (min-width: 1025px) {
+        .landing .headers span {
+          display: none; } }
+      @media only screen and (min-width: 1025px) {
+        .landing .headers span:nth-of-type(2) {
+          display: none; } }
   .landing .imgs {
     width: 100vw;
     height: 46vh; }
@@ -43,6 +98,18 @@
       font-weight: 100;
       -webkit-box-shadow: -1px 2px 0px 0px rgba(0, 0, 0, 0.36);
               box-shadow: -1px 2px 0px 0px rgba(0, 0, 0, 0.36); }
+      @media only screen and (min-width: 1025px) {
+        .landing .imgs .alert {
+          top: 9vh;
+          width: 3vw;
+          height: 3vw;
+          left: 36vw;
+          font-size: 2vw;
+          z-index: 0; } }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .landing .imgs .alert {
+          bottom: 68vh;
+          font-size: 5vw; } }
     .landing .imgs img {
       width: 45vw;
       position: absolute;
@@ -52,25 +119,60 @@
       display: none; }
       .landing .imgs img:first-of-type {
         top: 27vh; }
+        @media only screen and (min-width: 1025px) {
+          .landing .imgs img:first-of-type {
+            top: 8vh;
+            width: 20vw; } }
+        @media only screen and (max-width: 1024px) and (min-width: 415px) {
+          .landing .imgs img:first-of-type {
+            top: 24vh; } }
       .landing .imgs img:nth-of-type(2) {
         top: 22vh; }
+        @media only screen and (min-width: 1025px) {
+          .landing .imgs img:nth-of-type(2) {
+            width: 17vh;
+            padding-top: 17vh; } }
+        @media only screen and (max-width: 1024px) and (min-width: 415px) {
+          .landing .imgs img:nth-of-type(2) {
+            width: 38vw; } }
     .landing .imgs img:first-of-type.active {
       left: 27.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .landing .imgs img:first-of-type.active {
+          left: 20vw; } }
     .landing .imgs img:last-of-type.active {
       left: 27.5vw; }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .landing .imgs img:last-of-type.active {
+          left: 31vw; } }
   .landing .subheads {
     width: 80vw;
     margin-left: 10vw;
     font-size: 3.4vw;
     font-weight: 600;
     -webkit-transition: opacity .5s;
-    transition: opacity .5s; }
+    transition: opacity .5s;
+    color: white; }
+    @media only screen and (min-width: 1025px) {
+      .landing .subheads {
+        font-size: 1.5vw;
+        font-weight: 400;
+        width: 33vw;
+        float: right;
+        padding-right: 15vw; } }
   .landing .landing-nav {
     margin-top: 4vh; }
+    @media only screen and (min-width: 1025px) {
+      .landing .landing-nav {
+        width: 40vw;
+        margin-left: 10vw; } }
     .landing .landing-nav img {
       vertical-align: middle;
       width: 5vw;
       padding: 2vw; }
+      @media only screen and (min-width: 1025px) {
+        .landing .landing-nav img {
+          width: 2vw; } }
       .landing .landing-nav img:last-of-type {
         -webkit-transform: rotate(180deg);
                 transform: rotate(180deg); }
@@ -80,12 +182,25 @@
       border-radius: 4vw;
       border: #00AEEF 0.4vw solid;
       display: inline-block;
-      vertical-align: middle; }
+      vertical-align: middle;
+      margin-top: 6vh; }
+      @media only screen and (min-width: 1025px) {
+        .landing .landing-nav span {
+          border: #00AEEF 0.2vw solid;
+          width: 1vw;
+          height: 0.5vw; } }
       .landing .landing-nav span:first-of-type {
         margin-left: 26vw; }
+        @media only screen and (min-width: 1025px) {
+          .landing .landing-nav span:first-of-type {
+            margin-left: 10vw; } }
       .landing .landing-nav span:last-of-type {
         margin-right: 26vw;
         margin-left: 4vw; }
+        @media only screen and (min-width: 1025px) {
+          .landing .landing-nav span:last-of-type {
+            margin-right: 10vw;
+            margin-left: 4vw; } }
     .landing .landing-nav span.active {
       background-color: #00AEEF; }
   .landing .down-chevron {
@@ -96,6 +211,9 @@
     -webkit-animation: slide 1s infinite;
             animation: slide 1s infinite;
     opacity: 0; }
+    @media only screen and (min-width: 1025px) {
+      .landing .down-chevron {
+        display: none; } }
 
 @-webkit-keyframes slide {
   0% {
@@ -157,6 +275,9 @@
   position: absolute;
   width: 100vw;
   bottom: 14vh; }
+  @media only screen and (min-width: 1025px) {
+    .bottom-third {
+      bottom: 36vh; } }
 
 .initial-hide {
   display: none; }
@@ -164,28 +285,85 @@
 .infographics {
   background-color: white;
   padding-top: 6vh; }
-  .infographics span {
+  @media only screen and (min-width: 1025px) {
+    .infographics {
+      padding-top: 15vh; } }
+  .infographics .text span {
     display: block; }
-    .infographics span:first-of-type {
+    .infographics .text span:first-of-type {
       display: block;
       font-size: 5vw;
       font-weight: 400;
       margin-left: 10vw; }
-    .infographics span:nth-of-type(2) {
+      @media only screen and (min-width: 1025px) {
+        .infographics .text span:first-of-type {
+          font-size: 2.5vw;
+          margin-left: 12.5vw;
+          display: inline; } }
+    .infographics .text span:nth-of-type(2) {
       display: block;
       font-size: 5vw;
       font-weight: 700;
       margin-left: 10vw; }
-    .infographics span:last-of-type {
+      @media only screen and (min-width: 1025px) {
+        .infographics .text span:nth-of-type(2) {
+          font-size: 2.5vw;
+          margin-left: .5vw;
+          display: inline; } }
+    .infographics .text span:nth-of-type(3) {
       margin-top: 5vh;
+      width: 70vw;
+      margin-left: 15vw;
+      font-weight: 600;
+      margin-left: 10vw; }
+      @media only screen and (min-width: 1025px) {
+        .infographics .text span:nth-of-type(3) {
+          font-size: 2vw;
+          font-weight: 400;
+          width: 100%;
+          margin-left: 0;
+          text-align: center; } }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .infographics .text span:nth-of-type(3) {
+          font-size: 3.5vw; } }
+    .infographics .text span:last-of-type {
       margin-bottom: 5vh;
       width: 70vw;
       margin-left: 15vw;
       font-weight: 600;
       margin-left: 10vw; }
+      @media only screen and (min-width: 1025px) {
+        .infographics .text span:last-of-type {
+          font-size: 2vw;
+          width: 100%;
+          font-weight: 400;
+          margin-left: 0;
+          text-align: center; } }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .infographics .text span:last-of-type {
+          font-size: 3.5vw; } }
+  .infographics .graphics {
+    padding-bottom: 10vh; }
+    @media only screen and (min-width: 1025px) {
+      .infographics .graphics {
+        padding-bottom: 70vh;
+        width: 100%; } }
   .infographics img {
     width: 100vw;
     margin-top: 5vh; }
+    @media only screen and (min-width: 1025px) {
+      .infographics img {
+        width: 30%;
+        float: left;
+        display: inline-block;
+        margin-bottom: 5vh; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .infographics img {
+        width: 70vw;
+        margin-left: 15vw; } }
+    @media only screen and (min-width: 1025px) {
+      .infographics img:first-of-type {
+        padding-left: 5%; } }
 
 .heads {
   display: block;
@@ -201,25 +379,87 @@
   color: white;
   background: -webkit-gradient(linear, left top, left bottom, from(#150958), color-stop(70%, #150958), to(#00aeef));
   background: linear-gradient(to bottom, #150958 0%, #150958 70%, #00aeef 100%); }
+  @media only screen and (min-width: 1025px) {
+    .gradient {
+      padding-left: 10vw;
+      padding-right: 10vw; } }
+  @media only screen and (max-width: 1024px) and (min-width: 415px) {
+    .gradient {
+      background: -webkit-gradient(linear, left top, left bottom, from(#150958), color-stop(83%, #150958), color-stop(93%, #00aeef));
+      background: linear-gradient(to bottom, #150958 0%, #150958 83%, #00aeef 93%); } }
   .gradient .plus-messenger {
     margin-bottom: 10vh;
     width: 84vw; }
+    @media only screen and (min-width: 1025px) {
+      .gradient .plus-messenger {
+        width: 100%; } }
     .gradient .plus-messenger .capabilites {
       text-transform: uppercase;
       font-size: 6vw;
-      margin-bottom: 0vh; }
-    .gradient .plus-messenger div {
-      margin-bottom: 6vh; }
-      .gradient .plus-messenger div img {
-        vertical-align: middle;
-        width: 12vw;
-        margin-right: 3vw; }
-      .gradient .plus-messenger div span {
-        vertical-align: middle;
-        font-weight: 300;
-        font-style: italic; }
+      margin-bottom: 5vh; }
+      @media only screen and (min-width: 1025px) {
+        .gradient .plus-messenger .capabilites {
+          text-align: center;
+          width: 100%;
+          padding-left: 0;
+          margin-left: 0;
+          padding-top: 10vh;
+          padding-bottom: 4vh;
+          font-size: 3vw; } }
+    @media only screen and (min-width: 1025px) {
+      .gradient .plus-messenger .heads {
+        font-size: 2.25vw;
+        width: 33%;
+        margin-right: 0;
+        float: left; } }
+  @media only screen and (min-width: 1025px) {
+    .gradient .smallGraphics {
+      width: 66%;
+      padding-bottom: 15vh;
+      margin-left: 28vw; } }
+  .gradient .smallGraphics div {
+    margin-bottom: 6vh; }
+    @media only screen and (min-width: 1025px) {
+      .gradient .smallGraphics div {
+        width: 50%;
+        float: left; } }
+    .gradient .smallGraphics div img {
+      vertical-align: middle;
+      width: 12vw;
+      margin-right: 3vw; }
+      @media only screen and (min-width: 1025px) {
+        .gradient .smallGraphics div img {
+          width: 6vw;
+          margin-right: 0; } }
+    .gradient .smallGraphics div span {
+      vertical-align: middle;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 3.5vw; }
+      @media only screen and (min-width: 1025px) {
+        .gradient .smallGraphics div span {
+          font-size: 1.2vw;
+          margin-left: 1vw; } }
+  .gradient .cost-effective {
+    display: none; }
+    @media only screen and (min-width: 1025px) {
+      .gradient .cost-effective {
+        display: inline-block;
+        width: 55%;
+        padding-top: 12vh; } }
   .gradient .every-lead {
     margin-bottom: 10vh; }
+    @media only screen and (min-width: 1025px) {
+      .gradient .every-lead {
+        float: right;
+        display: inline-block;
+        width: 35%;
+        margin-top: 10vh; } }
+    @media only screen and (min-width: 1025px) {
+      .gradient .every-lead .heads {
+        font-size: 2.25vw;
+        width: 94%;
+        margin-right: 0; } }
     .gradient .every-lead span {
       display: block; }
     .gradient .every-lead img {
@@ -229,21 +469,53 @@
       margin-top: 2vh;
       margin-bottom: 2vh;
       font-weight: 700;
-      font-weight: 400;
       text-transform: uppercase; }
+      @media only screen and (min-width: 1025px) {
+        .gradient .every-lead .title {
+          font-size: 1.25vw;
+          font-weight: 400;
+          margin-bottom: 1vh; } }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .gradient .every-lead .title {
+          font-size: 3vw; } }
     .gradient .every-lead .description {
       width: 80vw;
       display: block;
       margin-bottom: 6vh; }
+      @media only screen and (min-width: 1025px) {
+        .gradient .every-lead .description {
+          font-weight: 100;
+          width: 94%;
+          margin-bottom: 5vh; } }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .gradient .every-lead .description {
+          font-size: 3.5vw; } }
+  @media only screen and (min-width: 1025px) {
+    .gradient .future {
+      clear: both;
+      padding-top: 10vh; } }
   .gradient .future .heads {
     display: block;
     text-transform: uppercase;
     font-weight: 500;
     margin-bottom: 2vh; }
+    @media only screen and (min-width: 1025px) {
+      .gradient .future .heads {
+        font-size: 2vw;
+        text-align: center;
+        margin-bottom: 4vh; } }
   .gradient .future .desc {
     width: 80vw;
     display: block;
     font-weight: 300; }
+    @media only screen and (min-width: 1025px) {
+      .gradient .future .desc {
+        font-size: 1.5vw;
+        font-weight: 100;
+        width: 70%;
+        margin-left: 15%;
+        text-align: center;
+        padding-bottom: 5vh; } }
   .gradient .future .news .title {
     display: block;
     font-weight: 600; }
@@ -282,76 +554,79 @@
           transform: scale(1);
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards; }
+  @media only screen and (min-width: 1025px) {
+    .email-icon {
+      padding-top: 80vh; } }
   .email-icon:nth-of-type(even) {
-    -webkit-transform: rotate(-19deg);
-            transform: rotate(-19deg);
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
     -webkit-animation-duration: .3s;
             animation-duration: .3s; }
   .email-icon:nth-of-type(odd) {
-    -webkit-transform: rotate(18deg);
-            transform: rotate(18deg);
+    -webkit-transform: rotate(13deg);
+            transform: rotate(13deg);
     -webkit-animation-duration: .5s;
             animation-duration: .5s; }
   .email-icon:nth-of-type(1) {
-    top: 24vh;
-    left: 1vw; }
-  .email-icon:nth-of-type(2) {
-    top: 36vh;
-    left: 79vw; }
-  .email-icon:nth-of-type(3) {
-    top: 59vh;
-    left: 5vw; }
-  .email-icon:nth-of-type(4) {
-    top: 55vh;
-    left: 19vw; }
-  .email-icon:nth-of-type(5) {
-    top: 47vh;
-    left: 54vw; }
-  .email-icon:nth-of-type(6) {
-    top: 33vh;
-    left: 76vw; }
-  .email-icon:nth-of-type(7) {
-    top: 36vh;
-    left: 18vw; }
-  .email-icon:nth-of-type(8) {
-    top: 56vh;
-    left: 49vw; }
-  .email-icon:nth-of-type(9) {
-    top: 40vh;
-    left: 6vw; }
-  .email-icon:nth-of-type(10) {
-    top: 45vh;
-    left: 68vw; }
-  .email-icon:nth-of-type(11) {
-    top: 53vh;
-    left: 78vw; }
-  .email-icon:nth-of-type(12) {
-    top: 38vh;
-    left: 39vw; }
-  .email-icon:nth-of-type(13) {
-    top: 42vh;
-    left: 42vw; }
-  .email-icon:nth-of-type(14) {
-    top: 37vh;
-    left: 13vw; }
-  .email-icon:nth-of-type(15) {
-    top: 27vh;
-    left: 75vw; }
-  .email-icon:nth-of-type(16) {
-    top: 53vh;
-    left: 47vw; }
-  .email-icon:nth-of-type(17) {
-    top: 46vh;
-    left: 87vw; }
-  .email-icon:nth-of-type(18) {
-    top: 58vh;
-    left: 70vw; }
-  .email-icon:nth-of-type(19) {
-    top: 26vh;
+    top: 48vh;
     left: 69vw; }
-  .email-icon:nth-of-type(20) {
+  .email-icon:nth-of-type(2) {
+    top: 49vh;
+    left: 44vw; }
+  .email-icon:nth-of-type(3) {
+    top: 41vh;
+    left: 38vw; }
+  .email-icon:nth-of-type(4) {
+    top: 59vh;
+    left: 23vw; }
+  .email-icon:nth-of-type(5) {
+    top: 54vh;
+    left: 50vw; }
+  .email-icon:nth-of-type(6) {
+    top: 42vh;
+    left: 59vw; }
+  .email-icon:nth-of-type(7) {
+    top: 21vh;
+    left: 78vw; }
+  .email-icon:nth-of-type(8) {
+    top: 47vh;
+    left: 61vw; }
+  .email-icon:nth-of-type(9) {
+    top: 31vh;
+    left: 46vw; }
+  .email-icon:nth-of-type(10) {
+    top: 50vh;
+    left: 30vw; }
+  .email-icon:nth-of-type(11) {
+    top: 26vh;
+    left: 52vw; }
+  .email-icon:nth-of-type(12) {
+    top: 26vh;
+    left: 47vw; }
+  .email-icon:nth-of-type(13) {
     top: 43vh;
     left: 34vw; }
+  .email-icon:nth-of-type(14) {
+    top: 55vh;
+    left: 48vw; }
+  .email-icon:nth-of-type(15) {
+    top: 42vh;
+    left: 61vw; }
+  .email-icon:nth-of-type(16) {
+    top: 37vh;
+    left: 19vw; }
+  .email-icon:nth-of-type(17) {
+    top: 47vh;
+    left: 29vw; }
+  .email-icon:nth-of-type(18) {
+    top: 25vh;
+    left: 85vw; }
+  .email-icon:nth-of-type(19) {
+    top: 39vh;
+    left: 18vw; }
+  .email-icon:nth-of-type(20) {
+    top: 26vh;
+    left: 6vw; }
 
 .display-none {
   display: none; }
@@ -370,6 +645,7 @@
 
 body {
   margin: 0;
+  background-color: black;
   background-attachment: fixed;
   font-family: 'Open Sans', sans-serif; }
 
@@ -410,12 +686,12 @@ header {
   z-index: 1;
   text-align: center;
   padding-top: 3vh;
-  padding-bottom: 3vh; }
+  padding-bottom: 3vh;
+  top: 0; }
   @media only screen and (min-width: 1025px) {
     header {
       height: 8vh;
-      text-align: start;
-      top: 0; } }
+      text-align: start; } }
   header img {
     width: 7vw;
     vertical-align: middle; }
@@ -495,7 +771,7 @@ footer {
   height: -moz-fit-content;
   height: fit-content;
   position: relative;
-  background-color: #150958; }
+  background-color: #00aeef; }
   footer img {
     width: 35vw;
     top: 2.5vh;
@@ -509,7 +785,7 @@ footer {
     top: -2.5vh; }
     footer .link-holder a {
       text-decoration: none;
-      color: white;
+      color: #ffffff;
       display: block;
       font-weight: 300;
       text-align: right;

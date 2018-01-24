@@ -1,21 +1,73 @@
-.landing
-  text-align: center
-  height: 100vh
-  width: 100vw
-  position: relative
-  .icon
-    margin-top: 3vh
-    width: 40vw
+.green
+  @include desktop
+    background-color: black
+    height: 95vh
   .headers
     font-size: 4.7vw
     width: 80vw
     margin-left: 10vw
     margin-top: 1vh
     font-weight: 700
+    padding-top: 11vh
+    @include desktop
+      padding-top: 50vh
+      color: white
+    @include tablet
+      padding-top: 40vh
     span
       display: block
       text-transform: uppercase
       font-weight: 300
+      @include desktop
+        font-weight: 700
+      @include tablet
+        font-weight: 700
+      &:nth-of-type(2)
+        @include desktop
+          font-size: 2vw
+        @include tablet
+          font-size: 3vw
+
+img.hide-desktop
+  @include desktop
+    position: absolute
+    top: 20vh
+    right: 10vw
+    width: 18vw
+
+.landing
+  text-align: center
+  height: 100vh
+  width: 100vw
+  position: relative
+  background-color: black
+  @include desktop
+    height: 68vh
+  .headers
+    font-size: 4.7vw
+    width: 80vw
+    margin-left: 10vw
+    margin-top: 1vh
+    font-weight: 700
+    padding-top: 11vh
+    @include desktop
+      display: none
+    // @include tablet
+    //   padding-top: 40vh
+    span
+      display: block
+      text-transform: uppercase
+      font-weight: 300
+      color: white
+      @include desktop
+        display: none
+      @include tablet
+        // display: none
+      &:nth-of-type(2)
+        @include desktop
+          display: none
+        @include tablet
+          // display: none
   .imgs
     width: 100vw
     height: 46vh
@@ -37,6 +89,16 @@
       font-size: 6vw
       font-weight: 100
       box-shadow: -1px 2px 0px 0px rgba(0, 0, 0, 0.36)
+      @include desktop
+        top: 9vh
+        width: 3vw
+        height: 3vw
+        left: 36vw
+        font-size: 2vw
+        z-index: 0
+      @include tablet
+        bottom: 68vh
+        font-size: 5vw
     img
       width: 45vw
       position: absolute
@@ -45,24 +107,50 @@
       display: none
       &:first-of-type
         top: 27vh
+        @include desktop
+          top: 8vh
+          width: 20vw
+        @include tablet
+          top: 24vh
       &:nth-of-type(2)
         top: 22vh
+        @include desktop
+          width: 17vh
+          padding-top: 17vh
+        @include tablet
+          width: 38vw
     img:first-of-type.active
       left: 27.5vw
+      @include desktop
+        left: 20vw
     img:last-of-type.active
       left: 27.5vw
+      @include tablet
+        left: 31vw
   .subheads
     width: 80vw
     margin-left: 10vw
     font-size: 3.4vw
     font-weight: 600
     transition: opacity .5s
+    color: white
+    @include desktop
+      font-size: 1.5vw
+      font-weight: 400
+      width: 33vw
+      float: right
+      padding-right: 15vw
   .landing-nav
     margin-top: 4vh
+    @include desktop
+      width: 40vw
+      margin-left: 10vw
     img
       vertical-align: middle
       width: 5vw
       padding: 2vw
+      @include desktop
+        width: 2vw
       &:last-of-type
         transform: rotate(180deg)
     span
@@ -72,11 +160,21 @@
       border: $fifthMain 0.4vw solid
       display: inline-block
       vertical-align: middle
+      margin-top: 6vh
+      @include desktop
+        border: #00AEEF 0.2vw solid
+        width: 1vw
+        height: 0.5vw
       &:first-of-type
         margin-left: 26vw
+        @include desktop
+          margin-left: 10vw
       &:last-of-type
         margin-right: 26vw
         margin-left: 4vw
+        @include desktop
+          margin-right: 10vw
+          margin-left: 4vw
     span.active
       background-color: $fifthMain
   .down-chevron
@@ -86,6 +184,8 @@
     top: 65vh
     animation: slide 1s infinite
     opacity: 0
+    @include desktop
+      display: none
 
 @keyframes slide
   0%
@@ -115,6 +215,8 @@
   position: absolute
   width: 100vw
   bottom: 14vh
+  @include desktop
+    bottom: 36vh
 
 .initial-hide
   display: none
@@ -122,28 +224,76 @@
 .infographics
   background-color: white
   padding-top: 6vh
-  span
+  @include desktop
+    padding-top: 15vh
+  .text span
     display: block
     &:first-of-type
       display: block
       font-size: 5vw
       font-weight: 400
       margin-left: 10vw
+      @include desktop
+        font-size: 2.5vw
+        margin-left: 12.5vw
+        display: inline
     &:nth-of-type(2)
       display: block
       font-size: 5vw
       font-weight: 700
       margin-left: 10vw
-    &:last-of-type
+      @include desktop
+        font-size: 2.5vw
+        margin-left: .5vw
+        display: inline
+    &:nth-of-type(3)
       margin-top: 5vh
+      width: 70vw
+      margin-left: 15vw
+      font-weight: 600
+      margin-left: 10vw
+      @include desktop
+        font-size: 2vw
+        font-weight: 400
+        width: 100%
+        margin-left: 0
+        text-align: center
+      @include tablet
+        font-size: 3.5vw
+    &:last-of-type
       margin-bottom: 5vh
       width: 70vw
       margin-left: 15vw
       font-weight: 600
       margin-left: 10vw
+      @include desktop
+        font-size: 2vw
+        width: 100%
+        font-weight: 400
+        margin-left: 0
+        text-align: center
+      @include tablet
+        font-size: 3.5vw
+
+  .graphics
+    padding-bottom: 10vh
+    @include desktop
+      padding-bottom: 70vh
+      width: 100%
   img
     width: 100vw
     margin-top: 5vh
+    @include desktop
+      width: 30%
+      float: left
+      display: inline-block
+      margin-bottom: 5vh
+    @include tablet
+      width: 70vw
+      margin-left: 15vw
+    &:first-of-type
+      @include desktop
+        padding-left: 5%
 
 .heads
   display: block
@@ -157,26 +307,96 @@
   padding-top: 6vh
   padding-bottom: 6vh
   color: white
-  background: linear-gradient(to bottom, rgba(21, 9, 88, 1) 0%, rgba(21, 9, 88, 1) 70%, rgba(0, 174, 239, 1) 100%)
+  background: linear-gradient(to bottom, #150958 0%, #150958 70%, #00aeef 100%)
+  @include desktop
+    padding-left: 10vw
+    padding-right: 10vw
+  @include tablet
+    background: linear-gradient(to bottom, #150958 0%, #150958 83%, #00aeef 93%)
   .plus-messenger
     margin-bottom: 10vh
     width: 84vw
+    @include desktop
+      width: 100%
     .capabilites
       text-transform: uppercase
       font-size: 6vw
-      margin-bottom: 0vh
+      margin-bottom: 5vh
+      @include desktop
+        text-align: center
+        width: 100%
+        padding-left: 0
+        margin-left: 0
+        padding-top: 10vh
+        padding-bottom: 4vh
+        font-size: 3vw
+    .heads
+      @include desktop
+        font-size: 2.25vw
+        width: 33%
+        margin-right: 0
+        float: left
+
+  .smallGraphics
+    // padding-bottom: 10vh
+    @include desktop
+      width: 66%
+      padding-bottom: 15vh
+      margin-left: 28vw
     div
       margin-bottom: 6vh
+      @include desktop
+        width: 50%
+        float: left
       img
         vertical-align: middle
         width: 12vw
         margin-right: 3vw
+        @include desktop
+          width: 6vw
+          margin-right: 0
       span
         vertical-align: middle
         font-weight: 300
         font-style: italic
+        font-size: 3.5vw
+        @include desktop
+          font-size: 1.2vw
+          margin-left: 1vw
+
+    .imgBrowse
+      @include desktop
+        // padding-left: 5vw
+    .imgPurchase
+      @include desktop
+        // padding-left: 5vw
+    .imgSupport
+      @include desktop
+        // padding-left: 5vw
+    .imgCal
+      @include desktop
+        // padding-left: 5vw
+
+  .cost-effective
+    display: none
+    @include desktop
+      display: inline-block
+      width: 55%
+      padding-top: 12vh
+
   .every-lead
     margin-bottom: 10vh
+    @include desktop
+      float: right
+      display: inline-block
+      width: 35%
+      margin-top: 10vh
+    .heads
+      @include desktop
+        font-size: 2.25vw
+        width: 94%
+        margin-right: 0
+        // float: right
     span
       display: block
     img
@@ -186,24 +406,47 @@
       margin-top: 2vh
       margin-bottom: 2vh
       font-weight: 700
-      font-weight: 400
       text-transform: uppercase
+      @include desktop
+        font-size: 1.25vw
+        font-weight: 400
+        margin-bottom: 1vh
+      @include tablet
+        font-size: 3vw
     .description
       width: 80vw
       display: block
-      // margin-left: 10vw
       margin-bottom: 6vh
+      @include desktop
+        font-weight: 100
+        width: 94%
+        margin-bottom: 5vh
+      @include tablet
+        font-size: 3.5vw
   .future
+    @include desktop
+      clear: both
+      padding-top: 10vh
     .heads
       display: block
       text-transform: uppercase
       font-weight: 500
       margin-bottom: 2vh
+      @include desktop
+        font-size: 2vw
+        text-align: center
+        margin-bottom: 4vh
     .desc
       width: 80vw
       display: block
       font-weight: 300
-      // margin-bottom: 14vh
+      @include desktop
+        font-size: 1.5vw
+        font-weight: 100
+        width: 70%
+        margin-left: 15%
+        text-align: center
+        padding-bottom: 5vh
     .news
       .title
         display: block
@@ -238,6 +481,8 @@
   animation-delay: 2s
   transform: scale(1)
   animation-fill-mode: forwards
+  @include desktop
+    padding-top: 80vh
   &:nth-of-type(even)
     transform: rotate((random(20) * -1) + deg)
     animation-duration: .3s

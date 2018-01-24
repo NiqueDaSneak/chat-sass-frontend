@@ -1,18 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="65px" height="42px" viewBox="0 0 65 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="77px" height="54px" viewBox="0 0 77 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
-    <title>Group</title>
+    <title>email-icon</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <rect id="path-1" x="0" y="0" width="65" height="42" rx="4"></rect>
+        <filter x="-18.5%" y="-21.4%" width="136.9%" height="150.0%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <polygon id="path-2" points="32.5 2 63 19 2 19"></polygon>
+        <filter x="-8.2%" y="-35.3%" width="116.4%" height="158.8%" filterUnits="objectBoundingBox" id="filter-3">
+            <feMorphology radius="1.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="-1" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Group">
+        <g id="email-icon" filter="url(#filter-1)" transform="translate(6.000000, 4.000000)">
             <g id="Rectangle-2">
-                <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-1"></use>
-                <rect stroke="#979797" stroke-width="3" x="1.5" y="1.5" width="62" height="39" rx="4"></rect>
+                <g id="path-1-link" fill="#EDEDED">
+                    <rect id="path-1" x="0" y="0" width="65" height="42" rx="4"></rect>
+                </g>
+                <rect id="Rectangle-path" stroke="#150958" stroke-width="3" x="1.5" y="1.5" width="62" height="39" rx="2"></rect>
             </g>
-            <polygon id="Triangle" stroke="#979797" stroke-width="3" fill="#D8D8D8" stroke-linecap="round" stroke-linejoin="bevel" transform="translate(32.500000, 14.500000) scale(1, -1) translate(-32.500000, -14.500000) " points="32.5 2 63 27 2 27"></polygon>
+            <g id="Triangle" stroke-linecap="round" stroke-linejoin="bevel" fill-rule="nonzero" transform="translate(32.500000, 10.500000) scale(-1, 1) rotate(-180.000000) translate(-32.500000, -10.500000) ">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                <use stroke="#150958" stroke-width="3" fill="#C2C2C2" fill-rule="evenodd" xlink:href="#path-2"></use>
+            </g>
         </g>
     </g>
 </svg>
