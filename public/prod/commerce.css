@@ -68,13 +68,7 @@
       @media only screen and (min-width: 1025px) {
         .landing .headers span {
           display: none; } }
-      @media only screen and (max-width: 1024px) and (min-width: 415px) {
-        .landing .headers span {
-          display: none; } }
       @media only screen and (min-width: 1025px) {
-        .landing .headers span:nth-of-type(2) {
-          display: none; } }
-      @media only screen and (max-width: 1024px) and (min-width: 415px) {
         .landing .headers span:nth-of-type(2) {
           display: none; } }
   .landing .imgs {
@@ -112,6 +106,10 @@
           left: 36vw;
           font-size: 2vw;
           z-index: 0; } }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .landing .imgs .alert {
+          bottom: 68vh;
+          font-size: 5vw; } }
     .landing .imgs img {
       width: 45vw;
       position: absolute;
@@ -127,13 +125,16 @@
             width: 20vw; } }
         @media only screen and (max-width: 1024px) and (min-width: 415px) {
           .landing .imgs img:first-of-type {
-            top: 55vh; } }
+            top: 24vh; } }
       .landing .imgs img:nth-of-type(2) {
         top: 22vh; }
         @media only screen and (min-width: 1025px) {
           .landing .imgs img:nth-of-type(2) {
             width: 17vh;
             padding-top: 17vh; } }
+        @media only screen and (max-width: 1024px) and (min-width: 415px) {
+          .landing .imgs img:nth-of-type(2) {
+            width: 38vw; } }
     .landing .imgs img:first-of-type.active {
       left: 27.5vw; }
       @media only screen and (min-width: 1025px) {
@@ -141,6 +142,9 @@
           left: 20vw; } }
     .landing .imgs img:last-of-type.active {
       left: 27.5vw; }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .landing .imgs img:last-of-type.active {
+          left: 31vw; } }
   .landing .subheads {
     width: 80vw;
     margin-left: 10vw;
@@ -319,6 +323,9 @@
           width: 100%;
           margin-left: 0;
           text-align: center; } }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .infographics .text span:nth-of-type(3) {
+          font-size: 3.5vw; } }
     .infographics .text span:last-of-type {
       margin-bottom: 5vh;
       width: 70vw;
@@ -332,6 +339,9 @@
           font-weight: 400;
           margin-left: 0;
           text-align: center; } }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .infographics .text span:last-of-type {
+          font-size: 3.5vw; } }
   .infographics .graphics {
     padding-bottom: 10vh; }
     @media only screen and (min-width: 1025px) {
@@ -347,6 +357,10 @@
         float: left;
         display: inline-block;
         margin-bottom: 5vh; } }
+    @media only screen and (max-width: 1024px) and (min-width: 415px) {
+      .infographics img {
+        width: 70vw;
+        margin-left: 15vw; } }
     @media only screen and (min-width: 1025px) {
       .infographics img:first-of-type {
         padding-left: 5%; } }
@@ -369,6 +383,10 @@
     .gradient {
       padding-left: 10vw;
       padding-right: 10vw; } }
+  @media only screen and (max-width: 1024px) and (min-width: 415px) {
+    .gradient {
+      background: -webkit-gradient(linear, left top, left bottom, from(#150958), color-stop(83%, #150958), color-stop(93%, #00aeef));
+      background: linear-gradient(to bottom, #150958 0%, #150958 83%, #00aeef 93%); } }
   .gradient .plus-messenger {
     margin-bottom: 10vh;
     width: 84vw; }
@@ -457,6 +475,9 @@
           font-size: 1.25vw;
           font-weight: 400;
           margin-bottom: 1vh; } }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .gradient .every-lead .title {
+          font-size: 3vw; } }
     .gradient .every-lead .description {
       width: 80vw;
       display: block;
@@ -466,6 +487,9 @@
           font-weight: 100;
           width: 94%;
           margin-bottom: 5vh; } }
+      @media only screen and (max-width: 1024px) and (min-width: 415px) {
+        .gradient .every-lead .description {
+          font-size: 3.5vw; } }
   @media only screen and (min-width: 1025px) {
     .gradient .future {
       clear: both;
@@ -534,75 +558,75 @@
     .email-icon {
       padding-top: 80vh; } }
   .email-icon:nth-of-type(even) {
-    -webkit-transform: rotate(-7deg);
-            transform: rotate(-7deg);
+    -webkit-transform: rotate(-12deg);
+            transform: rotate(-12deg);
     -webkit-animation-duration: .3s;
             animation-duration: .3s; }
   .email-icon:nth-of-type(odd) {
-    -webkit-transform: rotate(12deg);
-            transform: rotate(12deg);
+    -webkit-transform: rotate(13deg);
+            transform: rotate(13deg);
     -webkit-animation-duration: .5s;
             animation-duration: .5s; }
   .email-icon:nth-of-type(1) {
-    top: 49vh;
-    left: 29vw; }
-  .email-icon:nth-of-type(2) {
-    top: 51vh;
-    left: 17vw; }
-  .email-icon:nth-of-type(3) {
     top: 48vh;
-    left: 18vw; }
+    left: 69vw; }
+  .email-icon:nth-of-type(2) {
+    top: 49vh;
+    left: 44vw; }
+  .email-icon:nth-of-type(3) {
+    top: 41vh;
+    left: 38vw; }
   .email-icon:nth-of-type(4) {
-    top: 27vh;
-    left: 9vw; }
+    top: 59vh;
+    left: 23vw; }
   .email-icon:nth-of-type(5) {
-    top: 24vh;
-    left: 48vw; }
+    top: 54vh;
+    left: 50vw; }
   .email-icon:nth-of-type(6) {
-    top: 31vh;
-    left: 35vw; }
-  .email-icon:nth-of-type(7) {
-    top: 31vh;
-    left: 31vw; }
-  .email-icon:nth-of-type(8) {
-    top: 58vh;
-    left: 23vw; }
-  .email-icon:nth-of-type(9) {
-    top: 43vh;
-    left: 12vw; }
-  .email-icon:nth-of-type(10) {
-    top: 47vh;
-    left: 67vw; }
-  .email-icon:nth-of-type(11) {
-    top: 28vh;
-    left: 7vw; }
-  .email-icon:nth-of-type(12) {
-    top: 40vh;
-    left: 37vw; }
-  .email-icon:nth-of-type(13) {
     top: 42vh;
-    left: 48vw; }
-  .email-icon:nth-of-type(14) {
-    top: 30vh;
-    left: 29vw; }
-  .email-icon:nth-of-type(15) {
-    top: 52vh;
-    left: 23vw; }
-  .email-icon:nth-of-type(16) {
-    top: 21vh;
     left: 59vw; }
-  .email-icon:nth-of-type(17) {
-    top: 22vh;
-    left: 63vw; }
-  .email-icon:nth-of-type(18) {
-    top: 40vh;
-    left: 41vw; }
-  .email-icon:nth-of-type(19) {
+  .email-icon:nth-of-type(7) {
+    top: 21vh;
+    left: 78vw; }
+  .email-icon:nth-of-type(8) {
     top: 47vh;
-    left: 17vw; }
+    left: 61vw; }
+  .email-icon:nth-of-type(9) {
+    top: 31vh;
+    left: 46vw; }
+  .email-icon:nth-of-type(10) {
+    top: 50vh;
+    left: 30vw; }
+  .email-icon:nth-of-type(11) {
+    top: 26vh;
+    left: 52vw; }
+  .email-icon:nth-of-type(12) {
+    top: 26vh;
+    left: 47vw; }
+  .email-icon:nth-of-type(13) {
+    top: 43vh;
+    left: 34vw; }
+  .email-icon:nth-of-type(14) {
+    top: 55vh;
+    left: 48vw; }
+  .email-icon:nth-of-type(15) {
+    top: 42vh;
+    left: 61vw; }
+  .email-icon:nth-of-type(16) {
+    top: 37vh;
+    left: 19vw; }
+  .email-icon:nth-of-type(17) {
+    top: 47vh;
+    left: 29vw; }
+  .email-icon:nth-of-type(18) {
+    top: 25vh;
+    left: 85vw; }
+  .email-icon:nth-of-type(19) {
+    top: 39vh;
+    left: 18vw; }
   .email-icon:nth-of-type(20) {
-    top: 51vh;
-    left: 83vw; }
+    top: 26vh;
+    left: 6vw; }
 
 .display-none {
   display: none; }
