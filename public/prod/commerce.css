@@ -37,7 +37,8 @@
   text-align: center;
   height: 100vh;
   width: 100vw;
-  position: relative; }
+  position: relative;
+  background-color: black; }
   .landing .headers {
     font-size: 4.7vw;
     width: 80vw;
@@ -51,7 +52,8 @@
     .landing .headers span {
       display: block;
       text-transform: uppercase;
-      font-weight: 300; }
+      font-weight: 300;
+      color: white; }
       @media only screen and (min-width: 1025px) {
         .landing .headers span {
           display: none; } }
@@ -130,7 +132,8 @@
     font-size: 3.4vw;
     font-weight: 600;
     -webkit-transition: opacity .5s;
-    transition: opacity .5s; }
+    transition: opacity .5s;
+    color: white; }
     @media only screen and (min-width: 1025px) {
       .landing .subheads {
         font-size: 1.5vw;
@@ -494,8 +497,8 @@
     .email-icon {
       padding-top: 80vh; } }
   .email-icon:nth-of-type(even) {
-    -webkit-transform: rotate(-1deg);
-            transform: rotate(-1deg);
+    -webkit-transform: rotate(-3deg);
+            transform: rotate(-3deg);
     -webkit-animation-duration: .3s;
             animation-duration: .3s; }
   .email-icon:nth-of-type(odd) {
@@ -504,65 +507,65 @@
     -webkit-animation-duration: .5s;
             animation-duration: .5s; }
   .email-icon:nth-of-type(1) {
-    top: 44vh;
-    left: 34vw; }
+    top: 33vh;
+    left: 11vw; }
   .email-icon:nth-of-type(2) {
-    top: 60vh;
-    left: 42vw; }
+    top: 59vh;
+    left: 47vw; }
   .email-icon:nth-of-type(3) {
-    top: 59vh;
-    left: 33vw; }
+    top: 44vh;
+    left: 48vw; }
   .email-icon:nth-of-type(4) {
-    top: 37vh;
-    left: 32vw; }
-  .email-icon:nth-of-type(5) {
-    top: 54vh;
-    left: 68vw; }
-  .email-icon:nth-of-type(6) {
-    top: 27vh;
-    left: 44vw; }
-  .email-icon:nth-of-type(7) {
-    top: 28vh;
-    left: 15vw; }
-  .email-icon:nth-of-type(8) {
-    top: 27vh;
-    left: 12vw; }
-  .email-icon:nth-of-type(9) {
-    top: 25vh;
-    left: 69vw; }
-  .email-icon:nth-of-type(10) {
-    top: 25vh;
-    left: 33vw; }
-  .email-icon:nth-of-type(11) {
-    top: 60vh;
-    left: 70vw; }
-  .email-icon:nth-of-type(12) {
-    top: 37vh;
-    left: 13vw; }
-  .email-icon:nth-of-type(13) {
-    top: 48vh;
-    left: 64vw; }
-  .email-icon:nth-of-type(14) {
-    top: 24vh;
-    left: 31vw; }
-  .email-icon:nth-of-type(15) {
-    top: 30vh;
-    left: 3vw; }
-  .email-icon:nth-of-type(16) {
-    top: 42vh;
-    left: 9vw; }
-  .email-icon:nth-of-type(17) {
     top: 49vh;
+    left: 56vw; }
+  .email-icon:nth-of-type(5) {
+    top: 56vh;
+    left: 15vw; }
+  .email-icon:nth-of-type(6) {
+    top: 24vh;
+    left: 39vw; }
+  .email-icon:nth-of-type(7) {
+    top: 58vh;
+    left: 41vw; }
+  .email-icon:nth-of-type(8) {
+    top: 45vh;
+    left: 32vw; }
+  .email-icon:nth-of-type(9) {
+    top: 53vh;
+    left: 10vw; }
+  .email-icon:nth-of-type(10) {
+    top: 41vh;
     left: 34vw; }
-  .email-icon:nth-of-type(18) {
+  .email-icon:nth-of-type(11) {
+    top: 29vh;
+    left: 36vw; }
+  .email-icon:nth-of-type(12) {
+    top: 23vh;
+    left: 72vw; }
+  .email-icon:nth-of-type(13) {
+    top: 21vh;
+    left: 80vw; }
+  .email-icon:nth-of-type(14) {
+    top: 33vh;
+    left: 68vw; }
+  .email-icon:nth-of-type(15) {
+    top: 49vh;
+    left: 65vw; }
+  .email-icon:nth-of-type(16) {
     top: 43vh;
-    left: 76vw; }
+    left: 60vw; }
+  .email-icon:nth-of-type(17) {
+    top: 31vh;
+    left: 12vw; }
+  .email-icon:nth-of-type(18) {
+    top: 21vh;
+    left: 47vw; }
   .email-icon:nth-of-type(19) {
-    top: 26vh;
-    left: 52vw; }
+    top: 40vh;
+    left: 74vw; }
   .email-icon:nth-of-type(20) {
-    top: 59vh;
-    left: 83vw; }
+    top: 53vh;
+    left: 12vw; }
 
 .display-none {
   display: none; }
@@ -581,6 +584,7 @@
 
 body {
   margin: 0;
+  background-color: black;
   background-attachment: fixed;
   font-family: 'Open Sans', sans-serif; }
 

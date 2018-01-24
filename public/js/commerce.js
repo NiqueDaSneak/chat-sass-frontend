@@ -2,6 +2,9 @@
 
 $(document).ready(() => {
 
+  // hide header
+  $('header').hide()
+
   // make first img show up, but still off screen on mobile
   setTimeout(() => {
     $('.imgs img:first-of-type').css('display', 'initial')
@@ -73,6 +76,7 @@ $(document).ready(() => {
         $('.landing-nav span:last-of-type').addClass('active')
         $('.landing-nav span:first-of-type').removeClass('active')
         $('.down-chevron').show()
+        $('header').show()
         $('.down-chevron').css('opacity', '1')
         $('.alert').css('left', '-77.5vw')
         $('.imgs img.active').toggleClass('active')
@@ -146,6 +150,7 @@ $(document).ready(() => {
           $('.landing-nav span:last-of-type').addClass('active')
           $('.landing-nav span:first-of-type').removeClass('active')
           $('.down-chevron').show()
+          $('header').show()
           $('.down-chevron').css('opacity', '1')
           $('.alert').css('left', '-77.5vw')
           $('.imgs img.active').toggleClass('active')
@@ -190,6 +195,7 @@ $(document).ready(() => {
           $('.landing-nav span:last-of-type').addClass('active')
           $('.landing-nav span:first-of-type').removeClass('active')
           $('.down-chevron').show()
+          $('header').show()
           $('.down-chevron').css('opacity', '1')
           $('.alert').css('left', '-77.5vw')
           $('.imgs img.active').toggleClass('active')
