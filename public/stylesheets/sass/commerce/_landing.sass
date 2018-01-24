@@ -1,6 +1,6 @@
 .green
   @include desktop
-    background-color: $siteGreen
+    background-color: black
     height: 95vh
   .headers
     font-size: 4.7vw
@@ -10,7 +10,8 @@
     font-weight: 700
     padding-top: 11vh
     @include desktop
-      padding-top: 60vh
+      padding-top: 50vh
+      color: white
     @include tablet
       padding-top: 40vh
     span
@@ -27,16 +28,21 @@
         @include tablet
           font-size: 3vw
 
+img.hide-desktop
+  @include desktop
+    position: absolute
+    top: 20vh
+    right: 10vw
+    width: 18vw
+
 .landing
   text-align: center
   height: 100vh
   width: 100vw
   position: relative
   background-color: black
-  // .icon
-  //   margin-top: 3vh
-  //   width: 40vw
-
+  @include desktop
+    height: 68vh
   .headers
     font-size: 4.7vw
     width: 80vw
@@ -84,11 +90,12 @@
       font-weight: 100
       box-shadow: -1px 2px 0px 0px rgba(0, 0, 0, 0.36)
       @include desktop
-        top: 39vh
+        top: 9vh
         width: 3vw
         height: 3vw
         left: 36vw
         font-size: 2vw
+        z-index: 0
     img
       width: 45vw
       position: absolute
@@ -98,8 +105,8 @@
       &:first-of-type
         top: 27vh
         @include desktop
-          top: 40vh
-          width: 12vw
+          top: 8vh
+          width: 20vw
         @include tablet
           top: 55vh
       &:nth-of-type(2)
@@ -109,6 +116,8 @@
           padding-top: 17vh
     img:first-of-type.active
       left: 27.5vw
+      @include desktop
+        left: 20vw
     img:last-of-type.active
       left: 27.5vw
   .subheads
@@ -121,17 +130,20 @@
     @include desktop
       font-size: 1.5vw
       font-weight: 400
-      width: 25%
+      width: 33vw
       float: right
-      padding-right: 9vw
+      padding-right: 15vw
   .landing-nav
     margin-top: 4vh
+    @include desktop
+      width: 40vw
+      margin-left: 10vw
     img
       vertical-align: middle
       width: 5vw
       padding: 2vw
       @include desktop
-        width: 3vw
+        width: 2vw
       &:last-of-type
         transform: rotate(180deg)
     span
@@ -141,11 +153,21 @@
       border: $fifthMain 0.4vw solid
       display: inline-block
       vertical-align: middle
+      margin-top: 6vh
+      @include desktop
+        border: #00AEEF 0.2vw solid
+        width: 1vw
+        height: 0.5vw
       &:first-of-type
         margin-left: 26vw
+        @include desktop
+          margin-left: 10vw
       &:last-of-type
         margin-right: 26vw
         margin-left: 4vw
+        @include desktop
+          margin-right: 10vw
+          margin-left: 4vw
     span.active
       background-color: $fifthMain
   .down-chevron
@@ -186,6 +208,8 @@
   position: absolute
   width: 100vw
   bottom: 14vh
+  @include desktop
+    bottom: 36vh
 
 .initial-hide
   display: none
@@ -288,7 +312,7 @@
         padding-left: 0
         margin-left: 0
         padding-top: 10vh
-        padding-bottom: 20vh
+        padding-bottom: 4vh
         font-size: 3vw
     .heads
       @include desktop
@@ -300,20 +324,20 @@
   .smallGraphics
     // padding-bottom: 10vh
     @include desktop
-      width: 64%
-      float: right
+      width: 66%
       padding-bottom: 15vh
+      margin-left: 28vw
     div
       margin-bottom: 6vh
       @include desktop
-        width: 35%
+        width: 50%
         float: left
       img
         vertical-align: middle
         width: 12vw
         margin-right: 3vw
         @include desktop
-          width: 2vw
+          width: 6vw
           margin-right: 0
       span
         vertical-align: middle
@@ -321,7 +345,8 @@
         font-style: italic
         font-size: 3.5vw
         @include desktop
-          font-size: 1vw
+          font-size: 1.2vw
+          margin-left: 1vw
 
     .imgBrowse
       @include desktop
@@ -341,7 +366,7 @@
     @include desktop
       display: inline-block
       width: 55%
-      padding-top: 9vh
+      padding-top: 12vh
 
   .every-lead
     margin-bottom: 10vh
@@ -349,6 +374,7 @@
       float: right
       display: inline-block
       width: 35%
+      margin-top: 10vh
     .heads
       @include desktop
         font-size: 2.25vw

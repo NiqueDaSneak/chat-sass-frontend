@@ -2,9 +2,6 @@
 
 $(document).ready(() => {
 
-  // hide header
-  $('header').hide()
-
   // make first img show up, but still off screen on mobile
   setTimeout(() => {
     $('.imgs img:first-of-type').css('display', 'initial')
@@ -16,6 +13,12 @@ $(document).ready(() => {
   }, 2000)
 
   if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
+
+    // remove first gif for desktop
+    $('img.hide-desktop').remove()
+
+    // hide header
+    $('header').hide()
 
     // hide down chevron
     $('.down-chevron').hide()
@@ -241,6 +244,60 @@ $(document).ready(() => {
       }
     }
   } else {
+    // remove emails
+    $('.email-icon').remove()
 
+    // remove landing nav
+    $('.landing-nav').remove()
+
+    $('.initial-hide').show()
+
+    // for top scrolling imgs
+    var messengerIcon = true
+
+    $('.landing-nav').click((event) => {
+      if (messengerIcon === true) {
+        $('.initial-hide').css('display', 'initial')
+        console.log('...remove messenger icon')
+
+        $('.subheads').css('opacity', '0')
+        messengerIcon = false
+        console.log(messengerIcon)
+        $('.landing-nav span:last-of-type').addClass('active')
+        $('.landing-nav span:first-of-type').removeClass('active')
+        $('.down-chevron').show()
+        $('header').show()
+        $('.down-chevron').css('opacity', '1')
+        $('.alert').css('left', '-77.5vw')
+        $('.imgs img.active').toggleClass('active')
+
+        setTimeout(() => {
+          $('.imgs img:first-of-type').css('display', 'none')
+        }, 500)
+
+        $('.imgs img:last-of-type').css('display', 'initial')
+        setTimeout(() => {
+          $('.imgs img:last-of-type').toggleClass('active')
+        }, 200)
+
+      } else {
+        messengerIcon = true
+        console.log('...add messenger icon')
+        $('.subheads').css('opacity', '1')
+        $('.landing-nav span:last-of-type').removeClass('active')
+        $('.landing-nav span:first-of-type').addClass('active')
+
+        $('.imgs img.active').toggleClass('active')
+        setTimeout(() => {
+          $('.imgs img:last-of-type').css('display', 'none')
+        }, 500)
+
+        $('.imgs img:first-of-type').css('display', 'initial')
+        setTimeout(() => {
+          $('.imgs img:first-of-type').toggleClass('active')
+        }, 200)
+      }
+
+    })
   }
 })
