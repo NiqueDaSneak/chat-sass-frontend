@@ -558,75 +558,75 @@
     .email-icon {
       padding-top: 80vh; } }
   .email-icon:nth-of-type(even) {
-    -webkit-transform: rotate(-12deg);
-            transform: rotate(-12deg);
+    -webkit-transform: rotate(-4deg);
+            transform: rotate(-4deg);
     -webkit-animation-duration: .3s;
             animation-duration: .3s; }
   .email-icon:nth-of-type(odd) {
-    -webkit-transform: rotate(13deg);
-            transform: rotate(13deg);
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
     -webkit-animation-duration: .5s;
             animation-duration: .5s; }
   .email-icon:nth-of-type(1) {
-    top: 48vh;
-    left: 69vw; }
+    top: 52vh;
+    left: 14vw; }
   .email-icon:nth-of-type(2) {
-    top: 49vh;
-    left: 44vw; }
+    top: 37vh;
+    left: 26vw; }
   .email-icon:nth-of-type(3) {
-    top: 41vh;
-    left: 38vw; }
+    top: 33vh;
+    left: 69vw; }
   .email-icon:nth-of-type(4) {
-    top: 59vh;
-    left: 23vw; }
+    top: 58vh;
+    left: 61vw; }
   .email-icon:nth-of-type(5) {
-    top: 54vh;
-    left: 50vw; }
+    top: 34vh;
+    left: 38vw; }
   .email-icon:nth-of-type(6) {
-    top: 42vh;
-    left: 59vw; }
+    top: 51vh;
+    left: 27vw; }
   .email-icon:nth-of-type(7) {
-    top: 21vh;
-    left: 78vw; }
+    top: 36vh;
+    left: 48vw; }
   .email-icon:nth-of-type(8) {
     top: 47vh;
-    left: 61vw; }
+    left: 57vw; }
   .email-icon:nth-of-type(9) {
-    top: 31vh;
-    left: 46vw; }
+    top: 53vh;
+    left: 29vw; }
   .email-icon:nth-of-type(10) {
-    top: 50vh;
-    left: 30vw; }
+    top: 21vh;
+    left: 77vw; }
   .email-icon:nth-of-type(11) {
-    top: 26vh;
-    left: 52vw; }
+    top: 59vh;
+    left: 46vw; }
   .email-icon:nth-of-type(12) {
-    top: 26vh;
-    left: 47vw; }
+    top: 49vh;
+    left: 85vw; }
   .email-icon:nth-of-type(13) {
-    top: 43vh;
-    left: 34vw; }
+    top: 35vh;
+    left: 13vw; }
   .email-icon:nth-of-type(14) {
-    top: 55vh;
-    left: 48vw; }
+    top: 37vh;
+    left: 39vw; }
   .email-icon:nth-of-type(15) {
     top: 42vh;
-    left: 61vw; }
+    left: 83vw; }
   .email-icon:nth-of-type(16) {
-    top: 37vh;
-    left: 19vw; }
+    top: 57vh;
+    left: 40vw; }
   .email-icon:nth-of-type(17) {
-    top: 47vh;
-    left: 29vw; }
+    top: 35vh;
+    left: 2vw; }
   .email-icon:nth-of-type(18) {
-    top: 25vh;
-    left: 85vw; }
+    top: 27vh;
+    left: 50vw; }
   .email-icon:nth-of-type(19) {
-    top: 39vh;
-    left: 18vw; }
+    top: 21vh;
+    left: 9vw; }
   .email-icon:nth-of-type(20) {
-    top: 26vh;
-    left: 6vw; }
+    top: 39vh;
+    left: 37vw; }
 
 .display-none {
   display: none; }
