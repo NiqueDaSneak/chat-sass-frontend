@@ -18,7 +18,7 @@ $(document).ready(() => {
     // data-zip-code="true",
     token: function(token) {
       console.log(token)
-      $.post('https://chat-sass-messenger-uploader.herokuapp.com/tedxrouter', {stripe: token, cost: Number(noDotPrice)})
+      $.post('https://chat-sass-messenger-uploader.herokuapp.com/tedxrouter', {stripe: {email: token.email, id: token.id}, cost: Number(noDotPrice)})
     }
   })
 
