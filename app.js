@@ -185,6 +185,9 @@ app.get('/webview-checkout', (req, res) => {
   res.sendFile(path.join(__dirname + '/views/webview-checkout.html'))
 })
 
+app.get('/tedxdonate', (req, res) => {
+  res.sendFile(path.join(__dirname + '/views/tedxdonate.html'))
+})
 
 app.get('/tiers/:userID/:userAccessToken', (req, res) => {
   res.sendFile(path.join(__dirname + '/views/tiers.html'))
