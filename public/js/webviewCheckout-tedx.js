@@ -13,6 +13,7 @@ $(document).ready(() => {
   var handler = StripeCheckout.configure({
     key: 'pk_test_RcrJKqemWFARPg2zNFfPSZXj',
     // key: 'sk_live_vCVX2baHRaQSbnF1Y5DMcQiN',
+    image: '/imgs/tedx_logo.png',
     locale: 'auto',
     zipCode: true,
     // data-zip-code="true",
