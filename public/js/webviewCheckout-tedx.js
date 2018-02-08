@@ -21,7 +21,7 @@ $(document).ready(() => {
       console.log(token)
       $.post('https://chat-sass-messenger-uploader.herokuapp.com/tedxrouter', {stripe: {email: token.email, id: token.id}, cost: Number(noDotPrice)})
       setTimeout(() => {
-        window.location.replace("http://www.tedxcincinnati.com/");
+        window.location.replace("https://www.messenger.com/closeWindow/?image_url=https://www.irrigatemsg.com/imgs/success-icon.png&display_text=Success");
       }, 3000)
     }
   })
