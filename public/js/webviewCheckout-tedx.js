@@ -20,6 +20,9 @@ $(document).ready(() => {
     token: function(token) {
       console.log(token)
       $.post('https://chat-sass-messenger-uploader.herokuapp.com/tedxrouter', {stripe: {email: token.email, id: token.id}, cost: Number(noDotPrice)})
+      setTimeout(() => {
+        window.location.replace("http://www.tedxcincinnati.com/");
+      }, 3000)
     }
   })
 
