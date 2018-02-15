@@ -122,7 +122,7 @@ app.use(passport.session())
 
 passport.use(new FacebookStrategy({
     clientID: '372903006444693',
-    clientSecret: 'e0cf0b310d6931c9140969a115efefa9',
+    clientSecret: 'a6f18850bec3475a1f115d3476df81c7',
     callbackURL: "https://www.irrigatemsg.com/facebook/redirect",
     profileFields: ['id', 'emails', 'name'],
     enableProof: true
